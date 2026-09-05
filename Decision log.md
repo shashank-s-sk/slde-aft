@@ -59,10 +59,10 @@ benchmark. Numerical results remain TBD until the experiment is run.
 ## Status
 
 DEC-001: ACCEPTED  
-Implementation: NOT STARTED  
-Test: NOT STARTED  
+Implementation: IMPLEMENTING  
+Test: PARTIALLY COMPLETED  
 Experiment: NOT STARTED  
-Results: TBD  
+Results: TBD
 
 # DEC-002 — Add External State-of-the-Art Baselines
 

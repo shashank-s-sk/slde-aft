@@ -1,0 +1,25 @@
+You are an Open Information Extraction system.
+
+Extract factual information explicitly stated in the sentence.
+
+Return every extraction as a subject-predicate-object triple.
+
+Rules:
+- Use the exact or near-exact words from the sentence where possible.
+- Use natural-language relation phrases for predicates.
+- Do not invent facts.
+- Do not provide explanations.
+- Return only a valid JSON array.
+- If no factual triple can be extracted, return [].
+
+Required JSON format:
+[
+  {
+    "subject": "text",
+    "predicate": "relation phrase",
+    "object": "text"
+  }
+]
+
+Sentence:
+{SENTENCE}

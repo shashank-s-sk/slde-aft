@@ -1,94 +1,47 @@
-==================================================
-EVID-001
-==================================================
+# EVID-001 — DEC-001 CaRB Dataset Preparation
 
-Related Decision:
-DEC-001
+**Implemented:** Implemented initial CaRB dataset integration. The CaRB gold test data was loaded, grouped by sentence, and converted into a 30-sentence JSONL subset containing sentence IDs, sentence text, and gold subject–predicate–object triples.
 
-Title:
-[Short name of the decision]
+**Files:** `src/datasets/carb_adapter.py`, `notebooks/02_carb_prepare_subset.ipynb`, `data/carb_dev_sample.jsonl`, `data/CaRB/data/gold/test.tsv`
 
-Date:
-[YYYY-MM-DD]
+**Data/Test:** CaRB public OpenIE benchmark; gold test file `data/CaRB/data/gold/test.tsv`. The loader processed 634 unique sentences and saved the first 30 unique sentences as a development subset.
 
---------------------------------------------------
-1. IMPLEMENTATION
---------------------------------------------------
+**Expected:** The adapter should read the CaRB gold TSV format, group multiple gold extractions belonging to the same sentence, and save a reusable JSONL subset with sentence IDs, source text, and gold triples.
 
-What was implemented:
-[What exactly did I implement?]
+**Actual:** Successfully loaded 634 unique CaRB sentences and saved 30 sentence records to `data/carb_dev_sample.jsonl`. Inspection of the CaRB gold file confirmed the expected four-column format: sentence, relation, argument 1, and argument 2.
 
-Files / Components changed:
-[File names or modules]
+**Result:** PASS
 
---------------------------------------------------
-2. TEST SETUP
---------------------------------------------------
+**Next step:** Inspect the generated JSONL records, create and test an OpenIE extraction prompt, then run the existing unstructured LLM extractor on only 3 CaRB sentences before scaling to 10 or 30 sentences.
 
-Dataset / Test data:
-[Dataset name / number of examples]
+## EVID-002 — DEC-001 CaRB OpenIE Smoke Test
 
-Test configuration:
-[Model, parameters, seeds, hardware, etc. if relevant]
+**Implemented:** Created and tested a CaRB-specific OpenIE extraction path using an open-relation prompt, OpenRouter API calls, JSON parsing, and latency recording.
 
---------------------------------------------------
-3. EXPECTED OUTPUT
---------------------------------------------------
+**Files:** `notebooks/03_carb_extraction_smoke_test.ipynb`, `prompts/openie_carb_v1.txt`, `outputs/carb_smoke_test_3/predictions.json`, `outputs/carb_smoke_test_3/config.json`
 
-Expected:
-[What should happen if the implementation is correct?]
+**Data/Test:** Three sentences from `data/carb_dev_sample.jsonl`; model `openrouter/auto`; temperature `0.0`.
 
-Expected output:
-[What output should the system produce?]
+**Expected:** The LLM should return valid JSON subject–predicate–object triples for each CaRB sentence, with no API or parsing errors.
 
-Expected metrics:
-[Precision / Recall / F1 / ECE / latency / etc., if applicable]
+**Actual:** All 3 API calls completed successfully. All responses contained valid parseable JSON. No API errors and no parse errors occurred. Per-sentence latencies were 3.90 seconds, 3.76 seconds, and 19.74 seconds. The first sentence produced two semantically correct triples; a minor formatting difference was observed between `32.7 %` in gold data and `32.7%` in prediction.
 
---------------------------------------------------
-4. ACTUAL OUTPUT
---------------------------------------------------
+**Result:** PASS
 
-Actual:
-[What actually happened?]
+**Next step:** Implement a shared normalizer and internal precision/recall/F1 evaluator, then evaluate the saved predictions without making additional API calls.
 
-Actual output:
-[What did the system actually produce?]
+# EVID-003 — DEC-001 CaRB 10-Sentence Pilot
 
-Actual metrics:
-[Record the measured results]
+**Implemented:** Scaled CaRB OpenIE extraction from 3 to 10 sentences using the same prompt and model.
 
---------------------------------------------------
-5. OBSERVATIONS
---------------------------------------------------
+**Files:** `notebooks/03_carb_extraction_smoke_test.ipynb`, `prompts/openie_carb_v1.txt`, `outputs/carb_10_dev/subset_10.jsonl`, `outputs/carb_10_dev/predictions.json`, `outputs/carb_10_dev/metrics_internal.json`
 
-[What did I notice?
-Any errors?
-Unexpected behaviour?
-Problems?
-Anything different from the expectation?]
+**Data/Test:** First 10 sentences from `data/carb_dev_sample.jsonl`; model `openrouter/auto`; temperature `0.0`.
 
---------------------------------------------------
-6. CONCLUSION
---------------------------------------------------
+**Expected:** The LLM should return valid JSON subject–predicate–object triples for each sentence, with improved coverage compared to the 3-sentence smoke test.
 
-Result:
-[PASS / PARTIAL / FAIL]
+**Actual:** All 10 API calls completed successfully. The system extracted 25 predicted triples against 35 gold triples. Internal evaluation yielded precision 0.1600, recall 0.1143, and F1 0.1333, with 4 true positives, 21 false positives, and 31 false negatives.
 
-What does this evidence show?
-[Short interpretation of the result]
+**Result:** PASS (pipeline functional; performance low but expected for a first-pass prompt on a small subset).
 
---------------------------------------------------
-7. DECISION STATUS
---------------------------------------------------
-
-Decision:
-[CONFIRMED / MODIFIED / REJECTED]
-
-Reason:
-[Why is the original decision confirmed, modified,
-or rejected?]
-
-Next action:
-[What should be done next?]
-
-==================================================
+**Next step:** Inspect mismatched triples to identify systematic errors (e.g., over-splitting, wrong subjects, paraphrase mismatches), then decide whether to refine the prompt or proceed to a larger subset.
