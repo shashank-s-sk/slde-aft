@@ -58,11 +58,19 @@ benchmark. Numerical results remain TBD until the experiment is run.
 
 ## Status
 
-DEC-001: ACCEPTED  
-Implementation: IMPLEMENTING  
-Test: PARTIALLY COMPLETED  
-Experiment: NOT STARTED  
-Results: TBD
+DEC-001: ACCEPTED
+Implementation: DONE
+Test: DONE
+Experiment: PILOT COMPLETED
+Results: Internal CaRB-10 F1 = 0.1333
+Official CaRB score: TBD
+
+DEC-001, part 1: Prepare CaRB data                 ✅ Done
+DEC-001, part 2: Run your LLM on 3 sentences       ← Do this now
+DEC-001, part 3: Save and inspect predictions
+DEC-001, part 4: Evaluate internally
+DEC-001, part 5: Export CaRB format and run scorer --not completed
+DEC-002: Add external baseline using same pipeline
 
 # DEC-002 — Add External State-of-the-Art Baselines
 
@@ -134,11 +142,16 @@ experiments are run.
 
 ## Status
 
-DEC-002: ACCEPTED  
-Implementation: NOT STARTED  
-Test: NOT STARTED  
-Experiment: NOT STARTED  
-Results: TBD  
+DEC-002: ACCEPTED
+Implementation: PARTIALLY COMPLETED
+Test: DONE (external LLM baseline, CaRB-10)
+Experiment: PILOT COMPLETED
+Results:
+- SLDE-AFT CaRB pilot: Precision 0.1600, Recall 0.1143, F1 0.1333
+- Llama-3.1-8B-Instruct baseline: Precision 0.0345, Recall 0.0286, F1 0.0312
+- Protocol: CaRB-10 development subset; shared internal normalized exact-match evaluator
+- Official CaRB scoring: TBD
+- REBEL baseline: TBD
 
 # DEC-003 — Strengthen Mathematical Contribution
 

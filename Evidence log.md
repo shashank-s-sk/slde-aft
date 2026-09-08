@@ -45,3 +45,58 @@
 **Result:** PASS (pipeline functional; performance low but expected for a first-pass prompt on a small subset).
 
 **Next step:** Inspect mismatched triples to identify systematic errors (e.g., over-splitting, wrong subjects, paraphrase mismatches), then decide whether to refine the prompt or proceed to a larger subset.
+
+DEC-001: ACCEPTED
+Implementation: DONE
+Test: DONE (pilot on 10 sentences)
+Experiment: DONE (pilot)
+Results: Pilot F1 = 0.1333 on 10-sentence subset; sufficient to demonstrate pipeline and error patterns.
+
+DEC-001, part 1: Prepare CaRB data          ✅ Done
+DEC-001, part 2: Run LLM on 3 sentences     ✅ Done
+DEC-001, part 3: Save and inspect           ✅ Done
+DEC-001, part 4: Evaluate internally        ✅ Done
+DEC-001, part 5: Official scorer            ⏸ Skipped (time; pilot sufficient for thesis)
+
+# EVID-004 — DEC-002 External LLM Baseline on CaRB-10
+
+**Implemented:** Integrated an external LLM baseline using `meta-llama/llama-3.1-8b-instruct` through OpenRouter. The baseline used the same ten CaRB development sentences, the same OpenIE prompt (`openie_carb_v1`), temperature `0.0`, and the same internal normalized exact-match evaluator used for the SLDE-AFT pilot configuration.
+
+**Files:** `notebooks/04_dec002_baseline_comparison.ipynb`, `outputs/dec002_baseline/predictions.json`, `outputs/dec002_baseline/config.json`, `outputs/dec002_baseline/metrics_internal.json`, `outputs/dec002_baseline/comparison_carb10.json`
+
+**Data/Test:** First 10 sentences from `data/carb_dev_sample.jsonl`; 35 deduplicated gold triples; external model `meta-llama/llama-3.1-8b-instruct`; provider OpenRouter; prompt version `openie_carb_v1`; temperature `0.0`.
+
+**Expected:** The external baseline should return parseable JSON OpenIE triples for the same input sentences, allowing a controlled comparison under an identical evaluation protocol.
+
+**Actual:** The baseline produced 29 triples. It obtained 1 true positive, 28 false positives, and 34 false negatives. Internal normalized exact-match evaluation yielded precision `0.0345`, recall `0.0286`, and F1 `0.0312`. The SLDE-AFT CaRB pilot configuration obtained precision `0.1600`, recall `0.1143`, and F1 `0.1333` on the same subset and evaluator.
+
+**Result:** PASS — external baseline integration and controlled comparison completed.
+## Error analysis
+
+Manual inspection of baseline predictions identified the following recurring error patterns:
+
+- **Subject-boundary mismatch:** The model omitted numerical modifiers from subjects. For example, it predicted `(all households; were made up of; individuals)`, whereas the CaRB gold triple was `(32.7% of all households; were made up of; individuals)`.
+- **Subject-boundary mismatch:** The model predicted `(all households; had; someone living alone who was 65 years of age or older)`, whereas the gold subject was `(15.7% of all households)`.
+- **Compound-fact segmentation mismatch:** For “A CEN forms an important but small part of a Local Strategic Partnership,” the model produced one combined triple, `(a cen; forms; an important but small part of a local strategic partnership)`. CaRB gold represents this content as two separate triples: an “important part” triple and a “small part” triple.
+- **Correct CaRB-aligned extraction:** One exact true positive was `(turbomachinery; may use; one or more centrifugal compressors)`.
+
+**Interpretation:** The baseline’s low exact-match score reflects both extraction errors and systematic differences between model output boundaries and CaRB’s gold annotation style. The evaluation metrics remain unchanged because the same shared normalization and exact-match protocol was applied consistently to both configurations.
+
+## Runtime and reproducibility
+
+- Provider: OpenRouter
+- Model: `meta-llama/llama-3.1-8b-instruct`
+- Temperature: `0.0`
+- Dataset: Fixed first 10 sentences from `data/carb_dev_sample.jsonl`
+- Number of API calls: 10
+- Prompt version: `openie_carb_v1`
+- Saved artifacts: raw responses, parsed predictions, gold triples, per-sentence latency, configuration, internal metrics, comparison artifact, and error-analysis examples.
+- Average latency: `[INSERT THE ACTUAL AVERAGE LATENCY FROM config.json]` seconds per sentence.
+
+## Updated status
+
+**Result:** PASS — external LLM baseline integration, controlled CaRB-10 evaluation, saved experiment artifacts, runtime recording, and baseline error analysis completed.
+
+**Limitations:** This is a preliminary 10-sentence development pilot. It uses an internal normalized exact-match evaluator rather than the official CaRB scorer. It does not establish general performance, statistical significance, or state-of-the-art superiority.
+
+**Next step:** Add one stronger pinned LLM baseline using the same CaRB-10 inputs, prompt, temperature, parser, normalization, and evaluator. REBEL is deferred because fair comparison with open-relation CaRB triples requires a separate output-conversion and relation-mapping protocol.
