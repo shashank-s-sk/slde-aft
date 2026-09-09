@@ -1,0 +1,27 @@
+{"iteration": 1, "subject": "Product-A", "predicate": "has_color", "object": "black", "confidence": 0.90, "source_id": "structured_001", "source_type": "structured", "provenance": "Product-A has color black.", "gold_label": 1}
+{"iteration": 2, "subject": "Product-A", "predicate": "has_color", "object": "black", "confidence": 0.85, "source_id": "unstructured_001", "source_type": "unstructured", "provenance": "The Product-A device is available in black.", "gold_label": 1}
+{"iteration": 3, "subject": "Product-A", "predicate": "has_color", "object": "black", "confidence": 0.80, "source_id": "unstructured_002", "source_type": "unstructured", "provenance": "Product-A comes in a black finish.", "gold_label": 1}
+
+{"iteration": 1, "subject": "Product-A", "predicate": "has_color", "object": "white", "confidence": 0.70, "source_id": "unstructured_003", "source_type": "unstructured", "provenance": "Product-A is described as white.", "gold_label": 0}
+{"iteration": 3, "subject": "Product-A", "predicate": "has_color", "object": "white", "confidence": 0.60, "source_id": "unstructured_004", "source_type": "unstructured", "provenance": "A second description states Product-A has a white color.", "gold_label": 0}
+
+{"iteration": 1, "subject": "Product-A", "predicate": "has_noise_cancellation", "object": "yes", "confidence": 0.88, "source_id": "structured_002", "source_type": "structured", "provenance": "Product-A supports noise cancellation.", "gold_label": 1}
+{"iteration": 2, "subject": "Product-A", "predicate": "has_noise_cancellation", "object": "yes", "confidence": 0.82, "source_id": "unstructured_005", "source_type": "unstructured", "provenance": "Noise cancellation is available on Product-A.", "gold_label": 1}
+
+{"iteration": 1, "subject": "Product-A", "predicate": "has_noise_cancellation", "object": "no", "confidence": 0.55, "source_id": "unstructured_006", "source_type": "unstructured", "provenance": "One source claims Product-A lacks noise cancellation.", "gold_label": 0}
+
+{"iteration": 1, "subject": "Product-B", "predicate": "belongs_to_category", "object": "laptop", "confidence": 0.92, "source_id": "structured_003", "source_type": "structured", "provenance": "Product-B is a laptop.", "gold_label": 1}
+{"iteration": 2, "subject": "Product-B", "predicate": "belongs_to_category", "object": "laptop", "confidence": 0.75, "source_id": "unstructured_007", "source_type": "unstructured", "provenance": "Product-B is marketed as a laptop.", "gold_label": 1}
+
+{"iteration": 2, "subject": "Product-B", "predicate": "belongs_to_category", "object": "tablet", "confidence": 0.65, "source_id": "unstructured_008", "source_type": "unstructured", "provenance": "A noisy source labels Product-B as a tablet.", "gold_label": 0}
+
+{"iteration": 1, "subject": "Product-C", "predicate": "made_of_material", "object": "aluminum", "confidence": 0.89, "source_id": "structured_004", "source_type": "structured", "provenance": "Product-C uses aluminum construction.", "gold_label": 1}
+{"iteration": 2, "subject": "Product-C", "predicate": "made_of_material", "object": "aluminum", "confidence": 0.78, "source_id": "unstructured_009", "source_type": "unstructured", "provenance": "Product-C is built with aluminum.", "gold_label": 1}
+
+{"iteration": 1, "subject": "Product-D", "predicate": "has_price_usd", "object": "499", "confidence": 0.94, "source_id": "structured_005", "source_type": "structured", "provenance": "Product-D costs 499 USD.", "gold_label": 1}
+{"iteration": 2, "subject": "Product-D", "predicate": "has_price_usd", "object": "499", "confidence": 0.86, "source_id": "unstructured_010", "source_type": "unstructured", "provenance": "The listed price of Product-D is 499 dollars.", "gold_label": 1}
+
+{"iteration": 3, "subject": "Product-D", "predicate": "has_price_usd", "object": "549", "confidence": 0.72, "source_id": "unstructured_011", "source_type": "unstructured", "provenance": "One retailer lists Product-D at 549 dollars.", "gold_label": 0}
+
+{"iteration": 1, "subject": "Product-E", "predicate": "target_market_region", "object": "EU", "confidence": 0.84, "source_id": "structured_006", "source_type": "structured", "provenance": "Product-E targets the EU market.", "gold_label": 1}
+{"iteration": 2, "subject": "Product-E", "predicate": "target_market_region", "object": "EU", "confidence": 0.76, "source_id": "unstructured_012", "source_type": "unstructured", "provenance": "Product-E is intended for European markets.", "gold_label": 1}

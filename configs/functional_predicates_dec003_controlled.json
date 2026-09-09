@@ -1,0 +1,19 @@
+{
+  "decision": "DEC-003",
+  "description": "Functional-predicate policy for controlled PKB mathematical validation.",
+  "functional_predicates": [
+    "has_color",
+    "has_noise_cancellation",
+    "belongs_to_category",
+    "has_price_usd",
+    "target_market_region"
+  ],
+  "non_functional_predicates": [
+    "made_of_material"
+  ],
+  "notes": [
+    "Conflict adjustment is only applied to predicates designated as functionally single-valued.",
+    "This configuration is specific to the controlled DEC-003 validation dataset.",
+    "Predicate functionality is a modelling assumption and must be documented."
+  ]
+}
