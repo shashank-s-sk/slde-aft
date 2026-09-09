@@ -144,14 +144,13 @@ experiments are run.
 
 DEC-002: ACCEPTED
 Implementation: PARTIALLY COMPLETED
-Test: DONE (external LLM baseline, CaRB-10)
+Test: DONE (Llama-3.1-8B external baseline, CaRB-10)
 Experiment: PILOT COMPLETED
-Results:
-- SLDE-AFT CaRB pilot: Precision 0.1600, Recall 0.1143, F1 0.1333
-- Llama-3.1-8B-Instruct baseline: Precision 0.0345, Recall 0.0286, F1 0.0312
-- Protocol: CaRB-10 development subset; shared internal normalized exact-match evaluator
+Results: RECORDED
+Remaining:
+- Stronger pinned LLM baseline: TBD
+- REBEL baseline: Deferred; requires an explicit task-alignment and output-mapping protocol
 - Official CaRB scoring: TBD
-- REBEL baseline: TBD
 
 # DEC-003 — Strengthen Mathematical Contribution
 
@@ -204,12 +203,15 @@ Numerical results remain TBD until the experiments are run.
 
 ## Status
 
-DEC-003: ACCEPTED  
-Implementation: NOT STARTED  
-Testing: NOT STARTED  
-Experiment: NOT STARTED  
-Results: TBD
-docs: math.pdf to upload please ask when implementing it
+DEC-003: ACCEPTED
+Implementation: PARTIALLY COMPLETE
+Testing: PARTIALLY COMPLETE
+Experiment: TOY VALIDATION COMPLETE
+Results: INITIAL RESULTS AVAILABLE
+Scaled Controlled Experiment: NOT STARTED
+Per-Iteration Product-PKB Logging: NOT STARTED
+Leakage-Safe Split: NOT STARTED
+Paper Integration: NOT STARTED
 
 # DEC-004 — Conduct Module-Level Ablation Study
 

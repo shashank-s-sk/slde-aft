@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "domain": "synthetic_product_dataset",
+  "functional_predicates": [
+    "manufactured_by",
+    "belongs_to_category",
+    "has_price_usd",
+    "has_screen_size_inch",
+    "has_ram_gb",
+    "has_storage_gb",
+    "has_battery_life_hours",
+    "has_weight_kg",
+    "made_of_material",
+    "target_market_region",
+    "supports_fast_charging",
+    "has_noise_cancellation"
+  ],
+  "non_functional_predicates": [
+    "has_color"
+  ],
+  "notes": {
+    "has_color": "A product can legitimately have multiple available colors, so no mutual-exclusivity penalty is applied.",
+    "functional_rule": "Conflict adjustment is applied only when the predicate is explicitly listed as functional. This configuration applies only to the synthetic product-domain experiment and is not used for CaRB."
+  }
+}

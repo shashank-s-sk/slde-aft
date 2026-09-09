@@ -100,3 +100,199 @@ Manual inspection of baseline predictions identified the following recurring err
 **Limitations:** This is a preliminary 10-sentence development pilot. It uses an internal normalized exact-match evaluator rather than the official CaRB scorer. It does not establish general performance, statistical significance, or state-of-the-art superiority.
 
 **Next step:** Add one stronger pinned LLM baseline using the same CaRB-10 inputs, prompt, temperature, parser, normalization, and evaluator. REBEL is deferred because fair comparison with open-relation CaRB triples requires a separate output-conversion and relation-mapping protocol.
+
+# EVID-005 — DEC-003 Initial Aggregation Validation
+
+
+## Experiment
+
+
+- Decision: DEC-003
+- Experiment ID: `DEC003_TOY_V1`
+- Dataset: Controlled synthetic PKB with 10 candidate triples and 6 gold-positive triples.
+- Mathematical authority: `SLDE_AFT_Mathematical_Contribution_Final.pdf`
+- Implementation: `src/pkb_math.py`
+- Shrinkage: `lambda = 0.75`
+- Threshold: `tau = 0.88`
+- Methods: max merge, mean aggregation, standard Noisy-Or, Conservative Noisy-Or, and conflict-adjusted Conservative Noisy-Or.
+
+
+## Implemented
+
+
+- Calculated all five aggregation methods using identical observations.
+- Verified that final confidence follows:
+
+\[
+C_t = \frac{A_t}{m_t + 1}
+\]
+
+for functional predicates, and \(C_t=A_t\) for non-functional predicates.
+- Generated per-triple scores, threshold-sweep results, ECE values,
+  calibration-bin records, Brier scores, reliability diagram, and
+  F1-by-threshold plot.
+
+
+## Files
+
+
+- `src/pkb_math.py`
+- `outputs/dec003_pkb_validation/per_triple_scores.csv`
+- `outputs/dec003_pkb_validation/threshold_sweep.csv`
+- `outputs/dec003_pkb_validation/ece_by_method.csv`
+- `outputs/dec003_pkb_validation/calibration_bins.csv`
+- `outputs/dec003_pkb_validation/brier_by_method.csv`
+- `outputs/dec003_pkb_validation/reliability_diagram.png`
+- `outputs/dec003_pkb_validation/f1_by_threshold.png`
+
+
+## Actual
+
+
+At `tau = 0.88`:
+
+| Method | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| max merge | 1.0000 | 0.8333 | 0.9091 |
+| mean aggregation | 1.0000 | 0.1667 | 0.2857 |
+| standard Noisy-Or | 0.8571 | 1.0000 | 0.9231 |
+| Conservative Noisy-Or | 1.0000 | 0.3333 | 0.5000 |
+| Conservative Noisy-Or + conflict adjustment | 0.0000 | 0.0000 | 0.0000 |
+
+Lowest observed ECE: Conservative Noisy-Or = `0.289421`.
+
+
+## Result
+
+
+PASS — initial formula implementation and toy aggregation/calibration
+validation completed.
+
+
+## Limitations
+
+
+- Small controlled dataset only.
+- Results are illustrative, not general benchmark evidence.
+- No multi-seed scaled experiment or real product-PKB iteration log yet.
+
+Functional-predicate policy:
+`configs/functional_predicates_dec003_controlled.json`
+
+## Scope:
+This policy applies only to the controlled DEC-003 mathematical
+validation dataset. It is not automatically used for the original
+product-domain pipeline or CaRB OpenIE experiments.
+
+## Complexity implementation status
+
+The current DEC-003 experiment evaluates the aggregation functions in
+`src/pkb_math.py`.
+
+The experiment does not yet demonstrate that the indexed running-residual
+PKB implementation described in the mathematical document has been used.
+Therefore, the current report should describe the optimized O(1) update
+cost as a proposed implementation design, not as a measured property of
+the executed prototype.
+
+
+## Next step
+
+
+Run unit tests for `src/pkb_math.py`, then complete the scaled controlled
+DEC-003 experiment with three seeds and no/moderate/high conflict scenarios.
+
+# EVID-007 — DEC-003 Product-PKB Logging Audit
+
+## Experiment
+
+- Decision: DEC-003
+- Dataset: Existing 40-product SLDE-AFT notebook and saved outputs.
+- Purpose: Determine whether the historical run can reconstruct per-triple
+  support, conflict-adjusted confidence, threshold crossings, and provenance
+  without new API calls.
+
+## Actual
+
+Historical iteration-level metrics can be recovered:
+
+- Precision, recall, and F1.
+- KB size.
+- Structured and LLM growth.
+- Feedback usage.
+- Synthetic-example counts.
+- Runtime for iterations 2–4.
+
+Per-triple Conservative Noisy-Or support, competitor counts,
+conflict-adjusted confidence, exact threshold crossings, and complete
+per-iteration provenance cannot be reliably recovered from the existing
+artifacts because the required observation histories and PKB snapshots
+were not preserved.
+
+## Result
+
+PARTIAL — aggregate iteration history is recoverable; complete DEC-003
+per-triple PKB convergence history requires a future instrumented run.
+
+## Limitation
+
+No historical values will be fabricated or inferred from aggregate metrics.
+
+## Next step
+
+Add observation-level and per-iteration PKB snapshot logging to the next
+40-product Prob-KB run without changing the extraction architecture or
+mathematical formula.
+
+# EVID-008 — DEC-003 Local Instrumentation Smoke Test
+
+
+## Experiment
+
+
+- Decision: DEC-003
+- Experiment ID: `DEC003_LOCAL_TEST`
+- Purpose: Validate API-free observation logging, score calculation,
+  conflict handling, provenance retention, and snapshot export.
+- API calls: `0`.
+
+
+## Files
+
+
+- `src/pkb_math.py`
+- `src/pkb_instrumentation.py`
+- `configs/functional_predicates_dec003_controlled.json`
+- `notebooks/07_dec003_probkb_local_test.ipynb`
+- `outputs/dec003_probkb_local_test/observations_iteration_1.csv`
+- `outputs/dec003_probkb_local_test/pkb_snapshot_iteration_1.csv`
+
+
+## Actual
+
+
+- Saved 4 observation records.
+- Aggregated observations into 3 unique triple records.
+- Correctly calculated Conservative Noisy-Or support.
+- Correctly applied conflict adjustment to the functional
+  `has_noise_cancellation` predicate.
+- Correctly applied no conflict penalty to non-functional
+  `made_of_material`.
+- Preserved confidence history, source IDs, source types, provenance, and
+  extractor version.
+- Verified all support and final-confidence scores were within `[0, 1]`.
+- No API calls were made.
+
+
+## Result
+
+
+PASS — local DEC-003 instrumentation smoke test completed.
+
+
+## Next step
+
+
+Create and run unit tests for `src/pkb_instrumentation.py`, then create a
+separate product-domain functional-predicate policy before building the
+candidate-buffer adapter for the future instrumented product-PKB run.
