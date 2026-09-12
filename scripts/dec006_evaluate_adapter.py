@@ -1,14 +1,15 @@
-"""DEC-006 local-adapter evaluation — run on Colab/GPU alongside
-dec006_lora_finetune.py, NOT locally. Loads a base model (optionally
-with a LoRA adapter), runs local inference on the held-out test split
-(data/product_split.csv, respecting the same leakage-safe boundaries as
-every other experiment in this project), and evaluates with the exact
-same normalized-triple protocol used everywhere else (src/evaluator.py)
-so results are directly comparable to the API-based runs (EVID-013 etc).
+"""DEC-006 local-adapter evaluation — run on the same rented GPU
+alongside dec006_lora_finetune.py, NOT locally. Loads a base model
+(optionally with a LoRA adapter), runs local inference on the held-out
+test split (data/product_split.csv, respecting the same leakage-safe
+boundaries as every other experiment in this project), and evaluates
+with the exact same normalized-triple protocol used everywhere else
+(src/evaluator.py) so results are directly comparable to the API-based
+runs (EVID-013 etc).
 
-Usage on Colab:
-    python dec006_evaluate_adapter.py --adapter outputs/dec006_adapters/stage0_tinyllama
-    python dec006_evaluate_adapter.py   # no --adapter => evaluates the base model only
+Usage:
+    python scripts/dec006_evaluate_adapter.py   # no --adapter => base model only (the "before" number)
+    python scripts/dec006_evaluate_adapter.py --adapter outputs/dec006_adapters/mistral7b_qlora
 """
 
 from __future__ import annotations
@@ -22,7 +23,7 @@ from src.datasets.product_generator import ALLOWED_PREDICATES, generate_products
 from src.evaluator import Triple, compute_precision_recall_f1
 from src.leakage_split import build_product_split
 
-BASE_MODEL = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+BASE_MODEL = "mistralai/Mistral-7B-Instruct-v0.3"
 
 
 def build_prompt(text: str) -> str:

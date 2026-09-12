@@ -1,48 +1,40 @@
-"""DEC-006 LoRA/QLoRA fine-tuning — run this on Google Colab (free T4)
-or a rented GPU, NOT locally (needs torch + CUDA + transformers/peft/trl,
+"""DEC-006 LoRA/QLoRA fine-tuning — run this on a rented GPU (RunPod
+RTX 4090 24GB), NOT locally (needs torch + CUDA + transformers/peft/trl,
 none of which are installed in this project's local dev environment).
 
-Staged plan (see Decision log.md DEC-006):
-  Stage 0 (free): BASE_MODEL = "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-    USE_4BIT = False — reproduces the original prototype's setup on a
-    free Colab T4, validates this ported pipeline against known-working
-    config before attempting anything bigger.
-  Stage 1 (free, try first): BASE_MODEL = a 7B/8B instruct model (e.g.
-    "meta-llama/Llama-3.1-8B-Instruct" or "mistralai/Mistral-7B-Instruct-v0.3"),
-    USE_4BIT = True (QLoRA) — commonly fits on a free T4's 16GB VRAM
-    with small batch size + gradient accumulation.
-  Stage 2 (paid, only if Stage 1 fails on free tier): same script,
-    rented RTX 4090/A100 with more VRAM/longer sessions.
+Decision (see Decision log.md DEC-006 and dec006_runpod_plan memory):
+  going straight to the 7B QLoRA target on a rented RTX 4090 — the
+  TinyLlama-1.1B "Stage 0" sanity check is skipped by user decision.
+  Model is Mistral-7B-Instruct-v0.3 (ungated on Hugging Face) rather
+  than Llama-3.1-8B-Instruct, specifically to avoid the gated-repo
+  approval wait, which would burn paid pod time unpredictably.
 
-Colab setup cell (run first):
-    !pip install -q transformers peft trl accelerate bitsandbytes datasets
+Pod setup (run first):
+    pip install -q transformers peft trl accelerate bitsandbytes datasets
 
-Usage on Colab, after uploading this repo (or just this script +
-src/synthetic_data_generator.py's output file):
-    python dec006_lora_finetune.py
+Usage, after `git clone`-ing this repo onto the pod:
+    python scripts/dec006_lora_finetune.py
 """
 
 from __future__ import annotations
 
 from pathlib import Path
 
-# ---- Stage config: edit these two lines to move between stages ----
-BASE_MODEL = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # Stage 0
-USE_4BIT = False  # set True for Stage 1 (7B/8B QLoRA)
-# BASE_MODEL = "meta-llama/Llama-3.1-8B-Instruct"  # Stage 1
-# USE_4BIT = True
+BASE_MODEL = "mistralai/Mistral-7B-Instruct-v0.3"
+USE_4BIT = True  # QLoRA — fits comfortably in 24GB VRAM
 
 SYNTHETIC_DATA_PATH = "outputs/dec006_synthetic_data/product_domain_synth_train.jsonl"
-OUTPUT_DIR = "outputs/dec006_adapters/stage0_tinyllama" if not USE_4BIT else "outputs/dec006_adapters/stage1_7b_qlora"
+OUTPUT_DIR = "outputs/dec006_adapters/mistral7b_qlora"
 
-# LoRA hyperparameters — matching the original prototype's proven config
-# (paper Section 4.6 / 5.4), as the starting point for the DEC-006
-# hyperparameter grid, not assumed optimal.
+# LoRA hyperparameters — rank/alpha/lr match the original prototype's
+# proven config (paper Section 4.6 / 5.4); epochs bumped from the
+# prototype's 1 to 3 per DEC-006 step 5 ("test 2-3 epochs"), since 127
+# examples at 1 epoch is only ~16 optimizer steps — likely underfit.
 LORA_RANK = 16
 LORA_ALPHA = 32
 LORA_DROPOUT = 0.05
 LEARNING_RATE = 2e-4
-NUM_EPOCHS = 1
+NUM_EPOCHS = 3
 BATCH_SIZE = 2
 GRAD_ACCUM_STEPS = 4
 
