@@ -1,0 +1,16 @@
+# Pinned to the versions actually used to produce the results in
+# Evidence log.md. Covers src/, scripts/, and tests/ (the modular,
+# reproducible pipeline) — NOT the original SLDE_AFT_DualSource_Final_*
+# notebooks, which have their own heavier pip-install cells (torch,
+# transformers, peft, accelerate, bitsandbytes, sentencepiece, trl,
+# faker) needed only for the LoRA fine-tuning sections (DEC-006, not
+# yet ported to src/).
+#
+# Python version used: 3.12.6
+
+pandas==3.0.5
+numpy==2.5.3
+scipy==1.18.1
+requests==2.34.2
+matplotlib==3.11.1
+pytest==9.1.1

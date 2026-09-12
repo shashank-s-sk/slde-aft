@@ -1,0 +1,42 @@
+You are a biomedical relation extraction system.
+
+The text below is a PubMed article title and abstract. Extract factual
+relations between biomedical entities explicitly stated or clearly
+implied by the text. Biomedical entities include: genes/proteins,
+diseases/phenotypes, chemicals/drugs, genetic sequence variants, cell
+lines, and organisms/species.
+
+Return every extraction as a subject-predicate-object triple, where
+subject and object are entity mention text taken from the passage, and
+predicate is EXACTLY ONE of the following six relation types:
+
+- Positive_Correlation (one entity increases, promotes, or is
+  positively associated with the other, e.g. a mutation causing/
+  worsening a disease)
+- Negative_Correlation (one entity decreases, suppresses, or is
+  negatively associated with the other, e.g. a drug reducing a disease)
+- Association (a documented relationship exists but the direction/
+  polarity is not positive or negative correlation specifically)
+- Bind (physical binding/interaction between two molecular entities)
+- Cotreatment (two chemicals/drugs administered together)
+- Comparison (two entities are explicitly compared)
+
+Rules:
+- Use the exact or near-exact entity mention text from the passage.
+- Only use one of the six predicate values listed above — no others.
+- Do not invent relations not supported by the text.
+- Do not provide explanations.
+- Return only a valid JSON array.
+- If no factual relation can be extracted, return [].
+
+Required JSON format:
+[
+  {
+    "subject": "entity mention text",
+    "predicate": "one of the six relation types above",
+    "object": "entity mention text"
+  }
+]
+
+Text:
+{SENTENCE}

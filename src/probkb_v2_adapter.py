@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 from src.pkb_instrumentation import (
-    build_snapshot_dataframe,
     refresh_slot_scores,
     save_iteration_artifacts,
 )
@@ -55,6 +54,9 @@ class CandidateBufferAdapter:
             Dict[str, Any],
         ] = {}
 
+        # observation rows accepted since the last end_iteration() call
+        self.pending_observations: List[Dict[str, Any]] = []
+
         self.iteration = 0
 
     def accept_candidate(
@@ -86,6 +88,21 @@ class CandidateBufferAdapter:
         object_norm = normalized_object(object_value)
 
         key = (subject_norm, predicate_norm, object_norm)
+
+        self.pending_observations.append({
+            "experiment_id": self.experiment_id,
+            "run_id": self.run_id,
+            "prob_kb_version": self.prob_kb_version,
+            "subject": subject,
+            "predicate": predicate,
+            "object": object_value,
+            "triple_key": "|".join(key),
+            "observation_confidence": float(confidence),
+            "source_id": source_id,
+            "source_type": source_type,
+            "provenance": str(provenance)[:300],
+            "extractor_version": source_type,
+        })
 
         if key not in self.accepted:
             self.accepted[key] = {
@@ -132,22 +149,35 @@ class CandidateBufferAdapter:
         else:
             self.iteration += 1
 
-        snapshot_df = build_snapshot_dataframe(
+        for row in self.pending_observations:
+            row["iteration"] = self.iteration
+
+        save_iteration_artifacts(
+            observation_rows=self.pending_observations,
             accepted=self.accepted,
+            output_dir=self.output_dir,
             experiment_id=self.experiment_id,
             run_id=self.run_id,
-            prob_kb_version=self.prob_kb_version,
             iteration=self.iteration,
+            prob_kb_version=self.prob_kb_version,
             threshold=self.threshold,
             gold_keys=self.gold_keys,
         )
 
-        save_iteration_artifacts(
-            observations=[],  # see note below
-            snapshot_df=snapshot_df,
-            output_dir=self.output_dir,
-            iteration=self.iteration,
-        )
+        self.pending_observations = []
 
     def get_accepted(self) -> Dict[Tuple[str, str, str], Dict[str, Any]]:
         return self.accepted
+
+    def as_key_set(self) -> set[Tuple[str, str, str]]:
+        return set(self.accepted.keys())
+
+    def get_locked_context_strings(self, n: int = 12) -> List[str]:
+        items = sorted(
+            self.accepted.values(),
+            key=lambda x: (-x.get("confidence", 0.0), x["predicate"], x["subject"]),
+        )
+        return [
+            f'{x["subject"]} | {x["predicate"]} | {x["object"]} | conf={round(x.get("confidence", 0.0), 3)}'
+            for x in items[:n]
+        ]

@@ -26,3 +26,9 @@ outputs/
 data/raw/
 *.h5
 *.pkl
+
+# Model checkpoints / adapters (DEC-006 LoRA/QLoRA training artifacts)
+*.safetensors
+*.bin
+adapters/
+checkpoints/

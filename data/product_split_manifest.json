@@ -1,0 +1,23 @@
+{
+  "n_products_superset": 50,
+  "split_seed": 7,
+  "generation_seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.1,
+    "test": 0.2
+  },
+  "counts": {
+    "train": 35,
+    "val": 5,
+    "test": 10
+  },
+  "usage": "For a dataset of size N (20/30/40/50), keep only rows with product_idx <= N, then join structured_products.csv / gold_triples_*.csv on product_idx (loop position, 1-based) to get each product's split assignment.",
+  "leakage_rules": [
+    "Test-split products must be evaluated on unstructured-text extraction only.",
+    "Do not seed the KB with a test-split product's structured target triples before evaluating that product.",
+    "Do not use test-split products in synthetic training data, LoRA fine-tuning data, few-shot prompt examples, feedback- controller exemplars, or threshold selection.",
+    "Val-split products may be used for threshold selection and hyperparameter tuning; train-split products may seed the KB and generate synthetic supervision."
+  ],
+  "assumption": "Assumes the 20/30/40/50 notebooks are run with random.seed(42) and unmodified brands/categories/colors/materials/regions lists, so product_idx 1..N is identical across dataset sizes. If any notebook's generation cell is edited, this assumption must be re-verified before reusing this split."
+}

@@ -61,15 +61,19 @@ benchmark. Numerical results remain TBD until the experiment is run.
 DEC-001: ACCEPTED
 Implementation: DONE
 Test: DONE
-Experiment: PILOT COMPLETED
-Results: Internal CaRB-10 F1 = 0.1333
-Official CaRB score: TBD
+Experiment: SCALED PILOT COMPLETE (10 -> 30 sentences; see EVID-021)
+Results: Internal CaRB-30 F1 = 0.0591 (meta-llama/llama-3.1-8b-instruct,
+  pinned). Supersedes the old CaRB-10 F1=0.1333 figure (EVID-003), which
+  used unpinned `openrouter/auto` and is not a reproducible measurement
+  of any specific model — see EVID-021 for why.
+Official CaRB score: still TBD (internal normalized exact-match
+  evaluator only)
 
 DEC-001, part 1: Prepare CaRB data                 ✅ Done
-DEC-001, part 2: Run your LLM on 3 sentences       ← Do this now
-DEC-001, part 3: Save and inspect predictions
-DEC-001, part 4: Evaluate internally
-DEC-001, part 5: Export CaRB format and run scorer --not completed
+DEC-001, part 2: Run your LLM on 3 sentences        ✅ Done (now scaled to 30)
+DEC-001, part 3: Save and inspect predictions       ✅ Done
+DEC-001, part 4: Evaluate internally                ✅ Done
+DEC-001, part 5: Export CaRB format and run scorer  — still not completed
 DEC-002: Add external baseline using same pipeline
 
 # DEC-002 — Add External State-of-the-Art Baselines
@@ -143,14 +147,36 @@ experiments are run.
 ## Status
 
 DEC-002: ACCEPTED
-Implementation: PARTIALLY COMPLETED
-Test: DONE (Llama-3.1-8B external baseline, CaRB-10)
-Experiment: PILOT COMPLETED
+Implementation: DONE (stronger baseline requirement fulfilled)
+Test: DONE (Llama-3.1-8B external baseline CaRB-10, EVID-004; DeepSeek-V3.2
+  stronger baseline CaRB-30, EVID-021)
+Experiment: PILOT COMPLETE at N=30. DeepSeek-V3.2 F1=0.1340 vs. pinned
+  Llama-3.1-8B F1=0.0591 (~2.3x) — see EVID-021.
 Results: RECORDED
 Remaining:
-- Stronger pinned LLM baseline: TBD
 - REBEL baseline: Deferred; requires an explicit task-alignment and output-mapping protocol
 - Official CaRB scoring: TBD
+- Scale beyond N=30 toward CaRB's full 634-sentence set if a benchmark-
+  grade (not pilot-grade) result is needed
+
+## Provider/model plan (decided during DEC-005 API credit troubleshooting; DeepSeek baseline executed in EVID-021)
+
+- **Core SLDE-AFT pipeline experiments (DEC-003/004/005 ablations and
+  statistics):** stay on OpenRouter + `meta-llama/llama-3.1-8b-instruct`
+  — do not switch model or provider mid-study; every result so far
+  (EVID-013/014/016/019) assumes this exact model.
+- **If OpenRouter's grace-credit allowance runs dry again and blocks
+  this same pipeline:** fall back to **Fireworks AI** (verified $1
+  documented free credit, vs. OpenRouter's undocumented ~$0.02 grace
+  pool) to keep running the *same* model, not a different one. Requires
+  generalizing `src/extractors/openrouter_llm.py`'s hardcoded endpoint
+  to a configurable base URL first (small change, not yet done).
+- **For this decision's "stronger external baseline" requirement
+  specifically:** use **DeepSeek** (V3.2 or whatever the current
+  version is when this is executed) as the stronger paid baseline model,
+  run as a separate one-time comparison — decoupled from the core
+  ablation pipeline so it doesn't disturb comparability of the
+  already-collected Llama-3.1-8B results.
 
 # DEC-003 — Strengthen Mathematical Contribution
 
@@ -204,14 +230,24 @@ Numerical results remain TBD until the experiments are run.
 ## Status
 
 DEC-003: ACCEPTED
-Implementation: PARTIALLY COMPLETE
-Testing: PARTIALLY COMPLETE
-Experiment: TOY VALIDATION COMPLETE
-Results: INITIAL RESULTS AVAILABLE
-Scaled Controlled Experiment: NOT STARTED
-Per-Iteration Product-PKB Logging: NOT STARTED
-Leakage-Safe Split: NOT STARTED
-Paper Integration: NOT STARTED
+Implementation: DONE (unit tests, product-domain functional-predicate
+  policy, and candidate-buffer adapter — src/probkb_v2_adapter.py — are done;
+  the earlier-named src/pkb_candidate_buffer_adapter.py empty stub has
+  been removed)
+Testing: DONE for pkb_math.py and pkb_instrumentation.py (19 tests passing)
+Experiment: TOY VALIDATION COMPLETE; SCALED CONTROLLED EXPERIMENT COMPLETE
+  (DEC003_SCALED_V1, seeds 42/43/44, no/moderate/high conflict scenarios,
+  see outputs/dec003_scaled/ and EVID-009)
+Results: INITIAL RESULTS AVAILABLE (toy); SCALED SYNTHETIC RESULTS AVAILABLE
+  (see EVID-009)
+Scaled Controlled Experiment: DONE
+Per-Iteration Product-PKB Logging: DONE — full 155-call instrumented run
+  completed (35 train x 4 iterations + 5 val + 10 test), see EVID-013.
+  Train-set iteration F1: 0.3668 -> 0.3682 -> 0.2894 -> 0.4183
+  (non-monotonic, unexplained — flagged for DEC-007). Held-out F1: val
+  0.5970 (n=5), test 0.1970 (n=10). Total cost $0.00259 for 155 calls.
+Leakage-Safe Split: DONE (data/product_split.csv, 70/10/20, seed 7; see EVID-010)
+Paper Integration: NOT STARTED (can now be written using EVID-005 + EVID-009 + EVID-013)
 
 # DEC-004 — Conduct Module-Level Ablation Study
 
@@ -290,11 +326,23 @@ remove synthetic-data generation;
 
 ## Status
 
-DEC-004: ACCEPTED  
-Implementation: NOT STARTED  
-Testing: NOT STARTED  
-Experiment: NOT STARTED  
-Results: TBD  
+DEC-004: ACCEPTED
+Implementation: DONE for 5 of 7 ablations (Full reference, Without-Feedback,
+  Without-Prob-KB, Structured-only, Unstructured-only) via a shared
+  src/experiment_runner.py reused by DEC-005. Without-Synthetic-Data-Gen
+  and Without-LoRA deferred to pair with DEC-006 (nothing to ablate until
+  fine-tuning exists). Without-Provenance deferred — no active provenance
+  filter exists in the pipeline yet to toggle off; see EVID-015.
+Testing: DONE (14 new offline tests: deterministic KB adapter + experiment
+  runner module-flag behavior, all mocked/zero-cost)
+Experiment: PILOT COMPLETE (N=20, single seed, 5 configs, 229 calls,
+  $0.0035; see EVID-016)
+Results: CLEAN PILOT COMPLETE (EVID-019, N=20, single seed). without_feedback
+  beat full on train/val/test F1 (two independent real-data runs now
+  point this way — still needs DEC-005 multi-seed before paper use).
+  without_prob_kb underperformed full. unstructured_only reached the
+  best F1 of any run so far (0.714), single-seed, needs confirmation.
+  Nothing here is paper-reportable yet — proceed to DEC-005.
 
 # DEC-005 — Add Statistical Validation
 
@@ -358,11 +406,20 @@ Numerical results remain TBD until experiments are run.
 
 ## Status
 
-DEC-005: ACCEPTED  
-Implementation: NOT STARTED  
-Testing: NOT STARTED  
-Experiment: NOT STARTED  
-Results: TBD  
+DEC-005: ACCEPTED
+Implementation: DONE (reuses src/experiment_runner.py from DEC-004; resumable
+  by design — skips any config/seed whose saved call_log.json already has
+  <20% error rate)
+Testing: DONE (offline/mocked dry run validated before real spend)
+Experiment: COMPLETE — all 5 configs x 5 seeds (42-46), N=20 (see EVID-020).
+Results: without_feedback and without_prob_kb show NO statistically
+  significant difference from full (all paired t-test/Wilcoxon p-values
+  0.31-0.51). EVID-016/019's single-seed "without_feedback beats full"
+  finding did NOT replicate — with 5 seeds, without_feedback's mean
+  train F1 is actually lower than full's, reversing the earlier
+  apparent direction, and still not significant either way. Correct
+  conclusion: no ablation effect detected at N=20/5-seed scale. A
+  larger-N re-run would be needed for a paper-reportable ablation claim.
 
 # DEC-006 — Improve Fine-Tuning Using Cloud GPU
 
@@ -412,11 +469,22 @@ Numerical results remain TBD until experiments are run.
 
 ## Status
 
-DEC-006: ACCEPTED  
-Implementation: NOT STARTED  
-Testing: NOT STARTED  
-Experiment: NOT STARTED  
-Results: TBD  
+DEC-006: ACCEPTED
+Implementation: PARTIAL — zero-cost portion done (src/synthetic_data_generator.py,
+  Colab-ready scripts/dec006_lora_finetune.py + dec006_evaluate_adapter.py,
+  staged Stage 0 TinyLlama-1.1B / Stage 1 7B-8B QLoRA via a config flag).
+  See EVID-025. GPU training itself not yet run.
+Testing: DONE for the zero-cost portion (4 new tests, 44/44 suite passing;
+  127 real synthetic examples generated from EVID-013's actual PKB run
+  as a cross-check, not just synthetic test fixtures)
+Experiment: NOT STARTED (needs GPU — free Colab first per the staged
+  budget plan; see conversation for the $0 -> ~$5-15 -> ~$20-50 staging)
+Results: TBD
+Note: found while reading the old notebook that its B3 baseline (cell 22)
+  and Table-9 "Iterative FT" results (cells 31-35) use two DIFFERENT code
+  paths — B3's reported number substitutes a different OpenRouter model
+  instead of the actually-fine-tuned local adapter. Worth knowing if
+  those old numbers are ever cited.
 
 # DEC-007 — Add Systematic Error Analysis
 
@@ -478,11 +546,19 @@ Numerical results remain TBD until experiments are run.
 
 ## Status
 
-DEC-007: ACCEPTED  
-Implementation: NOT STARTED  
-Testing: NOT STARTED  
-Experiment: NOT STARTED  
-Results: TBD  
+DEC-007: ACCEPTED
+Implementation: DONE (scripts/dec007_error_analysis.py, zero API cost —
+  analyzes already-saved predictions from EVID-013 and EVID-021)
+Testing: N/A (pure analysis script, no new extraction logic to unit-test)
+Experiment: COMPLETE — see EVID-022. 1,035 categorized rows across
+  CaRB-30 (both systems) and the product-domain PKB run.
+Results: Zero pure false negatives in the product-domain train set
+  (every gold fact observed at least once across 4 iterations); conflict
+  adjustment mostly resolves hallucination-vs-hallucination conflicts,
+  not correct-vs-incorrect ones (108 vs 1); CaRB subject-boundary-
+  mismatch failure mode confirmed independently a second time.
+Remaining: held-out val/test false-negative analysis not done; final
+  curated example selection for the paper still needs manual review.
 
 # DEC-008 — Add Scalability Evaluation
 
@@ -544,11 +620,22 @@ Numerical results remain TBD until experiments are run.
 
 ## Status
 
-DEC-008: ACCEPTED  
-Implementation: NOT STARTED  
-Testing: NOT STARTED  
-Experiment: NOT STARTED  
-Results: TBD  
+DEC-008: ACCEPTED
+Implementation: DONE (scripts/dec008_scalability_sweep.py; scoped with
+  user to single-pass extraction at N=20/50/100/200 rather than the
+  full spec's 4-iteration loop at 50-1000, to keep wall-clock time
+  reasonable — see EVID-023)
+Testing: DONE (mocked dry run before real spend)
+Experiment: COMPLETE — see EVID-023. 370 calls, $0.0046.
+Results: Runtime scales linearly with N (no quadratic blowup); mean
+  per-document latency stays flat (~4.0s) from N=20 to N=200 despite KB
+  growing to 2,814 entries — the key positive scalability finding.
+  Memory measurement failed (methodology flaw: sequential runs in one
+  process contaminate GC-affected deltas) — not usable, needs isolated
+  subprocess re-measurement if required for the paper.
+Remaining: full closed-loop (multi-iteration) scalability at large N not
+  tested; no GPU utilization data (N/A until DEC-006); clean memory
+  measurement still needed.
 
 # DEC-009 — Add Biomedical Domain Evaluation
 
@@ -611,11 +698,18 @@ Numerical results remain TBD until experiments are run.
 
 ## Status
 
-DEC-009: ACCEPTED  
-Implementation: NOT STARTED  
-Testing: NOT STARTED  
-Experiment: NOT STARTED  
-Results: TBD 
+DEC-009: ACCEPTED
+Implementation: DONE (src/datasets/biored_adapter.py, prompts/openie_biored_v1.txt,
+  src/extractors/openrouter_openie.py generalized for custom prompts)
+Testing: DONE (40/40 suite still passing; mocked dry run before real spend)
+Experiment: PILOT COMPLETE — see EVID-024. 15 Dev-split abstracts, $0.0005.
+Results: Strict exact-match F1=0.0074 is misleadingly low — mostly a
+  gold-construction/boundary-mismatch artifact (BioRED's concept-ID gold
+  approximated by first-mention text). Relaxed containment-match F1=0.1029
+  (14x more true positives) is the fairer read: biomedical domain is
+  genuinely harder than the product domain, but not a near-total failure.
+Remaining: n=15 is pilot-scale only; real entity linking not attempted
+  (first-mention proxy used instead); no external baseline on BioRED yet.
 
 # DEC-010 — Strengthen Results Discussion
 
