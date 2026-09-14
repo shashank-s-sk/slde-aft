@@ -22,31 +22,13 @@ from pathlib import Path
 from src.datasets.product_generator import ALLOWED_PREDICATES, generate_products
 from src.evaluator import Triple, compute_precision_recall_f1
 from src.leakage_split import build_product_split
+from src.prompts import build_extraction_prompt
 
 BASE_MODEL = "mistralai/Mistral-7B-Instruct-v0.3"
 
 
 def build_prompt(text: str) -> str:
-    return f"""You extract factual product knowledge triples.
-
-Return ONLY a valid JSON array.
-Each item must contain: subject, predicate, object, confidence
-
-Allowed predicates:
-{", ".join(ALLOWED_PREDICATES)}
-
-Rules:
-- Extract only facts explicitly supported by text.
-- confidence must be between 0.85 and 0.99.
-- Do not invent facts.
-
-Text:
-{text}
-
-Example output:
-[
-  {{"subject":"TechNova Smartphone Max 1","predicate":"manufactured_by","object":"TechNova","confidence":0.95}}
-]""".strip()
+    return build_extraction_prompt(text, ALLOWED_PREDICATES)
 
 
 def parse_json_array(text: str) -> list[dict]:
