@@ -1,0 +1,747 @@
+[
+  {
+    "product_idx": 4,
+    "predicted_triples": [
+      {
+        "subject": "Laptop Device",
+        "predicate": "has_price_usd",
+        "object": "499"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "NeoTech Laptop Air 4",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "NeoTech Laptop Air 4",
+        "predicate": "has_price_usd",
+        "object": "499"
+      },
+      {
+        "subject": "NeoTech Laptop Air 4",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "NeoTech Laptop Air 4",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "NeoTech Laptop Air 4",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "NeoTech Laptop Air 4",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "NeoTech Laptop Air 4",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 5,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "supports_fast_charging",
+        "object": "False"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "VoltEdge Tablet Lite 5",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "VoltEdge Tablet Lite 5",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "VoltEdge Tablet Lite 5",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "VoltEdge Tablet Lite 5",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "VoltEdge Tablet Lite 5",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "VoltEdge Tablet Lite 5",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "VoltEdge Tablet Lite 5",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 7,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "belongs_to_category",
+        "object": "smartphone"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "belongs_to_category",
+        "object": "smartphone"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 10,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 21,
+    "predicted_triples": [
+      {
+        "subject": "Laptop Device",
+        "predicate": "has_screen_size_inch",
+        "object": "6.1"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Laptop Device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Zenbyte Laptop Air 21",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "Zenbyte Laptop Air 21",
+        "predicate": "has_screen_size_inch",
+        "object": "6.1"
+      },
+      {
+        "subject": "Zenbyte Laptop Air 21",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "Zenbyte Laptop Air 21",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "Zenbyte Laptop Air 21",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "Zenbyte Laptop Air 21",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Zenbyte Laptop Air 21",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 24,
+    "predicted_triples": [
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "VoltEdge Smartwatch Pro 24",
+        "predicate": "belongs_to_category",
+        "object": "smartwatch"
+      },
+      {
+        "subject": "VoltEdge Smartwatch Pro 24",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "VoltEdge Smartwatch Pro 24",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "VoltEdge Smartwatch Pro 24",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "VoltEdge Smartwatch Pro 24",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "VoltEdge Smartwatch Pro 24",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "VoltEdge Smartwatch Pro 24",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 26,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_ram_gb",
+        "object": "6"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_battery_life_hours",
+        "object": "20"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_weight_kg",
+        "object": "0.55"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_ram_gb",
+        "object": "6"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_battery_life_hours",
+        "object": "20"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_weight_kg",
+        "object": "0.55"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "TechNova Headphones Lite 26",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      }
+    ]
+  },
+  {
+    "product_idx": 35,
+    "predicted_triples": [
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "has_weight_kg",
+        "object": "0.23"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "Smartwatch Device",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Auralex Smartwatch Pro 35",
+        "predicate": "belongs_to_category",
+        "object": "smartwatch"
+      },
+      {
+        "subject": "Auralex Smartwatch Pro 35",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "Auralex Smartwatch Pro 35",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "Auralex Smartwatch Pro 35",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "Auralex Smartwatch Pro 35",
+        "predicate": "has_weight_kg",
+        "object": "0.23"
+      },
+      {
+        "subject": "Auralex Smartwatch Pro 35",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "Auralex Smartwatch Pro 35",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 38,
+    "predicted_triples": [
+      {
+        "subject": "laptop device",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_weight_kg",
+        "object": "1.8"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "VoltEdge Laptop Plus 38",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "VoltEdge Laptop Plus 38",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "VoltEdge Laptop Plus 38",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "VoltEdge Laptop Plus 38",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "VoltEdge Laptop Plus 38",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "VoltEdge Laptop Plus 38",
+        "predicate": "has_weight_kg",
+        "object": "1.8"
+      },
+      {
+        "subject": "VoltEdge Laptop Plus 38",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 42,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "TechNova Smartphone Max 1",
+        "predicate": "supports_fast_charging",
+        "object": "false"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "TechNova Smartphone Max 42",
+        "predicate": "belongs_to_category",
+        "object": "smartphone"
+      },
+      {
+        "subject": "TechNova Smartphone Max 42",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "TechNova Smartphone Max 42",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "TechNova Smartphone Max 42",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "TechNova Smartphone Max 42",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "TechNova Smartphone Max 42",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "TechNova Smartphone Max 42",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  }
+]
