@@ -1,0 +1,4962 @@
+[
+  {
+    "product_idx": 1,
+    "cost_usd": 1.582e-05,
+    "latency_s": 2.4355599000118673,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 2,
+    "cost_usd": 6.75e-06,
+    "latency_s": 1.1776896999799646,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 3,
+    "cost_usd": 6.48e-06,
+    "latency_s": 1.198921600007452,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 4,
+    "cost_usd": 1.09e-05,
+    "latency_s": 6.2043397999950685,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 5,
+    "cost_usd": 1.292e-05,
+    "latency_s": 6.525385399989318,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 6,
+    "cost_usd": 6.55e-06,
+    "latency_s": 1.538904499990167,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 7,
+    "cost_usd": 7.77e-06,
+    "latency_s": 1.1931253999937326,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 8,
+    "cost_usd": 1.464e-05,
+    "latency_s": 8.699675000010757,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 9,
+    "cost_usd": 9.82e-06,
+    "latency_s": 4.700150200020289,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 11,
+    "cost_usd": 2.732e-05,
+    "latency_s": 0.6272366999764927,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 14,
+    "cost_usd": 1.565e-05,
+    "latency_s": 2.2719118999957573,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 20,
+    "cost_usd": 1.57e-05,
+    "latency_s": 9.349172299989732,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 21,
+    "cost_usd": 1.09e-05,
+    "latency_s": 5.7819477999873925,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 22,
+    "cost_usd": 6.45e-06,
+    "latency_s": 5.298948900017422,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 26,
+    "cost_usd": 3.019e-05,
+    "latency_s": 0.6469602000142913,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 28,
+    "cost_usd": 1.278e-05,
+    "latency_s": 6.872923099988839,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 29,
+    "cost_usd": 2.688e-05,
+    "latency_s": 3.1328751999826636,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 30,
+    "cost_usd": 1.63e-05,
+    "latency_s": 2.0647958999907132,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 33,
+    "cost_usd": 1.286e-05,
+    "latency_s": 7.248220000008587,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 34,
+    "cost_usd": 1.288e-05,
+    "latency_s": 8.59896169998683,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 36,
+    "cost_usd": 1.394e-05,
+    "latency_s": 8.425025000004098,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 38,
+    "cost_usd": 1.23e-05,
+    "latency_s": 6.784721499978332,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 40,
+    "cost_usd": 1.409e-05,
+    "latency_s": 2.438932700024452,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 41,
+    "cost_usd": 1.096e-05,
+    "latency_s": 6.621640800003661,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 42,
+    "cost_usd": 6.53e-06,
+    "latency_s": 1.1251206999877468,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 43,
+    "cost_usd": 1.353e-05,
+    "latency_s": 2.1377664000028744,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 44,
+    "cost_usd": 1.09e-05,
+    "latency_s": 6.394039500009967,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 45,
+    "cost_usd": 6.28e-06,
+    "latency_s": 1.153739700006554,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 46,
+    "cost_usd": 1.503e-05,
+    "latency_s": 2.1219750000163913,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 48,
+    "cost_usd": 1.436e-05,
+    "latency_s": 8.701915100013139,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 50,
+    "cost_usd": 6.59e-06,
+    "latency_s": 1.1362790999992285,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 51,
+    "cost_usd": 1.843e-05,
+    "latency_s": 2.614967000001343,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 52,
+    "cost_usd": 1.082e-05,
+    "latency_s": 6.189067300001625,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 54,
+    "cost_usd": 6.49e-06,
+    "latency_s": 1.4886415000073612,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 56,
+    "cost_usd": 1.054e-05,
+    "latency_s": 5.4941658999887295,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 59,
+    "cost_usd": 1.17e-05,
+    "latency_s": 6.871326299995417,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 60,
+    "cost_usd": 1.286e-05,
+    "latency_s": 7.33169010002166,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 61,
+    "cost_usd": 1.495e-05,
+    "latency_s": 5.354301499988651,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 63,
+    "cost_usd": 1.48e-05,
+    "latency_s": 2.333118699985789,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 64,
+    "cost_usd": 1.356e-05,
+    "latency_s": 2.0229857999947853,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 65,
+    "cost_usd": 1.286e-05,
+    "latency_s": 7.140801300003659,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 66,
+    "cost_usd": 2.588e-05,
+    "latency_s": 0.6817675000056624,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 67,
+    "cost_usd": 2.801e-05,
+    "latency_s": 0.696779299993068,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 68,
+    "cost_usd": 1.364e-05,
+    "latency_s": 4.103838099981658,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 69,
+    "cost_usd": 6.32e-06,
+    "latency_s": 1.1371076999930665,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 70,
+    "cost_usd": 6.14e-06,
+    "latency_s": 2.1071137999824714,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 71,
+    "cost_usd": 1.561e-05,
+    "latency_s": 2.0856756000139285,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 72,
+    "cost_usd": 1.3e-05,
+    "latency_s": 7.404073099984089,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 73,
+    "cost_usd": 1.186e-05,
+    "latency_s": 6.37171059998218,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 74,
+    "cost_usd": 3.7966e-05,
+    "latency_s": 1.793817300000228,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 76,
+    "cost_usd": 6.46e-06,
+    "latency_s": 1.1811051999975462,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 77,
+    "cost_usd": 4.88e-06,
+    "latency_s": 1.2695558000123128,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 78,
+    "cost_usd": 6.92e-06,
+    "latency_s": 2.056932200008305,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 80,
+    "cost_usd": 1.374e-05,
+    "latency_s": 9.188336400024127,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 81,
+    "cost_usd": 6.53e-06,
+    "latency_s": 1.3530845000059344,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 82,
+    "cost_usd": 1.316e-05,
+    "latency_s": 5.828386599983787,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 84,
+    "cost_usd": 1.276e-05,
+    "latency_s": 6.513504500006093,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 85,
+    "cost_usd": 6.57e-06,
+    "latency_s": 1.281569299986586,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 86,
+    "cost_usd": 1.671e-05,
+    "latency_s": 2.527349599986337,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 87,
+    "cost_usd": 2.513e-05,
+    "latency_s": 0.6320982000033837,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 88,
+    "cost_usd": 1.278e-05,
+    "latency_s": 6.145923500007484,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 89,
+    "cost_usd": 1.552e-05,
+    "latency_s": 8.247512800007826,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 90,
+    "cost_usd": 1.33e-05,
+    "latency_s": 6.903899299999466,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 91,
+    "cost_usd": 7.9e-06,
+    "latency_s": 2.728338299988536,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 92,
+    "cost_usd": 7.72e-06,
+    "latency_s": 3.86148660001345,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 93,
+    "cost_usd": 1.342e-05,
+    "latency_s": 6.094660400005523,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 95,
+    "cost_usd": 5.92e-06,
+    "latency_s": 1.7466690999863204,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 97,
+    "cost_usd": 1.463e-05,
+    "latency_s": 2.974308500008192,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 98,
+    "cost_usd": 1.166e-05,
+    "latency_s": 8.014238000003388,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 99,
+    "cost_usd": 2.903e-05,
+    "latency_s": 0.7712610999878962,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 100,
+    "cost_usd": 2.925e-05,
+    "latency_s": 0.7240495999867562,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 101,
+    "cost_usd": 1.328e-05,
+    "latency_s": 2.109375,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 103,
+    "cost_usd": 6.41e-06,
+    "latency_s": 1.3250441999989562,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 104,
+    "cost_usd": 6.47e-06,
+    "latency_s": 1.2268387000076473,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 105,
+    "cost_usd": 1.678e-05,
+    "latency_s": 9.718196100002388,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 106,
+    "cost_usd": 1.28e-05,
+    "latency_s": 9.022266799991485,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 107,
+    "cost_usd": 2.964e-05,
+    "latency_s": 0.8177453000098467,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 110,
+    "cost_usd": 1.312e-05,
+    "latency_s": 7.873580000014044,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 111,
+    "cost_usd": 1.31e-05,
+    "latency_s": 6.770314300025348,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 113,
+    "cost_usd": 6.45e-06,
+    "latency_s": 1.2810892999987118,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 114,
+    "cost_usd": 9.54e-06,
+    "latency_s": 5.019913900003303,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 115,
+    "cost_usd": 6.81e-06,
+    "latency_s": 1.2827489000046626,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 116,
+    "cost_usd": 1.28e-05,
+    "latency_s": 8.654473400005372,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 117,
+    "cost_usd": 1.072e-05,
+    "latency_s": 4.923827799997525,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 118,
+    "cost_usd": 5.86e-06,
+    "latency_s": 2.633255399996415,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 119,
+    "cost_usd": 2.93e-05,
+    "latency_s": 5.926933199982159,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 120,
+    "cost_usd": 5.02e-06,
+    "latency_s": 2.7376447999849916,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 121,
+    "cost_usd": 6.26e-06,
+    "latency_s": 1.4806524000014178,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 122,
+    "cost_usd": 6.63e-06,
+    "latency_s": 2.219448400021065,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 123,
+    "cost_usd": 6.45e-06,
+    "latency_s": 1.19404490001034,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 124,
+    "cost_usd": 1.492e-05,
+    "latency_s": 11.404164700012188,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 125,
+    "cost_usd": 1.156e-05,
+    "latency_s": 6.844046500016702,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 126,
+    "cost_usd": 1.198e-05,
+    "latency_s": 6.993303000024753,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 127,
+    "cost_usd": 1.304e-05,
+    "latency_s": 9.10446459997911,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 129,
+    "cost_usd": 6.59e-06,
+    "latency_s": 1.1793081999931019,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 131,
+    "cost_usd": 1.727e-05,
+    "latency_s": 3.207012900005793,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 132,
+    "cost_usd": 1.498e-05,
+    "latency_s": 5.679762999992818,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 133,
+    "cost_usd": 1.296e-05,
+    "latency_s": 8.675936899991939,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 134,
+    "cost_usd": 6.28e-06,
+    "latency_s": 2.2136633999762125,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 135,
+    "cost_usd": 7.6e-06,
+    "latency_s": 1.2427679999964312,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 136,
+    "cost_usd": 1.272e-05,
+    "latency_s": 7.195384399994509,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 140,
+    "cost_usd": 1.136e-05,
+    "latency_s": 6.280836699996144,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 146,
+    "cost_usd": 1.476e-05,
+    "latency_s": 10.178359899990028,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 151,
+    "cost_usd": 2.581e-05,
+    "latency_s": 0.6856841999979224,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 152,
+    "cost_usd": 1.262e-05,
+    "latency_s": 7.758812999993097,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 153,
+    "cost_usd": 2.901e-05,
+    "latency_s": 0.7026496999897063,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 154,
+    "cost_usd": 7.93e-06,
+    "latency_s": 1.4693597999867052,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 155,
+    "cost_usd": 1.288e-05,
+    "latency_s": 10.145623399992473,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 156,
+    "cost_usd": 1.296e-05,
+    "latency_s": 10.146000100008678,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 158,
+    "cost_usd": 1.28e-05,
+    "latency_s": 7.933931299980031,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 159,
+    "cost_usd": 1.174e-05,
+    "latency_s": 8.054291000007652,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 160,
+    "cost_usd": 2.116e-05,
+    "latency_s": 16.809971100010443,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 163,
+    "cost_usd": 1.252e-05,
+    "latency_s": 9.685449900018284,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 164,
+    "cost_usd": 6.25e-06,
+    "latency_s": 1.2832712999952491,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 165,
+    "cost_usd": 1.288e-05,
+    "latency_s": 6.775806899997406,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 166,
+    "cost_usd": 6.55e-06,
+    "latency_s": 1.4182725999853574,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 168,
+    "cost_usd": 1.048e-05,
+    "latency_s": 5.091902200016193,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 169,
+    "cost_usd": 5.02e-06,
+    "latency_s": 0.9542809000122361,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 170,
+    "cost_usd": 1.174e-05,
+    "latency_s": 6.943521500012139,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 173,
+    "cost_usd": 4.98e-06,
+    "latency_s": 0.8799199000059161,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 174,
+    "cost_usd": 7.02e-06,
+    "latency_s": 2.3723564999818336,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 175,
+    "cost_usd": 1.088e-05,
+    "latency_s": 5.794658099999651,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 176,
+    "cost_usd": 2.742e-05,
+    "latency_s": 0.6659199999994598,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 179,
+    "cost_usd": 6.51e-06,
+    "latency_s": 1.0484343999996781,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 180,
+    "cost_usd": 5.04e-06,
+    "latency_s": 0.910629100020742,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 181,
+    "cost_usd": 1.304e-05,
+    "latency_s": 6.988579299999401,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 182,
+    "cost_usd": 6.28e-06,
+    "latency_s": 1.1097078000020701,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 183,
+    "cost_usd": 6.45e-06,
+    "latency_s": 1.367044899991015,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 185,
+    "cost_usd": 6.47e-06,
+    "latency_s": 1.4690633999998681,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 186,
+    "cost_usd": 1.551e-05,
+    "latency_s": 2.0343471000087447,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 187,
+    "cost_usd": 1.474e-05,
+    "latency_s": 12.422024799976498,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 188,
+    "cost_usd": 1.308e-05,
+    "latency_s": 8.092193099990254,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 189,
+    "cost_usd": 6.79e-06,
+    "latency_s": 1.359665700001642,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 190,
+    "cost_usd": 1.33e-05,
+    "latency_s": 13.116432300012093,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 192,
+    "cost_usd": 6.55e-06,
+    "latency_s": 1.2187627000093926,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 194,
+    "cost_usd": 1.284e-05,
+    "latency_s": 8.703479200019501,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 195,
+    "cost_usd": 1.444e-05,
+    "latency_s": 11.577082599978894,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 197,
+    "cost_usd": 1.586e-05,
+    "latency_s": 11.270969400007743,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 199,
+    "cost_usd": 1.29e-05,
+    "latency_s": 6.771106100000907,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 200,
+    "cost_usd": 7.92e-06,
+    "latency_s": 3.8695186999975704,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 1,
+    "cost_usd": 1.962e-05,
+    "latency_s": 6.457708400004776,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 2,
+    "cost_usd": 1.728e-05,
+    "latency_s": 7.010936400009086,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 3,
+    "cost_usd": 1.228e-05,
+    "latency_s": 1.3815663999994285,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 4,
+    "cost_usd": 1.632e-05,
+    "latency_s": 4.387941199995112,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 5,
+    "cost_usd": 2.19e-05,
+    "latency_s": 12.667927399976179,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 9
+  },
+  {
+    "product_idx": 6,
+    "cost_usd": 1.734e-05,
+    "latency_s": 8.47617499998887,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 7,
+    "cost_usd": 1.134e-05,
+    "latency_s": 1.0697583000001032,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 8,
+    "cost_usd": 4.754e-05,
+    "latency_s": 0.7799608999921475,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 9,
+    "cost_usd": 1.728e-05,
+    "latency_s": 5.446870099985972,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 11,
+    "cost_usd": 1.94e-05,
+    "latency_s": 10.455045700015035,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 14,
+    "cost_usd": 2.207e-05,
+    "latency_s": 2.3867880000034347,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 20,
+    "cost_usd": 1.124e-05,
+    "latency_s": 5.00523599999724,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 21,
+    "cost_usd": 1.736e-05,
+    "latency_s": 4.814044400001876,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 22,
+    "cost_usd": 4.277e-05,
+    "latency_s": 0.7060106999997515,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 26,
+    "cost_usd": 1.966e-05,
+    "latency_s": 10.835700900002848,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 28,
+    "cost_usd": 2.123e-05,
+    "latency_s": 2.1870705999899656,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 29,
+    "cost_usd": 1.708e-05,
+    "latency_s": 5.556842399993911,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 30,
+    "cost_usd": 2.132e-05,
+    "latency_s": 1.9299647000152618,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 33,
+    "cost_usd": 1.128e-05,
+    "latency_s": 0.9201684000145178,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 34,
+    "cost_usd": 1.93e-05,
+    "latency_s": 8.998251500015613,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 36,
+    "cost_usd": 1.732e-05,
+    "latency_s": 6.170827499998268,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 38,
+    "cost_usd": 1.752e-05,
+    "latency_s": 7.492466499999864,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 40,
+    "cost_usd": 1.988e-05,
+    "latency_s": 8.637586199998623,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 41,
+    "cost_usd": 1.638e-05,
+    "latency_s": 5.520579700008966,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 42,
+    "cost_usd": 2e-05,
+    "latency_s": 2.1611492999945767,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 43,
+    "cost_usd": 1.936e-05,
+    "latency_s": 7.4739632999990135,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 44,
+    "cost_usd": 1.888e-05,
+    "latency_s": 2.0043994000006933,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 45,
+    "cost_usd": 1.928e-05,
+    "latency_s": 10.197760200011544,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 46,
+    "cost_usd": 2.332e-05,
+    "latency_s": 11.058581399993272,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 48,
+    "cost_usd": 2.131e-05,
+    "latency_s": 3.0745206999999937,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 50,
+    "cost_usd": 1.736e-05,
+    "latency_s": 6.92271020001499,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 51,
+    "cost_usd": 1.946e-05,
+    "latency_s": 7.699334800010547,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 52,
+    "cost_usd": 1.86e-05,
+    "latency_s": 6.161390900000697,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 54,
+    "cost_usd": 1.798e-05,
+    "latency_s": 7.513248300005216,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 56,
+    "cost_usd": 4.267e-05,
+    "latency_s": 0.7068975000001956,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 59,
+    "cost_usd": 1.74e-05,
+    "latency_s": 5.354171300015878,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 60,
+    "cost_usd": 2.132e-05,
+    "latency_s": 2.081707900011679,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 61,
+    "cost_usd": 4.567e-05,
+    "latency_s": 0.6705557999957819,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 63,
+    "cost_usd": 1.982e-05,
+    "latency_s": 1.8412359999783803,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 64,
+    "cost_usd": 4.581e-05,
+    "latency_s": 0.7461561000091024,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 65,
+    "cost_usd": 1.936e-05,
+    "latency_s": 7.198064699972747,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 66,
+    "cost_usd": 1.756e-05,
+    "latency_s": 4.983996599999955,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 67,
+    "cost_usd": 1.858e-05,
+    "latency_s": 6.393837000010535,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 68,
+    "cost_usd": 1.146e-05,
+    "latency_s": 1.1243100000137929,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 69,
+    "cost_usd": 1.948e-05,
+    "latency_s": 7.593359899998177,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 70,
+    "cost_usd": 1.136e-05,
+    "latency_s": 0.9430393000075128,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 71,
+    "cost_usd": 1.732e-05,
+    "latency_s": 5.082979099999648,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 72,
+    "cost_usd": 1.834e-05,
+    "latency_s": 5.788750500010792,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 73,
+    "cost_usd": 1.94e-05,
+    "latency_s": 6.440167300024768,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 74,
+    "cost_usd": 2.159e-05,
+    "latency_s": 2.087674899987178,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 76,
+    "cost_usd": 1.804e-05,
+    "latency_s": 6.094734899990726,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 77,
+    "cost_usd": 4.528e-05,
+    "latency_s": 0.7298952999990433,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 78,
+    "cost_usd": 1.13e-05,
+    "latency_s": 0.971864999999525,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 80,
+    "cost_usd": 4.263e-05,
+    "latency_s": 0.8278213000157848,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 81,
+    "cost_usd": 1.79e-05,
+    "latency_s": 5.343647900008364,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 82,
+    "cost_usd": 1.842e-05,
+    "latency_s": 6.094916500005638,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 84,
+    "cost_usd": 1.806e-05,
+    "latency_s": 5.063040500011994,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 85,
+    "cost_usd": 1.712e-05,
+    "latency_s": 5.420252299983986,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 86,
+    "cost_usd": 1.138e-05,
+    "latency_s": 0.9536652999813668,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 87,
+    "cost_usd": 1.126e-05,
+    "latency_s": 0.8996740000147838,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 88,
+    "cost_usd": 2.032e-05,
+    "latency_s": 8.272734199999832,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 89,
+    "cost_usd": 1.954e-05,
+    "latency_s": 7.123835099977441,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 90,
+    "cost_usd": 1.852e-05,
+    "latency_s": 6.319287399994209,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 91,
+    "cost_usd": 1.928e-05,
+    "latency_s": 7.666213799995603,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 92,
+    "cost_usd": 1.918e-05,
+    "latency_s": 6.541114599996945,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 93,
+    "cost_usd": 1.924e-05,
+    "latency_s": 9.643837599986,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 95,
+    "cost_usd": 1.914e-05,
+    "latency_s": 7.192896900000051,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 97,
+    "cost_usd": 1.906e-05,
+    "latency_s": 5.624839699972654,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 98,
+    "cost_usd": 1.92e-05,
+    "latency_s": 9.54842340000323,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 99,
+    "cost_usd": 1.91e-05,
+    "latency_s": 7.493949600000633,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 100,
+    "cost_usd": 1.922e-05,
+    "latency_s": 7.492190200020559,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 101,
+    "cost_usd": 1.97e-05,
+    "latency_s": 2.0604009999951813,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 103,
+    "cost_usd": 1.904e-05,
+    "latency_s": 6.82848820000072,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 104,
+    "cost_usd": 2.444e-05,
+    "latency_s": 10.448648499994306,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 11
+  },
+  {
+    "product_idx": 105,
+    "cost_usd": 2.13e-05,
+    "latency_s": 2.2769994999980554,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 106,
+    "cost_usd": 1.138e-05,
+    "latency_s": 0.811112299998058,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 107,
+    "cost_usd": 2.096e-05,
+    "latency_s": 8.642810699995607,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 110,
+    "cost_usd": 1.138e-05,
+    "latency_s": 0.9125600999977905,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 111,
+    "cost_usd": 1.952e-05,
+    "latency_s": 7.900502900010906,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 113,
+    "cost_usd": 1.122e-05,
+    "latency_s": 0.9746151000144891,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 114,
+    "cost_usd": 4.259e-05,
+    "latency_s": 0.7813625000126194,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 115,
+    "cost_usd": 1.138e-05,
+    "latency_s": 0.8773531999904662,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 116,
+    "cost_usd": 1.926e-05,
+    "latency_s": 6.645436599996174,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 117,
+    "cost_usd": 4.296e-05,
+    "latency_s": 0.6659417999908328,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 118,
+    "cost_usd": 1.832e-05,
+    "latency_s": 8.271809699974256,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 119,
+    "cost_usd": 1.924e-05,
+    "latency_s": 5.746708399994532,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 120,
+    "cost_usd": 1.952e-05,
+    "latency_s": 5.707508000021335,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 121,
+    "cost_usd": 1.148e-05,
+    "latency_s": 1.9453441000077873,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 122,
+    "cost_usd": 1.77e-05,
+    "latency_s": 5.105186700006016,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 123,
+    "cost_usd": 1.736e-05,
+    "latency_s": 6.892662500002189,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 124,
+    "cost_usd": 1.95e-05,
+    "latency_s": 7.497884500015061,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 125,
+    "cost_usd": 4.496e-05,
+    "latency_s": 0.9420334999740589,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 126,
+    "cost_usd": 8.6454e-05,
+    "latency_s": 1.3331584999978077,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 127,
+    "cost_usd": 1.946e-05,
+    "latency_s": 7.04905719999806,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 129,
+    "cost_usd": 1.714e-05,
+    "latency_s": 5.476373099983903,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 131,
+    "cost_usd": 1.144e-05,
+    "latency_s": 1.3736919999937527,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 132,
+    "cost_usd": 1.936e-05,
+    "latency_s": 6.2845110000052955,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 133,
+    "cost_usd": 3.174e-05,
+    "latency_s": 13.50963889999548,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 134,
+    "cost_usd": 4.336e-05,
+    "latency_s": 0.6703059000137728,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 135,
+    "cost_usd": 1.142e-05,
+    "latency_s": 3.482661799993366,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 136,
+    "cost_usd": 1.802e-05,
+    "latency_s": 5.05907830002252,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 140,
+    "cost_usd": 1.949e-05,
+    "latency_s": 1.9586647000105586,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 146,
+    "cost_usd": 1.846e-05,
+    "latency_s": 4.775069099996472,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 151,
+    "cost_usd": 1.75e-05,
+    "latency_s": 4.92289030001848,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 152,
+    "cost_usd": 1.792e-05,
+    "latency_s": 5.006233599997358,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 153,
+    "cost_usd": 1.914e-05,
+    "latency_s": 7.474473899987061,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 154,
+    "cost_usd": 4.642e-05,
+    "latency_s": 0.7375331000075676,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 155,
+    "cost_usd": 1.934e-05,
+    "latency_s": 7.556715799990343,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 156,
+    "cost_usd": 2.05e-05,
+    "latency_s": 7.245191399997566,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 158,
+    "cost_usd": 1.922e-05,
+    "latency_s": 13.392562900000485,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 159,
+    "cost_usd": 5.021e-05,
+    "latency_s": 0.777694899996277,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 160,
+    "cost_usd": 1.138e-05,
+    "latency_s": 0.8323046999867074,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 163,
+    "cost_usd": 1.118e-05,
+    "latency_s": 0.8845146999810822,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 164,
+    "cost_usd": 1.61e-05,
+    "latency_s": 6.299876199977007,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 165,
+    "cost_usd": 1.278e-05,
+    "latency_s": 1.2840021000010893,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 166,
+    "cost_usd": 1.8e-05,
+    "latency_s": 5.856509500008542,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 168,
+    "cost_usd": 1.956e-05,
+    "latency_s": 1.9201815999986138,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 169,
+    "cost_usd": 1.976e-05,
+    "latency_s": 6.9816611999995075,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 170,
+    "cost_usd": 2.008e-05,
+    "latency_s": 7.567183299979661,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 173,
+    "cost_usd": 1.14e-05,
+    "latency_s": 1.1069094000267796,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 174,
+    "cost_usd": 1.964e-05,
+    "latency_s": 11.261757900007069,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 175,
+    "cost_usd": 1.73e-05,
+    "latency_s": 5.0644420000026,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 176,
+    "cost_usd": 2.004e-05,
+    "latency_s": 3.175931400008267,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 179,
+    "cost_usd": 1.728e-05,
+    "latency_s": 7.0812347999890335,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 180,
+    "cost_usd": 1.146e-05,
+    "latency_s": 1.031400699983351,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 181,
+    "cost_usd": 1.13e-05,
+    "latency_s": 1.586123300017789,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 182,
+    "cost_usd": 1.94e-05,
+    "latency_s": 9.671935499995016,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 183,
+    "cost_usd": 1.272e-05,
+    "latency_s": 1.4071258000039961,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 185,
+    "cost_usd": 2.109e-05,
+    "latency_s": 2.4457831000036094,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 186,
+    "cost_usd": 4.67e-05,
+    "latency_s": 0.702016100025503,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 187,
+    "cost_usd": 1.136e-05,
+    "latency_s": 0.9506421000114642,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 188,
+    "cost_usd": 1.95e-05,
+    "latency_s": 8.744223899993813,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 189,
+    "cost_usd": 1.92e-05,
+    "latency_s": 7.379688599990914,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 190,
+    "cost_usd": 4.647e-05,
+    "latency_s": 0.7173067999829073,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 192,
+    "cost_usd": 1.924e-05,
+    "latency_s": 8.885459999990417,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 194,
+    "cost_usd": 1.814e-05,
+    "latency_s": 6.348401300027035,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 195,
+    "cost_usd": 1.95e-05,
+    "latency_s": 5.610840700013796,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 197,
+    "cost_usd": 2.008e-05,
+    "latency_s": 6.615660799987381,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 199,
+    "cost_usd": 1.936e-05,
+    "latency_s": 8.35174419998657,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 200,
+    "cost_usd": 1.146e-05,
+    "latency_s": 4.1504922999884,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 1,
+    "cost_usd": 4.613e-05,
+    "latency_s": 0.7573557000141591,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 2,
+    "cost_usd": 2.025e-05,
+    "latency_s": 2.145630999992136,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 3,
+    "cost_usd": 1.938e-05,
+    "latency_s": 5.461275799985742,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 4,
+    "cost_usd": 1.838e-05,
+    "latency_s": 8.014310900005512,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 5,
+    "cost_usd": 1.72e-05,
+    "latency_s": 5.790820800000802,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 6,
+    "cost_usd": 1.732e-05,
+    "latency_s": 5.170192400022643,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 7,
+    "cost_usd": 1.82e-05,
+    "latency_s": 6.485099300014554,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 8,
+    "cost_usd": 1.924e-05,
+    "latency_s": 7.347011400008341,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 9,
+    "cost_usd": 4.332e-05,
+    "latency_s": 1.7021022000117227,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 11,
+    "cost_usd": 1.138e-05,
+    "latency_s": 4.682460699987132,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 14,
+    "cost_usd": 4.682e-05,
+    "latency_s": 0.9597288999939337,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 20,
+    "cost_usd": 1.698e-05,
+    "latency_s": 5.20246010000119,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 21,
+    "cost_usd": 2.181e-05,
+    "latency_s": 2.477062999998452,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 22,
+    "cost_usd": 1.918e-05,
+    "latency_s": 8.91993229999207,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 26,
+    "cost_usd": 1.964e-05,
+    "latency_s": 9.77481830000761,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 28,
+    "cost_usd": 2.238e-05,
+    "latency_s": 9.114597300009336,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 29,
+    "cost_usd": 4.288e-05,
+    "latency_s": 1.1233121000113897,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 30,
+    "cost_usd": 2.04e-05,
+    "latency_s": 8.458493999991333,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 33,
+    "cost_usd": 1.126e-05,
+    "latency_s": 2.471676999994088,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 34,
+    "cost_usd": 1.816e-05,
+    "latency_s": 14.897384300013073,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 36,
+    "cost_usd": 2.037e-05,
+    "latency_s": 2.7566608999914024,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 38,
+    "cost_usd": 1.75e-05,
+    "latency_s": 9.397944399999687,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 40,
+    "cost_usd": 1.986e-05,
+    "latency_s": 9.409326299995882,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 41,
+    "cost_usd": 1.636e-05,
+    "latency_s": 6.010980799997924,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 42,
+    "cost_usd": 2.162e-05,
+    "latency_s": 8.057765899982769,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 43,
+    "cost_usd": 1.818e-05,
+    "latency_s": 5.796964699984528,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 44,
+    "cost_usd": 2.281e-05,
+    "latency_s": 2.544737099990016,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 45,
+    "cost_usd": 1.926e-05,
+    "latency_s": 6.396854200022062,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 46,
+    "cost_usd": 1.938e-05,
+    "latency_s": 6.960498800006462,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 48,
+    "cost_usd": 1.816e-05,
+    "latency_s": 7.7212256000202615,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 50,
+    "cost_usd": 1.73e-05,
+    "latency_s": 4.951559500012081,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 51,
+    "cost_usd": 1.944e-05,
+    "latency_s": 9.334350400022231,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 52,
+    "cost_usd": 4.328e-05,
+    "latency_s": 0.8040880000044126,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 54,
+    "cost_usd": 1.232e-05,
+    "latency_s": 1.934387000015704,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 56,
+    "cost_usd": 4.27e-05,
+    "latency_s": 0.6742452000034973,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 59,
+    "cost_usd": 1.738e-05,
+    "latency_s": 5.5698182999913115,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 60,
+    "cost_usd": 1.926e-05,
+    "latency_s": 8.864379400009057,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 61,
+    "cost_usd": 2.326e-05,
+    "latency_s": 10.203756600007182,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 63,
+    "cost_usd": 1.92e-05,
+    "latency_s": 13.740563200000906,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 64,
+    "cost_usd": 1.938e-05,
+    "latency_s": 8.174563699983992,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 65,
+    "cost_usd": 1.142e-05,
+    "latency_s": 0.9767632999864873,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 66,
+    "cost_usd": 1.754e-05,
+    "latency_s": 5.082357799983583,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 67,
+    "cost_usd": 2.22e-05,
+    "latency_s": 10.435982199996943,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 9
+  },
+  {
+    "product_idx": 68,
+    "cost_usd": 1.828e-05,
+    "latency_s": 5.104287599999225,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 69,
+    "cost_usd": 1.942e-05,
+    "latency_s": 9.253577499999665,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 70,
+    "cost_usd": 2.022e-05,
+    "latency_s": 5.71497579998686,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 71,
+    "cost_usd": 1.69e-05,
+    "latency_s": 4.975921499979449,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 72,
+    "cost_usd": 1.136e-05,
+    "latency_s": 4.081215499987593,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 73,
+    "cost_usd": 2.002e-05,
+    "latency_s": 2.201923500018893,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 74,
+    "cost_usd": 1.142e-05,
+    "latency_s": 1.2957347000192385,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 76,
+    "cost_usd": 1.126e-05,
+    "latency_s": 0.9146680000121705,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 77,
+    "cost_usd": 1.124e-05,
+    "latency_s": 0.7700224000145681,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 78,
+    "cost_usd": 1.828e-05,
+    "latency_s": 7.947673300019233,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 80,
+    "cost_usd": 1.694e-05,
+    "latency_s": 4.564217000006465,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 81,
+    "cost_usd": 1.128e-05,
+    "latency_s": 0.901769099989906,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 82,
+    "cost_usd": 1.84e-05,
+    "latency_s": 5.630624299985357,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 84,
+    "cost_usd": 1.804e-05,
+    "latency_s": 5.375788999983342,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 85,
+    "cost_usd": 4.308e-05,
+    "latency_s": 0.7674532999808434,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 86,
+    "cost_usd": 1.996e-05,
+    "latency_s": 10.969795499986503,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 87,
+    "cost_usd": 0.000146082,
+    "latency_s": 12.355389699980151,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 88,
+    "cost_usd": 1.914e-05,
+    "latency_s": 6.774935199995525,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 89,
+    "cost_usd": 1.952e-05,
+    "latency_s": 5.80582300000242,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 90,
+    "cost_usd": 2.976e-05,
+    "latency_s": 0.5162338000081945,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 91,
+    "cost_usd": 4.542e-05,
+    "latency_s": 0.706042100006016,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 92,
+    "cost_usd": 1.916e-05,
+    "latency_s": 5.939343500009272,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 93,
+    "cost_usd": 4.534e-05,
+    "latency_s": 0.6727615999989212,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 95,
+    "cost_usd": 1.912e-05,
+    "latency_s": 9.63100230001146,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 97,
+    "cost_usd": 1.904e-05,
+    "latency_s": 7.418697899993276,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 98,
+    "cost_usd": 1.806e-05,
+    "latency_s": 6.854960600001505,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 99,
+    "cost_usd": 4.503e-05,
+    "latency_s": 1.069015400018543,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 100,
+    "cost_usd": 1.92e-05,
+    "latency_s": 5.9609949000005145,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 101,
+    "cost_usd": 2.013e-05,
+    "latency_s": 2.2579674999869894,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 103,
+    "cost_usd": 1.79e-05,
+    "latency_s": 6.1756650999886915,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 104,
+    "cost_usd": 1.79e-05,
+    "latency_s": 5.375586599984672,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 105,
+    "cost_usd": 1.828e-05,
+    "latency_s": 2.111126999981934,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 106,
+    "cost_usd": 1.14e-05,
+    "latency_s": 1.2004666000138968,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 107,
+    "cost_usd": 2.19e-05,
+    "latency_s": 13.762291999999434,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 110,
+    "cost_usd": 2.496e-05,
+    "latency_s": 2.72431140000117,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 111,
+    "cost_usd": 1.95e-05,
+    "latency_s": 9.723632100009127,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 113,
+    "cost_usd": 2.26e-05,
+    "latency_s": 2.5544547000026796,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 114,
+    "cost_usd": 4.454e-05,
+    "latency_s": 0.7020417999883648,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 115,
+    "cost_usd": 1.82e-05,
+    "latency_s": 5.697689199994784,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 116,
+    "cost_usd": 1.24e-05,
+    "latency_s": 2.0155868000001647,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 117,
+    "cost_usd": 4.299e-05,
+    "latency_s": 1.002825000003213,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 118,
+    "cost_usd": 1.83e-05,
+    "latency_s": 8.93340039998293,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 119,
+    "cost_usd": 1.922e-05,
+    "latency_s": 7.49133950000396,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 120,
+    "cost_usd": 1.95e-05,
+    "latency_s": 7.294177799980389,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 121,
+    "cost_usd": 1.146e-05,
+    "latency_s": 0.9163896999962162,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 122,
+    "cost_usd": 1.973e-05,
+    "latency_s": 2.0672660000273027,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 123,
+    "cost_usd": 2.27e-05,
+    "latency_s": 2.2881273000093643,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 124,
+    "cost_usd": 1.136e-05,
+    "latency_s": 0.7863124000141397,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 125,
+    "cost_usd": 2.016e-05,
+    "latency_s": 7.658654299972113,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 126,
+    "cost_usd": 1.842e-05,
+    "latency_s": 7.026506800000789,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 127,
+    "cost_usd": 1.948e-05,
+    "latency_s": 6.90275219999603,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 129,
+    "cost_usd": 0.000151822,
+    "latency_s": 14.723070000007283,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 131,
+    "cost_usd": 1.826e-05,
+    "latency_s": 5.299926599982427,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 132,
+    "cost_usd": 1.934e-05,
+    "latency_s": 7.469277299998794,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 133,
+    "cost_usd": 1.936e-05,
+    "latency_s": 6.097429800021928,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 134,
+    "cost_usd": 2.008e-05,
+    "latency_s": 2.09805700002471,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 135,
+    "cost_usd": 1.14e-05,
+    "latency_s": 0.8991509999905247,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 136,
+    "cost_usd": 4.511e-05,
+    "latency_s": 0.7341214000189211,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 140,
+    "cost_usd": 2.227e-05,
+    "latency_s": 2.203113800002029,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 146,
+    "cost_usd": 1.844e-05,
+    "latency_s": 6.944390000018757,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 151,
+    "cost_usd": 1.748e-05,
+    "latency_s": 5.19075760000851,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 152,
+    "cost_usd": 1.79e-05,
+    "latency_s": 5.692751099995803,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 153,
+    "cost_usd": 1.236e-05,
+    "latency_s": 1.61545159999514,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 154,
+    "cost_usd": 1.852e-05,
+    "latency_s": 6.57219599999371,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 155,
+    "cost_usd": 1.816e-05,
+    "latency_s": 5.711555899993982,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 156,
+    "cost_usd": 4.783e-05,
+    "latency_s": 0.9039221999992151,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 158,
+    "cost_usd": 1.321e-05,
+    "latency_s": 1.2938081999891438,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 159,
+    "cost_usd": 2.062e-05,
+    "latency_s": 7.663649699999951,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 160,
+    "cost_usd": 1.816e-05,
+    "latency_s": 4.652509400009876,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 163,
+    "cost_usd": 2.026e-05,
+    "latency_s": 2.064162100024987,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 164,
+    "cost_usd": 1.808e-05,
+    "latency_s": 5.609583000012208,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 165,
+    "cost_usd": 1.816e-05,
+    "latency_s": 4.985897499980638,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 166,
+    "cost_usd": 2.02e-05,
+    "latency_s": 1.884362399985548,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 168,
+    "cost_usd": 1.688e-05,
+    "latency_s": 3.910372600017581,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 169,
+    "cost_usd": 1.974e-05,
+    "latency_s": 6.351903500006301,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 170,
+    "cost_usd": 1.814e-05,
+    "latency_s": 4.691980400006287,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 173,
+    "cost_usd": 1.834e-05,
+    "latency_s": 5.194570899999235,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 174,
+    "cost_usd": 1.958e-05,
+    "latency_s": 7.629032500000903,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 175,
+    "cost_usd": 1.728e-05,
+    "latency_s": 6.412365299998783,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 176,
+    "cost_usd": 4.59e-05,
+    "latency_s": 0.7715012000116985,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 179,
+    "cost_usd": 1.914e-05,
+    "latency_s": 7.095026700000744,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 180,
+    "cost_usd": 1.928e-05,
+    "latency_s": 6.952178099978482,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 181,
+    "cost_usd": 1.944e-05,
+    "latency_s": 6.348346199985826,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 182,
+    "cost_usd": 1.138e-05,
+    "latency_s": 0.9906197999953292,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 183,
+    "cost_usd": 2.07e-05,
+    "latency_s": 2.4659405999991577,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 185,
+    "cost_usd": 1.718e-05,
+    "latency_s": 6.923298099980457,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 186,
+    "cost_usd": 4.665e-05,
+    "latency_s": 0.845101999992039,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 187,
+    "cost_usd": 1.134e-05,
+    "latency_s": 0.9674400000076275,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 188,
+    "cost_usd": 1.152e-05,
+    "latency_s": 1.1047663999779616,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 189,
+    "cost_usd": 1.999e-05,
+    "latency_s": 2.0273192999884486,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 190,
+    "cost_usd": 4.642e-05,
+    "latency_s": 0.760196499992162,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 192,
+    "cost_usd": 1.922e-05,
+    "latency_s": 10.780413600004977,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 194,
+    "cost_usd": 1.924e-05,
+    "latency_s": 7.059762999997474,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 195,
+    "cost_usd": 2.064e-05,
+    "latency_s": 8.707197999989148,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 197,
+    "cost_usd": 1.886e-05,
+    "latency_s": 7.968489199993201,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 199,
+    "cost_usd": 1.134e-05,
+    "latency_s": 0.9880010999913793,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 200,
+    "cost_usd": 1.844e-05,
+    "latency_s": 6.371969500003615,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 1,
+    "cost_usd": 1.946e-05,
+    "latency_s": 7.016798700002255,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 2,
+    "cost_usd": 1.708e-05,
+    "latency_s": 5.785681500012288,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 3,
+    "cost_usd": 1.124e-05,
+    "latency_s": 1.0239432999806013,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 4,
+    "cost_usd": 1.877e-05,
+    "latency_s": 2.002377400000114,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 5,
+    "cost_usd": 1.23e-05,
+    "latency_s": 2.115471900004195,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 6,
+    "cost_usd": 1.718e-05,
+    "latency_s": 5.9525454999820795,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 7,
+    "cost_usd": 1.802e-05,
+    "latency_s": 6.753614399989601,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 8,
+    "cost_usd": 4.498e-05,
+    "latency_s": 0.8509331000095699,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 9,
+    "cost_usd": 1.608e-05,
+    "latency_s": 4.704990499973064,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 11,
+    "cost_usd": 1.924e-05,
+    "latency_s": 6.968145099992398,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 14,
+    "cost_usd": 1.976e-05,
+    "latency_s": 9.120408300019335,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 20,
+    "cost_usd": 8.4022e-05,
+    "latency_s": 1.1296925999922678,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 21,
+    "cost_usd": 1.112e-05,
+    "latency_s": 1.0262559999828227,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 22,
+    "cost_usd": 1.224e-05,
+    "latency_s": 2.047137500019744,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 26,
+    "cost_usd": 1.95e-05,
+    "latency_s": 8.240679600014118,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 28,
+    "cost_usd": 2.182e-05,
+    "latency_s": 2.628139900014503,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 29,
+    "cost_usd": 1.692e-05,
+    "latency_s": 5.95738729997538,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 30,
+    "cost_usd": 2.116e-05,
+    "latency_s": 3.1784280999854673,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 33,
+    "cost_usd": 2.891e-05,
+    "latency_s": 0.5638072000001557,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 34,
+    "cost_usd": 1.914e-05,
+    "latency_s": 7.631442600017181,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 36,
+    "cost_usd": 1.104e-05,
+    "latency_s": 0.9859890000079758,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 38,
+    "cost_usd": 1.736e-05,
+    "latency_s": 6.092781600018498,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 40,
+    "cost_usd": 2.961e-05,
+    "latency_s": 0.9215969999786466,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 41,
+    "cost_usd": 1.522e-05,
+    "latency_s": 3.851695600023959,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 4
+  },
+  {
+    "product_idx": 42,
+    "cost_usd": 2.144e-05,
+    "latency_s": 10.40415899999789,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 43,
+    "cost_usd": 1.924e-05,
+    "latency_s": 8.049992300017038,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 44,
+    "cost_usd": 1.728e-05,
+    "latency_s": 5.80400610002107,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 45,
+    "cost_usd": 1.912e-05,
+    "latency_s": 8.811989400011953,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 46,
+    "cost_usd": 1.124e-05,
+    "latency_s": 4.171636299986858,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 48,
+    "cost_usd": 1.13e-05,
+    "latency_s": 0.9107009000144899,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 50,
+    "cost_usd": 1.12e-05,
+    "latency_s": 0.9309233999811113,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 51,
+    "cost_usd": 1.93e-05,
+    "latency_s": 8.770587300008629,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 52,
+    "cost_usd": 1.116e-05,
+    "latency_s": 1.0275888000032865,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 54,
+    "cost_usd": 1.11e-05,
+    "latency_s": 1.144500299997162,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 56,
+    "cost_usd": 1.216e-05,
+    "latency_s": 1.8141878999886103,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 59,
+    "cost_usd": 1.124e-05,
+    "latency_s": 0.9925981000124011,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 60,
+    "cost_usd": 1.116e-05,
+    "latency_s": 0.9523546999844257,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 61,
+    "cost_usd": 2.121e-05,
+    "latency_s": 2.5002000000094995,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 63,
+    "cost_usd": 2.106e-05,
+    "latency_s": 2.2630377000023145,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 64,
+    "cost_usd": 1.132e-05,
+    "latency_s": 0.9113462000095751,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 65,
+    "cost_usd": 1.128e-05,
+    "latency_s": 1.063983100000769,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 66,
+    "cost_usd": 1.74e-05,
+    "latency_s": 5.111390200007008,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 67,
+    "cost_usd": 1.126e-05,
+    "latency_s": 1.036189500009641,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 68,
+    "cost_usd": 1.13e-05,
+    "latency_s": 0.9282132999796886,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 69,
+    "cost_usd": 1.424e-05,
+    "latency_s": 3.69239720000769,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 70,
+    "cost_usd": 1.192e-05,
+    "latency_s": 1.5551153999986127,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 71,
+    "cost_usd": 1.676e-05,
+    "latency_s": 5.641459600010421,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 72,
+    "cost_usd": 1.926e-05,
+    "latency_s": 12.110638099984499,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 73,
+    "cost_usd": 2.108e-05,
+    "latency_s": 11.867865799984429,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 74,
+    "cost_usd": 1.936e-05,
+    "latency_s": 7.7832064000249375,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 76,
+    "cost_usd": 1.22e-05,
+    "latency_s": 1.9843828000011854,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 77,
+    "cost_usd": 1.266e-05,
+    "latency_s": 2.111301299999468,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 78,
+    "cost_usd": 1.81e-05,
+    "latency_s": 9.186436299991328,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 80,
+    "cost_usd": 1.68e-05,
+    "latency_s": 6.517824299982749,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 81,
+    "cost_usd": 1.958e-05,
+    "latency_s": 8.538457299990114,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 82,
+    "cost_usd": 1.826e-05,
+    "latency_s": 9.4391516999749,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 84,
+    "cost_usd": 1.963e-05,
+    "latency_s": 2.2780326000065543,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 85,
+    "cost_usd": 4.257e-05,
+    "latency_s": 0.6986561000230722,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 86,
+    "cost_usd": 1.122e-05,
+    "latency_s": 1.0689363999990746,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 87,
+    "cost_usd": 4.494e-05,
+    "latency_s": 0.7814762000052724,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 88,
+    "cost_usd": 1.792e-05,
+    "latency_s": 8.851217399991583,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 89,
+    "cost_usd": 1.938e-05,
+    "latency_s": 6.148043100023642,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 90,
+    "cost_usd": 4.597e-05,
+    "latency_s": 0.7738594000111334,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 91,
+    "cost_usd": 1.912e-05,
+    "latency_s": 9.21292540000286,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 92,
+    "cost_usd": 2.294e-05,
+    "latency_s": 11.027968199981842,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 93,
+    "cost_usd": 1.128e-05,
+    "latency_s": 1.0020650000078604,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 95,
+    "cost_usd": 4.482e-05,
+    "latency_s": 0.7793077000242192,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 97,
+    "cost_usd": 1.786e-05,
+    "latency_s": 9.207840799994301,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 98,
+    "cost_usd": 4.265e-05,
+    "latency_s": 0.7873393000045326,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 99,
+    "cost_usd": 1.122e-05,
+    "latency_s": 1.0047096000052989,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 100,
+    "cost_usd": 1.118e-05,
+    "latency_s": 0.9844375999819022,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 101,
+    "cost_usd": 1.999e-05,
+    "latency_s": 2.195767600002,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 103,
+    "cost_usd": 1.888e-05,
+    "latency_s": 8.97467530000722,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 104,
+    "cost_usd": 1.968e-05,
+    "latency_s": 6.179415999999037,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 105,
+    "cost_usd": 1.814e-05,
+    "latency_s": 1.837674899987178,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 106,
+    "cost_usd": 1.794e-05,
+    "latency_s": 5.504605199996149,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 107,
+    "cost_usd": 5.033e-05,
+    "latency_s": 0.7678373999951873,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 110,
+    "cost_usd": 1.938e-05,
+    "latency_s": 9.986042300006375,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 111,
+    "cost_usd": 4.551e-05,
+    "latency_s": 0.7430744000012055,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 113,
+    "cost_usd": 1.966e-05,
+    "latency_s": 10.618870100006461,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 114,
+    "cost_usd": 1.942e-05,
+    "latency_s": 2.0378591000044253,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 115,
+    "cost_usd": 1.122e-05,
+    "latency_s": 0.9686262999894097,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 116,
+    "cost_usd": 1.91e-05,
+    "latency_s": 7.920826499990653,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 117,
+    "cost_usd": 1.598e-05,
+    "latency_s": 5.931990200013388,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 118,
+    "cost_usd": 4.563e-05,
+    "latency_s": 0.7956641000055242,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 119,
+    "cost_usd": 1.908e-05,
+    "latency_s": 8.035088100004941,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 120,
+    "cost_usd": 1.128e-05,
+    "latency_s": 1.1145858000090811,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 121,
+    "cost_usd": 1.916e-05,
+    "latency_s": 9.205402699997649,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 122,
+    "cost_usd": 1.914e-05,
+    "latency_s": 1.95644410001114,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 123,
+    "cost_usd": 1.116e-05,
+    "latency_s": 0.9684963000181597,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 124,
+    "cost_usd": 1.934e-05,
+    "latency_s": 10.061235700006364,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 125,
+    "cost_usd": 1.11e-05,
+    "latency_s": 1.1065084000001661,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 126,
+    "cost_usd": 1.124e-05,
+    "latency_s": 1.049964399979217,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 127,
+    "cost_usd": 2.926e-05,
+    "latency_s": 0.5095064000051934,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 129,
+    "cost_usd": 2.19e-05,
+    "latency_s": 12.00991160000558,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 10
+  },
+  {
+    "product_idx": 131,
+    "cost_usd": 1.824e-05,
+    "latency_s": 6.477691700012656,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 132,
+    "cost_usd": 1.92e-05,
+    "latency_s": 7.004493999993429,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 133,
+    "cost_usd": 1.23e-05,
+    "latency_s": 9.494404899975052,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 134,
+    "cost_usd": 1.71e-05,
+    "latency_s": 6.427839999989374,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 135,
+    "cost_usd": 1.838e-05,
+    "latency_s": 5.515364299993962,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 136,
+    "cost_usd": 2.29e-05,
+    "latency_s": 9.753635799977928,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 140,
+    "cost_usd": 1.766e-05,
+    "latency_s": 9.798079900006996,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 146,
+    "cost_usd": 1.134e-05,
+    "latency_s": 1.0279363000008743,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 151,
+    "cost_usd": 1.734e-05,
+    "latency_s": 8.69811500000651,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 152,
+    "cost_usd": 1.672e-05,
+    "latency_s": 4.674975700007053,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 153,
+    "cost_usd": 1.898e-05,
+    "latency_s": 7.3840108000149485,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 154,
+    "cost_usd": 1.134e-05,
+    "latency_s": 5.234951499995077,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 155,
+    "cost_usd": 1.126e-05,
+    "latency_s": 0.9245626999763772,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 156,
+    "cost_usd": 1.23e-05,
+    "latency_s": 1.9631195999972988,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 158,
+    "cost_usd": 1.794e-05,
+    "latency_s": 6.471710199984955,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 159,
+    "cost_usd": 1.884e-05,
+    "latency_s": 12.997307799989358,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 160,
+    "cost_usd": 1.146e-05,
+    "latency_s": 1.2132516999845393,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 163,
+    "cost_usd": 1.21e-05,
+    "latency_s": 1.8237769000115804,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 164,
+    "cost_usd": 1.106e-05,
+    "latency_s": 0.941385399986757,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 165,
+    "cost_usd": 1.914e-05,
+    "latency_s": 6.99732930000755,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 166,
+    "cost_usd": 2.172e-05,
+    "latency_s": 9.105967200011946,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 168,
+    "cost_usd": 1.82e-05,
+    "latency_s": 2.579359499999555,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 169,
+    "cost_usd": 1.96e-05,
+    "latency_s": 6.601677800004836,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 170,
+    "cost_usd": 1.8e-05,
+    "latency_s": 5.9836318000161555,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 173,
+    "cost_usd": 1.124e-05,
+    "latency_s": 0.9978186000080314,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 174,
+    "cost_usd": 1.944e-05,
+    "latency_s": 7.46569080001791,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 175,
+    "cost_usd": 1.714e-05,
+    "latency_s": 5.2445020000159275,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 176,
+    "cost_usd": 1.988e-05,
+    "latency_s": 1.9861663000192493,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 179,
+    "cost_usd": 1.112e-05,
+    "latency_s": 1.6001708999974653,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 180,
+    "cost_usd": 1.914e-05,
+    "latency_s": 9.652532299980521,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 181,
+    "cost_usd": 1.93e-05,
+    "latency_s": 7.745631700003287,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 182,
+    "cost_usd": 1.124e-05,
+    "latency_s": 0.9739921999862418,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 183,
+    "cost_usd": 1.702e-05,
+    "latency_s": 6.191101600008551,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 185,
+    "cost_usd": 1.892e-05,
+    "latency_s": 18.971015499992063,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 186,
+    "cost_usd": 1.966e-05,
+    "latency_s": 6.517949000000954,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 187,
+    "cost_usd": 1.824e-05,
+    "latency_s": 7.394944300001953,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 188,
+    "cost_usd": 1.138e-05,
+    "latency_s": 0.9290031999989878,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 189,
+    "cost_usd": 4.487e-05,
+    "latency_s": 1.6576598999963608,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 190,
+    "cost_usd": 8.615e-05,
+    "latency_s": 1.2963936000014655,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 192,
+    "cost_usd": 4.269e-05,
+    "latency_s": 1.0203889999829698,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 194,
+    "cost_usd": 1.91e-05,
+    "latency_s": 9.038074000010965,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 195,
+    "cost_usd": 1.934e-05,
+    "latency_s": 8.52398379999795,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 197,
+    "cost_usd": 1.872e-05,
+    "latency_s": 7.058944299991708,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 199,
+    "cost_usd": 1.92e-05,
+    "latency_s": 7.958162099996116,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 200,
+    "cost_usd": 1.13e-05,
+    "latency_s": 3.9433882999874186,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 17,
+    "cost_usd": 1.906e-05,
+    "latency_s": 10.76952010000241,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 27,
+    "cost_usd": 1.756e-05,
+    "latency_s": 6.017590400006156,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 31,
+    "cost_usd": 8.4326e-05,
+    "latency_s": 0.9784673000103794,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 37,
+    "cost_usd": 1.104e-05,
+    "latency_s": 2.0758967000001576,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 47,
+    "cost_usd": 2.017e-05,
+    "latency_s": 2.2093526999815367,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 49,
+    "cost_usd": 1.897e-05,
+    "latency_s": 2.004836299980525,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 53,
+    "cost_usd": 1.916e-05,
+    "latency_s": 7.01505200000247,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 79,
+    "cost_usd": 1.906e-05,
+    "latency_s": 7.302764899999602,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 96,
+    "cost_usd": 4.824e-05,
+    "latency_s": 0.8105165000015404,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8
+  },
+  {
+    "product_idx": 128,
+    "cost_usd": 1.818e-05,
+    "latency_s": 9.653347099985695,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 137,
+    "cost_usd": 2.11e-05,
+    "latency_s": 2.649874099995941,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 139,
+    "cost_usd": 1.924e-05,
+    "latency_s": 6.428101400000742,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 141,
+    "cost_usd": 1.912e-05,
+    "latency_s": 6.5485850000113714,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 144,
+    "cost_usd": 1.108e-05,
+    "latency_s": 1.0541402000235394,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 147,
+    "cost_usd": 1.114e-05,
+    "latency_s": 1.0053525000112131,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 149,
+    "cost_usd": 1.924e-05,
+    "latency_s": 8.060117000015453,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 157,
+    "cost_usd": 1.73e-05,
+    "latency_s": 5.299036799988244,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 171,
+    "cost_usd": 1.938e-05,
+    "latency_s": 6.478849600011017,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 177,
+    "cost_usd": 1.908e-05,
+    "latency_s": 5.676664500002516,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 193,
+    "cost_usd": 1.804e-05,
+    "latency_s": 5.663101600017399,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 10,
+    "cost_usd": 1.778e-05,
+    "latency_s": 5.7448872000095434,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 12,
+    "cost_usd": 4.474e-05,
+    "latency_s": 0.8282092000008561,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 13,
+    "cost_usd": 1.914e-05,
+    "latency_s": 8.47208629999659,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 15,
+    "cost_usd": 1.924e-05,
+    "latency_s": 6.674537100014277,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 16,
+    "cost_usd": 4.594e-05,
+    "latency_s": 0.7806439000123646,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 18,
+    "cost_usd": 1.982e-05,
+    "latency_s": 1.8939145999902394,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 19,
+    "cost_usd": 1.902e-05,
+    "latency_s": 7.393264799989993,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 23,
+    "cost_usd": 1.788e-05,
+    "latency_s": 6.182641799998237,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 24,
+    "cost_usd": 1.104e-05,
+    "latency_s": 1.1655961999786086,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 25,
+    "cost_usd": 1.708e-05,
+    "latency_s": 5.646534300001804,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 32,
+    "cost_usd": 4.028e-05,
+    "latency_s": 0.6846223999746144,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 35,
+    "cost_usd": 1.736e-05,
+    "latency_s": 9.521065700013423,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 39,
+    "cost_usd": 1.876e-05,
+    "latency_s": 6.83058800001163,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 55,
+    "cost_usd": 1.936e-05,
+    "latency_s": 2.0373468000034336,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 57,
+    "cost_usd": 2.308e-05,
+    "latency_s": 11.714132499997504,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 58,
+    "cost_usd": 1.114e-05,
+    "latency_s": 0.9625381999940146,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 62,
+    "cost_usd": 1.702e-05,
+    "latency_s": 6.298365099995863,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "product_idx": 75,
+    "cost_usd": 1.894e-05,
+    "latency_s": 9.780424700002186,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 83,
+    "cost_usd": 1.924e-05,
+    "latency_s": 8.878710699995281,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 94,
+    "cost_usd": 1.934e-05,
+    "latency_s": 8.863951199979056,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 102,
+    "cost_usd": 1.898e-05,
+    "latency_s": 1.8656797999865375,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 108,
+    "cost_usd": 1.772e-05,
+    "latency_s": 7.202217299985932,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 109,
+    "cost_usd": 1.902e-05,
+    "latency_s": 7.984522300015669,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 112,
+    "cost_usd": 1.648e-05,
+    "latency_s": 7.340433100005612,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 130,
+    "cost_usd": 1.954e-05,
+    "latency_s": 8.826404200022807,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 138,
+    "cost_usd": 1.118e-05,
+    "latency_s": 1.034749299986288,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 142,
+    "cost_usd": 1.222e-05,
+    "latency_s": 2.5948595000081696,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "product_idx": 143,
+    "cost_usd": 1.836e-05,
+    "latency_s": 7.851188500004355,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 145,
+    "cost_usd": 1.098e-05,
+    "latency_s": 1.1567740000027698,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 148,
+    "cost_usd": 1.716e-05,
+    "latency_s": 8.601812600012636,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 150,
+    "cost_usd": 1.956e-05,
+    "latency_s": 2.019939899997553,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 161,
+    "cost_usd": 2.514e-05,
+    "latency_s": 2.5527808999759145,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "product_idx": 162,
+    "cost_usd": 1.944e-05,
+    "latency_s": 7.3625345999898855,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 167,
+    "cost_usd": 1.898e-05,
+    "latency_s": 8.34376349998638,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 172,
+    "cost_usd": 1.934e-05,
+    "latency_s": 7.29343499999959,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 178,
+    "cost_usd": 2.336e-05,
+    "latency_s": 3.1674531000026036,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7
+  },
+  {
+    "product_idx": 184,
+    "cost_usd": 1.72e-05,
+    "latency_s": 5.364703400002327,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 191,
+    "cost_usd": 1.112e-05,
+    "latency_s": 1.0280479000066407,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0
+  },
+  {
+    "product_idx": 196,
+    "cost_usd": 2.064e-05,
+    "latency_s": 2.565680200001225,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  },
+  {
+    "product_idx": 198,
+    "cost_usd": 1.8e-05,
+    "latency_s": 5.9612488000129815,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6
+  }
+]

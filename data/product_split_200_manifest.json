@@ -1,0 +1,16 @@
+{
+  "n_products_superset": 200,
+  "split_seed": 7,
+  "generation_seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.1,
+    "test": 0.2
+  },
+  "counts": {
+    "train": 140,
+    "val": 20,
+    "test": 40
+  },
+  "note": "Independent split computed for a 200-product DEC-006 scale-up run (EVID-026 follow-up). NOT a superset/subset relationship with data/product_split.csv (the original 50-product split) -- shuffle output depends on sequence length, so product indices 1-50 land in different roles here."
+}

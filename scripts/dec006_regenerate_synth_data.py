@@ -24,6 +24,7 @@ Usage:
 
 from __future__ import annotations
 
+import argparse
 import json
 from collections import defaultdict
 from pathlib import Path
@@ -38,7 +39,13 @@ OUT_PATH = "outputs/dec006_synthetic_data/product_domain_synth_train.jsonl"
 
 
 def main():
-    df = pd.read_csv(SNAPSHOT_PATH)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--snapshot-path", default=SNAPSHOT_PATH,
+                         help="PKB snapshot CSV to derive training data from (default: the original 50-product DEC-003 run)")
+    parser.add_argument("--out-path", default=OUT_PATH)
+    args = parser.parse_args()
+
+    df = pd.read_csv(args.snapshot_path)
     accepted = df[df["above_threshold"] == True]  # noqa: E712
 
     triples_by_subject: dict[str, list[dict]] = defaultdict(list)
@@ -67,7 +74,7 @@ def main():
         target = json.dumps(triples, ensure_ascii=False)
         examples.append({"text": f"{prompt}\n{target}"})
 
-    out_path = Path(OUT_PATH)
+    out_path = Path(args.out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         for ex in examples:
