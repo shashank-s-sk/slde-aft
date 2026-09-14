@@ -1629,3 +1629,147 @@ working config) using `outputs/dec006_synthetic_data/product_domain_synth_train.
 then `scripts/dec006_evaluate_adapter.py` on the resulting adapter. Only
 escalate to a paid rented GPU if Stage 0/Stage 1 (7B/8B QLoRA) hits a
 real wall on Colab's free tier.
+
+# EVID-026 — DEC-006 First Real GPU Run: Mistral-7B QLoRA, Base vs. Fine-Tuned
+
+## Experiment
+
+- Decision: DEC-006
+- GPU: rented RunPod RTX 4090 24GB (two pods needed — see Limitations).
+  Cost: well under $1 of a $10 budget.
+- Skipped the TinyLlama-1.1B "Stage 0" sanity stage by explicit user
+  decision — went straight to the paper-target 7B model:
+  `mistralai/Mistral-7B-Instruct-v0.3` (ungated on Hugging Face, chosen
+  over `meta-llama/Llama-3.1-8B-Instruct` specifically to avoid an
+  HF gated-repo approval wait burning paid pod time).
+- QLoRA: rank 16, alpha 32, dropout 0.05, lr 2e-4, 3 epochs, batch 2 /
+  grad-accum 4, bf16 throughout.
+- Same leakage-safe test split as every other experiment in this
+  project (`data/product_split.csv`), same normalized-triple exact-
+  match evaluator (`src/evaluator.py`).
+
+## Three real bugs found and fixed during this run (not GPU/pod issues)
+
+1. **bf16/fp16 dtype mismatch crashed training outright.** First
+   training attempt hit `NotImplementedError:
+   "_amp_foreach_non_finite_check_and_unscale_cuda" not implemented for
+   'BFloat16'`. Mistral-7B's native weights load as bf16, but the
+   script mixed that with fp16-mode `GradScaler` (`bf16=False,
+   fp16=True`), and `GradScaler` can't unscale bf16 gradients. Fixed by
+   using bf16 throughout (`bnb_4bit_compute_dtype`, model dtype, and
+   `SFTConfig`) — the RTX 4090 supports bf16 natively, no loss scaling
+   needed at all.
+2. **Train/eval task-format mismatch produced F1=0.0000.** The original
+   synthetic training data (`src/synthetic_data_generator.py`) followed
+   SLDE.pdf Module 4's literal template — "Extract the [predicate] of
+   [subject]" -> a prose sentence, one relation per example. But
+   `dec006_evaluate_adapter.py` evaluates a completely different task:
+   a full product paragraph in, a JSON array of triples out. The model
+   learned its actual training task well (loss 2.03->0.40, token
+   accuracy 66%->90% over 48 steps) but every generation then failed
+   to parse as JSON at eval time. Fixed with a new shared
+   `src/prompts.py` (`build_extraction_prompt`, used by both training-
+   data generation and evaluation) and
+   `scripts/dec006_regenerate_synth_data.py`, which rebuilds the
+   synthetic set from the same source
+   (`pkb_snapshot_iteration_4.csv`, 127 above-threshold triples / 33
+   products — same source as the original file, EVID-025) but grouped
+   per product: real product description in, JSON array of that
+   product's high-confidence triples out — the exact eval task shape.
+3. **Adapter emitted empty completions (0 new tokens) even after fixing
+   #2.** Re-ran training on the reformatted 33-example set (15 steps,
+   loss 0.78->0.62, token accuracy 79.6%->92.9%) — still F1=0.0000 at
+   eval. Diagnosed with a raw-completion probe run directly on the pod:
+   the fine-tuned model immediately emitted EOS under greedy decoding
+   (`repr(completion) == ''`), while the un-fine-tuned base model never
+   does this. A known degenerate mode for a very small/short fine-tune
+   (33 examples, 15 steps), not a training failure. Fixed with
+   `min_new_tokens=100` in `dec006_evaluate_adapter.py`'s
+   `generate()` call, forcing real output past the point the model
+   wants to stop; confirmed on-pod this produces parseable JSON.
+
+## Actual (final, real result — same generation config applied to both)
+
+| | Precision | Recall | F1 |
+|---|---|---|---|
+| Base `Mistral-7B-Instruct-v0.3` (no fine-tuning) | 0.3500 | 0.3000 | **0.3231** |
+| + QLoRA fine-tune (33 examples, 3 epochs / 15 steps) | 0.3333 | 0.1714 | **0.2264** |
+
+Fine-tuning **decreased** F1 by 0.0967 (recall dropped most: 0.30 ->
+0.17). Spot-checked raw completions from the fine-tuned model: it
+produces syntactically valid JSON with some individually correct
+fields (e.g. `has_price_usd: 499` and `made_of_material: carbon fiber`
+both matched gold in one inspected example), but frequently gets the
+`subject` field wrong (e.g. copying a source-text fragment like "It is
+a laptop device" instead of the actual product name), which fails
+exact-match scoring even when predicate/object are right, and often
+only emits one truncated triple per product rather than the full set.
+
+## Result
+
+FAIL for the "fine-tuning improves extraction" direction of DEC-006's
+expected results — a real, honestly-measured negative result, not a
+bug. Consistent with DEC-005's ablation finding (EVID-020): interventions
+tested so far at small scale (N=20 ablation seeds; here, 33 training
+examples / 15 steps) are not showing the improvements the manuscript's
+claims assume.
+
+## Interpretation
+
+- This is very likely a **too-small/too-short fine-tune**, not evidence
+  that QLoRA fine-tuning cannot help this task. 33 training examples
+  and 15 optimizer steps is far below what's typically needed to reliably
+  teach a 7B model a new structured-output behavior without hurting its
+  existing instruction-following ability (recall dropping more than
+  precision is consistent with the model becoming less complete/more
+  conservative post-fine-tune, not randomly worse).
+- The `subject`-field copying error suggests the model partially
+  learned "copy a noun phrase from the text into a JSON field" rather
+  than "identify and repeat the exact product name" — plausibly because
+  the 33 training targets only ever named each of the 33 unique
+  products once each, giving the model very little repetition to learn
+  the specific copy-the-subject-verbatim behavior from.
+- Claim #1/#2 (unified pipeline / automated synthetic supervision) now
+  has a real, if currently negative, data point. Per
+  [[submission_readiness_framework]], this needs either (a) a bigger,
+  more repeated training run before drawing a paper-level conclusion,
+  or (b) reporting this honestly as "fine-tuning was implemented and
+  tested; no improvement detected at this very small scale" — mirroring
+  exactly how DEC-005's null ablation result should be framed. Do not
+  report only the negative single run as if it were a definitive
+  "fine-tuning doesn't work" finding.
+
+## Limitations
+
+- Single run, single seed, single (very small) hyperparameter
+  configuration — no LoRA grid search, no multiple seeds (DEC-006 steps
+  6-8 not done).
+- 33 training examples is a hard ceiling of the current product-domain
+  PKB run's above-threshold triple count (EVID-025) grouped per product
+  — scaling this up requires either a larger PKB run (more products) or
+  loosening the confidence threshold, not just more epochs on the same
+  33.
+- The adapter and full per-example predictions were not saved off the
+  pod (see below) — only the aggregate metrics and this write-up
+  persist. A re-run to regenerate the actual adapter file would cost
+  under $1 given the same setup is now debugged and working.
+- **Practical/infra note, not a science limitation:** this run needed
+  two RunPod pods — the first had a broken host-level GPU passthrough
+  (`/dev/nvidia0` missing, only a non-zero-indexed device node present;
+  a `ln -sf` symlink workaround did not fix it; terminating and
+  redeploying on a different host resolved it immediately — see
+  `dec006_runpod_plan` memory). The second pod also had no cached git
+  credentials, so committing the adapter/eval outputs back to GitHub at
+  the end was skipped by user decision (Option B: log the numbers here
+  instead of spending more time on GitHub token setup) — the results
+  above are transcribed directly from the pod's terminal output, not
+  re-verified from a saved file.
+
+## Next step
+
+If a paper-reportable DEC-006 result is wanted: scale up the training
+set (more products through the PKB pipeline, and/or a lower confidence
+threshold), run at least 2-3 seeds, and consider a small LR/epoch grid
+(DEC-006 steps 6-8) before drawing conclusions either way. Until then,
+report this as implemented-and-tested-negative-at-small-scale, not as
+a completed fine-tuning ablation.

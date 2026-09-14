@@ -470,16 +470,25 @@ Numerical results remain TBD until experiments are run.
 ## Status
 
 DEC-006: ACCEPTED
-Implementation: PARTIAL — zero-cost portion done (src/synthetic_data_generator.py,
-  Colab-ready scripts/dec006_lora_finetune.py + dec006_evaluate_adapter.py,
-  staged Stage 0 TinyLlama-1.1B / Stage 1 7B-8B QLoRA via a config flag).
-  See EVID-025. GPU training itself not yet run.
-Testing: DONE for the zero-cost portion (4 new tests, 44/44 suite passing;
-  127 real synthetic examples generated from EVID-013's actual PKB run
-  as a cross-check, not just synthetic test fixtures)
-Experiment: NOT STARTED (needs GPU — free Colab first per the staged
-  budget plan; see conversation for the $0 -> ~$5-15 -> ~$20-50 staging)
-Results: TBD
+Implementation: DONE (src/synthetic_data_generator.py + src/prompts.py +
+  scripts/dec006_regenerate_synth_data.py for task-aligned training
+  data; scripts/dec006_lora_finetune.py + dec006_evaluate_adapter.py
+  for QLoRA training/eval, run and debugged on a real rented GPU)
+Testing: DONE (44/44 suite passing throughout; the GPU scripts
+  themselves were validated end-to-end on RunPod, not just unit-tested)
+Experiment: PILOT COMPLETE on a rented RunPod RTX 4090 (Mistral-7B-
+  Instruct-v0.3, QLoRA rank 16, 33 examples, 3 epochs / 15 steps; see
+  EVID-026). Single run, single seed — DEC-006 steps 6-8 (LoRA grid,
+  multi-seed) not done.
+Results: Base F1=0.3231 (P=0.3500, R=0.3000) vs. fine-tuned F1=0.2264
+  (P=0.3333, R=0.1714) — fine-tuning DECREASED F1 by 0.0967 at this
+  scale. Real, honestly-measured result, not a bug (three real bugs
+  were found and fixed en route — bf16/fp16 dtype crash, train/eval
+  task-format mismatch, and an empty-completion generation bug — see
+  EVID-026 for all three). Mirrors DEC-005's null-ablation pattern:
+  do not report this as "fine-tuning doesn't work" — report as
+  implemented-and-tested, no improvement detected at this very small
+  (33-example) scale, larger-N re-run needed for a paper-level claim.
 Note: found while reading the old notebook that its B3 baseline (cell 22)
   and Table-9 "Iterative FT" results (cells 31-35) use two DIFFERENT code
   paths — B3's reported number substitutes a different OpenRouter model
