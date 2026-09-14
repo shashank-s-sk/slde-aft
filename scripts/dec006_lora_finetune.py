@@ -56,7 +56,7 @@ def main():
         bnb_config = BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_compute_dtype=torch.bfloat16,
             bnb_4bit_use_double_quant=True,
         )
         model = AutoModelForCausalLM.from_pretrained(
@@ -64,7 +64,7 @@ def main():
         )
     else:
         model = AutoModelForCausalLM.from_pretrained(
-            BASE_MODEL, torch_dtype=torch.float16, device_map="auto",
+            BASE_MODEL, torch_dtype=torch.bfloat16, device_map="auto",
         )
 
     model = get_peft_model(model, LoraConfig(
@@ -89,8 +89,8 @@ def main():
             save_strategy="no",
             report_to="none",
             dataset_text_field="text",
-            bf16=False,  # T4 does not support bf16
-            fp16=True,
+            bf16=True,  # matches Mistral's native dtype and the RTX 4090's native bf16 support;
+            fp16=False,  # avoids the fp16 GradScaler, which can't handle bf16 grad tensors
         ),
     )
 
