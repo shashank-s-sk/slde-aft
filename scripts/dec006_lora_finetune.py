@@ -13,18 +13,30 @@ Pod setup (run first):
     pip install -q transformers peft trl accelerate bitsandbytes datasets
 
 Usage, after `git clone`-ing this repo onto the pod:
-    python scripts/dec006_lora_finetune.py
+    python scripts/dec006_lora_finetune.py               # seed 42 (default)
+    python scripts/dec006_lora_finetune.py --seed 43
+    python scripts/dec006_lora_finetune.py --seed 44
+
+Multi-seed note: prior to this --seed flag, every run silently used
+HF TrainingArguments' hardcoded default seed=42 regardless of intent --
+EVID-026/EVID-027's single "seed" was always actually seed 42. This
+flag makes seed 42 explicit (so old results are directly reproducible)
+and lets 43/44 etc. produce genuinely different LoRA initializations
+(via transformers.set_seed, called before model/LoRA construction --
+passing seed only to SFTConfig would NOT reseed the LoRA init, since
+that happens before the Trainer exists) and data ordering, for a real
+multi-seed replication check (DEC-006 steps 6-8).
 """
 
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 
 BASE_MODEL = "mistralai/Mistral-7B-Instruct-v0.3"
 USE_4BIT = True  # QLoRA — fits comfortably in 24GB VRAM
 
 SYNTHETIC_DATA_PATH = "outputs/dec006_synthetic_data/product_domain_synth_train.jsonl"
-OUTPUT_DIR = "outputs/dec006_adapters/mistral7b_qlora"
 
 # LoRA hyperparameters — rank/alpha/lr match the original prototype's
 # proven config (paper Section 4.6 / 5.4); epochs bumped from the
@@ -40,13 +52,20 @@ GRAD_ACCUM_STEPS = 4
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--seed", type=int, default=42)
+    args = parser.parse_args()
+    seed = args.seed
+    output_dir = f"outputs/dec006_adapters/mistral7b_qlora_seed{seed}" if seed != 42 else "outputs/dec006_adapters/mistral7b_qlora"
+
     import torch
     from datasets import load_dataset
-    from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+    from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, set_seed
     from peft import LoraConfig, get_peft_model
     from trl import SFTTrainer, SFTConfig
 
-    Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+    set_seed(seed)  # must happen before model/LoRA construction, not just via SFTConfig
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
 
     tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
     if tokenizer.pad_token is None:
@@ -73,14 +92,15 @@ def main():
     ))
 
     train_ds = load_dataset("json", data_files=SYNTHETIC_DATA_PATH)["train"]
-    print(f"Training on {len(train_ds)} examples -> {OUTPUT_DIR}")
+    print(f"Training on {len(train_ds)} examples (seed={seed}) -> {output_dir}")
 
     trainer = SFTTrainer(
         model=model,
         processing_class=tokenizer,
         train_dataset=train_ds,
         args=SFTConfig(
-            output_dir=OUTPUT_DIR,
+            output_dir=output_dir,
+            seed=seed,
             per_device_train_batch_size=BATCH_SIZE,
             gradient_accumulation_steps=GRAD_ACCUM_STEPS,
             num_train_epochs=NUM_EPOCHS,
@@ -95,21 +115,21 @@ def main():
     )
 
     trainer.train()
-    trainer.model.save_pretrained(OUTPUT_DIR)
-    tokenizer.save_pretrained(OUTPUT_DIR)
+    trainer.model.save_pretrained(output_dir)
+    tokenizer.save_pretrained(output_dir)
 
     config_used = {
-        "base_model": BASE_MODEL, "use_4bit": USE_4BIT,
+        "base_model": BASE_MODEL, "use_4bit": USE_4BIT, "seed": seed,
         "lora_rank": LORA_RANK, "lora_alpha": LORA_ALPHA, "lora_dropout": LORA_DROPOUT,
         "learning_rate": LEARNING_RATE, "num_epochs": NUM_EPOCHS,
         "batch_size": BATCH_SIZE, "grad_accum_steps": GRAD_ACCUM_STEPS,
         "n_training_examples": len(train_ds),
     }
     import json
-    with open(Path(OUTPUT_DIR) / "training_config.json", "w") as f:
+    with open(Path(output_dir) / "training_config.json", "w") as f:
         json.dump(config_used, f, indent=2)
 
-    print(f"LoRA adapter saved: {OUTPUT_DIR}")
+    print(f"LoRA adapter saved: {output_dir}")
     del trainer, model
     torch.cuda.empty_cache()
 
