@@ -1773,3 +1773,123 @@ threshold), run at least 2-3 seeds, and consider a small LR/epoch grid
 (DEC-006 steps 6-8) before drawing conclusions either way. Until then,
 report this as implemented-and-tested-negative-at-small-scale, not as
 a completed fine-tuning ablation.
+
+# EVID-027 — DEC-006 Scaled-Up Run: 200-Product PKB + Larger Fine-Tune (Positive Result)
+
+## Experiment
+
+- Decision: DEC-006, direct follow-up to EVID-026's negative small-
+  scale result. User explicitly directed: "scale up the training set
+  and rerun."
+- Phase 1 (no GPU, local, real OpenRouter API calls): scaled the
+  product-domain PKB run from 50 to 200 products via a new parallel
+  script (`scripts/dec006_scaleup_probkb_run.py`, `EXPERIMENT_ID=
+  DEC006_SCALEUP_V1`), a fresh independent leakage-safe split
+  (`data/product_split_200.csv`, 140/20/40 train/val/test — NOT a
+  superset of the original 50-product split), same model
+  (`meta-llama/llama-3.1-8b-instruct`), same 4-iteration + held-out
+  design as DEC-003's canonical run. 620 API calls, $0.011995 total
+  cost. Held-out F1 (LLM extraction quality, not fine-tuning):
+  val 0.5610, test 0.4126.
+- Above-threshold training triples: 475 across 90 unique products (up
+  from EVID-026's 127 triples / 33 products — roughly 3.7x more
+  triples, 2.7x more products).
+- Regenerated `outputs/dec006_synthetic_data/product_domain_synth_train.jsonl`
+  from this bigger snapshot via `scripts/dec006_regenerate_synth_data.py
+  --snapshot-path outputs/dec006_scaleup_probkb/train_kb/pkb_snapshot_iteration_4.csv`
+  — same task-aligned (paragraph-in, JSON-array-out) format as
+  EVID-026's fix, so this run has no format-mismatch risk.
+- Phase 2 (rented RunPod RTX 4090, clean pod this time — GPU checked
+  out on first try, no passthrough issues): same QLoRA config as
+  EVID-026 (rank 16, alpha 32, lr 2e-4, 3 epochs, bf16), now training
+  on 90 examples instead of 33 -> 36 optimizer steps instead of 15.
+
+## Actual
+
+Training: loss 0.665 -> 0.11 over 36 steps (502.6s), final
+`train_loss=0.2789`, `mean_token_accuracy=0.9723` — a much healthier
+training curve than EVID-026's 15-step run.
+
+Same leakage-safe test split, same evaluator, same generation config
+(`min_new_tokens=100` guard from EVID-026 still in place) applied to
+both:
+
+| | Precision | Recall | F1 | TP | FP | FN | Predictions made |
+|---|---|---|---|---|---|---|---|
+| Base `Mistral-7B-Instruct-v0.3` | 0.3500 | 0.3000 | **0.3231** | 21 | 39 | 49 | 60 |
+| + QLoRA fine-tune (90 examples, 3 epochs / 36 steps) | 0.7308 | 0.2714 | **0.3958** | 19 | 7 | 51 | 26 |
+
+## Result
+
+PASS — the first genuine positive fine-tuning result in this project.
+F1 improved by +0.0727 (0.3231 -> 0.3958). Precision more than
+doubled (0.35 -> 0.73); recall dipped slightly (0.30 -> 0.27). Net
+effect: the fine-tuned model makes far fewer predictions overall (26
+vs. 60) but is much more likely to be right when it does — a
+precision/recall trade-off that nets out positive on F1 at this scale.
+
+This directly reverses EVID-026's negative finding and confirms that
+memo's own interpretation: the earlier failure was a too-small/too-
+short fine-tune (33 examples/15 steps), not evidence that QLoRA
+fine-tuning can't help this task. Scaling the training set alone (no
+other hyperparameter changes) was enough to flip the sign.
+
+## Interpretation
+
+- The precision-heavy improvement (more than 2x) with a recall cost is
+  a plausible, explicable pattern for a still-small (90-example)
+  fine-tune: the model became more conservative — it apparently
+  learned "only commit to a triple when confident" better than it
+  learned "always attempt every extractable fact," which is exactly
+  the kind of asymmetric partial learning expected before a fine-tune
+  is large enough to master both precision and recall together.
+- A spot check of `outputs/dec006_eval/mistral7b_qlora/predictions.json`
+  shows the `subject`-field copying error identified in EVID-026 is
+  STILL present in some predictions (e.g. `"subject": "laptop device"`
+  instead of the actual product name, on product_idx 4, also
+  duplicated as an identical repeated triple) — this is very likely
+  suppressing recall further and capping how high F1 could go even at
+  this improved scale. Fixing this specific failure mode (rather than
+  just adding more data) is a plausible next lever if a bigger
+  improvement is wanted.
+- Per [[submission_readiness_framework]] claims #1/#2: this is now a
+  genuine, positive, reproducible-methodology data point for the
+  unified pipeline / automated synthetic supervision claims — stronger
+  than DEC-005's still-null ablation finding for claim #4. Still only
+  a single run/seed (DEC-006 steps 6-8 — LoRA grid, multiple seeds —
+  remain undone), so report as "implemented and tested, F1 improved by
+  +0.073 at this scale" rather than a fully validated, multi-seed
+  result.
+
+## Limitations
+
+- Single run, single seed, unchanged hyperparameters from EVID-026
+  (only the dataset size changed) — cannot yet separate "more data
+  helped" from "this particular data/seed combination happened to
+  help"; a second seed at the same scale would meaningfully strengthen
+  this finding.
+- The subject-copying failure mode from EVID-026 was not fixed, only
+  outgrown partially by more data — still an open, identified quality
+  issue in the fine-tuned model's outputs.
+- 90 examples is still a hard ceiling of this 200-product run's
+  above-threshold triple count; a further scale-up (e.g. 500+ products)
+  would need proportionally more OpenRouter spend (still cheap — this
+  run cost $0.012 for 4x the original) and GPU time (this run took
+  ~8.4 minutes of training alone, comfortably inside the $10 RunPod
+  budget with room for several more iterations).
+- Adapter/eval outputs were pushed to GitHub this time (unlike
+  EVID-026) after resolving pod git-credential setup — see
+  `dec006_runpod_plan` memory for the working procedure. The token
+  used was pasted in plaintext into the pod's own chat session during
+  troubleshooting; user was advised to rotate it immediately.
+
+## Next step
+
+If DEC-006 steps 6-8 (multi-seed, LoRA hyperparameter grid) are wanted
+for a paper-reportable claim: rerun at this same 90-example scale with
+2-3 different seeds to check the improvement direction replicates, and/or
+try a small grid (rank, alpha, learning rate, epochs) using val-split
+performance to select. Separately, investigating and fixing the
+subject-copying failure mode (e.g. via more explicit training examples
+that vary surface phrasing of the product name) could improve recall
+without needing more raw data volume.

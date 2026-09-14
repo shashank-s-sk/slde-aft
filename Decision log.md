@@ -476,19 +476,24 @@ Implementation: DONE (src/synthetic_data_generator.py + src/prompts.py +
   for QLoRA training/eval, run and debugged on a real rented GPU)
 Testing: DONE (44/44 suite passing throughout; the GPU scripts
   themselves were validated end-to-end on RunPod, not just unit-tested)
-Experiment: PILOT COMPLETE on a rented RunPod RTX 4090 (Mistral-7B-
-  Instruct-v0.3, QLoRA rank 16, 33 examples, 3 epochs / 15 steps; see
-  EVID-026). Single run, single seed — DEC-006 steps 6-8 (LoRA grid,
-  multi-seed) not done.
-Results: Base F1=0.3231 (P=0.3500, R=0.3000) vs. fine-tuned F1=0.2264
-  (P=0.3333, R=0.1714) — fine-tuning DECREASED F1 by 0.0967 at this
-  scale. Real, honestly-measured result, not a bug (three real bugs
-  were found and fixed en route — bf16/fp16 dtype crash, train/eval
-  task-format mismatch, and an empty-completion generation bug — see
-  EVID-026 for all three). Mirrors DEC-005's null-ablation pattern:
-  do not report this as "fine-tuning doesn't work" — report as
-  implemented-and-tested, no improvement detected at this very small
-  (33-example) scale, larger-N re-run needed for a paper-level claim.
+Experiment: TWO pilots complete on rented RunPod RTX 4090s (Mistral-7B-
+  Instruct-v0.3, QLoRA rank 16). Run 1: 33 examples, 15 steps
+  (EVID-026, negative). Run 2: scaled the PKB run 50->200 products
+  (620 API calls, $0.012) to get 90 examples / 36 steps (EVID-027,
+  POSITIVE). Still single seed per configuration — DEC-006 steps 6-8
+  (LoRA grid, multi-seed) not done.
+Results: Run 1 (33 examples) — base F1=0.3231 vs. fine-tuned F1=0.2264,
+  DECREASED. Run 2 (90 examples, same hyperparameters otherwise) —
+  base F1=0.3231 vs. fine-tuned F1=0.3958 (P=0.7308, R=0.2714),
+  INCREASED by +0.0727, driven by precision more than doubling
+  (0.35->0.73) at a small recall cost. Scaling the training set alone
+  flipped the sign — supports EVID-026's own interpretation that the
+  first run was simply too small/short, not evidence fine-tuning can't
+  help. A subject-field copying error identified in EVID-026 is still
+  present in some Run 2 predictions and likely caps recall further.
+  Report as: implemented and tested, F1 improved +0.073 at 90-example
+  scale (single run/seed) — real and positive, but not yet a
+  multi-seed-validated paper claim.
 Note: found while reading the old notebook that its B3 baseline (cell 22)
   and Table-9 "Iterative FT" results (cells 31-35) use two DIFFERENT code
   paths — B3's reported number substitutes a different OpenRouter model
