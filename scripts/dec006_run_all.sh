@@ -16,6 +16,10 @@
 
 set -e
 
+# scripts/ importing `src...` needs the repo root on PYTHONPATH — python
+# only puts the script's own directory (scripts/) on sys.path by default.
+export PYTHONPATH="$(pwd)"
+
 echo "=== Step 0/4: GPU sanity check ==="
 if ! python3 -c "
 import torch, sys
