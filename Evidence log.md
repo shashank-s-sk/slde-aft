@@ -1893,3 +1893,141 @@ performance to select. Separately, investigating and fixing the
 subject-copying failure mode (e.g. via more explicit training examples
 that vary surface phrasing of the product name) could improve recall
 without needing more raw data volume.
+
+# EVID-028 — DEC-006 Real Leakage Found + Corrected Multi-Seed Result (SUPERSEDES EVID-027's numbers)
+
+## Experiment
+
+- Decision: DEC-006, direct follow-up to EVID-027. User asked "what
+  dataset/size are these F1 scores on" — answering that precisely
+  surfaced a real bug.
+- **Leakage found:** EVID-027's 90-example fine-tuning set was built
+  from the 200-product scale-up split (`data/product_split_200.csv`),
+  an independently-shuffled split from the original 50-product split
+  (`data/product_split.csv`) that `dec006_evaluate_adapter.py` uses for
+  its held-out test set. Checked for overlap directly: **2 of the 10
+  test products (`Auralex Smartphone Air 7`, `TechNova Headphones Lite
+  26`) were also used to build the fine-tuning training examples** —
+  real train/test leakage, contaminating 20% of the test set. This
+  means EVID-027's reported numbers (base F1=0.3231, seed 42
+  F1=0.3958) are NOT valid held-out measurements and should not be
+  cited.
+- **Fix:** `scripts/dec006_evaluate_adapter.py` now reads the actual
+  training data file, extracts every product name used in training
+  (parsing the trailing target JSON array of each example), and
+  automatically excludes any would-be test product that appears there
+  — printing exactly what was excluded and recording it in
+  `metrics.json`, so this can't happen silently again regardless of
+  which future training-data source is used.
+- Also added real `--seed` control to `scripts/dec006_lora_finetune.py`
+  (`transformers.set_seed()` called before model/LoRA construction,
+  which passing `seed` only to `SFTConfig` would NOT achieve, since
+  LoRA init happens before the `Trainer` exists) — EVID-026/027's
+  single "seed" was actually always the HF default (42), with zero
+  real variation. New `scripts/dec006_multiseed_run.sh` trains/evaluates
+  seeds 43 and 44 in addition.
+- Re-evaluated ALL FOUR configurations (base, seed 42, seed 43, seed
+  44) on the SAME corrected, leakage-safe **8-product / 56-gold-triple**
+  test set (down from the original 10 products / 70 triples).
+- Ran on a different physical setup than EVID-026/027 for seeds 43/44:
+  after 3 consecutive RTX 4090 pods failed the GPU sanity check with
+  identical `torch.cuda.is_available()=False` errors (a systemic
+  driver/CUDA mismatch, not the earlier per-host device-node bug),
+  switched to an **RTX 3090** on the same provider, which worked
+  immediately. Runtime is therefore not comparable across seeds
+  (seed 42 trained in 502.6s on a 4090; seeds 43/44 trained in ~131s
+  each on a 3090) — the GPU model does not affect the correctness of
+  the F1 metric itself, only wall-clock time, so this does not affect
+  result validity.
+
+## Actual (final, corrected numbers)
+
+| | Precision | Recall | F1 | TP | FP | FN |
+|---|---|---|---|---|---|---|
+| Base `Mistral-7B-Instruct-v0.3` | 0.1522 | 0.1250 | **0.1373** | 7 | 39 | 49 |
+| + QLoRA, seed 42 | 0.5385 | 0.1250 | **0.2029** (+0.0656) | 7 | 6 | 49 |
+| + QLoRA, seed 43 | 0.6364 | 0.1250 | **0.2090** (+0.0717) | 7 | 4 | 49 |
+| + QLoRA, seed 44 | 0.1515 | 0.0893 | **0.1124** (−0.0249) | 5 | 28 | 51 |
+
+Fine-tuned mean F1 = 0.1748 (std = 0.0541) vs. base F1 = 0.1373 — mean
+improvement +0.0375, but the across-seed std (0.054) is larger than
+the mean effect, and one of three seeds (44) is negative.
+
+**Striking detail:** base, seed 42, and seed 43 all get the exact same
+7 true positives (out of 56 gold triples) — identical recall
+(0.1250). The entire difference between them is false positives: base
+predicts 46 triples total (39 wrong), seed 42 predicts 13 (6 wrong),
+seed 43 predicts 11 (4 wrong). Fine-tuning is not teaching the model
+to find more correct facts; it's teaching it to stop guessing wrong
+ones, for 2 of the 3 seeds. Seed 44 breaks this pattern: worse recall
+(5 TP, not 7) AND worse precision than seeds 42/43 (28 FP), though
+still better precision than the base model.
+
+## Result
+
+MIXED, not a clean positive result — an important correction to
+EVID-027's apparent clean win. 2 of 3 seeds show a real, meaningful F1
+improvement over base, driven entirely by a large reduction in false
+positives (over-generation) rather than any recall gain. 1 of 3 seeds
+(44) underperforms the base model. This is NOT statistically
+conclusive at n=3 (std exceeds the mean effect size) — matches the
+cautious framing DEC-005 already established for the feedback-ablation
+finding, and should be reported the same way: real signal, direction
+mostly positive, not yet significance-tested or seed-count-sufficient
+for a strong paper claim.
+
+## Interpretation
+
+- The identical TP=7 across base/seed42/seed43 is a striking and
+  genuinely useful qualitative finding for professor_feedback.md point
+  #10 ("why precision improves significantly... why recall remains
+  relatively unchanged") — this dataset/scale directly demonstrates
+  that exact pattern, with a concrete mechanism (fewer false-positive
+  guesses, same true positives found) rather than just an aggregate
+  number.
+- Seed 44's regression is a genuine negative data point, not an
+  anomaly to explain away — with only 90 training examples, QLoRA
+  fine-tuning outcomes are evidently sensitive to initialization, and
+  this instability is itself worth reporting honestly rather than
+  cherry-picking the two good seeds.
+- Per [[submission_readiness_framework]] claims #1/#2: downgrade from
+  EVID-027's "genuine positive data point" framing to "real, mixed,
+  probably-net-positive-but-noisy effect requiring more seeds/a formal
+  significance test before a confident paper claim" — closer to claim
+  #4's (DEC-005) honest-null framing than previously thought, though
+  directionally more encouraging (2/3 positive vs. DEC-005's genuinely
+  null p=0.35-0.51 result).
+- This whole episode is also a good worked example for DEC-012
+  (reproducibility): it shows exactly why leakage-checking must be
+  automatic and enforced in code, not manually reasoned about per run
+  — a second independently-shuffled split silently reintroduced
+  leakage that no one would have caught without explicitly checking
+  index overlap.
+
+## Limitations
+
+- n=3 seeds is still small for a confident statistical claim; DEC-005
+  used 5 seeds for its (also inconclusive) ablation test. A 5-seed
+  DEC-006 run would be the natural next step if a firmer claim is
+  wanted.
+- The leakage guard only checks product *names* extracted from the
+  training data's target JSON — if a future training-data format
+  doesn't embed subject names in a JSON array the same way, the guard
+  would need updating (it fails safe by finding zero trained subjects
+  and excluding nothing, not by crashing, so this is a silent-gap risk
+  worth remembering, not a crash risk).
+- Runtime/GPU-utilization numbers are not comparable between seed 42
+  (RTX 4090) and seeds 43/44 (RTX 3090) — noted above, does not affect
+  F1 validity but would matter if DEC-006's runtime numbers are ever
+  reported per-seed.
+
+## Next step
+
+If DEC-006 is to support a stronger paper claim: run 2 more seeds (45,
+46 -- matching DEC-005's 5-seed convention) on the same 90-example set
+and run a proper paired significance test (t-test or Wilcoxon, per
+professor_feedback.md point #5) across all 5 seeds' F1 vs. base,
+rather than eyeballing direction. Until then, report DEC-006 as: "QLoRA
+fine-tuning reduces false-positive over-generation and improves F1 in
+most (2/3) seeds tested, with one regression; effect not yet
+significance-tested."

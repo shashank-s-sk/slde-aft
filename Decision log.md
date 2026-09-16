@@ -476,24 +476,36 @@ Implementation: DONE (src/synthetic_data_generator.py + src/prompts.py +
   for QLoRA training/eval, run and debugged on a real rented GPU)
 Testing: DONE (44/44 suite passing throughout; the GPU scripts
   themselves were validated end-to-end on RunPod, not just unit-tested)
-Experiment: TWO pilots complete on rented RunPod RTX 4090s (Mistral-7B-
-  Instruct-v0.3, QLoRA rank 16). Run 1: 33 examples, 15 steps
-  (EVID-026, negative). Run 2: scaled the PKB run 50->200 products
-  (620 API calls, $0.012) to get 90 examples / 36 steps (EVID-027,
-  POSITIVE). Still single seed per configuration — DEC-006 steps 6-8
-  (LoRA grid, multi-seed) not done.
+Experiment: THREE pilots on rented RunPod GPUs (Mistral-7B-Instruct-v0.3,
+  QLoRA rank 16): Run 1 (EVID-026, 33 examples/15 steps, RTX 4090) and
+  Run 2 (EVID-027, 90 examples/36 steps via a 200-product PKB scale-up,
+  RTX 4090) then a 3-seed confirmation of Run 2's setup (seeds 42/43/44,
+  RTX 4090 then RTX 3090 after 3 consecutive 4090 pods failed GPU
+  passthrough). A REAL LEAKAGE BUG was found and fixed between Run 2
+  and the seed confirmation (see EVID-028): the 90-example training set
+  and the eval test set came from two independently-shuffled splits
+  that overlapped on 2 of 10 test products. EVID-027's originally-
+  reported numbers are SUPERSEDED and must not be cited; EVID-028 has
+  the corrected numbers on a leakage-safe 8-product/56-triple test set,
+  and dec006_evaluate_adapter.py now auto-detects and excludes any
+  such overlap going forward. DEC-006 steps 7-8 (LoRA grid, 5-seed
+  convention matching DEC-005) still not done.
 Results: Run 1 (33 examples) — base F1=0.3231 vs. fine-tuned F1=0.2264,
-  DECREASED. Run 2 (90 examples, same hyperparameters otherwise) —
-  base F1=0.3231 vs. fine-tuned F1=0.3958 (P=0.7308, R=0.2714),
-  INCREASED by +0.0727, driven by precision more than doubling
-  (0.35->0.73) at a small recall cost. Scaling the training set alone
-  flipped the sign — supports EVID-026's own interpretation that the
-  first run was simply too small/short, not evidence fine-tuning can't
-  help. A subject-field copying error identified in EVID-026 is still
-  present in some Run 2 predictions and likely caps recall further.
-  Report as: implemented and tested, F1 improved +0.073 at 90-example
-  scale (single run/seed) — real and positive, but not yet a
-  multi-seed-validated paper claim.
+  DECREASED (this comparison predates the leakage bug's introduction
+  and is not affected by it). Corrected 90-example result (EVID-028,
+  n=3 seeds, leakage-safe): base F1=0.1373; seed42 F1=0.2029 (+0.0656);
+  seed43 F1=0.2090 (+0.0717); seed44 F1=0.1124 (-0.0249). Mean
+  fine-tuned F1=0.1748 (std=0.0541) — mean improvement +0.0375, but std
+  exceeds the mean effect and 1 of 3 seeds regressed: MIXED, probably
+  net-positive result, NOT statistically conclusive at n=3. Notably,
+  base/seed42/seed43 all get the exact same 7 true positives (identical
+  recall) -- fine-tuning's entire effect on those two seeds is
+  eliminating false positives (46->13->11 total predictions), not
+  finding more correct facts, a clean mechanistic story for
+  professor_feedback.md point #10. Report as: implemented and tested,
+  probably helps (2/3 seeds, mechanistically clean precision effect),
+  one regression, not yet significance-tested — mirrors DEC-005's
+  cautious framing more than EVID-027's apparent clean win did.
 Note: found while reading the old notebook that its B3 baseline (cell 22)
   and Table-9 "Iterative FT" results (cells 31-35) use two DIFFERENT code
   paths — B3's reported number substitutes a different OpenRouter model
