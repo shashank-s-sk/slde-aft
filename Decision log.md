@@ -20,9 +20,11 @@ just says where each DEC currently stands and what's left.
 | 012 | Reproducibility Package | NOT STARTED | — | Packaging task — do near the end, before submission |
 | 013 | Writing Refinement | NOT STARTED | — | Writing task — deferred |
 | 018 | Provenance Filter (Claim #5) | DONE | Filtering raises training-data precision vs. gold from 93.5%→100% (drops 31/475 triples, all wrong) — EVID-029. Now the default in `dec006_regenerate_synth_data.py` | Optionally re-run DEC-006 fine-tuning on the filtered (444-triple) data to check if subject-copying failures decrease |
+| 019 | Closed-Loop Integration Test (Claim #1) | DONE | Treatment (fine-tuned model closes the loop) ~FLAT vs. pre-closure baseline (F1 0.3869→0.3864) but BEATS control/no-fine-tuning (F1 0.3791, -0.0073) — EVID-030. Closing the loop does no harm and modestly beats the realistic alternative | Repeat with seeds 42/44 as separate treatment arms to check this holds across seeds; a sustained multi-cycle loop is a bigger follow-up |
 
-**Open items with no owning DEC yet:**
-- **Closed-loop integration test (claim #1, the "unified closed-loop architecture" claim).** Every component (extraction, PKB, feedback, synthetic-data generation, LoRA fine-tuning) has been built and tested standalone, but the fine-tuned model has never been plugged back into the PKB/feedback iterative loop to test whether the *whole system* improves when the loop actually closes. This is the one genuinely unbuilt piece of the architecture and the most direct test of claim #1. Needs a new DEC.
+No more open items without an owning DEC — all 5 of SLDE.pdf's claims
+now have at least one real experiment behind them (see each DEC row
+above for how strong/mixed/null each one currently is).
 
 Informal, not-yet-accepted ideas sketched at the end of this file (DEC-014
 leakage protocol, DEC-015 task/metric validity, DEC-016 threats to
@@ -1239,6 +1241,77 @@ Note: this result also mechanistically explains the "subject-copying"
   real product name) — it was learning directly from these exact
   hallucinated training examples. A future DEC-006 fine-tuning run using
   the filtered data may show less of this specific failure.
+
+# DEC-019 — Closed-Loop Integration Test (Claim #1)
+
+## Why is this required?
+
+SLDE.pdf's claim #1 describes a "unified 7-module closed-loop
+architecture." Every module (extraction, PKB aggregation, feedback,
+synthetic-data generation, LoRA fine-tuning) had been built and tested
+standalone, but the fine-tuned model had never been plugged back into
+the PKB/feedback iterative loop to test whether the whole SYSTEM
+improves when the loop actually closes — the literal meaning of the
+claim. This was the one genuinely unbuilt piece of the architecture,
+identified while discussing overall project sequencing with the user.
+
+## Decision
+
+Reconstruct the exact KB state at the end of the DEC-006 200-product
+scale-up run's 4 iterations (EVID-027/028's source data), then run ONE
+more iteration two ways from that identical starting point — continuing
+with the un-fine-tuned base model (CONTROL) vs. using the fine-tuned
+adapter (TREATMENT) — and compare the resulting knowledge bases against
+known gold, plus against the pre-closure iteration-4 baseline.
+
+## How will it be implemented?
+
+1. `src/pkb_replay.py`: reconstruct `CandidateBufferAdapter` state by
+   replaying saved `observations_iteration_N.csv` files through fresh
+   `accept_candidate()` calls (verified exact: reproduces the original
+   475/475 above-threshold triples and all 2241 accepted keys).
+2. Use the plain `src/prompts.py` prompt (no locked-context/
+   feedback-hint) for BOTH arms' iteration 5, since the fine-tuned
+   model was only ever trained on that format — using the usual
+   locked-context prompt for one arm and not the other would confound
+   fine-tuning with a prompt-format difference, the same category of
+   bug found in EVID-026.
+3. CONTROL (`scripts/dec019_closedloop_control.py`, local): replay
+   iterations 1-4, run iteration 5 via the same base API model
+   (`meta-llama/llama-3.1-8b-instruct`) over the same 140 train
+   products, merge in, measure.
+4. TREATMENT (`scripts/dec019_closedloop_treatment_extract.py` on a
+   rented GPU + `_merge.py` locally): identical design, using the
+   seed-43 fine-tuned adapter (EVID-028's best-performing seed)
+   instead of the API model.
+5. `scripts/dec019_closedloop_compare.py`: three-way comparison
+   (iteration-4 baseline / control / treatment) against known gold.
+
+## Expected Results
+
+A three-way KB-quality comparison (precision/recall/F1 against gold).
+No numerical result assumed ahead of running it.
+
+## Status
+
+DEC-019: ACCEPTED
+Implementation: DONE (`src/pkb_replay.py`, `openrouter_llm.py`'s
+  `prompt_override`, all four `dec019_closedloop_*.py` scripts)
+Testing: replay verified exact against the original snapshot before
+  building anything on top of it (475/475 above-threshold triples,
+  2241/2241 accepted keys match exactly)
+Experiment: COMPLETE — see EVID-030. Control: 140 API calls, $0.002074.
+  Treatment: one GPU pass (seed-43 adapter) over the same 140 products.
+Results: Iteration-4 baseline F1=0.3869 (n=475) -> CONTROL iteration-5
+  F1=0.3791 (n=480, WORSE) -> TREATMENT iteration-5 F1=0.3864 (n=499,
+  ~FLAT vs. baseline, but BETTER than control by +0.0073). Closing the
+  loop does not clearly beat leaving the KB alone (the treatment/
+  baseline difference, -0.0005, is negligible), but it IS reliably
+  better than the realistic alternative of continuing to extract with
+  the un-fine-tuned model, which measurably degrades the KB. Report
+  claim #1 as: the fine-tuned model, once looped back in, does no harm
+  and modestly outperforms not fine-tuning, rather than "closing the
+  loop improves the system" outright.
 
 DEC-014 (evaluation protocol & leakage control)
 

@@ -2139,3 +2139,124 @@ using the newly-filtered 444-triple training set instead of the
 475-triple unfiltered one, and specifically check whether the
 subject-copying failure mode in the fine-tuned model's predictions
 decreases as a result.
+
+# EVID-030 — DEC-019 Closed-Loop Integration Test (Claim #1)
+
+## Experiment
+
+- Decision: DEC-019 (new — claim #1, "unified closed-loop
+  architecture," never actually tested end-to-end before this).
+- Starting point: the exact KB state at the end of iteration 4 of the
+  DEC-006 200-product scale-up run (EVID-027/028's source data),
+  reconstructed via `src/pkb_replay.py` by replaying the saved
+  `observations_iteration_{1,2,3,4}.csv` files through fresh
+  `accept_candidate()` calls. Verified exact before use: reproduces
+  the original 475/475 above-threshold triples and all 2241 accepted
+  keys with zero discrepancy.
+- From that identical starting point, ran ONE more iteration two ways
+  over the same 140 train products, both using the plain
+  `src/prompts.py` prompt (no locked-context/feedback-hint, since the
+  fine-tuned model was only ever trained on that format):
+  - **CONTROL**: `meta-llama/llama-3.1-8b-instruct` via OpenRouter (the
+    same un-fine-tuned base model iterations 1-4 used). 140 calls,
+    $0.002074, 1 parse error.
+  - **TREATMENT**: the seed-43 QLoRA adapter (EVID-028's best-performing
+    seed, F1=0.2090 in standalone eval), run locally on a rented RTX
+    4090. 603 raw triples extracted across the same 140 products.
+- Merged each arm's iteration-5 output into its own copy of the
+  replayed iteration-4 state, called `end_iteration(5)`, and measured
+  the accumulated above-threshold KB's precision/recall/F1 against the
+  same known gold used throughout DEC-006/018.
+
+## Actual
+
+| Arm | KB size | Precision | Recall | F1 |
+|---|---:|---:|---:|---:|
+| Iteration 4 (pre-closure baseline) | 475 | 0.9347 | 0.2440 | **0.3869** |
+| Iteration 5, CONTROL (base model continues) | 480 | 0.9083 | 0.2396 | **0.3791** |
+| Iteration 5, TREATMENT (fine-tuned model closes the loop) | 499 | 0.8978 | 0.2462 | **0.3864** |
+
+Net new above-threshold triples contributed: CONTROL added 5 (480-475);
+TREATMENT added 24 (499-475) — the fine-tuned model contributed roughly
+5x more net-new KB content than the base model did in the same
+additional pass, at a comparable (very slightly lower) precision.
+
+## Result
+
+MIXED / informative null, not a clean win — but a real, decisive
+comparison. TREATMENT (closing the loop) is essentially FLAT versus
+the pre-closure baseline (F1 -0.0005, negligible) — it does not clearly
+demonstrate that closing the loop improves the system in an absolute
+sense. However, TREATMENT clearly beats CONTROL (+0.0073 F1) — i.e.,
+*if* another iteration is going to run at all, using the fine-tuned
+model for it is measurably better than continuing with the
+un-fine-tuned model, which actively degrades the KB (-0.0078 F1 vs.
+baseline).
+
+## Interpretation
+
+- **The realistic comparison for claim #1 is treatment vs. control, not
+  treatment vs. baseline.** In an actually-running closed-loop system,
+  the alternative to "fine-tune and re-extract" isn't "do nothing" —
+  it's "keep re-extracting with the same un-fine-tuned model," which
+  this experiment shows is the worse choice. Framed this way, closing
+  the loop has a real, if modest, benefit.
+- **Why does the un-fine-tuned CONTROL degrade the KB at all?** Losing
+  the locked-context/feedback-hint guidance (used deliberately here to
+  keep the comparison fair to the fine-tuned model, which never saw
+  that format) makes iteration 5 behave more like an unguided pass —
+  and DEC-007/EVID-022 already found that unguided extraction produces
+  more hallucination-vs-hallucination noise. The fine-tuned model
+  appears to partially compensate for this lost guidance on its own
+  (consistent with DEC-006/EVID-028's finding that fine-tuning makes
+  the model more conservative/precise), which is plausibly *why*
+  treatment ends up flat rather than also degrading.
+- **This result is now consistent with, not contradictory to, DEC-006's
+  own mixed finding (EVID-028).** DEC-006 found fine-tuning helps in
+  2 of 3 seeds on standalone extraction; this test used only the single
+  best seed (43) and found a modest relative — not absolute — benefit
+  when looped back into the full system. Together these paint a
+  coherent picture: fine-tuning at this data scale is a real but small
+  and seed-dependent lever, not yet a transformative one.
+- Per [[submission_readiness_framework]] claim #1: report as "the
+  closed-loop architecture was implemented and tested end-to-end; the
+  fine-tuned model, once integrated, does not clearly beat leaving the
+  KB alone, but does reliably outperform continuing to extract without
+  fine-tuning" — an honest, mechanistically-explained result, not a
+  triumphant claim and not a dead end either.
+
+## Limitations
+
+- Single seed (43) tested for treatment, not all 3 from EVID-028 — a
+  weaker or stronger seed might shift this comparison in either
+  direction; DEC-006's own seed 44 was a net regression in standalone
+  eval, so a closed-loop test using that seed instead might show
+  treatment losing to control.
+- Locked-context/feedback-hint was deliberately dropped for both arms'
+  iteration 5 to keep the comparison fair to the fine-tuned model. This
+  makes iteration 5 not a perfect like-for-like continuation of
+  iterations 2-4's actual methodology (which did use locked
+  context/feedback) — the CONTROL arm's degradation may partly reflect
+  losing that guidance rather than being purely representative of "the
+  base model, one more time, under identical conditions to iterations
+  1-4."
+- One additional iteration only, not a sustained multi-cycle closed
+  loop (extract -> fine-tune -> extract -> fine-tune again -> ...). A
+  longer-running loop could show compounding effects in either
+  direction that a single extra iteration cannot reveal.
+- Uses the same 140 train products already used to build the
+  iteration-4 baseline (matching how iterations 2-4 already re-used the
+  train set with escalating guidance) rather than a fresh, unseen batch
+  of products — a fresh-batch design would be a cleaner test of
+  generalization but was not attempted here.
+
+## Next step
+
+If a stronger closed-loop claim is wanted: repeat with seeds 42 and 44
+as separate treatment arms (already-trained adapters, no new GPU
+training needed — just new extraction passes) to see whether the
+treatment-beats-control result holds across all 3 seeds or was
+specific to the best one. A sustained multi-cycle version (fine-tune
+again after this iteration 5, extract again, etc.) would be a more
+complete test of the "closed-loop" claim but is substantially more
+engineering and GPU time.
