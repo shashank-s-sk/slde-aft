@@ -19,9 +19,9 @@ just says where each DEC currently stands and what's left.
 | 011 | Novelty Positioning | NOT STARTED | — | Writing task — deferred |
 | 012 | Reproducibility Package | NOT STARTED | — | Packaging task — do near the end, before submission |
 | 013 | Writing Refinement | NOT STARTED | — | Writing task — deferred |
+| 018 | Provenance Filter (Claim #5) | DONE | Filtering raises training-data precision vs. gold from 93.5%→100% (drops 31/475 triples, all wrong) — EVID-029. Now the default in `dec006_regenerate_synth_data.py` | Optionally re-run DEC-006 fine-tuning on the filtered (444-triple) data to check if subject-copying failures decrease |
 
 **Open items with no owning DEC yet:**
-- **Claim #5 — Provenance filtering.** Manuscript claims provenance "actively filters synthetic training data quality"; no code anywhere does this (provenance is logged, never gated on). Currently a FALSE claim in the draft, not just a missing one. Needs a new DEC. Pure local dev, no GPU/pod cost.
 - **Closed-loop integration test (claim #1, the "unified closed-loop architecture" claim).** Every component (extraction, PKB, feedback, synthetic-data generation, LoRA fine-tuning) has been built and tested standalone, but the fine-tuned model has never been plugged back into the PKB/feedback iterative loop to test whether the *whole system* improves when the loop actually closes. This is the one genuinely unbuilt piece of the architecture and the most direct test of claim #1. Needs a new DEC.
 
 Informal, not-yet-accepted ideas sketched at the end of this file (DEC-014
@@ -1164,6 +1164,81 @@ Implementation: NOT STARTED
 Review: NOT STARTED  
 Final Manuscript: NOT STARTED  
 Results: TBD  
+
+# DEC-018 — Build a Real Provenance Filter (Claim #5)
+
+## Why is this required?
+
+SLDE.pdf's claim #5 states that provenance "actively filters synthetic
+training data quality." This was false as written: neither the old
+notebook nor the new `src/` pipeline had any code that gates synthetic
+training-data inclusion on provenance — provenance was logged per
+triple (source IDs, source types, raw text) but never used to include
+or exclude anything. This is a correctness problem in the manuscript,
+not just a missing experiment, and had no owning DEC.
+
+Also directly supports professor_feedback.md point #7 ("provenance
+filtering examples") by providing real, concrete examples of what gets
+filtered and why.
+
+## Decision
+
+Add a real filter, gate synthetic-training-data generation on it by
+default, and — since this domain's true gold triples are known (it's
+synthetically generated) — directly measure whether it improves
+training-data quality rather than just asserting it does.
+
+## How will it be implemented?
+
+1. `src/provenance_filter.py`: a triple passes if at least one of its
+   observations came from a STRUCTURED source (`has_structured_
+   corroboration`), regardless of how many unstructured observations
+   it also has.
+2. `scripts/dec018_provenance_filter_validation.py`: apply the filter
+   to an already-collected PKB snapshot (the DEC-006 200-product
+   scale-up run, EVID-027/028's source data) and measure precision
+   against the known gold triples, with vs. without the filter.
+3. Wire the filter into `scripts/dec006_regenerate_synth_data.py`
+   (on by default; `--no-provenance-filter` reproduces the old
+   unfiltered behavior for backward compatibility with EVID-026/027/028's
+   already-completed results).
+4. Unit tests for the filter logic (`tests/test_provenance_filter.py`).
+
+## Expected Results
+
+A precision comparison (with-filter vs. without-filter) against known
+gold triples on the same snapshot. No numerical result assumed ahead
+of running it.
+
+## Status
+
+DEC-018: ACCEPTED
+Implementation: DONE (`src/provenance_filter.py`,
+  `scripts/dec018_provenance_filter_validation.py`, wired into
+  `scripts/dec006_regenerate_synth_data.py` as the new default)
+Testing: DONE (5 new unit tests, 49/49 suite passing)
+Experiment: COMPLETE — see EVID-029. Zero API/GPU cost (reprocessed an
+  already-collected snapshot).
+Results: Filtering raises precision against gold from 93.5% -> 100.0%
+  on the 475 above-threshold triples from the 200-product scale-up run
+  (EVID-027/028's source data) by dropping the 31 triples (6.5%) whose
+  only corroboration is unstructured — every single one of which is
+  wrong (0% precision on that subset), overwhelmingly generic
+  device-category nouns ("laptop device", "tablet device") standing in
+  for the real product name, or copied sentence fragments, repeated
+  2-21 times each and mistaken by Noisy-Or aggregation for corroborating
+  evidence. Regenerated `outputs/dec006_synthetic_data/
+  product_domain_synth_train.jsonl` with the filter on: 73 product-level
+  examples / 444 triples (down from 90 examples / 475 triples
+  unfiltered) — this is now the default training data for any future
+  DEC-006 fine-tuning run; EVID-026/027/028's already-completed results
+  used the unfiltered version and are unaffected.
+Note: this result also mechanistically explains the "subject-copying"
+  failure mode flagged in EVID-026/027/028 (the fine-tuned model
+  sometimes outputs generic phrases like "laptop device" instead of the
+  real product name) — it was learning directly from these exact
+  hallucinated training examples. A future DEC-006 fine-tuning run using
+  the filtered data may show less of this specific failure.
 
 DEC-014 (evaluation protocol & leakage control)
 

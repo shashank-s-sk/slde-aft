@@ -1,0 +1,11 @@
+{
+  "snapshot_path": "outputs/dec006_scaleup_probkb/train_kb/pkb_snapshot_iteration_4.csv",
+  "n_total_above_threshold": 475,
+  "unfiltered_precision": 0.9347368421052632,
+  "n_with_structured_corroboration": 444,
+  "precision_with_structured_corroboration": 1.0,
+  "n_unstructured_only": 31,
+  "precision_unstructured_only": 0.0,
+  "n_dropped_by_filter": 31,
+  "pct_dropped_by_filter": 0.06526315789473684
+}

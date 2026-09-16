@@ -16,10 +16,23 @@ train_kb/pkb_snapshot_iteration_4.csv, above_threshold rows only --
 127 rows / 33 products, same source as the original file per EVID-025),
 grouped per product, using the exact same prompt template as eval.
 
+DEC-018 provenance filter (see src/provenance_filter.py): by default,
+also drops any triple whose corroboration is unstructured-only (no
+structured source in its observation history). Validated on the
+200-product scale-up snapshot (EVID-029): this raises training-data
+precision against gold from 93.5% to 100%, by removing exactly the
+triples that are hallucinations -- despite crossing the confidence
+threshold and being observed 2-21 times each, every one of the
+unstructured-only triples in that snapshot was wrong (mostly generic
+device-category nouns like "laptop device" standing in for the real
+product name). Pass --no-provenance-filter to reproduce the older,
+unfiltered behavior (e.g. to exactly match EVID-026/027/028's data).
+
 Pure Python + pandas, no GPU needed.
 
 Usage:
     python scripts/dec006_regenerate_synth_data.py
+    python scripts/dec006_regenerate_synth_data.py --no-provenance-filter
 """
 
 from __future__ import annotations
@@ -33,6 +46,7 @@ import pandas as pd
 
 from src.datasets.product_generator import ALLOWED_PREDICATES
 from src.prompts import build_extraction_prompt
+from src.provenance_filter import has_structured_corroboration
 
 SNAPSHOT_PATH = "outputs/dec003_product_probkb_v2/train_kb/pkb_snapshot_iteration_4.csv"
 OUT_PATH = "outputs/dec006_synthetic_data/product_domain_synth_train.jsonl"
@@ -43,10 +57,19 @@ def main():
     parser.add_argument("--snapshot-path", default=SNAPSHOT_PATH,
                          help="PKB snapshot CSV to derive training data from (default: the original 50-product DEC-003 run)")
     parser.add_argument("--out-path", default=OUT_PATH)
+    parser.add_argument("--no-provenance-filter", action="store_true",
+                         help="Disable the DEC-018 provenance filter (reproduces pre-DEC-018 behavior)")
     args = parser.parse_args()
+    use_provenance_filter = not args.no_provenance_filter
 
     df = pd.read_csv(args.snapshot_path)
-    accepted = df[df["above_threshold"] == True]  # noqa: E712
+    accepted = df[df["above_threshold"] == True].copy()  # noqa: E712
+
+    if use_provenance_filter:
+        n_before = len(accepted)
+        accepted = accepted[accepted["source_types"].apply(lambda s: has_structured_corroboration(json.loads(s)))]
+        print(f"Provenance filter: kept {len(accepted)}/{n_before} triples "
+              f"(dropped {n_before - len(accepted)} with unstructured-only corroboration)")
 
     triples_by_subject: dict[str, list[dict]] = defaultdict(list)
     text_by_subject: dict[str, str] = {}

@@ -1,0 +1,32 @@
+subject,predicate,object,observation_count,is_correct
+laptop device,has_noise_cancellation,no,21,False
+TechNova Smartphone Pro 1,has_color,blue,17,False
+laptop device,has_color,green,7,False
+tablet device,has_noise_cancellation,no,16,False
+tablet device,has_color,silver,10,False
+TechNova Smartphone Pro 1,has_color,green,11,False
+TechNova Smartphone Pro 1,has_color,white,12,False
+TechNova Smartphone Pro 1,has_color,silver,7,False
+tablet device,has_color,blue,7,False
+tablet device,has_color,white,4,False
+tablet device,made_of_material,plastic,3,False
+smartwatch device,has_noise_cancellation,no,4,False
+TechNova Smartphone Pro 1,has_color,black,4,False
+headphones device,has_color,green,4,False
+The display measures 6.7 inches.,has_screen_size_inch,6.7,2,False
+Battery lasts up to 14 hours.,has_battery_life_hours,14,4,False
+Built with carbon fiber construction.,made_of_material,carbon fiber,4,False
+Targeted at the US market.,target_market_region,US,2,False
+Noise cancellation: no.,has_noise_cancellation,no,2,False
+It is a smartphone device,has_noise_cancellation,no,2,False
+The display measures 13.3 inches.,has_screen_size_inch,13.3,6,False
+Comes with 32GB of RAM.,has_ram_gb,32,3,False
+Weighs approximately 1.45kg.,has_weight_kg,1.45,3,False
+Targeted at the APAC market.,target_market_region,APAC,3,False
+Fast charging is no.,supports_fast_charging,no,4,False
+laptop device,has_color,black,2,False
+It is a smartphone device,has_battery_life_hours,8,3,False
+It is a smartwatch device,belongs_to_category,smartwatch device,6,False
+It is a smartwatch device,has_color,silver,4,False
+It is a smartwatch device,has_noise_cancellation,no,5,False
+headphones device,has_color,silver,2,False
