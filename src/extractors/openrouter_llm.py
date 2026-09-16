@@ -58,6 +58,7 @@ def call_openrouter_for_triples(
     temperature: float = 0.0,
     timeout: int = 90,
     max_tokens: int = 512,
+    prompt_override: str | None = None,
 ) -> dict:
     """Returns a dict with: items (parsed triples), raw_response, latency_s,
     cost_usd, prompt_tokens, completion_tokens, http_status, error.
@@ -69,9 +70,18 @@ def call_openrouter_for_triples(
     (100K+ tokens) rather than what the call will actually use, which
     can trigger a spurious HTTP 402 "insufficient credits" on a low but
     genuinely sufficient balance. See Evidence log.md EVID-018.
+
+    prompt_override (DEC-019 closed-loop test): use this exact prompt
+    instead of build_prompt(...) -- needed to match src/prompts.py's
+    plain (no locked-context/feedback-hint) format when comparing
+    against a fine-tuned model that was trained on that exact format,
+    so the API-based "control" extraction isn't disadvantaged/advantaged
+    by a different prompt structure than the fine-tuned "treatment".
     """
 
-    prompt = build_prompt(text, locked_context=locked_context, feedback_hint=feedback_hint)
+    prompt = prompt_override if prompt_override is not None else build_prompt(
+        text, locked_context=locked_context, feedback_hint=feedback_hint
+    )
 
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -141,6 +151,7 @@ def extract_unstructured_llm(
     locked_context=None,
     feedback_hint: str | None = None,
     extractor_tag: str = "openrouter",
+    prompt_override: str | None = None,
 ) -> dict:
     """Returns dict with: triples (list of common-schema dicts) plus the
     same latency/cost/error fields as call_openrouter_for_triples."""
@@ -151,6 +162,7 @@ def extract_unstructured_llm(
         model=model,
         locked_context=locked_context,
         feedback_hint=feedback_hint,
+        prompt_override=prompt_override,
     )
 
     triples = []
