@@ -1,5 +1,5 @@
 {
-  "adapter": null,
+  "adapter": "outputs/dec006_adapters/mistral7b_qlora_seed43",
   "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
   "n_test_products_evaluated": 8,
   "n_test_products_excluded_for_leakage": 2,
@@ -7,12 +7,12 @@
     "Auralex Smartphone Air 7",
     "TechNova Headphones Lite 26"
   ],
-  "precision": 0.15217391304347827,
+  "precision": 0.6363636363636364,
   "recall": 0.125,
-  "f1": 0.13725490196078433,
+  "f1": 0.208955223880597,
   "true_positives": 7,
-  "false_positives": 39,
+  "false_positives": 4,
   "false_negatives": 49,
   "gold_count": 56,
-  "prediction_count": 46
+  "prediction_count": 11
 }

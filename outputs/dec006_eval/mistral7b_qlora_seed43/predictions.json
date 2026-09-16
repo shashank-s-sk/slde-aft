@@ -1,18 +1,7 @@
 [
   {
     "product_idx": 4,
-    "predicted_triples": [
-      {
-        "subject": "laptop device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
-      },
-      {
-        "subject": "laptop device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "NeoTech Laptop Air 4",
@@ -53,18 +42,7 @@
   },
   {
     "product_idx": 5,
-    "predicted_triples": [
-      {
-        "subject": "Built with carbon fiber construction.",
-        "predicate": "made_of_material",
-        "object": "carbon fiber"
-      },
-      {
-        "subject": "Noise cancellation:",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "VoltEdge Tablet Lite 5",
@@ -182,13 +160,7 @@
   },
   {
     "product_idx": 21,
-    "predicted_triples": [
-      {
-        "subject": "laptop device",
-        "predicate": "supports_fast_charging",
-        "object": "yes"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "Zenbyte Laptop Air 21",
@@ -232,7 +204,17 @@
     "predicted_triples": [
       {
         "subject": "smartwatch device",
-        "predicate": "has_noise_cancellation",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "supports_fast_charging",
         "object": "no"
       },
       {
@@ -281,23 +263,7 @@
   },
   {
     "product_idx": 35,
-    "predicted_triples": [
-      {
-        "subject": "smartwatch device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
-      },
-      {
-        "subject": "smartwatch device",
-        "predicate": "supports_fast_charging",
-        "object": "yes"
-      },
-      {
-        "subject": "smartwatch device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "Auralex Smartwatch Pro 35",

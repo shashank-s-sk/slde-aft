@@ -1,0 +1,13 @@
+{
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "use_4bit": true,
+  "seed": 44,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "learning_rate": 0.0002,
+  "num_epochs": 3,
+  "batch_size": 2,
+  "grad_accum_steps": 4,
+  "n_training_examples": 90
+}

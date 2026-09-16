@@ -4,13 +4,23 @@
     "predicted_triples": [
       {
         "subject": "laptop device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
+        "predicate": "has_price_usd",
+        "object": "499"
       },
       {
         "subject": "laptop device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "made_of_material",
+        "object": "aluminum"
       }
     ],
     "gold_triples": [
@@ -133,12 +143,7 @@
       },
       {
         "subject": "Zenbyte Tablet Max 10",
-        "predicate": "target_market_region",
-        "object": "Global"
-      },
-      {
-        "subject": "Zenbyte Tablet Max 10",
-        "predicate": "has_noise_cancellation",
+        "predicate": "supports_fast_charging",
         "object": "no"
       }
     ],
@@ -185,8 +190,13 @@
     "predicted_triples": [
       {
         "subject": "laptop device",
-        "predicate": "supports_fast_charging",
-        "object": "yes"
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "made_of_material",
+        "object": "plastic"
       }
     ],
     "gold_triples": [
@@ -231,12 +241,37 @@
     "product_idx": 24,
     "predicted_triples": [
       {
-        "subject": "smartwatch device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
+        "subject": "smartwatch",
+        "predicate": "belongs_to_category",
+        "object": "smartwatch"
       },
       {
-        "subject": "smartwatch device",
+        "subject": "display",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "display",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "internal storage",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "battery",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "color",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "noise_cancellation",
         "predicate": "has_noise_cancellation",
         "object": "no"
       }
@@ -281,23 +316,7 @@
   },
   {
     "product_idx": 35,
-    "predicted_triples": [
-      {
-        "subject": "smartwatch device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
-      },
-      {
-        "subject": "smartwatch device",
-        "predicate": "supports_fast_charging",
-        "object": "yes"
-      },
-      {
-        "subject": "smartwatch device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "Auralex Smartwatch Pro 35",
@@ -338,7 +357,38 @@
   },
   {
     "product_idx": 38,
-    "predicted_triples": [],
+    "predicted_triples": [
+      {
+        "subject": "Laptop Device Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "Laptop Device Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "Laptop Device Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "Laptop Device Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Laptop Device Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.8"
+      },
+      {
+        "subject": "Laptop Device Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ],
     "gold_triples": [
       {
         "subject": "VoltEdge Laptop Plus 38",
@@ -379,7 +429,43 @@
   },
   {
     "product_idx": 42,
-    "predicted_triples": [],
+    "predicted_triples": [
+      {
+        "subject": "smartphone device",
+        "predicate": "belongs_to_category",
+        "object": "smartphone"
+      },
+      {
+        "subject": "smartphone device",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "smartphone device",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "smartphone device",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "smartphone device",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "smartphone device",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "smartphone device",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ],
     "gold_triples": [
       {
         "subject": "TechNova Smartphone Max 42",
