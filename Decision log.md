@@ -1,3 +1,36 @@
+# STATUS DASHBOARD (read this first — full rationale/detail is in each DEC section below)
+
+Keep this table in sync whenever a DEC's status changes. Full write-ups
+with numbers/citations live in `Evidence log.md` (EVID-xxx); this table
+just says where each DEC currently stands and what's left.
+
+| DEC | Title | Status | Key Result | Next Step |
+|---|---|---|---|---|
+| 001 | CaRB Public Benchmark | DONE (pilot) | Llama-3.1-8B F1=0.0591 (N=30, pinned model) — EVID-021 | Part 5: run the official CaRB scorer (still just internal exact-match) |
+| 002 | External SOTA Baseline | DONE (partial) | DeepSeek-V3.2 F1=0.1340 vs. Llama F1=0.0591 (~2.3x) — EVID-021 | REBEL/GenIE/InstructUIE/GPT-4/Claude/Gemini comparisons (professor feedback #2) still not done — large, deferred |
+| 003 | Math Contribution (Noisy-Or) | DONE — **strongest result in the project** | +0.043 F1 aggregate on real data (EVID-014); held-out test F1=0.197, val F1=0.597 (EVID-013) | Paper integration (write into manuscript) not started |
+| 004 | Module-Level Ablation | DONE (single-seed pilot) | without_feedback appeared to beat full — did NOT replicate at 5 seeds (see DEC-005) | Superseded by DEC-005; nothing further needed here |
+| 005 | Statistical Validation (ablation) | DONE | NO significant effect, N=20/5-seed, p=0.31-0.51 (EVID-020) — honest null | Would need a larger-N re-run for a stronger claim either way |
+| 006 | Fine-Tuning (LoRA/QLoRA) | DONE (3 GPU runs, 1 leakage bug found+fixed) | MIXED: 2/3 seeds improve (+0.066/+0.072 F1 via fewer false positives), 1 regresses (-0.025); not significant at n=3 (EVID-028) | 2 more seeds (45,46) + real significance test, OR fold into the closed-loop test below |
+| 007 | Systematic Error Analysis | DONE | Zero pure false negatives in product train set; conflict adjustment resolves hallucination-vs-hallucination (108) not correct-vs-incorrect (1) — EVID-022 | Held-out val/test FN analysis + final example curation for the paper |
+| 008 | Scalability Evaluation | DONE (single-pass scope) | Runtime linear to N=200; per-doc latency flat ~4s regardless of KB size — EVID-023 | Memory measurement is broken (methodology flaw, needs isolated subprocess); full closed-loop scalability untested |
+| 009 | Domain Generalization (BioRED) | DONE (pilot, n=15) | Strict F1=0.0074 (misleading, boundary-mismatch artifact); relaxed F1=0.1029 — EVID-024 | Pilot-scale only; no external baseline on BioRED yet |
+| 010 | Strengthen Discussion | NOT STARTED | — | Writing task — deferred until all experiments done, per [[feedback_experiments_before_writing]] |
+| 011 | Novelty Positioning | NOT STARTED | — | Writing task — deferred |
+| 012 | Reproducibility Package | NOT STARTED | — | Packaging task — do near the end, before submission |
+| 013 | Writing Refinement | NOT STARTED | — | Writing task — deferred |
+
+**Open items with no owning DEC yet:**
+- **Claim #5 — Provenance filtering.** Manuscript claims provenance "actively filters synthetic training data quality"; no code anywhere does this (provenance is logged, never gated on). Currently a FALSE claim in the draft, not just a missing one. Needs a new DEC. Pure local dev, no GPU/pod cost.
+- **Closed-loop integration test (claim #1, the "unified closed-loop architecture" claim).** Every component (extraction, PKB, feedback, synthetic-data generation, LoRA fine-tuning) has been built and tested standalone, but the fine-tuned model has never been plugged back into the PKB/feedback iterative loop to test whether the *whole system* improves when the loop actually closes. This is the one genuinely unbuilt piece of the architecture and the most direct test of claim #1. Needs a new DEC.
+
+Informal, not-yet-accepted ideas sketched at the end of this file (DEC-014
+leakage protocol, DEC-015 task/metric validity, DEC-016 threats to
+validity, DEC-017 data governance) are notes, not active decisions —
+don't treat them as in-progress work.
+
+---
+
 # DEC-001 — Add CaRB Public OpenIE Benchmark
 
 ## Why is this required?
