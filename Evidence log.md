@@ -2260,3 +2260,133 @@ specific to the best one. A sustained multi-cycle version (fine-tune
 again after this iteration 5, extract again, etc.) would be a more
 complete test of the "closed-loop" claim but is substantially more
 engineering and GPU time.
+
+# EVID-031 — DEC-001 Part 5: Official CaRB Scorer Result
+
+## Experiment
+
+- Decision: DEC-001 part 5 — the longest-standing incomplete item in
+  the project. Every prior CaRB number (EVID-003/004/021) came from
+  this project's own internal normalized-triple exact-match evaluator,
+  never the actual CaRB benchmark's official scoring tool.
+- Zero new API/GPU cost — rescored the already-collected predictions
+  from EVID-021's pinned-model N=30 run
+  (`outputs/dec001_002_carb30/{slde_aft_llama,deepseek_baseline}/
+  predictions.json`) using the real `data/CaRB/carb.py` scorer (the
+  official dair-iitd/CaRB tool, vendored in this repo as a submodule).
+- **Naming correction found while preparing this:** the 30-sentence
+  file is named `data/carb_dev_sample.jsonl`, but exact sentence-text
+  lookup confirms all 30 sentences are present in CaRB's official
+  TEST split gold file (`data/CaRB/data/gold/test.tsv`), not
+  `dev.tsv` (0/30 matched dev). This is a mislabeling to fix in any
+  future write-up, not a leakage concern — CaRB is an extraction-
+  quality-only benchmark in this project, never used to train or tune
+  anything.
+- Converted `predicted_triples` into CaRB's tab-separated format
+  (`sentence\tconfidence\tpredicate\tsubject\tobject`) via
+  `scripts/dec001_run_official_carb_scorer.py`. No per-triple
+  confidence was captured during the original extraction
+  (`prompts/openie_carb_v1.txt` doesn't request one), so every triple
+  got a uniform confidence of 1.0 — this collapses CaRB's usual
+  precision-recall curve to a single point, which is normal for
+  systems without calibrated per-triple confidence and does not affect
+  the resulting precision/recall/F1.
+- Filtered the official test.tsv gold file down to just these 30
+  sentences (`outputs/dec001_official_carb/gold_subset_30.tsv`, 125
+  gold triples) so recall is computed only over the sentences actually
+  attempted, not all 641 test sentences.
+- Used CaRB's own DEFAULT matching function (no `--exactMatch`/
+  `--strictMatch`/etc. flag — `Matcher.binary_linient_tuple_match`),
+  the standard matching reported as "the CaRB score" in the literature.
+
+## Setup fixes required (documented for reproducibility, not committed
+## upstream -- the vendored submodule's remote is the read-only
+## upstream dair-iitd/CaRB, not a fork this project can push to)
+
+1. `data/CaRB/oie_readers/extraction.py` imports
+   `from sklearn.preprocessing.data import binarize` — an internal
+   sklearn path removed in modern scikit-learn (this repo dates to
+   2019, `requirements.txt` pins `scikit-learn==0.18`, impossible to
+   install cleanly on Python 3.12). Patched locally to
+   `from sklearn.preprocessing import binarize` (`binarize` is never
+   actually called anywhere in that file — confirmed via grep — so
+   this is a dead-import path fix with zero behavior change). Left as
+   an uncommitted local working-tree edit inside the submodule; must
+   be reapplied after a fresh `git submodule` checkout.
+2. `nltk.download('stopwords')` — the matcher needs this corpus and it
+   isn't bundled; one-time local setup.
+
+## Actual
+
+| System | AUC | Optimal Precision | Optimal Recall | Optimal F1 |
+|---|---:|---:|---:|---:|
+| `meta-llama/llama-3.1-8b-instruct` (SLDE-AFT extractor) | 0.331 | 0.652 | 0.401 | **0.496** |
+| DeepSeek-V3.2 (external baseline) | 0.392 | 0.713 | 0.458 | **0.558** |
+
+Compare to this project's own internal exact-match numbers on the same
+30 sentences (EVID-021): Llama F1=0.0591, DeepSeek F1=0.1340. The
+official CaRB score is **~8.4x higher** for Llama and **~4.2x higher**
+for DeepSeek than the internal metric ever reported.
+
+## Result
+
+PASS — DEC-001 part 5 is complete, and the result is a major, positive
+correction to how this project's extraction quality should be
+described. The internal exact-match evaluator was not just "a bit
+strict" — it was undercounting real extraction quality by roughly
+4-8x on this benchmark.
+
+## Interpretation
+
+- **This directly confirms and quantifies EVID-004/022's own error
+  analysis**, which already identified subject-boundary mismatches
+  (e.g., predicted `"all households"` vs. gold `"32.7 % of all
+  households"`) as a major, systematic failure mode of exact-match
+  scoring — semantically correct extractions penalized purely for
+  argument-span boundaries. CaRB's own matching function was
+  specifically designed by its authors to handle exactly this kind of
+  boundary variation, which is why the gap is this large.
+- **Every internal-evaluator CaRB number in this project's Decision/
+  Evidence logs (EVID-003/004/021, and DEC-001/002's headline figures)
+  understates real performance by roughly 4-8x** and should not be the
+  numbers quoted in the paper's main results table — the official
+  scores above should be, with the internal-evaluator numbers kept
+  only as a secondary/diagnostic detail if mentioned at all.
+- Llama-3.1-8B F1=0.496 and DeepSeek-V3.2 F1=0.558 are now genuinely
+  comparable, literature-standard numbers that can be checked against
+  other published CaRB results for context — something the internal
+  metric's F1=0.059/0.134 numbers never could be.
+- Per [[submission_readiness_framework]]: this doesn't change DEC-002's
+  qualitative finding (DeepSeek still beats Llama, ~1.6x in F1 terms
+  under official scoring vs. ~2.3x under the internal metric — a
+  smaller but still real gap), but it substantially strengthens the
+  credibility of the CaRB pilot itself, directly addressing part of
+  professor_feedback.md point #1's emphasis on established, standard
+  benchmarks.
+
+## Limitations
+
+- Still N=30, a pilot scale, not the full 641-sentence CaRB test set —
+  DEC-002's own "Remaining" note about scaling toward the full set for
+  a benchmark-grade (not pilot-grade) result still applies.
+- Uniform confidence (1.0) means only a single point on the
+  precision-recall curve was evaluated, not a full curve/AUC in the
+  way systems with calibrated confidence scores would be scored — the
+  reported AUC values (0.331/0.392) are a degenerate single-point
+  approximation, not a meaningful curve-shape comparison. The
+  Precision/Recall/F1 values are the ones to cite, not the AUC.
+- The submodule compatibility patch (`sklearn.preprocessing.data` ->
+  `sklearn.preprocessing`) lives only in this project's local working
+  tree, not committed anywhere reproducible via git (no push access to
+  the upstream dair-iitd/CaRB repo) — anyone re-cloning this repo's
+  `data/CaRB` submodule fresh will need to reapply it manually (see
+  "Setup fixes" above) before this script will run.
+- REBEL/full benchmark comparisons (professor feedback #2) remain a
+  separate, larger, still-deferred item.
+
+## Next step
+
+If a benchmark-grade (not pilot) CaRB result is wanted for the paper:
+scale the extraction to CaRB's full 634/641-sentence test set (real
+API cost, still cheap based on this project's per-call cost history)
+and rerun this same official-scorer conversion.

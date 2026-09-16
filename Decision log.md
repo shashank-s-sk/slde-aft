@@ -6,8 +6,8 @@ just says where each DEC currently stands and what's left.
 
 | DEC | Title | Status | Key Result | Next Step |
 |---|---|---|---|---|
-| 001 | CaRB Public Benchmark | DONE (pilot) | Llama-3.1-8B F1=0.0591 (N=30, pinned model) — EVID-021 | Part 5: run the official CaRB scorer (still just internal exact-match) |
-| 002 | External SOTA Baseline | DONE (partial) | DeepSeek-V3.2 F1=0.1340 vs. Llama F1=0.0591 (~2.3x) — EVID-021 | REBEL/GenIE/InstructUIE/GPT-4/Claude/Gemini comparisons (professor feedback #2) still not done — large, deferred |
+| 001 | CaRB Public Benchmark | DONE (pilot + official scorer) | **OFFICIAL** CaRB F1=0.496 (Llama-3.1-8B, N=30) — EVID-031. Supersedes the internal-evaluator F1=0.0591 (~8.4x higher; internal metric undercounted due to boundary-mismatch scoring artifacts) | Scale to CaRB's full 641-sentence test set for a benchmark-grade (not pilot) result |
+| 002 | External SOTA Baseline | DONE (partial) | **OFFICIAL**: DeepSeek F1=0.558 vs. Llama F1=0.496 (~1.6x) — EVID-031. (Internal evaluator said ~2.3x — smaller real gap once boundary artifacts are removed) | REBEL/GenIE/InstructUIE/GPT-4/Claude/Gemini comparisons (professor feedback #2) still not done — large, deferred |
 | 003 | Math Contribution (Noisy-Or) | DONE — **strongest result in the project** | +0.043 F1 aggregate on real data (EVID-014); held-out test F1=0.197, val F1=0.597 (EVID-013) | Paper integration (write into manuscript) not started |
 | 004 | Module-Level Ablation | DONE (single-seed pilot) | without_feedback appeared to beat full — did NOT replicate at 5 seeds (see DEC-005) | Superseded by DEC-005; nothing further needed here |
 | 005 | Statistical Validation (ablation) | DONE | NO significant effect, N=20/5-seed, p=0.31-0.51 (EVID-020) — honest null | Would need a larger-N re-run for a stronger claim either way |
@@ -96,19 +96,27 @@ benchmark. Numerical results remain TBD until the experiment is run.
 DEC-001: ACCEPTED
 Implementation: DONE
 Test: DONE
-Experiment: SCALED PILOT COMPLETE (10 -> 30 sentences; see EVID-021)
-Results: Internal CaRB-30 F1 = 0.0591 (meta-llama/llama-3.1-8b-instruct,
-  pinned). Supersedes the old CaRB-10 F1=0.1333 figure (EVID-003), which
-  used unpinned `openrouter/auto` and is not a reproducible measurement
-  of any specific model — see EVID-021 for why.
-Official CaRB score: still TBD (internal normalized exact-match
-  evaluator only)
+Experiment: SCALED PILOT COMPLETE (10 -> 30 sentences; see EVID-021).
+  Official scoring COMPLETE (see EVID-031).
+Results: OFFICIAL CaRB score (data/CaRB/carb.py, default lenient
+  matching): Llama-3.1-8B-instruct P=0.652 R=0.401 F1=0.496; DeepSeek-V3.2
+  P=0.713 R=0.458 F1=0.558. This SUPERSEDES the internal-evaluator
+  numbers as the headline figures for the paper — the internal
+  exact-match evaluator (F1=0.0591 Llama, F1=0.1340 DeepSeek) undercounts
+  real performance by ~4-8x due to subject-boundary-mismatch scoring
+  artifacts already identified in EVID-004/022; the official scorer's
+  lenient matching handles exactly this. Old CaRB-10 F1=0.1333 figure
+  (EVID-003, unpinned `openrouter/auto`) remains superseded for the
+  separate reason given in EVID-021 (not a reproducible measurement of
+  any specific model).
+Official CaRB score: DONE — see EVID-031. 30-sentence pilot scale, not
+  the full 641-sentence test set.
 
 DEC-001, part 1: Prepare CaRB data                 ✅ Done
 DEC-001, part 2: Run your LLM on 3 sentences        ✅ Done (now scaled to 30)
 DEC-001, part 3: Save and inspect predictions       ✅ Done
 DEC-001, part 4: Evaluate internally                ✅ Done
-DEC-001, part 5: Export CaRB format and run scorer  — still not completed
+DEC-001, part 5: Export CaRB format and run scorer  ✅ Done — see EVID-031
 DEC-002: Add external baseline using same pipeline
 
 # DEC-002 — Add External State-of-the-Art Baselines
@@ -185,8 +193,12 @@ DEC-002: ACCEPTED
 Implementation: DONE (stronger baseline requirement fulfilled)
 Test: DONE (Llama-3.1-8B external baseline CaRB-10, EVID-004; DeepSeek-V3.2
   stronger baseline CaRB-30, EVID-021)
-Experiment: PILOT COMPLETE at N=30. DeepSeek-V3.2 F1=0.1340 vs. pinned
-  Llama-3.1-8B F1=0.0591 (~2.3x) — see EVID-021.
+Experiment: PILOT COMPLETE at N=30. Internal evaluator: DeepSeek-V3.2
+  F1=0.1340 vs. pinned Llama-3.1-8B F1=0.0591 (~2.3x) — see EVID-021.
+  OFFICIAL CaRB scorer (EVID-031, use this for the paper): DeepSeek-V3.2
+  F1=0.558 vs. Llama-3.1-8B F1=0.496 (~1.6x) — DeepSeek still wins, but
+  by a smaller margin once boundary-mismatch scoring artifacts are
+  removed by CaRB's own lenient matching.
 Results: RECORDED
 Remaining:
 - REBEL baseline: Deferred; requires an explicit task-alignment and output-mapping protocol
