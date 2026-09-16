@@ -7,6 +7,18 @@ with the exact same normalized-triple protocol used everywhere else
 (src/evaluator.py) so results are directly comparable to the API-based
 runs (EVID-013 etc).
 
+Cross-split leakage guard: the fine-tuning training data
+(outputs/dec006_synthetic_data/product_domain_synth_train.jsonl) may
+have been built from a DIFFERENT, independently-shuffled product split
+than this script's evaluation split (e.g. EVID-027's 200-product
+scale-up split vs. this script's default 50-product split) -- found in
+practice to overlap: 2 of 10 original test products were also used to
+build EVID-027's fine-tuning examples, real train/test leakage. This
+script now reads that training file and automatically excludes any
+would-be test product whose name was actually used in training,
+printing exactly what got excluded and why, rather than silently
+evaluating on a partially-contaminated set.
+
 Usage:
     python scripts/dec006_evaluate_adapter.py   # no --adapter => base model only (the "before" number)
     python scripts/dec006_evaluate_adapter.py --adapter outputs/dec006_adapters/mistral7b_qlora
@@ -25,10 +37,44 @@ from src.leakage_split import build_product_split
 from src.prompts import build_extraction_prompt
 
 BASE_MODEL = "mistralai/Mistral-7B-Instruct-v0.3"
+SYNTHETIC_TRAIN_PATH = "outputs/dec006_synthetic_data/product_domain_synth_train.jsonl"
 
 
 def build_prompt(text: str) -> str:
     return build_extraction_prompt(text, ALLOWED_PREDICATES)
+
+
+def load_trained_subjects(path: str) -> set[str]:
+    """Extract every product/subject name actually used in the fine-tuning
+    training data, by parsing the trailing target JSON array of each
+    training example's text field (the LAST '[' in the string -- the
+    prompt's own fixed "Example output" block also contains one, so the
+    first bracket is not it)."""
+    trained = set()
+    p = Path(path)
+    if not p.exists():
+        return trained
+    with open(p, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                text = json.loads(line)["text"]
+            except Exception:
+                continue
+            start = text.rfind("[")
+            if start == -1:
+                continue
+            try:
+                items = json.loads(text[start:])
+            except Exception:
+                continue
+            for item in items:
+                subj = item.get("subject")
+                if subj:
+                    trained.add(subj)
+    return trained
 
 
 def parse_json_array(text: str) -> list[dict]:
@@ -57,6 +103,8 @@ def main():
     parser.add_argument("--adapter", default=None, help="Path to a saved LoRA adapter, or omit for base model only")
     parser.add_argument("--base-model", default=BASE_MODEL)
     parser.add_argument("--n-products", type=int, default=50)
+    parser.add_argument("--training-data-path", default=SYNTHETIC_TRAIN_PATH,
+                         help="Used only for the leakage guard -- excludes any test product also present here")
     args = parser.parse_args()
 
     import torch
@@ -82,6 +130,15 @@ def main():
         products[idx] = (unstructured_row, gold_unstructured)
 
     test_idx = sorted(i for i in products if split.get(i) == "test")
+
+    trained_subjects = load_trained_subjects(args.training_data_path)
+    leaked_idx = [i for i in test_idx if products[i][0]["product_name"] in trained_subjects]
+    if leaked_idx:
+        leaked_names = [products[i][0]["product_name"] for i in leaked_idx]
+        print(f"!!! LEAKAGE GUARD: excluding {len(leaked_idx)}/{len(test_idx)} test products "
+              f"also present in the fine-tuning training data: {leaked_names}")
+        test_idx = [i for i in test_idx if i not in leaked_idx]
+    print(f"Evaluating on {len(test_idx)} leakage-safe test products.")
 
     all_pred_triples, all_gold_triples = [], []
     predictions = []
@@ -128,7 +185,13 @@ def main():
     with open(out_dir / "predictions.json", "w") as f:
         json.dump(predictions, f, indent=2)
     with open(out_dir / "metrics.json", "w") as f:
-        json.dump({"adapter": args.adapter, "base_model": args.base_model, **metrics}, f, indent=2)
+        json.dump({
+            "adapter": args.adapter, "base_model": args.base_model,
+            "n_test_products_evaluated": len(test_idx),
+            "n_test_products_excluded_for_leakage": len(leaked_idx),
+            "leaked_product_names_excluded": [products[i][0]["product_name"] for i in leaked_idx],
+            **metrics,
+        }, f, indent=2)
     print(f"Saved to {out_dir}/")
 
 
