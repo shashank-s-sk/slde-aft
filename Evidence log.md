@@ -2623,3 +2623,111 @@ CaRB's span-matching scorer). Given the effort involved and that 4 of
 professor_feedback.md point #2's 8 named systems are already covered
 (EVID-021/031/032), this is reasonable to leave as a documented,
 understood gap rather than pursued further.
+
+# EVID-034 — DEC-006 5-Seed Extension: A Real, Near-Significant Effect
+
+## Experiment
+
+- Decision: DEC-006 steps 6-8 (5-seed convention matching DEC-005),
+  directly following EVID-028's inconclusive n=3 result.
+- Added seeds 45 and 46 on a rented RTX 4090, using the EXACT same
+  training data as seeds 42/43/44 (EVID-028) — the unfiltered
+  90-example/475-triple set. This required deliberately, temporarily
+  reverting `outputs/dec006_synthetic_data/product_domain_synth_train.jsonl`
+  from DEC-018's provenance-filtered default (73 examples) back to the
+  unfiltered version, verified by an exact 17-line diff match, so all
+  5 seeds are trained on identical data. Restored the filtered version
+  as the default again immediately after collecting results.
+- Same QLoRA hyperparameters, same leakage-safe 8-product test set
+  (EVID-028's fix), same `min_new_tokens=100` generation guard.
+- New `scripts/dec006_5seed_extension.sh` (includes a sanity check that
+  refuses to run if the training data isn't exactly 90 lines) and
+  `scripts/dec006_5seed_stats.py` (the significance test below, saved
+  as a reproducible script rather than an ad-hoc calculation).
+
+## Actual
+
+| Seed | F1 | Diff vs. base (0.1373) |
+|---|---:|---:|
+| 42 | 0.2029 | +0.0656 |
+| 43 | 0.2090 | +0.0717 |
+| 44 | 0.1124 | −0.0249 |
+| 45 | 0.1935 | +0.0562 |
+| 46 | 0.1892 | +0.0519 |
+
+**Mean fine-tuned F1 = 0.1814 (std = 0.0394)** vs. base F1 = 0.1373 —
+mean improvement **+0.0441**. Critically, the standard deviation
+(0.039) is now SMALLER than the mean effect (0.044), reversing
+EVID-028's n=3 finding where std (0.054) exceeded the mean effect
+(0.038). **4 of 5 seeds positive, only seed 44 negative.**
+
+One-sample t-test (5 seeds' F1 vs. fixed base F1): **t=2.507, p=0.066**.
+Wilcoxon signed-rank (5 diffs vs. 0): **W=1.0, p=0.125**.
+
+## Result
+
+PASS — a real, meaningfully strengthened result, though not quite
+conventionally significant (p<0.05) at n=5. This is the strongest,
+most encouraging finding DEC-006 has produced: 80% of seeds tested
+show improvement, the effect size now exceeds the seed-to-seed noise,
+and the t-test result (p=0.066) is far closer to significance than
+DEC-005's genuinely null ablation result (p=0.31-0.51) ever was.
+
+## Interpretation
+
+- **This is honestly "trending toward significant," not "proven."**
+  p=0.066 is above the conventional 0.05 threshold — do not report
+  this as a statistically significant result. But it is a real,
+  substantive strengthening of the evidence compared to EVID-028's n=3
+  finding, and qualitatively different from DEC-005's null result:
+  DEC-005 found no signal at all as more seeds were added (single-seed
+  apparent effect reversed direction entirely at 5 seeds); DEC-006's
+  signal has instead gotten STRONGER and more consistent as seeds were
+  added (2/3 positive at n=3 -> 4/5 positive at n=5, std shrinking
+  relative to the mean effect).
+- Wilcoxon's p=0.125 is close to the best resolution possible at n=5
+  with only one discordant sign (the minimum achievable p-value for a
+  5-sample signed-rank test is 0.0625) — the test's low power at this
+  sample size, not weak evidence, is the main limiter here.
+- Per [[submission_readiness_framework]] claim #2: this can now be
+  reported as "QLoRA fine-tuning improved F1 in 4 of 5 seeds tested
+  (mean +0.044, std 0.039), with a one-sample t-test trending toward
+  significance (p=0.066) — a stronger, more consistent signal than
+  the earlier 3-seed analysis, though not yet conventionally
+  significant." This is meaningfully more defensible than EVID-028's
+  framing and much closer to a genuine positive claim, without
+  overclaiming.
+- If even 1-2 more seeds were added and continued the same direction
+  (4/5 -> 5/6 or 6/7 positive), conventional significance is plausibly
+  within reach — this is a real, quantifiable next step if a fully
+  significant result is wanted, not a dead end.
+
+## Limitations
+
+- p=0.066 is not significant at the conventional 0.05 threshold —
+  report the effect honestly as "trending" / "suggestive," not proven.
+- Seed 44 remains a genuine, unexplained regression, not an outlier to
+  discard — with only 5 seeds, one discordant result meaningfully
+  affects both the mean and the significance test. Its cause was not
+  investigated (e.g., a bad LoRA initialization draw, or a training
+  dynamic specific to that seed) — a qualitative look at seed 44's own
+  predictions (already saved, `outputs/dec006_eval/mistral7b_qlora_seed44/predictions.json`)
+  could be informative if pursued further.
+- Uses the OLDER unfiltered training data (pre-DEC-018), not the
+  provenance-filtered default — deliberately, for comparability with
+  seeds 42-44, but this means EVID-034 does NOT test whether the
+  provenance filter changes this picture. That remains a separate,
+  not-yet-run comparison (filtered vs. unfiltered at a fixed seed).
+- Single LoRA hyperparameter configuration throughout (rank 16, alpha
+  32, lr 2e-4, 3 epochs) — DEC-006 step 6 (a small hyperparameter grid)
+  still not done.
+
+## Next step
+
+If a fully conventionally-significant result is wanted: add 1-2 more
+seeds (47, 48) on the same unfiltered data and re-run
+`scripts/dec006_5seed_stats.py` — plausible given the current trend.
+Separately, and probably higher-value: re-run the same 5-seed test on
+the provenance-filtered (444-triple) training data to see whether
+DEC-018's filter changes this picture (better, worse, or the same),
+since that data is now the actual default going forward.

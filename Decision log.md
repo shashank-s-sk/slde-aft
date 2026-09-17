@@ -11,7 +11,7 @@ just says where each DEC currently stands and what's left.
 | 003 | Math Contribution (Noisy-Or) | DONE — **strongest result in the project** | +0.043 F1 aggregate on real data (EVID-014); held-out test F1=0.197, val F1=0.597 (EVID-013) | Paper integration (write into manuscript) not started |
 | 004 | Module-Level Ablation | DONE (single-seed pilot) | without_feedback appeared to beat full — did NOT replicate at 5 seeds (see DEC-005) | Superseded by DEC-005; nothing further needed here |
 | 005 | Statistical Validation (ablation) | DONE | NO significant effect, N=20/5-seed, p=0.31-0.51 (EVID-020) — honest null | Would need a larger-N re-run for a stronger claim either way |
-| 006 | Fine-Tuning (LoRA/QLoRA) | DONE (3 GPU runs, 1 leakage bug found+fixed) | MIXED: 2/3 seeds improve (+0.066/+0.072 F1 via fewer false positives), 1 regresses (-0.025); not significant at n=3 (EVID-028) | 2 more seeds (45,46) + real significance test, OR fold into the closed-loop test below |
+| 006 | Fine-Tuning (LoRA/QLoRA) | DONE (5-seed, matches DEC-005 convention) | 4/5 seeds improve, mean F1 +0.044 (0.137→0.181), std now smaller than the effect; one-sample t-test p=0.066 (trending, not conventionally significant), Wilcoxon p=0.125 — EVID-034, strongest signal DEC-006 has produced | Optional: 1-2 more seeds could reach significance; separately, re-test on DEC-018's provenance-filtered data (not yet done) |
 | 007 | Systematic Error Analysis | DONE | Zero pure false negatives in product train set; conflict adjustment resolves hallucination-vs-hallucination (108) not correct-vs-incorrect (1) — EVID-022 | Held-out val/test FN analysis + final example curation for the paper |
 | 008 | Scalability Evaluation | DONE (single-pass scope) | Runtime linear to N=200; per-doc latency flat ~4s regardless of KB size — EVID-023 | Memory measurement is broken (methodology flaw, needs isolated subprocess); full closed-loop scalability untested |
 | 009 | Domain Generalization (BioRED) | DONE (pilot, n=15) | Strict F1=0.0074 (misleading, boundary-mismatch artifact); relaxed F1=0.1029 — EVID-024 | Pilot-scale only; no external baseline on BioRED yet |
@@ -543,36 +543,38 @@ Implementation: DONE (src/synthetic_data_generator.py + src/prompts.py +
   for QLoRA training/eval, run and debugged on a real rented GPU)
 Testing: DONE (44/44 suite passing throughout; the GPU scripts
   themselves were validated end-to-end on RunPod, not just unit-tested)
-Experiment: THREE pilots on rented RunPod GPUs (Mistral-7B-Instruct-v0.3,
-  QLoRA rank 16): Run 1 (EVID-026, 33 examples/15 steps, RTX 4090) and
-  Run 2 (EVID-027, 90 examples/36 steps via a 200-product PKB scale-up,
-  RTX 4090) then a 3-seed confirmation of Run 2's setup (seeds 42/43/44,
-  RTX 4090 then RTX 3090 after 3 consecutive 4090 pods failed GPU
-  passthrough). A REAL LEAKAGE BUG was found and fixed between Run 2
-  and the seed confirmation (see EVID-028): the 90-example training set
-  and the eval test set came from two independently-shuffled splits
-  that overlapped on 2 of 10 test products. EVID-027's originally-
-  reported numbers are SUPERSEDED and must not be cited; EVID-028 has
-  the corrected numbers on a leakage-safe 8-product/56-triple test set,
-  and dec006_evaluate_adapter.py now auto-detects and excludes any
-  such overlap going forward. DEC-006 steps 7-8 (LoRA grid, 5-seed
-  convention matching DEC-005) still not done.
+Experiment: FOUR pilots on rented RunPod GPUs (Mistral-7B-Instruct-v0.3,
+  QLoRA rank 16): Run 1 (EVID-026, 33 examples/15 steps), Run 2
+  (EVID-027, 90 examples/36 steps via a 200-product PKB scale-up), a
+  3-seed confirmation of Run 2 (seeds 42/43/44, EVID-028 — found and
+  fixed a real train/test leakage bug), then a 5-seed extension (seeds
+  45/46 added, EVID-034) matching DEC-005's convention. DEC-006 step 6
+  (LoRA hyperparameter grid) still not done.
 Results: Run 1 (33 examples) — base F1=0.3231 vs. fine-tuned F1=0.2264,
-  DECREASED (this comparison predates the leakage bug's introduction
-  and is not affected by it). Corrected 90-example result (EVID-028,
-  n=3 seeds, leakage-safe): base F1=0.1373; seed42 F1=0.2029 (+0.0656);
-  seed43 F1=0.2090 (+0.0717); seed44 F1=0.1124 (-0.0249). Mean
-  fine-tuned F1=0.1748 (std=0.0541) — mean improvement +0.0375, but std
-  exceeds the mean effect and 1 of 3 seeds regressed: MIXED, probably
-  net-positive result, NOT statistically conclusive at n=3. Notably,
-  base/seed42/seed43 all get the exact same 7 true positives (identical
-  recall) -- fine-tuning's entire effect on those two seeds is
-  eliminating false positives (46->13->11 total predictions), not
-  finding more correct facts, a clean mechanistic story for
-  professor_feedback.md point #10. Report as: implemented and tested,
-  probably helps (2/3 seeds, mechanistically clean precision effect),
-  one regression, not yet significance-tested — mirrors DEC-005's
-  cautious framing more than EVID-027's apparent clean win did.
+  DECREASED (predates the leakage bug, unaffected by it). FINAL 5-seed
+  result on the corrected leakage-safe 8-product test set (EVID-034,
+  the current headline number for this claim): base F1=0.1373;
+  seed42=0.2029 (+0.0656); seed43=0.2090 (+0.0717); seed44=0.1124
+  (-0.0249); seed45=0.1935 (+0.0562); seed46=0.1892 (+0.0519). Mean
+  fine-tuned F1=0.1814 (std=0.0394) — mean improvement +0.0441, std now
+  SMALLER than the mean effect (reversed from the n=3 result), 4 of 5
+  seeds positive. One-sample t-test t=2.507, p=0.066 (trending toward
+  significance, not conventionally significant); Wilcoxon p=0.125 (near
+  the n=5 test's power floor of 0.0625). Report as: "fine-tuning
+  improved F1 in 4 of 5 seeds tested (mean +0.044), trending toward
+  significance (p=0.066) but not conventionally significant" — a real,
+  meaningfully strengthened signal versus the n=3 result, stronger than
+  DEC-005's genuinely null ablation finding (p=0.31-0.51), though not
+  yet a fully proven claim. Mechanistic finding from EVID-028 still
+  holds: base/seed42/seed43 share identical true-positive counts —
+  fine-tuning's effect (where positive) is eliminating false positives,
+  not finding new correct facts (professor_feedback.md point #10).
+Note: this 5-seed run used the OLDER unfiltered training data (matching
+  seeds 42-44 for comparability), not DEC-018's provenance-filtered
+  default — the filtered version was restored as the default
+  immediately after collecting these results. Testing the filtered
+  data's effect on this same 5-seed design is a separate, not-yet-run
+  comparison.
 Note: found while reading the old notebook that its B3 baseline (cell 22)
   and Table-9 "Iterative FT" results (cells 31-35) use two DIFFERENT code
   paths — B3's reported number substitutes a different OpenRouter model
