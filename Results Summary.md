@@ -135,7 +135,9 @@ Mean fine-tuned F1 = 0.1748 (std 0.0541) vs. base 0.1373 — mean +0.0375, but t
 
 **Practical note worth a sentence in Methods:** Gemini 2.5 Pro required a much larger token budget (3072 vs. 512 for the other four models) and still had a 5/30 error rate on this task — reasoning-heavy models may need more generous generation budgets and more robust output parsing for structured extraction than non-reasoning models need for the same task.
 
-**Caveat:** still a 30-sentence pilot, not CaRB's full 641-sentence test set — note this as a scale limitation, not a validity one. REBEL, GenIE, InstructUIE, DyGIE++ (the remaining professor-feedback-named systems) were not attempted — each needs a different, dependency-heavy research codebase rather than a simple API call.
+**Caveat:** still a 30-sentence pilot, not CaRB's full 641-sentence test set — note this as a scale limitation, not a validity one.
+
+**REBEL was attempted and found genuinely incompatible with CaRB's evaluation, not simply "not run"** (EVID-033) — worth a sentence in the paper's limitations, not silence. REBEL (`Babelscape/rebel-large`) is a *closed* relation-extraction model trained on Wikidata's fixed schema (canonical predicates like `"point in time"`, `"has part"`, `"subclass of"` and linked entity names), fundamentally different from CaRB's *open*-domain span-based extraction (free-text predicates copied verbatim from the sentence). Scoring REBEL's output against CaRB's span matcher gave F1=0.0000 — not because REBEL performs badly, but because the two systems represent facts in incompatible formats; a fair comparison would need an entity-linking/relation-verbalization mapping layer, out of scope for this pilot. **Do not cite REBEL's raw F1 anywhere — cite this qualitative finding instead.** GenIE and InstructUIE likely share this same incompatibility (also schema/KB-grounded); DyGIE++ remains untried (AllenNLP dependency).
 
 ---
 
@@ -162,7 +164,7 @@ Mean fine-tuned F1 = 0.1748 (std 0.0541) vs. base 0.1373 — mean +0.0375, but t
 | # | Point | Where it's addressed here |
 |---|---|---|
 | 1 | Strengthen experimental evaluation (public benchmarks) | CaRB official scores (DEC-001); BioRED domain pilot (DEC-009) — still only 2 domains/benchmarks, DocRED/TACRED/REBEL-benchmark/Universal-IE not attempted |
-| 2 | Compare against SOTA methods | DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro all done (DEC-002, EVID-031/032) — 4 of 8 named systems covered. REBEL/GenIE/InstructUIE/DyGIE++ still not done (REBEL most tractable if pursued) |
+| 2 | Compare against SOTA methods | DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro all done (DEC-002, EVID-031/032) — 4 of 8 named systems covered. REBEL attempted and found task-incompatible with CaRB scoring (EVID-033, real finding, not a gap). GenIE/InstructUIE (likely same incompatibility)/DyGIE++ (AllenNLP) not attempted |
 | 3 | Improve mathematical contribution | DEC-003's Noisy-Or result — strongest claim, but formal derivation/convergence/complexity analysis for the manuscript text still needs writing |
 | 4 | Proper ablation study | DEC-004/005 — done, honest null result |
 | 5 | Statistical validation | DEC-005 (ablation, 5 seeds) and DEC-006/028 (fine-tuning, 3 seeds) — both real, neither fully conclusive |
