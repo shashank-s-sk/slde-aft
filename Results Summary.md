@@ -117,18 +117,25 @@ Mean fine-tuned F1 = 0.1748 (std 0.0541) vs. base 0.1373 — mean +0.0375, but t
 
 **Every CaRB number reported before EVID-031 used this project's own internal exact-match evaluator, which undercounts real performance by roughly 4-8x** due to subject-boundary-mismatch scoring artifacts (e.g., penalizing a predicted `"all households"` against gold `"32.7% of all households"` as entirely wrong, despite being the same fact).
 
-**Official scores** (EVID-031, run via the real `data/CaRB/carb.py` tool, N=30 sentences, default lenient matching):
+**Official scores** (EVID-031/032, run via the real `data/CaRB/carb.py` tool, N=30 sentences, default lenient matching) — now covering 5 systems, 4 of the 8 professor feedback point #2 names GPT-4/Claude/Gemini plus DeepSeek:
 
 | System | Precision | Recall | F1 |
 |---|---:|---:|---:|
-| Llama-3.1-8B-instruct (SLDE-AFT's extractor) | 0.652 | 0.401 | **0.496** |
 | DeepSeek-V3.2 (external baseline) | 0.713 | 0.458 | **0.558** |
+| Gemini 2.5 Pro | 0.773 | 0.401 | **0.528** |
+| Claude Sonnet 5 | 0.642 | 0.446 | **0.527** |
+| GPT-4o | 0.736 | 0.384 | **0.504** |
+| Llama-3.1-8B-instruct (SLDE-AFT's own extractor) | 0.652 | 0.401 | **0.496** |
 
-(Internal-evaluator numbers, now superseded and not to be used as headline figures: Llama F1=0.0591, DeepSeek F1=0.1340.)
+(Internal-evaluator numbers, now superseded and not to be used as headline figures.)
 
-**Use the official numbers (0.496 / 0.558) anywhere CaRB results are cited in the paper.** DeepSeek still outperforms Llama, but by a smaller margin under official scoring (~1.6x) than the internal metric suggested (~2.3x).
+**Use the official numbers above anywhere CaRB results are cited in the paper.**
 
-**Caveat:** still a 30-sentence pilot, not CaRB's full 641-sentence test set — note this as a scale limitation, not a validity one.
+**Important, honest finding — state this explicitly, don't omit it:** SLDE-AFT's own extractor (Llama-3.1-8B) is the **weakest of all 5 systems tested**, though the gap is modest (~12% relative, top to bottom). This does not undermine the paper's actual novelty claims — the Noisy-Or aggregation, closed-loop architecture, and provenance filtering all operate *on top of* whatever base extractor is used, and SLDE-AFT deliberately uses a smaller, cheaper, open-weight model rather than a larger proprietary one. Frame it as: "the architecture's value lies in what it does with the base extractor's outputs, not in having the single strongest raw extractor."
+
+**Practical note worth a sentence in Methods:** Gemini 2.5 Pro required a much larger token budget (3072 vs. 512 for the other four models) and still had a 5/30 error rate on this task — reasoning-heavy models may need more generous generation budgets and more robust output parsing for structured extraction than non-reasoning models need for the same task.
+
+**Caveat:** still a 30-sentence pilot, not CaRB's full 641-sentence test set — note this as a scale limitation, not a validity one. REBEL, GenIE, InstructUIE, DyGIE++ (the remaining professor-feedback-named systems) were not attempted — each needs a different, dependency-heavy research codebase rather than a simple API call.
 
 ---
 
@@ -155,7 +162,7 @@ Mean fine-tuned F1 = 0.1748 (std 0.0541) vs. base 0.1373 — mean +0.0375, but t
 | # | Point | Where it's addressed here |
 |---|---|---|
 | 1 | Strengthen experimental evaluation (public benchmarks) | CaRB official scores (DEC-001); BioRED domain pilot (DEC-009) — still only 2 domains/benchmarks, DocRED/TACRED/REBEL-benchmark/Universal-IE not attempted |
-| 2 | Compare against SOTA methods | DeepSeek-V3.2 baseline only (DEC-002) — REBEL/GenIE/InstructUIE/DyGIE++/GPT-4/Claude/Gemini still not done; largest remaining gap |
+| 2 | Compare against SOTA methods | DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro all done (DEC-002, EVID-031/032) — 4 of 8 named systems covered. REBEL/GenIE/InstructUIE/DyGIE++ still not done (REBEL most tractable if pursued) |
 | 3 | Improve mathematical contribution | DEC-003's Noisy-Or result — strongest claim, but formal derivation/convergence/complexity analysis for the manuscript text still needs writing |
 | 4 | Proper ablation study | DEC-004/005 — done, honest null result |
 | 5 | Statistical validation | DEC-005 (ablation, 5 seeds) and DEC-006/028 (fine-tuning, 3 seeds) — both real, neither fully conclusive |
