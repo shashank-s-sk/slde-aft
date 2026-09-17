@@ -7,7 +7,7 @@ just says where each DEC currently stands and what's left.
 | DEC | Title | Status | Key Result | Next Step |
 |---|---|---|---|---|
 | 001 | CaRB Public Benchmark | DONE (pilot + official scorer) | **OFFICIAL** CaRB F1=0.496 (Llama-3.1-8B, N=30) — EVID-031. Supersedes the internal-evaluator F1=0.0591 (~8.4x higher; internal metric undercounted due to boundary-mismatch scoring artifacts) | Scale to CaRB's full 641-sentence test set for a benchmark-grade (not pilot) result |
-| 002 | External SOTA Baseline | DONE (partial) | **OFFICIAL**: DeepSeek F1=0.558 vs. Llama F1=0.496 (~1.6x) — EVID-031. (Internal evaluator said ~2.3x — smaller real gap once boundary artifacts are removed) | REBEL/GenIE/InstructUIE/GPT-4/Claude/Gemini comparisons (professor feedback #2) still not done — large, deferred |
+| 002 | External SOTA Baseline | DONE (4 of 8 named systems) | **OFFICIAL** F1 ranking: DeepSeek 0.558 > Gemini 2.5 Pro 0.528 ≈ Claude Sonnet 5 0.527 > GPT-4o 0.504 > **Llama-3.1-8B (SLDE-AFT) 0.496 — weakest of all 5** — EVID-031/032. Frame honestly: smaller/cheaper extractor by design, architecture's value is aggregation/feedback/fine-tuning on top, not raw extraction | REBEL (most tractable), GenIE/InstructUIE/DyGIE++ (deferred, dependency-heavy) still not done |
 | 003 | Math Contribution (Noisy-Or) | DONE — **strongest result in the project** | +0.043 F1 aggregate on real data (EVID-014); held-out test F1=0.197, val F1=0.597 (EVID-013) | Paper integration (write into manuscript) not started |
 | 004 | Module-Level Ablation | DONE (single-seed pilot) | without_feedback appeared to beat full — did NOT replicate at 5 seeds (see DEC-005) | Superseded by DEC-005; nothing further needed here |
 | 005 | Statistical Validation (ablation) | DONE | NO significant effect, N=20/5-seed, p=0.31-0.51 (EVID-020) — honest null | Would need a larger-N re-run for a stronger claim either way |
@@ -190,21 +190,36 @@ experiments are run.
 ## Status
 
 DEC-002: ACCEPTED
-Implementation: DONE (stronger baseline requirement fulfilled)
+Implementation: DONE (stronger baseline requirement fulfilled; extended
+  to GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro per EVID-032)
 Test: DONE (Llama-3.1-8B external baseline CaRB-10, EVID-004; DeepSeek-V3.2
-  stronger baseline CaRB-30, EVID-021)
-Experiment: PILOT COMPLETE at N=30. Internal evaluator: DeepSeek-V3.2
-  F1=0.1340 vs. pinned Llama-3.1-8B F1=0.0591 (~2.3x) — see EVID-021.
-  OFFICIAL CaRB scorer (EVID-031, use this for the paper): DeepSeek-V3.2
-  F1=0.558 vs. Llama-3.1-8B F1=0.496 (~1.6x) — DeepSeek still wins, but
-  by a smaller margin once boundary-mismatch scoring artifacts are
-  removed by CaRB's own lenient matching.
+  CaRB-30, EVID-021; GPT-4o/Claude Sonnet 5/Gemini 2.5 Pro CaRB-30,
+  EVID-032)
+Experiment: PILOT COMPLETE at N=30, 5 systems total. OFFICIAL CaRB
+  scorer (EVID-031/032, use these for the paper):
+    DeepSeek-V3.2            F1=0.558 (P=0.713 R=0.458)
+    Gemini 2.5 Pro           F1=0.528 (P=0.773 R=0.401)
+    Claude Sonnet 5          F1=0.527 (P=0.642 R=0.446)
+    GPT-4o                   F1=0.504 (P=0.736 R=0.384)
+    Llama-3.1-8B (SLDE-AFT)  F1=0.496 (P=0.652 R=0.401)
+  SLDE-AFT's own extractor is the WEAKEST of all 5 tested, though the
+  gap is modest (~12% relative, top to bottom) — must be framed
+  honestly in the paper as a deliberate smaller/cheaper-model choice,
+  not hidden. Internal-evaluator numbers for the 3 new baselines also
+  recorded (EVID-032) but superseded by the official ones per EVID-031's
+  precedent.
 Results: RECORDED
 Remaining:
-- REBEL baseline: Deferred; requires an explicit task-alignment and output-mapping protocol
-- Official CaRB scoring: TBD
+- REBEL baseline: Still deferred — most tractable of the remaining
+  named systems (Babelscape/rebel-large via transformers, CPU-feasible)
+  if pursued further
+- GenIE/InstructUIE/DyGIE++: Deliberately not attempted — each needs a
+  different, older, dependency-heavy research codebase (DyGIE++ needs
+  AllenNLP, essentially unmaintained); disproportionate effort for a
+  30-sentence pilot
 - Scale beyond N=30 toward CaRB's full 634-sentence set if a benchmark-
-  grade (not pilot-grade) result is needed
+  grade (not pilot-grade) result is needed, across all 5 systems now
+  on record
 
 ## Provider/model plan (decided during DEC-005 API credit troubleshooting; DeepSeek baseline executed in EVID-021)
 

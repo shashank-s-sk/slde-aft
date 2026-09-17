@@ -1,0 +1,15 @@
+{
+  "system": "gpt4o_baseline",
+  "model": "openai/gpt-4o",
+  "n_sentences": 30,
+  "total_cost_usd": 0.0327825,
+  "n_errors": 0,
+  "precision": 0.19298245614035087,
+  "recall": 0.09090909090909091,
+  "f1": 0.12359550561797754,
+  "true_positives": 11,
+  "false_positives": 46,
+  "false_negatives": 110,
+  "gold_count": 121,
+  "prediction_count": 57
+}

@@ -42,6 +42,9 @@ OUT_DIR = Path("outputs/dec001_official_carb")
 SYSTEMS = {
     "slde_aft_llama": "outputs/dec001_002_carb30/slde_aft_llama/predictions.json",
     "deepseek_baseline": "outputs/dec001_002_carb30/deepseek_baseline/predictions.json",
+    "gpt4o_baseline": "outputs/dec002_sota_baselines/gpt4o_baseline/predictions.json",
+    "claude_sonnet5_baseline": "outputs/dec002_sota_baselines/claude_sonnet5_baseline/predictions.json",
+    "gemini25pro_baseline": "outputs/dec002_sota_baselines/gemini25pro_baseline/predictions.json",
 }
 
 

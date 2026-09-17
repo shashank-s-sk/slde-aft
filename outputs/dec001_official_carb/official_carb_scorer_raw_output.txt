@@ -8,3 +8,18 @@ AUC: 0.392	 Optimal (precision, recall, F1): [0.713 0.458 0.558]
 INFO:root:Writing PR curve of TabReader to E:\slde-aft\outputs\dec001_official_carb\deepseek_baseline_pr_curve.dat
 
 
+=== gpt4o_baseline ===
+AUC: 0.333	 Optimal (precision, recall, F1): [0.736 0.384 0.504]
+INFO:root:Writing PR curve of TabReader to E:\slde-aft\outputs\dec001_official_carb\gpt4o_baseline_pr_curve.dat
+
+
+=== claude_sonnet5_baseline ===
+AUC: 0.366	 Optimal (precision, recall, F1): [0.642 0.446 0.527]
+INFO:root:Writing PR curve of TabReader to E:\slde-aft\outputs\dec001_official_carb\claude_sonnet5_baseline_pr_curve.dat
+
+
+=== gemini25pro_baseline ===
+AUC: 0.356	 Optimal (precision, recall, F1): [0.773 0.401 0.528]
+INFO:root:Writing PR curve of TabReader to E:\slde-aft\outputs\dec001_official_carb\gemini25pro_baseline_pr_curve.dat
+
+

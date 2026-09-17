@@ -2390,3 +2390,144 @@ If a benchmark-grade (not pilot) CaRB result is wanted for the paper:
 scale the extraction to CaRB's full 634/641-sentence test set (real
 API cost, still cheap based on this project's per-call cost history)
 and rerun this same official-scorer conversion.
+
+# EVID-032 — DEC-002 Extension: GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro Baselines
+
+## Experiment
+
+- Decision: DEC-002 (extending the external SOTA baseline requirement)
+  — professor_feedback.md point #2 explicitly names "GPT-4 extraction,"
+  "Claude," and "Gemini" among the expected comparisons; only DeepSeek
+  had been added before this.
+- Identical protocol to EVID-021's DeepSeek baseline: same 30 CaRB
+  sentences (`data/carb_dev_sample.jsonl`), same prompt
+  (`prompts/openie_carb_v1.txt`), same internal evaluator, PLUS the
+  official CaRB scorer (per EVID-031) for all five systems now on
+  record.
+- Models: `openai/gpt-4o` (matches "GPT-4 extraction" literally),
+  `anthropic/claude-sonnet-5` (current-gen, comparable tier to
+  DeepSeek-V3.2), `google/gemini-2.5-pro` (stable, non-preview).
+- New `scripts/dec002_sota_baselines_gpt_claude_gemini.py`.
+
+## Three real bugs found and fixed while collecting this
+
+1. **OpenRouter in-flight credit budget + Claude Sonnet 5's new-account
+   rate limit (20 req/min)**, hit by firing 3 models' worth of calls
+   back-to-back with no delay. Fixed with a floor delay between calls
+   (3.5s, keeping every model comfortably under 20 rpm) and
+   retry-with-backoff on HTTP 402/429.
+2. **The account then ran out of real credits entirely** (a genuine
+   "upgrade to a paid account" 402, not the transient in-flight-budget
+   variant) partway through re-collecting Claude/Gemini — user topped
+   up OpenRouter credits ($5) to resolve; no code fix applicable here,
+   documented as an operational dependency.
+3. **`src/extractors/openrouter_openie.py` crashed on a `None` content
+   field** (`TypeError: expected string or bytes-like object, got
+   'NoneType'`) — observed specifically with `google/gemini-2.5-pro`,
+   which apparently can spend its entire token budget on internal
+   reasoning and return a null final-answer content field. Fixed by
+   treating `None` content as a normal extraction failure
+   (`"model returned null content"`) instead of crashing the whole
+   script. This is a real robustness fix to shared, reused code, not
+   specific to this one baseline run.
+4. **Gemini 2.5 Pro's responses were truncated mid-JSON at the default
+   `max_tokens=512`**, confirmed via a direct diagnostic call showing
+   output cut off mid-string. Raised to 1536 (still 12/30 failures),
+   then 3072 (5/30 failures) before accepting the result — Gemini's
+   reasoning-heavy responses apparently consume much more of the token
+   budget than the other four models tested, at ~7-15x the API cost
+   per sentence ($0.49 total for 30 sentences vs. $0.03-0.07 for
+   GPT-4o/Claude).
+
+## Actual
+
+**Internal evaluator** (this project's own normalized exact-match, for
+continuity with earlier entries):
+
+| System | Precision | Recall | F1 | Errors | Cost |
+|---|---:|---:|---:|---:|---:|
+| GPT-4o | 0.193 | 0.091 | 0.124 | 0/30 | $0.033 |
+| Claude Sonnet 5 | 0.132 | 0.099 | 0.113 | 0/30 | $0.068 |
+| Gemini 2.5 Pro | 0.311 | 0.157 | 0.209 | 5/30 | $0.491 |
+
+**Official CaRB scorer** (per EVID-031's methodology — use these, not
+the internal-evaluator numbers, in the paper):
+
+| System | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| Llama-3.1-8B-instruct (SLDE-AFT's own extractor) | 0.652 | 0.401 | **0.496** |
+| GPT-4o | 0.736 | 0.384 | **0.504** |
+| Claude Sonnet 5 | 0.642 | 0.446 | **0.527** |
+| Gemini 2.5 Pro | 0.773 | 0.401 | **0.528** |
+| DeepSeek-V3.2 | 0.713 | 0.458 | **0.558** |
+
+Ranked by official F1: DeepSeek-V3.2 > Gemini 2.5 Pro ≈ Claude Sonnet 5
+> GPT-4o > Llama-3.1-8B-instruct.
+
+## Result
+
+PASS on execution (professor feedback point #2 now has 4 real external
+baselines instead of 1), but an important, honest finding: **SLDE-AFT's
+own extractor (Llama-3.1-8B) is the WEAKEST of all 5 systems tested**
+under official CaRB scoring — not by a huge margin (0.496 vs. the
+range 0.504-0.558, roughly a 12% relative gap top-to-bottom), but it is
+last, not first or middle of the pack.
+
+## Interpretation
+
+- **This needs honest framing in the paper, not omission.** SLDE-AFT's
+  contribution was never claimed to be "the best raw extractor" — the
+  paper's actual novelty claims (per [[submission_readiness_framework]])
+  are the Noisy-Or aggregation (claim #3), the closed-loop architecture
+  (claim #1), and provenance filtering (claim #5), all of which operate
+  ON TOP OF whatever base extractor is used. This result should be
+  framed as: "SLDE-AFT deliberately uses a smaller, cheaper open-weight
+  model (Llama-3.1-8B) as its extractor rather than a larger proprietary
+  one, and the architecture's value lies in what it does with that
+  model's outputs (aggregation, feedback, fine-tuning), not in raw
+  single-pass extraction quality" — not as a weakness to hide.
+- Gemini 2.5 Pro's high API cost and error rate (5/30, all truncation/
+  null-content related) despite scoring competitively is itself a
+  practically-relevant finding: it suggests reasoning-heavy models may
+  need substantially larger token budgets and more robust output
+  parsing for structured-extraction tasks than non-reasoning models
+  need for the same task.
+- DeepSeek-V3.2 remains the strongest system tested on raw extraction
+  quality, consistent with its role as DEC-002's original "stronger
+  baseline" pick (EVID-021).
+- The three new baselines plus DeepSeek now cover 4 of the 8 systems
+  professor_feedback.md point #2 names (GPT-4 [as GPT-4o], Claude,
+  Gemini, plus DeepSeek as an unnamed-but-stronger addition). REBEL,
+  GenIE, InstructUIE, DyGIE++ remain not attempted — see Limitations.
+
+## Limitations
+
+- Still N=30, pilot scale, same as every other CaRB result in this
+  project.
+- REBEL, GenIE, InstructUIE, DyGIE++ (the remaining systems named in
+  professor_feedback.md point #2) were deliberately not attempted here
+  — each requires a different, often older, dependency-heavy research
+  codebase (DyGIE++ needs AllenNLP, essentially unmaintained) rather
+  than a simple API call, disproportionate effort for a 30-sentence
+  pilot. REBEL specifically (Babelscape/rebel-large, downloadable via
+  `transformers`, runnable on CPU) is the most tractable of the four if
+  pursued further.
+- Gemini 2.5 Pro's result used a much larger max_tokens (3072 vs. 512
+  for the other four models) and still has a 5/30 error rate -- not a
+  perfectly like-for-like comparison in terms of generation budget,
+  though the scored triples themselves went through the identical
+  parsing/evaluation pipeline as every other system.
+- Model pins are current as of 2026-09; any of these providers may
+  retire or replace these specific model IDs, unlike the project's
+  core pipeline model which is expected to stay fixed for the
+  ablation/statistics work.
+
+## Next step
+
+If REBEL is added: use `Babelscape/rebel-large` via `transformers`
+(`AutoModelForSeq2SeqLM`), CPU inference is feasible for 30 short
+sentences, output format uses `<triplet>`/`<subj>`/`<obj>` special
+tokens requiring a small parser, then convert to the same tabbed format
+already built for `scripts/dec001_run_official_carb_scorer.py`. If a
+benchmark-grade (not pilot) comparison across all 5 already-tested
+systems is wanted, scale to CaRB's full test set.

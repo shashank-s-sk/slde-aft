@@ -74,6 +74,15 @@ def extract_openie_triples(
     result["cost_usd"] = usage.get("cost")
 
     content = response_json["choices"][0]["message"]["content"]
+    if content is None:
+        # Some providers (observed with google/gemini-2.5-pro via
+        # OpenRouter) can return a null content field -- e.g. the model
+        # spent its whole token budget on internal reasoning and never
+        # produced a final answer. Treat as a normal extraction failure,
+        # not a crash.
+        result["error"] = "model returned null content"
+        result["raw_content_on_error"] = None
+        return result
     match = re.search(r"\[.*\]", content, re.DOTALL)
     if not match:
         result["error"] = "no JSON array found in model output"

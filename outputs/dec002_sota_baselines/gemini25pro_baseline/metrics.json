@@ -1,0 +1,15 @@
+{
+  "system": "gemini25pro_baseline",
+  "model": "google/gemini-2.5-pro",
+  "n_sentences": 30,
+  "total_cost_usd": 0.49145750000000005,
+  "n_errors": 5,
+  "precision": 0.3114754098360656,
+  "recall": 0.15702479338842976,
+  "f1": 0.2087912087912088,
+  "true_positives": 19,
+  "false_positives": 42,
+  "false_negatives": 102,
+  "gold_count": 121,
+  "prediction_count": 61
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "sentence_id": "carb_test_0001",
+    "cost_usd": 0.00637,
+    "latency_s": 6.419737599964719,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0002",
+    "cost_usd": 0.00824375,
+    "latency_s": 7.973083799995948,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "sentence_id": "carb_test_0003",
+    "cost_usd": 0.01400125,
+    "latency_s": 10.464795999985654,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 4
+  },
+  {
+    "sentence_id": "carb_test_0004",
+    "cost_usd": 0.01053625,
+    "latency_s": 9.309989099972881,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 3
+  },
+  {
+    "sentence_id": "carb_test_0005",
+    "cost_usd": 0.03072125,
+    "latency_s": 26.19476240000222,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5
+  },
+  {
+    "sentence_id": "carb_test_0006",
+    "cost_usd": 0.00867,
+    "latency_s": 7.286849599971902,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 3
+  },
+  {
+    "sentence_id": "carb_test_0007",
+    "cost_usd": 0.0307975,
+    "latency_s": 27.87666349997744,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0008",
+    "cost_usd": 0.03090125,
+    "latency_s": 25.913946099986788,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "sentence_id": "carb_test_0009",
+    "cost_usd": 0.00407625,
+    "latency_s": 4.4151969000231475,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0010",
+    "cost_usd": 0.01407375,
+    "latency_s": 13.268613000051118,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0011",
+    "cost_usd": 0.0086875,
+    "latency_s": 9.277202400029637,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "sentence_id": "carb_test_0012",
+    "cost_usd": 0.01142,
+    "latency_s": 9.631520700000692,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0013",
+    "cost_usd": 0.02232625,
+    "latency_s": 19.287204599997494,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 3
+  },
+  {
+    "sentence_id": "carb_test_0014",
+    "cost_usd": 0.024545,
+    "latency_s": 22.335582600033376,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0015",
+    "cost_usd": 0.00795125,
+    "latency_s": 7.2366302000009455,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 3
+  },
+  {
+    "sentence_id": "carb_test_0016",
+    "cost_usd": 0.018375,
+    "latency_s": 15.687251800030936,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 3
+  },
+  {
+    "sentence_id": "carb_test_0017",
+    "cost_usd": 0.028695,
+    "latency_s": 26.330788699968252,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0018",
+    "cost_usd": 0.03091375,
+    "latency_s": 25.335376900038682,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "sentence_id": "carb_test_0019",
+    "cost_usd": 0.00527875,
+    "latency_s": 5.627777599962428,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 3
+  },
+  {
+    "sentence_id": "carb_test_0020",
+    "cost_usd": 0.01049125,
+    "latency_s": 9.178693099995144,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 3
+  },
+  {
+    "sentence_id": "carb_test_0021",
+    "cost_usd": 0.01480625,
+    "latency_s": 13.457341499975882,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 3
+  },
+  {
+    "sentence_id": "carb_test_0022",
+    "cost_usd": 0.03091375,
+    "latency_s": 26.24402480002027,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "sentence_id": "carb_test_0023",
+    "cost_usd": 0.030885,
+    "latency_s": 27.50188060000073,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0
+  },
+  {
+    "sentence_id": "carb_test_0024",
+    "cost_usd": 0.0,
+    "latency_s": 129.7144800000242,
+    "http_status": 200,
+    "error": "model returned null content",
+    "n_triples": 0
+  },
+  {
+    "sentence_id": "carb_test_0025",
+    "cost_usd": 0.01005875,
+    "latency_s": 9.514427900023293,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0026",
+    "cost_usd": 0.01440375,
+    "latency_s": 13.0418287999928,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 4
+  },
+  {
+    "sentence_id": "carb_test_0027",
+    "cost_usd": 0.00787375,
+    "latency_s": 8.100428699981421,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  },
+  {
+    "sentence_id": "carb_test_0028",
+    "cost_usd": 0.01235375,
+    "latency_s": 11.521788899961393,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0029",
+    "cost_usd": 0.02913,
+    "latency_s": 24.831215900019743,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 2
+  },
+  {
+    "sentence_id": "carb_test_0030",
+    "cost_usd": 0.0139575,
+    "latency_s": 13.747372800018638,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1
+  }
+]
