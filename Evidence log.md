@@ -2531,3 +2531,95 @@ tokens requiring a small parser, then convert to the same tabbed format
 already built for `scripts/dec001_run_official_carb_scorer.py`. If a
 benchmark-grade (not pilot) comparison across all 5 already-tested
 systems is wanted, scale to CaRB's full test set.
+
+# EVID-033 — DEC-002 REBEL Attempt: Real Task-Incompatibility Finding
+
+## Experiment
+
+- Decision: DEC-002 (professor_feedback.md point #2's first-named,
+  most standard baseline). Zero API cost — `Babelscape/rebel-large`
+  run locally on CPU via `transformers`, on the same 30 CaRB sentences
+  as every other baseline in this project.
+- New `scripts/dec002_rebel_baseline.py`, with a dedicated parser for
+  REBEL's `<triplet>`/`<subj>`/`<obj>` delimited output format (not
+  the JSON-array format the other extractors use), adapted from the
+  parsing logic on the model's own HF model card.
+- Runtime: 117.4s for 30 sentences on CPU (beam search, num_beams=3),
+  0 code errors.
+
+## Actual
+
+Internal evaluator: **P=0.0000 R=0.0000 F1=0.0000** (0 true positives,
+31 predictions, 121 gold triples).
+
+Manual inspection of the predictions (not just the score) shows this
+is NOT a broken or low-quality extractor — REBEL is working exactly as
+designed, extracting a **structurally different kind of triple** than
+CaRB expects:
+
+| Sentence (truncated) | CaRB gold (free-text spans) | REBEL output (Wikidata-style) |
+|---|---|---|
+| "32.7% of all households were made up of individuals..." | `(32.7% of all households, were made up of, individuals)` | `(65 years of age, point in time, 65)` |
+| "A CEN forms an important...part of a Local Strategic Partnership." | `(A CEN, forms, an important part of a Local Strategic Partnership)` | `(Local Strategic Partnership, has part, CEN)` |
+| "...he became the youngest mayor in Pittsburgh's history..." | `(he, became, the youngest mayor in Pittsburgh's history)` | `(Democrat, located in the administrative territorial entity, Pittsburgh)` |
+
+## Result
+
+FAIL for the direct comparison table, but PASS as a real, informative
+methodological finding — **this confirms and explains, rather than
+contradicts, DEC-002's own original deferral note**
+("REBEL baseline: Deferred; requires an explicit task-alignment and
+output-mapping protocol").
+
+## Interpretation
+
+- **REBEL is a closed relation-extraction model**, trained on
+  Wikidata's fixed relation schema (canonical predicate labels like
+  "point in time", "has part", "subclass of", "inception") and
+  canonical/linked entity names, not CaRB's open-domain span-based
+  extraction (arbitrary free-text noun phrases and predicates copied
+  verbatim from the source sentence). These are genuinely different
+  tasks that happen to both be called "relation/triple extraction."
+- Scoring REBEL's Wikidata-relation output directly against CaRB's
+  exact/lenient span-matching evaluator (internal or official)
+  produces a meaningless near-zero score — not a fair measurement of
+  REBEL's actual capability at its own task, and reporting it as-is
+  in a comparison table would be misleading in the same way EVID-024's
+  strict BioRED F1=0.0074 would have been if reported without context.
+- **Do not include REBEL in the main CaRB comparison table as a bare
+  F1 number.** If REBEL must be discussed, frame it exactly as this
+  entry does: attempted, found to require a task-alignment/output-
+  mapping layer that this pilot's scope did not include, consistent
+  with the standing DEC-002 deferral.
+- This is a legitimate, citable methodological point for the paper's
+  limitations/discussion section: comparing an Open IE system against
+  a closed relation-extraction system on the same benchmark requires
+  an explicit mapping protocol (e.g., entity linking + relation
+  verbalization back to free text) that neither this project nor,
+  typically, most OpenIE papers actually build — it's a real, known
+  difficulty in cross-paradigm IE comparison, not a flaw specific to
+  this project's methodology.
+
+## Limitations
+
+- Only REBEL was attempted from the remaining professor-feedback-named
+  systems; GenIE and InstructUIE likely share REBEL's closed/schema-
+  grounded nature (GenIE also targets Wikidata-style KB population)
+  and would probably hit the same fundamental incompatibility if
+  attempted the same way. DyGIE++ is span-based and closer to CaRB's
+  paradigm, but wasn't attempted (AllenNLP dependency).
+- No attempt was made to build the task-alignment/output-mapping layer
+  that would make a fair REBEL comparison possible — correctly scoped
+  out as substantial additional work, not a quick fix.
+
+## Next step
+
+If a fair REBEL comparison is ever wanted: build an output-mapping
+layer that verbalizes REBEL's canonical entity/relation output back
+into free-text spans matching the source sentence (or, more simply,
+manually/qualitatively compare REBEL's extracted facts against gold
+for semantic correctness rather than trying to force them through
+CaRB's span-matching scorer). Given the effort involved and that 4 of
+professor_feedback.md point #2's 8 named systems are already covered
+(EVID-021/031/032), this is reasonable to leave as a documented,
+understood gap rather than pursued further.

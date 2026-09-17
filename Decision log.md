@@ -7,7 +7,7 @@ just says where each DEC currently stands and what's left.
 | DEC | Title | Status | Key Result | Next Step |
 |---|---|---|---|---|
 | 001 | CaRB Public Benchmark | DONE (pilot + official scorer) | **OFFICIAL** CaRB F1=0.496 (Llama-3.1-8B, N=30) — EVID-031. Supersedes the internal-evaluator F1=0.0591 (~8.4x higher; internal metric undercounted due to boundary-mismatch scoring artifacts) | Scale to CaRB's full 641-sentence test set for a benchmark-grade (not pilot) result |
-| 002 | External SOTA Baseline | DONE (4 of 8 named systems) | **OFFICIAL** F1 ranking: DeepSeek 0.558 > Gemini 2.5 Pro 0.528 ≈ Claude Sonnet 5 0.527 > GPT-4o 0.504 > **Llama-3.1-8B (SLDE-AFT) 0.496 — weakest of all 5** — EVID-031/032. Frame honestly: smaller/cheaper extractor by design, architecture's value is aggregation/feedback/fine-tuning on top, not raw extraction | REBEL (most tractable), GenIE/InstructUIE/DyGIE++ (deferred, dependency-heavy) still not done |
+| 002 | External SOTA Baseline | DONE (4/8 scored + 1 attempted) | **OFFICIAL** F1 ranking: DeepSeek 0.558 > Gemini 2.5 Pro 0.528 ≈ Claude Sonnet 5 0.527 > GPT-4o 0.504 > **Llama-3.1-8B (SLDE-AFT) 0.496 — weakest of all 5** — EVID-031/032. Frame honestly: smaller/cheaper extractor by design. REBEL attempted (EVID-033): real finding — it's a closed/Wikidata-style extractor, fundamentally incompatible with CaRB's open-span scoring, not a bare F1 to report | GenIE/InstructUIE (likely same incompatibility as REBEL)/DyGIE++ (AllenNLP) — deliberately not attempted |
 | 003 | Math Contribution (Noisy-Or) | DONE — **strongest result in the project** | +0.043 F1 aggregate on real data (EVID-014); held-out test F1=0.197, val F1=0.597 (EVID-013) | Paper integration (write into manuscript) not started |
 | 004 | Module-Level Ablation | DONE (single-seed pilot) | without_feedback appeared to beat full — did NOT replicate at 5 seeds (see DEC-005) | Superseded by DEC-005; nothing further needed here |
 | 005 | Statistical Validation (ablation) | DONE | NO significant effect, N=20/5-seed, p=0.31-0.51 (EVID-020) — honest null | Would need a larger-N re-run for a stronger claim either way |
@@ -210,16 +210,21 @@ Experiment: PILOT COMPLETE at N=30, 5 systems total. OFFICIAL CaRB
   precedent.
 Results: RECORDED
 Remaining:
-- REBEL baseline: Still deferred — most tractable of the remaining
-  named systems (Babelscape/rebel-large via transformers, CPU-feasible)
-  if pursued further
-- GenIE/InstructUIE/DyGIE++: Deliberately not attempted — each needs a
-  different, older, dependency-heavy research codebase (DyGIE++ needs
-  AllenNLP, essentially unmaintained); disproportionate effort for a
-  30-sentence pilot
+- REBEL baseline: ATTEMPTED (EVID-033) — real finding, not a bare
+  number: REBEL is a closed relation-extraction model (Wikidata-style
+  canonical entities/predicates), fundamentally incompatible with
+  CaRB's open-domain span matching without a task-alignment/output-
+  mapping layer this pilot's scope didn't include. Confirms DEC-002's
+  original deferral note was correct. Do not report a bare REBEL F1 in
+  the comparison table — cite EVID-033's qualitative finding instead.
+- GenIE/InstructUIE/DyGIE++: Deliberately not attempted — GenIE and
+  InstructUIE likely share REBEL's closed/schema-grounded nature and
+  would probably hit the same incompatibility; DyGIE++ needs AllenNLP,
+  essentially unmaintained. Disproportionate effort for a 30-sentence
+  pilot.
 - Scale beyond N=30 toward CaRB's full 634-sentence set if a benchmark-
-  grade (not pilot-grade) result is needed, across all 5 systems now
-  on record
+  grade (not pilot-grade) result is needed, across the 5 systems with
+  valid comparable scores
 
 ## Provider/model plan (decided during DEC-005 API credit troubleshooting; DeepSeek baseline executed in EVID-021)
 
