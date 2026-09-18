@@ -26,6 +26,23 @@ and lets 43/44 etc. produce genuinely different LoRA initializations
 passing seed only to SFTConfig would NOT reseed the LoRA init, since
 that happens before the Trainer exists) and data ordering, for a real
 multi-seed replication check (DEC-006 steps 6-8).
+
+DEC-022 (epoch/LoRA grid) additions: --epochs and --data-path let a
+single run override NUM_EPOCHS / SYNTHETIC_DATA_PATH without touching
+the module-level defaults (which stay pointed at DEC-018's current
+73-example provenance-filtered default -- the production default, NOT
+what DEC-022's grid uses). DEC-022 Stage 1 explicitly passes
+--data-path outputs/dec006_synthetic_data/product_domain_synth_train_90unfiltered.jsonl
+(the exact 90-example unfiltered set from EVID-028/034, extracted from
+git commit eaf300f) so results stay comparable to the existing
+epoch=3/seed=42 data point (F1=0.2029, EVID-034) -- do not use the
+default 73-example path for DEC-022 comparisons, they are not the same
+training set.
+
+Usage (DEC-022 Stage 1):
+    python scripts/dec006_lora_finetune.py --seed 42 --epochs 2 \\
+        --data-path outputs/dec006_synthetic_data/product_domain_synth_train_90unfiltered.jsonl \\
+        --output-dir outputs/dec022_epoch_grid/epochs_2
 """
 
 from __future__ import annotations
@@ -54,9 +71,27 @@ GRAD_ACCUM_STEPS = 4
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--epochs", type=int, default=None,
+                         help="Override NUM_EPOCHS (DEC-022 grid); defaults to the module constant.")
+    parser.add_argument("--lora-rank", type=int, default=None, help="Override LORA_RANK (DEC-022 grid).")
+    parser.add_argument("--lora-alpha", type=int, default=None, help="Override LORA_ALPHA (DEC-022 grid).")
+    parser.add_argument("--learning-rate", type=float, default=None, help="Override LEARNING_RATE (DEC-022 grid).")
+    parser.add_argument("--data-path", type=str, default=None,
+                         help="Override SYNTHETIC_DATA_PATH -- DEC-022 grid MUST pass the "
+                              "90-example unfiltered set to stay comparable to EVID-034.")
+    parser.add_argument("--output-dir", type=str, default=None,
+                         help="Override the default output_dir naming.")
     args = parser.parse_args()
     seed = args.seed
-    output_dir = f"outputs/dec006_adapters/mistral7b_qlora_seed{seed}" if seed != 42 else "outputs/dec006_adapters/mistral7b_qlora"
+    num_epochs = args.epochs if args.epochs is not None else NUM_EPOCHS
+    lora_rank = args.lora_rank if args.lora_rank is not None else LORA_RANK
+    lora_alpha = args.lora_alpha if args.lora_alpha is not None else LORA_ALPHA
+    learning_rate = args.learning_rate if args.learning_rate is not None else LEARNING_RATE
+    data_path = args.data_path if args.data_path is not None else SYNTHETIC_DATA_PATH
+    if args.output_dir is not None:
+        output_dir = args.output_dir
+    else:
+        output_dir = f"outputs/dec006_adapters/mistral7b_qlora_seed{seed}" if seed != 42 else "outputs/dec006_adapters/mistral7b_qlora"
 
     import torch
     from datasets import load_dataset
@@ -87,12 +122,14 @@ def main():
         )
 
     model = get_peft_model(model, LoraConfig(
-        r=LORA_RANK, lora_alpha=LORA_ALPHA, lora_dropout=LORA_DROPOUT,
+        r=lora_rank, lora_alpha=lora_alpha, lora_dropout=LORA_DROPOUT,
         bias="none", task_type="CAUSAL_LM",
     ))
 
-    train_ds = load_dataset("json", data_files=SYNTHETIC_DATA_PATH)["train"]
-    print(f"Training on {len(train_ds)} examples (seed={seed}) -> {output_dir}")
+    train_ds = load_dataset("json", data_files=data_path)["train"]
+    print(f"Training on {len(train_ds)} examples (seed={seed}, epochs={num_epochs}, "
+          f"rank={lora_rank}, alpha={lora_alpha}, lr={learning_rate}) -> {output_dir}")
+    print(f"Data source: {data_path}")
 
     trainer = SFTTrainer(
         model=model,
@@ -103,8 +140,8 @@ def main():
             seed=seed,
             per_device_train_batch_size=BATCH_SIZE,
             gradient_accumulation_steps=GRAD_ACCUM_STEPS,
-            num_train_epochs=NUM_EPOCHS,
-            learning_rate=LEARNING_RATE,
+            num_train_epochs=num_epochs,
+            learning_rate=learning_rate,
             logging_steps=10,
             save_strategy="no",
             report_to="none",
@@ -120,10 +157,10 @@ def main():
 
     config_used = {
         "base_model": BASE_MODEL, "use_4bit": USE_4BIT, "seed": seed,
-        "lora_rank": LORA_RANK, "lora_alpha": LORA_ALPHA, "lora_dropout": LORA_DROPOUT,
-        "learning_rate": LEARNING_RATE, "num_epochs": NUM_EPOCHS,
+        "lora_rank": lora_rank, "lora_alpha": lora_alpha, "lora_dropout": LORA_DROPOUT,
+        "learning_rate": learning_rate, "num_epochs": num_epochs,
         "batch_size": BATCH_SIZE, "grad_accum_steps": GRAD_ACCUM_STEPS,
-        "n_training_examples": len(train_ds),
+        "n_training_examples": len(train_ds), "data_path": data_path,
     }
     import json
     with open(Path(output_dir) / "training_config.json", "w") as f:

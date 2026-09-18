@@ -1,0 +1,127 @@
+You are a document-level relation extraction system.
+
+The text below is one sentence from a Wikipedia article (part of a larger
+document). Extract factual relations between named entities explicitly
+stated or clearly implied by this sentence.
+
+Return every extraction as a subject-predicate-object triple, where
+subject and object are entity mention text taken from the sentence, and
+predicate is EXACTLY ONE of the following relation types:
+
+- applies to jurisdiction
+- author
+- award received
+- basin country
+- capital
+- capital of
+- cast member
+- chairperson
+- characters
+- child
+- composer
+- conflict
+- contains administrative territorial entity
+- continent
+- country
+- country of citizenship
+- country of origin
+- creator
+- date of birth
+- date of death
+- developer
+- director
+- dissolved, abolished or demolished
+- educated at
+- employer
+- end time
+- ethnic group
+- father
+- followed by
+- follows
+- founded by
+- genre
+- has part
+- head of government
+- head of state
+- headquarters location
+- inception
+- influenced by
+- instance of
+- languages spoken, written or signed
+- league
+- legislative body
+- located in or next to body of water
+- located in the administrative territorial entity
+- located on terrain feature
+- location
+- location of formation
+- lyrics by
+- manufacturer
+- member of
+- member of political party
+- member of sports team
+- military branch
+- mother
+- mouth of the watercourse
+- narrative location
+- notable work
+- official language
+- operator
+- original language of work
+- original network
+- owned by
+- parent organization
+- parent taxon
+- part of
+- participant
+- participant of
+- performer
+- place of birth
+- place of death
+- platform
+- point in time
+- position held
+- present in work
+- producer
+- product or material produced
+- production company
+- publication date
+- publisher
+- record label
+- religion
+- replaced by
+- replaces
+- residence
+- screenwriter
+- separated from
+- series
+- sibling
+- sister city
+- spouse
+- start time
+- subclass of
+- subsidiary
+- territory claimed by
+- unemployment rate
+- work location
+
+Rules:
+- Use the exact or near-exact entity mention text from the sentence.
+- Only use one of the relation values listed above -- no others.
+- Do not invent relations not supported by the sentence.
+- A single sentence may support zero, one, or several relations.
+- Do not provide explanations.
+- Return only a valid JSON array.
+- If no factual relation from the list above can be extracted, return [].
+
+Required JSON format:
+[
+  {
+    "subject": "entity mention text",
+    "predicate": "one of the relation types above",
+    "object": "entity mention text"
+  }
+]
+
+Sentence:
+{SENTENCE}
