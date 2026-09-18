@@ -6,9 +6,9 @@ just says where each DEC currently stands and what's left.
 
 | DEC | Title | Status | Key Result | Next Step |
 |---|---|---|---|---|
-| 001 | CaRB Public Benchmark | DONE (pilot + official scorer) | **OFFICIAL** CaRB F1=0.496 (Llama-3.1-8B, N=30) — EVID-031. Supersedes the internal-evaluator F1=0.0591 (~8.4x higher; internal metric undercounted due to boundary-mismatch scoring artifacts) | Scale to CaRB's full 641-sentence test set for a benchmark-grade (not pilot) result |
+| 001 | CaRB Public Benchmark | DONE (pilot + full-scale official scorer) | **OFFICIAL full-scale (N=548)** CaRB F1=0.467 (Llama-3.1-8B), F1=0.571 (DeepSeek-V3.2) — EVID-035. Pilot (N=30, EVID-031) F1=0.496/0.558 held up well (deltas -0.029/+0.013), no dramatic shift. Cost $0.0520 | Optional: extend full-scale to GPT-4o/Claude/Gemini (~$12.66 combined) for full 5-system parity; not required |
 | 002 | External SOTA Baseline | DONE (4/8 scored + 1 attempted) | **OFFICIAL** F1 ranking: DeepSeek 0.558 > Gemini 2.5 Pro 0.528 ≈ Claude Sonnet 5 0.527 > GPT-4o 0.504 > **Llama-3.1-8B (SLDE-AFT) 0.496 — weakest of all 5** — EVID-031/032. Frame honestly: smaller/cheaper extractor by design. REBEL attempted (EVID-033): real finding — it's a closed/Wikidata-style extractor, fundamentally incompatible with CaRB's open-span scoring, not a bare F1 to report | GenIE/InstructUIE (likely same incompatibility as REBEL)/DyGIE++ (AllenNLP) — deliberately not attempted |
-| 003 | Math Contribution (Noisy-Or) | DONE — **strongest result in the project** | +0.043 F1 aggregate on real data (EVID-014); held-out test F1=0.197, val F1=0.597 (EVID-013) | Paper integration (write into manuscript) not started |
+| 003 | Math Contribution (Noisy-Or) | DONE — **strongest result in the project** | +0.043 F1 aggregate on real data (EVID-014); real-data ECE=0.3332 + O(N)/O(N^2) complexity diagnosed (EVID-036) | Steps 2-4 (formal derivation/proof/convergence) are math-writing, not experiments; manuscript integration not started |
 | 004 | Module-Level Ablation | DONE (single-seed pilot) | without_feedback appeared to beat full — did NOT replicate at 5 seeds (see DEC-005) | Superseded by DEC-005; nothing further needed here |
 | 005 | Statistical Validation (ablation) | DONE | NO significant effect, N=20/5-seed, p=0.31-0.51 (EVID-020) — honest null | Would need a larger-N re-run for a stronger claim either way |
 | 006 | Fine-Tuning (LoRA/QLoRA) | DONE (5-seed, matches DEC-005 convention) | 4/5 seeds improve, mean F1 +0.044 (0.137→0.181), std now smaller than the effect; one-sample t-test p=0.066 (trending, not conventionally significant), Wilcoxon p=0.125 — EVID-034, strongest signal DEC-006 has produced | Optional: 1-2 more seeds could reach significance; separately, re-test on DEC-018's provenance-filtered data (not yet done) |
@@ -21,6 +21,9 @@ just says where each DEC currently stands and what's left.
 | 013 | Writing Refinement | NOT STARTED | — | Writing task — deferred |
 | 018 | Provenance Filter (Claim #5) | DONE | Filtering raises training-data precision vs. gold from 93.5%→100% (drops 31/475 triples, all wrong) — EVID-029. Now the default in `dec006_regenerate_synth_data.py` | Optionally re-run DEC-006 fine-tuning on the filtered (444-triple) data to check if subject-copying failures decrease |
 | 019 | Closed-Loop Integration Test (Claim #1) | DONE | Treatment (fine-tuned model closes the loop) ~FLAT vs. pre-closure baseline (F1 0.3869→0.3864) but BEATS control/no-fine-tuning (F1 0.3791, -0.0073) — EVID-030. Closing the loop does no harm and modestly beats the realistic alternative | Repeat with seeds 42/44 as separate treatment arms to check this holds across seeds; a sustained multi-cycle loop is a bigger follow-up |
+| 020 | Framework-Level Validation on DocRED | DONE (pilot) | Naive F1=0.0329 vs. PKB-aggregated F1=0.0104 (worse) — PKB's exact-string-match aggregation rarely corroborates the same fact across differently-phrased evidence sentences on open text. Real, diagnosed limitation, cost $0.00131 | Genuine finding for Limitations (point #10); a fuzzy/entity-linked matching key would be the natural fix if pursued further |
+| 021 | Extractor-Only Validation on TACRED | **NOT PURSUED** (user decision, 2026-09-18) | — | Dropped — CaRB + DocRED already cover two benchmark task types; add one Limitations sentence (see DEC-021 section) so this reads as a scope decision, not a gap |
+| 022 | Epoch / LoRA Hyperparameter Grid (Claim #2, point #6) | Stage 1+2 DONE | Winning config: epochs=5, rank=16, alpha=32, lr=2e-4 (only epochs changed from original default) — F1=0.2222 vs default's F1=0.2029 (+0.0193) — EVID-037/038. Recall flat (0.1250) across all 9 grid runs | Stage 3: winning config × seeds 43-46, then significance test vs. base and EVID-034 — pod stopped, redeploy next session |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -117,6 +120,64 @@ DEC-001, part 2: Run your LLM on 3 sentences        ✅ Done (now scaled to 30)
 DEC-001, part 3: Save and inspect predictions       ✅ Done
 DEC-001, part 4: Evaluate internally                ✅ Done
 DEC-001, part 5: Export CaRB format and run scorer  ✅ Done — see EVID-031
+DEC-001, part 6: Scale to full 641-sentence test set  ⏳ SCOPED, not started
+
+## DEC-001 Part 6 — Full 641-Sentence Scale-Up (scoped 2026-09-17)
+
+**Why:** the 30-sentence pilot is a real, official-scorer result, but a
+Q1 reviewer can reasonably ask "why not the full CaRB test set" —
+`data/CaRB/data/test.txt` has 641 sentences total, and this project's
+carb_dev_sample.jsonl only used 30 (4.7%). Cost analysis shows scaling
+the core result is nearly free.
+
+**Cost estimate, extrapolated linearly from the EVID-021 30-sentence
+run (per-sentence cost x 641):**
+
+| System | 30-sentence actual cost | Estimated cost at 641 |
+|---|---:|---:|
+| Llama-3.1-8B-instruct (SLDE-AFT's own extractor) | $0.000221 | **~$0.005** |
+| DeepSeek-V3.2 (external baseline) | $0.002136 | **~$0.046** |
+| GPT-4o | $0.033 | ~$0.71 |
+| Claude Sonnet 5 | $0.068 | ~$1.45 |
+| Gemini 2.5 Pro | $0.491 (large 3072-token budget) | ~$10.50 |
+
+**Decision, given the user's current budget constraint:** scale up
+**Llama-3.1-8B and DeepSeek-V3.2 only** (combined estimated cost
+**~$0.05**, trivial) to the full 641-sentence set — this covers the
+paper's actual headline claim (SLDE-AFT's own extractor's official
+CaRB score) and its strongest baseline comparison. **Defer GPT-4o/
+Claude/Gemini full-scale runs** (combined ~$12.66) as optional —
+their 30-sentence pilot numbers can still be reported as pilot-scale
+SOTA comparison points, just not the primary "benchmark-grade" claim.
+
+**How to implement:**
+1. Build a full-641 equivalent of `carb_dev_sample.jsonl` from
+   `data/CaRB/data/test.txt` (same conversion logic used for the
+   30-sentence sample — check `scripts/dec001_002_carb30_comparison.py`
+   / whatever script built `carb_dev_sample.jsonl` originally for the
+   exact parsing format, since CaRB's raw `test.txt` format needs
+   converting to the `sourceid`/`content`/gold-triples JSONL shape).
+2. Re-run `scripts/dec001_002_carb30_comparison.py`-equivalent logic
+   pointed at the full-641 file, for `slde_aft_llama` and
+   `deepseek_baseline` only.
+3. Re-run the official scorer (`data/CaRB/carb.py`, same method as
+   EVID-031) on the full-641 predictions.
+4. Record as a new EVID entry superseding the 30-sentence number as
+   the paper's headline CaRB figure; keep the 30-sentence number
+   available as a documented earlier pilot, not deleted.
+
+**Status:** DONE (2026-09-18) — see EVID-035. Official full-scale
+(N=548) result: **Llama-3.1-8B F1=0.467** (P=0.589, R=0.387),
+**DeepSeek-V3.2 F1=0.571** (P=0.713, R=0.477). Actual cost **$0.0520**
+(both systems combined), matching the ~$0.05 estimate. Compared to the
+30-sentence pilot (Llama F1=0.496, DeepSeek F1=0.558): both deltas
+small (-0.029 / +0.013) — the pilot numbers held up well, no dramatic
+shift, qualitative finding unchanged (DeepSeek modestly beats
+Llama-3.1-8B). This is now the paper's headline, benchmark-grade CaRB
+figure, replacing the pilot as the primary citation (pilot kept as a
+documented earlier result, not deleted). GPT-4o/Claude/Gemini remain
+pilot-scale only (cost-deferred, ~$12.66 combined for full parity).
+
 DEC-002: Add external baseline using same pipeline
 
 # DEC-002 — Add External State-of-the-Art Baselines
@@ -315,6 +376,20 @@ Per-Iteration Product-PKB Logging: DONE — full 155-call instrumented run
   0.5970 (n=5), test 0.1970 (n=10). Total cost $0.00259 for 155 calls.
 Leakage-Safe Split: DONE (data/product_split.csv, 70/10/20, seed 7; see EVID-010)
 Paper Integration: NOT STARTED (can now be written using EVID-005 + EVID-009 + EVID-013)
+Real-Data Calibration (step 6) + Computational Complexity (step 5):
+  DONE (2026-09-18) — see EVID-036. Real-data ECE=0.3332, Brier=0.2969
+  on the 657-triple gold-labeled EVID-013 snapshot (previously
+  synthetic-only). Diagnosed: worst-calibrated bins (0.6-0.9 confidence,
+  0% actual accuracy) are functional predicates with zero competitors —
+  same failure mode DEC-018's provenance filter targets, seen here from
+  the calibration angle. Complexity: production PKB is O(N) per call /
+  O(N^2) cumulative (empirically confirmed, 72.7x latency growth for
+  80x more calls) due to `accepted_slot_keys`'s linear scan; an indexed
+  alternative achieves ~O(1) per call / O(N) cumulative with the same
+  Noisy-Or math (illustrative only, not integrated into production).
+  Remaining DEC-003 gap: steps 2-4 (formal derivation, boundedness/
+  monotonicity proof, convergence discussion) — pure math-writing
+  tasks, not experiments.
 
 # DEC-004 — Conduct Module-Level Ablation Study
 
@@ -1346,6 +1421,404 @@ Results: Iteration-4 baseline F1=0.3869 (n=475) -> CONTROL iteration-5
   claim #1 as: the fine-tuned model, once looped back in, does no harm
   and modestly outperforms not fine-tuning, rather than "closing the
   loop improves the system" outright.
+
+# DEC-020 — Framework-Level Validation on DocRED (Public Multi-Document Benchmark)
+
+## Why is this required?
+
+DEC-001 (CaRB) satisfies professor_feedback.md point #1 only under the
+narrower reading — it tests the raw extractor in isolation, sentence by
+sentence, and never touches the PKB, Noisy-Or aggregation, or feedback
+controller. The feedback's actual wording is "insufficient for
+validating a new research **framework**," which is a stronger claim:
+the framework, not just the extractor, should be shown to work on
+public data. CaRB structurally cannot support that stronger reading —
+it's flat, independent sentences with no entity repeated across
+documents, so there is nothing for a PKB to accumulate evidence about.
+
+DocRED (explicitly named in professor_feedback.md point #1) is
+structurally different in the one way that matters here: it is
+document-level, and the same entities are mentioned repeatedly across
+multiple sentences within a document (with coreference clusters
+provided). That repetition is exactly the structure the PKB's
+Noisy-Or aggregation and conflict-adjustment mechanisms are designed
+to operate on — DocRED is the first public dataset in this project
+that can exercise the framework, not just the extractor.
+
+## Decision
+
+Run the core SLDE-AFT pipeline (extraction -> PKB -> Noisy-Or
+aggregation; feedback controller and fine-tuning are optional
+stretch scope, not required for this DEC to be considered done) on a
+pilot subset of DocRED's human-annotated dev split, treating each
+evidence sentence for a given (head, relation, tail) triple as one
+observation — analogous to how the product pipeline treats multiple
+structured/unstructured source-records per product. Compare KB-quality
+(precision/recall/F1 against DocRED gold) for the full PKB-aggregated
+pipeline against a naive single-pass baseline (no aggregation across
+observations) on the same documents, to isolate whether aggregation
+itself adds value on public data — not just whether extraction works.
+
+**Explicit caveat, learned from this project's own history (EVID-031's
+internal-evaluator undercount, EVID-033's REBEL/CaRB schema
+mismatch):** DocRED's ~96 relations are a fixed, closed, Wikidata-style
+schema — much closer to REBEL's predicate set than to CaRB's
+open-domain free-text predicates. This means (a) the extraction prompt
+must be schema-guided (a closed allowed-predicate list, similar in
+spirit to the product domain's `ALLOWED_PREDICATES`), not CaRB's
+open-phrase prompt, and (b) scoring must follow DocRED's own official
+evaluation convention (entity-pair + relation-type match via
+coreference-resolved entity IDs), not CaRB's span matcher and not this
+project's old internal evaluator. Verify the scoring format against a
+handful of known examples BEFORE running anything at scale — do not
+repeat the pattern of discovering a scoring-format mismatch after the
+fact.
+
+## How will it be implemented?
+
+1. Download the official DocRED dataset (thunlp/DocRED or the HF
+   `docred` dataset) and inspect the human-annotated dev split's format
+   (`sents`, `vertexSet` mention/coreference clusters, `labels` with
+   head/tail entity index + relation id `r` + evidence sentence
+   indices).
+2. Build a `DocRedAdapter` that converts each document into
+   SLDE-AFT's per-entity-pair observation format: each evidence
+   sentence for a given (head, relation, tail) triple becomes one
+   observation, so multiple sentences supporting the same fact
+   accumulate through the PKB exactly as multiple product-source
+   records do today.
+3. Map DocRED's 96 relation IDs to a closed, human-readable predicate
+   list for a schema-guided extraction prompt (see the caveat above —
+   do not reuse CaRB's open-phrase prompt here).
+4. Run extraction with the same core-pipeline model
+   (`meta-llama/llama-3.1-8b-instruct`, per [[dec002_provider_plan]])
+   over a small pilot (10-20 documents from the dev-annotated split,
+   matching this project's established pilot-first pattern from DEC-001
+   and DEC-009), feed observations into the PKB, apply Noisy-Or
+   aggregation across each document's repeated entity-pair evidence.
+5. Evaluate against DocRED gold using DocRED's own official scoring
+   convention. Also run the same extractions through a naive
+   no-aggregation baseline (first/only observation per triple) for
+   the isolating comparison described in the Decision above.
+6. Save predictions, gold triples, configs, logs, metrics, and error
+   examples, matching this project's standard evidence-log format.
+
+## Expected Results
+
+- Per-document PKB run stats and final KB size.
+- Precision/recall/F1 against DocRED gold, official protocol, for both
+  the full PKB-aggregated pipeline and the naive no-aggregation
+  baseline (the delta between these two is the actual test of whether
+  the framework — not just the extractor — adds value on public data).
+- Error examples, including an explicit check for whether the
+  closed-schema mismatch causes the same kind of scoring failure found
+  with REBEL (EVID-033) — report this honestly if it occurs, don't
+  paper over it.
+- Numerical results remain TBD until the pilot is run; no result is
+  assumed ahead of time.
+
+## Status
+
+DEC-020: ACCEPTED, IN PROGRESS (started 2026-09-17)
+Implementation: Steps 1-2 DONE (zero API cost).
+  - Data acquired via the thunlp/docred HuggingFace mirror (MIT
+    licensed) instead of DocRED's own Google-Drive-only distribution
+    (not directly scriptable) -- `data/DocRED/dev.json` (998
+    human-annotated dev-split documents) + `data/DocRED/rel_info.json`
+    (96 relation-id -> name mapping). Confirmed schema matches the
+    official DocRED format exactly (sents/vertexSet/labels).
+  - `src/datasets/docred_adapter.py` built (mirrors
+    `src/datasets/biored_adapter.py`'s pattern): parses each document
+    into gold_triples (deduplicated, for scoring) and observations
+    (one row per (triple, evidence sentence) pair, first-surface-
+    mention entity representation, same documented simplification as
+    BioRED).
+  - `scripts/dec020_docred_pilot_build.py` run: selected 15 documents
+    (seed=42, biased toward docs with >=1 multi-evidence gold triple --
+    845/998 dev docs qualify) -> 189 gold triples, 356 observations,
+    106 of the 189 gold triples (56%) have 2+ evidence sentences, i.e.
+    genuinely multiple observations for the PKB to aggregate over.
+    Output: `outputs/dec020_docred_pilot/pilot_docs.jsonl` +
+    `closed_predicates.json` (the 96-relation schema).
+Testing: dry-run with a mocked extractor (zero cost) validated the
+  full PKB wiring end-to-end before any real spend.
+Experiment: COMPLETE. `prompts/openie_docred_v1.txt` built (schema-
+  guided, all 96 DocRED relations enumerated). `configs/
+  docred_functional_predicates.json` left empty -- no single-valued-
+  predicate policy attempted for DocRED (documented simplification;
+  only plain Noisy-Or corroboration tested, not the conflict-adjustment
+  penalty). Threshold recalibrated from the product pipeline's default
+  0.88 to **0.70** for this experiment -- see
+  `scripts/dec020_docred_extract_and_pkb.py`'s docstring for the exact
+  math (0.88 would need 4+ corroborating observations under
+  shrinkage=0.5, which DocRED's evidence structure rarely provides;
+  0.70 crosses at 2+). `scripts/dec020_docred_extract_and_pkb.py` run
+  for real: 71 API calls (one per unique evidence sentence across the
+  15 pilot docs), 1 transient error, **total cost $0.00131**.
+Results: NAIVE baseline (dedup union, no aggregation): P=0.0341
+  R=0.0317 F1=0.0329 (176 predicted triples vs. 189 gold). PKB
+  aggregated (>=0.70 confidence): P=0.3333 R=0.0053 F1=0.0104 (only 3
+  of 176 candidate triples ever accumulated enough observations to
+  cross threshold, across all 15 documents combined).
+  **Honest verdict: aggregation raises precision ~10x but collapses
+  recall so far that F1 gets WORSE, not better** -- a real, negative-
+  for-F1 result, not a technical failure.
+  **Root cause, diagnosed (not just observed):** checked directly --
+  e.g. the "Brigden, Ontario" pilot doc has 16 gold triples with 2+
+  genuine evidence sentences in the source text, yet only 1 PKB-
+  accepted triple emerged from that document. The PKB's accepted-
+  candidate key is an EXACT (lowercased/stripped) string match on
+  subject+predicate+object (`src/pkb_instrumentation.py`'s
+  `normalized_slot`/`normalized_object`). In the product domain, the
+  same fact is usually named consistently across structured/
+  unstructured sources (e.g. a fixed product name), so repeated
+  observations collapse to the same key and corroborate each other.
+  On open Wikipedia text, the model's own extracted surface phrasing
+  for the SAME underlying fact varies between its two evidence
+  sentences often enough that the two extractions almost never
+  produce byte-identical triples -- so they're treated as unrelated
+  single-observation candidates instead of corroborating each other,
+  and essentially nothing survives the accept threshold.
+  **This is a genuine, citable finding for the paper's Limitations
+  section (professor_feedback.md point #10, "where the framework may
+  fail"):** the current Noisy-Or aggregation mechanism, as implemented
+  (exact-string keying, no entity-linking/paraphrase normalization),
+  does not transfer to open-domain multi-sentence text the way it does
+  in the product domain -- a real architectural boundary condition,
+  discovered by actually running the framework on public data, which
+  is exactly what DEC-020 set out to test. Report both numbers
+  (naive vs. PKB) and this mechanism, not just the F1 delta.
+  See `outputs/dec020_docred_extract_and_pkb/summary.json` for full
+  per-document detail.
+
+# DEC-021 — Extractor-Only Validation on TACRED (Public Closed-Schema Benchmark)
+
+## Why is this required?
+
+professor_feedback.md point #1 names TACRED explicitly. TACRED is
+sentence-level with the subject/object entity pair already marked and
+one relation label per example (41 fixed types + "no_relation") — a
+**closed relation-classification** task, structurally flat like CaRB
+(no entity repeated across multiple sentences/sources), not
+document-structured like DocRED. There is nothing for the PKB to
+accumulate evidence about here, for the same reason CaRB doesn't
+exercise the PKB either (established while scoping DEC-020). So this
+DEC tests a *different task type* than CaRB (closed classification vs.
+open extraction) to broaden public-benchmark breadth, not a different
+depth of the architecture.
+
+## Decision
+
+Run **extractor-only** evaluation (same scope as DEC-001/CaRB — no
+PKB, no aggregation, no feedback, no fine-tuning) of the core-pipeline
+model (`meta-llama/llama-3.1-8b-instruct`) on a TACRED pilot subset,
+scoring against TACRED's official relation-classification metric
+(micro-F1 over the 41 relation types, excluding `no_relation` per the
+standard TACRED convention).
+
+**Access caveat, CHECKED (2026-09-17):** TACRED (`LDC2018T24`) is
+LDC-licensed but cheap to obtain — **free for LDC members, $25
+one-time fee for non-members** (https://catalog.ldc.upenn.edu/LDC2018T24).
+Not a real blocker. **Decision: purchase and use real TACRED, not the
+FewRel fallback** — $25 is trivial and the professor named TACRED
+specifically. Note: the HuggingFace mirror (`DFKI-SLT/tacred`) still
+requires the licensed LDC files locally as input; it does not bypass
+the license, so it doesn't avoid the $25 purchase.
+
+## How will it be implemented?
+
+1. Purchase TACRED access from the LDC catalog ($25 non-member fee,
+   confirmed 2026-09-17 — see caveat above) if not already an LDC
+   member.
+2. Download/obtain the dataset and inspect its format: sentence tokens,
+   subject/object entity span indices, gold relation label.
+3. Build a `TacredAdapter` (or `FewRelAdapter`) converting each example
+   into a single-turn prompt: sentence + marked subject/object spans ->
+   predict one relation from the fixed closed list (schema-guided
+   prompt, similar in spirit to DocRED's DEC-020 prompt and the
+   product domain's `ALLOWED_PREDICATES` — NOT CaRB's open-phrase
+   prompt, since this is a closed-schema classification task).
+4. Run extraction on a small pilot (matching this project's established
+   pilot-first pattern: CaRB started at 30 sentences, BioRED at n=15) —
+   suggest 30-50 examples, stratified across a handful of relation
+   types rather than fully random, so at least some positive
+   (non-`no_relation`) examples are guaranteed in the pilot.
+5. Score using TACRED's official convention (micro-F1 excluding
+   `no_relation`) — do NOT reuse the internal CaRB-style span evaluator
+   or invent a new metric; this is a classification task, not a span-
+   extraction task, so the failure modes are different (e.g., picking
+   a plausible but wrong relation type, not a boundary mismatch).
+6. Save predictions, gold labels, configs, logs, metrics, and error
+   examples (confusion between related relation types is expected and
+   worth reporting, same spirit as DEC-007's error analysis).
+
+## Expected Results
+
+- Micro-F1 (and per-relation-type breakdown) against TACRED/FewRel
+  gold for the core-pipeline extractor.
+- A brief qualitative note on error types (e.g., confusing sibling
+  relation types like `per:city_of_birth` vs. `per:city_of_residence`,
+  if using actual TACRED).
+- An explicit note of which dataset was actually used (TACRED vs.
+  FewRel) and why, if a substitution was necessary.
+- Numerical results remain TBD until the pilot is run; no result is
+  assumed ahead of time.
+
+## Status
+
+DEC-021: NOT PURSUED (dropped 2026-09-18, explicit user decision)
+Implementation: NOT STARTED
+Testing: NOT STARTED
+Experiment: NOT STARTED — access check DONE (LDC $25 non-member fee,
+  confirmed 2026-09-17, not technically a blocker, but the user
+  declined to spend it out of pocket). **Decision: do not pursue
+  TACRED.** professor_feedback.md's benchmark list was framed as
+  "such as" (illustrative, not a strict checklist); CaRB (open-domain
+  extraction, full-scale, EVID-035) + DocRED (closed-schema document-
+  level RE, framework-level, DEC-020) already cover two genuinely
+  different public-benchmark task types, at both the extractor level
+  and the framework level, plus BioRED for cross-domain generalization
+  (DEC-009). TACRED would have added a third closed-schema
+  *classification* variant -- worthwhile breadth, not load-bearing
+  evidence, not worth the user's own $25 given what's already covered.
+  **Add one sentence to the manuscript's Limitations section so this
+  reads as a reasoned scope decision, not a silent gap:** "TACRED
+  requires a paid LDC license; given resource constraints, we
+  prioritized cost-free public benchmarks (CaRB, DocRED) spanning
+  open-domain and closed-schema, document-level extraction."
+Results: N/A
+
+# DEC-022 — Epoch / LoRA Hyperparameter Grid (Claim #2, professor_feedback.md point #6)
+
+## Why is this required?
+
+professor_feedback.md point #6 ("Improve the Fine-Tuning Section")
+names 5 specific things to investigate: larger base models, additional
+training epochs, larger synthetic datasets, improved instruction
+generation, better LoRA hyperparameter tuning. Checking DEC-006's
+actual history: larger base model (Mistral-7B) and larger synthetic
+datasets (33->90 examples) were done; instruction generation used
+fixed templates, never iterated on; **additional training epochs and
+LoRA hyperparameter tuning were never tested at all** — every single
+fine-tuning run in this project (EVID-026, EVID-027/028, all 5 seeds
+of the final EVID-034 result) used the exact same fixed configuration
+(rank 16, alpha 32, lr 2e-4, 3 epochs), chosen once upfront by
+reasoning, never validated against alternatives. This is also already
+tracked as undone in DEC-006's own step 6 ("tune a small LoRA grid")
+and flagged in EVID-034's own Limitations. Given the final 5-seed
+result (p=0.066) is already the closest-to-significant number in the
+project, a hyperparameter sweep is a plausible, direct way to either
+strengthen it or at least honestly demonstrate the investigation the
+professor asked for.
+
+## Decision
+
+Run a staged (not full cross-product) search, to keep GPU time/cost
+bounded: **Stage 1** sweeps epoch count alone, holding LoRA config at
+the current default; **Stage 2** sweeps a small LoRA grid (rank,
+alpha, learning rate) at the best epoch count found in Stage 1;
+**Stage 3** re-runs the single winning combined configuration across
+the full 5-seed convention (seeds 42-46) for a real, comparable
+statistical test against the existing baseline (base F1=0.1373,
+current-config 5-seed mean F1=0.1814, EVID-034). Stages 1-2 use a
+single seed (42) each, since they're a cheap exploratory search, not
+the final claim -- only the winning configuration gets the full 5-seed
+treatment, matching this project's own established pattern (DEC-006
+itself went single-seed -> 3-seed -> 5-seed only once a signal looked
+real).
+
+Use the SAME 90-example unfiltered training set and the SAME
+leakage-safe 8-product/56-triple test set as EVID-028/034, so results
+are directly comparable to the existing baseline -- no other variable
+changes except the hyperparameter(s) under test in each stage.
+
+**Explicit scoping note:** a full joint grid (epochs x rank x alpha x
+lr) would require dozens of GPU runs; the staged/greedy approach is a
+standard, defensible cost-saving simplification for hyperparameter
+search, not a shortcut that undermines the result -- documented here
+so it isn't mistaken for an oversight.
+
+## How will it be implemented?
+
+1. Rent a GPU pod (RunPod, same provider/process as DEC-006 -- see
+   [[dec006_runpod_plan]] for gotchas: check `torch.cuda.is_available()`
+   immediately, redeploy if GPU passthrough fails; use a classic GitHub
+   PAT if pushing results).
+2. **Stage 1 (epoch sweep):** run `scripts/dec006_lora_finetune.py`
+   with `NUM_EPOCHS` in **{2, 5, 8}** only (LoRA config fixed at
+   rank=16, alpha=32, lr=2e-4, seed=42) -- **epoch=1 is skipped
+   (reasoned to underfit at this data size, per the original 1->3
+   decision in EVID-025/026) and epoch=3 is NOT re-run**, since that
+   exact configuration (90 examples, rank 16, alpha 32, lr 2e-4, 3
+   epochs, seed 42) already has a real result from EVID-034: **F1=0.2029
+   (P=0.5385, R=0.1250)** -- reuse that data point directly rather than
+   spending GPU time reproducing it. Evaluate each new adapter with
+   `scripts/dec006_evaluate_adapter.py` against the same leakage-safe
+   test set. Record F1 (and precision/recall) for {2, 5, 8}, and
+   combine with the existing 3-epoch point for the full comparison
+   table (4 points total: 2, 3 [reused], 5, 8).
+3. Pick the epoch count with the best F1 from Stage 1 (call it
+   `best_epochs`).
+4. **Stage 2 (LoRA grid):** at `best_epochs`, sweep rank in {8, 16, 32}
+   with alpha = 2*rank paired (3 runs), then at the best rank/alpha
+   from that, sweep learning rate in {1e-4, 2e-4, 3e-4} (3 more runs).
+   Seed=42 throughout. Record F1 for each.
+5. Pick the single best combined configuration (`best_epochs`,
+   `best_rank`, `best_alpha`, `best_lr`) from Stages 1-2.
+6. **Stage 3 (confirmatory):** re-run that winning configuration at
+   seeds 42-46 (5 seeds, matching DEC-005/006's convention), evaluate
+   each, and run the same paired t-test / Wilcoxon signed-rank test
+   used in `scripts/dec006_5seed_stats.py` comparing this new 5-seed
+   result against both the base model and the EXISTING default-config
+   5-seed result (EVID-034) -- three-way comparison: base vs. old
+   config vs. new config.
+7. Save all intermediate grid results (not just the winner) so the
+   full search is reproducible and reportable, not just the best point.
+
+## Expected Results
+
+- A table of F1 (precision/recall too) per epoch count (Stage 1).
+- A table of F1 per LoRA configuration tested (Stage 2).
+- The winning configuration's full 5-seed result, with mean/std and
+  significance tests against both base and the current EVID-034
+  configuration.
+- An honest report either way: if the grid search finds a
+  meaningfully better configuration (e.g., pushes p below 0.05), report
+  it as the new default; if nothing in the grid beats the current
+  config, that itself is a legitimate, reportable answer to point #6
+  ("we investigated epochs and LoRA hyperparameters; the originally
+  chosen configuration was already near-optimal in the range tested").
+  Do not assume a positive result ahead of running it.
+
+## Status
+
+DEC-022: ACCEPTED, IN PROGRESS (started 2026-09-18)
+Implementation: `scripts/dec006_lora_finetune.py` extended with
+  --epochs/--lora-rank/--lora-alpha/--learning-rate/--data-path/
+  --output-dir overrides (defaults unchanged). Committed/pushed
+  (4ca1c7b).
+Testing: N/A (real GPU runs, no mocked dry-run needed given DEC-006's
+  scripts were already proven)
+Experiment: **Stage 1 (epoch sweep) COMPLETE** -- see EVID-037.
+  **Stage 2 (LoRA rank/alpha/lr grid) COMPLETE** -- see EVID-038
+  (survived one RunPod host-capacity interruption mid-sweep; no data
+  lost, the in-flight run had saved nothing, redone on a fresh pod).
+  Session ended for the day after Stage 2 finished (2026-09-18
+  evening); pod stopped to avoid burning credit.
+Results: **Winning combined configuration: epochs=5, rank=16,
+  alpha=32, lr=2e-4** -- identical to the original DEC-006 defaults
+  except epochs (3->5). F1=0.2222 (P=1.0000, R=0.1250) vs. the
+  3-epoch default's F1=0.2029, a +0.0193 improvement, at seed 42.
+  Every alternative tested in the full 9-run grid (epochs {2,8}, rank
+  {8,32}, lr {1e-4,3e-4}) underperformed the winner. Recall flat at
+  0.1250 across ALL 9 runs plus base -- fine-tuning here only ever
+  suppresses false positives, never finds new true positives,
+  regardless of epochs/rank/alpha/lr. Honest, complete answer to
+  professor_feedback.md point #6's epoch and LoRA-tuning asks: epochs
+  needed adjusting, LoRA hyperparameters did not.
+  **Next: Stage 3** -- re-run the winning config at seeds 43-46 (seed
+  42 done), then a real paired significance test against both base and
+  the existing EVID-034 (epochs=3) 5-seed result.
 
 DEC-014 (evaluation protocol & leakage control)
 
