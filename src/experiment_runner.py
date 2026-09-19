@@ -25,6 +25,7 @@ Design notes (see Decision log.md DEC-004 for the full rationale):
 
 from __future__ import annotations
 
+import json
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -57,6 +58,7 @@ class ExperimentConfig:
     shrinkage: float = 0.75
     functional_predicates_path: str = "configs/functional_predicates_product_domain.json"
     split_path: str = "data/product_split.csv"
+    cache_path: Optional[str] = None
 
 
 def load_split(split_path: str) -> dict[int, str]:
@@ -135,10 +137,46 @@ def run_experiment(config: ExperimentConfig, api_key: str) -> dict:
     total_calls = 0
     call_log = []
 
+    # Optional per-call cache (DEC-023): if set, a successful call for a
+    # given (product_idx, iteration, phase) is replayed from disk instead
+    # of re-hit against the API on a resumed run, and every new call is
+    # flushed to disk immediately -- so a mid-run kill loses at most one
+    # in-flight call instead of the whole run. Off by default (cache_path
+    # is None), so existing DEC-004/005 usage and tests are unaffected.
+    cache_hits: dict[tuple[int, int, str], dict] = {}
+    cache_file = None
+    if config.cache_path:
+        cache_file_path = Path(config.cache_path)
+        cache_file_path.parent.mkdir(parents=True, exist_ok=True)
+        if cache_file_path.exists():
+            with open(cache_file_path, encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    entry = json.loads(line)
+                    if entry.get("error") is None:  # only successful calls are reusable
+                        key = (entry["product_idx"], entry["iteration"], entry["phase"])
+                        cache_hits[key] = entry
+        cache_file = open(cache_file_path, "a", encoding="utf-8")
+
     def do_llm_call(idx, text, locked_context, feedback_hint, iteration, phase):
         nonlocal total_cost, total_calls
         if not config.use_unstructured:
             return {"triples": [], "error": None, "cost_usd": 0.0, "latency_s": 0.0}
+
+        cache_key = (idx, iteration, phase)
+        cached = cache_hits.get(cache_key)
+        if cached is not None:
+            total_cost += cached["cost_usd"]
+            total_calls += 1
+            call_log.append(cached)
+            return {
+                "triples": cached["full_triples"], "error": None,
+                "http_status": cached.get("http_status"), "latency_s": cached["latency_s"],
+                "cost_usd": cached["cost_usd"],
+            }
+
         result = extract_unstructured_llm(
             doc_text=text, source_id=f"product_{idx}", api_key=api_key,
             model=config.model, locked_context=locked_context, feedback_hint=feedback_hint,
@@ -159,6 +197,12 @@ def run_experiment(config: ExperimentConfig, api_key: str) -> dict:
                 {"subject": t["subject"], "predicate": t["predicate"], "object": t["object"]}
                 for t in result["triples"]
             ],
+            # Full triples (confidence/source_id/source_type/provenance included),
+            # needed to correctly replay a cached call through accept_candidate --
+            # kept separate from "predicted_triples" above so that field's existing
+            # subject/predicate/object-only shape (used elsewhere for call_log.json)
+            # is unchanged.
+            "full_triples": result["triples"],
         }
         if result["error"]:
             raw = result.get("raw_response")
@@ -170,6 +214,9 @@ def run_experiment(config: ExperimentConfig, api_key: str) -> dict:
                 pass
             log_entry["raw_content_on_error"] = content
         call_log.append(log_entry)
+        if cache_file is not None:
+            cache_file.write(json.dumps(log_entry) + "\n")
+            cache_file.flush()
         return result
 
     output_root = Path(config.output_root)
@@ -267,6 +314,9 @@ def run_experiment(config: ExperimentConfig, api_key: str) -> dict:
             {"split": "val", **prf(val_pred_keys, val_gold_keys)},
             {"split": "test", **prf(test_pred_keys, test_gold_keys)},
         ]
+
+    if cache_file is not None:
+        cache_file.close()
 
     return {
         "config": config,

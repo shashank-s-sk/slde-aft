@@ -23,7 +23,8 @@ just says where each DEC currently stands and what's left.
 | 019 | Closed-Loop Integration Test (Claim #1) | DONE | Treatment (fine-tuned model closes the loop) ~FLAT vs. pre-closure baseline (F1 0.3869→0.3864) but BEATS control/no-fine-tuning (F1 0.3791, -0.0073) — EVID-030. Closing the loop does no harm and modestly beats the realistic alternative | Repeat with seeds 42/44 as separate treatment arms to check this holds across seeds; a sustained multi-cycle loop is a bigger follow-up |
 | 020 | Framework-Level Validation on DocRED | DONE (pilot) | Naive F1=0.0329 vs. PKB-aggregated F1=0.0104 (worse) — PKB's exact-string-match aggregation rarely corroborates the same fact across differently-phrased evidence sentences on open text. Real, diagnosed limitation, cost $0.00131 | Genuine finding for Limitations (point #10); a fuzzy/entity-linked matching key would be the natural fix if pursued further |
 | 021 | Extractor-Only Validation on TACRED | **NOT PURSUED** (user decision, 2026-09-18) | — | Dropped — CaRB + DocRED already cover two benchmark task types; add one Limitations sentence (see DEC-021 section) so this reads as a scope decision, not a gap |
-| 022 | Epoch / LoRA Hyperparameter Grid (Claim #2, point #6) | Stage 1+2 DONE | Winning config: epochs=5, rank=16, alpha=32, lr=2e-4 (only epochs changed from original default) — F1=0.2222 vs default's F1=0.2029 (+0.0193) — EVID-037/038. Recall flat (0.1250) across all 9 grid runs | Stage 3: winning config × seeds 43-46, then significance test vs. base and EVID-034 — pod stopped, redeploy next session |
+| 022 | Epoch / LoRA Hyperparameter Grid (Claim #2, point #6) | **DONE — all 3 stages** | **epochs=5 config SIGNIFICANT vs. base** (one-sample t-test p=0.0028, 5-seed mean F1=0.2012 vs base 0.1373) — EVID-037/038/040. First fine-tuning config in the project to cross p<0.05. Not proven significantly better than the old epochs=3 config specifically (p=0.45/0.63) | None required. Optional: re-test epochs=5 on DEC-018's provenance-filtered data |
+| 023 | N=50 Ablation Confirmatory Run (Claim #4, point #5) | DONE | Null result replicates and STRENGTHENS at N=50: without_feedback p=0.57/0.63, without_prob_kb p=0.63/1.0 (t/Wilcoxon) — EVID-039. Variance shrank 3.6x vs N=20 (std 0.335→0.093), so this is now a properly-powered null, not inconclusive | None — per DEC-023's pre-registered commitment, no further re-runs; reframe claim #4 as "tested at two scales, no effect either time" |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -1792,7 +1793,7 @@ so it isn't mistaken for an oversight.
 
 ## Status
 
-DEC-022: ACCEPTED, IN PROGRESS (started 2026-09-18)
+DEC-022: DONE (all 3 stages complete, 2026-09-19)
 Implementation: `scripts/dec006_lora_finetune.py` extended with
   --epochs/--lora-rank/--lora-alpha/--learning-rate/--data-path/
   --output-dir overrides (defaults unchanged). Committed/pushed
@@ -1816,9 +1817,119 @@ Results: **Winning combined configuration: epochs=5, rank=16,
   regardless of epochs/rank/alpha/lr. Honest, complete answer to
   professor_feedback.md point #6's epoch and LoRA-tuning asks: epochs
   needed adjusting, LoRA hyperparameters did not.
-  **Next: Stage 3** -- re-run the winning config at seeds 43-46 (seed
-  42 done), then a real paired significance test against both base and
-  the existing EVID-034 (epochs=3) 5-seed result.
+  **Stage 3 (5-seed confirmatory run) COMPLETE** -- see EVID-040.
+  Trained/evaluated seeds 43-46 (seed 42 already known) at the winning
+  config. 5-seed F1: 0.2222/0.1972/0.2222/0.1935/0.1707, mean=0.2012
+  (std=0.0194). **One-sample t-test vs. base: p=0.0028 -- SIGNIFICANT**
+  (first fine-tuning config in the project to cross p<0.05). Wilcoxon
+  p=0.0625 (the n=5 mathematical floor -- all 5 seeds positive vs.
+  base). Direct paired comparison vs. the old epochs=3 config
+  (EVID-034): p=0.45/0.63 -- NOT significant, so epochs=5 is proven
+  significantly better than base, but not proven significantly better
+  than epochs=3 specifically. Recommend citing this (epochs=5,
+  p=0.0028) as the manuscript's primary fine-tuning evidence, with
+  EVID-034's epochs=3 result demoted to "an earlier, less-tuned
+  configuration."
+
+# DEC-023 — N=50 Ablation Confirmatory Run (Claim #4, professor_feedback.md point #5)
+
+## Why is this required?
+
+DEC-005's N=20/5-seed ablation (EVID-020) found no significant
+difference between `without_feedback`/`without_prob_kb` and the full
+pipeline (p=0.31-0.51). Diagnosed root cause: the held-out test set at
+N=20 has only 3-4 products, producing extreme per-seed variance (two
+of five seeds scored held-out F1=0.0 exactly for `full`, std=0.335 —
+larger than the mean itself). This is a statistical-power problem, not
+necessarily proof of a zero effect: a real small-to-moderate effect
+could easily be invisible at this noise level. DEC-005's own recorded
+next step already named the fix ("a larger, paper-reportable ablation/
+statistics result... needs a fresh run at full N=50 (or larger)
+scale") but it was never executed.
+
+**Explicit framing, agreed with the user:** this experiment is designed
+to INCREASE STATISTICAL POWER to detect whatever effect actually
+exists, not to engineer a positive result. Checked the actual feedback-
+hint implementation (`src/feedback_builder.py`) first — it is NOT a
+weak or buggy mechanism: it directly tells the model, in the next
+iteration's prompt, which gold facts are still missing, which of its
+own outputs are unsupported, and which predicates are undercovered.
+There is no coding defect to "fix" here. If N=50 still shows no effect,
+that is the correct, reportable conclusion — do not re-run further
+seeds/scales hunting for significance once a fair, adequately-powered
+test has been done.
+
+## Decision
+
+Re-run DEC-005's exact design (`src/experiment_runner.py`,
+`scripts/dec005_multiseed_run.py`) completely unchanged except
+`N_PRODUCTS` (20 -> 50). Same 5 configs (full, without_feedback,
+without_prob_kb, structured_only, unstructured_only), same 5 seeds
+(42-46), same model, same statistical tests (paired t-test + Wilcoxon
+signed-rank vs. `full`).
+
+## How will it be implemented?
+
+1. Change `scripts/dec005_multiseed_run.py`'s `N_PRODUCTS = 20` to
+   `N_PRODUCTS = 50` (the only code change).
+2. Verify the leakage-safe split logic (`src/leakage_split.py`)
+   produces a sensible 50-product train/val/test partition before
+   spending on the real run (per this project's own established
+   gotcha: splits computed at different N are not nested/consistent —
+   confirm the new split doesn't silently overlap with any other
+   experiment's data).
+3. Dry-run with a mocked extractor first (zero cost), matching this
+   project's standing practice before any real API spend.
+4. Run the real 5-config x 5-seed sweep. Estimate: the N=20 version
+   cost $0.017718 total; N=50 (~2.5x the products) should stay well
+   under $1, but confirm actual cost as the run progresses rather than
+   assuming.
+5. Run the same paired significance tests as EVID-020, report
+   whichever result actually comes out — significant, still null, or
+   reversed — without re-running additional seeds/scales to chase a
+   particular answer.
+
+## Expected Results
+
+- Mean +/- std F1 (train and held-out) for all 5 configs at N=50.
+- Paired t-test / Wilcoxon p-values for without_feedback and
+  without_prob_kb vs. full.
+- A materially larger held-out test set (proportionally, ~7-10
+  products instead of 3-4) should substantially shrink the variance
+  that made EVID-020 inconclusive, whichever direction the mean effect
+  turns out to point.
+- Numerical results remain TBD until the experiment is run — no
+  outcome is assumed ahead of time, in either direction.
+
+## Status
+
+DEC-023: DONE (2026-09-19) -- see EVID-039
+Implementation: `scripts/dec023_ablation_n50.py` (reuses
+  `src/experiment_runner.py` unchanged except N_PRODUCTS). Added
+  per-call caching (`ExperimentConfig.cache_path`) to
+  `src/experiment_runner.py` mid-run after 5 consecutive system-level
+  low-memory kills destroyed whole-run progress; verified correct with
+  a standalone test (caught a real bug: cached triples were initially
+  missing fields needed by accept_candidate) before trusting it. All 6
+  pre-existing experiment_runner tests still pass.
+Testing: DONE (caching mechanism verified with a mocked flaky-then-
+  fixed extractor before relying on it for the real run)
+Experiment: COMPLETE. Total cost $0.0819. One reliability incident: a
+  duplicate/concurrent background process ran briefly against the same
+  output files before being caught and killed -- verified no data
+  corruption resulted (see EVID-039's Reliability notes).
+Results: **Null result replicates and gets STRONGER at N=50, not
+  weaker.** Held-out test F1 paired vs. full: without_feedback mean
+  diff=-0.045 (p=0.57/0.63 t/Wilcoxon), without_prob_kb mean
+  diff=+0.033 (p=0.63/1.0). All comparisons p>=0.34. Critically,
+  variance shrank substantially vs. EVID-020 (full's test F1 std:
+  0.335 at N=20 -> 0.093 at N=50) -- so this is now a properly-powered
+  null, not an inconclusive one. without_feedback's direction flipped
+  sign again (N=20: +0.142; N=50: -0.045), consistent with noise
+  around a near-zero true effect. **Per DEC-023's own pre-registered
+  commitment: this is the final answer, no further re-runs.** Claim #4
+  should be framed in the manuscript as "proposed and tested at two
+  scales (N=20, N=50); no significant effect detected either time."
 
 DEC-014 (evaluation protocol & leakage control)
 
