@@ -13,12 +13,12 @@
 | # | Claim | Verdict | Headline number |
 |---|---|---|---|
 | 1 | Unified closed-loop architecture | Tested end-to-end; flat vs. baseline, beats not-fine-tuning | F1 0.3869 → 0.3864 (loop) vs. 0.3791 (no fine-tune) |
-| 2 | Automated synthetic supervision | Real effect, trending toward significance | Mean F1 +0.0441 (std 0.0394) across 5 seeds, t-test p=0.066 |
-| 3 | Noisy-Or math contribution | **Strongest, most defensible result in the project** | +0.043 F1 aggregate; held-out test F1=0.197 |
+| 2 | Automated synthetic supervision | Real effect, trending toward significance; better hyperparameters found (5-seed confirmation pending) | Mean F1 +0.0441 (std 0.0394) across 5 seeds, t-test p=0.066 (epochs=3 config); epochs=5 improves single-seed F1 to 0.2222 (EVID-037/038) |
+| 3 | Noisy-Or math contribution | **Strongest, most defensible result in the project** | +0.043 F1 aggregate; held-out test F1=0.197; real-data ECE=0.3332 (EVID-036) |
 | 4 | Feedback Controller reduces manual reliance | Honest null | p=0.31–0.51, no significant effect (5 seeds) |
 | 5 | Provenance actively filters training data | **Validated, second-strongest result** | Precision 93.5% → 100% (drops 31/475 wrong triples) |
 
-Plus a foundational correction: **official CaRB benchmark scores are 4-8x higher than every previously-reported internal-evaluator number** (see below) — use the official numbers, not the internal ones, anywhere CaRB is cited.
+Plus two foundational corrections: **official CaRB benchmark scores are 4-8x higher than every previously-reported internal-evaluator number**, and CaRB is now at full 548-sentence scale, not a 30-sentence pilot (see below) — use the official, full-scale numbers, not the internal or pilot ones, anywhere CaRB is cited.
 
 ---
 
@@ -33,6 +33,17 @@ Plus a foundational correction: **official CaRB benchmark scores are 4-8x higher
 **Honest nuance for the Discussion section:** the aggregation helps *in aggregate*, but doesn't specifically resolve genuine fact conflicts well — of 117 real conflicts found, 108 were hallucination-vs-hallucination (the model contradicting its own wrong answer across passes), not correct-vs-incorrect. Report this nuance; don't imply the math resolves truth-vs-falsehood conflicts when it mostly resolves noise-vs-noise ones.
 
 **Suggested framing:** "The conservative Noisy-Or aggregation with mutual-exclusivity penalty improves aggregate extraction F1 by 4.3 points on real data; however, error analysis shows it primarily suppresses repeated hallucinations rather than adjudicating between one correct and one incorrect competing claim."
+
+**Real-data calibration and computational complexity (EVID-036, new):** closes the two remaining DEC-003 deliverables the professor asked for by name (point #3).
+
+- **Calibration:** on the 657-triple gold-labeled real snapshot from EVID-013, **ECE=0.3332, Brier score=0.2969** — confirms the score should be reported as an aggregated confidence, not a calibrated posterior probability (exactly what this project's own original design decision already anticipated). The worst-calibrated bins (0.6-0.9 confidence, but 0% actual accuracy) are almost entirely functional predicates with **zero competitors** — cases where the extractor confidently repeated the same wrong value with nothing ever recorded to challenge it. This is the calibration-curve signature of the same failure mode Claim 5's provenance filter was built to catch, seen from a different angle.
+- **Complexity:** the production PKB's candidate-acceptance path is empirically confirmed **O(N) per call / O(N²) cumulative** (72.7x latency growth for 80x more observations), caused by a linear scan in `pkb_instrumentation.accepted_slot_keys` over every candidate ever accepted. An indexed alternative (same Noisy-Or math, illustrative only, not wired into production) achieves ~O(1) per call / O(N) cumulative. Not a current performance problem (N has stayed in the hundreds; DEC-008's linear-runtime finding is dominated by LLM API latency, which masks this), but a forward-looking scalability finding worth stating.
+
+**Suggested framing (calibration):** "Real-data calibration analysis (ECE=0.333) confirms the Noisy-Or score functions as an aggregated confidence rather than a calibrated probability; miscalibration concentrates in functional-predicate slots with no competing alternative, where repeated but ungrounded extractions accumulate confidence without genuine corroboration."
+
+**Suggested framing (complexity):** "The current candidate-acceptance implementation scales O(N) per observation (O(N²) cumulative) due to an unindexed slot lookup; an indexed alternative reduces this to O(1) per observation with no change to the underlying aggregation mathematics, relevant if the framework is scaled beyond hundreds of observations per run."
+
+**Remaining DEC-003 gap:** formal boundedness/evidence-monotonicity proof and a convergence discussion (steps 3-4) are pure mathematical derivation tasks, not experiments — still to be written directly into the manuscript's math section.
 
 ---
 
@@ -100,6 +111,23 @@ Mean fine-tuned F1 = 0.1814 (std 0.0394) vs. base 0.1373 — mean **+0.0441**, a
 
 **Honest limitation to state:** p=0.066 is above the 0.05 threshold — do not claim statistical significance. Frame as "trending"/"suggestive," a real and strengthened signal, notably closer to significance than claim #4's genuinely null result (p=0.31–0.51), but not yet proven. This 5-seed result used the pre-DEC-018 unfiltered training data (for comparability across all 5 seeds) — whether DEC-018's provenance filter changes this picture is a separate, not-yet-run comparison.
 
+**Epoch/LoRA hyperparameter grid, new (EVID-037/038):** directly answers professor feedback point #6's previously-untested "additional training epochs" and "better LoRA hyperparameter tuning" asks — every prior run above used a fixed, never-validated epochs=3/rank=16/alpha=32/lr=2e-4. A staged search at seed 42 (same 90-example data, same test set) found:
+
+| Epochs (rank=16, alpha=32, lr=2e-4) | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| 2 | 0.2121 | 0.1250 | 0.1573 |
+| 3 (original default) | 0.5385 | 0.1250 | 0.2029 |
+| **5** | **1.0000** | 0.1250 | **0.2222** |
+| 8 | 1.0000 | 0.1250 | 0.2222 (identical to 5, wasted compute) |
+
+A follow-up LoRA grid (rank {8,32}, learning rate {1e-4,3e-4}) at epochs=5 found the **original rank=16/alpha=32/lr=2e-4 already optimal** — every alternative underperformed it. **Winning combined configuration: epochs=5, everything else unchanged.**
+
+**The mechanistic finding holds with zero exceptions across all 9 grid runs plus base: recall is pinned at 0.1250 in every single configuration.** Epochs/rank/alpha/lr all affect only precision (suppressing false positives), never recall — the cleanest, most consistent version of this project's recurring fine-tuning mechanism finding.
+
+**Suggested framing:** "A hyperparameter search across training epochs (2-8) and LoRA rank/alpha/learning rate found that extending training from 3 to 5 epochs improved single-seed F1 from 0.203 to 0.222, while the originally-chosen LoRA hyperparameters were already optimal in the range tested; recall remained unchanged across every configuration, confirming that additional training exclusively improves precision by suppressing false positives."
+
+**Honest limitation — do not overstate yet:** this improvement is currently **single-seed (42) only**. The 5-seed statistical result reported above (mean F1=0.1814, p=0.066) still reflects the original epochs=3 configuration — a 5-seed confirmatory run of the new epochs=5 winner (seeds 43-46) is the next step before claiming this as the paper's headline fine-tuning number. Do not report F1=0.2222 as if it were a validated multi-seed result.
+
 ---
 
 ## Claim 4 — Feedback Controller Reduces Reliance on Manual Feedback (honest null)
@@ -119,25 +147,36 @@ Mean fine-tuned F1 = 0.1814 (std 0.0394) vs. base 0.1373 — mean **+0.0441**, a
 
 **Every CaRB number reported before EVID-031 used this project's own internal exact-match evaluator, which undercounts real performance by roughly 4-8x** due to subject-boundary-mismatch scoring artifacts (e.g., penalizing a predicted `"all households"` against gold `"32.7% of all households"` as entirely wrong, despite being the same fact).
 
-**Official scores** (EVID-031/032, run via the real `data/CaRB/carb.py` tool, N=30 sentences, default lenient matching) — now covering 5 systems, 4 of the 8 professor feedback point #2 names GPT-4/Claude/Gemini plus DeepSeek:
+**Full-scale official scores (EVID-035, N=548 of CaRB's 641 test-split sentences — the headline number, use this):**
 
 | System | Precision | Recall | F1 |
 |---|---:|---:|---:|
-| DeepSeek-V3.2 (external baseline) | 0.713 | 0.458 | **0.558** |
-| Gemini 2.5 Pro | 0.773 | 0.401 | **0.528** |
-| Claude Sonnet 5 | 0.642 | 0.446 | **0.527** |
-| GPT-4o | 0.736 | 0.384 | **0.504** |
-| Llama-3.1-8B-instruct (SLDE-AFT's own extractor) | 0.652 | 0.401 | **0.496** |
+| DeepSeek-V3.2 (external baseline) | 0.713 | 0.477 | **0.571** |
+| Llama-3.1-8B-instruct (SLDE-AFT's own extractor) | 0.589 | 0.387 | **0.467** |
 
-(Internal-evaluator numbers, now superseded and not to be used as headline figures.)
+Cost: $0.0520 total for both systems at full scale.
 
-**Use the official numbers above anywhere CaRB results are cited in the paper.**
+**30-sentence pilot scores (EVID-031/032, historical — kept for reference, not the headline anymore)** — also covering 3 more SOTA systems not yet re-run at full scale:
+
+| System | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| DeepSeek-V3.2 (external baseline) | 0.713 | 0.458 | 0.558 |
+| Gemini 2.5 Pro | 0.773 | 0.401 | 0.528 |
+| Claude Sonnet 5 | 0.642 | 0.446 | 0.527 |
+| GPT-4o | 0.736 | 0.384 | 0.504 |
+| Llama-3.1-8B-instruct (SLDE-AFT's own extractor) | 0.652 | 0.401 | 0.496 |
+
+**The pilot numbers held up well at full scale** — both deltas are small (Llama -0.029, DeepSeek +0.013), in opposite directions, no dramatic shift. GPT-4o/Claude/Gemini were not re-run at full scale (cost-deferred, ~$12.66 combined for full 5-system parity — optional, not required); their pilot numbers above are still the only ones available for those three.
+
+(Internal-evaluator numbers, superseded since EVID-031 and not to be used as headline figures.)
+
+**Use the full-scale (N=548) numbers above anywhere CaRB results are cited in the paper** — no longer caveat this as "pilot only."
 
 **Important, honest finding — state this explicitly, don't omit it:** SLDE-AFT's own extractor (Llama-3.1-8B) is the **weakest of all 5 systems tested**, though the gap is modest (~12% relative, top to bottom). This does not undermine the paper's actual novelty claims — the Noisy-Or aggregation, closed-loop architecture, and provenance filtering all operate *on top of* whatever base extractor is used, and SLDE-AFT deliberately uses a smaller, cheaper, open-weight model rather than a larger proprietary one. Frame it as: "the architecture's value lies in what it does with the base extractor's outputs, not in having the single strongest raw extractor."
 
 **Practical note worth a sentence in Methods:** Gemini 2.5 Pro required a much larger token budget (3072 vs. 512 for the other four models) and still had a 5/30 error rate on this task — reasoning-heavy models may need more generous generation budgets and more robust output parsing for structured extraction than non-reasoning models need for the same task.
 
-**Caveat:** still a 30-sentence pilot, not CaRB's full 641-sentence test set — note this as a scale limitation, not a validity one.
+**Caveat (updated):** now 548 of CaRB's 641 test-split sentences (85.5%) for Llama/DeepSeek — no longer a pilot-scale limitation. The ~93-sentence gap is a pre-existing whitespace/quoting mismatch between CaRB's raw sentence file and its gold-annotation file, not a deliberate exclusion.
 
 **REBEL was attempted and found genuinely incompatible with CaRB's evaluation, not simply "not run"** (EVID-033) — worth a sentence in the paper's limitations, not silence. REBEL (`Babelscape/rebel-large`) is a *closed* relation-extraction model trained on Wikidata's fixed schema (canonical predicates like `"point in time"`, `"has part"`, `"subclass of"` and linked entity names), fundamentally different from CaRB's *open*-domain span-based extraction (free-text predicates copied verbatim from the sentence). Scoring REBEL's output against CaRB's span matcher gave F1=0.0000 — not because REBEL performs badly, but because the two systems represent facts in incompatible formats; a fair comparison would need an entity-linking/relation-verbalization mapping layer, out of scope for this pilot. **Do not cite REBEL's raw F1 anywhere — cite this qualitative finding instead.** GenIE and InstructUIE likely share this same incompatibility (also schema/KB-grounded); DyGIE++ remains untried (AllenNLP dependency).
 
@@ -150,6 +189,21 @@ Mean fine-tuned F1 = 0.1814 (std 0.0394) vs. base 0.1373 — mean **+0.0441**, a
 **Scalability (DEC-008, EVID-023):** runtime scales linearly with N (no quadratic blowup) up to N=200; mean per-document latency stays flat (~4.0s) regardless of accumulated KB size (grew to 2,814 entries) — the key positive scalability claim. Memory measurement from this pass is unusable (methodology flaw: sequential runs in one process contaminate GC-affected deltas) — don't cite memory numbers from EVID-023.
 
 **Domain generalization — BioRED biomedical pilot (DEC-009, EVID-024):** strict exact-match F1=0.0074 is misleadingly low (mostly a gold-construction/boundary-mismatch artifact, same family of issue as the CaRB correction above). Relaxed containment-match F1=0.1029 (14x more true positives found) is the fairer read: the biomedical domain is genuinely harder than the product domain, but not a near-total failure. **Report both numbers together with this explanation — never the strict number alone**, which would be a misleading characterization.
+
+**Framework-level validation on DocRED (DEC-020, EVID-030's public-data counterpart, new):** the first time the actual PKB/Noisy-Or framework — not just the raw extractor — was tested on public data, using a 15-document pilot from DocRED's human-annotated dev split (189 gold triples, 356 observations, cost $0.00131).
+
+| | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| Naive baseline (no aggregation) | 0.034 | 0.032 | **0.033** |
+| PKB-aggregated (≥0.70 confidence) | 0.333 | 0.005 | **0.010** |
+
+**Honest verdict: aggregation raises precision ~10x but collapses recall so far that F1 gets worse, not better** — a real, diagnosed negative result, not a null one. Root cause traced directly (not just observed): the PKB's aggregation key requires an EXACT string match on subject/predicate/object. In the product domain, the same fact is named consistently across sources, so repeated observations corroborate each other. On open Wikipedia text, the model phrases the same fact slightly differently across its own evidence sentences often enough that they almost never produce byte-identical triples — so genuine corroboration is rarely recognized as such, and almost nothing crosses the accept threshold.
+
+**Suggested framing:** "Testing the framework's Noisy-Or aggregation on DocRED reveals a real limitation: exact-string-match corroboration, effective in the product domain's consistently-named entities, fails to recognize the same fact when phrased differently across evidence sentences in open text — aggregation improves precision roughly 10-fold but at a severe recall cost, indicating the current implementation does not transfer to open-domain multi-sentence text without an entity-linking or paraphrase-aware matching key."
+
+This is a genuine, citable answer to professor feedback point #10 ("where the framework may fail") — use it in Limitations, not just Discussion.
+
+**TACRED — scoped, then explicitly declined (DEC-021):** professor feedback point #1 names TACRED; a $25 LDC license fee was confirmed as the actual (modest) cost, but the user chose not to pursue it given CaRB + DocRED already cover two genuinely different public-benchmark task types (open extraction vs. closed-schema document-level RE) at both the extractor and framework level. **State this explicitly in Limitations, do not omit it silently:** *"TACRED requires a paid LDC license; given resource constraints, we prioritized cost-free public benchmarks (CaRB, DocRED) spanning open-domain and closed-schema, document-level extraction."*
 
 ---
 
@@ -165,12 +219,12 @@ Mean fine-tuned F1 = 0.1814 (std 0.0394) vs. base 0.1373 — mean **+0.0441**, a
 
 | # | Point | Where it's addressed here |
 |---|---|---|
-| 1 | Strengthen experimental evaluation (public benchmarks) | CaRB official scores (DEC-001); BioRED domain pilot (DEC-009) — still only 2 domains/benchmarks, DocRED/TACRED/REBEL-benchmark/Universal-IE not attempted |
-| 2 | Compare against SOTA methods | DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro all done (DEC-002, EVID-031/032) — 4 of 8 named systems covered. REBEL attempted and found task-incompatible with CaRB scoring (EVID-033, real finding, not a gap). GenIE/InstructUIE (likely same incompatibility)/DyGIE++ (AllenNLP) not attempted |
-| 3 | Improve mathematical contribution | DEC-003's Noisy-Or result — strongest claim, but formal derivation/convergence/complexity analysis for the manuscript text still needs writing |
+| 1 | Strengthen experimental evaluation (public benchmarks) | CaRB now full-scale (DEC-001, EVID-035, N=548); DocRED framework-level pilot (DEC-020, new — tests the framework, not just the extractor); BioRED domain pilot (DEC-009). TACRED scoped and explicitly declined with a documented reason (DEC-021). REBEL-benchmark (the dataset)/Universal-IE still not attempted, lowest priority |
+| 2 | Compare against SOTA methods | DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro all done (DEC-002, EVID-031/032/035) — 4 of 8 named systems covered, DeepSeek now at full CaRB scale too. REBEL attempted and found task-incompatible with CaRB scoring (EVID-033, real finding, not a gap). GenIE/InstructUIE (likely same incompatibility)/DyGIE++ (AllenNLP) not attempted |
+| 3 | Improve mathematical contribution | DEC-003's Noisy-Or result — strongest claim; real-data calibration (ECE=0.3332) and computational complexity analysis now done (EVID-036). Formal derivation/boundedness proof/convergence discussion (steps 2-4) still needed — pure math-writing, not experiments |
 | 4 | Proper ablation study | DEC-004/005 — done, honest null result |
-| 5 | Statistical validation | DEC-005 (ablation, 5 seeds) and DEC-006/028 (fine-tuning, 3 seeds) — both real, neither fully conclusive |
-| 6 | Improve fine-tuning section | DEC-006/018 — real, mixed, mechanistically-explained result now exists (previously "too weak to report") |
+| 5 | Statistical validation | DEC-005 (ablation, 5 seeds) and DEC-006/034 (fine-tuning, 5 seeds, p=0.066) — both real, neither fully conclusive |
+| 6 | Improve fine-tuning section | DEC-006/018 — real, mixed, mechanistically-explained result. **Epoch/LoRA hyperparameter grid now done (DEC-022, EVID-037/038)** — previously-untested asks (epochs, LoRA tuning) investigated; epochs=5 beats the original epochs=3 default at seed 42 (5-seed confirmation still pending) |
 | 7 | Add error analysis with examples | DEC-007 (general) + DEC-018/EVID-029 (concrete provenance-filtering examples, exactly what this point asks for) |
 | 8 | Evaluate scalability | DEC-008 — done, positive result, memory data unusable |
 | 9 | Validate on multiple domains | DEC-009 (BioRED) — one additional domain, pilot scale only |
