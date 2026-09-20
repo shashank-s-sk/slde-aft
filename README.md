@@ -133,3 +133,51 @@ diagnosed from saved artifacts instead of requiring a re-run.
 - `Decision log.md` — what was decided, why, and current status per decision (DEC-001 through DEC-013+).
 - `Evidence log.md` — what was actually run, with real numbers (EVID-001 onward).
 - `Learnings.md` — lessons learned, including a running inference table with confidence labels (CONFIRMED / HYPOTHESIS / INSUFFICIENT DATA).
+
+
+## PROMPT
+You are helping me bring the SLDE-AFT repo and paper up to the standard a strong Q1 journal reviewer expects. Read these first, in order: README.md, professor_feedback.md, slde_aft_next_steps.md, "Decision log.md" (status dashboard), "Results Summary.md", then the relevant EVID entries in "Evidence log.md". Then run `pytest tests -q`.
+
+## Ground rules (non-negotiable)
+1. Never invent, estimate, round, or "clean up" any number. Every figure must come from a saved output file or an EVID entry. If a number can't be traced, say so.
+2. Never delete or overwrite existing experiments, notebooks, or outputs. Work on a new branch `q1-rework`. Commit after each phase.
+3. Never read, print, or commit `.env` or the API key.
+4. Before any run that costs API money, or GPU time beyond a few minutes, give me a cost/time estimate and wait for my approval. Anything estimated over $2 always needs approval.
+5. Pre-register before running: for each new experiment, write the hypothesis, metric, seeds, test, and what result would count as a null in the Decision log BEFORE running it. Report nulls and negatives honestly. No re-running to chase significance.
+6. After each phase, update "Decision log.md", "Evidence log.md" and "Results Summary.md" consistently, then stop and give me a short report (what was done, what changed, what is still weak). Do not start the next phase until I say go.
+
+## Phase 0 - Audit (no API spend)
+Produce `AUDIT.md`: for each of the 13 professor points, what exists, what is missing, and which claims in "Results Summary.md" are stronger than the underlying evidence. Specifically check and report on:
+- The "Claim 3 (Noisy-Or) is strongest" framing versus the ablation result where `without_prob_kb` (max-merge) is numerically >= full at N=50, and versus EVID-014, where the +0.043 F1 is conflict-adjusted vs RAW Noisy-Or (not vs a naive baseline), single run, and flat-to-negative on the 117 conflict rows.
+- Whether the epochs=5 choice was selected on the same held-out test set used for the 5-seed confirmation (EVID-037/038/040).
+- Whether the provenance-filter result (93.5% -> 100%) is circular because the structured CSV and the gold labels come from the same generator (`src/datasets/product_generator.py`).
+- Whether the "base" fine-tuning F1 is one fixed number used in a one-sample t-test.
+- Which experiments have no raw outputs committed (outputs/ is gitignored).
+
+## Phase 1 - Fix validity threats
+1a. Tuning leakage: redo hyperparameter/epoch selection using the validation split only, then evaluate once on the untouched test split. If the split is too small, propose a larger leakage-safe split (e.g. extend `data/product_split_200.csv` usage) and show me the manifest before running.
+1b. Noisy-Or vs baselines: run a multi-seed (>=10) end-to-end comparison of max-merge, mean, standard Noisy-Or, conservative Noisy-Or, and conflict-adjusted conservative Noisy-Or, on held-out data, with a validation-chosen threshold. Report best-F1, precision, recall, ECE, Brier, and paired tests. Also run it on the DocRED and CaRB-derived data if feasible.
+1c. Provenance circularity: design and run an experiment where the structured source is corrupted at controlled noise rates (e.g. 0/5/10/20%). Report the filter's precision/recall under noise. If the filter only works because structured data is perfect, say so.
+1d. For fine-tuning significance: the base model is deterministic (greedy decoding), so do NOT invent per-seed base variance. Instead quantify test-set uncertainty: (1) paired bootstrap over test PRODUCTS comparing base vs each fine-tuned seed on identical products, reporting 95% CIs on F1 difference; (2) rerun on a larger leakage-safe held-out set (>=30 products) with hyperparameters chosen on the validation split only. Report training-seed variance and test-set variance separately. Do not claim generalization from the 8-product test set.
+## Phase 2 - Reproducibility (professor point 12)
+- Commit (or provide a documented download script for) the raw outputs behind every reported number, excluding large adapters and secrets.
+- Add `scripts/reproduce_all.py` that regenerates every table in "Results Summary.md" from saved raw outputs, and diff its output against the summary.
+- Fix README status (it's stale), complete `requirements.txt` (torch, transformers, peft, trl, bitsandbytes etc. in a separate `requirements-finetune.txt`), record pinned model IDs, dates, temperature/top-p/max-tokens, seeds, hardware.
+- Create `docs/` with reproduction steps and a data/licensing note.
+
+## Phase 3 - Close evidence gaps (get approval per experiment)
+- Scalability (point 8): rerun memory measurement in isolated subprocesses; log GPU memory/utilization for fine-tuning and inference; extend beyond N=200 if budget allows; fix or benchmark the O(N) accepted_slot_keys scan (indexed version wired in, same math, with a regression test).
+- DocRED (point 1): implement a paraphrase/entity-normalised matching key as an option, and rerun the pilot on a larger sample (>=100 docs). Report it honestly even if it stays negative.
+- Second domain (point 9): scale BioRED beyond n=15 with a relaxed-and-strict scorer and at least one external baseline.
+- Baselines (point 2): extend GPT-4o/Claude/Gemini to a larger CaRB subset with CIs, if cost is acceptable. Do not report REBEL's raw F1; keep the incompatibility finding.
+- Error analysis (point 7): curate a table of correct, failed, hallucinated, conflicting, ambiguous, and provenance-filtered examples with explanations.
+
+## Phase 4 - Manuscript support
+Write into `paper/` (LaTeX, Springer template placeholder), using only verified numbers:
+- Math section: formal definition, derivation, boundedness and evidence-monotonicity proof for a fixed conflict set, convergence discussion and its limits under dynamic conflicts, complexity, calibration.
+- Novelty positioning vs RAG, continual learning, AutoML, Universal IE, KG population, self-training. No "first system" claims.
+- Missing Sections 8-11 (ablation, discussion, limitations, conclusion) and a rewritten abstract/results using the pinned-model numbers, not the old `openrouter/auto` figures.
+- A claim-evidence table: each claim, its evidence, its strength (validated / trend / null / negative), and the exact wording I am allowed to use.
+- Limitations must state: synthetic product domain, small held-out sets, single extractor family, API-model drift, monotonic-recall interpretation, TACRED not pursued.
+
+Start with Phase 0 only. Stop when AUDIT.md is done.
