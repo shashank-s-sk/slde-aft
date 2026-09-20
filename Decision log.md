@@ -24,7 +24,8 @@ just says where each DEC currently stands and what's left.
 | 020 | Framework-Level Validation on DocRED | DONE (pilot) | Naive F1=0.0329 vs. PKB-aggregated F1=0.0104 (worse) — PKB's exact-string-match aggregation rarely corroborates the same fact across differently-phrased evidence sentences on open text. Real, diagnosed limitation, cost $0.00131 | Genuine finding for Limitations (point #10); a fuzzy/entity-linked matching key would be the natural fix if pursued further |
 | 021 | Extractor-Only Validation on TACRED | **NOT PURSUED** (user decision, 2026-09-18) | — | Dropped — CaRB + DocRED already cover two benchmark task types; add one Limitations sentence (see DEC-021 section) so this reads as a scope decision, not a gap |
 | 022 | Epoch / LoRA Hyperparameter Grid (Claim #2, point #6) | **DONE — all 3 stages** | **epochs=5 config SIGNIFICANT vs. base** (one-sample t-test p=0.0028, 5-seed mean F1=0.2012 vs base 0.1373) — EVID-037/038/040. First fine-tuning config in the project to cross p<0.05. Not proven significantly better than the old epochs=3 config specifically (p=0.45/0.63) | None required. Optional: re-test epochs=5 on DEC-018's provenance-filtered data |
-| 023 | N=50 Ablation Confirmatory Run (Claim #4, point #5) | DONE | Null result replicates and STRENGTHENS at N=50: without_feedback p=0.57/0.63, without_prob_kb p=0.63/1.0 (t/Wilcoxon) — EVID-039. Variance shrank 3.6x vs N=20 (std 0.335→0.093), so this is now a properly-powered null, not inconclusive | None — per DEC-023's pre-registered commitment, no further re-runs; reframe claim #4 as "tested at two scales, no effect either time" |
+| 023 | N=50 Ablation Confirmatory Run (Claim #4, point #5) | DONE | Null result replicates at N=50: without_feedback p=0.57/0.63, without_prob_kb p=0.63/1.0 (t/Wilcoxon) — EVID-039. Variance shrank 3.6x vs N=20 (std 0.335→0.093). **Correction (AUDIT.md, 2026-09-20): n=5 seeds only detects effects >=~0.29-0.30 F1 (Cohen's d=1.68 needed for 80% power) — not "properly powered" for small-to-moderate effects, just a tighter measurement than N=20** | None — per DEC-023's pre-registered commitment, no further re-runs; reframe claim #4 as "tested at two scales, no effect >=~0.3 F1 detected either time" |
+| 024 | Fine-Tuning Hyperparameter Selection Without Tuning-Leakage | PRE-REGISTERED, NOT STARTED | — | Awaiting user approval of design + ~35-45min GPU-time estimate before running anything |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -1930,6 +1931,45 @@ Results: **Null result replicates and gets STRONGER at N=50, not
   commitment: this is the final answer, no further re-runs.** Claim #4
   should be framed in the manuscript as "proposed and tested at two
   scales (N=20, N=50); no significant effect detected either time."
+
+# DEC-024 — Fine-Tuning Hyperparameter Selection Without Tuning-Leakage (Phase 1a, AUDIT.md A2 fix)
+
+## PRE-REGISTRATION (written before any run, per README.md's ground rule 5)
+
+**Why this is required:** `AUDIT.md`'s A2 finding, verified directly against `scripts/dec006_evaluate_adapter.py`: DEC-022's epoch/LoRA hyperparameter search and its "confirmatory" 5-seed evaluation both used the identical 8-product test split (`data/product_split.csv`). There was no independent validation split separating "which config to pick" from "how well does the picked config generalize" — textbook tuning-on-the-test-set leakage. The reported one-sample t-test p=0.0028 (EVID-040) should not be trusted as an unbiased estimate.
+
+**Fix:** use `data/product_split_200.csv` (verified: 140 train / 20 validation / 40 test, seed 7/42, confirmed identical to `src/leakage_split.build_product_split(n_products=200)` -- not a separately-computed file, just a snapshot of the same deterministic function). Select every hyperparameter using ONLY the 20-product validation split; evaluate the single winning configuration exactly once on the untouched 40-product test split.
+
+**Hypothesis:** the epoch/LoRA configuration selected using only the validation split will still show an improvement over the base (non-fine-tuned) Mistral-7B model when evaluated on the untouched 40-product test split, though the effect size and significance may differ from EVID-040's leakage-affected result.
+
+**Metric:** F1 (precision/recall also reported), computed by the existing leakage-safe, name-based exclusion logic already in `dec006_evaluate_adapter.py` (unchanged).
+
+**Design:**
+1. **Grid search (validation-only, seed 42, single run per config — matching DEC-022 Stage 1-2's own precedent of single-seed exploration before multi-seed confirmation):**
+   - Epochs ∈ {2, 3, 5, 8}, LoRA fixed at the original default (rank=16, alpha=32, lr=2e-4). Evaluate each on the 20-product **validation** split (requires adding an `--eval-split {val,test}` option to `dec006_evaluate_adapter.py`, defaulting to `test` so existing usage is unaffected).
+   - At the winning epoch count: rank ∈ {8,32} (alpha=2×rank) and lr ∈ {1e-4,3e-4}, same validation-only evaluation. (Reuses DEC-022's exact grid values for comparability.)
+   - Pick the single best config by validation F1.
+2. **Base-model reference (fresh, on the NEW test split — the old base F1=0.1373 is from a different 8-product test set and is not valid here per AUDIT.md A6):** evaluate the un-fine-tuned Mistral-7B once on the 40-product test split.
+3. **Confirmatory run:** train the winning config at seeds 42-46 (5 seeds, matching DEC-005/006's convention), evaluate each **once** on the 40-product test split -- this evaluation happens exactly once per seed, with no further hyperparameter adjustment based on the result.
+4. **Statistics:** one-sample t-test and Wilcoxon signed-rank of the 5 test-split F1 values against the fresh base F1 (step 2), matching EVID-034/040's method for comparability. Additionally report a paired bootstrap over test PRODUCTS (per README Phase 1d) to separate seed-level variance from test-set-level uncertainty -- not done in any prior DEC-006/022 result.
+
+**Seeds:** 42-46 for the confirmatory step (5 seeds). Seed 42 only for the exploratory grid.
+
+**What counts as a null:** p >= 0.05 (one-sample t-test) for the winning config vs. the fresh base F1 on the 40-product test set. **This will be reported as a null if that is the result** -- no re-running, no additional seeds, no post-hoc grid re-expansion to chase significance (ground rule 5).
+
+**What this does NOT fix:** the provenance-filter circularity (A3) and the DEC-019 model-mismatch confound (A6) are separate issues, not addressed by this experiment. DEC-023's ablation power limitation (n=5, detects only effects >=~0.3 F1) is inherited here too -- if the true effect is small-to-moderate, this design will not reliably detect it either, and that limitation should be stated alongside any null result from this DEC.
+
+## Cost / time estimate (awaiting approval before any run)
+
+- GPU: same rented RunPod RTX 4090 (or 3090 fallback) used throughout DEC-006/022. Requires the user to deploy a pod, per that established workflow -- not something runnable from this session directly.
+- Training runs: 4 (epoch grid) + 4 (LoRA grid) + 5 (confirmatory seeds) = 13 fine-tuning runs, each in the same ~100-500s range observed in DEC-022 (scales with epoch count). Estimated total GPU wall-clock: **~35-45 minutes.**
+- Evaluation runs: 8 (grid, on 20 val products) + 5 (confirmatory, on 40 test products) + 1 (base model, on 40 test products) -- inference-only, a few minutes total, not a significant cost driver.
+- No new OpenRouter/API costs (this is entirely local GPU fine-tuning + evaluation, same as DEC-006/022).
+- **Estimated cost: well under $2** (RunPod community-cloud RTX 4090 rates are typically $0.30-0.50/hour; ~45 min of GPU time is a fraction of that), but this is a GPU-time estimate, not a precise dollar figure -- confirm actual pod rate before starting.
+
+## Status
+
+DEC-024: PRE-REGISTERED, NOT STARTED. Per the ground rules, do not run anything until the user explicitly approves this design and cost estimate.
 
 DEC-014 (evaluation protocol & leakage control)
 
