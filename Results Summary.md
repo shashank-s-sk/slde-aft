@@ -13,26 +13,29 @@
 | # | Claim | Verdict | Headline number |
 |---|---|---|---|
 | 1 | Unified closed-loop architecture | Tested end-to-end; flat vs. baseline, beats not-fine-tuning | F1 0.3869 → 0.3864 (loop) vs. 0.3791 (no fine-tune) |
-| 2 | Automated synthetic supervision | **Real, statistically significant effect** (epochs=5 config, first fine-tuning result in the project to cross p<0.05) | Mean F1=0.2012 (std 0.0194) across 5 seeds vs. base 0.1373 — one-sample t-test **p=0.0028** (EVID-040). Supersedes the earlier epochs=3 config's p=0.066 trending result |
-| 3 | Noisy-Or math contribution | **Strongest, most defensible result in the project** | +0.043 F1 aggregate; held-out test F1=0.197; real-data ECE=0.3332 (EVID-036) |
-| 4 | Feedback Controller reduces manual reliance | Honest null, now tested at two scales | N=20: p=0.31–0.51 (EVID-020); N=50: p=0.57–1.0, variance shrank 3.6x (EVID-039) — a stronger, properly-powered null, not just "not enough data" |
-| 5 | Provenance actively filters training data | **Validated, second-strongest result** | Precision 93.5% → 100% (drops 31/475 wrong triples) |
+| 2 | Automated synthetic supervision | Real effect vs. base, **but the hyperparameter selection has a disclosed tuning-leakage limitation** | Mean F1=0.2012 (std 0.0194) across 5 seeds vs. base 0.1373 — one-sample t-test **p=0.0028** (EVID-040). **Caveat: epochs=5 was selected using the same 8-product test set later used to report this p-value (AUDIT.md A2) — report as suggestive, not clean confirmatory significance, unless DEC-024's validation-split rerun is completed first** |
+| 3 | Noisy-Or math contribution | A real, positive real-data finding, **but not an unqualified "strongest" claim** — it sits in tension with the N=50 ablation | +0.043 F1 (conflict-adjusted vs. **raw/unadjusted Noisy-Or**, not a naive/no-aggregation baseline — AUDIT.md A1); real-data ECE=0.3332 (EVID-036). **The N=50 ablation (EVID-039) found removing this mechanism (`without_prob_kb`) scored numerically as well as or better than keeping it** — report both findings together |
+| 4 | Feedback Controller reduces manual reliance | Honest null, tested at two scales, **power-limited** | N=20: p=0.31–0.51 (EVID-020); N=50: p=0.57–1.0, variance shrank 3.6x (EVID-039). **At n=5 seeds this design can only detect effects of ≈0.29-0.30 F1 or larger (Cohen's d=1.68 for 80% power, AUDIT.md Part C) — do not call this "properly powered" without that qualifier; it rules out large effects only** |
+| 5 | Provenance actively filters training data | A real precision result, **but validated under a partially circular setup** | Precision 93.5% → 100% (drops 31/475 wrong triples). **Caveat: gold labels and the structured source it corroborates against are both derived from the same generator (AUDIT.md A3) — this does not test robustness to a structured source that itself contains errors, the realistic scenario the filter is meant for** |
 
 Plus two foundational corrections: **official CaRB benchmark scores are 4-8x higher than every previously-reported internal-evaluator number**, and CaRB is now at full 548-sentence scale, not a 30-sentence pilot (see below) — use the official, full-scale numbers, not the internal or pilot ones, anywhere CaRB is cited.
+
+**All four caveats above come from `AUDIT.md` (2026-09-20/21), a methodological review that checked every headline claim in this file directly against the underlying code and data. Where this file and `AUDIT.md` conflict, `AUDIT.md`'s corrected framing is authoritative — the sections below have been updated to match it.**
 
 ---
 
 ## Claim 3 — Noisy-Or Conservative Confidence Aggregation (the math contribution)
 
-**This is the strongest, most defensible claim in the paper. Lead with it.**
+**A real, positive real-data finding — but do NOT call it "the strongest, most defensible claim in the paper" or any equivalent unqualified superlative. AUDIT.md found this framing is in direct tension with the project's own ablation evidence; report both sides together.**
 
-- Real-data check (EVID-014): the conservative Noisy-Or + mutual-exclusivity-penalty aggregation improves F1 by **+0.043** in aggregate over a naive baseline, on real (not synthetic) product-domain data.
+- Real-data check (EVID-014): the conservative Noisy-Or + mutual-exclusivity-penalty aggregation improves F1 by **+0.043** in aggregate **compared to raw (unadjusted) Noisy-Or support** — NOT compared to a naive/no-aggregation baseline. Raw Noisy-Or is itself a non-trivial aggregation mechanism; do not describe this comparison as "vs. naive," on real (not synthetic) product-domain data.
 - Full instrumented run (EVID-013, 155 API calls, $0.00259): train-set iteration F1 progressed **0.3668 → 0.3682 → 0.2894 → 0.4183** across 4 iterations — non-monotonic and not fully explained (flagged for future error analysis, see DEC-007). Held-out F1: **val 0.5970** (n=5), **test 0.1970** (n=10).
 - Toy/scaled synthetic validation (EVID-005/009) also supports the mechanism working as designed.
+- **Direct tension with the project's own ablation (AUDIT.md A1, new):** DEC-023's N=50 ablation (EVID-039) found `without_prob_kb` (max-merge, i.e. this mechanism *removed* from the full closed loop) scored **numerically higher** than `full` on held-out test F1 (0.3783 vs. 0.3451). The paired significance test did not distinguish them (p=0.63/1.0), so this isn't "Noisy-Or hurts" — but it directly contradicts describing this as the project's strongest, most defensible result. **Report both the positive EVID-014 finding and this ablation tension together, honestly.**
 
-**Honest nuance for the Discussion section:** the aggregation helps *in aggregate*, but doesn't specifically resolve genuine fact conflicts well — of 117 real conflicts found, 108 were hallucination-vs-hallucination (the model contradicting its own wrong answer across passes), not correct-vs-incorrect. Report this nuance; don't imply the math resolves truth-vs-falsehood conflicts when it mostly resolves noise-vs-noise ones.
+**Honest nuance for the Discussion section:** the aggregation helps *in aggregate* (vs. raw Noisy-Or, single run), but doesn't specifically resolve genuine fact conflicts well — of 117 real conflicts found, 108 were hallucination-vs-hallucination (the model contradicting its own wrong answer across passes), not correct-vs-incorrect, and conflict-adjustment is flat-to-negative (F1 0.1846→0.1667) on precisely those 117 rows. Report this nuance; don't imply the math resolves truth-vs-falsehood conflicts when it mostly resolves noise-vs-noise ones, and the aggregate improvement comes from the other 540 rows where the conflict/non-conflict distinction barely matters.
 
-**Suggested framing:** "The conservative Noisy-Or aggregation with mutual-exclusivity penalty improves aggregate extraction F1 by 4.3 points on real data; however, error analysis shows it primarily suppresses repeated hallucinations rather than adjudicating between one correct and one incorrect competing claim."
+**Suggested framing:** "The conservative Noisy-Or aggregation with mutual-exclusivity penalty improves aggregate extraction F1 by 4.3 points relative to unadjusted Noisy-Or support on one real-data run; however, this improvement is flat-to-negative on the subset of triples with a genuine competing alternative, and a separate N=50 closed-loop ablation found no significant difference (and a numerically higher score) when the mechanism was removed entirely — the aggregate real-data benefit and the ablation result should both be reported, not just the favorable one."
 
 **Real-data calibration and computational complexity (EVID-036, new):** closes the two remaining DEC-003 deliverables the professor asked for by name (point #3).
 
@@ -47,9 +50,9 @@ Plus two foundational corrections: **official CaRB benchmark scores are 4-8x hig
 
 ---
 
-## Claim 5 — Provenance-Based Filtering (validated, second-strongest result)
+## Claim 5 — Provenance-Based Filtering (a real precision result, validated under a partially circular setup)
 
-**A rare case where ground truth is known exactly** (the product domain is synthetically generated), enabling a real precision measurement, not just an implementation claim.
+**A rare case where ground truth is known exactly** (the product domain is synthetically generated), enabling a real precision measurement, not just an implementation claim — **but AUDIT.md found the validation itself is partially circular; disclose this explicitly, do not present the number as proof of general robustness.**
 
 - Filter rule: a triple is kept only if at least one of its observations came from a **structured** source (not just repeated unstructured/LLM observations).
 - Validated on 475 above-threshold triples from the 200-product PKB run (EVID-029):
@@ -61,8 +64,9 @@ Plus two foundational corrections: **official CaRB benchmark scores are 4-8x hig
 | Fails filter (unstructured-only) | 31 | **0.0%** — every single one wrong |
 
 - **Mechanistic bonus finding:** the 31 dropped triples are almost all generic device-category nouns ("laptop device", "tablet device") standing in for the real product name, repeated 2-21 times each and mistaken by Noisy-Or aggregation for corroborating evidence. This *directly explains* (not just correlates with) the "subject-copying" failure mode seen in the DEC-006 fine-tuned model's outputs — it learned from these exact hallucinated examples.
+- **Circularity caveat (AUDIT.md A3, new — verified directly against `src/datasets/product_generator.py`):** in this synthetic dataset, the gold labels used to score the filter are constructed *from the same generator* as the structured source data the filter checks against (`gold_unstructured` is built directly from `gold_structured`, which shares the same underlying generated attribute values as the structured CSV row). So "requires structured corroboration" and "matches gold" are, by construction, close to the same test here. **This does not mean the filter is a bad idea, but the 93.5%→100% number does not demonstrate the filter would help if the structured source itself could contain errors** — the realistic justification given for the mechanism in the paper's framework description. State this limitation plainly rather than presenting the number as general validation.
 
-**Suggested framing:** "Requiring structured corroboration for provenance-based filtering raises synthetic training-data precision from 93.5% to 100% on the validated subset, by removing systematically-hallucinated triples that repeated confidently enough to cross the confidence threshold despite never being grounded in a structured fact."
+**Suggested framing:** "Requiring structured corroboration for provenance-based filtering raises synthetic training-data precision from 93.5% to 100% on the validated subset, by removing systematically-hallucinated triples that repeated confidently enough to cross the confidence threshold despite never being grounded in a structured fact. Because the structured source and the gold labels in this synthetic domain are derived from the same generator, this result demonstrates the filter's mechanism works as designed but does not establish robustness to a structured source that itself contains errors — a question left to future work on a domain with independently-sourced structured and gold data."
 
 ---
 
@@ -82,13 +86,17 @@ Design (EVID-030): reconstructed the exact 4-iteration KB state (verified bit-fo
 
 **Suggested framing:** "Integrating the fine-tuned model back into the iterative pipeline neither degrades the knowledge base nor clearly improves it in absolute terms, but reliably outperforms the realistic alternative of continued extraction without fine-tuning — indicating the closed loop is safe to run and modestly beneficial rather than transformative at this scale."
 
-**Caveat to state honestly:** single seed (43, the best of 3) tested for treatment; a weaker seed (44 was a net regression standalone) might shift this comparison.
+**Caveats to state honestly:**
+- Single seed (43, the best of 3) tested for treatment; a weaker seed (44 was a net regression standalone) might shift this comparison.
+- **Model-mismatch confound (AUDIT.md A6, new — verified directly against `scripts/dec006_lora_finetune.py` and EVID-030):** CONTROL uses `meta-llama/llama-3.1-8b-instruct`; TREATMENT uses the fine-tuned QLoRA adapter, which is fine-tuned **Mistral-7B-Instruct-v0.3**, not a fine-tuned Llama-3.1-8B. These are two different base model families. **The observed TREATMENT-vs-CONTROL difference is confounded by this model swap — some or all of the apparent "closing the loop helps" effect could be attributable to Mistral-7B being a different (better or worse) model than Llama-3.1-8B at this task, independent of whether fine-tuning itself contributed anything.** State this explicitly; do not attribute the full difference to fine-tuning/closing the loop without this caveat.
 
 ---
 
-## Claim 2 — Automated Synthetic Supervision from High-Confidence Triples (real, statistically significant effect)
+## Claim 2 — Automated Synthetic Supervision from High-Confidence Triples (real effect vs. base, with a disclosed tuning-leakage limitation)
 
-**Headline result (EVID-040, use this as the primary evidence): the epochs=5 configuration is the first fine-tuning result in the project to reach conventional statistical significance.**
+**Headline result (EVID-040): the epochs=5 configuration is the first fine-tuning result in the project to reach conventional statistical significance vs. base — but this must be reported with the leakage caveat below, not as clean confirmatory evidence.**
+
+**Tuning-leakage caveat (AUDIT.md A2, new — verified directly against `scripts/dec006_evaluate_adapter.py`): every evaluation in this section — the epoch/LoRA grid search AND this "confirmatory" 5-seed run — used the identical 8-product test split.** There was no independent validation set separating "which configuration to pick" from "how well does the picked configuration generalize." With only 8 products and 9 configurations tried across the grid (Stages 1-2 below), some of the apparent epochs=5 advantage is plausibly the search fitting this specific small test set rather than a fully generalizable effect. **DEC-024 (pre-registered in `Decision log.md`) specifies the correct fix — select hyperparameters on an independent validation split, confirm once on an untouched test split — but has not been run** (the user chose to proceed with manuscript writing using this honest caveat instead of spending another GPU session). **The manuscript must state this limitation explicitly wherever p=0.0028 is cited — do not present it as unqualified, clean statistical significance.**
 
 | Seed | Precision | Recall | F1 |
 |---|---:|---:|---:|
@@ -100,9 +108,9 @@ Design (EVID-030): reconstructed the exact 4-iteration KB state (verified bit-fo
 
 Mean F1 = **0.2012** (std 0.0194) vs. base F1=0.1373. **One-sample t-test vs. base: p=0.0028** (significant). Wilcoxon signed-rank: p=0.0625 — the mathematical floor for a 5-sample test, reached because all 5 seeds improved over base.
 
-**Important, precise scope of the claim:** a direct paired comparison against the earlier epochs=3 configuration (EVID-034, same 5 seeds) is NOT significant (paired t p=0.4461, Wilcoxon p=0.6250), despite epochs=5's higher mean (0.2012 vs. 0.1814) and notably tighter spread (std 0.0194 vs. 0.0352). **The correct claim is "epochs=5 is significantly better than the base model" — not "epochs=5 is proven significantly better than epochs=3."** Both are true findings; don't conflate them.
+**Important, precise scope of the claim:** a direct paired comparison against the earlier epochs=3 configuration (EVID-034, same 5 seeds) is NOT significant (paired t p=0.4461, Wilcoxon p=0.6250), despite epochs=5's higher mean (0.2012 vs. 0.1814) and notably tighter spread (std 0.0194 vs. 0.0352). **The correct claim is "epochs=5 is significantly better than the base model" — not "epochs=5 is proven significantly better than epochs=3."** Both are true findings; don't conflate them. **And per the leakage caveat above, even the "significantly better than base" claim should be qualified as selected-and-tested-on-the-same-data, not an independently confirmed result.**
 
-**Suggested framing:** "A systematic hyperparameter search (Section on Claim 2 methodology below) found that extending fine-tuning from 3 to 5 epochs, with LoRA rank/alpha/learning rate unchanged, produces a statistically significant improvement over the base model (one-sample t-test, p=0.0028, n=5 seeds) — the first fine-tuning configuration in this study to reach conventional significance, compared to the original configuration's non-significant trend (p=0.066)."
+**Suggested framing:** "A hyperparameter search found that extending fine-tuning from 3 to 5 epochs, with LoRA rank/alpha/learning rate unchanged, produces a statistically significant improvement over the base model (one-sample t-test, p=0.0028, n=5 seeds) on the held-out test set used for both selection and evaluation; we note this as a limitation and identify an independent validation-based confirmation as a direction for future work (Section 10). The original 3-epoch configuration, by contrast, showed only a non-significant trend (p=0.066)."
 
 ---
 
@@ -146,7 +154,7 @@ A follow-up LoRA grid (rank {8,32}, learning rate {1e-4,3e-4}) at epochs=5 found
 
 **Suggested framing:** "A hyperparameter search across training epochs (2-8) and LoRA rank/alpha/learning rate found that extending training from 3 to 5 epochs improved F1, while the originally-chosen LoRA hyperparameters were already optimal in the range tested; recall remained unchanged across every configuration, confirming that additional training exclusively improves precision by suppressing false positives."
 
-**Status update: the 5-seed confirmatory run is now done (EVID-040, seeds 43-46 added to the existing seed 42) — see the headline result at the top of this section.** epochs=5's significance vs. base (p=0.0028) is now a validated, multi-seed finding, not a single-seed anecdote. This is the paper's headline fine-tuning number going forward; the epochs=3 result immediately below is now the "earlier, less-tuned configuration" for methodological narrative, not the primary evidence.
+**Status update: the 5-seed confirmatory run is now done (EVID-040, seeds 43-46 added to the existing seed 42) — see the headline result at the top of this section.** epochs=5's significance vs. base (p=0.0028) is now a multi-seed finding, not a single-seed anecdote — **but see the tuning-leakage caveat at the top of this section before citing this as clean confirmatory evidence.** This is the paper's headline fine-tuning number going forward; the epochs=3 result immediately below is now the "earlier, less-tuned configuration" for methodological narrative, not the primary evidence. DEC-024 (pre-registered, not run) specifies the leakage-free follow-up if a stronger claim is needed later.
 
 ---
 
@@ -162,13 +170,15 @@ A follow-up LoRA grid (rank {8,32}, learning rate {1e-4,3e-4}) at epochs=5 found
 | without_feedback | 0.3005 (0.1728) | -0.0446 | 0.5707 | 0.625 |
 | without_prob_kb | 0.3783 (0.1744) | +0.0332 | 0.6348 | 1.000 |
 
-**The null replicates and gets STRONGER at N=50, not weaker.** `full`'s variance shrank 3.6x (test F1 std: 0.335 at N=20 → 0.093 at N=50) — so this is now a properly-powered null, not an inconclusive one. `without_feedback`'s direction flipped sign again (positive at N=20, negative at N=50), consistent with genuine noise around a near-zero true effect rather than a real effect being masked by noise.
+**The null replicates and the measurement gets tighter at N=50, not weaker.** `full`'s variance shrank 3.6x (test F1 std: 0.335 at N=20 → 0.093 at N=50). `without_feedback`'s direction flipped sign again (positive at N=20, negative at N=50), consistent with genuine noise around a near-zero true effect rather than a real effect being masked by noise.
 
-**Verdict:** no ablation effect detected at either N=20 or N=50. Per DEC-023's own pre-registered commitment, this is the final answer — no further re-runs chasing significance.
+**Power caveat (AUDIT.md Part C, new — computed directly): do not describe this as "properly powered" without qualification.** At n=5 seeds, a paired/one-sample t-test needs Cohen's d≈1.68 for 80% power at α=0.05. Using the observed stds (0.1728/0.1744), the smallest reliably detectable mean difference is **≈0.29-0.30 F1** — a very large effect. **This design rules out large effects only; it cannot distinguish "no effect" from "a small-to-moderate effect that this sample size can't detect."**
 
-**Suggested framing:** "A five-seed statistical validation, repeated at both N=20 and N=50 products, found no significant difference in F1 between the full pipeline and ablated variants without the feedback controller or probabilistic knowledge base (all p ≥ 0.34 across both scales). Variance dropped substantially at the larger scale (full's held-out test F1 std: 0.335 → 0.093), indicating the null result reflects a genuinely small effect size rather than insufficient statistical power."
+**Verdict:** no ablation effect **of ≈0.3 F1 or larger** detected at either N=20 or N=50. Per DEC-023's own pre-registered commitment, this is the final answer — no further re-runs chasing significance — but the manuscript should state the detectable-effect-size limitation alongside the null, not present it as a general "feedback doesn't matter" conclusion.
 
-**This claim's correct manuscript treatment:** explicit reframing as "proposed and tested at two independent scales; no significant effect detected either time" — not an assertion that feedback helps, and not something that needs a further, larger re-run (already addressed).
+**Suggested framing:** "A five-seed statistical validation, repeated at both N=20 and N=50 products, found no significant difference in F1 between the full pipeline and ablated variants without the feedback controller or probabilistic knowledge base (all p ≥ 0.34 across both scales). Variance dropped substantially at the larger scale (full's held-out test F1 std: 0.335 → 0.093). At n=5 seeds, this design can detect only effects of approximately 0.3 F1 or larger (80% power, α=0.05); the null result rules out a large effect but cannot rule out a smaller one."
+
+**This claim's correct manuscript treatment:** explicit reframing as "proposed and tested at two independent scales; no effect of ≈0.3 F1 or larger detected either time" — not an unqualified assertion that feedback has no effect, and not something that needs a further, larger re-run (already addressed at the scales tested).
 
 ---
 
@@ -250,10 +260,10 @@ This is a genuine, citable answer to professor feedback point #10 ("where the fr
 |---|---|---|
 | 1 | Strengthen experimental evaluation (public benchmarks) | CaRB now full-scale (DEC-001, EVID-035, N=548); DocRED framework-level pilot (DEC-020, new — tests the framework, not just the extractor); BioRED domain pilot (DEC-009). TACRED scoped and explicitly declined with a documented reason (DEC-021). REBEL-benchmark (the dataset)/Universal-IE still not attempted, lowest priority |
 | 2 | Compare against SOTA methods | DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro all done (DEC-002, EVID-031/032/035) — 4 of 8 named systems covered, DeepSeek now at full CaRB scale too. REBEL attempted and found task-incompatible with CaRB scoring (EVID-033, real finding, not a gap). GenIE/InstructUIE (likely same incompatibility)/DyGIE++ (AllenNLP) not attempted |
-| 3 | Improve mathematical contribution | DEC-003's Noisy-Or result — strongest claim; real-data calibration (ECE=0.3332) and computational complexity analysis now done (EVID-036). Formal derivation/boundedness proof/convergence discussion (steps 2-4) still needed — pure math-writing, not experiments |
+| 3 | Improve mathematical contribution | DEC-003's Noisy-Or result — a real, positive real-data finding, but **not an unqualified "strongest claim"** (in tension with the N=50 ablation, AUDIT.md A1); real-data calibration (ECE=0.3332) and computational complexity analysis now done (EVID-036). Formal derivation/boundedness proof/convergence discussion (steps 2-4) still needed — pure math-writing, not experiments |
 | 4 | Proper ablation study | DEC-004/005 — done, honest null result |
-| 5 | Statistical validation | DEC-005/023 (ablation, 5 seeds at both N=20 and N=50 — properly-powered null, EVID-020/039) and DEC-006/022 (fine-tuning, 5 seeds, **epochs=5 config significant at p=0.0028**, EVID-040) — both now conclusive, one positive one null |
-| 6 | Improve fine-tuning section | DEC-006/018/022 — **statistically significant result achieved** (p=0.0028 vs. base, EVID-040). Previously-untested asks (additional epochs, LoRA hyperparameter tuning) fully investigated via a systematic grid (DEC-022); epochs=5 is the winning, validated configuration |
+| 5 | Statistical validation | DEC-005/023 (ablation, 5 seeds at both N=20 and N=50 — null result, but only rules out effects ≥~0.3 F1, AUDIT.md Part C) and DEC-006/022 (fine-tuning, 5 seeds, **epochs=5 config significant at p=0.0028 vs. base, but with a disclosed tuning-leakage limitation**, EVID-040/AUDIT.md A2) — both now have real numbers, both need their respective caveats stated |
+| 6 | Improve fine-tuning section | DEC-006/018/022 — a real result achieved (p=0.0028 vs. base, EVID-040), previously-untested asks (additional epochs, LoRA hyperparameter tuning) fully investigated via a systematic grid (DEC-022). **Must disclose the tuning-leakage limitation (AUDIT.md A2) — the same test set was used for both hyperparameter selection and confirmation; DEC-024 is pre-registered to fix this but not yet run** |
 | 7 | Add error analysis with examples | DEC-007 (general) + DEC-018/EVID-029 (concrete provenance-filtering examples, exactly what this point asks for) |
 | 8 | Evaluate scalability | DEC-008 — done, positive result, memory data unusable |
 | 9 | Validate on multiple domains | DEC-009 (BioRED) — one additional domain, pilot scale only |
