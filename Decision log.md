@@ -25,7 +25,7 @@ just says where each DEC currently stands and what's left.
 | 021 | Extractor-Only Validation on TACRED | **NOT PURSUED** (user decision, 2026-09-18) | — | Dropped — CaRB + DocRED already cover two benchmark task types; add one Limitations sentence (see DEC-021 section) so this reads as a scope decision, not a gap |
 | 022 | Epoch / LoRA Hyperparameter Grid (Claim #2, point #6) | **DONE — all 3 stages** | **epochs=5 config SIGNIFICANT vs. base** (one-sample t-test p=0.0028, 5-seed mean F1=0.2012 vs base 0.1373) — EVID-037/038/040. First fine-tuning config in the project to cross p<0.05. Not proven significantly better than the old epochs=3 config specifically (p=0.45/0.63) | None required. Optional: re-test epochs=5 on DEC-018's provenance-filtered data |
 | 023 | N=50 Ablation Confirmatory Run (Claim #4, point #5) | DONE | Null result replicates at N=50: without_feedback p=0.57/0.63, without_prob_kb p=0.63/1.0 (t/Wilcoxon) — EVID-039. Variance shrank 3.6x vs N=20 (std 0.335→0.093). **Correction (AUDIT.md, 2026-09-20): n=5 seeds only detects effects >=~0.29-0.30 F1 (Cohen's d=1.68 needed for 80% power) — not "properly powered" for small-to-moderate effects, just a tighter measurement than N=20** | None — per DEC-023's pre-registered commitment, no further re-runs; reframe claim #4 as "tested at two scales, no effect >=~0.3 F1 detected either time" |
-| 024 | Fine-Tuning Hyperparameter Selection Without Tuning-Leakage | PRE-REGISTERED, NOT STARTED | — | Awaiting user approval of design + ~35-45min GPU-time estimate before running anything |
+| 024 | Fine-Tuning Hyperparameter Selection Without Tuning-Leakage | PRE-REGISTERED, DEFERRED | User chose to write the manuscript now with an honest tuning-leakage caveat instead of running this fix | Available as future work / a revision-stage improvement if needed; not run |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -1969,7 +1969,15 @@ Results: **Null result replicates and gets STRONGER at N=50, not
 
 ## Status
 
-DEC-024: PRE-REGISTERED, NOT STARTED. Per the ground rules, do not run anything until the user explicitly approves this design and cost estimate.
+DEC-024: PRE-REGISTERED, DEFERRED (2026-09-21, explicit user decision).
+  User chose to proceed with manuscript writing using honest, hedged
+  language about the tuning-leakage limitation (AUDIT.md A2) rather
+  than spend another GPU session running this fix first. Not
+  cancelled -- the pre-registration stands and this remains available
+  as genuine future work / a revision-stage improvement if a reviewer
+  asks for it. The manuscript's fine-tuning claim (Section 7/Claim #2)
+  must state the leakage caveat explicitly rather than presenting
+  p=0.0028 as clean, unqualified significance.
 
 DEC-014 (evaluation protocol & leakage control)
 
