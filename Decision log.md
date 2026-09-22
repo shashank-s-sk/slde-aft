@@ -26,6 +26,7 @@ just says where each DEC currently stands and what's left.
 | 022 | Epoch / LoRA Hyperparameter Grid (Claim #2, point #6) | **DONE — all 3 stages** | **epochs=5 config SIGNIFICANT vs. base** (one-sample t-test p=0.0028, 5-seed mean F1=0.2012 vs base 0.1373) — EVID-037/038/040. First fine-tuning config in the project to cross p<0.05. Not proven significantly better than the old epochs=3 config specifically (p=0.45/0.63) | None required. Optional: re-test epochs=5 on DEC-018's provenance-filtered data |
 | 023 | N=50 Ablation Confirmatory Run (Claim #4, point #5) | DONE | Null result replicates at N=50: without_feedback p=0.57/0.63, without_prob_kb p=0.63/1.0 (t/Wilcoxon) — EVID-039. Variance shrank 3.6x vs N=20 (std 0.335→0.093). **Correction (AUDIT.md, 2026-09-20): n=5 seeds only detects effects >=~0.29-0.30 F1 (Cohen's d=1.68 needed for 80% power) — not "properly powered" for small-to-moderate effects, just a tighter measurement than N=20** | None — per DEC-023's pre-registered commitment, no further re-runs; reframe claim #4 as "tested at two scales, no effect >=~0.3 F1 detected either time" |
 | 024 | Fine-Tuning Hyperparameter Selection Without Tuning-Leakage | PRE-REGISTERED, DEFERRED | User chose to write the manuscript now with an honest tuning-leakage caveat instead of running this fix | Available as future work / a revision-stage improvement if needed; not run |
+| 025 | Closed-Loop Retest With the Headline (epochs=5) Fine-Tuned Model | SCOPED, NOT YET RUN | DEC-019's closed-loop test (EVID-030) used the now-superseded epochs=3 seed-43 adapter, not the paper's actual epochs=5 headline model (EVID-040) — Claims #1 and #2 have never been jointly tested | Needs a rented GPU pod + explicit go-ahead to spend; scripts ready (`scripts/dec025_closedloop_*.py`) |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -1978,6 +1979,97 @@ DEC-024: PRE-REGISTERED, DEFERRED (2026-09-21, explicit user decision).
   asks for it. The manuscript's fine-tuning claim (Section 7/Claim #2)
   must state the leakage caveat explicitly rather than presenting
   p=0.0028 as clean, unqualified significance.
+
+# DEC-025 — Closed-Loop Retest With the Headline Fine-Tuned Model (Claim #1, epochs=3 -> epochs=5 swap)
+
+## Why is this required?
+
+DEC-019's closed-loop test (EVID-030, Claim #1's evidence) already runs
+at N=200 (140 train-split products from `data/product_split_200.csv`,
+reconstructing `outputs/dec006_scaleup_probkb`'s 4-iteration KB state)
+-- this was verified directly against `scripts/dec019_closedloop_control.py`
+after an earlier incorrect claim in this session that it was N=50 only;
+that was wrong and is corrected here. What IS still true: DEC-019's
+TREATMENT arm used `outputs/dec006_adapters/mistral7b_qlora_seed43`,
+confirmed by the script's own docstring to be the **epochs=3** adapter
+from EVID-028's era. The paper's actual headline fine-tuning result
+(EVID-040, p=0.0028) is the **epochs=5** configuration from DEC-022/023
+-- a model that has never been fed back into the closed loop. Claim #1
+and Claim #2's headline numbers currently come from two different,
+never-jointly-tested fine-tuned models.
+
+## Decision
+
+Re-run DEC-019's closed-loop comparison with a single variable changed:
+swap the TREATMENT arm's adapter from epochs=3/seed=43 to epochs=5/seed=43
+(same seed, so only the epoch count differs -- isolates that one
+variable instead of confounding it with seed variation). Reuse DEC-019's
+iteration-4 baseline and CONTROL arm unchanged (both are independent of
+which fine-tuned adapter is being tested, so re-running them would spend
+money to re-derive an answer already known).
+
+## How will it be implemented?
+
+1. **Train (GPU, new cost):**
+   ```
+   python scripts/dec006_lora_finetune.py --seed 43 --epochs 5 \
+       --data-path outputs/dec006_synthetic_data/product_domain_synth_train_90unfiltered.jsonl \
+       --output-dir outputs/dec025_adapters/mistral7b_qlora_epochs5_seed43
+   ```
+   (Same 90-example unfiltered dataset EVID-037/038/040 used, for direct
+   comparability with the winning grid result -- not the current
+   73-example provenance-filtered production default.)
+2. **Extract (GPU, new cost):** `scripts/dec025_closedloop_epochs5_treatment_extract.py`
+   -- same 140 train-split products, same plain prompt format, same
+   generation config as DEC-019's treatment-extract step.
+3. **Merge (local, zero cost):** `scripts/dec025_closedloop_epochs5_treatment_merge.py`
+   -- replays iterations 1-4 fresh from the same snapshot DEC-019 used,
+   merges in the epochs=5 model's iteration-5 triples, computes the same
+   two metrics DEC-019 reported.
+4. **Compare (local, zero cost):** `scripts/dec025_closedloop_compare.py`
+   -- prints/saves a 4-row table: iteration-4 baseline, CONTROL
+   (reused from DEC-019 as-is), TREATMENT epochs=3 (DEC-019, for
+   reference), TREATMENT epochs=5 (this DEC, the headline-model result).
+
+## Expected Results
+
+A 4-row precision/recall/F1/KB-size comparison showing whether closing
+the loop with the model that is actually the paper's headline
+fine-tuning result behaves differently from DEC-019's original
+epochs=3 finding (flat vs. baseline, beats not-fine-tuning in a
+single-seed comparison). Numerical results remain TBD until the
+experiment is run -- do not assume the direction in advance.
+
+## What this does NOT fix
+
+This is still a single-seed (43) comparison, still confounded by the
+same model-family swap DEC-019 already disclosed (CONTROL uses
+Llama-3.1-8B, TREATMENT uses fine-tuned Mistral-7B) -- this DEC only
+changes which epoch count of the Mistral-7B adapter is used, it does
+not address the model-family confound or add seed variation. If the
+result is a null or flat finding, per this project's standing ground
+rule (README.md ground rule 5 / DEC-023's precedent) it will be
+reported as such -- no re-running to chase a different outcome.
+
+## Cost / time estimate (awaiting approval before any run)
+
+- GPU: same rented RunPod RTX 4090 workflow as DEC-006/022/024 -- requires
+  the user to deploy a pod; not runnable from this session directly.
+- Training: 1 run, epochs=5 on 90 examples -- DEC-022's own epochs=5
+  grid run took well under 10 minutes on this same hardware.
+- Extraction: 140 inference calls on the same GPU, no new OpenRouter/API
+  spend -- comparable in wall-clock time to DEC-019's original treatment
+  extraction (a few minutes).
+- Merge + compare: zero cost, runs locally.
+- **Estimated cost: a small fraction of an hour of RunPod time (well
+  under $1 at typical $0.30-0.50/hour RTX 4090 rates)** -- confirm actual
+  pod rate before starting.
+
+## Status
+
+DEC-025: SCOPED, NOT YET RUN (2026-09-22). Script and pre-registration
+  written; awaiting a rented GPU pod and explicit go-ahead to spend
+  before executing steps 1-2 above.
 
 DEC-014 (evaluation protocol & leakage control)
 
