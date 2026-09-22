@@ -193,20 +193,42 @@ extraction and adaptation pipeline is comparatively underexplored.
 \label{sec:related-work-dysect}
 
 The system closest to SLDE-AFT in the published literature is DySECT, a
-Dynamic Self-Evolving Extraction System \citep{aminnaseri2026dysect}. DySECT
-incrementally populates a self-expanding knowledge base with triples
-extracted by an LLM, aggregates them with a probabilistic confidence and
-graph-based reasoning layer, and feeds the enriched knowledge base back into
-the extractor through prompt tuning, few-shot example sampling, or
+Dynamic Self-Evolving Extraction and Curation Toolkit, presented in a paper
+titled ``A Dynamic Self-Evolving Extraction System''
+\citep{aminnaseri2026dysect}. DySECT incrementally populates a self-expanding
+knowledge base with triples extracted by an LLM, aggregates them with a
+probabilistic confidence and graph-based reasoning layer built on top of
+Theo \citep{mitchell1989theo}, and feeds the enriched knowledge base back
+into the extractor through prompt tuning, few-shot example sampling, or
 fine-tuning on knowledge-base-derived synthetic data -- forming, in the
 authors' own description, a closed loop in which extraction improves
-knowledge and knowledge improves extraction. \citet{aminnaseri2026dysect}
-report that KB-guided extraction lifts recall by 5--8 percentage points with
-no retraining, and show recall improvements on DocRED across several LLM
-extractors when guided by the accumulated knowledge base. DySECT also keeps
+knowledge and knowledge improves extraction. Table~1 of
+\citet{aminnaseri2026dysect} reports that, at the first KB-guided iteration,
+recall improves by 5--8 percentage points over the no-feedback baseline
+across all four evaluated models (GPT-4.1: 22.80\%$\to$30.62\%; GPT-4.1-mini:
+12.72\%$\to$20.22\%; Kimi~K2.5: 32.03\%$\to$37.85\%; LLaMA-3.3~70B:
+23.23\%$\to$28.78\%, positive-feedback mode), on DocRED. DySECT also keeps
 its knowledge base explicitly inspectable, letting a user review triples,
 confidence statistics, and hierarchical structure, and manually validate,
 invalidate, or add knowledge.
+
+\paragraph{The confidence aggregation formula is not merely similar --
+it is the same formula.} \citet{aminnaseri2026dysect}'s Equations 1--2 define
+$C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with a default
+shrinkage $\lambda=0.75$, followed by a mutual-exclusivity penalty
+$C(t) = C_{\mathrm{agg}}(t) / (m(t)+1)$. This is notationally and
+mathematically identical to SLDE-AFT's Conservative Noisy-OR aggregation
+with mutual-exclusivity penalty (Section~4; the same default shrinkage of
+0.75 is independently confirmed in this project's own
+\texttt{scripts/dec003\_product\_probkb\_run.py}). This paper does not claim
+priority or originality for this formula, and does not claim it is novel or
+absent from prior extraction-KB systems: DySECT is a published, citable
+counter-example to any such claim. What Section~4 contributes instead is
+a formal derivation and proofs of this formula's boundedness, monotonicity,
+and saturation properties, and the rival-ceiling result
+$C(t) < 1/(m(t)+1) \le 0.5$ for any contested single-valued-predicate slot
+-- properties stated but not proved in \citet{aminnaseri2026dysect}'s
+description of the same formula.
 
 \paragraph{Capabilities SLDE-AFT shares with DySECT.} Four elements of
 DySECT's design, as described by \citet{aminnaseri2026dysect}, are also
@@ -239,7 +261,7 @@ These are stated here as an honest scope limitation of the current
 implementation relative to DySECT, not as a design decision, and are
 revisited in Section~9 (Limitations).
 
-\paragraph{Capabilities unique to SLDE-AFT, verified as implemented.} Three
+\paragraph{Capabilities unique to SLDE-AFT, verified as implemented.} Two
 elements of SLDE-AFT's design have no counterpart described in
 \citet{aminnaseri2026dysect}. First, dual-source structured seeding: SLDE-AFT
 ingests structured records (CSV/JSON) through a deterministic schema-based
@@ -252,13 +274,10 @@ automatically withholds a triple from becoming fine-tuning training data
 unless it has structured corroboration (Section~4, Section~7) -- an
 automated mechanism aimed at synthetic-data quality, verified to measurably
 change training-data precision on real data (Section~7), not a substitute
-for DySECT's manual interface but a different kind of gate entirely. Third,
-a specific conservative Noisy-OR aggregation rule with an explicit
-mutual-exclusivity penalty, for which Section~4 gives a formal derivation
-and proofs of its boundedness, monotonicity, and saturation properties;
-DySECT's paper describes its confidence and graph-based reasoning layer at
-the level of system design rather than as a proved mathematical object, so
-the two are not directly comparable as formal contributions.
+for DySECT's manual interface but a different kind of gate entirely. The
+confidence aggregation formula itself is not unique to SLDE-AFT, as stated
+above; the formal analysis of that formula (Section~4) is what this paper
+contributes on top of it.
 
 \paragraph{Empirical comparability.} The two systems' empirical evaluations
 use different benchmarks, base models, and metrics: DySECT reports a
@@ -313,7 +332,12 @@ positions SLDE-AFT's architecture against it.
 % per the task's "Existing material to reconcile against" instruction.
 
 \section{Discussion}
-% TODO: not yet written.
+% TODO: not yet written. Carry forward from Section 2.7 / Learnings.md:
+% DySECT reports consistent recall IMPROVEMENTS from KB-guided extraction
+% on DocRED (Table 1, all four models), whereas SLDE-AFT's own DocRED
+% pilot (DEC-020) found the PKB aggregation mechanism REDUCED recall
+% (naive baseline 0.032 -> PKB-aggregated 0.005). State this contrast
+% honestly here -- do not write it yet, per the task's staged order.
 
 \section{Limitations}
 % TODO: not yet written.
