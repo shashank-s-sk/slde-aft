@@ -208,32 +208,68 @@ its knowledge base explicitly inspectable, letting a user review triples,
 confidence statistics, and hierarchical structure, and manually validate,
 invalidate, or add knowledge.
 
-SLDE-AFT shares DySECT's core structure of a closed loop between an LLM
-extractor and a probabilistically aggregated, self-expanding knowledge base
-that feeds back into extraction. The two systems differ in several specific,
-verifiable respects. First, DySECT's knowledge base is populated from LLM
-extraction alone, whereas SLDE-AFT seeds its knowledge base from a
-deterministic structured-data path (schema-based extraction from CSV/JSON
-input at fixed high confidence) in addition to the LLM-based unstructured
-path, before either source is aggregated by the same probabilistic mechanism
-(Section~4). Second, DySECT's inspectability mechanism is a manual review
-and correction interface; SLDE-AFT's provenance layer is instead used as an
-automated, non-manual gate on which extracted facts are allowed to become
-fine-tuning training data (Section~4, Section~7), a distinct mechanism aimed
-at synthetic-data quality rather than human oversight of the knowledge base
-itself. Third, SLDE-AFT's confidence aggregation is a specific conservative
-Noisy-OR rule with an explicit mutual-exclusivity penalty, for which
-Section~4 gives a formal derivation and proofs of its boundedness,
-monotonicity, and saturation properties; DySECT's paper describes its
-confidence and graph-based reasoning layer at the level of the system
-design rather than as a proved mathematical object, so the two are not
-directly comparable as formal contributions. Fourth, the two systems'
-empirical evaluations use different benchmarks, base models, and metrics
-(DySECT reports recall lift across GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and
-Kimi~K2.5 on DocRED; SLDE-AFT's evaluation is described in
-Sections~5--7), so no direct numerical comparison between the two systems is
-made in this paper; a controlled head-to-head evaluation on a shared
-benchmark is identified as future work in Section~10.
+\paragraph{Capabilities SLDE-AFT shares with DySECT.} Four elements of
+DySECT's design, as described by \citet{aminnaseri2026dysect}, are also
+present and verified in SLDE-AFT's implementation (Section~4): a
+\emph{closed loop} in which extraction populates a knowledge base and the
+knowledge base feeds back into extraction; a \emph{probabilistic confidence}
+layer over accumulated triples, rather than treating every extraction as
+equally trustworthy; \emph{prompt-augmentation feedback}, in which the
+current state of the knowledge base is used to steer the extractor's next
+pass (DySECT via prompt tuning and few-shot example sampling; SLDE-AFT via
+the Feedback Controller's Encouraging/Prohibitive-mode prompt updates,
+Section~4); and \emph{synthetic training data generated from high-confidence
+knowledge-base triples} to fine-tune the extractor, rather than from an
+externally curated dataset.
+
+\paragraph{Capabilities DySECT reports that SLDE-AFT's implementation does
+not have.} \citet{aminnaseri2026dysect} describe two further capabilities
+that were also specified in SLDE-AFT's original architecture design but are
+not present in the implementation evaluated in this paper, verified directly
+against the current codebase: \emph{hierarchical knowledge abstraction}
+(DySECT accumulates and exposes hierarchical domain concept structure;
+SLDE-AFT's design document specified KNN-clustering-based subconcept
+abstraction, but no such clustering or hierarchy-construction code exists in
+the evaluated system) and a \emph{human curation interface} allowing a user
+to inspect, validate, invalidate, or add knowledge-base entries directly
+(SLDE-AFT's design document specified an analogous human validation
+interface with character-level source offsets and a model-version registry
+with rollback; none of these are implemented in the evaluated system).
+These are stated here as an honest scope limitation of the current
+implementation relative to DySECT, not as a design decision, and are
+revisited in Section~9 (Limitations).
+
+\paragraph{Capabilities unique to SLDE-AFT, verified as implemented.} Three
+elements of SLDE-AFT's design have no counterpart described in
+\citet{aminnaseri2026dysect}. First, dual-source structured seeding: SLDE-AFT
+ingests structured records (CSV/JSON) through a deterministic schema-based
+extraction path at a fixed high confidence, in addition to the LLM-based
+unstructured path, before both sources are aggregated by the same
+probabilistic mechanism (Section~4); DySECT's knowledge base is populated
+from LLM extraction alone. Second, provenance as an automated training-data
+gate: rather than a human curation step, SLDE-AFT's provenance layer
+automatically withholds a triple from becoming fine-tuning training data
+unless it has structured corroboration (Section~4, Section~7) -- an
+automated mechanism aimed at synthetic-data quality, verified to measurably
+change training-data precision on real data (Section~7), not a substitute
+for DySECT's manual interface but a different kind of gate entirely. Third,
+a specific conservative Noisy-OR aggregation rule with an explicit
+mutual-exclusivity penalty, for which Section~4 gives a formal derivation
+and proofs of its boundedness, monotonicity, and saturation properties;
+DySECT's paper describes its confidence and graph-based reasoning layer at
+the level of system design rather than as a proved mathematical object, so
+the two are not directly comparable as formal contributions.
+
+\paragraph{Empirical comparability.} The two systems' empirical evaluations
+use different benchmarks, base models, and metrics: DySECT reports a
+5--8 percentage point recall lift from KB-guided extraction with no
+retraining, and recall improvements on DocRED across GPT-4.1, GPT-4.1-mini,
+LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's evaluation (Sections~5--7) uses
+CaRB, DocRED, and BioRED with a different set of base models and a
+seed-based statistical protocol. No direct numerical comparison between the
+two systems is made in this paper as a result; a controlled head-to-head
+evaluation on a shared benchmark is identified as future work in
+Section~10.
 
 \subsection{Synthesis}
 
