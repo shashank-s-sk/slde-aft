@@ -1,0 +1,296 @@
+% SLDE-AFT manuscript -- article-class skeleton.
+% TODO: swap this preamble for the Springer journal's official LaTeX
+% template (e.g. svjour3/sn-jnl) once the target journal is confirmed;
+% article class is a placeholder for drafting only.
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{SLDE-AFT: A Self-Learning Dual-Source Knowledge Extraction and Automated Fine-Tuning System}
+\author{Shashank Kumar Sadashiva \and Ahmed Ebada}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ------------------------------------------------------------------
+\section{Introduction}
+% TODO: not yet written. Per the task's order of work, Section 1 is
+% written last, once Sections 2-9 are settled. Do not draft contribution
+% claims here until the Results/Discussion sections determine what each
+% claim can honestly say.
+
+% ------------------------------------------------------------------
+\section{Related Work}
+\label{sec:related-work}
+
+The work presented in this paper intersects six established research
+paradigms: automated machine learning \citep{hutter2019automl,elsken2019nas,feurer2022autosklearn2,he2021automlsurvey}, information
+extraction \citep{banko2007openie,lu2022uie,josifoski2022genie,liu2024openiesurvey}, retrieval-augmented generation \citep{guu2020realm,lewis2020rag}, parameter-efficient
+fine-tuning \citep{houlsby2019peft,lester2021prompttuning,hu2021lora,dettmers2023qlora}, feedback-based self-improvement \citep{wang2023selfinstruct,madaan2023selfrefine,gulcehre2023rest,chen2024spin}, and probabilistic knowledge
+representation \citep{bach2017psl,ji2021kgsurvey,nguyen2020kgcsurvey}. Each paradigm addresses a partial subset of the
+capabilities that SLDE-AFT integrates within a single architecture; the
+subsections below review each in turn, and Section~\ref{sec:related-work-dysect}
+discusses the one system in the literature that spans the largest share of
+these capabilities at once.
+
+\subsection{Automated Machine Learning}
+
+Automated machine learning (AutoML) emerged to reduce human effort in
+constructing supervised learning pipelines by automating model selection,
+hyperparameter optimisation, and architecture search \citep{hutter2019automl,he2021automlsurvey}.
+Bayesian-optimisation-based frameworks such as Auto-Sklearn \citep{feurer2015autosklearn}
+and its successor Auto-Sklearn~2.0 \citep{feurer2022autosklearn2} introduced
+meta-learning-guided warm starting and portfolio construction to reduce
+pipeline search time substantially. Ensemble-driven systems such as
+AutoGluon \citep{erickson2020autogluon} extended automation to tabular
+prediction tasks through multi-layer stacking, while commercial platforms
+such as Amazon SageMaker Autopilot \citep{das2020sagemaker} enabled
+transparent, editable pipeline generation at deployment scale. Neural
+architecture search methods \citep{elsken2019nas} further widened the
+automation boundary to model structure itself. Despite these advances, AutoML
+frameworks treat data extraction as a fixed upstream preprocessing step: the
+adaptive boundary begins at feature engineering and ends at model deployment,
+leaving the connection between heterogeneous source ingestion, knowledge
+accumulation, and iterative model adaptation outside the automation scope
+addressed by the closed-loop design described in Section~4.
+
+\subsection{Information Extraction and Relation Extraction}
+
+Information extraction research has pursued two broad trajectories:
+schema-free open extraction and schema-guided structured extraction. Open
+Information Extraction systems \citep{banko2007openie,liu2024openiesurvey}
+showed that relational triples could be extracted from large text corpora
+without predefining relation types, using lightweight linguistic processing
+and redundancy-based confidence estimation. Document-level relation
+extraction benchmarks such as DocRED \citep{yao2019docred} established
+evaluation standards for reasoning across sentence boundaries, while
+supervised relation classification datasets such as TACRED
+\citep{zhang2017tacred} became widely adopted benchmarks for sentence-level
+relation extraction. Generative extraction architectures reformulated triple
+extraction as sequence-to-structure generation: REBEL \citep{cabot2021rebel}
+reformulated end-to-end relation extraction as autoregressive triplet
+generation, GenIE \citep{josifoski2022genie} extended this to
+schema-constrained decoding at large entity-relation scale, and TANL
+\citep{paolini2021tanl} treated structured prediction as translation between
+augmented natural languages. Universal IE frameworks \citep{lu2022uie,wang2023instructuie}
+unified heterogeneous extraction tasks under a single architecture via
+structured extraction languages and multi-task instruction tuning. Joint
+extraction systems such as DyGIE++ \citep{wadden2019dygiepp} improved the
+integration of entity and relation extraction, while open-world attribute
+discovery systems such as OA-Mine \citep{zhang2022oamine} enabled discovery
+of previously unseen attributes beyond predefined schemas. Zero-shot relation
+extraction approaches \citep{levy2017zeroshot} demonstrated that
+question-template reformulation can facilitate extraction of previously
+unseen relation types without retraining. These approaches improve
+extraction accuracy, coverage, schema flexibility, or generalisation
+capability, but they generally treat extraction as a terminal process and do
+not leverage accumulated extracted knowledge to drive iterative model
+adaptation through an automated feedback loop.
+
+\subsection{Retrieval-Augmented Generation}
+
+Retrieval-augmented generation (RAG) addresses the knowledge limitations of
+parametric language models by augmenting generation with dynamically
+retrieved external evidence, reducing hallucination and improving factual
+grounding. The RAG framework of \citet{lewis2020rag} demonstrated that dense
+passage retrieval combined with sequence-to-sequence generation improves
+factual accuracy on knowledge-intensive question-answering and reasoning
+tasks. REALM \citep{guu2020realm} integrated retrieval directly into language
+model pre-training, enabling differentiable retrieval learning while
+decoupling parametric knowledge from external evidence sources. SELF-RAG
+\citep{asai2023selfrag} introduced adaptive retrieval and self-reflection
+tokens that let the model critique its own outputs and selectively retrieve
+evidence, improving factual attribution. HippoRAG \citep{gutierrez2024hipporag}
+proposed a neurobiologically inspired long-term memory architecture combining
+knowledge graph construction with personalised PageRank retrieval, improving
+multi-hop reasoning. GraphRAG \citep{edge2025graphrag} extended RAG toward
+graph-structured community summarisation, enabling retrieval over
+hierarchically organised entity relationships. Despite these advances,
+existing RAG frameworks primarily focus on retrieval-enhanced inference and
+generally treat retrieved knowledge as a transient resource used only during
+generation; accumulated knowledge is not typically used to drive iterative
+extraction improvement, automated supervision generation, or continuous
+model adaptation.
+
+\subsection{Parameter-Efficient Fine-Tuning}
+
+The pretrain-then-fine-tune paradigm established by BERT \citep{devlin2019bert}
+demonstrated that large-scale bidirectional pretraining followed by
+task-specific adaptation can achieve strong downstream NLP performance;
+however, adaptation typically relies on task-specific labelled datasets.
+Instruction tuning via FLAN \citep{wei2022flan} and RLHF-aligned adaptation
+via InstructGPT \citep{ouyang2022instructgpt} showed that natural-language
+task descriptions and preference signals can generalise fine-tuned behaviour
+to unseen tasks, yet both approaches depend on large-scale human annotation.
+Parameter-efficient fine-tuning (PEFT) methods substantially reduced
+adaptation costs by updating only a small subset of model parameters.
+Representative approaches include adapter layers \citep{houlsby2019peft},
+soft prompt tuning \citep{lester2021prompttuning}, LoRA \citep{hu2021lora},
+and QLoRA \citep{dettmers2023qlora}, which progressively improved parameter
+efficiency while preserving downstream performance. Direct Preference
+Optimization \citep{rafailov2023dpo} replaced reward modelling with a
+simpler binary classification objective. Although these approaches
+significantly reduce adaptation overhead, they generally rely on externally
+curated supervision and are initiated through manually defined training
+workflows; the automatic generation of supervision signals from accumulated
+extracted knowledge, and the continuous triggering of model adaptation from
+that signal, remain largely unexplored by this line of work.
+
+\subsection{Feedback-Based and Self-Improving Learning}
+
+A growing line of research investigates how language models can improve
+their own outputs through iterative self-generated feedback, without
+additional human supervision. SELF-REFINE \citep{madaan2023selfrefine}
+showed that a single model acting as both generator and critic can improve
+output quality through training-free iterative refinement. Reinforced
+Self-Training \citep{gulcehre2023rest} proposed a Grow-Improve loop in which
+the model generates candidate outputs, filters them by reward score, and
+retrains on high-quality examples offline, reducing the cost of RLHF.
+Self-Play Fine-Tuning \citep{chen2024spin} enabled iterative self-improvement
+by training a model to distinguish its own outputs from human-quality
+references, without additional human data. SELF-INSTRUCT
+\citep{wang2023selfinstruct} introduced a self-bootstrapping pipeline for
+synthetic instruction generation that reduces annotation dependency.
+Toolformer \citep{schick2023toolformer} showed that language models can
+acquire external tool-use capabilities through self-supervised data
+generation. Continual learning research \citep{wang2024continuallearning}
+and Learning without Forgetting \citep{li2017lwf} address stability-plasticity
+trade-offs in sequential adaptation settings. These approaches improve
+generation quality, self-supervision, or adaptation efficiency, but they
+generally operate on transient model outputs and do not maintain a
+persistent structured knowledge repository that accumulates extracted facts
+and converts them into supervision signals for continuous model adaptation.
+
+\subsection{Probabilistic Knowledge Representation and Explainability}
+
+Principled uncertainty modelling over extracted facts matters for systems
+that must decide which knowledge to trust, accumulate, and reuse for
+downstream adaptation. Probabilistic Soft Logic \citep{bach2017psl} provided
+a scalable framework for soft reasoning over structured relational domains
+using hinge-loss Markov random fields, showing that confidence-weighted
+inference over structured variables is both theoretically grounded and
+practically efficient. Knowledge graph surveys \citep{ji2021kgsurvey,nguyen2020kgcsurvey}
+identify confidence-aware extraction, knowledge base population, and
+uncertainty management as persistent challenges in scalable knowledge-centric
+systems. Explainability research has established principled attribution
+methods: LIME \citep{ribeiro2016lime} provides locally faithful
+model-agnostic explanations through input perturbation, and LLM
+explainability surveys \citep{zhao2023explainability} extend attribution
+taxonomies to the prompting and fine-tuning paradigms of large language
+models. These works show that confidence modelling and attribution are
+tractable and important, but they operate primarily as post-hoc or offline
+analysis tools; the integration of provenance traceability and
+confidence-aware filtering as \emph{active} components of a continuous
+extraction and adaptation pipeline is comparatively underexplored.
+
+\subsection{Closest Prior System: DySECT}
+\label{sec:related-work-dysect}
+
+The system closest to SLDE-AFT in the published literature is DySECT, a
+Dynamic Self-Evolving Extraction System \citep{aminnaseri2026dysect}. DySECT
+incrementally populates a self-expanding knowledge base with triples
+extracted by an LLM, aggregates them with a probabilistic confidence and
+graph-based reasoning layer, and feeds the enriched knowledge base back into
+the extractor through prompt tuning, few-shot example sampling, or
+fine-tuning on knowledge-base-derived synthetic data -- forming, in the
+authors' own description, a closed loop in which extraction improves
+knowledge and knowledge improves extraction. \citet{aminnaseri2026dysect}
+report that KB-guided extraction lifts recall by 5--8 percentage points with
+no retraining, and show recall improvements on DocRED across several LLM
+extractors when guided by the accumulated knowledge base. DySECT also keeps
+its knowledge base explicitly inspectable, letting a user review triples,
+confidence statistics, and hierarchical structure, and manually validate,
+invalidate, or add knowledge.
+
+SLDE-AFT shares DySECT's core structure of a closed loop between an LLM
+extractor and a probabilistically aggregated, self-expanding knowledge base
+that feeds back into extraction. The two systems differ in several specific,
+verifiable respects. First, DySECT's knowledge base is populated from LLM
+extraction alone, whereas SLDE-AFT seeds its knowledge base from a
+deterministic structured-data path (schema-based extraction from CSV/JSON
+input at fixed high confidence) in addition to the LLM-based unstructured
+path, before either source is aggregated by the same probabilistic mechanism
+(Section~4). Second, DySECT's inspectability mechanism is a manual review
+and correction interface; SLDE-AFT's provenance layer is instead used as an
+automated, non-manual gate on which extracted facts are allowed to become
+fine-tuning training data (Section~4, Section~7), a distinct mechanism aimed
+at synthetic-data quality rather than human oversight of the knowledge base
+itself. Third, SLDE-AFT's confidence aggregation is a specific conservative
+Noisy-OR rule with an explicit mutual-exclusivity penalty, for which
+Section~4 gives a formal derivation and proofs of its boundedness,
+monotonicity, and saturation properties; DySECT's paper describes its
+confidence and graph-based reasoning layer at the level of the system
+design rather than as a proved mathematical object, so the two are not
+directly comparable as formal contributions. Fourth, the two systems'
+empirical evaluations use different benchmarks, base models, and metrics
+(DySECT reports recall lift across GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and
+Kimi~K2.5 on DocRED; SLDE-AFT's evaluation is described in
+Sections~5--7), so no direct numerical comparison between the two systems is
+made in this paper; a controlled head-to-head evaluation on a shared
+benchmark is identified as future work in Section~10.
+
+\subsection{Synthesis}
+
+Across the paradigms reviewed above, a consistent pattern emerges: each
+research tradition addresses one layer of the extraction-knowledge-adaptation
+problem in relative isolation. AutoML research automates model selection and
+optimisation while leaving knowledge acquisition outside the automation
+boundary \citep{hutter2019automl,feurer2022autosklearn2}. Information
+extraction systems improve fact discovery but generally treat extracted
+knowledge as a terminal output rather than a reusable learning signal
+\citep{banko2007openie,lu2022uie,liu2024openiesurvey}. RAG improves grounding
+but keeps the retriever static \citep{lewis2020rag,asai2023selfrag}.
+Fine-tuning reduces adaptation cost but requires manually curated
+supervision and manually triggered training \citep{hu2021lora,dettmers2023qlora}.
+Self-improving systems refine outputs but lack a structured, persistent
+knowledge substrate \citep{madaan2023selfrefine,gulcehre2023rest}. Provenance
+and confidence-modelling systems record attribution but do not typically use
+it as an active training-data filter \citep{bach2017psl,ribeiro2016lime}.
+DySECT \citep{aminnaseri2026dysect} is the one system in this review that
+combines several of these layers into a closed loop, and the preceding
+subsection states plainly where SLDE-AFT's design overlaps with it and where
+it differs. Section~3 formalises the resulting cross-paradigm gap and
+positions SLDE-AFT's architecture against it.
+
+% ------------------------------------------------------------------
+\section{Cross-Paradigm Research Gap}
+% TODO: not yet written.
+
+\section{Proposed Framework}
+% TODO: not yet written.
+
+\section{Formal Analysis of the Aggregation Rule}
+% TODO: not yet written.
+
+\section{Experimental Setup}
+% TODO: not yet written.
+
+\section{Results}
+% TODO: not yet written -- awaiting the user's Section 7 Word document
+% (6 tables, 4 figures) and its supplementary material (Tables S1-S8),
+% per the task's "Existing material to reconcile against" instruction.
+
+\section{Discussion}
+% TODO: not yet written.
+
+\section{Limitations}
+% TODO: not yet written.
+
+\section{Conclusion}
+% TODO: not yet written.
+
+\section*{Declarations}
+% TODO: not yet written -- data/code availability, funding, competing
+% interests, author contributions. Leave TODO markers for the user to
+% supply text where required.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}
