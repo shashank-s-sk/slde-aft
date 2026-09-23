@@ -22,7 +22,9 @@ Thumbs.db
 secrets.json
 
 # Large data / outputs (optional for now)
-outputs/
+outputs/*
+# DEC-026 is load-bearing for the paper's contribution -- committed (user decision, 2026-09-23)
+!outputs/dec026_aggregation_rules/
 data/raw/
 *.h5
 *.pkl
