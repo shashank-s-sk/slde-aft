@@ -2391,6 +2391,532 @@ DEC-026: RUN, COMPLETE, both addenda incorporated (2026-09-23). See
   tau=0.88 and CI -- R4/R5/R6 reported as tested and null/negative, not
   as contributions.
 
+# DEC-027 — Leakage-Free Fine-Tuning Evaluation (executes the previously-scoped DEC-024 design)
+
+## Why is this required?
+
+AUDIT.md A2 / Results Summary Claim 2 state a standing, disclosed
+limitation: EVID-040's headline fine-tuning result (epochs=5,
+p=0.0028 vs. base) used the identical 8-product test split for both
+hyperparameter selection (DEC-022 Stages 1-2) and confirmation (Stage
+3) -- no independent validation split separated "which configuration
+to pick" from "how well does the picked configuration generalize."
+DEC-024 pre-registered the fix on 2026-09-21 but was scoped and
+deferred, not run, by explicit user decision at the time. This DEC
+executes that design without modification to its statistical core,
+adding the specific reporting requirements from the current task brief
+(a pre-registered minimum effect of interest, a paired bootstrap over
+test products as the primary test, an explicit leakage-guard unit
+test, and a stated provenance-filter choice). This result replaces
+Section 7's current exploratory fine-tuning subsection as the manuscript's headline
+fine-tuning evidence -- the current numbers are not discarded, but are
+demoted to "an earlier, tuning-leakage-affected exploration," matching
+this project's existing convention for superseded results (e.g. how
+EVID-034's epochs=3 result was demoted, not deleted, when EVID-040
+superseded it).
+
+## Data and split
+
+`data/product_split_200.csv` (140 train / 20 validation / 40 test,
+seed 7/42, already used by DEC-006/018/019/026). Training data:
+the existing 90-example **unfiltered** synthetic set derived from this
+same 200-product run's train-KB snapshot (already committed per the
+2026-09-22 commit "Commit the 90-example unfiltered synthetic training
+set for DEC-025"), identical to what EVID-037/038/040's grid used.
+**Design choice, flagged for review:** unfiltered, not
+provenance-filtered, is used deliberately so this experiment isolates
+only the leakage-selection-procedure fix -- switching to the
+provenance-filtered 73-example set at the same time would confound two
+independent variables (selection procedure and training-data
+composition) in one result. A provenance-filtered rerun of this same
+leakage-free design is identified as natural follow-up work, not done
+here. If the user prefers the filtered set as primary instead, say so
+before approval; this is a reversible choice at this stage, not after
+training starts.
+
+## Design
+
+1. **Validation-only grid search (seed 42 only, matching DEC-022
+   Stages 1-2's own single-seed-exploration precedent), evaluated on
+   the 20-product VALIDATION split, never the test split:**
+   - Epochs in {2,3,5,8}, LoRA fixed at rank 16/alpha 32/lr
+     2e-4 (the existing default).
+   - At the winning epoch count: rank in {8,32} (alpha=2xrank)
+     and lr in {1e-4, 3e-4}, same
+     validation-only evaluation (reuses DEC-022's exact grid values for
+     comparability).
+   - **Selection rule, pre-registered exactly as specified:** best
+     validation F1; ties within 0.01 go to the simpler (lower
+     rank) or shorter (fewer epochs) configuration. Every validation
+     score from the grid is saved and reported, not only the winner's.
+2. **Fresh base-model reference**, evaluated once on the untouched
+   40-product test split (the existing F1=0.1373 number is from a
+   different, 8-product test set derived from the 50-product superset
+   and does not transfer here, per AUDIT.md A6 and this task's own
+   instruction).
+3. **Confirmatory run:** the single winning configuration, trained at
+   seeds 42-46 (reusing the seed-42 adapter already trained during
+   grid search rather than retraining it, matching DEC-022 Stage
+   1-to-3's own reuse precedent), evaluated exactly once per seed on
+   the 40-product test split.
+4. **Leakage guard, as a unit test, not a manual check:** a new
+   `tests/test_dec027_leakage_guard.py` asserts, for the actual
+   training JSONL file used, that no product name from the validation
+   or test index sets (loaded from `data/product_split_200.csv`)
+   appears as the subject of any training example, mirroring
+   `scripts/dec006_evaluate_adapter.py`'s existing cross-split guard
+   but as an executable, CI-style assertion rather than a runtime
+   print statement. The training/evaluation scripts abort (non-zero
+   exit) if this test fails, before any GPU time is spent.
+
+## Statistics
+
+- **Primary test:** paired bootstrap over the 40 test products. For
+  each product, compute its F1 difference (fine-tuned - base),
+  averaged across the 5 confirmatory seeds; resample products with
+  replacement, 10,000 times (matching DEC-026's established
+  cluster-bootstrap convention); report the 95% percentile CI of
+  the mean per-product difference. **Positive only if the CI excludes
+  0 AND the point estimate is >= 0.03** (the pre-registered
+  minimum effect of interest, chosen because it is an order of
+  magnitude above noise on this metric scale and below EVID-040's
+  originally-reported +0.064, so a real but smaller-than-previously-reported
+  effect would still register as positive rather than being
+  swallowed by an overly strict threshold).
+- **Secondary, descriptive only:** one-sample t-test and Wilcoxon
+  signed-rank of the 5 seeds' test-split F1 against the fresh base
+  F1, matching EVID-034/040's method for comparability; note
+  Wilcoxon's p=0.0625 floor at n=5 explicitly if reached
+  (the manuscript's Experimental Setup Section 6 statistical-protocol subsection's established convention).
+- **Variance reported separately, not conflated:** (a) training-seed
+  variance -- sample SD of the 5 seeds' whole-test-set F1; (b)
+  test-product variance -- SD of the per-product F1 differences
+  used in the primary bootstrap. These answer different questions (how
+  much does the outcome depend on the training seed, vs. how much does
+  it depend on which products are in the test set) and are not
+  combined into one number.
+
+## What counts as a null
+
+The primary bootstrap CI includes 0, or excludes 0 but the point
+estimate is <0.03. **This will be reported as a null exactly as
+found, including if it reverses the direction of EVID-040's original
+(leakage-affected) result -- no re-running, no grid re-expansion, no
+switching to the provenance-filtered data post-hoc to chase
+significance.** A null here is itself the answer to AUDIT.md A2, not a
+failed experiment: it would mean the previously-reported effect was
+plausibly an artifact of tuning on the evaluation data, which is
+exactly the failure mode DEC-024/DEC-027 exists to detect. **If this
+result is a null, that null supersedes EVID-040's exploratory positive
+result as the manuscript's headline fine-tuning claim -- the manuscript
+must state this supersession explicitly wherever fine-tuning is
+discussed, not report the two results side by side as if equally
+weighted evidence.** (User instruction, 2026-09-23.)
+
+## Cost / time estimate (awaiting approval)
+
+Identical to DEC-024's own estimate, since the design is unchanged:
+rented RunPod GPU (RTX 4090, with 3090 fallback per this project's
+established pattern); 8 exploratory grid trainings (4 epoch x
+1 seed, 4 LoRA x 1 seed, reusing the epoch winner as one LoRA
+grid point) + 4 new confirmatory trainings (seeds 43-46, seed 42
+reused from the grid) = 12 fine-tuning runs, each in the
+~100-500s range observed in DEC-022; inference passes (8 validation
+evaluations, 5 test evaluations, 1 base-model evaluation) add a few
+minutes. **Estimated total: 35-45 minutes of GPU wall-clock**, matching
+the user's own ~45-minute estimate; at typical RunPod RTX 4090
+community rates (0.30-0.50/hour), **well under $1**, but this is a
+time estimate, not a confirmed price -- confirm the actual pod rate
+before starting, per standing project convention.
+
+## Status
+
+DEC-027: APPROVED (2026-09-23), unfiltered training set confirmed as
+  primary, supersession clause added above. Queued third (after
+  DEC-028, DEC-030), before DEC-029, per user-specified run order.
+
+---
+
+# DEC-028 — Provenance Filter Under a Noisy Structured Source (Claim #5 circularity fix)
+
+## Why is this required?
+
+AUDIT.md A3 / Results Summary Claim 5 flag a real circularity: in the
+synthetic product domain, structured records and gold labels are
+generated by the same function call
+(`src/datasets/product_generator.py`, the manuscript's Experimental Setup Section 6 datasets subsection),
+so "corroborated by a structured source" and "matches gold" are close
+to the same statement by construction. EVID-029's 93.5% to 100%
+precision-lift result is real but was measured only under this
+noise-free structured source, and cannot by itself show the filter
+adds value when the structured source is imperfect, which is the
+realistic deployment condition this filter is meant for.
+
+## Design, precisely, to avoid recreating the same circularity in a different form
+
+**The corruption is applied to individual observation rows, before a
+full replay through the real PKB acceptance and aggregation code
+(`src/pkb_replay.py`, `src/probkb_v2_adapter.py`), not as a post-hoc
+relabeling of the already-built snapshot.** This distinction is the
+whole point of the design, stated explicitly because a naive
+implementation could reintroduce circularity in a new form:
+
+1. Start from the already-saved `observations_iteration_{1,2,3,4}.csv`
+   files of the 200-product run (`outputs/dec006_scaleup_probkb/train_kb/`,
+   EVID-027/029's source data) -- the exact same observation rows used
+   throughout DEC-006/018/019/026, zero new extraction.
+2. For a corruption rate r in {0%, 5%, 10%, 20%}: independently,
+   for each observation row whose `source_type == "structured"`, corrupt
+   it with probability r by replacing its `object` value with a
+   **different** value drawn uniformly from that predicate's own fixed
+   value pool as literally enumerated in
+   `src/datasets/product_generator.py` (e.g. `has_color` draws from
+   `colors = ["black","silver","blue","white","green"]` excluding the
+   true value; numeric predicates draw from their own fixed pools --
+   `price_usd` from `[199,249,...,1299]`, etc.) -- a "plausible wrong
+   value" defined precisely by the generator's own domain, not
+   invented ad hoc. Unstructured observation rows are never touched.
+3. **Replay** the (partially corrupted) full observation set through a
+   fresh `CandidateBufferAdapter` via `src/pkb_replay.py`'s existing
+   `replay_iterations`, exactly as DEC-019/DEC-026 already do,
+   producing a new snapshot in which the corrupted structured values
+   have gone through the real Noisy-OR aggregation and tau=0.88
+   admission logic -- a triple whose only structured observation was
+   corrupted genuinely loses structured corroboration in this replay
+   (its accepted entry, if any, now reflects only unstructured
+   evidence); the corrupted (wrong) object value, if strong enough,
+   can itself become a newly-accepted candidate with structured
+   corroboration.
+4. **Gold labels are never touched and never re-derived from the
+   corrupted data**: they remain exactly `gold_unstructured` (or,
+   where relevant, `gold_structured`) from the true, uncorrupted
+   generator output for these 140 train products, imported the same
+   way DEC-026 already does
+   (`scripts/dec006_scaleup_probkb_run.py`'s own `normalize_gold`).
+   This is what prevents the corruption from recreating circularity:
+   the ground truth used to score the filter is structurally
+   independent of which observations were corrupted, at every
+   corruption rate.
+5. Apply `src/provenance_filter.py`'s existing, unmodified
+   `has_structured_corroboration` to the replayed snapshot at each
+   rate, and score against true gold.
+
+## Addendum (2026-09-23, before any run): the rival ceiling confounds the design as originally written
+
+Flagged by the user before approval, and correct: when a structured
+value is corrupted, the corrupted (wrong) object and the true object
+now compete in the same functionally single-valued slot (the manuscript's
+rival-ceiling proposition's m(t)>=1 case, src/pkb_math.py). Both candidates'
+scores are then capped below 1/(m(t)+1) <= 0.5, so **neither** can
+reach tau=0.88 regardless of which one is actually correct -- the
+originally-specified design would have silently computed filter
+precision only over the minority of triples whose corruption happened
+not to create real competition (e.g.\ the true value already had
+enough independent unstructured support to remain admitted alongside a
+weak corrupted rival, or the corrupted slot is on the one
+non-functional predicate, `has_color`). This would understate how much
+work the filter is actually doing, for a reason having nothing to do
+with provenance. Three changes, made before any run:
+
+**(a) Ceiling visibility, reported per corruption rate, per arm
+(defined in (b) below):** the number of admitted triples; the number
+of contested single-valued-predicate slots the corruption created
+(slots with m(t)>=1 that were uncontested, m(t)=0, before
+corruption); and how many of those newly-contested slots have any
+candidate admitted at all -- the same "contested slots with admission"
+definition DEC-026 already established, reused here for
+consistency rather than redefined. This makes ceiling-driven exclusion
+visible in the reported numbers rather than silently folded into a
+single precision figure.
+
+**(b) Two arms, run in full and reported side by side, not just one:**
+- **Conflict-adjusted arm (as originally specified):** C(t) =
+  A(t)/(m(t)+1) for functional predicates, i.e. the published rule,
+  unchanged.
+- **Support-only arm (new):** C(t) = A(t) for every predicate,
+  functional or not -- the conflict-adjustment divisor is disabled
+  entirely, so admission depends only on accumulated Noisy-OR support,
+  never on how many rivals a slot has. This arm cannot be blocked by
+  the ceiling by construction (no division by m(t)+1 occurs), so it
+  isolates whether the provenance filter itself still separates
+  correct from incorrect triples once the ceiling can no longer
+  suppress admission on either side of a contested slot. Both arms use
+  the identical corrupted observation set and the identical five
+  corruption seeds per rate -- only the scoring rule differs, matching
+  this project's established "only the scoring changes" convention
+  from DEC-026.
+
+**(c) Sanity check, required before proceeding to any non-zero
+corruption rate:** at r=0% (no corruption), the conflict-adjusted
+arm's replay must reproduce EVID-029's published numbers exactly --
+475 above-threshold triples, 444 passing the filter, 31 removed. **If
+it does not reproduce these three numbers exactly, stop immediately,
+report the discrepancy (which number(s) differ and by how much) to the
+user, and do not proceed to the 5/10/20% corruption rates or the
+support-only arm.** This is a correctness gate on the replay mechanism
+itself, not a result to interpret -- a mismatch here means the
+replay does not faithfully reconstruct EVID-029's known-correct state,
+and every corrupted-rate result downstream would be untrustworthy
+until fixed.
+
+## Metrics, per corruption rate, per arm
+
+- **Admitted triples** (total count above the arm's threshold) --
+  new, per the addendum.
+- **Contested single-valued-predicate slots created by corruption**
+  (m(t)>=1 where m(t)=0 pre-corruption) -- new, per the addendum.
+- **Of those, how many have any candidate admitted** -- new, per the
+  addendum; expected near 0 for the conflict-adjusted arm at every
+  rate (the ceiling holds regardless of corruption rate -- it is a
+  property of the formula, not of how the contest arose) and expected
+  to be visibly nonzero for the support-only arm, which is exactly
+  the contrast this addendum exists to make visible.
+- Precision of triples that pass the filter (have >= 1 structured
+  observation surviving in the replayed snapshot), against true gold.
+- Precision of triples the filter removes (structured-only-absent),
+  against true gold.
+- Count of true-correct triples wrongly removed (their only structured
+  corroboration was corrupted away, and no unstructured corroboration
+  alone crossed the arm's threshold).
+- Count of incorrect triples that wrongly pass (a corrupted, wrong
+  object value received strong-enough support under the arm's own
+  scoring rule to be accepted as a candidate with structured
+  corroboration).
+- Five corruption seeds per non-zero rate (independent draws of which
+  rows are corrupted and which wrong value each receives); 0% needs
+  no seed variation since nothing is randomized. Report mean, sample
+  SD, and 95% bootstrap CI (10,000 resamples over the 140 train
+  products, matching DEC-026's convention) at each rate, for both arms.
+
+## Pre-registered expectation and null criterion
+
+**Applies separately within each arm** (the filter is applied to
+whichever set of candidates that arm's own threshold admits, so
+"passing-set" and "removed-set" below mean the conflict-adjusted arm's
+admitted set for the conflict-adjusted arm's numbers, and the
+support-only arm's own admitted set for its numbers -- the two arms
+are not pooled).
+
+**Expected shape:** passing-set precision should degrade gradually as
+r increases (some corrupted-but-structurally-corroborated triples
+will pass), but should remain measurably above removed-set precision
+at every tested rate up to 20% -- the filter should still be doing
+net-positive work, just with a smaller margin than the noise-free
+100% vs. 0% result.
+**What counts as the filter failing, pre-registered exactly:** at a
+given rate, if the 95% bootstrap CI for (passing-set precision -
+removed-set precision) includes 0 or is negative, the filter's
+structured-corroboration criterion no longer distinguishes correct
+from incorrect triples at that noise level, and this is reported as
+such -- not reframed, not excused by "real structured sources are
+cleaner than this."
+
+## Cost / time estimate
+
+Zero -- pure replay of already-saved observation rows through existing,
+unmodified PKB code, no API calls, no GPU. Estimated wall-clock: a few
+minutes for 4 rates x up to 5 seeds x 2 arms = 34 replay runs (rate 0%
+needs only 1 per arm, since nothing is randomized there).
+
+## Status
+
+DEC-028: APPROVED with the three changes above (2026-09-23): (a)
+  admitted/contested-slot/contested-with-admission counts now reported
+  per rate per arm; (b) a support-only arm added, run and reported
+  alongside the conflict-adjusted arm; (c) a hard zero-corruption
+  sanity check against EVID-029 (475/444/31) required before any
+  non-zero rate is run, with an abort-and-report instruction if it
+  fails. Queued to run first (before DEC-030, DEC-027, DEC-029), since
+  its result may change how the others are reported.
+
+---
+
+# DEC-029 — Higher-Powered Module Ablation (extends DEC-023/EVID-039)
+
+## Why is this required?
+
+AUDIT.md's correction to DEC-023 (already stated in Results Summary
+Claim 3 and restated in the manuscript's Discussion Section 8 ablations
+subsection) is precise about what a 5-seed null does and does not show:
+it excludes only large effects (~ 0.29-0.30 absolute F1,
+Cohen's d ~ 1.68 for 80% power at n=5), not
+small-to-moderate ones. This DEC extends the seed count to narrow that
+detectable-effect floor, without changing the design in any other way.
+
+**Expected minimum detectable effect, pre-registered before running
+(user-supplied, using the same observed SD ~ 0.17 AUDIT.md's own
+calculation is based on, paired t-test, alpha=0.05, 80% power):**
+
+| n (seeds) | Approximate MDE (absolute F1) |
+|---|---:|
+| 5 (existing) | ~0.286 |
+| 10 | ~0.169 |
+| 15 | ~0.132 |
+| 20 | ~0.112 |
+| 30 | ~0.090 |
+
+These are projections from a fixed assumed SD, stated up front rather
+than only after the run; the actually-achieved MDE (computed from this
+run's own observed SD, which may differ from 0.17) is reported
+alongside every null result per the Statistics section below, not
+substituted silently for this pre-registered projection.
+
+## Design
+
+Extends `scripts/dec023_ablation_n50.py`'s existing design (same
+N=50 product superset, same 3 of its 5 configs specified by this
+task -- `full`, `without_feedback`, `without_prob_kb`; `structured_only`
+and `unstructured_only` are out of scope here, matching the task
+brief's own scoping) with new seeds beyond the existing 42-46, saved to
+a new `outputs/dec029_ablation_extended/` directory so EVID-039's
+original 5-seed result is never overwritten (README ground rule 2).
+Combined analysis (existing 5 seeds + new seeds) is computed as a
+separate step, not by modifying EVID-039's own saved files.
+
+**Seed count: 30 total (25 new: seeds 47-71), approved and confirmed
+below the user's own $0.30 threshold.** The user asked for the cost of
+30 as well as 20 and pre-authorized 30 if it came in under $0.30; the
+cost estimate below confirms $0.246, so 30 total seeds is the run
+target, not 20.
+
+**Zero-cost fallback if the budget does not allow more seeds:** a
+paired bootstrap over the 10 held-out test products at the existing 5
+seeds (42-46) only -- resample products with replacement, 10,000
+times, using each resampled product's mean-across-5-seeds F1
+difference from `full`, reporting the 95% CI. This quantifies
+test-set-level uncertainty (which products happen to be in the test
+split) without any new extraction, complementary to but not a
+replacement for the seed-level power increase the main design provides
+(it answers "how much does the test-set composition affect the
+estimate," not "how much does training-seed variance affect it").
+
+## Statistics
+
+- Paired t-test and Wilcoxon signed-rank of `without_feedback` and
+  `without_prob_kb` against `full`, at the full achieved seed count,
+  matching EVID-020/039's existing method for direct comparability.
+- 95% CI for every comparison (paired bootstrap over seeds, same
+  percentile-CI convention used throughout this project).
+- **Minimum detectable effect, computed and reported, not assumed:**
+  using the same method as AUDIT.md's n=5 calculation (paired
+  t-test, alpha=0.05, 80% power, using this run's own observed
+  SD, not EVID-039's), reported explicitly alongside any null result.
+  Approximate expectation from EVID-039's existing SDs (~ 0.19-0.20,
+  sample-SD-corrected): at n=15, Cohen's d ~ 0.77 gives an
+  approximate MDE of ~ 0.15 F1; at n=20, d ~ 0.65
+  gives ~ 0.13 F1 -- approximate, pre-run projections only,
+  to be replaced with the actually-achieved figure after running, per
+  this DEC's own reporting requirement.
+- **No null from this DEC is described as "properly powered" without
+  stating the achieved minimum detectable effect next to it** -- the
+  exact wording AUDIT.md already requires elsewhere in this project,
+  applied here from the start rather than corrected after the fact.
+
+## Cost estimate
+
+EVID-039's own 25-combination (5 configs x 5 seeds) 5-seed run
+cost $0.0819 total, ~$0.003276/combination. This DEC uses only 3 of
+those 5 configs.
+
+- **20 total seeds (15 new x 3 configs = 45 new combinations): ~$0.147.**
+- **30 total seeds (25 new x 3 configs = 75 new combinations): ~$0.246.**
+
+Both well under the $2 approval threshold; 30 is also under the user's
+specific $0.30 threshold for this decision, so **30 total seeds (25
+new) is confirmed as the run target**, per the user's own
+pre-authorization.
+
+## What counts as a null
+
+p >= 0.05 (or a bootstrap CI including 0) for a comparison, reported
+exactly as found at the achieved seed count (30 total), with the
+achieved MDE stated alongside it -- no further seed extension to chase
+significance beyond the 30 seeds approved here.
+
+## Status
+
+DEC-029: APPROVED (2026-09-23), 30 total seeds (25 new: 47-71)
+  confirmed as the run target at ~$0.246, with the pre-registered MDE
+  table above added before running. Queued last (after DEC-028,
+  DEC-030, DEC-027), the only DEC in this batch with real API cost.
+
+---
+
+# DEC-030 — Reproducibility Package (professor_feedback.md point 12)
+
+## Why is this required?
+
+professor_feedback.md point 12 asks for reproducibility directly.
+AUDIT.md's Phase 0 audit already flagged that `outputs/` is
+gitignored project-wide (the same gap DEC-026's own commit exception
+was a one-off fix for), that `requirements.txt` bundles fine-tuning
+dependencies (torch/transformers/peft/trl/bitsandbytes) into every
+install even for users who never touch the GPU path, and that no
+single script regenerates the manuscript's own tables from raw data.
+
+## Scope (this is a deliverables list, not a statistical experiment --
+## pre-registered here as what "done" means, per ground rule 1's
+## spirit even though there is no hypothesis to test)
+
+1. **Commit raw outputs behind every number reported in the
+   manuscript.** Extend the existing `outputs/*` / `!outputs/dec026_aggregation_rules/`
+   pattern in `.gitignore` (Section 7's own committed precedent) with
+   one targeted exception per `outputs/dec0NN_*` directory actually
+   cited by an EVID number reachable from the manuscript, EXCLUDING any
+   file >50MB (in practice, LoRA adapter weights --
+   `*.safetensors`/`*.bin`, already globally ignored) and anything
+   under `.env`/secrets (already ignored, unaffected). A
+   `scripts/download_adapters.md` (or equivalent) documents where the
+   excluded adapter weights can be obtained instead (e.g. re-run the
+   relevant fine-tuning script, or a separately-hosted archive if the
+   user provides one) rather than silently leaving them unreachable
+   with no explanation.
+2. **`scripts/reproduce_all.py`**: regenerates every table currently in
+   `paper/main.tex`'s Section 7 (and its Table S1-S8 appendix) from the
+   committed raw outputs above, and diffs its regenerated values
+   against `Results Summary.md`'s own numbers. **Any mismatch is
+   reported in the script's own output, not silently corrected** --
+   this is a verification tool, not a second source of truth.
+3. **Fix the stale README status text** (verified against the current
+   `README.md` for what is actually stale before editing, not assumed).
+4. **Split `requirements.txt`** into a base file and
+   `requirements-finetune.txt` (torch, transformers, peft, trl,
+   bitsandbytes), so a CaRB/DocRED/BioRED-only reproduction never needs
+   GPU-fine-tuning dependencies installed.
+5. **`docs/reproduction.md`**: every pinned model ID used anywhere in
+   this project (the manuscript's Experimental Setup Section 6 models subsection's own list, restated
+   here for a reader who only wants this one file), the dates each was
+   run (from each EVID entry's own commit history, not guessed),
+   decoding settings (temperature 0, per-script max-token limits where
+   they differ), every seed convention used (42-46 confirmatory, 7 for
+   splits, 42 for generation), hardware (RunPod RTX 4090/3090), and a
+   data/licensing note (the synthetic generator is this project's own
+   code with no external license constraint; DocRED is MIT-licensed
+   via the thunlp mirror per Decision log.md's DEC-020 entry; BioRED is
+   NCBI public-domain; CaRB's own license, if not already recorded, is
+   verified before writing it, not assumed).
+
+## What counts as this DEC not being done
+
+Any of the five items above left incomplete, or
+`scripts/reproduce_all.py` reporting a mismatch against `Results
+Summary.md` that is not then reported to the user plainly (not
+silently patched in either file to make the diff pass).
+
+## Cost / time estimate
+
+Zero API/GPU cost -- engineering and documentation work plus git
+operations. Time is implementation effort, not a metered resource;
+no approval threshold applies, but this DEC still runs only after the
+user's go-ahead alongside the other three, per this task's own
+"stopping for approval between each" instruction.
+
+## Status
+
+DEC-030: APPROVED (2026-09-23), unchanged from the original
+  pre-registration. Queued second (after DEC-028, before DEC-027,
+  DEC-029).
+
 DEC-014 (evaluation protocol & leakage control)
 
 Prevents test-set leakage, prompt overfitting, and unfair comparisons.
