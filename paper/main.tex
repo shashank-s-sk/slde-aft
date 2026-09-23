@@ -61,7 +61,7 @@ frameworks treat data extraction as a fixed upstream preprocessing step: the
 adaptive boundary begins at feature engineering and ends at model deployment,
 leaving the connection between heterogeneous source ingestion, knowledge
 accumulation, and iterative model adaptation outside the automation scope
-addressed by the closed-loop design described in Section~4.
+addressed by the closed-loop design described in Section~\ref{sec:framework}.
 
 \subsection{Information Extraction and Relation Extraction}
 
@@ -221,12 +221,12 @@ $C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with a default
 shrinkage $\lambda=0.75$, followed by a mutual-exclusivity penalty
 $C(t) = C_{\mathrm{agg}}(t) / (m(t)+1)$. This is notationally and
 mathematically identical to SLDE-AFT's Conservative Noisy-OR aggregation
-with mutual-exclusivity penalty (Section~5; the same default shrinkage of
+with mutual-exclusivity penalty (Section~\ref{sec:formal-analysis}; the same default shrinkage of
 0.75 is independently confirmed in this project's own
 \texttt{scripts/dec003\_product\_probkb\_run.py}). This paper does not claim
 priority or originality for this formula, and does not claim it is novel or
 absent from prior extraction-KB systems: DySECT is a published, citable
-counter-example to any such claim. What Section~5 contributes instead is
+counter-example to any such claim. What Section~\ref{sec:formal-analysis} contributes instead is
 a formal derivation and proofs of this formula's boundedness, monotonicity,
 and saturation properties, and the rival-ceiling result
 $C(t) < 1/(m(t)+1) \le 0.5$ for any contested single-valued-predicate slot
@@ -235,7 +235,7 @@ description of the same formula.
 
 \paragraph{Capabilities SLDE-AFT shares with DySECT.} Four elements of
 DySECT's design, as described by \citet{aminnaseri2026dysect}, are also
-present and verified in SLDE-AFT's implementation (Section~4): a
+present and verified in SLDE-AFT's implementation (Section~\ref{sec:framework}): a
 \emph{closed loop} in which extraction populates a knowledge base and the
 knowledge base feeds back into extraction; a \emph{probabilistic confidence}
 layer over accumulated triples, rather than treating every extraction as
@@ -307,7 +307,7 @@ in the evaluated system either.
 
 These are stated here as an honest scope limitation of the current
 implementation relative to DySECT, not as a design decision, and are
-revisited in Section~9 (Limitations).
+revisited in Section~\ref{sec:limitations} (Limitations).
 
 \paragraph{Capabilities unique to SLDE-AFT, verified as implemented.} Two
 elements of SLDE-AFT's design have no counterpart described in
@@ -315,28 +315,29 @@ elements of SLDE-AFT's design have no counterpart described in
 ingests structured records (CSV/JSON) through a deterministic schema-based
 extraction path at a fixed high confidence, in addition to the LLM-based
 unstructured path, before both sources are aggregated by the same
-probabilistic mechanism (Section~4); DySECT's knowledge base is populated
+probabilistic mechanism (Section~\ref{sec:framework}); DySECT's knowledge base is populated
 from LLM extraction alone. Second, provenance as an automated training-data
 gate: rather than a human curation step, SLDE-AFT's provenance layer
 automatically withholds a triple from becoming fine-tuning training data
-unless it has structured corroboration (Section~4, Section~7) -- an
+unless it has structured corroboration (Section~\ref{sec:framework}, Section~\ref{sec:results}) -- an
 automated mechanism aimed at synthetic-data quality, verified to measurably
-change training-data precision on real data (Section~7), not a substitute
+change training-data precision on real data (Section~\ref{sec:results}), not a substitute
 for DySECT's manual interface but a different kind of gate entirely. The
 confidence aggregation formula itself is not unique to SLDE-AFT, as stated
-above; the formal analysis of that formula (Section~5) is what this paper
+above; the formal analysis of that formula (Section~\ref{sec:formal-analysis}) is what this paper
 contributes on top of it.
 
 \paragraph{Empirical comparability.} The two systems' empirical evaluations
 use different benchmarks, base models, and metrics: DySECT reports a
 5--8 percentage point recall lift from KB-guided extraction with no
 retraining, and recall improvements on DocRED across GPT-4.1, GPT-4.1-mini,
-LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's evaluation (Sections~6--8) uses
-CaRB, DocRED, and BioRED with a different set of base models and a
+LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's evaluation
+(Sections~\ref{sec:setup-datasets}--\ref{sec:results}) uses CaRB,
+DocRED, and BioRED with a different set of base models and a
 seed-based statistical protocol. No direct numerical comparison between the
 two systems is made in this paper as a result; a controlled head-to-head
 evaluation on a shared benchmark is identified as future work in
-Section~10.
+Section~\ref{sec:conclusion}.
 
 \subsection{Synthesis}
 
@@ -358,15 +359,222 @@ it as an active training-data filter \citep{bach2017psl,ribeiro2016lime}.
 DySECT \citep{aminnaseri2026dysect} is the one system in this review that
 combines several of these layers into a closed loop, and the preceding
 subsection states plainly where SLDE-AFT's design overlaps with it and where
-it differs. Section~3 formalises the resulting cross-paradigm gap and
+it differs. Section~\ref{sec:gap} formalises the resulting cross-paradigm gap and
 positions SLDE-AFT's architecture against it.
 
 % ------------------------------------------------------------------
 \section{Cross-Paradigm Research Gap}
-% TODO: not yet written.
+\label{sec:gap}
+
+The six paradigms reviewed in Section~\ref{sec:related-work} each
+address one part of the extraction-knowledge-adaptation cycle, and
+\citet{aminnaseri2026dysect} already closes that cycle: a closed loop
+in which LLM extraction populates a probabilistically-scored knowledge
+base, and the knowledge base feeds back into extraction through prompt
+augmentation, few-shot sampling, and optionally fine-tuning
+(Section~\ref{sec:related-work-dysect}). The gap this paper addresses
+is therefore not that no system forms such a loop -- one does, and is
+cited throughout this paper as prior work, not distinguished from it by
+the existence of a loop alone.
+
+The gap is in what has been evaluated about such a loop once it exists.
+\citet{aminnaseri2026dysect}'s own evaluation reports a recall
+improvement from KB-guided prompting, aggregated across four extractor
+models on one benchmark, under a single run per configuration
+(Section~\ref{sec:related-work-dysect}). It does not report a
+module-level ablation isolating which component of the loop
+(aggregation, feedback, fine-tuning) is responsible for a measured
+change; a multi-seed statistical protocol distinguishing a real effect
+from run-to-run variance; a calibration measurement of the confidence
+scores the aggregation rule produces; or a held-out generalization test
+separating documents used to build the knowledge base from documents
+used to measure it. Symmetrically, this paper does not claim
+\citet{aminnaseri2026dysect}'s own design contributions -- its
+KNN-based hierarchical sub-concept abstraction, its human curation
+interface -- as untested weaknesses of that system: SLDE-AFT's own
+implementation lacks both (Section~\ref{sec:framework}), so this is not
+a comparison this paper is positioned to adjudicate either way.
+
+What SLDE-AFT contributes, then, is not a first closed loop, but a
+closed loop of this kind evaluated against the rigor its component
+claims require: a formal analysis of the aggregation rule's properties
+and failure modes, tested against an offline replay of two independent
+real-data snapshots (Section~\ref{sec:formal-analysis}); a
+module-level ablation across two scales and five seeds
+(Section~\ref{sec:results-ablation}); a multi-seed statistical
+protocol with confidence intervals and explicit power limits, stated
+rather than implied
+(Section~\ref{sec:setup-statistics}, Section~\ref{sec:discussion-ablations});
+a real-data calibration measurement
+(Section~\ref{sec:results-calibration}); and a leakage-controlled
+held-out evaluation with the leakage rules stated explicitly
+(Section~\ref{sec:setup-datasets}). Section~\ref{sec:framework}
+describes exactly what the evaluated implementation contains, and
+Section~\ref{sec:limitations} states plainly where it still falls
+short of the design this gap analysis motivates.
 
 \section{Proposed Framework}
-% TODO: not yet written.
+\label{sec:framework}
+
+This section describes only what the evaluated implementation
+contains, verified directly against \texttt{src/} and \texttt{scripts/}
+this session; a capability specified in the original architecture
+design but absent from the code is stated as such, not implied.
+
+\subsection{Dual-Source Extraction}
+\label{sec:framework-extraction}
+
+Two extraction paths are implemented for the product domain. The
+structured path (\texttt{src/extractors/structured.py}) maps CSV-column
+values to the domain's 13 predicates deterministically, at a fixed
+confidence of $0.98$, with no LLM call. The unstructured path
+(\texttt{src/extractors/openrouter\_llm.py}) prompts a pinned LLM via
+OpenRouter at temperature 0 to extract triples from free text, with a
+self-reported confidence the prompt restricts to $0.80$--$0.96$
+(Section~\ref{sec:setup-hyperparameters}). Both paths write to the same
+triple schema, which the probabilistic knowledge base then aggregates
+jointly. A separate, prompt-parameterized extractor
+(\texttt{src/extractors/openrouter\_openie.py}) is used for CaRB,
+DocRED, and BioRED, taking its prompt template as data rather than
+hard-coding it, so the same code path serves an open-phrase prompt
+(CaRB) or a closed, schema-constrained one (DocRED, BioRED)
+% [src/extractors/openrouter_openie.py]
+. Two distinct prompt templates are used across the codebase with two
+different self-reported confidence ranges: the core extraction prompt
+restricts confidence to $0.80$--$0.96$
+(\texttt{src/extractors/openrouter\_llm.py}), while the fine-tuning
+data-generation and evaluation prompt restricts it to $0.85$--$0.99$
+(\texttt{src/prompts.py}) -- stated in detail in
+Section~\ref{sec:setup-hyperparameters}, restated here as part of what
+the extraction modules themselves implement.
+
+There is no dedicated ingestion module (format detection, schema
+inference, or chunking): each pipeline reads its own fixed input shape
+directly -- Python dictionaries built from CSV/TSV-style records for
+the product domain and CaRB
+(\texttt{src/datasets/product\_generator.py},
+\texttt{src/datasets/carb\_adapter.py}), JSON for DocRED
+(\texttt{src/datasets/docred\_adapter.py}), and plain-text PubTator
+files for BioRED (\texttt{src/datasets/biored\_adapter.py}). No PDF,
+DOCX, or SQL ingestion code exists anywhere in \texttt{src/} or
+\texttt{scripts/}, verified by direct search of both directories.
+
+\subsection{Probabilistic Knowledge Base}
+\label{sec:framework-pkb}
+
+The Noisy-OR aggregation and conflict-adjustment formulas
+(Equations~\ref{eq:noisyor}--\ref{eq:conflict}) are implemented in
+\texttt{src/pkb\_math.py}, and applied per accepted candidate by
+\texttt{src/pkb\_instrumentation.py}'s \texttt{refresh\_slot\_scores}.
+\texttt{src/probkb\_v2\_adapter.py}'s \texttt{CandidateBufferAdapter}
+wraps this into a stateful knowledge base: every accepted observation is
+kept (no code path in \texttt{src/probkb\_v2\_adapter.py} or
+\texttt{src/pkb\_instrumentation.py} deletes, pops, or removes an
+accepted candidate, verified directly
+% [Results Summary.md, Claim 3 -- verified this session and again here]
+), so the knowledge base grows monotonically. A second adapter,
+\texttt{src/deterministic\_kb\_adapter.py}'s
+\texttt{DeterministicKBAdapter}, implements max-merge (confidence is the
+maximum over observations, no conflict handling) behind the identical
+interface, so \texttt{src/experiment\_runner.py} can swap between the
+two knowledge-base variants for the ablation in
+Section~\ref{sec:results-ablation} without branching logic elsewhere.
+\texttt{src/pkb\_replay.py} reconstructs a knowledge base's exact
+end-of-iteration state by replaying its saved
+\texttt{observations\_iteration\_N.csv} files through fresh
+\texttt{accept\_candidate()} calls, used for the closed-loop test
+(Section~\ref{sec:results-closedloop}) and DEC-026
+(Section~\ref{sec:formal-analysis-empirical}) without any new
+extraction.
+
+\subsection{Feedback Controller}
+\label{sec:framework-feedback}
+
+\texttt{src/feedback\_builder.py}'s \texttt{build\_feedback\_hint}
+constructs the prompt hint used to guide re-extraction: a
+missing-facts block (gold keys not yet accepted), a
+false-pattern block (accepted keys not in gold), and an
+undercovered-predicate block (predicates with fewer than two accepted
+observations), assembled from plain-text templates with no named
+``mode'' in the code. This function's second argument is
+\texttt{gold\_keys}, and every call site that builds a real feedback
+hint -- \texttt{scripts/dec003\_product\_probkb\_run.py},
+\texttt{src/experiment\_runner.py}, and the corresponding calls in the
+other product-domain run scripts -- passes it the \emph{train-split}
+gold key set, verified directly this session
+% [scripts/dec003_product_probkb_run.py, lines 184-186 and 218-220;
+% src/experiment_runner.py -- build_feedback_hint(kb.as_key_set(),
+% train_gold_keys, ALLOWED_PREDICATES) at both the per-iteration and
+% held-out-pass call sites]
+. The feedback signal is therefore computed against the known gold
+answers for the products it is guiding re-extraction on, not against
+any uncertainty or disagreement measure internal to the knowledge base
+itself -- the closed loop's feedback stage is not self-supervised in
+the sense of operating without ground truth; it presupposes gold labels
+for the training split are available, which they are only because this
+is a synthetic, fully-labeled domain
+(Section~\ref{sec:setup-datasets}). This is stated here because it
+changes what ``closed-loop'' can honestly be claimed to mean for this
+implementation, and is revisited in Section~\ref{sec:limitations}. The
+design documents' and \citet{aminnaseri2026dysect}'s ``Encouraging''
+and ``Prohibitive'' mode names
+(Section~\ref{sec:related-work-dysect}) describe the same two
+directions this hint encodes (recover missing facts; suppress false
+patterns) but do not appear anywhere in \texttt{src/feedback\_builder.py}
+-- verified directly, no such string exists in that module -- so this
+paper uses the code's own unnamed missing-fact / false-pattern /
+coverage-gap description here, not the design documents' mode names,
+for what is actually implemented.
+
+\subsection{Synthetic Supervision, Provenance Filtering, and Fine-Tuning}
+\label{sec:framework-finetuning}
+
+Synthetic fine-tuning examples are built from the knowledge base's own
+above-threshold triples, grouped per product into the same
+paragraph-in / JSON-array-out shape the evaluation harness uses
+(\texttt{scripts/dec006\_regenerate\_synth\_data.py}, using
+\texttt{src/prompts.py}'s shared prompt builder)
+% [scripts/dec006_regenerate_synth_data.py; EVID-026's docstring
+% documents an earlier, superseded per-relation Instruction/Response
+% template in src/synthetic_data_generator.py that taught a different
+% task shape than evaluation and produced F1=0.0000 as a direct result
+% -- not used for any result in Section 7]
+. By default, a triple is included only if at least one of its
+observations has \texttt{source\_type == "structured"}
+(\texttt{src/provenance\_filter.py}'s
+\texttt{has\_structured\_corroboration}), gating training-data inclusion
+on provenance rather than confidence alone
+(Section~\ref{sec:results-provenance}). Fine-tuning itself
+(\texttt{scripts/dec006\_lora\_finetune.py}, QLoRA on
+Mistral-7B-Instruct-v0.3, Section~\ref{sec:setup-models}) is invoked
+explicitly by a user-run script on a rented GPU pod; no code in
+\texttt{src/} or \texttt{scripts/} monitors recall or knowledge-base
+growth and triggers a fine-tuning run automatically, and no adapter
+registry or rollback mechanism exists -- both were specified in the
+original architecture design (a recall-drop/KB-stagnation trigger and a
+versioned adapter registry) but are absent from every fine-tuning
+script in this repository, verified by direct search
+(\texttt{grep} for ``registry''/``rollback''/``auto\_trigger'' across
+\texttt{src/} and \texttt{scripts/} returns no matches).
+
+\subsection{What Was Specified but Not Implemented}
+\label{sec:framework-gaps}
+
+Six elements of the original architecture design have no corresponding
+code in the implementation evaluated in this paper, each verified by
+direct search rather than assumed absent: KNN-based hierarchical
+sub-concept abstraction (Section~\ref{sec:related-work-dysect});
+auto-triggered fine-tuning and an adapter registry with rollback
+(Section~\ref{sec:framework-finetuning}); character-level source
+offsets (provenance is stored as a truncated text snippet,
+\texttt{src/probkb\_v2\_adapter.py}, not a character span); a human
+validation interface for inspecting, approving, or rejecting individual
+triples (no such interface, CLI or otherwise, exists in
+\texttt{src/} or \texttt{scripts/}); and ingestion beyond CSV, JSON,
+and plain text (Section~\ref{sec:framework-extraction}). These are
+stated here as an honest scope boundary of the implementation this
+paper evaluates, not as a design decision, and are revisited together
+with their consequences in Section~\ref{sec:limitations}.
 
 \section{Formal Analysis of the Aggregation Rule}
 \label{sec:formal-analysis}
@@ -749,7 +957,7 @@ generator function}
 % structured record are built from the identical drawn attribute values,
 % same generate_product_record() call]
 -- stated explicitly here since it underlies the provenance-filter
-circularity caveat discussed in Section~9 (Limitations).
+circularity caveat discussed in Section~\ref{sec:limitations} (Limitations).
 
 Two dataset sizes are used, both split 70/10/20 (train/val/test) with
 \texttt{random.Random(7)} (a seed distinct from the generation seed)
@@ -1830,9 +2038,11 @@ offered as consistent explanations for the observed calibration curve;
 neither was isolated experimentally from the other in this paper.
 
 \section{Limitations}
+\label{sec:limitations}
 % TODO: not yet written.
 
 \section{Conclusion}
+\label{sec:conclusion}
 % TODO: not yet written.
 
 \section*{Declarations}
