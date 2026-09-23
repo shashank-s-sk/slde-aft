@@ -86,11 +86,6 @@
       },
       {
         "subject": "PixelWare Tablet Max 12",
-        "predicate": "belongs_to_category",
-        "object": "tablet device"
-      },
-      {
-        "subject": "PixelWare Tablet Max 12",
         "predicate": "has_storage_gb",
         "object": "128"
       },
@@ -163,11 +158,6 @@
       },
       {
         "subject": "TechNova Tablet Max 13",
-        "predicate": "belongs_to_category",
-        "object": "tablet"
-      },
-      {
-        "subject": "TechNova Tablet Max 13",
         "predicate": "has_screen_size_inch",
         "object": "13.3"
       },
@@ -180,11 +170,6 @@
         "subject": "TechNova Tablet Max 13",
         "predicate": "has_color",
         "object": "blue"
-      },
-      {
-        "subject": "TechNova Tablet Max 13",
-        "predicate": "target_market_region",
-        "object": "US"
       },
       {
         "subject": "TechNova Tablet Max 13",
@@ -311,39 +296,19 @@
     "product_idx": 16,
     "predicted_triples": [
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_price_usd",
-        "object": "899"
+        "subject": "smartwatch device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_storage_gb",
-        "object": "128"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_battery_life_hours",
-        "object": "18"
-      },
-      {
-        "subject": "Smartwatch Device",
+        "subject": "smartwatch device",
         "predicate": "has_color",
         "object": "silver"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "made_of_material",
+        "subject": "smartwatch device",
+        "predicate": "has_color",
         "object": "aluminum"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "supports_fast_charging",
-        "object": "no"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
       }
     ],
     "gold_triples": [
@@ -414,13 +379,8 @@
       },
       {
         "subject": "Zenbyte Laptop Pro 18",
-        "predicate": "target_market_region",
-        "object": "APAC"
-      },
-      {
-        "subject": "Zenbyte Laptop Pro 18",
         "predicate": "supports_fast_charging",
-        "object": "yes"
+        "object": "no"
       }
     ],
     "gold_triples": [
@@ -463,43 +423,7 @@
   },
   {
     "product_idx": 19,
-    "predicted_triples": [
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_price_usd",
-        "object": "299"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_screen_size_inch",
-        "object": "10.9"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_ram_gb",
-        "object": "8"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_weight_kg",
-        "object": "1.45"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_color",
-        "object": "blue"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "target_market_region",
-        "object": "EU"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "supports_fast_charging",
-        "object": "false"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "PixelWare Smartphone Plus 19",
@@ -542,37 +466,32 @@
     "product_idx": 23,
     "predicted_triples": [
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "It is a smartphone device",
         "predicate": "belongs_to_category",
-        "object": "smartphone"
+        "object": "smartphone device"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "It is a smartphone device",
         "predicate": "has_ram_gb",
         "object": "8"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "It is a smartphone device",
         "predicate": "has_storage_gb",
         "object": "128"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "It is a smartphone device",
         "predicate": "has_battery_life_hours",
         "object": "10"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "It is a smartphone device",
         "predicate": "has_weight_kg",
         "object": "0.18"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "target_market_region",
-        "object": "US"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "It is a smartphone device",
         "predicate": "supports_fast_charging",
         "object": "yes"
       }
@@ -619,34 +538,24 @@
     "product_idx": 24,
     "predicted_triples": [
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_screen_size_inch",
-        "object": "6.7"
+        "subject": "smartwatch device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_storage_gb",
-        "object": "256"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_battery_life_hours",
-        "object": "8"
-      },
-      {
-        "subject": "Smartwatch Device",
+        "subject": "smartwatch device",
         "predicate": "has_color",
         "object": "green"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "supports_fast_charging",
-        "object": "no"
+        "subject": "smartwatch device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
+        "subject": "smartwatch device",
+        "predicate": "has_weight_kg",
+        "object": "0"
       }
     ],
     "gold_triples": [
@@ -691,34 +600,14 @@
     "product_idx": 25,
     "predicted_triples": [
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_ram_gb",
-        "object": "16"
+        "subject": "smartwatch device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_storage_gb",
-        "object": "128"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_weight_kg",
-        "object": "0.55"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "made_of_material",
-        "object": "aluminum"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "target_market_region",
-        "object": "Global"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "supports_fast_charging",
-        "object": "yes"
+        "subject": "smartwatch device",
+        "predicate": "has_color",
+        "object": "silver"
       }
     ],
     "gold_triples": [
@@ -763,32 +652,37 @@
     "product_idx": 32,
     "predicted_triples": [
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "smartphone device",
+        "predicate": "belongs_to_category",
+        "object": "smartphone"
+      },
+      {
+        "subject": "smartphone device",
         "predicate": "has_screen_size_inch",
         "object": "11.0"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "smartphone device",
         "predicate": "has_battery_life_hours",
         "object": "12"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "smartphone device",
         "predicate": "has_weight_kg",
         "object": "1.8"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "smartphone device",
         "predicate": "has_color",
         "object": "white"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "smartphone device",
         "predicate": "made_of_material",
         "object": "plastic"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "smartphone device",
         "predicate": "supports_fast_charging",
         "object": "no"
       }
@@ -835,34 +729,19 @@
     "product_idx": 35,
     "predicted_triples": [
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_price_usd",
-        "object": "199"
+        "subject": "smartwatch device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_screen_size_inch",
-        "object": "6.7"
+        "subject": "smartwatch device",
+        "predicate": "has_color",
+        "object": "silver"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_storage_gb",
-        "object": "64"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_weight_kg",
-        "object": "0.23"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "target_market_region",
-        "object": "EU"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "supports_fast_charging",
-        "object": "yes"
+        "subject": "smartwatch device",
+        "predicate": "made_of_material",
+        "object": "plastic"
       }
     ],
     "gold_triples": [
@@ -984,32 +863,37 @@
     "product_idx": 55,
     "predicted_triples": [
       {
-        "subject": "Tablet Device",
+        "subject": "tablet device",
+        "predicate": "belongs_to_category",
+        "object": "tablet"
+      },
+      {
+        "subject": "tablet device",
         "predicate": "has_ram_gb",
         "object": "32"
       },
       {
-        "subject": "Tablet Device",
+        "subject": "tablet device",
         "predicate": "has_storage_gb",
         "object": "128"
       },
       {
-        "subject": "Tablet Device",
+        "subject": "tablet device",
         "predicate": "has_weight_kg",
         "object": "0.18"
       },
       {
-        "subject": "Tablet Device",
+        "subject": "tablet device",
         "predicate": "has_color",
         "object": "blue"
       },
       {
-        "subject": "Tablet Device",
+        "subject": "tablet device",
         "predicate": "made_of_material",
         "object": "carbon fiber"
       },
       {
-        "subject": "Tablet Device",
+        "subject": "tablet device",
         "predicate": "supports_fast_charging",
         "object": "yes"
       }
@@ -1131,38 +1015,7 @@
   },
   {
     "product_idx": 58,
-    "predicted_triples": [
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "belongs_to_category",
-        "object": "smartphone"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_price_usd",
-        "object": "349"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_screen_size_inch",
-        "object": "13.3"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_battery_life_hours",
-        "object": "20"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_weight_kg",
-        "object": "1.8"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "made_of_material",
-        "object": "plastic"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "NeoTech Smartphone Max 58",
@@ -1205,39 +1058,19 @@
     "product_idx": 62,
     "predicted_triples": [
       {
-        "subject": "Headphones Device",
-        "predicate": "has_ram_gb",
-        "object": "16"
+        "subject": "headphones device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
       },
       {
-        "subject": "Headphones Device",
-        "predicate": "has_storage_gb",
-        "object": "1024"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_weight_kg",
-        "object": "1.8"
-      },
-      {
-        "subject": "Headphones Device",
+        "subject": "headphones device",
         "predicate": "has_color",
         "object": "white"
       },
       {
-        "subject": "Headphones Device",
+        "subject": "headphones device",
         "predicate": "made_of_material",
         "object": "aluminum"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "supports_fast_charging",
-        "object": "no"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_noise_cancellation",
-        "object": "no"
       }
     ],
     "gold_triples": [
@@ -1282,39 +1115,34 @@
     "product_idx": 75,
     "predicted_triples": [
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Priced at 899 USD.",
         "predicate": "has_price_usd",
         "object": "899"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Comes with 6GB of RAM.",
         "predicate": "has_ram_gb",
         "object": "6"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Offers 64GB of internal storage.",
         "predicate": "has_storage_gb",
         "object": "64"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Battery lasts up to 8 hours.",
         "predicate": "has_battery_life_hours",
         "object": "8"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Weighs approximately 1.45kg.",
         "predicate": "has_weight_kg",
         "object": "1.45"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Available in blue.",
         "predicate": "has_color",
         "object": "blue"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "target_market_region",
-        "object": "US"
       }
     ],
     "gold_triples": [
@@ -1467,11 +1295,6 @@
       },
       {
         "subject": "VoltEdge Smartwatch Plus 94",
-        "predicate": "supports_fast_charging",
-        "object": "no"
-      },
-      {
-        "subject": "VoltEdge Smartwatch Plus 94",
         "predicate": "has_noise_cancellation",
         "object": "no"
       }
@@ -1518,34 +1341,14 @@
     "product_idx": 102,
     "predicted_triples": [
       {
-        "subject": "Headphones Device",
-        "predicate": "has_price_usd",
-        "object": "349"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_ram_gb",
-        "object": "6"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_storage_gb",
-        "object": "64"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "target_market_region",
-        "object": "APAC"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "supports_fast_charging",
-        "object": "yes"
-      },
-      {
-        "subject": "Headphones Device",
+        "subject": "headphones device",
         "predicate": "has_noise_cancellation",
         "object": "yes"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_color",
+        "object": "silver"
       }
     ],
     "gold_triples": [
@@ -1590,37 +1393,37 @@
     "product_idx": 108,
     "predicted_triples": [
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Priced at 1099 USD.",
         "predicate": "has_price_usd",
         "object": "1099"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Comes with 6GB of RAM.",
         "predicate": "has_ram_gb",
         "object": "6"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Offers 256GB of internal storage.",
         "predicate": "has_storage_gb",
         "object": "256"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Battery lasts up to 18 hours.",
         "predicate": "has_battery_life_hours",
         "object": "18"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Targeted at the Global market.",
         "predicate": "target_market_region",
         "object": "Global"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Fast charging is no.",
         "predicate": "supports_fast_charging",
         "object": "no"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "Noise cancellation: no.",
         "predicate": "has_noise_cancellation",
         "object": "no"
       }
@@ -1665,43 +1468,7 @@
   },
   {
     "product_idx": 109,
-    "predicted_triples": [
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_price_usd",
-        "object": "499"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_screen_size_inch",
-        "object": "11.0"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_ram_gb",
-        "object": "6"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_storage_gb",
-        "object": "128"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_battery_life_hours",
-        "object": "8"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "made_of_material",
-        "object": "aluminum"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "supports_fast_charging",
-        "object": "no"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "Auralex Smartwatch Pro 109",
@@ -1744,32 +1511,17 @@
     "product_idx": 112,
     "predicted_triples": [
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_price_usd",
-        "object": "499"
+        "subject": "smartwatch device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_storage_gb",
-        "object": "1024"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_battery_life_hours",
-        "object": "8"
-      },
-      {
-        "subject": "Smartwatch Device",
+        "subject": "smartwatch device",
         "predicate": "has_color",
         "object": "black"
       },
       {
-        "subject": "Smartwatch Device",
-        "predicate": "target_market_region",
-        "object": "Global"
-      },
-      {
-        "subject": "Smartwatch Device",
+        "subject": "smartwatch device",
         "predicate": "supports_fast_charging",
         "object": "yes"
       }
@@ -1819,11 +1571,6 @@
         "subject": "Auralex Laptop Plus 130",
         "predicate": "manufactured_by",
         "object": "Auralex"
-      },
-      {
-        "subject": "Auralex Laptop Plus 130",
-        "predicate": "belongs_to_category",
-        "object": "laptop"
       },
       {
         "subject": "Auralex Laptop Plus 130",
@@ -1976,11 +1723,6 @@
       },
       {
         "subject": "VoltEdge Tablet Pro 142",
-        "predicate": "belongs_to_category",
-        "object": "tablet"
-      },
-      {
-        "subject": "VoltEdge Tablet Pro 142",
         "predicate": "has_screen_size_inch",
         "object": "6.1"
       },
@@ -1998,11 +1740,6 @@
         "subject": "VoltEdge Tablet Pro 142",
         "predicate": "made_of_material",
         "object": "plastic"
-      },
-      {
-        "subject": "VoltEdge Tablet Pro 142",
-        "predicate": "target_market_region",
-        "object": "EU"
       }
     ],
     "gold_triples": [
@@ -2050,11 +1787,6 @@
         "subject": "VoltEdge Smartwatch Lite 143",
         "predicate": "manufactured_by",
         "object": "VoltEdge"
-      },
-      {
-        "subject": "VoltEdge Smartwatch Lite 143",
-        "predicate": "belongs_to_category",
-        "object": "smartwatch"
       },
       {
         "subject": "VoltEdge Smartwatch Lite 143",
@@ -2124,33 +1856,23 @@
     "product_idx": 145,
     "predicted_triples": [
       {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_price_usd",
-        "object": "199"
+        "subject": "smartphone device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_battery_life_hours",
-        "object": "14"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "smartphone device",
         "predicate": "has_color",
         "object": "green"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "target_market_region",
-        "object": "Global"
+        "subject": "smartphone device",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
       },
       {
-        "subject": "TechNova Smartphone Max 1",
+        "subject": "smartphone device",
         "predicate": "supports_fast_charging",
-        "object": "no"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_noise_cancellation",
         "object": "no"
       }
     ],
@@ -2194,38 +1916,7 @@
   },
   {
     "product_idx": 148,
-    "predicted_triples": [
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_price_usd",
-        "object": "1299"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_ram_gb",
-        "object": "32"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_battery_life_hours",
-        "object": "10"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_weight_kg",
-        "object": "0.23"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_color",
-        "object": "white"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "target_market_region",
-        "object": "US"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "VoltEdge Headphones Plus 148",
@@ -2266,43 +1957,7 @@
   },
   {
     "product_idx": 150,
-    "predicted_triples": [
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_price_usd",
-        "object": "299"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_ram_gb",
-        "object": "8"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_storage_gb",
-        "object": "1024"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_battery_life_hours",
-        "object": "20"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_weight_kg",
-        "object": "0.23"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "has_color",
-        "object": "blue"
-      },
-      {
-        "subject": "TechNova Smartphone Max 1",
-        "predicate": "supports_fast_charging",
-        "object": "no"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "VoltEdge Smartwatch Air 150",
@@ -2351,11 +2006,6 @@
       },
       {
         "subject": "Zenbyte Tablet Air 161",
-        "predicate": "belongs_to_category",
-        "object": "tablet"
-      },
-      {
-        "subject": "Zenbyte Tablet Air 161",
         "predicate": "has_screen_size_inch",
         "object": "11.0"
       },
@@ -2363,11 +2013,6 @@
         "subject": "Zenbyte Tablet Air 161",
         "predicate": "has_ram_gb",
         "object": "32"
-      },
-      {
-        "subject": "Zenbyte Tablet Air 161",
-        "predicate": "made_of_material",
-        "object": "carbon fiber"
       },
       {
         "subject": "Zenbyte Tablet Air 161",
@@ -2505,11 +2150,6 @@
       },
       {
         "subject": "PixelWare Tablet Lite 167",
-        "predicate": "belongs_to_category",
-        "object": "tablet"
-      },
-      {
-        "subject": "PixelWare Tablet Lite 167",
         "predicate": "has_storage_gb",
         "object": "128"
       },
@@ -2604,11 +2244,6 @@
         "subject": "Auralex Laptop Lite 172",
         "predicate": "made_of_material",
         "object": "carbon fiber"
-      },
-      {
-        "subject": "Auralex Laptop Lite 172",
-        "predicate": "target_market_region",
-        "object": "Global"
       }
     ],
     "gold_triples": [
@@ -2653,39 +2288,14 @@
     "product_idx": 178,
     "predicted_triples": [
       {
-        "subject": "Smartwatch Device",
-        "predicate": "has_price_usd",
-        "object": "1099"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_screen_size_inch",
-        "object": "13.3"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_ram_gb",
-        "object": "8"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_storage_gb",
-        "object": "64"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "made_of_material",
-        "object": "carbon fiber"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "supports_fast_charging",
-        "object": "no"
-      },
-      {
-        "subject": "Smartwatch Device",
+        "subject": "smartwatch device",
         "predicate": "has_noise_cancellation",
         "object": "no"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_color",
+        "object": "silver"
       }
     ],
     "gold_triples": [
@@ -2728,38 +2338,7 @@
   },
   {
     "product_idx": 184,
-    "predicted_triples": [
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_screen_size_inch",
-        "object": "10.9"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_ram_gb",
-        "object": "8"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_storage_gb",
-        "object": "512"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_weight_kg",
-        "object": "1.8"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "has_color",
-        "object": "white"
-      },
-      {
-        "subject": "Smartwatch Device",
-        "predicate": "made_of_material",
-        "object": "carbon fiber"
-      }
-    ],
+    "predicted_triples": [],
     "gold_triples": [
       {
         "subject": "Auralex Smartwatch Max 184",
@@ -2802,27 +2381,12 @@
     "product_idx": 191,
     "predicted_triples": [
       {
-        "subject": "Headphones Device",
-        "predicate": "has_price_usd",
-        "object": "349"
+        "subject": "headphones device",
+        "predicate": "has_color",
+        "object": "silver"
       },
       {
-        "subject": "Headphones Device",
-        "predicate": "has_screen_size_inch",
-        "object": "6.7"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_storage_gb",
-        "object": "128"
-      },
-      {
-        "subject": "Headphones Device",
-        "predicate": "has_battery_life_hours",
-        "object": "20"
-      },
-      {
-        "subject": "Headphones Device",
+        "subject": "headphones device",
         "predicate": "made_of_material",
         "object": "carbon fiber"
       }
@@ -2872,11 +2436,6 @@
         "subject": "Auralex Smartwatch Pro 196",
         "predicate": "manufactured_by",
         "object": "Auralex"
-      },
-      {
-        "subject": "Auralex Smartwatch Pro 196",
-        "predicate": "belongs_to_category",
-        "object": "smartwatch"
       },
       {
         "subject": "Auralex Smartwatch Pro 196",

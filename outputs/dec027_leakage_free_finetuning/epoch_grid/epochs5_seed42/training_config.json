@@ -1,0 +1,14 @@
+{
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "use_4bit": true,
+  "seed": 42,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "learning_rate": 0.0002,
+  "num_epochs": 5,
+  "batch_size": 2,
+  "grad_accum_steps": 4,
+  "n_training_examples": 90,
+  "data_path": "outputs/dec006_synthetic_data/product_domain_synth_train_90unfiltered.jsonl"
+}

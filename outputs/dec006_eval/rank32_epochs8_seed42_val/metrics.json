@@ -1,0 +1,15 @@
+{
+  "adapter": "outputs/dec027_leakage_free_finetuning/lora_grid/rank32_epochs8_seed42",
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "n_test_products_evaluated": 20,
+  "n_test_products_excluded_for_leakage": 0,
+  "leaked_product_names_excluded": [],
+  "precision": 0.9438202247191011,
+  "recall": 0.6,
+  "f1": 0.7336244541484717,
+  "true_positives": 84,
+  "false_positives": 5,
+  "false_negatives": 56,
+  "gold_count": 140,
+  "prediction_count": 89
+}

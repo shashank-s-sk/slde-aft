@@ -1,18 +1,15 @@
 {
   "adapter": null,
   "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
-  "n_test_products_evaluated": 8,
-  "n_test_products_excluded_for_leakage": 2,
-  "leaked_product_names_excluded": [
-    "Auralex Smartphone Air 7",
-    "TechNova Headphones Lite 26"
-  ],
-  "precision": 0.15217391304347827,
-  "recall": 0.125,
-  "f1": 0.13725490196078433,
-  "true_positives": 7,
-  "false_positives": 39,
-  "false_negatives": 49,
-  "gold_count": 56,
-  "prediction_count": 46
+  "n_test_products_evaluated": 40,
+  "n_test_products_excluded_for_leakage": 0,
+  "leaked_product_names_excluded": [],
+  "precision": 0.5676855895196506,
+  "recall": 0.4642857142857143,
+  "f1": 0.5108055009823184,
+  "true_positives": 130,
+  "false_positives": 99,
+  "false_negatives": 150,
+  "gold_count": 280,
+  "prediction_count": 229
 }

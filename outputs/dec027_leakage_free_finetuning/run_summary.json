@@ -1,0 +1,279 @@
+{
+  "epoch_grid": {
+    "2": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs2_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs2_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.7523809523809524,
+        "recall": 0.5642857142857143,
+        "f1": 0.6448979591836734,
+        "true_positives": 79,
+        "false_positives": 26,
+        "false_negatives": 61,
+        "gold_count": 140,
+        "prediction_count": 105
+      }
+    },
+    "3": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs3_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs3_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.7094017094017094,
+        "recall": 0.5928571428571429,
+        "f1": 0.6459143968871596,
+        "true_positives": 83,
+        "false_positives": 34,
+        "false_negatives": 57,
+        "gold_count": 140,
+        "prediction_count": 117
+      }
+    },
+    "5": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs5_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs5_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.9222222222222223,
+        "recall": 0.5928571428571429,
+        "f1": 0.7217391304347827,
+        "true_positives": 83,
+        "false_positives": 7,
+        "false_negatives": 57,
+        "gold_count": 140,
+        "prediction_count": 90
+      }
+    },
+    "8": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs8_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs8_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 1.0,
+        "recall": 0.5928571428571429,
+        "f1": 0.7443946188340806,
+        "true_positives": 83,
+        "false_positives": 0,
+        "false_negatives": 57,
+        "gold_count": 140,
+        "prediction_count": 83
+      }
+    }
+  },
+  "lora_grid": {
+    "default_rank16_alpha32_lr2e-4": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs8_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs8_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 1.0,
+        "recall": 0.5928571428571429,
+        "f1": 0.7443946188340806,
+        "true_positives": 83,
+        "false_positives": 0,
+        "false_negatives": 57,
+        "gold_count": 140,
+        "prediction_count": 83
+      }
+    },
+    "rank8": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/lora_grid/rank8_epochs8_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/lora_grid/rank8_epochs8_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.9230769230769231,
+        "recall": 0.6,
+        "f1": 0.7272727272727274,
+        "true_positives": 84,
+        "false_positives": 7,
+        "false_negatives": 56,
+        "gold_count": 140,
+        "prediction_count": 91
+      }
+    },
+    "rank32": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/lora_grid/rank32_epochs8_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/lora_grid/rank32_epochs8_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.9438202247191011,
+        "recall": 0.6,
+        "f1": 0.7336244541484717,
+        "true_positives": 84,
+        "false_positives": 5,
+        "false_negatives": 56,
+        "gold_count": 140,
+        "prediction_count": 89
+      }
+    },
+    "lr1e-4": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/lora_grid/lr1e-4_epochs8_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/lora_grid/lr1e-4_epochs8_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.780952380952381,
+        "recall": 0.5857142857142857,
+        "f1": 0.6693877551020408,
+        "true_positives": 82,
+        "false_positives": 23,
+        "false_negatives": 58,
+        "gold_count": 140,
+        "prediction_count": 105
+      }
+    },
+    "lr3e-4": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/lora_grid/lr3e-4_epochs8_seed42",
+      "val_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/lora_grid/lr3e-4_epochs8_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 20,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.9438202247191011,
+        "recall": 0.6,
+        "f1": 0.7336244541484717,
+        "true_positives": 84,
+        "false_positives": 5,
+        "false_negatives": 56,
+        "gold_count": 140,
+        "prediction_count": 89
+      }
+    }
+  },
+  "confirmatory": {
+    "42": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs8_seed42",
+      "test_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs8_seed42",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 40,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.8721804511278195,
+        "recall": 0.4142857142857143,
+        "f1": 0.5617433414043583,
+        "true_positives": 116,
+        "false_positives": 17,
+        "false_negatives": 164,
+        "gold_count": 280,
+        "prediction_count": 133
+      }
+    },
+    "43": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed43",
+      "test_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed43",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 40,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.8939393939393939,
+        "recall": 0.42142857142857143,
+        "f1": 0.5728155339805826,
+        "true_positives": 118,
+        "false_positives": 14,
+        "false_negatives": 162,
+        "gold_count": 280,
+        "prediction_count": 132
+      }
+    },
+    "44": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed44",
+      "test_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed44",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 40,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.8206896551724138,
+        "recall": 0.425,
+        "f1": 0.56,
+        "true_positives": 119,
+        "false_positives": 26,
+        "false_negatives": 161,
+        "gold_count": 280,
+        "prediction_count": 145
+      }
+    },
+    "45": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed45",
+      "test_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed45",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 40,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.7733333333333333,
+        "recall": 0.4142857142857143,
+        "f1": 0.5395348837209303,
+        "true_positives": 116,
+        "false_positives": 34,
+        "false_negatives": 164,
+        "gold_count": 280,
+        "prediction_count": 150
+      }
+    },
+    "46": {
+      "adapter_dir": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed46",
+      "test_metrics": {
+        "adapter": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed46",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "n_test_products_evaluated": 40,
+        "n_test_products_excluded_for_leakage": 0,
+        "leaked_product_names_excluded": [],
+        "precision": 0.7041420118343196,
+        "recall": 0.425,
+        "f1": 0.5300668151447662,
+        "true_positives": 119,
+        "false_positives": 50,
+        "false_negatives": 161,
+        "gold_count": 280,
+        "prediction_count": 169
+      }
+    }
+  },
+  "base_test": {
+    "adapter": null,
+    "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "n_test_products_evaluated": 40,
+    "n_test_products_excluded_for_leakage": 0,
+    "leaked_product_names_excluded": [],
+    "precision": 0.5676855895196506,
+    "recall": 0.4642857142857143,
+    "f1": 0.5108055009823184,
+    "true_positives": 130,
+    "false_positives": 99,
+    "false_negatives": 150,
+    "gold_count": 280,
+    "prediction_count": 229
+  },
+  "data_path": "outputs/dec006_synthetic_data/product_domain_synth_train_90unfiltered.jsonl",
+  "winning_epochs": 8,
+  "winning_lora_config": "default_rank16_alpha32_lr2e-4",
+  "winning_adapter_dir_seed42": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs8_seed42"
+}

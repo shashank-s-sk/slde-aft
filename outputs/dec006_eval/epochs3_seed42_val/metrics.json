@@ -1,0 +1,15 @@
+{
+  "adapter": "outputs/dec027_leakage_free_finetuning/epoch_grid/epochs3_seed42",
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "n_test_products_evaluated": 20,
+  "n_test_products_excluded_for_leakage": 0,
+  "leaked_product_names_excluded": [],
+  "precision": 0.7094017094017094,
+  "recall": 0.5928571428571429,
+  "f1": 0.6459143968871596,
+  "true_positives": 83,
+  "false_positives": 34,
+  "false_negatives": 57,
+  "gold_count": 140,
+  "prediction_count": 117
+}

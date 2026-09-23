@@ -1,0 +1,1282 @@
+[
+  {
+    "product_idx": 17,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      }
+    ]
+  },
+  {
+    "product_idx": 27,
+    "predicted_triples": [],
+    "gold_triples": [
+      {
+        "subject": "Zenbyte Smartwatch Air 27",
+        "predicate": "belongs_to_category",
+        "object": "smartwatch"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 27",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 27",
+        "predicate": "has_battery_life_hours",
+        "object": "20"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 27",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 27",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 27",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 27",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 31,
+    "predicted_triples": [],
+    "gold_triples": [
+      {
+        "subject": "PixelWare Headphones Plus 31",
+        "predicate": "belongs_to_category",
+        "object": "headphones"
+      },
+      {
+        "subject": "PixelWare Headphones Plus 31",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "PixelWare Headphones Plus 31",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "PixelWare Headphones Plus 31",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "PixelWare Headphones Plus 31",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "PixelWare Headphones Plus 31",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "PixelWare Headphones Plus 31",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 37,
+    "predicted_triples": [
+      {
+        "subject": "headphones device",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "TechNova Headphones Lite 37",
+        "predicate": "belongs_to_category",
+        "object": "headphones"
+      },
+      {
+        "subject": "TechNova Headphones Lite 37",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "TechNova Headphones Lite 37",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Headphones Lite 37",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "TechNova Headphones Lite 37",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Headphones Lite 37",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Headphones Lite 37",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 47,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "has_price_usd",
+        "object": "249"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "has_ram_gb",
+        "object": "6"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "has_weight_kg",
+        "object": "1.8"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "has_price_usd",
+        "object": "249"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "has_ram_gb",
+        "object": "6"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "has_weight_kg",
+        "object": "1.8"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "NeoTech Laptop Air 47",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 49,
+    "predicted_triples": [],
+    "gold_triples": [
+      {
+        "subject": "TechNova Laptop Lite 49",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "TechNova Laptop Lite 49",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "TechNova Laptop Lite 49",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "TechNova Laptop Lite 49",
+        "predicate": "has_ram_gb",
+        "object": "6"
+      },
+      {
+        "subject": "TechNova Laptop Lite 49",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "TechNova Laptop Lite 49",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Laptop Lite 49",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      }
+    ]
+  },
+  {
+    "product_idx": 53,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_ram_gb",
+        "object": "16"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_ram_gb",
+        "object": "16"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "Zenbyte Headphones Air 53",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 79,
+    "predicted_triples": [
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "manufactured_by",
+        "object": "VoltEdge"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "manufactured_by",
+        "object": "VoltEdge"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "VoltEdge Smartphone Lite 79",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 96,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_screen_size_inch",
+        "object": "10.9"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_storage_gb",
+        "object": "1024"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_screen_size_inch",
+        "object": "10.9"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_storage_gb",
+        "object": "1024"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "Auralex Tablet Max 96",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 128,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_color",
+        "object": "black"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "belongs_to_category",
+        "object": "headphones"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Headphones Pro 128",
+        "predicate": "has_color",
+        "object": "black"
+      }
+    ]
+  },
+  {
+    "product_idx": 137,
+    "predicted_triples": [],
+    "gold_triples": [
+      {
+        "subject": "NeoTech Tablet Air 137",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "NeoTech Tablet Air 137",
+        "predicate": "has_screen_size_inch",
+        "object": "13.3"
+      },
+      {
+        "subject": "NeoTech Tablet Air 137",
+        "predicate": "has_ram_gb",
+        "object": "6"
+      },
+      {
+        "subject": "NeoTech Tablet Air 137",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "NeoTech Tablet Air 137",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "NeoTech Tablet Air 137",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "NeoTech Tablet Air 137",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 139,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "has_weight_kg",
+        "object": "0.23"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "has_weight_kg",
+        "object": "0.23"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "Auralex Smartphone Max 139",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 141,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "has_screen_size_inch",
+        "object": "6.1"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "has_screen_size_inch",
+        "object": "6.1"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Zenbyte Laptop Lite 141",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 144,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Zenbyte Laptop Plus 144",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 147,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "has_storage_gb",
+        "object": "1024"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "belongs_to_category",
+        "object": "headphones"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "has_storage_gb",
+        "object": "1024"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Auralex Headphones Air 147",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 149,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "belongs_to_category",
+        "object": "tablet"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "NeoTech Tablet Lite 149",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      }
+    ]
+  },
+  {
+    "product_idx": 157,
+    "predicted_triples": [],
+    "gold_triples": [
+      {
+        "subject": "TechNova Smartphone Plus 157",
+        "predicate": "belongs_to_category",
+        "object": "smartphone"
+      },
+      {
+        "subject": "TechNova Smartphone Plus 157",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "TechNova Smartphone Plus 157",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Smartphone Plus 157",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Smartphone Plus 157",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartphone Plus 157",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "TechNova Smartphone Plus 157",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 171,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "has_battery_life_hours",
+        "object": "20"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "has_battery_life_hours",
+        "object": "20"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Plus 171",
+        "predicate": "target_market_region",
+        "object": "EU"
+      }
+    ]
+  },
+  {
+    "product_idx": 177,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "TechNova Laptop Lite 177",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 193,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ],
+    "gold_triples": [
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "belongs_to_category",
+        "object": "smartphone"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 193",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  }
+]

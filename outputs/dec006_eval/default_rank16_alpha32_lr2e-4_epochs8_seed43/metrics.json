@@ -1,0 +1,15 @@
+{
+  "adapter": "outputs/dec027_leakage_free_finetuning/confirmatory/default_rank16_alpha32_lr2e-4_epochs8_seed43",
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "n_test_products_evaluated": 40,
+  "n_test_products_excluded_for_leakage": 0,
+  "leaked_product_names_excluded": [],
+  "precision": 0.8939393939393939,
+  "recall": 0.42142857142857143,
+  "f1": 0.5728155339805826,
+  "true_positives": 118,
+  "false_positives": 14,
+  "false_negatives": 162,
+  "gold_count": 280,
+  "prediction_count": 132
+}
