@@ -1073,11 +1073,155 @@ wall-clock time of a local Python/pandas script
 
 \section{Results}
 \label{sec:results}
-% TODO: not yet written -- awaiting the user's Section 7 Word document
-% (6 tables, 4 figures) and its supplementary material (Tables S1-S8),
-% per the task's "Existing material to reconcile against" instruction.
+% TODO: main results (6 tables, 4 figures) and supplementary material
+% (Tables S1-S8) not yet written -- awaiting the user's Section 7 Word
+% document, per the task's "Existing material to reconcile against"
+% instruction. The DEC-026 subsection below is written and does not
+% depend on that document.
+
+\subsection{DEC-026: Aggregation-Rule Comparison}
+\label{sec:results-dec026}
+
+This subsection reports the DEC-026 replay (Section~\ref{sec:formal-analysis-empirical})
+in full: report only, no interpretation -- the ceiling proof, the
+mechanistic explanation of each rule's behavior, and what may be
+concluded from these numbers are given in
+Section~\ref{sec:formal-analysis-empirical} and
+Section~\ref{sec:discussion}, not repeated here. Six rules (R1--R6,
+defined in Section~\ref{sec:formal-analysis-empirical}) are applied to
+the identical stored observations of two independent snapshots --
+Dataset A (657 triples, 35 test-split subjects) and Dataset B (2241
+triples, 92 test-split subjects) -- at two thresholds each: the
+rule's own validation-selected threshold (``F1-selected'') and the
+pipeline's fixed operating threshold $\tau=0.88$ (Section~\ref{sec:setup-hyperparameters}).
+R4, R5, and R6 are tested rules, reported here exactly as R1--R3 are;
+none of the three is claimed as a contribution
+(Section~\ref{sec:formal-analysis-summary}).
+
+\begin{table}[htbp]
+\centering
+\caption{Dataset A (657 triples): precision, recall, and $F_1$ at each
+rule's own F1-selected threshold and at the fixed $\tau=0.88$, side by
+side.}
+\label{tab:dec026-a-metrics}
+\begin{tabular}{@{}lc ccc ccc@{}}
+\toprule
+& & \multicolumn{3}{c}{F1-selected} & \multicolumn{3}{c}{Fixed $\tau=0.88$} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+Rule & $\tau_{\text{sel}}$ & $P$ & $R$ & $F_1$ & $P$ & $R$ & $F_1$ \\
+\midrule
+R1 (max-merge) & 0.98 & 0.5385 & 1.0000 & 0.7000 & 0.4389 & 1.0000 & 0.6100 \\
+R2 (published) & 0.73 & 0.5095 & 0.9571 & 0.6650 & 0.8333 & 0.3929 & 0.5340 \\
+R3 (source-count) & 0.73 & 0.5214 & 0.9571 & 0.6751 & 0.9322 & 0.3929 & 0.5528 \\
+R4 (evidence-share) & 0.73 & 0.5095 & 0.9571 & 0.6650 & 0.8333 & 0.3929 & 0.5340 \\
+R5 (R3+R4) & 0.73 & 0.5214 & 0.9571 & 0.6751 & 0.9322 & 0.3929 & 0.5528 \\
+R6 (unsquared, exploratory) & 0.73 & 0.4621 & 0.9571 & 0.6233 & 0.4674 & 0.9214 & 0.6202 \\
+\bottomrule
+\end{tabular}
+% [EVID-041]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Dataset B (2241 triples): precision, recall, and $F_1$ at each
+rule's own F1-selected threshold and at the fixed $\tau=0.88$, side by
+side.}
+\label{tab:dec026-b-metrics}
+\begin{tabular}{@{}lc ccc ccc@{}}
+\toprule
+& & \multicolumn{3}{c}{F1-selected} & \multicolumn{3}{c}{Fixed $\tau=0.88$} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+Rule & $\tau_{\text{sel}}$ & $P$ & $R$ & $F_1$ & $P$ & $R$ & $F_1$ \\
+\midrule
+R1 (max-merge) & 0.98 & 0.5308 & 1.0000 & 0.6935 & 0.4481 & 1.0000 & 0.6188 \\
+R2 (published) & 0.73 & 0.5102 & 0.9317 & 0.6593 & 0.9012 & 0.4534 & 0.6033 \\
+R3 (source-count) & 0.73 & 0.5149 & 0.9317 & 0.6632 & 0.9280 & 0.4534 & 0.6092 \\
+R4 (evidence-share) & 0.73 & 0.5102 & 0.9317 & 0.6593 & 0.9012 & 0.4534 & 0.6033 \\
+R5 (R3+R4) & 0.73 & 0.5149 & 0.9317 & 0.6632 & 0.9280 & 0.4534 & 0.6092 \\
+R6 (unsquared, exploratory) & 0.58 & 0.4894 & 0.9524 & 0.6465 & 0.5023 & 0.8986 & 0.6444 \\
+\bottomrule
+\end{tabular}
+% [EVID-041]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Admitted-triple counts and contested single-valued-predicate
+slots with at least one candidate admitted, both datasets, both
+thresholds.}
+\label{tab:dec026-admitted}
+\begin{tabular}{@{}llcc cc@{}}
+\toprule
+& & \multicolumn{2}{c}{F1-selected} & \multicolumn{2}{c}{Fixed $\tau=0.88$} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6}
+Dataset & Rule & Admitted & Contested slots & Admitted & Contested slots \\
+\midrule
+A (657) & R1 & 260 & 6 & 319 & 20 \\
+A (657) & R2 & 263 & 0 & 66 & 0 \\
+A (657) & R3 & 257 & 0 & 59 & 0 \\
+A (657) & R4 & 263 & 0 & 66 & 0 \\
+A (657) & R5 & 257 & 0 & 59 & 0 \\
+A (657) & R6 & 290 & 0 & 276 & 0 \\
+\midrule
+B (2241) & R1 & 910 & 40 & 1078 & 69 \\
+B (2241) & R2 & 882 & 0 & 243 & 0 \\
+B (2241) & R3 & 874 & 0 & 236 & 0 \\
+B (2241) & R4 & 882 & 0 & 243 & 0 \\
+B (2241) & R5 & 874 & 0 & 236 & 0 \\
+B (2241) & R6 & 940 & 10 & 864 & 0 \\
+\bottomrule
+\end{tabular}
+% [EVID-041]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Bootstrap 95\% CI for $F_1(\text{rule}) - F_1(\text{R2})$ at
+each rule's own F1-selected threshold, $10{,}000$ resamples over
+test-split subjects.}
+\label{tab:dec026-bootstrap-f1sel}
+\begin{tabular}{@{}llrrc@{}}
+\toprule
+Dataset & Rule & Mean diff. & 95\% CI & Excludes 0 \\
+\midrule
+A (657) & R1 & $+0.0359$ & $[0.0154, 0.0641]$ & Yes \\
+A (657) & R3 & $+0.0106$ & $[0.0028, 0.0222]$ & Yes \\
+A (657) & R4 & $+0.0000$ & $[0.0000, 0.0000]$ & No \\
+A (657) & R5 & $+0.0106$ & $[0.0028, 0.0222]$ & Yes \\
+A (657) & R6 & $-0.0429$ & $[-0.0870, -0.0118]$ & Yes \\
+\midrule
+B (2241) & R1 & $+0.0341$ & $[0.0191, 0.0496]$ & Yes \\
+B (2241) & R3 & $+0.0039$ & $[0.0013, 0.0075]$ & Yes \\
+B (2241) & R4 & $+0.0000$ & $[0.0000, 0.0000]$ & No \\
+B (2241) & R5 & $+0.0039$ & $[0.0013, 0.0075]$ & Yes \\
+B (2241) & R6 & $-0.0131$ & $[-0.0303, 0.0015]$ & No \\
+\bottomrule
+\end{tabular}
+% [EVID-041]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Bootstrap 95\% CI for precision, recall, and $F_1$
+differences against R2 at the fixed $\tau=0.88$ operating threshold,
+$10{,}000$ resamples over test-split subjects. Reported for R1 and R3
+against R2, per the comparison requested for this subsection.}
+\label{tab:dec026-bootstrap-tau088}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Comparison & Dataset & $P$ diff. (95\% CI) & $R$ diff. (95\% CI) & $F_1$ diff. (95\% CI) \\
+\midrule
+R1$-$R2 & A (657) & $-0.3847\ [-0.4803,-0.2460]$ & $+0.6052\ [0.4071,0.7983]$ & $+0.0809\ [-0.1147,0.2989]$ \\
+R1$-$R2 & B (2241) & $-0.4510\ [-0.4918,-0.4026]$ & $+0.5476\ [0.4435,0.6496]$ & $+0.0193\ [-0.0889,0.1298]$ \\
+R3$-$R2 & A (657) & $+0.1060\ [0.0321,0.2267]$ & $0.0000\ [0.0000,0.0000]$ & $+0.0192\ [0.0057,0.0395]$ \\
+R3$-$R2 & B (2241) & $+0.0270\ [0.0076,0.0519]$ & $0.0000\ [0.0000,0.0000]$ & $+0.0059\ [0.0016,0.0115]$ \\
+\bottomrule
+\end{tabular}
+% [EVID-041]
+\end{table}
 
 \section{Discussion}
+\label{sec:discussion}
 % TODO: not yet written. Carry forward from Section 2.7 / Learnings.md:
 % DySECT reports consistent recall IMPROVEMENTS from KB-guided extraction
 % on DocRED (Table 1, all four models), whereas SLDE-AFT's own DocRED
