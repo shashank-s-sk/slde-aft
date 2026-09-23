@@ -2071,6 +2071,288 @@ DEC-025: SCOPED, NOT YET RUN (2026-09-22). Script and pre-registration
   written; awaiting a rented GPU pod and explicit go-ahead to spend
   before executing steps 1-2 above.
 
+# DEC-026 — Offline Comparison of Confidence-Aggregation Rules (renumbered from task file's "DEC-025")
+
+**Numbering note:** the task brief (`CLAUDE_TASK_dec025_aggregation_rules (1).md`)
+labels this DEC-025, but DEC-025 above is already an active, separately
+scoped decision (closed-loop retest with the epochs=5 adapter). This work
+is logged as **DEC-026** instead; all file paths use `dec026_` in place
+of the task file's `dec025_`. Flagged for the user's confirmation rather
+than silently assumed.
+
+## Why is this required?
+
+DySECT (Amin-Naseri, Kim & Hruschka, ACL 2026, arXiv 2603.06915) already
+publishes this project's exact aggregation rule (Eq. 1 conservative
+Noisy-Or with lambda=0.75, Eq. 2 conflict-adjusted `/(m+1)` divisor), so
+the formula itself cannot be claimed as a contribution (Section 2.7 of
+the manuscript already documents this). Two failure modes of that rule
+are already established in this repository from real (non-synthetic)
+data:
+- **Rival ceiling** (structural): for any functionally single-valued
+  predicate with >=1 competing object, `C(t) = A(t)/(m+1) <= 0.5 < tau
+  (0.88)`, so a contested slot can never be admitted regardless of
+  evidence strength.
+- **Repeat-counting** (EVID-029, EVID-036): the same document read
+  multiple times (same model, temperature 0) produces identical output,
+  and Noisy-Or's `f_i` exponent treats each repeat as independent
+  corroboration. EVID-029 found 31 unstructured-only triples observed
+  2-21 times each, 0% correct against gold; EVID-036 found ECE=0.3332 on
+  the same 657-triple snapshot this DEC reuses.
+
+This DEC replays the already-collected, gold-labeled snapshots through
+five scoring rules (unchanged observations, only the aggregation
+formula varies) to test whether a corrected rule beats the published
+one, and reports honestly if it does not.
+
+## Data
+
+Two independent datasets, evaluated and reported separately (not
+pooled) — different runs, different scale, a mini-replication check on
+whether any winning rule agrees across both:
+
+| Dataset | Snapshot file | Observations | Triples | Unique subject strings | Gold split source |
+|---|---|---|---|---|---|
+| **A (product657)** | `outputs/dec003_product_probkb_v2/train_kb/pkb_snapshot_iteration_4.csv` | `outputs/dec003_product_probkb_v2/train_kb/observations_iteration_{1-4}.csv` | 657 | 69 | `data/product_split.csv` (35 train products), gold reconstructed via `scripts/dec003_product_probkb_run.normalize_gold` on `products[idx][3]` (gold_unstructured), imported not re-derived |
+| **B (product200)** | `outputs/dec006_scaleup_probkb/train_kb/pkb_snapshot_iteration_4.csv` | `outputs/dec006_scaleup_probkb/train_kb/observations_iteration_{1-4}.csv` | 2241 (475 above tau=0.88 under the published rule) | 183 | `data/product_split_200.csv` (140 train products), gold reconstructed via `scripts/dec006_scaleup_probkb_run.normalize_gold` on the same tuple index, imported not re-derived |
+
+Both snapshots already carry a `gold_label` column (candidate-level,
+1=matches a gold key) and per-triple JSON lists
+(`observation_confidences`, `source_ids`, `source_types`, `provenance`)
+aligned by index — these lists are the only per-observation data used;
+`src/pkb_replay.py` is not needed since no KB state reconstruction is
+required (the snapshot already IS the accepted-candidate state; only
+its scoring is being recomputed). Functional-predicate status
+(`functional_predicate` column) and structural competitor counts
+(`competitor_count` column) are reused as-is from both snapshots since
+both are properties of `configs/functional_predicates_product_domain.json`
+and the fixed candidate pool, not of the scoring rule — recomputing
+them per rule would be redundant and risks introducing a discrepancy
+against the already-validated snapshot generation code.
+
+**Recall denominator:** precision/recall/F1 use the FULL train-split
+gold key set (`prf()`-style TP/FP/FN, matching `scripts/dec003_product_
+probkb_run.py` and `scripts/dec006_scaleup_probkb_run.py`'s own
+convention), not just the rows with `gold_label==1` inside the
+snapshot. This means gold triples the extractor never even proposed as
+a candidate count as false negatives for every rule equally (all five
+rules share one fixed candidate pool per dataset) — recall differences
+across rules come only from which already-extracted candidates cross
+the threshold.
+
+## Rules — precise definitions (flagging two ambiguities in the task brief for sign-off)
+
+All five rules consume the same per-triple `observation_confidences`
+(+ aligned `source_ids`/`source_types`) list; nothing is re-extracted.
+
+- **R1 Max-merge:** `C(t) = max_i c_i` over all observations, all
+  predicates alike. No conflict/functional-predicate handling at all
+  (matches the original deterministic `LockedKnowledgeStore` baseline
+  referenced in EVID-013's interpretation).
+- **R2 Published rule:** unchanged — `conservative_noisy_or` (lambda=0.75)
+  then, for functional predicates only, `/(competitor_count+1)`
+  (`src/pkb_math.final_confidence`, already computed and stored as
+  `conflict_adjusted_final_confidence` in both snapshots — reused
+  directly, not recomputed).
+- **R3 Source-count:** **ambiguity flag** — the task text says "as R1's
+  noisy-or form," but R1 is max-merge, which has no noisy-or form. Read
+  as R2's Eq.1+Eq.2 form with the repeat-count exponent replaced by a
+  distinct-source count (consistent with the "Why" section's
+  repeat-counting critique, and with "only the scoring changes" applying
+  one axis at a time). Precise definition: a **distinct source** = a
+  unique `(source_type, source_id)` pair in the triple's aligned lists
+  (matches the task's own example, "structured row, unstructured
+  document" — e.g. `("structured","product_1")` vs.
+  `("unstructured","product_1")` count as two distinct sources; two
+  `("unstructured","product_1")` entries from different iterations count
+  as one). Verified empirically: 159/657 rows in dataset A have a
+  repeated `(source_type, source_id)` pair, so this dedup is not a
+  no-op. When a source repeats, its representative confidence is the
+  **max** confidence among its repeats (a specific, pre-registered
+  choice — not mean or first). `A_R3(t) = 1 - prod_s(1 - 0.75 *
+  c_s_max)` over distinct sources `s`, then `/(competitor_count+1)` for
+  functional predicates only (same functional-predicate gating as R2),
+  else `A_R3(t)` unchanged.
+- **R4 Evidence-share:** uses R2's original (repeat-counted, not
+  source-deduped) `A(t)`. Formula taken **literally** from the task
+  text: `C(t) = A(t) * A(t) / sum_j A(t_j) = A(t)^2 / sum_j A(t_j)`,
+  where the sum is over every candidate object `j` in the same
+  normalized `(subject, predicate)` slot (including `t` itself; a
+  slot with no competitor reduces to `C(t)=A(t)`, i.e. no ceiling for
+  an uncontested candidate — the property this rule is designed to
+  have). **Ambiguity flag:** applied only to functional predicates, by
+  analogy with R2/R3's scope (Eq. 2's divisor is explicitly documented
+  as functional-predicate-only, and the "share of slot support" concept
+  is meaningless for `has_color`, where multiple simultaneous true
+  values are legitimate, not a conflict). Non-functional predicates get
+  plain `A(t)`, same as R2.
+- **R5 = R3 + R4 combined:** same evidence-share formula as R4, but
+  built from R3's distinct-source `A_R3(t)` (numerator and every
+  `A_R3(t_j)` in the denominator), functional predicates only.
+
+## Validation/test split
+
+By **unique subject string**, per dataset, independently:
+`sorted(unique subjects)`, shuffled with `random.Random(42).shuffle`,
+first half -> validation, second half -> test (dataset A: 34/35;
+dataset B: 91/92). All triples sharing a subject stay in the same
+split. **Caveat, stated up front rather than discovered later:** per
+EVID-029's own finding, a large fraction of "subjects" in both
+snapshots are not real product names but hallucinated fragments (e.g.
+`"It is a laptop device"`, `"The display measures 15.6 inches"`) —
+dataset A has 69 unique subject strings against only 35 actual train
+products. Splitting by exact subject string is the most granular
+leakage-safe unit the stored data supports; it is not a guarantee of
+true product-level independence, and this limitation will be restated
+next to any result.
+
+## Threshold-selection procedure
+
+Per rule, per dataset: grid search `tau` in `{0.00, 0.01, ..., 1.00}`
+(101 values) on the **validation** split only, selecting the `tau`
+maximizing F1; ties broken toward the **larger** `tau` (deterministic,
+matches this project's existing bias toward a conservative/high fixed
+threshold). That single `tau` is then applied to the **test** split
+exactly once. No re-selection, no peeking at test to adjust `tau`.
+
+## Metrics (test split, reported once per rule per dataset)
+
+- Precision, recall, F1 at the selected `tau` (recall denominator as
+  defined above).
+- ECE (10 equal-width bins, same convention as
+  `scripts/dec003_real_data_calibration.py`) and Brier score, using each
+  rule's own score as the "confidence."
+- Number of admitted (>= tau) triples.
+- Number of **contested single-valued slots with any candidate
+  admitted**: `(subject_norm, predicate)` pairs where the predicate is
+  functional and the slot has >=2 distinct objects among its
+  candidates, restricted to test-split subjects, counted if any
+  candidate in that slot scores >= the rule's own test threshold.
+  Reported per rule; R2 is expected near zero by construction but will
+  be measured, not asserted.
+- 95% bootstrap CI (10,000 resamples) for F1(rule) − F1(R2) on the test
+  split: resample **subjects** (not triples) with replacement, include
+  all triples of each resampled subject (with duplicates when a subject
+  is drawn more than once), recompute F1 for both rules at their
+  already-fixed (not re-selected) thresholds, take the difference,
+  report the 2.5th/97.5th percentiles. Done for R1, R3, R4, R5 vs. R2,
+  independently for dataset A and B (8 CIs total).
+
+## What counts as a null
+
+If, for a given dataset, no rule among R3/R4/R5 has a 95% bootstrap CI
+for F1 − F1(R2) that excludes zero, that is a **null result** and will
+be reported as such — no re-running, no threshold or split
+re-selection to chase significance (README ground rule 5). Disagreement
+between dataset A and B's winning rule (if any) will also be reported
+plainly rather than resolved by picking whichever is more favorable.
+
+## Deliverables (all under `outputs/dec026_aggregation_rules/`)
+
+- `{dataset}_per_triple_scores.csv` — one row per triple per rule (raw
+  scores, admitted flag at that rule's test-selected tau), `dataset` in
+  `{product657, product200}`.
+- `{dataset}_val_test_split.json` — the exact subject-to-split
+  assignment (for reproducibility of the seed-42 shuffle).
+- `{dataset}_threshold_selection.csv` — the full validation-F1 grid per
+  rule (not just the argmax), so the selection is auditable.
+- `{dataset}_metrics_summary.json` — precision/recall/F1/ECE/
+  Brier/admitted-count/contested-slot-count per rule.
+- `{dataset}_bootstrap_ci.json` — the 10,000-resample F1-difference
+  distributions' summary stats and percentiles per rule.
+- New EVID entry (Evidence log.md) with the full results table across
+  both datasets, and this Decision log status row updated with the
+  outcome.
+- A short written statement of whether R3, R4, or R5 beats R2 on either
+  or both datasets, whether the result is a null, and exactly what may
+  be claimed from it in the manuscript.
+
+## Cost / time estimate
+
+Zero — pure pandas/Python replay over already-saved CSVs, no API calls,
+no GPU. Estimated wall-clock: a few minutes.
+
+## Status
+
+DEC-026: RUN, COMPLETE, first pass (2026-09-23). Full results in
+  EVID-041 (first version). Mixed outcome, not a clean win or a clean
+  null: R2's rival ceiling confirmed empirically real (0 contested-slot
+  admissions vs. R1's 6/40); R4's evidence-share fix, exactly as
+  specified, is a byte-identical null against R2 on both datasets (max
+  contested-slot score never approaches threshold); R3 (source-count /
+  repeat-counting fix) delivers a small but statistically robust F1
+  improvement over R2 on both datasets (CI excludes 0), via a precision
+  gain at fixed recall; R5 is numerically identical to R3 (its R4
+  component contributes nothing). Raw outputs:
+  `outputs/dec026_aggregation_rules/`.
+
+## Addendum — four approved follow-ups (2026-09-23, all zero-cost replay, no re-running of the original comparison)
+
+Approved by the user alongside DEC-026's first-pass results, before
+Section 4 resumed. All four executed together in the same script
+(`scripts/dec026_aggregation_rules_replay.py`, updated in place, not
+forked) and reported in EVID-041's revised version.
+
+1. **Secondary analysis at the pipeline's fixed operating threshold**
+   (tau=0.88, not F1-selected): rerun for every rule (now including R6,
+   below) on the same test split, same gold sets, reporting precision,
+   recall, F1, admitted count, and contested-slot admissions **alongside**
+   (not replacing) the F1-selected numbers. No new threshold selection,
+   no new bootstrap for this secondary view unless it changes a
+   conclusion.
+2. **R6 (exploratory, post-hoc — added after seeing R4's null, not part
+   of the original pre-registration, labeled as such everywhere it is
+   reported):** unsquared evidence share, `C(t) = A(t) / sum_j A(t_j)`,
+   same scope (functional predicates only) and same input (R2's
+   original support) as R4. Goes through the identical pipeline: val-only
+   threshold grid search, test-split metrics at both the F1-selected and
+   fixed 0.88 thresholds, and a bootstrap F1-difference CI against R2 on
+   the same 10,000 subject resamples used for R1/R3/R4/R5. **What counts
+   as a null for R6 specifically:** a 95% CI that does not exclude zero,
+   exactly the same standard applied to R1/R3/R4/R5 — no different bar
+   because it was added after seeing R4's result.
+3. **Recall-denominator statement:** EVID-041 must say explicitly which
+   gold set defines the recall denominator (train-split `gold_unstructured`
+   facts, imported from the original DEC-003/DEC-006 run scripts' own
+   `normalize_gold()` — the same set those scripts' own `train_gold_keys`
+   and the snapshot's own `gold_label` column already use), and state
+   plainly whether that makes DEC-026's recall comparable to recall
+   figures reported elsewhere in the project (EVID-013's held-out
+   val/test recall, EVID-014's whole-KB recall, EVID-030/DEC-019's
+   closed-loop recall) — verified during this addendum: EVID-014's
+   657-snapshot whole-KB recall is a directly comparable, same-gold-set,
+   same-snapshot number; EVID-013's held-out recall is not (different,
+   non-train products, single pass, no threshold admission); EVID-030's
+   closed-loop recall is not (uses `gold_structured`, a larger/stricter
+   full-structured-facts set, not `gold_unstructured`).
+4. **Commit `outputs/dec026_aggregation_rules/`:** add a targeted
+   `.gitignore` exception (`outputs/*` plus `!outputs/dec026_aggregation_rules/`,
+   replacing the previous blanket `outputs/` line) and commit the
+   directory's contents (per-triple scores, split assignments, threshold
+   grids, bootstrap distributions) — an explicit, one-time exception to
+   this project's standing convention of never committing `outputs/`
+   (a gap AUDIT.md already flags project-wide), made because this
+   specific experiment is now load-bearing for the paper's contribution.
+   No other `outputs/` directory is affected by this change.
+
+**Also required in EVID-041's revised write-up:** state as a headline
+comparison that R1 (max-merge, no conflict handling) beats R2 (the
+published rule) on **both** precision and recall on both datasets,
+with the caveat that both rules' thresholds were independently
+F1-selected on validation, and that this direction (unconstrained
+aggregation numerically outperforming the conflict-adjusted published
+rule) matches the same direction already found in the project's N=50
+closed-loop ablation (`without_prob_kb` >= `full`, AUDIT.md A1,
+EVID-039) — not a new, isolated finding, a second real-data
+confirmation of an existing tension already on record.
+
+## Status (addendum)
+
+DEC-026: RUN, COMPLETE, addendum incorporated (2026-09-23). See
+  EVID-041 (revised) for the full four-follow-up write-up including R6.
+  Section 4 of the manuscript remains paused until the user has reviewed
+  this addendum, per explicit instruction accompanying the approval.
+
 DEC-014 (evaluation protocol & leakage control)
 
 Prevents test-set leakage, prompt overfitting, and unfair comparisons.

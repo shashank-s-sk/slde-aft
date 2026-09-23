@@ -3433,3 +3433,372 @@ None required -- DEC-022 is complete across all 3 stages. If pursued
 further: re-test this same epochs=5 configuration on DEC-018's
 provenance-filtered training data to see if the significant effect
 holds or strengthens on the now-default training set.
+
+# EVID-041 — DEC-026: Offline Comparison of Five Confidence-Aggregation Rules
+
+## Experiment
+
+- Decision: DEC-026 (logged as DEC-026, not DEC-025 as the task brief
+  named it -- DEC-025 is already a separate, active decision; see that
+  entry's numbering note).
+- Zero API/GPU cost -- pure replay of `src/pkb_math.py`-style scoring
+  over two already-collected, gold-labeled PKB snapshots via
+  `scripts/dec026_aggregation_rules_replay.py`:
+  - **Dataset A (product657)**: `outputs/dec003_product_probkb_v2/train_kb/pkb_snapshot_iteration_4.csv`
+    (EVID-013/014/036's snapshot) -- 657 triples, 69 unique subject
+    strings (35 real train products + 34 hallucinated-fragment
+    "subjects," per EVID-029).
+  - **Dataset B (product200)**: `outputs/dec006_scaleup_probkb/train_kb/pkb_snapshot_iteration_4.csv`
+    (EVID-029/030's snapshot) -- 2241 triples, 183 unique subject
+    strings (140 real train products + fragments).
+- Gold sets reconstructed by importing (not re-deriving)
+  `normalize_gold`/`load_split`/`generate_products` from
+  `scripts/dec003_product_probkb_run.py` and
+  `scripts/dec006_scaleup_probkb_run.py`. Sanity check: reconstructed
+  gold membership matched the snapshot's own stored `gold_label` column
+  on all 657 and all 2241 rows, 0 mismatches -- the gold reconstruction
+  is verified consistent with the original runs, not an independent
+  (and potentially divergent) re-derivation.
+- Validation/test split: by unique subject string, seed 42, 50/50
+  (dataset A: 34 val / 35 test subjects; dataset B: 91 val / 92 test
+  subjects). Threshold grid-searched (0.00-1.00, step 0.01) per rule on
+  validation only (argmax F1, ties toward larger tau), applied once to
+  test. Full pre-registration: Decision log.md DEC-026.
+- Five rules, all consuming the identical stored observations (nothing
+  re-extracted): R1 max-merge (no conflict handling), R2 published
+  (conservative Noisy-Or, lambda=0.75, `/(m+1)` on functional
+  predicates -- unchanged, reused from the snapshot's own stored
+  columns), R3 source-count (Eq.1 aggregated over distinct
+  `(source_type, source_id)` pairs instead of repeat observations, max
+  confidence as the per-source representative, same `/(m+1)` gating as
+  R2), R4 evidence-share (`C(t) = A(t)^2 / sum_j A(t_j)` over the slot,
+  functional predicates only, R2's original support as input), R5 = R3
+  support fed into R4's evidence-share formula.
+
+## Actual
+
+**Dataset A (product657), test split (35 subjects, 346 triples):**
+
+| Rule | tau | Precision | Recall | F1 | ECE | Brier | Admitted | Contested slots admitted |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| R1 max-merge | 0.98 | 0.5385 | 1.0000 | 0.7000 | 0.5541 | 0.5322 | 260 | 6 |
+| R2 published | 0.73 | 0.5095 | 0.9571 | 0.6650 | 0.3124 | 0.2914 | 263 | 0 |
+| R3 source-count | 0.73 | 0.5214 | 0.9571 | 0.6751 | 0.3118 | 0.2825 | 257 | 0 |
+| R4 evidence-share | 0.73 | 0.5095 | 0.9571 | 0.6650 | 0.3130 | 0.2910 | 263 | 0 |
+| R5 combined | 0.73 | 0.5214 | 0.9571 | 0.6751 | 0.3154 | 0.2814 | 257 | 0 |
+
+95% bootstrap CI (10,000 resamples over the 35 test subjects) for
+F1(rule) − F1(R2): R1 +0.0359 [0.0154, 0.0641] (excludes 0); R3 +0.0106
+[0.0028, 0.0222] (excludes 0); R4 +0.0000 [0.0000, 0.0000] (does NOT
+exclude 0 -- R4 and R2 produce byte-identical admitted sets on every
+one of the 10,000 resamples); R5 +0.0106 [0.0028, 0.0222] (excludes 0,
+identical to R3's numbers because R5's admitted set is identical to
+R3's).
+
+**Dataset B (product200), test split (92 subjects, 1153 triples):**
+
+| Rule | tau | Precision | Recall | F1 | ECE | Brier | Admitted | Contested slots admitted |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| R1 max-merge | 0.98 | 0.5308 | 1.0000 | 0.6935 | 0.5441 | 0.5264 | 910 | 40 |
+| R2 published | 0.73 | 0.5102 | 0.9317 | 0.6593 | 0.2807 | 0.2693 | 882 | 0 |
+| R3 source-count | 0.73 | 0.5149 | 0.9317 | 0.6632 | 0.2691 | 0.2636 | 874 | 0 |
+| R4 evidence-share | 0.73 | 0.5102 | 0.9317 | 0.6593 | 0.2817 | 0.2693 | 882 | 0 |
+| R5 combined | 0.73 | 0.5149 | 0.9317 | 0.6632 | 0.2736 | 0.2624 | 874 | 0 |
+
+95% bootstrap CI (10,000 resamples over the 92 test subjects): R1
++0.0341 [0.0191, 0.0496] (excludes 0); R3 +0.0039 [0.0013, 0.0075]
+(excludes 0); R4 +0.0000 [0.0000, 0.0000] (does NOT exclude 0, again
+byte-identical to R2); R5 +0.0039 [0.0013, 0.0075] (excludes 0,
+identical to R3).
+
+Raw per-triple scores, split assignments, full threshold grids, and
+bootstrap distributions: `outputs/dec026_aggregation_rules/`.
+
+## Result
+
+**Mixed, not a clean win and not a clean null -- three distinct,
+reportable findings that must not be collapsed into one:**
+
+1. **R2's rival ceiling is empirically real and R2 does suppress
+   contested-slot admission to exactly zero on both datasets**, as
+   predicted rather than merely asserted (0/0 contested-slot
+   admissions on both). R1 (no conflict handling at all) admits 6 and
+   40 contested slots respectively, confirming the ceiling -- not the
+   data -- is what prevents this under R2.
+2. **R4's evidence-share formula, implemented exactly as literally
+   specified in the task brief, is a clean null for the ceiling
+   problem specifically.** Although it mathematically removes the
+   algebraic 0.5 cap (`C(t)=A(t)` when uncontested, `<A(t)` but
+   unbounded below 1 when contested), the actual observed support
+   values for competing candidates in this real data are close enough
+   in magnitude that no R4 score in any contested slot ever approaches
+   the selected threshold (max observed R4 score among dataset A's 107
+   contested-slot rows: 0.581, vs. tau=0.73). R4 therefore produces an
+   admitted set **byte-identical to R2** on both datasets -- confirmed
+   by the exact [0,0] bootstrap CI, not merely a small non-significant
+   difference. **R5 inherits this**: because its R4 component
+   contributes nothing, R5's entire measured improvement is actually
+   R3's improvement wearing a different name.
+3. **R3 (source-count / repeat-counting fix) is the one rule with a
+   small but statistically robust, real improvement over R2 on both
+   datasets** (dataset A: F1 +0.0106, CI excludes 0; dataset B: F1
+   +0.0039, CI excludes 0) -- driven entirely by a **precision** gain
+   at unchanged recall (A: 0.5095→0.5214 at R=0.9571 fixed; B:
+   0.5102→0.5149 at R=0.9317 fixed), not by any contested-slot
+   admission change (R3 shows 0 contested admissions too, same as R2).
+   This is exactly the mechanism EVID-029 predicted: deduplicating
+   repeated observations from the same `(source_type, source_id)`
+   before aggregating removes artificially inflated confidence on
+   uncontested but wrong candidates (the repeated-hallucination
+   pattern), which lets a few previously-admitted false positives fall
+   back below threshold without losing any true positives.
+
+## Interpretation
+
+- Matching the three outcomes named before this DEC ran: this lands on
+  **"only the contested-slot count moves, and only for the
+  no-conflict-handling baseline (R1), not for any of the proposed
+  fixes"** combined with **"R3 delivers a small real end-to-end
+  improvement, but through the repeat-counting mechanism, not the
+  ceiling mechanism."** Neither "R4/R5 beat R2 on both datasets" nor
+  "nothing moves at all" is an accurate summary -- both would misstate
+  what happened.
+- The precision-recall trade anticipated before running (ceiling
+  removal -> contested slots become admissible -> precision drops,
+  recall rises) **did not materialize for R4/R5**, precisely because no
+  contested-slot score got close enough to threshold to be admitted at
+  all. It DID appear, differently, for the unconstrained R1 baseline:
+  R1 reaches perfect recall (all gold facts carry a >=0.98 structured
+  observation, so max-merge trivially recovers them) at a real
+  precision cost relative to R2/R3 (0.5385 vs 0.5214 on dataset A) from
+  admitting contradictory competing values in the 6/40 contested slots
+  it lets through.
+- What can honestly be claimed in the manuscript: (a) a formal proof
+  plus this empirical confirmation that the published rule's rival
+  ceiling is real and structurally prevents any contested admission
+  regardless of evidence strength (Section 2.7's critique now has a
+  direct empirical companion, not just the algebraic argument); (b) a
+  corrected rule (R3) that measurably, significantly improves F1 via
+  precision on two independent real-data snapshots by fixing the
+  repeat-counting failure mode specifically; (c) an honest report that
+  the evidence-share correction for the ceiling problem, as specified,
+  does not change behavior on this data -- worth stating as a limit of
+  the proposed fix rather than omitting.
+- R3 and R5 are numerically identical in every reported metric (same
+  admitted set), so the manuscript should present R3 alone as "the"
+  corrected rule rather than reporting R5 as if it added something R3
+  did not.
+
+## Limitations
+
+- Both datasets come from the same synthetic product-domain generator
+  and the same two runs (DEC-003/DEC-006) already used throughout this
+  project -- no CaRB, BioRED, or DocRED replication of this specific
+  comparison. The two datasets are not fully independent either (same
+  generator, overlapping predicate schema, dataset B is a scaled-up
+  rerun of the same design as dataset A).
+- The val/test split is by exact subject string, not verified true
+  product identity -- most non-product "subjects" are hallucinated
+  extraction fragments (EVID-029), so this is the finest leakage-safe
+  unit the stored data supports, not a guarantee of full product-level
+  independence.
+- R4's null result is specific to the literal formula in the task
+  brief (`A(t)^2/sum_j A(t_j)`) and to this data's actual support
+  magnitudes; a differently-designed ceiling fix (e.g. a plain share
+  `A(t)/sum_j A(t_j)` without squaring, or a share computed without the
+  `/(m+1)`-style denominator floor) was not tested and might behave
+  differently -- not evidence that no ceiling fix could ever work, only
+  that this specific one does not move this specific data.
+- R3's max-confidence-per-source reduction rule was a pre-registered
+  but specific design choice (not mean, not first-observed); a
+  different reduction rule was not tested as a robustness check.
+- Contested-slot admission is measured only at each rule's own
+  test-selected tau; it was not swept across the full threshold range,
+  so "0 contested admissions" describes the operating point actually
+  used, not every possible threshold.
+
+## Addendum — Four Approved Follow-Ups (2026-09-23, same replay, zero additional cost)
+
+The user approved DEC-026's first-pass result above and requested four
+extensions before Section 4 resumed (full pre-registration addendum:
+Decision log.md DEC-026). All four were run together via the updated
+`scripts/dec026_aggregation_rules_replay.py`; nothing above was
+re-run or changed -- this section adds to, not replaces, the original
+result.
+
+### 1. Headline comparison the user asked to be stated explicitly: R1 beats R2 on both precision AND recall, both datasets
+
+| Dataset | R1 max-merge (tau=0.98) | R2 published (tau=0.73) |
+|---|---|---|
+| A (657) | P=0.5385, R=1.0000 | P=0.5095, R=0.9571 |
+| B (2241) | P=0.5308, R=1.0000 | P=0.5102, R=0.9317 |
+
+R1 -- no conflict handling at all -- beats the published rule on both
+metrics on both datasets, at its own independently F1-selected
+threshold (0.98, much higher than R2's 0.73). **Caveat, stated as
+requested:** thresholds were selected independently per rule on
+validation, so this is not "the same operating point, different rule"
+-- R1's advantage partly reflects that max-merge concentrates almost
+all of the real signal at very high confidence (every structurally
+seeded gold fact carries a 0.98 structured observation, trivially
+recovered by max-merge), which a shared fixed threshold would not
+capture the same way (see the tau=0.88 table below, where R1's
+precision drops to 0.44/0.45 while recall stays 1.0 -- R1 admits many
+more contested-slot conflicts at the lower fixed threshold: 20 and 69
+contested-slot admissions respectively, vs. 6/40 at its own
+F1-selected 0.98). **This direction is not a new, isolated finding: it
+matches AUDIT.md A1 / EVID-039's N=50 closed-loop ablation, where
+`without_prob_kb` (max-merge) numerically outperformed `full`
+(Noisy-Or + conflict adjustment) on held-out test F1 (0.3783 vs.
+0.3451, though not statistically distinguished there at n=5).**
+DEC-026 is a second, independent, real-data confirmation of the same
+tension, now with a much larger sample (35/92 test-split products
+across two snapshots) and a statistically significant bootstrap CI
+(+0.0359 [0.0154,0.0641] on A, +0.0341 [0.0191,0.0496] on B) -- this
+should be reported together with EVID-039, not as an unrelated new
+result, and together with the honest reading that R1 achieves this by
+abandoning all protection against admitting mutually-contradictory
+values into a functionally single-valued slot (see contested-admitted
+counts above), which is a real structural cost the F1 number alone
+does not show.
+
+### 2. Secondary analysis at the pipeline's fixed operating threshold (tau=0.88)
+
+Same test splits, same gold sets, same rules -- threshold fixed at
+0.88 instead of validation-selected, reported alongside (not instead
+of) the F1-selected table already given above.
+
+**Dataset A (product657), test split, tau=0.88 fixed:**
+
+| Rule | Precision | Recall | F1 | Admitted | Contested admitted |
+|---|---:|---:|---:|---:|---:|
+| R1 max-merge | 0.4389 | 1.0000 | 0.6100 | 319 | 20 |
+| R2 published | 0.8333 | 0.3929 | 0.5340 | 66 | 0 |
+| R3 source-count | 0.9322 | 0.3929 | 0.5528 | 59 | 0 |
+| R4 evidence-share | 0.8333 | 0.3929 | 0.5340 | 66 | 0 |
+| R5 combined | 0.9322 | 0.3929 | 0.5528 | 59 | 0 |
+| R6 (exploratory) | 0.4674 | 0.9214 | 0.6202 | 276 | 0 |
+
+**Dataset B (product200), test split, tau=0.88 fixed:**
+
+| Rule | Precision | Recall | F1 | Admitted | Contested admitted |
+|---|---:|---:|---:|---:|---:|
+| R1 max-merge | 0.4481 | 1.0000 | 0.6188 | 1078 | 69 |
+| R2 published | 0.9012 | 0.4534 | 0.6033 | 243 | 0 |
+| R3 source-count | 0.9280 | 0.4534 | 0.6092 | 236 | 0 |
+| R4 evidence-share | 0.9012 | 0.4534 | 0.6033 | 243 | 0 |
+| R5 combined | 0.9280 | 0.4534 | 0.6092 | 236 | 0 |
+| R6 (exploratory) | 0.5023 | 0.8986 | 0.6444 | 864 | 0 |
+
+**Reading:** at the pipeline's actual deployed threshold (0.88, much
+higher than any rule's own F1-selected value of 0.58-0.98), precision
+is far higher and recall far lower across the board than the
+F1-selected table shows -- this is expected (0.88 was never selected
+to maximize F1 on this data, it's the project's standing conservative
+operating point) and is exactly why both views are reported together:
+the F1-selected table answers "how good can each rule be," the
+tau=0.88 table answers "how does each rule actually behave at the
+threshold this project actually ships with." R2/R3/R4/R5 still show
+zero contested-slot admissions at 0.88 (the ceiling holds even harder
+at a higher threshold, as expected); R1 still lets through 20/69
+contested admissions even at 0.88, because max-merge has no mechanism
+that is sensitive to threshold choice in that respect. R2 vs. R3 at
+0.88: R3's precision is meaningfully higher (0.9322 vs 0.8333 on A;
+0.9280 vs 0.9012 on B) at identical recall (0.3929 / 0.4534) --
+the repeat-counting fix's benefit is, if anything, more visible at the
+pipeline's real operating threshold than at the F1-optimal one.
+
+### 3. R6 (exploratory, post-hoc): unsquared evidence share
+
+**Labeled exploratory because it was added after seeing R4's null, not
+part of the original DEC-026 pre-registration -- reported honestly as
+such, not folded into the confirmatory R1-R5 comparison.**
+
+| Dataset | tau (F1-sel.) | P | R | F1 | Bootstrap F1 diff vs. R2 (95% CI) |
+|---|---:|---:|---:|---:|---|
+| A (657) | 0.73 | 0.4621 | 0.9571 | 0.6233 | **−0.0429 [−0.0870, −0.0118]** (excludes 0 -- worse) |
+| B (2241) | 0.58 | 0.4894 | 0.9524 | 0.6465 | −0.0131 [−0.0303, 0.0015] (does not exclude 0 -- null) |
+
+**R6 does not answer the question it was added to answer, and the
+reason is a real, diagnosable mathematical defect, not noise.**
+Removing the square from R4's formula makes it degenerate for every
+*uncontested* slot: when a functional-predicate slot has exactly one
+candidate (`competitor_count=0`), `sum_j A(t_j) = A(t)` (the candidate
+is the only term in its own sum), so `C(t) = A(t)/A(t) = 1.0` **always**
+-- regardless of how weak the underlying evidence actually was.
+Verified directly on dataset A: all 495 of the 495 uncontested
+functional-predicate rows score exactly `R6 = 1.0000000`, versus a
+genuine spread under R2 (mean 0.7808, range 0.600-0.999998). Since
+495/657 (75%) of dataset A's candidates are exactly this uncontested
+case, R6 effectively discards almost all of the real confidence signal
+in the dataset, replacing it with a constant -- this, not the intended
+ceiling-removal mechanism, is what drives its worse-than-R2 (dataset A)
+or flat (dataset B) performance. **This is a genuinely informative
+negative result for the manuscript:** R4's squaring is not an
+arbitrary embellishment on the evidence-share idea -- it is what makes
+the formula reduce correctly to `A(t)` in the uncontested case (matching
+R2's own behavior there), and removing it breaks exactly that property.
+Any future ceiling-fix design should preserve this reduction; a plain
+share does not.
+
+### 4. Recall denominator, stated explicitly, with comparability across this project's other recall figures
+
+**DEC-026's recall = TP / (TP + FN), where the gold set is
+`gold_unstructured` for the train-split products, imported directly
+from `scripts/dec003_product_probkb_run.py` / `scripts/dec006_
+scaleup_probkb_run.py`'s own `normalize_gold()` function (not
+re-derived) -- the exact same gold set those scripts used to build
+their own `train_gold_keys`, and the same set the snapshot's own
+`gold_label` column was built from (verified: 0/657 and 0/2241
+mismatches). Denominator sizes: dataset A, 245 gold keys total (105
+val / 140 test); dataset B, 980 gold keys total (497 val / 483 test).**
+In both datasets this equals the count of `gold_label==1` rows already
+present in the snapshot exactly (245 and 980 respectively) -- meaning
+every gold_unstructured fact was extracted as a candidate at least
+once across the original run's 4 iterations (consistent with DEC-007/
+EVID-022's "zero pure false negatives" finding). Recall differences
+across rules in this DEC therefore reflect only which already-extracted
+candidates cross a threshold, never candidates the extractor missed
+entirely.
+
+**Comparability with other recall figures already in this project,
+checked directly against their source scripts rather than assumed:**
+
+- **Comparable, same gold definition, same snapshot:** EVID-014's
+  whole-KB recall on this exact 657-triple snapshot at tau=0.88,
+  conflict-adjusted: **0.4041** (99 TP / 245 gold). DEC-026's R2 recall
+  on the test-split half at the same tau=0.88: **0.3929** (55 TP / 140
+  gold) -- close, as expected for a same-definition measurement on
+  roughly half the products, and a useful internal consistency check
+  that the DEC-026 pipeline reproduces EVID-014's methodology
+  correctly.
+- **NOT comparable:** EVID-013's held-out val/test recall (val 0.5714,
+  test 0.1857) is measured on entirely different (non-train, held-out)
+  products, from a single raw unstructured-only extraction pass, with
+  no confidence-threshold admission step at all -- a different
+  quantity (extraction recall, not KB-admission recall) on a different
+  population.
+- **NOT comparable:** EVID-030/DEC-019's closed-loop recall (iteration
+  4 baseline: 0.2440, on the same dataset-B 140 train products) uses
+  **`gold_structured`**, not `gold_unstructured` -- verified directly
+  against `scripts/dec019_closedloop_compare.py` line 71
+  (`products[idx] = gold_structured`), a materially larger, stricter
+  gold set (every structured-column fact per product, not just the
+  facts actually mentioned in the generated unstructured text). This
+  explains the large apparent gap (0.24 vs. DEC-026's 0.93 F1-selected
+  / 0.45 fixed-0.88 recall on the same underlying snapshot) -- it is a
+  denominator-definition difference, not a discrepancy or an error in
+  either result. **The manuscript must not compare DEC-026's recall
+  numbers directly against EVID-030's without stating this.**
+
+## Next step
+
+None required for DEC-026 itself -- pre-registration and its approved
+follow-up addendum both fully executed, all results (including two
+distinct null/negative components: R4's exact null and R6's
+worse-than-baseline result) reported honestly. If pursued further:
+re-run this same comparison on the DEC-018 provenance-filtered training
+data / DocRED-BioRED snapshots if a reviewer asks for cross-domain
+confirmation; or design a ceiling-fix variant that both removes the
+algebraic cap AND preserves R4's correct uncontested-case reduction
+(R6 shows what happens when the second property is dropped).
