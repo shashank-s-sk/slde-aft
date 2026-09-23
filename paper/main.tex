@@ -241,25 +241,70 @@ knowledge base feeds back into extraction; a \emph{probabilistic confidence}
 layer over accumulated triples, rather than treating every extraction as
 equally trustworthy; \emph{prompt-augmentation feedback}, in which the
 current state of the knowledge base is used to steer the extractor's next
-pass (DySECT via prompt tuning and few-shot example sampling; SLDE-AFT via
-the Feedback Controller's Encouraging/Prohibitive-mode prompt updates,
-Section~4); and \emph{synthetic training data generated from high-confidence
+pass; and \emph{synthetic training data generated from high-confidence
 knowledge-base triples} to fine-tune the extractor, rather than from an
 externally curated dataset.
+
+\paragraph{A second naming match, alongside the formula match above.}
+\citet{aminnaseri2026dysect}'s Section 4 (``Feedback Modes'') names its two
+prompt-augmentation directions \emph{Encouraging (positive)} mode --
+high-confidence subconcepts and representative relations injected as
+positive examples, encouraging extraction of further instances in similar
+concept families -- and \emph{Prohibitive (negative)} mode -- well-covered
+or saturated subconcepts marked as already extracted, to discourage
+redundant re-extraction. This is the identical naming (``Encouraging
+Mode'' / ``Prohibitive Mode'') SLDE-AFT's own architecture design
+specifies for its Feedback Controller's two directions -- Encouraging Mode
+injecting high-confidence exemplar triples for underrepresented predicates,
+Prohibitive Mode flagging false-positive extraction patterns to avoid
+% [SLDE_AFT_Revised_Contribution_Document.docx, SLDE.docx -- both use this
+% exact "Encouraging Mode"/"Prohibitive Mode" naming for the Feedback
+% Controller's two directions, independently of this citation check]
+. As with the aggregation formula, this naming is not presented as
+SLDE-AFT's own coinage: \citet{aminnaseri2026dysect} is a published,
+citable source using the identical terms. One implementation-level
+difference is worth stating precisely rather than left implied: the
+evaluated codebase's feedback builder
+(\texttt{src/feedback\_builder.py}) constructs a missing-fact /
+false-pattern / undercovered-predicate hint block without using either
+literal mode label in code -- the ``Encouraging''/``Prohibitive'' naming
+appears in both projects' design-level description of the mechanism, not
+necessarily in SLDE-AFT's shipped variable or function names
+% [src/feedback_builder.py -- verified directly, no "encouraging" or
+% "prohibitive" string anywhere in the module]
+.
 
 \paragraph{Capabilities DySECT reports that SLDE-AFT's implementation does
 not have.} \citet{aminnaseri2026dysect} describe two further capabilities
 that were also specified in SLDE-AFT's original architecture design but are
 not present in the implementation evaluated in this paper, verified directly
-against the current codebase: \emph{hierarchical knowledge abstraction}
-(DySECT accumulates and exposes hierarchical domain concept structure;
-SLDE-AFT's design document specified KNN-clustering-based subconcept
-abstraction, but no such clustering or hierarchy-construction code exists in
-the evaluated system) and a \emph{human curation interface} allowing a user
-to inspect, validate, invalidate, or add knowledge-base entries directly
-(SLDE-AFT's design document specified an analogous human validation
-interface with character-level source offsets and a model-version registry
-with rollback; none of these are implemented in the evaluated system).
+against the current codebase: \emph{hierarchical knowledge abstraction} and
+a \emph{human curation interface}.
+
+For hierarchical abstraction, the specific mechanism matches, not just the
+general capability: \citet{aminnaseri2026dysect}'s Section 2.2 (``Knowledge
+Base Growth'') states that their knowledge integrator ``structures the
+KB's concepts into more interpretable hierarchies,'' and that ``for any
+node with a large or semantically heterogeneous set of children, we apply
+KNN-based clustering over the children's embeddings to group conceptually
+similar nodes into coherent clusters,'' with an LLM then proposing a label
+for each cluster that becomes a new intermediate node in the hierarchy.
+SLDE-AFT's own architecture design specifies the same method: ``Automatic
+hierarchical abstraction via KNN clustering and LLM-based subconcept
+labeling''
+% [SLDE_AFT_Revised_Contribution_Document.docx -- exact quoted phrase,
+% verified directly in the document's own text]
+-- KNN clustering over embeddings, followed by LLM-generated cluster
+labels, in both cases. No such clustering or hierarchy-construction code
+exists in SLDE-AFT's evaluated implementation, so this is stated as a
+specified-but-unimplemented capability, not a claim that SLDE-AFT
+implements a KNN-based hierarchy of its own.
+
+For the human curation interface, SLDE-AFT's design document specified an
+analogous human validation interface with character-level source offsets
+and a model-version registry with rollback; none of these are implemented
+in the evaluated system either.
+
 These are stated here as an honest scope limitation of the current
 implementation relative to DySECT, not as a design decision, and are
 revisited in Section~9 (Limitations).

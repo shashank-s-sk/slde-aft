@@ -65,6 +65,23 @@ the corresponding source is fixed.
   related work, and needs the user's direction on how Section 4 and the
   Introduction's contributions list should be reworded.
 
+- **Feedback-mode naming match and hierarchical-abstraction mechanism
+  match (Section 2.7, new).** Both verified directly against the full
+  DySECT PDF (arXiv 2603.06915v2, re-fetched this session): Section 4
+  ("Feedback Modes") names the two directions "Encouraging (positive)"
+  and "Prohibitive (negative)"; Section 2.2 ("Knowledge Base Growth")
+  describes "KNN-based clustering over the children's embeddings" with
+  an LLM proposing cluster labels. Cross-checked against SLDE-AFT's own
+  design documents (`SLDE_AFT_Revised_Contribution_Document.docx`,
+  `SLDE.docx`, extracted via their `word/document.xml`): both
+  independently specify "Encouraging Mode"/"Prohibitive Mode" naming
+  for the Feedback Controller and the exact phrase "Automatic
+  hierarchical abstraction via KNN clustering and LLM-based subconcept
+  labeling." Also verified directly against `src/feedback_builder.py`
+  that the shipped code uses neither mode label as a literal string
+  (stated in the text so the match isn't overstated as an
+  implementation-level fact).
+
 ## What WAS verified this session (for contrast, not an action item)
 
 - The DySECT citation (`aminnaseri2026dysect`) was independently verified
