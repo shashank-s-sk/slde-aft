@@ -3853,3 +3853,166 @@ data / DocRED-BioRED snapshots if a reviewer asks for cross-domain
 confirmation; or design a ceiling-fix variant that both removes the
 algebraic cap AND preserves R4's correct uncontested-case reduction
 (R6 shows what happens when the second property is dropped).
+
+# EVID-042 — DEC-028: Provenance Filter Under a Noisy Structured Source
+
+## Experiment
+
+- Decision: DEC-028 (AUDIT.md A3 / Results Summary Claim 5 circularity
+  fix -- the structured source and gold labels come from the same
+  generator, so EVID-029's 93.5%->100% precision lift was measured only
+  under a noise-free structured source).
+- Zero API/GPU cost -- pure replay. `scripts/dec028_provenance_corruption.py`
+  corrupts a controlled fraction of the 200-product run's structured
+  observation rows (iteration 1 only -- structured facts seed the KB at
+  iteration 1 only; 1,820 structured rows = 140 products x 13
+  predicates, verified directly), replacing each corrupted row's
+  `object` with a different value drawn from that predicate's own fixed
+  value pool (`src/datasets/product_generator.py`), then replays the
+  full (partially corrupted) observation set through the real,
+  unmodified `CandidateBufferAdapter`/`src/pkb_replay.py` machinery.
+  Gold labels are never touched or re-derived from corrupted data.
+- Rates tested: 0%, 5%, 10%, 20% (5 corruption seeds each for the
+  non-zero rates; 0% needs no seed variation).
+- **Two scoring arms, both read from the same replayed `accepted` dict
+  (no second replay needed -- `pkb_instrumentation.refresh_slot_scores`
+  already stores both fields on every entry):** conflict-adjusted
+  (`confidence` field, the published rule, C(t)=A(t)/(m(t)+1) for
+  functional predicates) and support-only (`support` field, A(t) alone,
+  no conflict-adjustment divisor for any predicate).
+- **Mandatory sanity check, per the pre-registration:** at 0%
+  corruption, the conflict-adjusted arm's replay reproduced EVID-029's
+  published numbers exactly -- 475 admitted, 444 passing the filter,
+  31 removed. **Confirmed to the exact integer before proceeding to any
+  non-zero rate.**
+
+## Actual
+
+**The rival ceiling confound the user flagged before approval is
+confirmed empirically, exactly as predicted:**
+
+| Rate | Contested slots created (mean, conflict-adj.) | Admitted among them (conflict-adj.) | Admitted among them (support-only) |
+|---|---:|---:|---:|
+| 0% | 0.0 | 0 | 0 |
+| 5% | 21.8 | **0** | 19.2 |
+| 10% | 43.6 | **0** | 36.4 |
+| 20% | 84.2 | **0** | 68.6 |
+
+Under the published (conflict-adjusted) rule, **zero of the
+corruption-created contested slots are ever admitted, at every tested
+rate** -- the ceiling (Proposition in Section 5 of the manuscript,
+`src/pkb_math.py`) suppresses all of them regardless of corruption
+level, confirming the confound exactly as the user predicted before
+approving this design. Under the support-only arm (ceiling disabled by
+construction), a large and growing fraction of these same contested
+slots do get resolved (88% at 5%, 83% at 10%, 81% at 20%).
+
+**Filter precision, both arms, all four rates (mean over 5 seeds; bootstrap
+CI is the subject-clustered 95% CI for passing-precision minus
+removed-precision, 10,000 resamples, matching DEC-026's actual
+convention -- resampling over every unique subject string present in
+the admitted pool, hallucinated/fragment subjects included, not only
+the 140 real products; see Limitations below):**
+
+| Rate | Arm | Admitted (mean) | Passing precision | Removed precision | Bootstrap diff (95% CI) |
+|---|---|---:|---:|---:|---|
+| 0% | conflict-adj. | 475 | 0.9910 | 0.0000 | +0.991 [0.979, 1.000] |
+| 0% | support-only | 687 | 0.9894 | 0.0000 | +0.989 [0.974, 1.000] |
+| 5% | conflict-adj. | 453.0 | 0.9914 | 0.0309 | +0.957 [0.909, 0.986] |
+| 5% | support-only | 683.6 | 0.9897 | 0.0853 | +0.892 [0.775, 0.948] |
+| 10% | conflict-adj. | 430.4 | 0.9899 | 0.1023 | +0.878 [0.769, 0.947] |
+| 10% | support-only | 677.2 | 0.9881 | 0.1589 | +0.810 [0.635, 0.903] |
+| 20% | conflict-adj. | 390.6 | 0.9864 | 0.1502 | +0.823 [0.688, 0.911] |
+| 20% | support-only | 668.2 | 0.9856 | 0.2587 | +0.705 [0.488, 0.836] |
+
+**Every one of these 8 rate/arm combinations excludes zero** -- the
+filter's null criterion (95% CI of passing-minus-removed precision
+including 0 or negative) is not met at any tested corruption level, in
+either arm. Full per-seed and per-rate-aggregate results:
+`outputs/dec028_provenance_corruption/dec028_results.json`.
+
+## Result
+
+PASS, decisively, on the pre-registered null criterion -- but with two
+distinct findings that must both be reported, not collapsed into one:
+
+1. **The provenance filter itself is robust to a noisy structured
+   source.** Passing-set precision never drops below 0.986 even at 20%
+   structured-source corruption (either arm), and the gap to removed-set
+   precision, while narrowing as corruption increases (0.991 -> 0.823
+   conflict-adjusted; 0.989 -> 0.705 support-only), remains large and
+   statistically significant at every tested rate. This is the
+   circularity fix AUDIT.md A3 asked for: the filter adds real,
+   measurable value even when "corroborated by structured data" and
+   "matches gold" are no longer close to the same statement.
+2. **The rival ceiling confound is real, exactly as predicted, and the
+   conflict-adjusted arm's precision numbers understate how much
+   contested-slot signal exists in the data.** Because zero
+   corruption-created contested slots are ever admitted under the
+   published rule, the conflict-adjusted precision figures above are
+   computed entirely over uncontested slots -- they say nothing about
+   whether the filter would correctly discriminate a corrupted-vs-true
+   pair *if* the ceiling ever let one through. The support-only arm
+   answers that question directly: yes, with a smaller but still
+   significant and still substantial margin (e.g. 0.705 at 20%, CI
+   excluding 0).
+
+## Interpretation
+
+- Both findings support Results Summary Claim 5 in different ways: the
+  conflict-adjusted numbers are what the deployed system actually does
+  (the ceiling really is active in production), while the support-only
+  numbers show the filter's own discriminative power is not an artifact
+  of the ceiling suppressing the hard cases -- it holds up on exactly
+  the contested slots the ceiling would otherwise hide from evaluation.
+- The degradation shape matches the pre-registered expectation:
+  passing-precision degrades gradually, remains measurably above
+  removed-precision at every rate up to 20%, and the filter does not
+  fail by the pre-registered criterion anywhere in the tested range.
+- This is the first time in the project a claim-5-relevant number has
+  been reported with the ceiling's effect on the measurement made
+  visible rather than implicit -- prior reports (EVID-029) did not
+  separately verify that ceiling suppression was zero at the tested
+  operating point, because there was no corruption-induced contest to
+  suppress in the noise-free original data.
+
+## Limitations
+
+- Corruption rates were only tested up to 20%; a real deployment's
+  structured-source error rate is unknown and could be higher or lower.
+- The bootstrap resamples over every unique subject string in the
+  admitted pool (matching DEC-026's actual implementation, verified
+  directly against `scripts/dec026_aggregation_rules_replay.py`), not
+  only the 140 real train products as the pre-registration's shorthand
+  description said -- this is the correct, DEC-026-consistent behavior,
+  not a deviation, but it is stated here explicitly since an earlier,
+  buggy version of this script restricted resampling to only the 140
+  real products and produced materially wrong (near-zero, sometimes
+  undefined) bootstrap results by silently dropping most of the
+  removed-set triples, which are disproportionately hallucinated/
+  fragment-subject triples per EVID-029. Caught and fixed before this
+  entry was written; the corrected version is what is reported above.
+- "Plausible wrong value" is drawn uniformly from each predicate's
+  fixed pool, including the true value's near-neighbors and its
+  opposites alike -- a real noisy structured source might have a
+  different error distribution (e.g. systematic unit-confusion errors,
+  or errors concentrated on specific fields), not modeled here.
+- Corruption is applied only to iteration-1 structured rows (the only
+  ones that exist, by design); the unstructured extraction path and
+  its own error characteristics are unchanged and not the subject of
+  this DEC.
+- The `contested_with_admission` metric is defined only for slots that
+  became newly contested due to corruption (m(t)=0 pre-corruption, m(t)>=1
+  after); slots that were already contested before any corruption
+  (a handful exist in the r=0 baseline from the original extraction's
+  own cross-contamination artifacts, per EVID-029) are not double-counted
+  here, but are also not separately re-analyzed in this DEC.
+
+## Next step
+
+None required for DEC-028 itself -- pre-registration and its
+user-requested revisions both fully executed, sanity check passed,
+both arms reported. This result should inform how DEC-029/DEC-027 are
+reported only in the sense that Claim 5's circularity objection is now
+closed with real evidence; no other DEC's design depends on this
+result's direction.

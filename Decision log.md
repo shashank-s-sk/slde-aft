@@ -2720,14 +2720,20 @@ needs only 1 per arm, since nothing is randomized there).
 
 ## Status
 
-DEC-028: APPROVED with the three changes above (2026-09-23): (a)
-  admitted/contested-slot/contested-with-admission counts now reported
-  per rate per arm; (b) a support-only arm added, run and reported
-  alongside the conflict-adjusted arm; (c) a hard zero-corruption
-  sanity check against EVID-029 (475/444/31) required before any
-  non-zero rate is run, with an abort-and-report instruction if it
-  fails. Queued to run first (before DEC-030, DEC-027, DEC-029), since
-  its result may change how the others are reported.
+DEC-028: RUN, COMPLETE (2026-09-23). Sanity check passed exactly
+  (475/444/31, matching EVID-029). Ceiling confound confirmed exactly
+  as predicted: 0 corruption-created contested slots ever admitted
+  under the conflict-adjusted (published) rule at any rate; the
+  support-only arm resolves 81-88% of the same contested slots instead.
+  Filter precision robust at every tested rate in both arms -- all 8
+  rate x arm bootstrap CIs for (passing precision - removed precision)
+  exclude zero, including the hardest tested condition (support-only,
+  20% corruption: +0.705, CI [0.488, 0.836]). Full results: EVID-042.
+  A bug in the first draft of the bootstrap (resampling restricted to
+  the 140 real products, silently dropping most removed-set triples,
+  which are disproportionately fragment-subject hallucinations) was
+  caught and fixed before this entry -- see EVID-042's Limitations.
+  Raw outputs: `outputs/dec028_provenance_corruption/`.
 
 ---
 

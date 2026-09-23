@@ -71,9 +71,9 @@ Plus two foundational corrections: **official CaRB benchmark scores are 4-8x hig
 
 ---
 
-## Claim 5 — Provenance-Based Filtering (a real precision result, validated under a partially circular setup)
+## Claim 5 — Provenance-Based Filtering (a real precision result, now validated under a noisy structured source too)
 
-**A rare case where ground truth is known exactly** (the product domain is synthetically generated), enabling a real precision measurement, not just an implementation claim — **but AUDIT.md found the validation itself is partially circular; disclose this explicitly, do not present the number as proof of general robustness.**
+**A rare case where ground truth is known exactly** (the product domain is synthetically generated), enabling a real precision measurement, not just an implementation claim. AUDIT.md originally found the EVID-029 validation partially circular (structured source and gold come from the same generator); **DEC-028 (EVID-042, new) closes that gap directly, not by argument but by measurement** — see below.
 
 - Filter rule: a triple is kept only if at least one of its observations came from a **structured** source (not just repeated unstructured/LLM observations).
 - Validated on 475 above-threshold triples from the 200-product PKB run (EVID-029):
@@ -85,9 +85,20 @@ Plus two foundational corrections: **official CaRB benchmark scores are 4-8x hig
 | Fails filter (unstructured-only) | 31 | **0.0%** — every single one wrong |
 
 - **Mechanistic bonus finding:** the 31 dropped triples are almost all generic device-category nouns ("laptop device", "tablet device") standing in for the real product name, repeated 2-21 times each and mistaken by Noisy-Or aggregation for corroborating evidence. This *directly explains* (not just correlates with) the "subject-copying" failure mode seen in the DEC-006 fine-tuned model's outputs — it learned from these exact hallucinated examples.
-- **Circularity caveat (AUDIT.md A3, new — verified directly against `src/datasets/product_generator.py`):** in this synthetic dataset, the gold labels used to score the filter are constructed *from the same generator* as the structured source data the filter checks against (`gold_unstructured` is built directly from `gold_structured`, which shares the same underlying generated attribute values as the structured CSV row). So "requires structured corroboration" and "matches gold" are, by construction, close to the same test here. **This does not mean the filter is a bad idea, but the 93.5%→100% number does not demonstrate the filter would help if the structured source itself could contain errors** — the realistic justification given for the mechanism in the paper's framework description. State this limitation plainly rather than presenting the number as general validation.
+- **Original circularity caveat (AUDIT.md A3 — verified directly against `src/datasets/product_generator.py`):** in this synthetic dataset, the gold labels used to score the filter are constructed *from the same generator* as the structured source data the filter checks against, so "requires structured corroboration" and "matches gold" were, by construction, close to the same test in the EVID-029 measurement above.
 
-**Suggested framing:** "Requiring structured corroboration for provenance-based filtering raises synthetic training-data precision from 93.5% to 100% on the validated subset, by removing systematically-hallucinated triples that repeated confidently enough to cross the confidence threshold despite never being grounded in a structured fact. Because the structured source and the gold labels in this synthetic domain are derived from the same generator, this result demonstrates the filter's mechanism works as designed but does not establish robustness to a structured source that itself contains errors — a question left to future work on a domain with independently-sourced structured and gold data."
+**DEC-028 (EVID-042, new): the filter tested directly under a noisy structured source, not just argued to need it.** 0%/5%/10%/20% of the 200-product run's structured observations were corrupted to a different, plausible value (drawn from that predicate's own fixed value pool) before a full replay through the real, unmodified PKB acceptance code — gold labels never touched or re-derived from the corrupted data, which is what breaks the circularity. Sanity check: the zero-corruption replay reproduced EVID-029's 475/444/31 exactly before any corrupted rate was trusted.
+
+| Rate | Passing precision | Removed precision | Bootstrap diff (95% CI) |
+|---|---:|---:|---|
+| 0% | 99.1% | 0.0% | +0.991 [0.979, 1.000] |
+| 5% | 99.1% | 3.1% | +0.957 [0.909, 0.986] |
+| 10% | 99.0% | 10.2% | +0.878 [0.769, 0.947] |
+| 20% | 98.6% | 15.0% | +0.823 [0.688, 0.911] |
+
+**All four rates exclude zero — the filter's precision advantage survives a genuinely noisy structured source, not just the noise-free original.** A second, important finding surfaced only because the user flagged it before approval: under the published (conflict-adjusted) rule, **zero** of the contested slots corruption creates are ever admitted, at any rate — the rival ceiling (Claim 3) suppresses all of them, so the table above is measured entirely over uncontested slots. A second scoring arm with the conflict penalty disabled (support-only, immune to the ceiling by construction) resolves 81-88% of those same contested slots and still shows the filter discriminating correctly, with a smaller but still-significant margin (e.g. +0.705, CI [0.488, 0.836] at 20% corruption). **Report both: the deployed system's own numbers (conflict-adjusted, ceiling active) and the ceiling-free numbers (support-only) that show the filter's discriminative power isn't merely an artifact of the ceiling hiding the hard cases.**
+
+**Suggested framing:** "Requiring structured corroboration for provenance-based filtering raises synthetic training-data precision from 93.5% to 100% under a noise-free structured source (EVID-029), and continues to separate correct from incorrect triples by a large, statistically significant margin when the structured source itself is corrupted at controlled rates up to 20% (EVID-042) — the filter's value is not an artifact of the structured source and gold labels sharing a generator. A companion analysis using an uncapped scoring rule (removing the confidence-aggregation rival ceiling described in Claim 3) confirms the filter still discriminates correctly even on the contested slots the ceiling would otherwise exclude from measurement entirely."
 
 ---
 
