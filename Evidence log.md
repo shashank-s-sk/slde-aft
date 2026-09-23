@@ -3626,41 +3626,47 @@ Decision log.md DEC-026). All four were run together via the updated
 re-run or changed -- this section adds to, not replaces, the original
 result.
 
-### 1. Headline comparison the user asked to be stated explicitly: R1 beats R2 on both precision AND recall, both datasets
+### 1. Headline comparison the user asked to be stated explicitly: R1 vs. R2 on precision and recall, both datasets -- REVISED after the round-2 fixed-tau bootstrap (see §2 below), read this whole section before citing either number
 
-| Dataset | R1 max-merge (tau=0.98) | R2 published (tau=0.73) |
+| Dataset | R1 max-merge (tau=0.98, own F1-selected) | R2 published (tau=0.73, own F1-selected) |
 |---|---|---|
 | A (657) | P=0.5385, R=1.0000 | P=0.5095, R=0.9571 |
 | B (2241) | P=0.5308, R=1.0000 | P=0.5102, R=0.9317 |
 
-R1 -- no conflict handling at all -- beats the published rule on both
-metrics on both datasets, at its own independently F1-selected
-threshold (0.98, much higher than R2's 0.73). **Caveat, stated as
-requested:** thresholds were selected independently per rule on
-validation, so this is not "the same operating point, different rule"
--- R1's advantage partly reflects that max-merge concentrates almost
-all of the real signal at very high confidence (every structurally
-seeded gold fact carries a 0.98 structured observation, trivially
-recovered by max-merge), which a shared fixed threshold would not
-capture the same way (see the tau=0.88 table below, where R1's
-precision drops to 0.44/0.45 while recall stays 1.0 -- R1 admits many
-more contested-slot conflicts at the lower fixed threshold: 20 and 69
-contested-slot admissions respectively, vs. 6/40 at its own
-F1-selected 0.98). **This direction is not a new, isolated finding: it
-matches AUDIT.md A1 / EVID-039's N=50 closed-loop ablation, where
-`without_prob_kb` (max-merge) numerically outperformed `full`
-(Noisy-Or + conflict adjustment) on held-out test F1 (0.3783 vs.
-0.3451, though not statistically distinguished there at n=5).**
-DEC-026 is a second, independent, real-data confirmation of the same
-tension, now with a much larger sample (35/92 test-split products
-across two snapshots) and a statistically significant bootstrap CI
-(+0.0359 [0.0154,0.0641] on A, +0.0341 [0.0191,0.0496] on B) -- this
-should be reported together with EVID-039, not as an unrelated new
-result, and together with the honest reading that R1 achieves this by
-abandoning all protection against admitting mutually-contradictory
-values into a functionally single-valued slot (see contested-admitted
-counts above), which is a real structural cost the F1 number alone
-does not show.
+At each rule's own independently F1-selected threshold, R1 -- no
+conflict handling at all -- beats the published rule on both precision
+and recall on both datasets, and the F1 gap there is a statistically
+significant bootstrap CI (+0.0359 [0.0154,0.0641] on A, +0.0341
+[0.0191,0.0496] on B). **This matches the same direction already found
+in the project's N=50 closed-loop ablation** (`without_prob_kb` >=
+`full`, AUDIT.md A1, EVID-039) -- a second, independent, real-data
+confirmation of that existing tension, not an isolated new result.
+
+**However, this F1 advantage is specific to comparing each rule at its
+own separately-optimized threshold and does NOT hold at the pipeline's
+actual shared operating threshold (tau=0.88) -- verified directly, not
+assumed (round-2 bootstrap, §2 below):** at tau=0.88, R1's precision is
+significantly *worse* than R2's (CI excludes zero, both datasets) and
+its recall is significantly *better* (CI excludes zero, both datasets
+-- trivially, since every structurally-seeded gold fact carries a 0.98
+observation that max-merge recovers regardless of conflicts), and
+**these two effects cancel: R1's F1 advantage over R2 at tau=0.88 does
+NOT reach significance on either dataset** (95% CI includes zero on
+both A and B). So the correct, complete statement is: **R1 looks like
+a clean win over R2 only when each rule gets its own best threshold;
+at a single shared operating point, R1 is a precision-for-recall trade
+with no significant net F1 change, while R3 (§2, §3 below) is the one
+rule whose F1 improvement over R2 survives at BOTH the F1-selected
+threshold and the fixed tau=0.88 pipeline threshold.** This is why
+Section 4 of the manuscript cites R3, not R1, as the corrected rule.
+The honest reading of R1 throughout remains: it achieves whatever
+recall/F1 it gets by abandoning all protection against admitting
+mutually-contradictory values into a functionally single-valued slot
+(6/40 and 20/69 contested-slot admissions at its F1-selected and
+tau=0.88 thresholds respectively, vs. 0 for R2/R3/R4/R5 at either) --
+useful as the empirical confirmation that R2's ceiling is real and
+does something (§2's contested-slot counts), not as a candidate
+replacement rule itself.
 
 ### 2. Secondary analysis at the pipeline's fixed operating threshold (tau=0.88)
 
@@ -3708,6 +3714,29 @@ that is sensitive to threshold choice in that respect. R2 vs. R3 at
 the repeat-counting fix's benefit is, if anything, more visible at the
 pipeline's real operating threshold than at the F1-optimal one.
 
+**Bootstrap CIs at tau=0.88 (10,000 resamples over test subjects,
+precision/recall/F1 reported separately, requested specifically since
+this is the comparison that goes in the paper):**
+
+| Comparison | Dataset | Precision diff (95% CI) | Recall diff (95% CI) | F1 diff (95% CI) |
+|---|---|---|---|---|
+| R1 − R2 | A | −0.3847 [−0.4803, −0.2460] **excludes 0** | +0.6052 [0.4071, 0.7983] **excludes 0** | +0.0809 [−0.1147, 0.2989] does not exclude 0 |
+| R1 − R2 | B | −0.4510 [−0.4918, −0.4026] **excludes 0** | +0.5476 [0.4435, 0.6496] **excludes 0** | +0.0193 [−0.0889, 0.1298] does not exclude 0 |
+| R3 − R2 | A | +0.1060 [0.0321, 0.2267] **excludes 0** | 0.0000 [0.0000, 0.0000] does not exclude 0 (exactly 0 -- identical TP/FN split) | +0.0192 [0.0057, 0.0395] **excludes 0** |
+| R3 − R2 | B | +0.0270 [0.0076, 0.0519] **excludes 0** | 0.0000 [0.0000, 0.0000] does not exclude 0 (exactly 0) | +0.0059 [0.0016, 0.0115] **excludes 0** |
+
+**This is the decisive comparison for the manuscript, not the
+F1-selected one:** at the pipeline's real operating threshold, R1's
+apparent F1 win over R2 (§1) evaporates -- its precision loss and
+recall gain are each individually significant but cancel in F1, which
+is not significant at tau=0.88 on either dataset. R3's advantage is the
+one that survives both views: a significant precision gain at exactly
+unchanged recall, significant F1 improvement, on both independent
+datasets, at both the F1-selected AND the fixed pipeline threshold.
+**R3, not R1, is the rule with a robust, threshold-independent,
+statistically significant improvement over R2 -- this is what Section
+4 of the manuscript cites as the corrected rule.**
+
 ### 3. R6 (exploratory, post-hoc): unsquared evidence share
 
 **Labeled exploratory because it was added after seeing R4's null, not
@@ -3740,6 +3769,28 @@ the formula reduce correctly to `A(t)` in the uncontested case (matching
 R2's own behavior there), and removing it breaks exactly that property.
 Any future ceiling-fix design should preserve this reduction; a plain
 share does not.
+
+**Conclusion (round-2 addition, requested explicitly): the rival
+ceiling is structural, not a scaling artefact of this project's
+data.** R4 and R6 differ by exactly one operation -- squaring -- and
+that operation alone is the difference between a formula that reduces
+correctly to `A(t)` when a slot is uncontested (R4, matching R2's own
+uncontested-case behavior, and therefore a well-formed but empirically
+inert fix on this data) and one that discards essentially all real
+signal in that case (R6, `=1.0` always, and measurably worse than
+doing nothing). This is a property of the *algebraic form* of a
+share-based normalizer, provable independent of which snapshot it is
+run on: **any share-based conflict-adjustment rule must satisfy
+`C(t) = A(t)` in the single-candidate case to avoid R6's failure mode**
+-- a necessary condition for a correct fix, not a dataset-specific
+tuning detail. This sharpens, rather than merely restates, Results
+Summary's existing formal-ceiling claim: the ceiling itself (`C(t) <
+0.5` when contested) was already proven algebraically; what DEC-026
+adds is that *escaping* the ceiling is not free -- a share-based
+replacement has its own correctness requirement (reduction to `A(t)`
+when uncontested), independently derivable and independently testable,
+and R6 is the concrete demonstration of what happens when a fix
+satisfies the ceiling-removal goal but violates that requirement.
 
 ### 4. Recall denominator, stated explicitly, with comparability across this project's other recall figures
 

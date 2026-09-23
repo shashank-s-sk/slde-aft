@@ -2346,12 +2346,50 @@ closed-loop ablation (`without_prob_kb` >= `full`, AUDIT.md A1,
 EVID-039) — not a new, isolated finding, a second real-data
 confirmation of an existing tension already on record.
 
-## Status (addendum)
+## Addendum 2 — Bootstrap CIs at the fixed tau=0.88 operating point, plus a structural reading of R6 (2026-09-23)
 
-DEC-026: RUN, COMPLETE, addendum incorporated (2026-09-23). See
-  EVID-041 (revised) for the full four-follow-up write-up including R6.
-  Section 4 of the manuscript remains paused until the user has reviewed
-  this addendum, per explicit instruction accompanying the approval.
+Two further approved items, both zero-cost, same replay, no new
+splits/thresholds:
+
+1. **Bootstrap CIs at the pipeline's fixed operating threshold
+   (tau=0.88), not just the F1-selected one** -- precision, recall and
+   F1 differences reported separately (not just F1), for R1 vs. R2 and
+   R3 vs. R2 (10,000 subject resamples, same procedure as the
+   F1-selected comparison). Rationale stated by the user: the
+   fixed-threshold comparison is what goes in the paper, so it needs
+   its own CIs. **This changed a conclusion, not just added detail**:
+   at tau=0.88, R1's F1 advantage over R2 no longer excludes zero on
+   either dataset (it was a clean, significant win at each rule's own
+   F1-selected threshold) -- R1 trades a large, significant precision
+   loss for a large, significant recall gain, and the two roughly
+   cancel in F1 at the fixed threshold. R3's precision gain over R2
+   *does* hold at tau=0.88 on both datasets (CI excludes zero), with
+   recall unchanged (CI exactly [0,0] -- R3 and R2 admit the identical
+   true-positive/false-negative split at this threshold, the dedup only
+   removes false positives here). Full numbers: EVID-041.
+2. **Add to EVID-041's conclusion:** R6's failure demonstrates the
+   rival ceiling is a structural property of share-based aggregation,
+   not an artifact of this dataset's scale -- any share-based
+   normalizer must reduce to `A(t)` when a slot is uncontested (matching
+   R2's own behavior there); the squared form (R4/R5) has this
+   property, the unsquared form (R6) does not, and that is *why* R6
+   fails, independent of which snapshot it's tested on. A result about
+   the rule's mathematical form, not just about this project's data.
+
+## Status (addendum 2)
+
+DEC-026: RUN, COMPLETE, both addenda incorporated (2026-09-23). See
+  EVID-041 (revised) for the fixed-tau bootstrap CIs and the structural
+  reading of R6. Section 4 of the manuscript may now resume, using
+  exactly the claims specified alongside this approval: (a) the
+  aggregation formula and lambda=0.75 are DySECT's, cited not claimed;
+  (b) this paper's contribution is the formal analysis (boundedness,
+  monotonicity, corroboration requirement, saturation, rival ceiling)
+  plus the empirical demonstration that the ceiling blocks every
+  contested slot at both thresholds tested; (c) the corrected rule is
+  R3 (distinct-source counting), reported with its measured gain at
+  tau=0.88 and CI -- R4/R5/R6 reported as tested and null/negative, not
+  as contributions.
 
 DEC-014 (evaluation protocol & leakage control)
 
