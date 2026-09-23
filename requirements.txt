@@ -1,10 +1,10 @@
 # Pinned to the versions actually used to produce the results in
-# Evidence log.md. Covers src/, scripts/, and tests/ (the modular,
-# reproducible pipeline) — NOT the original SLDE_AFT_DualSource_Final_*
-# notebooks, which have their own heavier pip-install cells (torch,
-# transformers, peft, accelerate, bitsandbytes, sentencepiece, trl,
-# faker) needed only for the LoRA fine-tuning sections (DEC-006, not
-# yet ported to src/).
+# Evidence log.md. Covers everything EXCEPT the LoRA/QLoRA fine-tuning
+# path (DEC-006 and its DEC-022/024/027 variants), which needs
+# requirements-finetune.txt as well -- install that too only if you are
+# running scripts/dec006_lora_finetune.py or
+# scripts/dec006_evaluate_adapter.py on a GPU. src/, scripts/ (minus
+# the fine-tuning scripts), and tests/ need only the packages below.
 #
 # Python version used: 3.12.6
 

@@ -1,0 +1,1885 @@
+[
+  {
+    "product_idx": 1,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.237e-05,
+    "latency_s": 1.8599908000323921,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Tablet",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "TechNova Tablet",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Tablet",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "TechNova Tablet",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "TechNova Tablet",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Tablet",
+        "predicate": "target_market_region",
+        "object": "EU"
+      }
+    ]
+  },
+  {
+    "product_idx": 2,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.19e-05,
+    "latency_s": 9.109976399922743,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_ram_gb",
+        "object": "16"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.544e-05,
+    "latency_s": 0.7111897000577301,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "headphones device",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 9,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.1e-05,
+    "latency_s": 12.477250299998559,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "laptop device",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_weight_kg",
+        "object": "0.55"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "target_market_region",
+        "object": "EU market"
+      }
+    ]
+  },
+  {
+    "product_idx": 11,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 7.63e-06,
+    "latency_s": 1.3298682000022382,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I don't see any input text that matches the example output. The example output is for a \"TechNova Smartphone Pro 1\" but the input text is about a \"Zenbyte Smartwatch Air 11\". Please provide the correct input text to generate the output."
+  },
+  {
+    "product_idx": 12,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.502e-05,
+    "latency_s": 2.3146057000849396,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "299"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "13.3"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      }
+    ]
+  },
+  {
+    "product_idx": 13,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 6.7e-06,
+    "latency_s": 1.3451659999554977,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I don't have any input text to extract product knowledge triples from. Please provide the input text, and I'll extract the triples according to the rules and return a valid JSON array."
+  },
+  {
+    "product_idx": 15,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.318e-05,
+    "latency_s": 6.181923400028609,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "has_price_usd",
+        "object": "699"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 16,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.367e-05,
+    "latency_s": 2.0106445000274107,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 17,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 5.93e-06,
+    "latency_s": 1.0967019000090659,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I don't have the information to generate the output. Can you provide more context or information about the product?"
+  },
+  {
+    "product_idx": 18,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.413e-05,
+    "latency_s": 0.6693265000358224,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5,
+    "predicted_triples": [
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.677e-05,
+    "latency_s": 2.6728812999790534,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Smartphone Plus 19",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Smartphone Plus 19",
+        "predicate": "has_screen_size_inch",
+        "object": "6.1"
+      },
+      {
+        "subject": "NeoTech Smartphone Plus 19",
+        "predicate": "has_storage_gb",
+        "object": "1024"
+      },
+      {
+        "subject": "NeoTech Smartphone Plus 19",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "NeoTech Smartphone Plus 19",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "NeoTech Smartphone Plus 19",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 20,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.264e-05,
+    "latency_s": 6.41970119997859,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 1,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.829e-05,
+    "latency_s": 2.0122993999393657,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "EU"
+      }
+    ]
+  },
+  {
+    "product_idx": 2,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.692e-05,
+    "latency_s": 15.982968700001948,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_ram_gb",
+        "object": "16"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.592e-05,
+    "latency_s": 8.61935789999552,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "headphones device",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 9,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.9e-06,
+    "latency_s": 1.2018172999378294,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 11,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.804e-05,
+    "latency_s": 7.201289899996482,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      }
+    ]
+  },
+  {
+    "product_idx": 12,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.564e-05,
+    "latency_s": 5.416799200000241,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      }
+    ]
+  },
+  {
+    "product_idx": 13,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.592e-05,
+    "latency_s": 5.349283199990168,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "headphones device",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 15,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 4.263e-05,
+    "latency_s": 0.8178906999528408,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "has_price_usd",
+        "object": "699"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "NeoTech Smartwatch Lite 15",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 16,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.882e-05,
+    "latency_s": 12.067303000018,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Auralex Laptop Lite 16",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 17,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 2.19e-05,
+    "latency_s": 2.622268100036308,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartwatch Pro 17",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Smartwatch Pro 17",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "TechNova Smartwatch Pro 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Smartwatch Pro 17",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "TechNova Smartwatch Pro 17",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartwatch Pro 17",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 18,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.113e-05,
+    "latency_s": 1.2051137000089511,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I don't have the input text you provided. Please provide the input text, and I'll extract the factual product knowledge triples for you."
+  },
+  {
+    "product_idx": 19,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.014e-05,
+    "latency_s": 1.013936399947852,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 20,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.964e-05,
+    "latency_s": 2.3607240000274032,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 1,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.544e-05,
+    "latency_s": 13.164750199997798,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "It",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "It",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "It",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "It",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "It",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "It",
+        "predicate": "target_market_region",
+        "object": "EU"
+      }
+    ]
+  },
+  {
+    "product_idx": 2,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.698e-05,
+    "latency_s": 16.19876659999136,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_ram_gb",
+        "object": "16"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.813e-05,
+    "latency_s": 2.18443240004126,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 9,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.96e-06,
+    "latency_s": 0.948788300040178,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 11,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.006e-05,
+    "latency_s": 1.1313048999290913,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 12,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.15e-05,
+    "latency_s": 1.3213946999749169,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      }
+    ]
+  },
+  {
+    "product_idx": 13,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 4.126e-05,
+    "latency_s": 1.0027925000758842,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "It is a headphones device",
+        "predicate": "belongs_to_category",
+        "object": "headphones"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 15,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.014e-05,
+    "latency_s": 1.260666499962099,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 16,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1e-05,
+    "latency_s": 1.3172723000170663,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 17,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.96e-06,
+    "latency_s": 1.0995182999176905,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 18,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.536e-05,
+    "latency_s": 7.74371800001245,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5,
+    "predicted_triples": [
+      {
+        "subject": "It is a smartwatch device",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "It is a smartwatch device",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "It is a smartwatch device",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "It is a smartwatch device",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "It is a smartwatch device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.02e-05,
+    "latency_s": 0.9786549999844283,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 20,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.97e-05,
+    "latency_s": 1.9155989000573754,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 1,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 1.817e-05,
+    "latency_s": 2.6598982999566942,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "EU"
+      }
+    ]
+  },
+  {
+    "product_idx": 2,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 1.68e-05,
+    "latency_s": 15.95848659996409,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_ram_gb",
+        "object": "16"
+      },
+      {
+        "subject": "NeoTech Headphones Plus 2",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 2.185e-05,
+    "latency_s": 2.2231817001011223,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "It is a headphones device.",
+        "predicate": "belongs_to_category",
+        "object": "headphones"
+      },
+      {
+        "subject": "Priced at 1299 USD.",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "Comes with 8GB of RAM.",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Battery lasts up to 8 hours.",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "Weighs approximately 1.45kg.",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "Available in black.",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "Fast charging is yes.",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 9,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 1.586e-05,
+    "latency_s": 14.470043600071222,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "laptop device",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_weight_kg",
+        "object": "0.55"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "target_market_region",
+        "object": "EU"
+      }
+    ]
+  },
+  {
+    "product_idx": 11,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 1.792e-05,
+    "latency_s": 19.36065490008332,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "has_color",
+        "object": "black"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "Zenbyte Smartwatch Air 11",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 12,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 1.132e-05,
+    "latency_s": 1.1883942999411374,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      }
+    ]
+  },
+  {
+    "product_idx": 13,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 1.736e-05,
+    "latency_s": 6.039980900008231,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "It is a headphones device",
+        "predicate": "belongs_to_category",
+        "object": "headphones"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 15,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.96e-06,
+    "latency_s": 1.040303900022991,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 16,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.82e-06,
+    "latency_s": 0.9905655001057312,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 17,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.78e-06,
+    "latency_s": 1.1026367999147624,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 18,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.66e-06,
+    "latency_s": 0.9511861000210047,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 19,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 2.616e-05,
+    "latency_s": 0.580003899987787,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 20,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 2.146e-05,
+    "latency_s": 11.906213899957947,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 3,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 2.551e-05,
+    "latency_s": 0.5930061999242753,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 6,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 1.668e-05,
+    "latency_s": 16.126469300012104,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Pro 6",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Pro 6",
+        "predicate": "has_ram_gb",
+        "object": "4GB"
+      },
+      {
+        "subject": "TechNova Laptop Pro 6",
+        "predicate": "has_storage_gb",
+        "object": "512GB"
+      },
+      {
+        "subject": "TechNova Laptop Pro 6",
+        "predicate": "has_weight_kg",
+        "object": "0.23kg"
+      },
+      {
+        "subject": "TechNova Laptop Pro 6",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "TechNova Laptop Pro 6",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 14,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 9.82e-06,
+    "latency_s": 1.0030209000688046,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 4,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 1.776e-05,
+    "latency_s": 7.574245500029065,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Tablet Air 4",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Tablet Air 4",
+        "predicate": "has_price_usd",
+        "object": "1099"
+      },
+      {
+        "subject": "Zenbyte Tablet Air 4",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "Zenbyte Tablet Air 4",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "Zenbyte Tablet Air 4",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "Zenbyte Tablet Air 4",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "Zenbyte Tablet Air 4",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 5,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 1.674e-05,
+    "latency_s": 6.437781700049527,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Smartwatch Lite 5",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Smartwatch Lite 5",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "PixelWare Smartwatch Lite 5",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "PixelWare Smartwatch Lite 5",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "PixelWare Smartwatch Lite 5",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "PixelWare Smartwatch Lite 5",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 7,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 1.846e-05,
+    "latency_s": 1.9236250999383628,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "10.9"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 10,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 1.912e-05,
+    "latency_s": 8.592440000036731,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Lite 10",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Lite 10",
+        "predicate": "has_screen_size_inch",
+        "object": "6.1"
+      },
+      {
+        "subject": "TechNova Laptop Lite 10",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Laptop Lite 10",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "TechNova Laptop Lite 10",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "TechNova Laptop Lite 10",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "model": "meta-llama/llama-3.1-8b-instruct",
+  "n_docs": 15,
+  "split": "Dev",
+  "total_cost_usd": 0.0005089900000000001,
+  "n_errors": 1,
+  "precision": 0.007518796992481203,
+  "recall": 0.007194244604316547,
+  "f1": 0.007352941176470588,
+  "true_positives": 1,
+  "false_positives": 132,
+  "false_negatives": 138,
+  "gold_count": 139,
+  "prediction_count": 133
+}

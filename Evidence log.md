@@ -4050,3 +4050,126 @@ both arms reported. This result should inform how DEC-029/DEC-027 are
 reported only in the sense that Claim 5's circularity objection is now
 closed with real evidence; no other DEC's design depends on this
 result's direction.
+
+# EVID-043 — DEC-030: Reproducibility Package
+
+## Experiment
+
+- Decision: DEC-030 (professor_feedback.md point 12). Zero API/GPU cost
+  -- engineering and documentation work plus git operations.
+- **Raw outputs committed**: `.gitignore` extended with 22 targeted
+  exceptions (one per `outputs/dec0NN_*` directory actually cited by an
+  EVID/DEC number reachable from `paper/main.tex`, verified by grepping
+  the manuscript for every `EVID-`/`DEC-` citation first, not assumed).
+  632 files added, ~76MB (excluding adapter weight files, which stay
+  excluded by the pre-existing `*.safetensors`/`*.bin` rules).
+  **Finding, not fixed retroactively**: several of these directories
+  turned out to already be committed from earlier in the project
+  (`dec002_rebel_baseline`, `dec002_sota_baselines`, `dec006_adapters`,
+  `dec006_eval`, `dec006_scaleup_probkb`, `dec006_synthetic_data`,
+  `dec018_provenance_filter`, `dec019_closedloop`) -- including five
+  `adapter_model.safetensors` files (14MB each, under this project's
+  own 50MB exclusion threshold, so not a violation of the pre-registered
+  rule, but also not something a reader would expect from the README's
+  previous "outputs/ is gitignored" claim). Left in place per README
+  ground rule 2 (never delete/overwrite existing outputs); documented
+  in `docs/reproduction.md` rather than silently rewritten out of
+  history.
+- **`scripts/reproduce_all.py`**: recomputes or reads 25 checks across
+  CaRB (both pilot and full-scale, both scorers), DocRED, the
+  provenance filter, the N=50 ablation, fine-tuning, the closed-loop
+  test, scalability, complexity, and DEC-026 -- each explicitly labeled
+  PASS/MISMATCH/READ (read from a stored value, not independently
+  re-derived, e.g. the official CaRB scorer's own AUC computation)/GAP
+  (raw output not found at all).
+- README's "Project status" and "Known limitations" sections rewritten
+  (previous text described a single-seed, DEC-006-through-013-not-started
+  state, wildly stale relative to the current DEC-001 through DEC-030
+  status); `requirements.txt` split into base and
+  `requirements-finetune.txt` (unpinned package list, matching the
+  exact `pip install` command every real fine-tuning run in this
+  project has actually used -- no version pins invented for packages
+  never pinned in any real run); `docs/reproduction.md` added with
+  pinned model IDs, decoding settings, seeds, hardware, approximate
+  run-date milestones from commit history, and a data/licensing note
+  (CaRB's MIT license verified directly against `data/CaRB/LICENSE`,
+  not assumed).
+
+## Actual
+
+`scripts/reproduce_all.py`'s first real run: **21 PASS, 2 READ, 0
+MISMATCH, 1 GAP** (full output: run the script; not reproduced in full
+here since it is itself the artifact). The GAP is real and disclosed,
+not a script bug: no per-seed raw evaluation metrics were found under
+`outputs/dec006_eval/` for the epochs=5 fine-tuning configuration
+(EVID-037/038/040) -- only `Evidence log.md`'s transcribed numbers
+exist for that specific result, confirming AUDIT.md's original Phase-0
+finding that some experiments have no raw outputs committed.
+
+**One genuine, previously-undocumented finding, surfaced by writing
+this script, not by looking for it:** EVID-029's published 93.5%->100%
+provenance-filter precision figures score against `gold_structured`
+(all 13 structured facts per product, reconstructed independently
+inside `scripts/dec018_provenance_filter_validation.py`), not against
+the same snapshot's own `gold_label` column, which reflects
+`gold_unstructured` (the subset of facts actually mentioned in
+generated text -- the set DEC-026/028's own gold reconstruction uses).
+Recomputing against `gold_label` instead gives **92.6%->99.1%, not
+93.5%->100%** -- verified directly, both ways, in
+`scripts/reproduce_all.py`'s `check_provenance()`. The published number
+is correct and exactly reproducible under EVID-029's own stated
+method; the finding is that two differently-scoped "gold" sets exist
+in this project under similar names, and Claim 5's headline number is
+specifically the broader (`gold_structured`) one.
+
+## Result
+
+PASS on the deliverable (all five DEC-030 items complete); **an
+honest, non-zero finding rate from the verification step itself** --
+exactly what a reproducibility check is supposed to produce when it is
+doing real work rather than rubber-stamping. Nothing was silently
+corrected: the gold-set finding is recorded here and in Results
+Summary.md's Claim 5 section, not resolved by picking whichever number
+looks better.
+
+## Interpretation
+
+- The gold_structured/gold_unstructured distinction is the same shape
+  of issue DEC-026/EVID-041 already surfaced for recall denominators
+  (comparable to EVID-014, not comparable to EVID-013/EVID-030) --
+  this project has, across at least two independent mechanisms now,
+  used two different "gold" sets under names that look interchangeable
+  but are not. Anyone adding a new gold-scored result to this project
+  should state explicitly which gold set it uses, not assume "gold" is
+  unambiguous.
+- The 8 already-committed `outputs/` directories found during this DEC
+  (predating any `.gitignore` rule for `outputs/`) mean the README's
+  previous blanket claim that `outputs/` is gitignored and nothing is
+  committed was already false before this DEC started, in a way
+  nobody had noticed -- another small instance of stale documentation
+  compounding over a long project, consistent with why DEC-030 was
+  worth doing at all.
+
+## Limitations
+
+- `reproduce_all.py` covers the tables with clearly-locatable raw
+  output; it does not yet cover every Table S1-S8 cell (e.g. Table
+  S1's calibration bins remain incomplete pending
+  `calibration_bins_real.csv`, already flagged as a TODO in
+  `paper/main.tex` itself) or DEC-027/029's results, which had not yet
+  run at the time this script was written.
+- The official CaRB scorer's own AUC/optimal-F1 computation is read
+  from its saved raw text output, not re-executed -- re-running the
+  actual external `carb.py` scorer end-to-end was judged out of scope
+  for this pass; the numbers are still traceable to a real scorer run,
+  just not re-invoked by this script.
+- The five pre-existing committed adapter `.safetensors` files were
+  left in place, not removed via history rewrite -- repository size
+  impact is minor (14MB x 5 = 70MB) but nonzero.
+
+## Next step
+
+None required for DEC-030 itself. If DEC-027/029 results are added to
+the manuscript later, extend `.gitignore`'s exception list and
+`scripts/reproduce_all.py`'s checks to cover them, following the same
+pattern used here.

@@ -1,0 +1,15 @@
+{
+  "system": "deepseek_baseline",
+  "model": "deepseek/deepseek-v3.2",
+  "n_sentences": 548,
+  "total_cost_usd": 0.04713983007999995,
+  "n_errors": 0,
+  "precision": 0.17462580185317178,
+  "recall": 0.1209279368213228,
+  "f1": 0.14289880431612714,
+  "true_positives": 245,
+  "false_positives": 1158,
+  "false_negatives": 1781,
+  "gold_count": 2026,
+  "prediction_count": 1403
+}

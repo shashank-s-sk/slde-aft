@@ -1,0 +1,1266 @@
+[
+  {
+    "product_idx": 1,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 8.99e-06,
+    "latency_s": 1.5689993998967111,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I don't see any product information in the input text. The text only talks about the VoltEdge Headphones Lite 1, but the example output is asking for information about the \"TechNova Smartphone Pro 1\". Please provide a valid input text that includes the product information for the TechNova Smartphone Pro 1. I'll be happy to help you extract the product knowledge triples in JSON format."
+  },
+  {
+    "product_idx": 2,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.43e-05,
+    "latency_s": 13.029878300032578,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "belongs_to_category",
+        "object": "laptop device"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "has_storage_gb",
+        "object": "256GB"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "has_battery_life_hours",
+        "object": "12"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.532e-05,
+    "latency_s": 46.1071140000131,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I cannot provide a JSON array that includes the statement \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" because it is not a valid fact. The correct fact is \"PixelWare Tablet Plus 8 is manufactured by PixelWare.\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact. However, \"PixelWare Tablet Plus 8 is manufactured by PixelWare\" is not a valid fact, but \"PixelWare Tablet Plus "
+  },
+  {
+    "product_idx": 9,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 6.05e-06,
+    "latency_s": 1.1635858999798074,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I don't have the input text you provided. Please provide the text you'd like me to extract knowledge triples from."
+  },
+  {
+    "product_idx": 11,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.33e-05,
+    "latency_s": 17.20000379998237,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Tablet Plus 11",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Tablet Plus 11",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "NeoTech Tablet Plus 11",
+        "predicate": "has_screen_size_inch",
+        "object": "13.3"
+      },
+      {
+        "subject": "NeoTech Tablet Plus 11",
+        "predicate": "has_ram_gb",
+        "object": "16"
+      },
+      {
+        "subject": "NeoTech Tablet Plus 11",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "NeoTech Tablet Plus 11",
+        "predicate": "target_market_region",
+        "object": "EU"
+      }
+    ]
+  },
+  {
+    "product_idx": 12,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 6.02e-06,
+    "latency_s": 3.2744972999207675,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I cannot provide a JSON array that contains information about a product that does not exist. Is there anything else I can help you with?"
+  },
+  {
+    "product_idx": 13,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 6.1e-06,
+    "latency_s": 3.237574200029485,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I can't create a JSON array that includes a subject that is not present in the input text. Is there something else I can help you with?"
+  },
+  {
+    "product_idx": 15,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 7.69e-06,
+    "latency_s": 1.219144600094296,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I don't see any input text that matches the example output. The input text you provided is about \"Zenbyte Headphones Pro 15\", but the example output is about \"TechNova Smartphone Pro 1\". Please provide the correct input text to generate the output."
+  },
+  {
+    "product_idx": 16,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.306e-05,
+    "latency_s": 11.236119200009853,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_battery_life_hours",
+        "object": "12"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 17,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.539e-05,
+    "latency_s": 0.7485446999780834,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "headphones device",
+        "predicate": "has_price_usd",
+        "object": "299"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "headphones device",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 18,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.152e-05,
+    "latency_s": 9.738911899970844,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "6.1"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.268e-05,
+    "latency_s": 7.315594800049439,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "1024"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 20,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 7.01e-06,
+    "latency_s": 1.3403283000225201,
+    "http_status": 200,
+    "error": "no JSON array found in model output",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": "I don't have the input text to extract the product knowledge triples from. Please provide the input text, and I'll do my best to extract the triples according to the rules and output them in the required JSON format."
+  },
+  {
+    "product_idx": 1,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.74e-06,
+    "latency_s": 1.0297804999863729,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 2,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.56e-06,
+    "latency_s": 1.0091175000416115,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 8,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.62e-06,
+    "latency_s": 1.0494692999636754,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 9,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.756e-05,
+    "latency_s": 5.984365199925378,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Smartwatch Pro 9",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Smartwatch Pro 9",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "PixelWare Smartwatch Pro 9",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "PixelWare Smartwatch Pro 9",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "PixelWare Smartwatch Pro 9",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "PixelWare Smartwatch Pro 9",
+        "predicate": "target_market_region",
+        "object": "EU"
+      }
+    ]
+  },
+  {
+    "product_idx": 11,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.68e-06,
+    "latency_s": 0.927074300008826,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 12,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.72e-06,
+    "latency_s": 1.0410843000281602,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 13,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.096e-05,
+    "latency_s": 3.7987804000731558,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 15,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.74e-06,
+    "latency_s": 0.9409570000134408,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 16,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.6e-06,
+    "latency_s": 1.1209700000472367,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 17,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 1.606e-05,
+    "latency_s": 4.893936299951747,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_price_usd",
+        "object": "299"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "has_weight_kg",
+        "object": "1.2"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "It is a headphones device",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 18,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.54e-06,
+    "latency_s": 0.9212491000071168,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 19,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.54e-06,
+    "latency_s": 1.0020100000547245,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 20,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.56e-06,
+    "latency_s": 1.005247199907899,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 1,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.76e-06,
+    "latency_s": 1.3825774000724778,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 2,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.62e-06,
+    "latency_s": 1.0277268999489024,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 8,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.72e-06,
+    "latency_s": 1.0081633999943733,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 9,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 2.526e-05,
+    "latency_s": 0.5348085999721661,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 11,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.74e-06,
+    "latency_s": 0.998666699975729,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 12,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.78e-06,
+    "latency_s": 0.9883036999963224,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 13,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.7e-06,
+    "latency_s": 0.8825009999563918,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 15,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.8e-06,
+    "latency_s": 0.9216457000002265,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 16,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.66e-06,
+    "latency_s": 1.2135427000466734,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 17,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 9.64e-06,
+    "latency_s": 0.9661033999873325,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 18,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.068e-05,
+    "latency_s": 2.385098999948241,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 2.064e-05,
+    "latency_s": 15.321658700006083,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8,
+    "predicted_triples": [
+      {
+        "subject": "The display measures 15.6 inches.",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "The display measures 15.6 inches.",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "The display measures 15.6 inches.",
+        "predicate": "has_storage_gb",
+        "object": "1024"
+      },
+      {
+        "subject": "The display measures 15.6 inches.",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "Available in silver.",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Targeted at the Global market.",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "Fast charging is no.",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Noise cancellation: no.",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 20,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.51e-05,
+    "latency_s": 13.645454299985431,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "It",
+        "predicate": "has_price_usd",
+        "object": "299"
+      },
+      {
+        "subject": "It",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "It",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "It",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "It",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "It",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 1,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.8e-06,
+    "latency_s": 0.988535700016655,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 2,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.58e-06,
+    "latency_s": 0.8994438000954688,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 8,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.72e-06,
+    "latency_s": 1.0318732999730855,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 9,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.66e-06,
+    "latency_s": 1.0263430998893455,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 11,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.74e-06,
+    "latency_s": 0.9511525999987498,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 12,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 2.556e-05,
+    "latency_s": 0.5823269999818876,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 13,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.74e-06,
+    "latency_s": 0.9209701999789104,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 15,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 2.561e-05,
+    "latency_s": 0.5893307999940589,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 16,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 7.323e-05,
+    "latency_s": 1.0757400000002235,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 17,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 9.64e-06,
+    "latency_s": 1.1543873000191525,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 18,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 2.392e-05,
+    "latency_s": 20.19846330001019,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 13,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "6.1"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "has_battery_life_hours",
+        "object": "12"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      },
+      {
+        "subject": "PixelWare Smartwatch Pro 9",
+        "predicate": "has_battery_life_hours",
+        "object": "24"
+      },
+      {
+        "subject": "PixelWare Laptop Max 2",
+        "predicate": "has_color",
+        "object": "white"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 2.02e-05,
+    "latency_s": 1.9708021000260487,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "1024"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 20,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.512e-05,
+    "latency_s": 4.601344799972139,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "It is a laptop device.",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "Priced at 299 USD.",
+        "predicate": "has_price_usd",
+        "object": "299"
+      },
+      {
+        "subject": "The display measures 11.0 inches.",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "Comes with 32GB of RAM.",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "Offers 256GB of internal storage.",
+        "predicate": "has_storage_gb",
+        "object": "256"
+      },
+      {
+        "subject": "Available in silver.",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Fast charging is no.",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 3,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 3.891e-05,
+    "latency_s": 0.7074499999871477,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "12"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "0.23"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 6,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 9.62e-06,
+    "latency_s": 1.3654921998968348,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 14,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 1.957e-05,
+    "latency_s": 2.052883299998939,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "10.9"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      }
+    ]
+  },
+  {
+    "product_idx": 4,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 1.722e-05,
+    "latency_s": 18.438427799963392,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "249"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "Global"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 5,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 9.8e-06,
+    "latency_s": 0.9974869999568909,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 7,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 9.68e-06,
+    "latency_s": 1.2413828000426292,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 10,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 1.648e-05,
+    "latency_s": 10.372348999953829,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Tablet Air 10",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Tablet Air 10",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "TechNova Tablet Air 10",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "TechNova Tablet Air 10",
+        "predicate": "has_storage_gb",
+        "object": "64"
+      },
+      {
+        "subject": "TechNova Tablet Air 10",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Tablet Air 10",
+        "predicate": "has_color",
+        "object": "white"
+      }
+    ]
+  }
+]

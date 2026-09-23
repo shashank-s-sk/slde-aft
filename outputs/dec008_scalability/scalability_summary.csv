@@ -1,0 +1,5 @@
+n_products,total_runtime_s,n_llm_calls,mean_latency_s_per_doc,max_latency_s,mem_before_mb,mem_after_mb,mem_delta_mb,kb_size,n_conflicts,n_above_threshold,n_errors,cost_usd
+20,92.144,20,4.598,12.353,74.0,79.31,5.32,284,8,37,9,0.000229
+50,199.044,50,3.976,9.693,79.32,80.23,0.92,737,59,106,17,0.000582
+100,405.839,100,4.053,9.165,80.23,50.6,-29.63,1455,117,263,24,0.001249
+200,799.06,200,3.988,20.124,50.6,52.17,1.57,2814,187,547,53,0.002555

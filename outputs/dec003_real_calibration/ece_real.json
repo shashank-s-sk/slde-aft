@@ -1,0 +1,9 @@
+{
+  "source_snapshot": "outputs\\dec003_product_probkb_v2\\train_kb\\pkb_snapshot_iteration_4.csv",
+  "n_triples": 657,
+  "n_bins": 10,
+  "ece": 0.3331909218852072,
+  "brier_score": 0.2969449182478024,
+  "n_gold_positive": 245,
+  "n_gold_negative": 412
+}

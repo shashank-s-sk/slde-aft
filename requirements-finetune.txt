@@ -1,0 +1,27 @@
+# Additional dependencies for the LoRA/QLoRA fine-tuning path only
+# (scripts/dec006_lora_finetune.py, scripts/dec006_evaluate_adapter.py,
+# and the DEC-022/024/027 hyperparameter-grid variants of the same
+# scripts). Not needed for CaRB/DocRED/BioRED extraction, the PKB
+# replay/aggregation-rule work (DEC-019/026/028), or the test suite --
+# install requirements.txt alone for those.
+#
+# These are run on a rented GPU (RunPod RTX 4090, per Decision log.md
+# DEC-006), NOT locally in this project's dev environment -- torch
+# itself is not listed here because every fine-tuning run to date used
+# a RunPod "PyTorch" template image with torch/CUDA already installed,
+# not a separate pip install; install torch matching your own CUDA
+# version if you are not using that same template.
+#
+# Unpinned, matching the exact command every fine-tuning run in this
+# project has actually used (scripts/dec006_lora_finetune.py's own
+# docstring: "pip install -q transformers peft trl accelerate
+# bitsandbytes datasets") -- no run in this project has pinned exact
+# versions of these packages, so no version pin is asserted here that
+# was not actually verified against a real run.
+
+transformers
+peft
+trl
+accelerate
+bitsandbytes
+datasets

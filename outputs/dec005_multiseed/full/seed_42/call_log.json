@@ -1,0 +1,2432 @@
+[
+  {
+    "product_idx": 1,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.765e-05,
+    "latency_s": 1.6172992000356317,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 2,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.528e-05,
+    "latency_s": 1.9739887000760064,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "laptop device",
+        "predicate": "has_price_usd",
+        "object": "499"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 3.149e-05,
+    "latency_s": 1.0342129999771714,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 9,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.892e-05,
+    "latency_s": 1.683372400002554,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "laptop device",
+        "predicate": "belongs_to_category",
+        "object": "laptop"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "laptop device",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 11,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.732e-05,
+    "latency_s": 0.9234330999897793,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 12,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.695e-05,
+    "latency_s": 1.8101852999534458,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "belongs_to_category",
+        "object": "tablet device"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_color",
+        "object": "green"
+      }
+    ]
+  },
+  {
+    "product_idx": 13,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 3.175e-05,
+    "latency_s": 1.6326304000103846,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "belongs_to_category",
+        "object": "tablet device"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "has_screen_size_inch",
+        "object": "13.3"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "has_weight_kg",
+        "object": "0.23"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "target_market_region",
+        "object": "US market"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 15,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 0.0,
+    "latency_s": 2.5210484999697655,
+    "http_status": 429,
+    "error": "{'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing', 'previous_errors': [{'code': 429, 'message': 'Provider returned error', 'provider_name': 'Novita', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'Cloudflare', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'Groq', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'CoreWeave', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}]}}",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": {
+      "error": {
+        "message": "Provider returned error",
+        "code": 429,
+        "metadata": {
+          "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+          "provider_name": "DeepInfra",
+          "is_byok": false,
+          "provider_error_code": "engine_overloaded",
+          "limit_source": "upstream_provider_shared_pool",
+          "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing",
+          "previous_errors": [
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "Novita",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "Cloudflare",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "Groq",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "CoreWeave",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            }
+          ]
+        }
+      },
+      "user_id": "user_3DZt6uwqRqMjNBplloRJaYdOCrR"
+    }
+  },
+  {
+    "product_idx": 16,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.415e-05,
+    "latency_s": 0.9923757000360638,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5,
+    "predicted_triples": [
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "smartwatch device",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      }
+    ]
+  },
+  {
+    "product_idx": 17,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.695e-05,
+    "latency_s": 1.169465099927038,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      }
+    ]
+  },
+  {
+    "product_idx": 18,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.88e-05,
+    "latency_s": 1.540468499995768,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 2.925e-05,
+    "latency_s": 1.2353458000579849,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "299"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "10.9"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 20,
+    "iteration": 1,
+    "phase": "train",
+    "cost_usd": 1.316e-05,
+    "latency_s": 1.0743548000464216,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 1,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 4.48e-05,
+    "latency_s": 1.346061100019142,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 2,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 4.387e-05,
+    "latency_s": 1.7283339999848977,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_price_usd",
+        "object": "499"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 3.584e-05,
+    "latency_s": 1.5886017000302672,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 8,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "199"
+      }
+    ]
+  },
+  {
+    "product_idx": 9,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 4.383e-05,
+    "latency_s": 1.4182376000098884,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_price_usd",
+        "object": "199"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      }
+    ]
+  },
+  {
+    "product_idx": 11,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 3.167e-05,
+    "latency_s": 1.7221183000365272,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 12,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 3.354e-05,
+    "latency_s": 1.3466682999860495,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "belongs_to_category",
+        "object": "tablet device"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 13,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 4.666e-05,
+    "latency_s": 1.17712779995054,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "belongs_to_category",
+        "object": "tablet device"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "has_screen_size_inch",
+        "object": "13.3"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "has_weight_kg",
+        "object": "0.23"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "target_market_region",
+        "object": "US market"
+      },
+      {
+        "subject": "TechNova Tablet Max 13",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 15,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 3.403e-05,
+    "latency_s": 1.0737747000530362,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 16,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 4.57e-05,
+    "latency_s": 1.0673716000746936,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 17,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 4.41e-05,
+    "latency_s": 1.239698899909854,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      }
+    ]
+  },
+  {
+    "product_idx": 18,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 3.315e-05,
+    "latency_s": 1.150893499958329,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 9.7378e-05,
+    "latency_s": 7.499836500035599,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 1,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      }
+    ]
+  },
+  {
+    "product_idx": 20,
+    "iteration": 2,
+    "phase": "train",
+    "cost_usd": 4.423e-05,
+    "latency_s": 1.4679072999861091,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 1,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 5.562e-05,
+    "latency_s": 1.7934084000298753,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 11,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Auralex Smartphone Max 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Tablet Max 12",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      }
+    ]
+  },
+  {
+    "product_idx": 2,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 2.015e-05,
+    "latency_s": 2.4844681000104174,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_price_usd",
+        "object": "499"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 0.0,
+    "latency_s": 3.056901100091636,
+    "http_status": 429,
+    "error": "{'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing', 'previous_errors': [{'code': 429, 'message': 'Provider returned error', 'provider_name': 'Novita', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'Groq', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'Cloudflare', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'CoreWeave', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}]}}",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": {
+      "error": {
+        "message": "Provider returned error",
+        "code": 429,
+        "metadata": {
+          "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+          "provider_name": "DeepInfra",
+          "is_byok": false,
+          "provider_error_code": "engine_overloaded",
+          "limit_source": "upstream_provider_shared_pool",
+          "remedy_hint": "Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing",
+          "previous_errors": [
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "Novita",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "Groq",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "Cloudflare",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "CoreWeave",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            }
+          ]
+        }
+      },
+      "user_id": "user_3DZt6uwqRqMjNBplloRJaYdOCrR"
+    }
+  },
+  {
+    "product_idx": 9,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 4.393e-05,
+    "latency_s": 1.817950600059703,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_price_usd",
+        "object": "199"
+      }
+    ]
+  },
+  {
+    "product_idx": 11,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 4.457e-05,
+    "latency_s": 1.9460331000154838,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_price_usd",
+        "object": "1299"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_screen_size_inch",
+        "object": "6.7"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 12,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 1.796e-05,
+    "latency_s": 1.3933552999515086,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 13,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 3.076e-05,
+    "latency_s": 0.7471407999983057,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 15,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 4.693e-05,
+    "latency_s": 0.7858059999998659,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "has_price_usd",
+        "object": "349"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "TechNova Smartwatch Lite 15",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 16,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 3.084e-05,
+    "latency_s": 0.7546915999846533,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 17,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 3.38e-05,
+    "latency_s": 0.7056326000019908,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "belongs_to_category",
+        "object": "laptop device"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "APAC market"
+      }
+    ]
+  },
+  {
+    "product_idx": 18,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 3.325e-05,
+    "latency_s": 0.7576030999189243,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 3.146e-05,
+    "latency_s": 0.722639299929142,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "10.9"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 20,
+    "iteration": 3,
+    "phase": "train",
+    "cost_usd": 4.673e-05,
+    "latency_s": 0.8451223999727517,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "belongs_to_category",
+        "object": "smartphone device"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "has_battery_life_hours",
+        "object": "10"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "has_color",
+        "object": "white"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Auralex Smartphone Pro 20",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 1,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.066e-05,
+    "latency_s": 0.9338993000565097,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 2,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 4.397e-05,
+    "latency_s": 0.8267684999154881,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_price_usd",
+        "object": "499"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_screen_size_inch",
+        "object": "15.6"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "4"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 8,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 4.65e-05,
+    "latency_s": 1.1153627999592572,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "14.0"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "yes"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "199"
+      }
+    ]
+  },
+  {
+    "product_idx": 9,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.113e-05,
+    "latency_s": 1.1582501999801025,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.18"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "supports_fast_charging",
+        "object": "yes"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_price_usd",
+        "object": "199"
+      }
+    ]
+  },
+  {
+    "product_idx": 11,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 0.0,
+    "latency_s": 1.6849097999511287,
+    "http_status": 429,
+    "error": "{'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Groq', 'previous_errors': [{'code': 429, 'message': 'Provider returned error', 'provider_name': 'Novita', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'DeepInfra', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'Cloudflare', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}, {'code': 429, 'message': 'Provider returned error', 'provider_name': 'CoreWeave', 'raw': 'meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations'}]}}",
+    "n_triples": 0,
+    "predicted_triples": [],
+    "raw_content_on_error": {
+      "error": {
+        "message": "Provider returned error",
+        "code": 429,
+        "metadata": {
+          "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations",
+          "provider_name": "Groq",
+          "previous_errors": [
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "Novita",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "DeepInfra",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "Cloudflare",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            },
+            {
+              "code": 429,
+              "message": "Provider returned error",
+              "provider_name": "CoreWeave",
+              "raw": "meta-llama/llama-3.1-8b-instruct is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations"
+            }
+          ]
+        }
+      },
+      "user_id": "user_3DZt6uwqRqMjNBplloRJaYdOCrR"
+    }
+  },
+  {
+    "product_idx": 12,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.076e-05,
+    "latency_s": 1.0282706000143662,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 13,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.076e-05,
+    "latency_s": 0.7634293999290094,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 15,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 1.781e-05,
+    "latency_s": 0.7333583000581712,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 16,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.084e-05,
+    "latency_s": 0.7517297000158578,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_price_usd",
+        "object": "899"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_battery_life_hours",
+        "object": "18"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 17,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.14e-05,
+    "latency_s": 0.7714319999795407,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "manufactured_by",
+        "object": "TechNova"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      }
+    ]
+  },
+  {
+    "product_idx": 18,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.325e-05,
+    "latency_s": 0.7430347000481561,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 19,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 3.146e-05,
+    "latency_s": 0.7306686999509111,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_screen_size_inch",
+        "object": "10.9"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_weight_kg",
+        "object": "1.45"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 20,
+    "iteration": 4,
+    "phase": "train",
+    "cost_usd": 1.761e-05,
+    "latency_s": 0.5293289999244735,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 3,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 4.621e-05,
+    "latency_s": 0.7740634999936447,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "NeoTech Smartphone Pro 3",
+        "predicate": "manufactured_by",
+        "object": "NeoTech"
+      },
+      {
+        "subject": "NeoTech Smartphone Pro 3",
+        "predicate": "belongs_to_category",
+        "object": "smartphone device"
+      },
+      {
+        "subject": "NeoTech Smartphone Pro 3",
+        "predicate": "has_screen_size_inch",
+        "object": "13.3"
+      },
+      {
+        "subject": "NeoTech Smartphone Pro 3",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "NeoTech Smartphone Pro 3",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "NeoTech Smartphone Pro 3",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "NeoTech Smartphone Pro 3",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 6,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 4.538e-05,
+    "latency_s": 1.0961939999833703,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 0,
+    "predicted_triples": []
+  },
+  {
+    "product_idx": 14,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 4.739e-05,
+    "latency_s": 1.858271700097248,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 7,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartwatch Air 14",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartwatch Air 14",
+        "predicate": "has_ram_gb",
+        "object": "6"
+      },
+      {
+        "subject": "Auralex Smartwatch Air 14",
+        "predicate": "has_storage_gb",
+        "object": "512"
+      },
+      {
+        "subject": "Auralex Smartwatch Air 14",
+        "predicate": "has_battery_life_hours",
+        "object": "8"
+      },
+      {
+        "subject": "Auralex Smartwatch Air 14",
+        "predicate": "has_weight_kg",
+        "object": "0.23"
+      },
+      {
+        "subject": "Auralex Smartwatch Air 14",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "Auralex Smartwatch Air 14",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 4,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 6.279e-05,
+    "latency_s": 1.27213259995915,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 15,
+    "predicted_triples": [
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "It is a laptop device",
+        "predicate": "has_screen_size_inch",
+        "object": "11.0"
+      },
+      {
+        "subject": "It is a laptop device",
+        "predicate": "has_price_usd",
+        "object": "499"
+      },
+      {
+        "subject": "It is a laptop device",
+        "predicate": "has_ram_gb",
+        "object": "32"
+      },
+      {
+        "subject": "It is a laptop device",
+        "predicate": "target_market_region",
+        "object": "EU"
+      },
+      {
+        "subject": "It is a laptop device",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 5,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 6.992e-05,
+    "latency_s": 1.5048365999246016,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 18,
+    "predicted_triples": [
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "manufactured_by",
+        "object": "PixelWare"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "target_market_region",
+        "object": "APAC"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_ram_gb",
+        "object": "8"
+      },
+      {
+        "subject": "Zenbyte Laptop Pro 18",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "made_of_material",
+        "object": "aluminum"
+      },
+      {
+        "subject": "TechNova Laptop Air 17",
+        "predicate": "has_color",
+        "object": "green"
+      },
+      {
+        "subject": "TechNova Smartphone Pro 1",
+        "predicate": "has_color",
+        "object": "blue"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "made_of_material",
+        "object": "carbon fiber"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "target_market_region",
+        "object": "US"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "supports_fast_charging",
+        "object": "no"
+      },
+      {
+        "subject": "PixelWare Laptop Plus 11",
+        "predicate": "has_noise_cancellation",
+        "object": "no"
+      }
+    ]
+  },
+  {
+    "product_idx": 7,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 3.102e-05,
+    "latency_s": 1.3004052999895066,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 5,
+    "predicted_triples": [
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "manufactured_by",
+        "object": "Auralex"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_ram_gb",
+        "object": "12"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_battery_life_hours",
+        "object": "14"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Auralex Smartphone Air 7",
+        "predicate": "target_market_region",
+        "object": "US"
+      }
+    ]
+  },
+  {
+    "product_idx": 10,
+    "iteration": 0,
+    "phase": "held_out",
+    "cost_usd": 4.566e-05,
+    "latency_s": 0.9344982000766322,
+    "http_status": 200,
+    "error": null,
+    "n_triples": 6,
+    "predicted_triples": [
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "manufactured_by",
+        "object": "Zenbyte"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_storage_gb",
+        "object": "128"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_weight_kg",
+        "object": "0.42"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "has_color",
+        "object": "silver"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "made_of_material",
+        "object": "plastic"
+      },
+      {
+        "subject": "Zenbyte Tablet Max 10",
+        "predicate": "target_market_region",
+        "object": "Global"
+      }
+    ]
+  }
+]

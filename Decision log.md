@@ -2919,9 +2919,20 @@ user's go-ahead alongside the other three, per this task's own
 
 ## Status
 
-DEC-030: APPROVED (2026-09-23), unchanged from the original
-  pre-registration. Queued second (after DEC-028, before DEC-027,
-  DEC-029).
+DEC-030: RUN, COMPLETE (2026-09-23). All five items done: 22
+  `.gitignore` exceptions added (632 files, ~76MB committed);
+  `scripts/reproduce_all.py` written and run (21 PASS, 2 READ, 0
+  MISMATCH, 1 disclosed GAP); README status/limitations rewritten;
+  `requirements-finetune.txt` split out; `docs/reproduction.md` added.
+  **One genuine finding, reported not silently fixed**: EVID-029's
+  93.5%->100% provenance-filter figures use `gold_structured`, not the
+  snapshot's own `gold_label` column (`gold_unstructured`) -- the
+  latter gives 92.6%->99.1% instead. The published number is correct
+  under its own stated method; both are now documented (EVID-043,
+  Results Summary.md Claim 5). Also found: 8 `outputs/` directories,
+  including 5 adapter `.safetensors` files, were already committed
+  before any `outputs/` gitignore rule existed -- left in place, not
+  rewritten out of history, documented in `docs/reproduction.md`.
 
 DEC-014 (evaluation protocol & leakage control)
 

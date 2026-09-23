@@ -19,14 +19,47 @@ practical "how to run it" guide.
 ## Project status
 
 **Do not treat any number in this repository as paper-ready until you
-check its status in `Decision log.md`.** As of this writing:
+check its status in `Decision log.md`.** This section is a snapshot,
+not the source of truth -- `Decision log.md`'s per-DEC status lines and
+`Results Summary.md` are authoritative and updated more often than this
+file. As of 2026-09-23 (DEC-001 through DEC-030 exist):
 
-- DEC-001 (public benchmark, CaRB): pilot only (10 sentences)
-- DEC-002 (external baseline): pilot only (one Llama baseline on CaRB-10)
-- DEC-003 (PKB math): experimentally complete except the paper write-up
-- DEC-004 (ablation study): one clean single-seed pilot run complete
-- DEC-005 (statistical validation): in progress
-- DEC-006 through DEC-013: not started
+- **Public benchmarks**: CaRB at full official-scorer scale (548/641
+  sentences, DEC-001/EVID-035); DocRED and BioRED are still
+  small pilots (15 documents each, DEC-020/DEC-009) -- not yet scaled.
+- **External baselines**: DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini
+  2.5 Pro all scored on CaRB (DEC-002); REBEL attempted and found
+  task-incompatible with CaRB's scoring, a real finding not a gap.
+- **PKB aggregation math**: formally analyzed with proofs (boundedness,
+  monotonicity, the corroboration requirement, saturation, the rival
+  ceiling) in `paper/main.tex`; empirically validated via an offline
+  replay comparing six aggregation rules on two independent real-data
+  snapshots (DEC-026/DEC-028, EVID-041/042) -- a corrected rule
+  (distinct-source aggregation) shows a real, statistically significant
+  improvement over the published rule; two other candidate corrections
+  are honestly reported as null/negative.
+- **Ablation study**: run at two scales (N=20, N=50) and, as of DEC-029,
+  a higher-seed-count extension -- see `Decision log.md` for the current
+  seed count and the achieved minimum detectable effect (do not describe
+  any ablation null here as "properly powered" without checking that
+  number first).
+- **Fine-tuning**: QLoRA on Mistral-7B-Instruct-v0.3; DEC-027 executes a
+  leakage-free hyperparameter-selection redesign (validation-only
+  selection, held-out test confirmation) -- check `Decision log.md`
+  for whether this has superseded the earlier tuning-leakage-affected
+  result (EVID-040) by the time you read this.
+- **Provenance filtering**: validated against a genuinely noisy (not
+  just noise-free) structured source (DEC-028/EVID-042) -- the original
+  circularity objection (AUDIT.md A3) is closed with a real measurement.
+- **Reproducibility**: raw outputs behind every number cited in
+  `paper/main.tex` are now committed under targeted `.gitignore`
+  exceptions (DEC-030); see `docs/reproduction.md` and
+  `scripts/reproduce_all.py`.
+
+This project has moved well past the single-seed, single-scale state
+this section originally described -- if you are reading a cached or
+old copy of this file, re-pull and re-check `Decision log.md` before
+trusting anything above.
 
 ## Repository structure
 
@@ -37,8 +70,17 @@ data/        Generated datasets, the leakage-safe product split, and
              CaRB benchmark data
 docs/        (reserved for methodology/reproduction docs)
 notebooks/   Original prototype notebooks + DEC-00x exploratory notebooks
-outputs/     Generated experiment results (gitignored — regenerate via
-             the scripts below, don't expect these to be committed)
+outputs/     Generated experiment results. Gitignored by default
+             (`outputs/*`), but as of DEC-030 the raw outputs behind
+             every number cited in `paper/main.tex` are committed via
+             targeted `.gitignore` exceptions -- see
+             `docs/reproduction.md` for the full list and
+             `scripts/reproduce_all.py` to regenerate and cross-check
+             them. Adapter weight files (`*.safetensors`/`*.bin`) stay
+             excluded from new commits regardless of directory; a
+             handful were committed before that rule existed (DEC-006,
+             DEC-025 adapters) and were left in place rather than
+             rewriting history.
 prompts/     Versioned extraction prompt templates
 src/         Reusable, tested pipeline code (see below)
 scripts/     Entry points that run a full experiment using src/
@@ -109,22 +151,34 @@ diagnosed from saved artifacts instead of requiring a re-run.
   used throughout this project's development (mock the LLM call,
   verify the pipeline wiring, then run for real).
 
-## Known limitations (as of this writing)
+## Known limitations (as of 2026-09-23 -- check `paper/main.tex`'s
+## Limitations section and `Decision log.md` for the current, detailed
+## list; this is a short pointer, not the full accounting)
 
-- All experiments so far use a **single seed** (42) except the
-  in-progress DEC-005 run — no result should be treated as
-  statistically validated until DEC-005 completes and significance
-  tests are run.
-- The product dataset is entirely synthetic (see
-  `src/datasets/product_generator.py`); no public benchmark result
-  beyond a 10-sentence CaRB pilot exists yet.
-- Held-out val/test splits at N=20 are very small (3 and 4 products) —
-  single-product differences swing precision/recall substantially.
-- LoRA fine-tuning (DEC-006) has not been ported from the original
-  notebooks into `src/` yet; it still only exists in
-  `SLDE_AFT_DualSource_Final_(*).ipynb`.
-- A provenance *filter* (as opposed to provenance *logging*, which
-  exists) has not been implemented anywhere in the pipeline.
+- **Single synthetic domain remains the primary evaluation domain.**
+  DocRED and BioRED are real public-data validations but still
+  small pilots (15 documents each) -- not yet scaled to a
+  benchmark-grade sample size.
+- **Structured records and gold labels share a generator** in the
+  synthetic product domain (`src/datasets/product_generator.py`);
+  DEC-028 tests the provenance filter under a corrupted structured
+  source specifically to address this for that one mechanism, but the
+  underlying single-domain limitation is not eliminated by that fix.
+- **A five-seed ablation (before DEC-029) only excludes large effects**
+  (approximately 0.3 absolute F1); check `Decision log.md` DEC-029 for
+  the achieved seed count and minimum detectable effect before citing
+  any ablation null as conclusive.
+- **The closed-loop and provenance-filter ablations use a model-family
+  confound** (base extractor vs. a fine-tuned model from a different
+  model family) not yet isolated as a separate experiment.
+- **TACRED was scoped and explicitly declined** (a paid LDC license;
+  CaRB + DocRED already cover open-domain and closed-schema extraction)
+  -- see `Decision log.md` DEC-021.
+- This list is intentionally short; do not treat its absence of an item
+  as evidence that item is resolved -- check `paper/main.tex`'s
+  Limitations section (or, if that section is itself still a TODO,
+  `Decision log.md`'s per-DEC status lines) before relying on this file
+  alone.
 
 ## Where to look for more detail
 

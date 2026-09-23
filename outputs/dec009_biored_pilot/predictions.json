@@ -1,0 +1,1496 @@
+[
+  {
+    "pmid": "14510914",
+    "text": "Congenital hypothyroidism due to a new deletion in the sodium/iodide symporter protein. OBJECTIVE: Iodide transport defect (ITD) is a rare disorder characterised by an inability of the thyroid to maintain an iodide gradient across the basolateral membrane of thyroid follicular cells, that often results in congenital hypothyroidism. When present the defect is also found in the salivary glands and gastric mucosa and it has been shown to arise from abnormalities of the sodium/iodide symporter (NIS). PATIENT: We describe a woman with hypothyroidism identified at the 3rd month of life. The diagnosis of ITD was suspected because of nodular goitre, and little if any iodide uptake by the thyroid and salivary glands. Treatment with iodide partially corrected the hypothyroidism; however, long-term substitution therapy with L-thyroxine was started. MEASUREMENTS: Thyroid radioiodide uptake was only 1.4% and 0.3% at 1 and 24 h after the administration of recombinant human TSH. The saliva to plasma I- ratio was 1.1 indicating that the inability of the thyroid gland to concentrate I- was also present in the salivary glands. RESULTS: Analysis of the patient's NIS gene revealed a 15 nucleotide (nt) deletion of the coding sequence (nt 1314 through nt 1328) and the insertion of 15 nt duplicating the first 15 nt of the adjacent intron. The patient was homozygous for this insertion/deletion, while both consanguineous parents were heterozygous. This deletion predicts the production of a protein lacking the five terminal amino acids of exon XI (439-443) which are located in the 6th intracellular loop. COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS failed to concentrate iodide, suggesting that the mutation was the direct cause of the ITD in this patient. CONCLUSION: In conclusion we describe the first Italian case of congenital hypothyroidism due to a new deletion in the NIS gene.",
+    "gold_triples": [
+      [
+        "deletion of the coding sequence (nt 1314 through nt 1328)",
+        "Positive_Correlation",
+        "Congenital hypothyroidism"
+      ],
+      [
+        "inability of the thyroid",
+        "Association",
+        "iodide"
+      ],
+      [
+        "lacking the five terminal amino acids of exon XI (439-443)",
+        "Positive_Correlation",
+        "Iodide transport defect"
+      ],
+      [
+        "lacking the five terminal amino acids of exon XI (439-443)",
+        "Positive_Correlation",
+        "Congenital hypothyroidism"
+      ],
+      [
+        "Iodide transport defect",
+        "Association",
+        "iodide"
+      ],
+      [
+        "Iodide transport defect",
+        "Negative_Correlation",
+        "sodium/iodide symporter"
+      ],
+      [
+        "L-thyroxine",
+        "Negative_Correlation",
+        "hypothyroidism"
+      ],
+      [
+        "iodide",
+        "Negative_Correlation",
+        "lacking the five terminal amino acids of exon XI (439-443)"
+      ],
+      [
+        "iodide",
+        "Association",
+        "sodium/iodide symporter"
+      ],
+      [
+        "hypothyroidism",
+        "Negative_Correlation",
+        "iodide"
+      ],
+      [
+        "Congenital hypothyroidism",
+        "Positive_Correlation",
+        "insertion of 15 nt duplicating the first 15"
+      ],
+      [
+        "Congenital hypothyroidism",
+        "Association",
+        "sodium/iodide symporter"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "a 15 nucleotide (nt) deletion of the coding sequence (nt 1314 through nt 1328)",
+        "predicate": "Positive_Correlation",
+        "object": "congenital hypothyroidism"
+      },
+      {
+        "subject": "the mutation",
+        "predicate": "Positive_Correlation",
+        "object": "the ITD in this patient"
+      },
+      {
+        "subject": "the mutation",
+        "predicate": "Bind",
+        "object": "the inability of the thyroid gland to concentrate I-"
+      },
+      {
+        "subject": "the mutation",
+        "predicate": "Bind",
+        "object": "the inability of the salivary glands to concentrate I-"
+      },
+      {
+        "subject": "Treatment with iodide",
+        "predicate": "Negative_Correlation",
+        "object": "hypothyroidism"
+      },
+      {
+        "subject": "the saliva to plasma I- ratio",
+        "predicate": "Comparison",
+        "object": "1.1"
+      },
+      {
+        "subject": "the saliva to plasma I- ratio",
+        "predicate": "Comparison",
+        "object": "1.1 indicating that the inability of the thyroid gland to concentrate I- was also present in the salivary glands"
+      },
+      {
+        "subject": "the patient's NIS gene",
+        "predicate": "Association",
+        "object": "the production of a protein lacking the five terminal amino acids of exon XI (439-443)"
+      },
+      {
+        "subject": "the patient's NIS gene",
+        "predicate": "Association",
+        "object": "the insertion/deletion"
+      },
+      {
+        "subject": "the patient's NIS gene",
+        "predicate": "Association",
+        "object": "the first 15 nt of the adjacent intron"
+      },
+      {
+        "subject": "the patient's NIS gene",
+        "predicate": "Association",
+        "object": "the 6th intracellular loop"
+      },
+      {
+        "subject": "COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS",
+        "predicate": "Bind",
+        "object": "iodide"
+      },
+      {
+        "subject": "COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS",
+        "predicate": "Bind",
+        "object": "the inability of the thyroid gland to concentrate I-"
+      },
+      {
+        "subject": "COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS",
+        "predicate": "Bind",
+        "object": "the inability of the salivary glands to concentrate I-"
+      },
+      {
+        "subject": "COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS",
+        "predicate": "Bind",
+        "object": "the mutation"
+      },
+      {
+        "subject": "COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS",
+        "predicate": "Bind",
+        "object": "the ITD in this patient"
+      },
+      {
+        "subject": "COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS",
+        "predicate": "Bind",
+        "object": "the inability of the thyroid gland to concentrate I- was also present in the salivary glands"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "15096016",
+    "text": "Pallidal stimulation: an alternative to pallidotomy? A resurgence of interest in the surgical treatment of Parkinson's disease (PD) came with the rediscovery of posteroventral pallidotomy by Laitinen in 1985. Laitinen's procedure improved most symptoms in drug-resistant PD, which engendered wide interest in the neurosurgical community. Another lesioning procedure, ventrolateral thalamotomy, has become a powerful alternative to stimulate the nucleus ventralis intermedius, producing high long-term success rates and low morbidity rates. Pallidal stimulation has not met with the same success. According to the literature pallidotomy improves the \"on\" symptoms of PD, such as dyskinesias, as well as the \"off\" symptoms, such as rigidity, bradykinesia, and on-off fluctuations. Pallidal stimulation improves bradykinesia and rigidity to a minor extent; however, its strength seems to be in improving levodopa-induced dyskinesias. Stimulation often produces an improvement in the hyper- or dyskinetic upper limbs, but increases the \"freezing\" phenomenon in the lower limbs at the same time. Considering the small increase in the patient's independence, the high costs of bilateral implants, and the difficulty most patients experience in handling the devices, the question arises as to whether bilateral pallidal stimulation is a real alternative to pallidotomy.",
+    "gold_triples": [
+      [
+        "levodopa",
+        "Positive_Correlation",
+        "dyskinesias"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "pallidotomy",
+        "predicate": "Positive_Correlation",
+        "object": "Parkinson's disease"
+      },
+      {
+        "subject": "pallidotomy",
+        "predicate": "Association",
+        "object": "Parkinson's disease symptoms"
+      },
+      {
+        "subject": "pallidal stimulation",
+        "predicate": "Negative_Correlation",
+        "object": "pallidotomy"
+      },
+      {
+        "subject": "pallidal stimulation",
+        "predicate": "Positive_Correlation",
+        "object": "levodopa-induced dyskinesias"
+      },
+      {
+        "subject": "pallidal stimulation",
+        "predicate": "Negative_Correlation",
+        "object": "freezing phenomenon"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "16152606",
+    "text": "Carrier frequency of mutation 657del5 in the NBS1 gene in a population of Polish pediatric patients with sporadic lymphoid malignancies. Nijmegen breakage syndrome (NBS) is a human autosomal recessive disease characterized by genomic instability and enhanced cancer predisposition, in particular to lymphoma and leukemia. Recently, significantly higher frequencies of heterozygous carriers of the Slavic founder NBS1 mutation, 657del5, were found in Russian children with sporadic lymphoid malignancies, and in Polish adults with non-Hodgkin lymphoma (NHL). In addition, the substitution 643C>T (R215W) has also been found in excess among children with acute lymphoblastic leukemia (ALL). In an attempt to asses the contribution of both mutations to the development of sporadic lymphoid malignancies, we analyzed DNA samples from a large group of Polish pediatric patients. The NBS1 mutation 657del5 on one allele was found in 3 of 270 patients with ALL and 2 of 212 children and adolescents with NHL; no carrier was found among 63 patients with Hodgkin lymphoma (HL). No carriers of the variant R215W were detected in any studied group. The relative frequency of the 657del5 mutation was calculated from a total of 6,984 controls matched by place of patient residence, of whom 42 were found to be carriers (frequency = 0.006). In the analyzed population with malignancies, an increased odds ratio for the occurrence of mutation 657del5 was found in comparison with the control Polish population (OR range 1.48-1.85, 95% confidence interval 1.18-2.65). This finding indicates that the frequency of the mutation carriers was indeed increased in patients with ALL and NHL (p < 0.05). Nonetheless, NBS1 gene heterozygosity is not a major risk factor for lymphoid malignancies in childhood and adolescence.",
+    "gold_triples": [
+      [
+        "cancer",
+        "Association",
+        "657del5"
+      ],
+      [
+        "acute lymphoblastic leukemia",
+        "Association",
+        "R215W"
+      ],
+      [
+        "acute lymphoblastic leukemia",
+        "Association",
+        "643C>T"
+      ],
+      [
+        "acute lymphoblastic leukemia",
+        "Association",
+        "657del5"
+      ],
+      [
+        "NBS1",
+        "Association",
+        "cancer"
+      ],
+      [
+        "NBS1",
+        "Association",
+        "non-Hodgkin lymphoma"
+      ],
+      [
+        "NBS1",
+        "Association",
+        "acute lymphoblastic leukemia"
+      ],
+      [
+        "NBS1",
+        "Association",
+        "sporadic lymphoid malignancies"
+      ],
+      [
+        "657del5",
+        "Association",
+        "non-Hodgkin lymphoma"
+      ],
+      [
+        "sporadic lymphoid malignancies",
+        "Association",
+        "657del5"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "NBS1 gene",
+        "predicate": "Association",
+        "object": "genomic instability"
+      },
+      {
+        "subject": "NBS1 gene",
+        "predicate": "Association",
+        "object": "cancer predisposition"
+      },
+      {
+        "subject": "NBS1 gene",
+        "predicate": "Association",
+        "object": "lymphoma and leukemia"
+      },
+      {
+        "subject": "Slavic founder NBS1 mutation, 657del5",
+        "predicate": "Positive_Correlation",
+        "object": "sporadic lymphoid malignancies"
+      },
+      {
+        "subject": "substitution 643C>T (R215W)",
+        "predicate": "Association",
+        "object": "acute lymphoblastic leukemia (ALL)"
+      },
+      {
+        "subject": "NBS1 mutation 657del5",
+        "predicate": "Positive_Correlation",
+        "object": "occurrence of lymphoid malignancies"
+      },
+      {
+        "subject": "NBS1 mutation 657del5",
+        "predicate": "Negative_Correlation",
+        "object": "Hodgkin lymphoma (HL)"
+      },
+      {
+        "subject": "mutation 657del5",
+        "predicate": "Comparison",
+        "object": "control Polish population"
+      },
+      {
+        "subject": "mutation 657del5",
+        "predicate": "Positive_Correlation",
+        "object": "occurrence of lymphoid malignancies"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "16277682",
+    "text": "Segregation of a M404V mutation of the p62/sequestosome 1 (p62/SQSTM1) gene with polyostotic Paget's disease of bone in an Italian family. Mutations of the p62/Sequestosome 1 gene (p62/SQSTM1) account for both sporadic and familial forms of Paget's disease of bone (PDB). We originally described a methionine-->valine substitution at codon 404 (M404V) of exon 8, in the ubiquitin protein-binding domain of p62/SQSTM1 gene in an Italian PDB patient. The collection of data from the patient's pedigree provided evidence for a familial form of PDB. Extension of the genetic analysis to other relatives in this family demonstrated segregation of the M404V mutation with the polyostotic PDB phenotype and provided the identification of six asymptomatic gene carriers. DNA for mutational analysis of the exon 8 coding sequence was obtained from 22 subjects, 4 PDB patients and 18 clinically unaffected members. Of the five clinically ascertained affected members of the family, four possessed the M404V mutation and exhibited the polyostotic form of PDB, except one patient with a single X-ray-assessed skeletal localization and one with a polyostotic disease who had died several years before the DNA analysis. By both reconstitution and mutational analysis of the pedigree, six unaffected subjects were shown to bear the M404V mutation, representing potential asymptomatic gene carriers whose circulating levels of alkaline phosphatase were recently assessed as still within the normal range. Taken together, these results support a genotype-phenotype correlation between the M404V mutation in the p62/SQSTM1 gene and a polyostotic form of PDB in this family. The high penetrance of the PDB trait in this family together with the study of the asymptomatic gene carriers will allow us to confirm the proposed genotype-phenotype correlation and to evaluate the potential use of mutational analysis of the p62/SQSTM1 gene in the early detection of relatives at risk for PDB.",
+    "gold_triples": [
+      [
+        "p62",
+        "Association",
+        "polyostotic disease"
+      ],
+      [
+        "p62",
+        "Association",
+        "Paget's disease of bone"
+      ],
+      [
+        "M404V",
+        "Association",
+        "polyostotic disease"
+      ],
+      [
+        "Paget's disease of bone",
+        "Positive_Correlation",
+        "M404V"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "M404V mutation of the p62/sequestosome 1 (p62/SQSTM1) gene",
+        "predicate": "Positive_Correlation",
+        "object": "polyostotic Paget's disease of bone"
+      },
+      {
+        "subject": "Mutations of the p62/Sequestosome 1 gene (p62/SQSTM1)",
+        "predicate": "Association",
+        "object": "Paget's disease of bone (PDB)"
+      },
+      {
+        "subject": "a methionine-->valine substitution at codon 404 (M404V) of exon 8",
+        "predicate": "Bind",
+        "object": "the ubiquitin protein-binding domain of p62/SQSTM1 gene"
+      },
+      {
+        "subject": "the M404V mutation",
+        "predicate": "Positive_Correlation",
+        "object": "the polyostotic PDB phenotype"
+      },
+      {
+        "subject": "the M404V mutation",
+        "predicate": "Positive_Correlation",
+        "object": "the polyostotic form of PDB"
+      },
+      {
+        "subject": "the M404V mutation",
+        "predicate": "Positive_Correlation",
+        "object": "the PDB trait"
+      },
+      {
+        "subject": "the p62/SQSTM1 gene",
+        "predicate": "Association",
+        "object": "the early detection of relatives at risk for PDB"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "1671881",
+    "text": "Two distinct mutations at a single BamHI site in phenylketonuria. Classical phenylketonuria is an autosomal recessive disease caused by a deficiency of hepatic phenylalanine hydroxylase (PAH). The abolition of an invariant BamHI site located in the coding sequence of the PAH gene (exon 7) led to the recognition of two new point mutations at codon 272 and 273 (272gly----stop and 273ser----phe, respectively). Both mutations were detected in north eastern France or Belgium and occurred on the background of RFLP haplotype 7 alleles. The present study supports the view that the clinical heterogeneity in PKU is accounted for by the large variety of mutant genotypes associated with PAH deficiencies..",
+    "gold_triples": [
+      [
+        "phenylketonuria",
+        "Positive_Correlation",
+        "272gly----stop"
+      ],
+      [
+        "phenylketonuria",
+        "Positive_Correlation",
+        "273ser----phe"
+      ],
+      [
+        "PAH",
+        "Association",
+        "phenylketonuria"
+      ],
+      [
+        "PAH",
+        "Negative_Correlation",
+        "deficiency of hepatic phenylalanine hydroxylase"
+      ],
+      [
+        "272gly----stop",
+        "Positive_Correlation",
+        "deficiency of hepatic phenylalanine hydroxylase"
+      ],
+      [
+        "273ser----phe",
+        "Positive_Correlation",
+        "deficiency of hepatic phenylalanine hydroxylase"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "phenylketonuria",
+        "predicate": "Association",
+        "object": "PAH deficiency"
+      },
+      {
+        "subject": "PAH deficiency",
+        "predicate": "Negative_Correlation",
+        "object": "phenylalanine hydroxylase"
+      },
+      {
+        "subject": "PAH gene",
+        "predicate": "Bind",
+        "object": "exon 7"
+      },
+      {
+        "subject": "codon 272",
+        "predicate": "Negative_Correlation",
+        "object": "stop"
+      },
+      {
+        "subject": "codon 273",
+        "predicate": "Negative_Correlation",
+        "object": "phe"
+      },
+      {
+        "subject": "RFLP haplotype 7 alleles",
+        "predicate": "Association",
+        "object": "PKU"
+      },
+      {
+        "subject": "mutant genotypes",
+        "predicate": "Association",
+        "object": "PKU"
+      },
+      {
+        "subject": "PAH deficiencies",
+        "predicate": "Association",
+        "object": "PKU"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "16867246",
+    "text": "Association of DRD2 polymorphisms and chlorpromazine-induced extrapyramidal syndrome in Chinese schizophrenic patients. AIM: Extrapyramidal syndrome (EPS) is most commonly affected by typical antipsychotic drugs that have a high affinity with the D2 receptor. Recently, many research groups have reported on the positive relationship between the genetic variations in the DRD2 gene and the therapeutic response in schizophrenia patients as a result of the role of variations in the receptor in modulating receptor expression. In this study, we evaluate the role DRD2 plays in chlorpromazine-induced EPS in schizophrenic patients. METHODS: We identified seven SNP(single nucleotide polymorphism) (-141Cins>del, TaqIB, TaqID, Ser311Cys, rs6275, rs6277 and TaqIA) in the DRD2 gene in 146 schizophrenic inpatients (59 with EPS and 87 without EPS according to the Simpson-Angus Scale) treated with chlorpromazine after 8 weeks. The alleles of all loci were determined by PCR (polymerase chain reaction). RESULTS: Polymorphisms TaqID, Ser311Cys and rs6277 were not polymorphic in the population recruited in the present study. No statistical significance was found in the allele distribution of -141Cins>del, TaqIB, rs6275 and TaqIA or in the estimated haplotypes (constituted by TaqIB, rs6275 and TaqIA) in linkage disequilibrium between the two groups. CONCLUSION: Our results did not lend strong support to the view that the genetic variation of the DRD2 gene plays a major role in the individually variable adverse effect induced by chlorpromazine, at least in Chinese patients with schizophrenia. Our results confirmed a previous study on the relationship between DRD2 and EPS in Caucasians.",
+    "gold_triples": [
+      [
+        "DRD2",
+        "Association",
+        "schizophrenic"
+      ],
+      [
+        "antipsychotic drugs",
+        "Association",
+        "DRD2"
+      ],
+      [
+        "schizophrenic",
+        "Negative_Correlation",
+        "chlorpromazine"
+      ],
+      [
+        "extrapyramidal syndrome",
+        "Association",
+        "DRD2"
+      ],
+      [
+        "extrapyramidal syndrome",
+        "Positive_Correlation",
+        "antipsychotic drugs"
+      ],
+      [
+        "chlorpromazine",
+        "Positive_Correlation",
+        "extrapyramidal syndrome"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "DRD2 polymorphisms",
+        "predicate": "Association",
+        "object": "chlorpromazine-induced extrapyramidal syndrome"
+      },
+      {
+        "subject": "DRD2 polymorphisms",
+        "predicate": "Association",
+        "object": "therapeutic response in schizophrenia patients"
+      },
+      {
+        "subject": "DRD2 polymorphisms",
+        "predicate": "Association",
+        "object": "EPS in schizophrenic patients"
+      },
+      {
+        "subject": "DRD2 gene",
+        "predicate": "Bind",
+        "object": "D2 receptor"
+      },
+      {
+        "subject": "DRD2 gene",
+        "predicate": "Bind",
+        "object": "receptor expression"
+      },
+      {
+        "subject": "chlorpromazine",
+        "predicate": "Bind",
+        "object": "D2 receptor"
+      },
+      {
+        "subject": "chlorpromazine",
+        "predicate": "Negative_Correlation",
+        "object": "EPS in schizophrenic patients"
+      },
+      {
+        "subject": "DRD2 gene",
+        "predicate": "Association",
+        "object": "EPS in Caucasians"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "17549393",
+    "text": "A novel IRF6 nonsense mutation (Y67X) in a German family with Van der Woude syndrome. Van der Woude syndrome (VWS) is the most common type of syndromic orofacial cleft, which accounts for approximately 2% of all cleft lip and palate cases. It is characterised by variable association of lower lip pits, cleft lip and cleft palate, and hypodontia. VWS arises as the result of mutations in the gene encoding interferon regulatory factor 6 (IRF6). The disorder is transmitted in an autosomal dominant manner, with high penetrance and variable expressivity. Very recently, mutations of the IRF6 gene in exons 2-9 have been found in VWS patients, suggesting that this gene plays an important role in orofacial development. We report a novel mutation of the IRF6 gene in a German family. Five out of the 12 persons affected were able to be investigated. The mutation produced a stop codon within exon 4 of the IRF6 gene. All 5 patients were heterozygous for a base substitution c.201C>A changing the tyrosine codon at amino acid position 67 into a stop codon (p.Y67X) in exon 4. The premature stop codon was responsible for a truncated protein lacking parts of the DNA- binding domain and the complete Smad-interferon regulatory factor-binding domain probably essential for interactions with the Smad transcription factors.",
+    "gold_triples": [
+      [
+        "IRF6",
+        "Bind",
+        "Smad"
+      ],
+      [
+        "IRF6",
+        "Association",
+        "Van der Woude syndrome"
+      ],
+      [
+        "Van der Woude syndrome",
+        "Positive_Correlation",
+        "c.201C>A"
+      ],
+      [
+        "Y67X",
+        "Positive_Correlation",
+        "Van der Woude syndrome"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "IRF6",
+        "predicate": "Association",
+        "object": "Van der Woude syndrome"
+      },
+      {
+        "subject": "IRF6",
+        "predicate": "Bind",
+        "object": "Smad transcription factors"
+      },
+      {
+        "subject": "IRF6",
+        "predicate": "Bind",
+        "object": "Smad-interferon regulatory factor-binding domain"
+      },
+      {
+        "subject": "IRF6",
+        "predicate": "Negative_Correlation",
+        "object": "truncated protein"
+      },
+      {
+        "subject": "IRF6",
+        "predicate": "Negative_Correlation",
+        "object": "DNA-binding domain"
+      },
+      {
+        "subject": "IRF6",
+        "predicate": "Negative_Correlation",
+        "object": "Smad-interferon regulatory factor-binding domain"
+      },
+      {
+        "subject": "Van der Woude syndrome",
+        "predicate": "Association",
+        "object": "lower lip pits"
+      },
+      {
+        "subject": "Van der Woude syndrome",
+        "predicate": "Association",
+        "object": "cleft lip"
+      },
+      {
+        "subject": "Van der Woude syndrome",
+        "predicate": "Association",
+        "object": "cleft palate"
+      },
+      {
+        "subject": "Van der Woude syndrome",
+        "predicate": "Association",
+        "object": "hypodontia"
+      },
+      {
+        "subject": "Y67X",
+        "predicate": "Bind",
+        "object": "stop codon"
+      },
+      {
+        "subject": "Y67X",
+        "predicate": "Bind",
+        "object": "truncated protein"
+      },
+      {
+        "subject": "Y67X",
+        "predicate": "Bind",
+        "object": "DNA-binding domain"
+      },
+      {
+        "subject": "Y67X",
+        "predicate": "Bind",
+        "object": "Smad-interferon regulatory factor-binding domain"
+      },
+      {
+        "subject": "c.201C>A",
+        "predicate": "Bind",
+        "object": "tyrosine codon"
+      },
+      {
+        "subject": "c.201C>A",
+        "predicate": "Bind",
+        "object": "stop codon"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "17962394",
+    "text": "Skewed X inactivation in an X linked nystagmus family resulted from a novel, p.R229G, missense mutation in the FRMD7 gene. AIMS: This study aimed to identify the underlying genetic defect of a large Turkish X linked nystagmus (NYS) family. METHODS: Both Xp11 and Xq26 loci were tested by linkage analysis. The 12 exons and intron-exon junctions of the FRMD7 gene were screened by direct sequencing. X chromosome inactivation analysis was performed by enzymatic predigestion of DNA with a methylation-sensitive enzyme, followed by PCR of the polymorphic CAG repeat of the androgen receptor gene. RESULTS: The family contained 162 individuals, among whom 28 had NYS. Linkage analysis confirmed the Xq26 locus. A novel missense c.686C>G mutation, which causes the substitution of a conserved arginine at amino acid position 229 by glycine (p.R229G) in exon 8 of the FRMD7 gene, was observed. This change was not documented in 120 control individuals. The clinical findings in a female who was homozygous for the mutation were not different from those of affected heterozygous females. Skewed X inactivation was remarkable in the affected females of the family. CONCLUSIONS: A novel p.R229G mutation in the FRMD7 gene causes the NYS phenotype, and skewed X inactivation influences the manifestation of the disease in X linked NYS females.",
+    "gold_triples": [
+      [
+        "X linked nystagmus",
+        "Association",
+        "FRMD7"
+      ],
+      [
+        "X linked nystagmus",
+        "Positive_Correlation",
+        "p.R229G"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "FRMD7 gene",
+        "predicate": "Bind",
+        "object": "Xq26 locus"
+      },
+      {
+        "subject": "p.R229G mutation",
+        "predicate": "Positive_Correlation",
+        "object": "NYS phenotype"
+      },
+      {
+        "subject": "p.R229G mutation",
+        "predicate": "Negative_Correlation",
+        "object": "120 control individuals"
+      },
+      {
+        "subject": "Skewed X inactivation",
+        "predicate": "Positive_Correlation",
+        "object": "manifestation of the disease in X linked NYS females"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "18046082",
+    "text": "Identification of apolipoprotein E Guangzhou (arginine 150 proline), a new variant associated with lipoprotein glomerulopathy. BACKGROUND/AIMS: Lipoprotein glomerulopathy (LPG) is a rare disease characterized by thrombus-like substances in markedly dilated glomerular capillaries and elevated plasma levels of apolipoprotein E (apoE). Previous studies have shown that genetic disorders of apoE may contribute to the pathogenesis of LPG, but LPG may not be caused by apoE gene mutations in Chinese patients. This study investigated the association of a new variant of apoE with LPG in a Chinese family. METHODS: The apoE gene in a family with 4 LPG patients was sequenced. The polymerase chain reaction product of coding region of apoE exon 4 was cloned into pMD 18-T vector and then sequenced. RESULTS: A novel point mutation in exon 4 of the apoE gene was identified in all 4 LPG patients and 1 asymptomatic family member. Sequence analysis confirmed a nucleotide G to C point mutation in exon 4 (base 308) of the apoE gene in all patients and the asymptomatic family member. This missense mutation denotes amino acid substitution of the proline residue for arginine residue at position 150 of apoE. Those patients were all heterozygotes with apoE Guangzhou. One of 2 grandsons was a heterozygous carrier of apoE Guangzhou, although he did not have proteinuria. CONCLUSION: The results of this study suggest that apoE (arginine 150 proline) is a novel apoE variant that etiologically related to LPG. This variant (apoE Guangzhou) may cause a marked molecular conformational change of the apoE and thus impair its binding ability to lipids.",
+    "gold_triples": [
+      [
+        "G to C point mutation in exon 4 (base 308)",
+        "Association",
+        "lipids"
+      ],
+      [
+        "apolipoprotein E",
+        "Bind",
+        "lipids"
+      ],
+      [
+        "apolipoprotein E",
+        "Association",
+        "lipoprotein glomerulopathy"
+      ],
+      [
+        "arginine 150 proline",
+        "Association",
+        "lipids"
+      ],
+      [
+        "arginine 150 proline",
+        "Association",
+        "lipoprotein glomerulopathy"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "LPG",
+        "predicate": "Association",
+        "object": "apoE"
+      },
+      {
+        "subject": "apoE gene mutations",
+        "predicate": "Negative_Correlation",
+        "object": "LPG"
+      },
+      {
+        "subject": "apoE Guangzhou",
+        "predicate": "Positive_Correlation",
+        "object": "LPG"
+      },
+      {
+        "subject": "apoE Guangzhou",
+        "predicate": "Bind",
+        "object": "lipids"
+      },
+      {
+        "subject": "apoE Guangzhou",
+        "predicate": "Association",
+        "object": "molecular conformational change"
+      },
+      {
+        "subject": "apoE Guangzhou",
+        "predicate": "Association",
+        "object": "apoE binding ability"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "21054465",
+    "text": "Mutational analysis of CYP2C8 in hypertensive patients using denaturing high performance liquid chromatography. WHAT IS KNOWN AND OBJECTIVE: CYP2C8 is involved in the cytochrome P450 (CYP) epoxygenase pathway. Arachidonic acid metabolites such as epoxyeicosatrienenoic acids and hydroxyeicosatetrenoic acids, produced may have a role in hypertension. We aimed to develop a medium through-put method for screening samples of known and new mutations of CYP2C8 using denaturing high performance liquid chromatography (DHPLC). METHODS: DNA samples from 200 subjects (hypertensive patients and healthy controls) were screened for SNPs in CYP2C8 using DHPLC. Genotypes and allelic frequencies of CYP2C8 between the healthy controls and patients with hypertension were compared. RESULTS AND DISCUSSIONS: Six variants were detected and two were new; T deletion at 5063 and substitution of C to T at 33468 in exon 8. Differences in variant frequencies were detected between the controls and hypertensive patients. The controls have significantly higher prevalence of C35322C compared to the patients. The functional significance of the SNP at 35322 requires further study. Having homozygous C35322C could be a protective factor for hypertension. WHAT IS NEW AND CONCLUSION: Denaturing high performance liquid chromatography is useful for population screening to identify new and existing SNPs. A higher frequency of the C35322T SNP was observed among hypertensive patients than control subjects. This potentially important observation requires confirmation and the clinical significance assessed.",
+    "gold_triples": [
+      [
+        "CYP2C8",
+        "Association",
+        "hypertensive"
+      ],
+      [
+        "Arachidonic acid",
+        "Association",
+        "hypertensive"
+      ],
+      [
+        "C35322T",
+        "Positive_Correlation",
+        "hypertensive"
+      ],
+      [
+        "C to T at 33468",
+        "Association",
+        "hypertensive"
+      ],
+      [
+        "hypertensive",
+        "Association",
+        "C35322C"
+      ],
+      [
+        "T deletion at 5063",
+        "Association",
+        "hypertensive"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "CYP2C8",
+        "predicate": "Association",
+        "object": "hypertension"
+      },
+      {
+        "subject": "CYP2C8",
+        "predicate": "Bind",
+        "object": "cytochrome P450 (CYP) epoxygenase pathway"
+      },
+      {
+        "subject": "CYP2C8",
+        "predicate": "Positive_Correlation",
+        "object": "hypertension"
+      },
+      {
+        "subject": "CYP2C8",
+        "predicate": "Negative_Correlation",
+        "object": "C35322C"
+      },
+      {
+        "subject": "C35322C",
+        "predicate": "Positive_Correlation",
+        "object": "hypertension"
+      },
+      {
+        "subject": "C35322C",
+        "predicate": "Negative_Correlation",
+        "object": "CYP2C8"
+      },
+      {
+        "subject": "C35322T",
+        "predicate": "Positive_Correlation",
+        "object": "hypertensive patients"
+      },
+      {
+        "subject": "C35322T",
+        "predicate": "Negative_Correlation",
+        "object": "control subjects"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "22711886",
+    "text": "TNFR-associated factor 2 deficiency in B lymphocytes predisposes to chronic lymphocytic leukemia/small lymphocytic lymphoma in mice. We have previously shown that transgenic (tg) mice expressing in B lymphocytes both BCL-2 and a TNFR-associated factor 2 (TRAF2) mutant lacking the really interesting new gene and zinc finger domains (TRAF2DN) develop small lymphocytic lymphoma and chronic lymphocytic leukemia with high incidence (Zapata et al. 2004. Proc. Nat. Acad. Sci. USA 101: 16600-16605). Further analysis of the expression of TRAF2 and TRAF2DN in purified B cells demonstrated that expression of both endogenous TRAF2 and tg TRAF2DN was negligible in Traf2DN-tg B cells compared with wild-type mice. This was the result of proteasome-dependent degradation, and rendered TRAF2DN B cells as bona fide TRAF2-deficient B cells. Similar to B cells with targeted Traf2 deletion, Traf2DN-tg mice show expanded marginal zone B cell population and have constitutive p100 NF-kappaB2 processing. Also, TRAF3, X-linked inhibitor of apoptosis, and Bcl-X(L) expression levels were increased, whereas cellular inhibitors of apoptosis 1 and 2 levels were drastically reduced compared with those found in wild-type B cells. Moreover, consistent with previous results, we also show that TRAF2 was required for efficient JNK and ERK activation in response to CD40 engagement. However, TRAF2 was deleterious for BCR-mediated activation of these kinases. In contrast, TRAF2 deficiency had no effect on CD40-mediated p38 MAPK activation but significantly reduced BCR-mediated p38 activation. Finally, we further confirm that TRAF2 was required for CD40-mediated proliferation, but its absence relieved B cells of the need for B cell activating factor for survival. Altogether, our results suggest that TRAF2 deficiency cooperates with BCL-2 in promoting chronic lymphocytic leukemia/small lymphocytic lymphoma in mice, possibly by specifically enforcing marginal zone B cell accumulation, increasing X-linked inhibitor of apoptosis expression, and rendering B cells independent of B cell activating factor for survival.",
+    "gold_triples": [
+      [
+        "BCL-2",
+        "Association",
+        "X-linked inhibitor of apoptosis"
+      ],
+      [
+        "BCL-2",
+        "Association",
+        "chronic lymphocytic leukemia"
+      ],
+      [
+        "BCR",
+        "Association",
+        "p38 MAPK"
+      ],
+      [
+        "CD40",
+        "Association",
+        "p38 MAPK"
+      ],
+      [
+        "ERK",
+        "Association",
+        "CD40"
+      ],
+      [
+        "JNK",
+        "Association",
+        "CD40"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Association",
+        "B cell activating factor"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Negative_Correlation",
+        "X-linked inhibitor of apoptosis"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Association",
+        "BCL-2"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Positive_Correlation",
+        "p38 MAPK"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Association",
+        "BCR"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Association",
+        "CD40"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Positive_Correlation",
+        "ERK"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Positive_Correlation",
+        "JNK"
+      ],
+      [
+        "TNFR-associated factor 2",
+        "Negative_Correlation",
+        "chronic lymphocytic leukemia"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "TNFR-associated factor 2 deficiency",
+        "predicate": "Negative_Correlation",
+        "object": "chronic lymphocytic leukemia/small lymphocytic lymphoma"
+      },
+      {
+        "subject": "TNFR-associated factor 2 deficiency",
+        "predicate": "Association",
+        "object": "BCL-2"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Bind",
+        "object": "CD40"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Bind",
+        "object": "JNK"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Bind",
+        "object": "ERK"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Negative_Correlation",
+        "object": "BCR-mediated activation of JNK and ERK"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Negative_Correlation",
+        "object": "BCR-mediated activation of p38"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Negative_Correlation",
+        "object": "BCR-mediated proliferation"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Negative_Correlation",
+        "object": "need for B cell activating factor for survival"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Positive_Correlation",
+        "object": "marginal zone B cell accumulation"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Positive_Correlation",
+        "object": "X-linked inhibitor of apoptosis expression"
+      },
+      {
+        "subject": "TRAF2",
+        "predicate": "Positive_Correlation",
+        "object": "independence from B cell activating factor for survival"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "24036311",
+    "text": "CTR9/PAF1c regulates molecular lineage identity, histone H3K36 trimethylation and genomic imprinting during preimplantation development. Genome-wide epigenetic reprogramming is required for successful preimplantation development. Inappropriate or deficient chromatin regulation can result in defective lineage specification and loss of genomic imprinting, compromising normal development. Here we report that two members of the RNA polymerase II associated factor, homolog (Saccharomyces cerevisiae) complex (PAF1 complex) components, Ctr9 and Rtf1, are required during mammalian preimplantation development. We demonstrate that Ctr9-deficient embryos fail to correctly specify lineages at the blastocyst stage. Expression of some lineage specific factors is markedly reduced in Ctr9 knockdown embryos, including Eomes, Elf5 and Sox2, while others are inappropriately expressed (Oct4, Nanog, Gata6, Fgf4 and Sox17). We also show that several imprinted genes (Mest, Peg3, Snrpn and Meg3) are aberrantly expressed although allele specific DNA methylation is not altered. We document a loss of histone H3 lysine 36 trimethylation (H3K36me3) in Ctr9-deficient embryos and confirm that knockdown of either Setd2 or Rtf1 results in similar phenotypes. These findings show that the PAF1 complex is required for mammalian development, likely through regulation of H3K36me3, and indicate functional conservation of the PAF1 complex from yeast to mammals in vivo.",
+    "gold_triples": [
+      [
+        "Setd2",
+        "Association",
+        "histone H3"
+      ],
+      [
+        "Rtf1",
+        "Association",
+        "histone H3"
+      ],
+      [
+        "CTR9",
+        "Negative_Correlation",
+        "Meg3"
+      ],
+      [
+        "CTR9",
+        "Negative_Correlation",
+        "Snrpn"
+      ],
+      [
+        "CTR9",
+        "Negative_Correlation",
+        "Peg3"
+      ],
+      [
+        "CTR9",
+        "Negative_Correlation",
+        "Mest"
+      ],
+      [
+        "CTR9",
+        "Negative_Correlation",
+        "Sox17"
+      ],
+      [
+        "CTR9",
+        "Negative_Correlation",
+        "Fgf4"
+      ],
+      [
+        "CTR9",
+        "Association",
+        "Gata6"
+      ],
+      [
+        "CTR9",
+        "Negative_Correlation",
+        "Nanog"
+      ],
+      [
+        "CTR9",
+        "Negative_Correlation",
+        "Oct4"
+      ],
+      [
+        "CTR9",
+        "Positive_Correlation",
+        "Sox2"
+      ],
+      [
+        "CTR9",
+        "Positive_Correlation",
+        "Elf5"
+      ],
+      [
+        "CTR9",
+        "Positive_Correlation",
+        "Eomes"
+      ],
+      [
+        "CTR9",
+        "Association",
+        "histone H3"
+      ],
+      [
+        "CTR9",
+        "Bind",
+        "Rtf1"
+      ],
+      [
+        "CTR9",
+        "Bind",
+        "CTR9"
+      ]
+    ],
+    "predicted_triples": [],
+    "error": "no JSON array found in model output"
+  },
+  {
+    "pmid": "25080425",
+    "text": "Regulation of signal transducer and activator of transcription 3 and apoptotic pathways by betaine attenuates isoproterenol-induced acute myocardial injury in rats. The present study was designed to investigate the cardioprotective effects of betaine on acute myocardial ischemia induced experimentally in rats focusing on regulation of signal transducer and activator of transcription 3 (STAT3) and apoptotic pathways as the potential mechanism underlying the drug effect. Male Sprague Dawley rats were treated with betaine (100, 200, and 400 mg/kg) orally for 40 days. Acute myocardial ischemic injury was induced in rats by subcutaneous injection of isoproterenol (85 mg/kg), for two consecutive days. Serum cardiac marker enzyme, histopathological variables and expression of protein levels were analyzed. Oral administration of betaine (200 and 400 mg/kg) significantly reduced the level of cardiac marker enzyme in the serum and prevented left ventricular remodeling. Western blot analysis showed that isoproterenol-induced phosphorylation of STAT3 was maintained or further enhanced by betaine treatment in myocardium. Furthermore, betaine (200 and 400 mg/kg) treatment increased the ventricular expression of Bcl-2 and reduced the level of Bax, therefore causing a significant increase in the ratio of Bcl-2/Bax. The protective role of betaine on myocardial damage was further confirmed by histopathological examination. In summary, our results showed that betaine pretreatment attenuated isoproterenol-induced acute myocardial ischemia via the regulation of STAT3 and apoptotic pathways.",
+    "gold_triples": [
+      [
+        "myocardial ischemia",
+        "Positive_Correlation",
+        "isoproterenol"
+      ],
+      [
+        "myocardial ischemia",
+        "Association",
+        "signal transducer and activator of transcription 3"
+      ],
+      [
+        "isoproterenol",
+        "Positive_Correlation",
+        "myocardial injury"
+      ],
+      [
+        "isoproterenol",
+        "Association",
+        "signal transducer and activator of transcription 3"
+      ],
+      [
+        "myocardial injury",
+        "Association",
+        "signal transducer and activator of transcription 3"
+      ],
+      [
+        "betaine",
+        "Negative_Correlation",
+        "Bax"
+      ],
+      [
+        "betaine",
+        "Positive_Correlation",
+        "Bcl-2"
+      ],
+      [
+        "betaine",
+        "Negative_Correlation",
+        "ventricular remodeling"
+      ],
+      [
+        "betaine",
+        "Negative_Correlation",
+        "myocardial ischemia"
+      ],
+      [
+        "betaine",
+        "Negative_Correlation",
+        "isoproterenol"
+      ],
+      [
+        "betaine",
+        "Negative_Correlation",
+        "myocardial injury"
+      ],
+      [
+        "betaine",
+        "Association",
+        "signal transducer and activator of transcription 3"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "betaine",
+        "predicate": "Positive_Correlation",
+        "object": "isoproterenol-induced acute myocardial ischemia"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Association",
+        "object": "STAT3"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Association",
+        "object": "apoptotic pathways"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Bind",
+        "object": "STAT3"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Bind",
+        "object": "apoptotic pathways"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Comparison",
+        "object": "isoproterenol-induced phosphorylation of STAT3"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Comparison",
+        "object": "Bcl-2/Bax ratio"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Comparison",
+        "object": "Bcl-2"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Comparison",
+        "object": "Bax"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Negative_Correlation",
+        "object": "cardiac marker enzyme"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Negative_Correlation",
+        "object": "left ventricular remodeling"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Positive_Correlation",
+        "object": "ventricular expression of Bcl-2"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Positive_Correlation",
+        "object": "ratio of Bcl-2/Bax"
+      },
+      {
+        "subject": "betaine",
+        "predicate": "Association",
+        "object": "histopathological examination"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "27509880",
+    "text": "Combination of the histone deacetylase inhibitor depsipeptide and 5-fluorouracil upregulates major histocompatibility complex class II and p21 genes and activates caspase-3/7 in human colon cancer HCT-116 cells. Epigenetic anticancer drugs such as histone deacetylase (HDAC) inhibitors have been combined with existing anticancer drugs for synergistic or additive effects. In the present study, we found that a very low concentration of depsipeptide, an HDAC inhibitor, potentiated the antitumor activity of 5-fluorouracil (5-FU) in a human colon cancer cell model using HCT-116, HT29, and SW48 cells via the inhibition of colony formation ability or cellular viability. Exposure to a combination of 5-FU (1.75 uM) and 1 nM depsipeptide for 24 and 48 h resulted in a 3- to 4-fold increase in activated caspase-3/7, while 5-FU alone failed to activate caspase-3/7. Microarray and subsequent gene ontology analyses revealed that compared to 5-FU or depsipeptide alone, the combination treatment of 5-FU and depsipeptide upregulated genes related to cell death and the apoptotic process consistent with the inhibition of colony formation and caspase-3/7 activation. These analyses indicated marked upregulation of antigen processing and presentation of peptide or polysaccharide antigen via major histocompatibility complex (MHC) class (GO:0002504) and MHC protein complex (GO:0042611). Compared with vehicle controls, the cells treated with the combination of 5-FU and depsipeptide showed marked induction (3- to 8.5-fold) of expression of MHC class II genes, but not of MHC class I genes. Furthermore, our global analysis of gene expression, which was focused on genes involved in the molecular regulation of MHC class II genes, showed enhancement of pro-apoptotic PCAF and CIITA after the combination of 5-FU and depsipeptide. These results may indicate a closer relationship between elevation of MHC class II expression and cellular apoptosis induced by the combination of depsipeptide and 5-FU. To the best of our knowledge, this is the first study to report that the combination of 5-FU and depsipeptide induces human colon cancer cell apoptosis in a concerted manner with the induction of MHC class II gene expression.",
+    "gold_triples": [
+      [
+        "polysaccharide",
+        "Association",
+        "major histocompatibility complex (MHC) class"
+      ],
+      [
+        "histone deacetylase",
+        "Negative_Correlation",
+        "depsipeptide"
+      ],
+      [
+        "5-fluorouracil",
+        "Negative_Correlation",
+        "colon cancer"
+      ],
+      [
+        "5-fluorouracil",
+        "Association",
+        "CIITA"
+      ],
+      [
+        "5-fluorouracil",
+        "Association",
+        "PCAF"
+      ],
+      [
+        "5-fluorouracil",
+        "Positive_Correlation",
+        "p21"
+      ],
+      [
+        "depsipeptide",
+        "Negative_Correlation",
+        "colon cancer"
+      ],
+      [
+        "depsipeptide",
+        "Association",
+        "CIITA"
+      ],
+      [
+        "depsipeptide",
+        "Association",
+        "PCAF"
+      ],
+      [
+        "depsipeptide",
+        "Cotreatment",
+        "5-fluorouracil"
+      ],
+      [
+        "depsipeptide",
+        "Positive_Correlation",
+        "p21"
+      ],
+      [
+        "major histocompatibility complex class II",
+        "Positive_Correlation",
+        "5-fluorouracil"
+      ],
+      [
+        "major histocompatibility complex class II",
+        "Positive_Correlation",
+        "depsipeptide"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "depsipeptide",
+        "predicate": "Positive_Correlation",
+        "object": "5-fluorouracil"
+      },
+      {
+        "subject": "depsipeptide",
+        "predicate": "Bind",
+        "object": "histone deacetylase"
+      },
+      {
+        "subject": "depsipeptide",
+        "predicate": "Association",
+        "object": "histone deacetylase inhibitors"
+      },
+      {
+        "subject": "5-fluorouracil",
+        "predicate": "Bind",
+        "object": "depsipeptide"
+      },
+      {
+        "subject": "5-fluorouracil",
+        "predicate": "Association",
+        "object": "histone deacetylase inhibitors"
+      },
+      {
+        "subject": "depsipeptide and 5-fluorouracil",
+        "predicate": "Positive_Correlation",
+        "object": "activated caspase-3/7"
+      },
+      {
+        "subject": "depsipeptide and 5-fluorouracil",
+        "predicate": "Association",
+        "object": "genes related to cell death and the apoptotic process"
+      },
+      {
+        "subject": "depsipeptide and 5-fluorouracil",
+        "predicate": "Positive_Correlation",
+        "object": "MHC class II genes"
+      },
+      {
+        "subject": "depsipeptide and 5-fluorouracil",
+        "predicate": "Association",
+        "object": "pro-apoptotic PCAF and CIITA"
+      }
+    ],
+    "error": null
+  },
+  {
+    "pmid": "27840894",
+    "text": "Seven novel and six de novo PHEX gene mutations in patients with hypophosphatemic rickets. Inactivating mutations in phosphate-regulating gene with homologies to endopeptidase on the X chromosome (PHEX) have been identified as a cause of X-linked hypophosphatemic rickets (XLH; OMIM 307800). In the present study, we enrolled 43 patients from 18 unrelated families clinically diagnosed with hypophosphatemic rickets and 250 healthy controls. For each available individual, all 22 exons with their exon-intron boundaries of the PHEX gene were directly sequenced. The levels of serum fibroblast growth factor 23 (FGF23) were measured as well. Sequencing analysis detected 17 different PHEX gene mutations, and 7 of these were identified as novel: 3 missense mutations, including c.304G>A (p.Gly102Arg) in exon 3, c.229T>C (p.Cys77Arg) in exon 3 and c.824T>C (p.Leu275Pro) in exon 7; 2 deletion mutations, including c.528delT (p.Glu177LysfsX44) in exon 5 and c.1234delA (p.Ser412ValfsX12) in exon 11; and 2 alternative splicing mutations, including c.436_436+1delAG in intron 4 at splicing donor sites and c.1483-1G>C in intron 13 at splicing acceptor sites. Moreover, 6 mutations were proven to be de novo in 6 sporadic cases and the probands were all females. No mutations were found in the 250 healthy controls. The serum levels of FGF23 varied widely among the patients with XLH, and no significant difference was found when compared with those of the healthy controls. On the whole, the findings of this study provide new insight into the spectrum of PHEX mutations and provide potential evidence of a critical domain in PHEX protein. In addition, the finding of an overlap of the serum FGF23 levels between the patients with XLH and the healthy controls indicates its limited diagnostic value in XLH.",
+    "gold_triples": [
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.1483-1G>C"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.304G>A"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.229T>C"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.824T>C"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.436_436+1delAG"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Ser412ValfsX12"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.1234delA"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Glu177LysfsX44"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.528delT"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Leu275Pro"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Cys77Arg"
+      ],
+      [
+        "X-linked hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Gly102Arg"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.1483-1G>C"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.304G>A"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.229T>C"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.824T>C"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.436_436+1delAG"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Ser412ValfsX12"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.1234delA"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Glu177LysfsX44"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "c.528delT"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Leu275Pro"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Cys77Arg"
+      ],
+      [
+        "hypophosphatemic rickets",
+        "Positive_Correlation",
+        "p.Gly102Arg"
+      ],
+      [
+        "PHEX",
+        "Negative_Correlation",
+        "X-linked hypophosphatemic rickets"
+      ],
+      [
+        "PHEX",
+        "Association",
+        "hypophosphatemic rickets"
+      ]
+    ],
+    "predicted_triples": [
+      {
+        "subject": "PHEX gene",
+        "predicate": "Association",
+        "object": "hypophosphatemic rickets"
+      },
+      {
+        "subject": "PHEX gene",
+        "predicate": "Bind",
+        "object": "phosphate-regulating gene with homologies to endopeptidase on the X chromosome (PHEX)"
+      },
+      {
+        "subject": "PHEX gene",
+        "predicate": "Bind",
+        "object": "FGF23"
+      },
+      {
+        "subject": "FGF23",
+        "predicate": "Comparison",
+        "object": "healthy controls"
+      },
+      {
+        "subject": "FGF23",
+        "predicate": "Comparison",
+        "object": "patients with XLH"
+      },
+      {
+        "subject": "PHEX gene mutations",
+        "predicate": "Positive_Correlation",
+        "object": "hypophosphatemic rickets"
+      },
+      {
+        "subject": "PHEX gene mutations",
+        "predicate": "Negative_Correlation",
+        "object": "healthy controls"
+      },
+      {
+        "subject": "PHEX gene mutations",
+        "predicate": "Bind",
+        "object": "serum FGF23 levels"
+      },
+      {
+        "subject": "serum FGF23 levels",
+        "predicate": "Comparison",
+        "object": "patients with XLH"
+      },
+      {
+        "subject": "serum FGF23 levels",
+        "predicate": "Comparison",
+        "object": "healthy controls"
+      }
+    ],
+    "error": null
+  }
+]

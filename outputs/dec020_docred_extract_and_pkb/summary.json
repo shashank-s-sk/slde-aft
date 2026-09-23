@@ -1,0 +1,151 @@
+{
+  "model": "meta-llama/llama-3.1-8b-instruct",
+  "n_docs": 15,
+  "threshold": 0.7,
+  "shrinkage": 0.5,
+  "total_cost_usd": 0.0013101000000000005,
+  "n_api_calls": 71,
+  "n_errors": 1,
+  "naive_baseline": {
+    "precision": 0.03409090909090909,
+    "recall": 0.031746031746031744,
+    "f1": 0.03287671232876712,
+    "true_positives": 6,
+    "false_positives": 170,
+    "false_negatives": 183,
+    "gold_count": 189,
+    "prediction_count": 176
+  },
+  "pkb_aggregated": {
+    "precision": 0.3333333333333333,
+    "recall": 0.005291005291005291,
+    "f1": 0.010416666666666666,
+    "true_positives": 1,
+    "false_positives": 2,
+    "false_negatives": 188,
+    "gold_count": 189,
+    "prediction_count": 3
+  },
+  "per_doc": [
+    {
+      "title": "Naomi (wrestler)",
+      "n_sentences": 5,
+      "n_gold": 8,
+      "n_naive_pred": 10,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 10
+    },
+    {
+      "title": "Oberliga Rheinland-Pfalz/Saar",
+      "n_sentences": 6,
+      "n_gold": 26,
+      "n_naive_pred": 8,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 8
+    },
+    {
+      "title": "Kurt Tucholsky",
+      "n_sentences": 6,
+      "n_gold": 8,
+      "n_naive_pred": 16,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 16
+    },
+    {
+      "title": "The Mudlark",
+      "n_sentences": 3,
+      "n_gold": 8,
+      "n_naive_pred": 9,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 9
+    },
+    {
+      "title": "North American Agreement on Environmental Cooperation",
+      "n_sentences": 3,
+      "n_gold": 6,
+      "n_naive_pred": 7,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 7
+    },
+    {
+      "title": "List of United States Armed Forces unit mottoes",
+      "n_sentences": 4,
+      "n_gold": 5,
+      "n_naive_pred": 7,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 7
+    },
+    {
+      "title": "Brigden, Ontario",
+      "n_sentences": 5,
+      "n_gold": 23,
+      "n_naive_pred": 19,
+      "n_pkb_accepted": 1,
+      "n_candidates_total": 19
+    },
+    {
+      "title": "Northern Territory Force",
+      "n_sentences": 5,
+      "n_gold": 14,
+      "n_naive_pred": 10,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 10
+    },
+    {
+      "title": "Fr\u00e9d\u00e9ric Talgorn",
+      "n_sentences": 4,
+      "n_gold": 16,
+      "n_naive_pred": 15,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 15
+    },
+    {
+      "title": "Dahod",
+      "n_sentences": 7,
+      "n_gold": 24,
+      "n_naive_pred": 17,
+      "n_pkb_accepted": 1,
+      "n_candidates_total": 17
+    },
+    {
+      "title": "Navy, Army and Air Force Institutes",
+      "n_sentences": 6,
+      "n_gold": 8,
+      "n_naive_pred": 15,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 15
+    },
+    {
+      "title": "Ocean Waves (film)",
+      "n_sentences": 6,
+      "n_gold": 8,
+      "n_naive_pred": 15,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 15
+    },
+    {
+      "title": "Cambodia\u2013Vietnam Friendship Monument",
+      "n_sentences": 2,
+      "n_gold": 10,
+      "n_naive_pred": 5,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 5
+    },
+    {
+      "title": "Malpai Borderlands",
+      "n_sentences": 2,
+      "n_gold": 11,
+      "n_naive_pred": 6,
+      "n_pkb_accepted": 0,
+      "n_candidates_total": 6
+    },
+    {
+      "title": "Belmopan",
+      "n_sentences": 7,
+      "n_gold": 14,
+      "n_naive_pred": 17,
+      "n_pkb_accepted": 1,
+      "n_candidates_total": 17
+    }
+  ]
+}

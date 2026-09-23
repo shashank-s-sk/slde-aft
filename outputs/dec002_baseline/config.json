@@ -1,0 +1,13 @@
+{
+  "experiment_id": "dec002_llama31_8b_carb10",
+  "decision": "DEC-002",
+  "dataset": "CaRB first 10 development sentences",
+  "subset_file": "e:\\slde-aft\\outputs\\carb_10_dev\\subset_10.jsonl",
+  "model": "meta-llama/llama-3.1-8b-instruct",
+  "provider": "OpenRouter",
+  "prompt_file": "e:\\slde-aft\\prompts\\openie_carb_v1.txt",
+  "prompt_version": "openie_carb_v1",
+  "temperature": 0.0,
+  "api_calls": 10,
+  "average_latency_seconds": 3.804393349995371
+}

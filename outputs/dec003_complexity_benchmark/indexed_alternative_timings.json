@@ -1,0 +1,32 @@
+[
+  {
+    "kb_size": 100,
+    "single_call_seconds": 2.6999987312592566e-06,
+    "accepted_dict_size": 100
+  },
+  {
+    "kb_size": 500,
+    "single_call_seconds": 2.9000002541579306e-06,
+    "accepted_dict_size": 500
+  },
+  {
+    "kb_size": 1000,
+    "single_call_seconds": 5.699999746866524e-06,
+    "accepted_dict_size": 1000
+  },
+  {
+    "kb_size": 2000,
+    "single_call_seconds": 5.399997462518513e-06,
+    "accepted_dict_size": 2000
+  },
+  {
+    "kb_size": 4000,
+    "single_call_seconds": 7.499998901039362e-06,
+    "accepted_dict_size": 4000
+  },
+  {
+    "kb_size": 8000,
+    "single_call_seconds": 7.90000194683671e-06,
+    "accepted_dict_size": 8000
+  }
+]

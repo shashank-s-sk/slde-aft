@@ -23,7 +23,33 @@ secrets.json
 
 # Large data / outputs (optional for now)
 outputs/*
-# DEC-026 is load-bearing for the paper's contribution -- committed (user decision, 2026-09-23)
+# DEC-030 (2026-09-23): committed exceptions for every outputs/ directory
+# actually cited by an EVID/DEC number reachable from paper/main.tex --
+# reproducibility package, professor_feedback.md point 12. Adapter weight
+# files (*.safetensors/*.bin, see below) stay excluded even inside these
+# directories; see docs/reproduction.md for how to obtain them separately.
+!outputs/dec001_002_carb30/
+!outputs/dec001_official_carb/
+!outputs/dec001_part6_carb_full/
+!outputs/dec001_part6_official_carb/
+!outputs/dec002_baseline/
+!outputs/dec002_rebel_baseline/
+!outputs/dec002_sota_baselines/
+!outputs/dec003_product_probkb_v2/
+!outputs/dec003_real_calibration/
+!outputs/dec003_complexity_benchmark/
+!outputs/dec005_multiseed/
+!outputs/dec006_adapters/
+!outputs/dec006_eval/
+!outputs/dec006_scaleup_probkb/
+!outputs/dec006_synthetic_data/
+!outputs/dec008_scalability/
+!outputs/dec009_biored_pilot/
+!outputs/dec018_provenance_filter/
+!outputs/dec019_closedloop/
+!outputs/dec020_docred_extract_and_pkb/
+!outputs/dec020_docred_pilot/
+!outputs/dec023_ablation_n50/
 !outputs/dec026_aggregation_rules/
 data/raw/
 *.h5

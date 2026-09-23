@@ -1,0 +1,457 @@
+[
+  {
+    "sentence_id": "carb_test_0001",
+    "sentence": "32.7 % of all households were made up of individuals and 15.7 % had someone living alone who was 65 years of age or older .",
+    "gold_triples": [
+      {
+        "subject": "32.7 % of all households",
+        "predicate": "were made up of",
+        "object": "individuals"
+      },
+      {
+        "subject": "15.7 % of all households",
+        "predicate": "had",
+        "object": "someone living alone who was 65 years of age or older"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "all households",
+        "predicate": "were made up of",
+        "object": "individuals"
+      },
+      {
+        "subject": "all households",
+        "predicate": "had",
+        "object": "someone living alone who was 65 years of age or older"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"all households\",\n    \"predicate\": \"were made up of\",\n    \"object\": \"individuals\"\n  },\n  {\n    \"subject\": \"all households\",\n    \"predicate\": \"had\",\n    \"object\": \"someone living alone who was 65 years of age or older\"\n  }\n]",
+    "latency_seconds": 7.4579357000184245,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0002",
+    "sentence": "A CEN forms an important but small part of a Local Strategic Partnership .",
+    "gold_triples": [
+      {
+        "subject": "A CEN",
+        "predicate": "forms",
+        "object": "an important part of a Local Strategic Partnership"
+      },
+      {
+        "subject": "A CEN",
+        "predicate": "forms",
+        "object": "a small part of a Local Strategic Partnership"
+      },
+      {
+        "subject": "a Strategic Partnership",
+        "predicate": "is",
+        "object": "Local"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "A CEN",
+        "predicate": "forms",
+        "object": "an important but small part of a Local Strategic Partnership"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"A CEN\",\n    \"predicate\": \"forms\",\n    \"object\": \"an important but small part of a Local Strategic Partnership\"\n  }\n]",
+    "latency_seconds": 0.8978472999879159,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0003",
+    "sentence": "A Democrat , he became the youngest mayor in Pittsburgh 's history in September 2006 at the age of 26 .",
+    "gold_triples": [
+      {
+        "subject": "he",
+        "predicate": "became",
+        "object": "the youngest mayor in  Pittsburgh 's history"
+      },
+      {
+        "subject": "he",
+        "predicate": "was",
+        "object": "A Democrat"
+      },
+      {
+        "subject": "the youngest mayor in Pittsburgh 's history",
+        "predicate": "was",
+        "object": "A Democrat"
+      },
+      {
+        "subject": "he",
+        "predicate": "became",
+        "object": "the youngest mayor in the history of"
+      },
+      {
+        "subject": "he",
+        "predicate": "became the youngest mayor in Pittsburgh 's history at",
+        "object": "the age of 26"
+      },
+      {
+        "subject": "the youngest mayor in Pittsburgh 's history",
+        "predicate": "was",
+        "object": "26"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "he",
+        "predicate": "became",
+        "object": "the youngest mayor in Pittsburgh's history"
+      },
+      {
+        "subject": "he",
+        "predicate": "became the youngest mayor in Pittsburgh's history in",
+        "object": "September 2006"
+      },
+      {
+        "subject": "he",
+        "predicate": "at the age of",
+        "object": "26"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"he\",\n    \"predicate\": \"became\",\n    \"object\": \"the youngest mayor in Pittsburgh's history\"\n  },\n  {\n    \"subject\": \"he\",\n    \"predicate\": \"became the youngest mayor in Pittsburgh's history in\",\n    \"object\": \"September 2006\"\n  },\n  {\n    \"subject\": \"he\",\n    \"predicate\": \"at the age of\",\n    \"object\": \"26\"\n  }\n]",
+    "latency_seconds": 2.408476599957794,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0004",
+    "sentence": "A cafeteria is also located on the sixth floor , a chapel on the 14th floor , and a study hall on the 15th floor .",
+    "gold_triples": [
+      {
+        "subject": "A cafeteria",
+        "predicate": "is also located",
+        "object": "on the sixth floor"
+      },
+      {
+        "subject": "a chapel",
+        "predicate": "is located",
+        "object": "on the 14th floor"
+      },
+      {
+        "subject": "a study hall",
+        "predicate": "is located",
+        "object": "on the 15th floor"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "cafeteria",
+        "predicate": "is located",
+        "object": "sixth floor"
+      },
+      {
+        "subject": "chapel",
+        "predicate": "is located",
+        "object": "14th floor"
+      },
+      {
+        "subject": "study hall",
+        "predicate": "is located",
+        "object": "15th floor"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"cafeteria\",\n    \"predicate\": \"is located\",\n    \"object\": \"sixth floor\"\n  },\n  {\n    \"subject\": \"chapel\",\n    \"predicate\": \"is located\",\n    \"object\": \"14th floor\"\n  },\n  {\n    \"subject\": \"study hall\",\n    \"predicate\": \"is located\",\n    \"object\": \"15th floor\"\n  }\n]",
+    "latency_seconds": 1.2800036999979056,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0005",
+    "sentence": "A common name , logo , and programming schedule followed in 1982 , with the establishment of the `` TV8 '' network between the three stations , changed to the `` Southern Cross Network '' seven years later .",
+    "gold_triples": [
+      {
+        "subject": "A common name , logo , and programming schedule",
+        "predicate": "was followed with the establishment of the",
+        "object": "`` TV8 '' network between the three stations"
+      },
+      {
+        "subject": "the `` TV8 '' network",
+        "predicate": "changed to the",
+        "object": "`` Southern Cross Network ''"
+      },
+      {
+        "subject": "`` TV8 '' network",
+        "predicate": "was establishment",
+        "object": "between the three stations"
+      },
+      {
+        "subject": "`` TV8 '' network",
+        "predicate": "was the established common name between",
+        "object": "the three stations"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "A common name, logo, and programming schedule",
+        "predicate": "followed",
+        "object": "in 1982"
+      },
+      {
+        "subject": "the establishment of the `TV8' network",
+        "predicate": "between",
+        "object": "the three stations"
+      },
+      {
+        "subject": "the establishment of the `TV8' network",
+        "predicate": "changed to",
+        "object": "the `Southern Cross Network'"
+      },
+      {
+        "subject": "the `TV8' network",
+        "predicate": "established",
+        "object": "in 1982"
+      },
+      {
+        "subject": "the `TV8' network",
+        "predicate": "changed to",
+        "object": "the `Southern Cross Network'"
+      },
+      {
+        "subject": "the `TV8' network",
+        "predicate": "established",
+        "object": "seven years later"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"A common name, logo, and programming schedule\",\n    \"predicate\": \"followed\",\n    \"object\": \"in 1982\"\n  },\n  {\n    \"subject\": \"the establishment of the `TV8' network\",\n    \"predicate\": \"between\",\n    \"object\": \"the three stations\"\n  },\n  {\n    \"subject\": \"the establishment of the `TV8' network\",\n    \"predicate\": \"changed to\",\n    \"object\": \"the `Southern Cross Network'\"\n  },\n  {\n    \"subject\": \"the `TV8' network\",\n    \"predicate\": \"established\",\n    \"object\": \"in 1982\"\n  },\n  {\n    \"subject\": \"the `TV8' network\",\n    \"predicate\": \"changed to\",\n    \"object\": \"the `Southern Cross Network'\"\n  },\n  {\n    \"subject\": \"the `TV8' network\",\n    \"predicate\": \"established\",\n    \"object\": \"seven years later\"\n  }\n]",
+    "latency_seconds": 2.0438283999683335,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0006",
+    "sentence": "A cooling center is a temporary air-conditioned public space set up by local authorities to deal with the health effects of a heat wave .",
+    "gold_triples": [
+      {
+        "subject": "A cooling center",
+        "predicate": "is a temporary",
+        "object": "air-conditioned public space set up by local authorities to deal with the health effects of a heat wave"
+      },
+      {
+        "subject": "A cooling center",
+        "predicate": "is a temporary air-conditioned public space set up by",
+        "object": "local authorities to deal with the health effects of a heat wave"
+      },
+      {
+        "subject": "A cooling center",
+        "predicate": "is set up by",
+        "object": "local authorities"
+      },
+      {
+        "subject": "local authorities set up a cooling center",
+        "predicate": "to deal with the",
+        "object": "health effects of a heat wave"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "A cooling center",
+        "predicate": "is a",
+        "object": "temporary air-conditioned public space"
+      },
+      {
+        "subject": "A cooling center",
+        "predicate": "set up by",
+        "object": "local authorities"
+      },
+      {
+        "subject": "A cooling center",
+        "predicate": "deal with",
+        "object": "the health effects of a heat wave"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"A cooling center\",\n    \"predicate\": \"is a\",\n    \"object\": \"temporary air-conditioned public space\"\n  },\n  {\n    \"subject\": \"A cooling center\",\n    \"predicate\": \"set up by\",\n    \"object\": \"local authorities\"\n  },\n  {\n    \"subject\": \"A cooling center\",\n    \"predicate\": \"deal with\",\n    \"object\": \"the health effects of a heat wave\"\n  }\n]",
+    "latency_seconds": 0.2046180999604985,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0007",
+    "sentence": "A manifold is `` prime '' if it can not be presented as a connected sum of more than one manifold , none of which is the sphere of the same dimension .",
+    "gold_triples": [
+      {
+        "subject": "A manifold",
+        "predicate": "is `` prime ''",
+        "object": "if it can not be presented as a connected sum  of more than one manifold , none of which is the sphere of the same dimension"
+      },
+      {
+        "subject": "a `` prime '' manifold",
+        "predicate": "can not be presented as a connected sum of",
+        "object": "more than one manifold , none of which is the sphere of the same dimension"
+      },
+      {
+        "subject": "A `` prime '' manifold , a connected sum of more than one manifold ,",
+        "predicate": "is not the",
+        "object": "sphere of the same dimension"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "manifold",
+        "predicate": "is",
+        "object": "prime"
+      },
+      {
+        "subject": "manifold",
+        "predicate": "can not be presented",
+        "object": "connected sum of more than one manifold"
+      },
+      {
+        "subject": "manifold",
+        "predicate": "is the sphere of the same dimension",
+        "object": "none"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"manifold\",\n    \"predicate\": \"is\",\n    \"object\": \"prime\"\n  },\n  {\n    \"subject\": \"manifold\",\n    \"predicate\": \"can not be presented\",\n    \"object\": \"connected sum of more than one manifold\"\n  },\n  {\n    \"subject\": \"manifold\",\n    \"predicate\": \"is the sphere of the same dimension\",\n    \"object\": \"none\"\n  }\n]",
+    "latency_seconds": 6.441618500044569,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0008",
+    "sentence": "A mid-March 2002 court order to stop printing for three months , was evaded by printing under other titles , such as `` Not That Respublika '' .",
+    "gold_triples": [
+      {
+        "subject": "A mid-March 2002 court order to stop printing for three months ,",
+        "predicate": "was evaded by printing under",
+        "object": "other titles , such as `` Not That Respublika ''"
+      },
+      {
+        "subject": "court",
+        "predicate": "ordered to stop printing",
+        "object": "for three months"
+      },
+      {
+        "subject": "court",
+        "predicate": "ordered to stop printing",
+        "object": "for three months"
+      },
+      {
+        "subject": "`` Not That Respublika ''",
+        "predicate": "was under",
+        "object": "other titles"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "A mid-March 2002 court order",
+        "predicate": "was evaded by",
+        "object": "printing under other titles"
+      },
+      {
+        "subject": "A mid-March 2002 court order",
+        "predicate": "to stop printing for three months",
+        "object": "was evaded"
+      },
+      {
+        "subject": "printing",
+        "predicate": "was evaded",
+        "object": "by printing under other titles"
+      },
+      {
+        "subject": "printing",
+        "predicate": "under other titles",
+        "object": "such as `` Not That Respublika ''"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"A mid-March 2002 court order\",\n    \"predicate\": \"was evaded by\",\n    \"object\": \"printing under other titles\"\n  },\n  {\n    \"subject\": \"A mid-March 2002 court order\",\n    \"predicate\": \"to stop printing for three months\",\n    \"object\": \"was evaded\"\n  },\n  {\n    \"subject\": \"printing\",\n    \"predicate\": \"was evaded\",\n    \"object\": \"by printing under other titles\"\n  },\n  {\n    \"subject\": \"printing\",\n    \"predicate\": \"under other titles\",\n    \"object\": \"such as `` Not That Respublika ''\"\n  }\n]",
+    "latency_seconds": 13.040659999998752,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0009",
+    "sentence": "A motorcycle speedway long-track meeting , one of the few held in the UK , was staged at Ammanford .",
+    "gold_triples": [
+      {
+        "subject": "A motorcycle speedway long-track meeting",
+        "predicate": "was",
+        "object": "one of the few held in the UK ,"
+      },
+      {
+        "subject": "A motorcycle speedway long-track meeting",
+        "predicate": "was staged at Ammanford,",
+        "object": "one of the few held in the"
+      },
+      {
+        "subject": "few long-track motorcycle speedway meetings",
+        "predicate": "are held in",
+        "object": "the UK"
+      },
+      {
+        "subject": "the motorcycle speedway meeting",
+        "predicate": "was a",
+        "object": "long-track meeting held in the UK ,"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "A motorcycle speedway long-track meeting",
+        "predicate": "was staged",
+        "object": "Ammanford"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"A motorcycle speedway long-track meeting\",\n    \"predicate\": \"was staged\",\n    \"object\": \"Ammanford\"\n  }\n]",
+    "latency_seconds": 2.918882600031793,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  },
+  {
+    "sentence_id": "carb_test_0010",
+    "sentence": "A partial list of turbomachinery that may use one or more centrifugal compressors within the machine are listed here .",
+    "gold_triples": [
+      {
+        "subject": "A partial list of turbomachinery that may use one or more centrifugal compressors within the machine",
+        "predicate": "are listed",
+        "object": "here"
+      },
+      {
+        "subject": "A partial list",
+        "predicate": "is of",
+        "object": "turbomachinery that may use one or more centrifugal compressors within the machine"
+      },
+      {
+        "subject": "turbomachinery",
+        "predicate": "may use",
+        "object": "one or more centrifugal compressors"
+      }
+    ],
+    "predicted_triples": [
+      {
+        "subject": "turbomachinery",
+        "predicate": "may use",
+        "object": "one or more centrifugal compressors"
+      },
+      {
+        "subject": "list",
+        "predicate": "is a list of",
+        "object": "turbomachinery"
+      },
+      {
+        "subject": "list",
+        "predicate": "lists",
+        "object": "turbomachinery that may use one or more centrifugal compressors within the machine"
+      }
+    ],
+    "raw_response": "[\n  {\n    \"subject\": \"turbomachinery\",\n    \"predicate\": \"may use\",\n    \"object\": \"one or more centrifugal compressors\"\n  },\n  {\n    \"subject\": \"list\",\n    \"predicate\": \"is a list of\",\n    \"object\": \"turbomachinery\"\n  },\n  {\n    \"subject\": \"list\",\n    \"predicate\": \"lists\",\n    \"object\": \"turbomachinery that may use one or more centrifugal compressors within the machine\"\n  }\n]",
+    "latency_seconds": 1.350062599987723,
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "temperature": 0.0,
+    "error": null
+  }
+]
