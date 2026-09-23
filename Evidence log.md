@@ -3931,6 +3931,40 @@ including 0 or negative) is not met at any tested corruption level, in
 either arm. Full per-seed and per-rate-aggregate results:
 `outputs/dec028_provenance_corruption/dec028_results.json`.
 
+**The filter advantage decays as corruption increases, and decays
+faster in the support-only arm (explicit, per the user's request):**
+
+| Arm | Advantage at 0% | Advantage at 20% | Absolute decay |
+|---|---:|---:|---:|
+| Conflict-adjusted | 0.991 | 0.823 | **-0.168** |
+| Support-only | 0.989 | 0.705 | **-0.284** |
+
+The support-only arm's advantage decays about 1.7x faster in absolute
+terms (-0.284 vs. -0.168 from 0% to 20% corruption) despite starting
+from almost the same point at 0% (0.989 vs. 0.991). This is visible
+directly in the removed-precision column above: removed-precision rises
+faster in the support-only arm (0.0000 -> 0.2587) than in the
+conflict-adjusted arm (0.0000 -> 0.1502) as corruption increases --
+consistent with, though not fully explained by, the support-only arm
+admitting far more candidates overall (390-687 vs. 388-475 depending on
+rate) via the contested slots it does not block, which pulls more
+corruption-affected triples into its removed set as corruption
+increases.
+
+**Caveat, stated plainly here rather than only in the Interpretation
+below: the two arms are not a like-for-like comparison, because of the
+ceiling finding above.** Since zero corruption-created contested slots
+are ever admitted under the conflict-adjusted arm, that arm's
+precision figures in the table above are computed **entirely over
+uncontested slots** at every rate -- they contain no contested-slot
+triples at all. The support-only arm's figures, by contrast, include
+whichever contested-slot triples its own (ceiling-free) scoring
+admits. The two "advantage" numbers being compared above are therefore
+each arm's precision advantage over a **different underlying
+population of admitted triples**, not the same population scored two
+ways -- a genuine result, but not a controlled ablation of "does the
+ceiling change filter behavior, all else equal."
+
 ## Result
 
 PASS, decisively, on the pre-registered null criterion -- but with two
