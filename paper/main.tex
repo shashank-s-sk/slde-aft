@@ -1073,11 +1073,421 @@ wall-clock time of a local Python/pandas script
 
 \section{Results}
 \label{sec:results}
-% TODO: main results (6 tables, 4 figures) and supplementary material
-% (Tables S1-S8) not yet written -- awaiting the user's Section 7 Word
-% document, per the task's "Existing material to reconcile against"
-% instruction. The DEC-026 subsection below is written and does not
-% depend on that document.
+
+This section reports the outcome of each experiment; interpretation is
+deferred to Section~\ref{sec:discussion}. All LLM extraction used
+pinned model identifiers at temperature 0. Product-domain runs used
+$\lambda=0.75$ and $\tau=0.88$, and the DocRED pilot used $\lambda=0.5$
+and $\tau=0.70$ (Section~\ref{sec:setup-hyperparameters}). Multi-seed
+results are reported as mean (sample SD) over seeds 42--46, with 95\%
+confidence intervals for differences and two-sided $p$-values; with
+five paired observations the smallest attainable Wilcoxon signed-rank
+$p$-value is $0.063$ (Section~\ref{sec:setup-statistics}). Scores are
+given to three decimal places. Supplementary Tables S1--S8
+(Appendix~\ref{sec:supplementary}) give the per-configuration,
+per-seed, and per-size values
+% [SLDE-AFT_Section7_Results_revised.docx]
+.
+
+\subsection{Public Benchmark Evaluation}
+\label{sec:results-benchmarks}
+
+On CaRB, the extractor was scored with the official scorer on 548 of
+the 641 test sentences; 93 were excluded because CaRB's sentence and
+gold-annotation files differ in whitespace and quoting
+% [EVID-035]
+. SLDE-AFT's Llama-3.1-8B-Instruct extractor obtained $F_1=0.467$,
+$0.104$ below DeepSeek-V3.2 ($0.571$; Table~\ref{tab:carb-results}). In
+a 30-sentence pilot of five systems it ranked last ($0.496$), $0.062$
+below DeepSeek-V3.2 ($0.558$). Full-scale $F_1$ differed from pilot
+$F_1$ by $-0.029$ for Llama-3.1-8B and $+0.013$ for DeepSeek-V3.2.
+Gemini 2.5 Pro required a budget of 3,072 output tokens and still
+returned no valid output for 5 of the 30 pilot sentences
+% [EVID-032; EVID-035]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{CaRB results under the official scorer: 30-sentence pilot and
+full evaluation on 548 sentences.}
+\label{tab:carb-results}
+\begin{tabular}{@{}l ccc ccc@{}}
+\toprule
+& \multicolumn{3}{c}{Pilot ($n=30$)} & \multicolumn{3}{c}{Full ($n=548$)} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+System & $P$ & $R$ & $F_1$ & $P$ & $R$ & $F_1$ \\
+\midrule
+DeepSeek-V3.2 & 0.713 & 0.458 & 0.558 & 0.713 & 0.477 & 0.571 \\
+Gemini 2.5 Pro & 0.773 & 0.401 & 0.528 & --- & --- & --- \\
+Claude Sonnet 5 & 0.642 & 0.446 & 0.527 & --- & --- & --- \\
+GPT-4o & 0.736 & 0.384 & 0.504 & --- & --- & --- \\
+Llama-3.1-8B-Instruct (SLDE-AFT) & 0.652 & 0.401 & 0.496 & 0.589 & 0.387 & 0.467 \\
+\bottomrule
+\end{tabular}
+% [EVID-032; EVID-035]
+\end{table}
+
+\noindent\emph{Note.} $P$, precision; $R$, recall. Systems are ordered
+by pilot $F_1$; ``---'' denotes not evaluated at full scale. REBEL
+generates relations from a fixed inventory and cannot be scored against
+CaRB's free-text predicates (raw $F_1=0.000$); no REBEL baseline is
+therefore reported
+% [EVID-033]
+. GenIE, InstructUIE, DyGIE++, and TACRED were outside the scope of
+this evaluation.
+
+On a 15-document DocRED pilot (189 gold triples, 356 observations),
+admitting only PKB-aggregated triples with scores $\ge 0.70$ increased
+precision from $0.034$ to $0.333$ but reduced recall from $0.032$ to
+$0.005$, lowering $F_1$ from $0.033$ to $0.010$
+(Table~\ref{tab:docred-results})
+% [Decision log.md, DEC-020]
+. On a 15-document BioRED pilot, $F_1$ was $0.007$ under strict
+exact matching and $0.103$ under relaxed containment matching, which
+recovered 14 times as many true positives; no external baseline was
+run on BioRED
+% [EVID-024]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{DocRED pilot (15 development documents; $\lambda=0.5$, $\tau=0.70$).}
+\label{tab:docred-results}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Method & $P$ & $R$ & $F_1$ \\
+\midrule
+No aggregation & 0.034 & 0.032 & 0.033 \\
+PKB aggregation (score $\ge 0.70$) & 0.333 & 0.005 & 0.010 \\
+\bottomrule
+\end{tabular}
+% [Decision log.md, DEC-020]
+\end{table}
+
+\subsection{Probabilistic Knowledge Base: Real-Data Validation and Calibration}
+\label{sec:results-calibration}
+
+On a gold-labelled snapshot of 657 product-domain triples,
+conflict-adjusted scoring increased $F_1$ by $0.043$ relative to
+unadjusted Noisy-OR support (single run). This compares two forms of
+the same rule; it is not a comparison with a no-aggregation or
+max-merge baseline. On the 117 triples with at least one competing
+value, $F_1$ decreased from $0.185$ to $0.167$, and 108 of these 117
+conflicts were between two incorrect values, whereas one was between a
+correct and an incorrect value
+% [EVID-014]
+.
+
+The per-observation confidence entering the aggregation is
+self-reported by the LLM, which the extraction prompt restricts to
+$0.80$--$0.96$
+% [src/extractors/openrouter_llm.py, line 35]
+. For single-valued predicates (12 of 13), a slot with at least one
+competing value has a final score below $1/(m+1) \le 0.5$
+(Section~\ref{sec:formal-analysis}, Proposition~\ref{prop:ceiling}), so
+it cannot reach $\tau=0.88$ while the rival persists
+(Figure~\ref{fig:ceiling}). The effect of this ceiling on recall was
+not measured directly here (Section~\ref{sec:formal-analysis-empirical}
+measures it offline via DEC-026, Section~\ref{sec:results-dec026}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/fig_rival_ceiling.png}
+\caption{Final score of a candidate as agreeing observations
+accumulate, for zero, one, and two competing values ($\lambda=0.75$;
+each observation $c=0.90$). Curves are computed analytically from
+Equations~\ref{eq:noisyor}--\ref{eq:conflict}.}
+\label{fig:ceiling}
+% [SLDE-AFT_Section7_Results_revised.docx, Figure 7.1]
+\end{figure}
+
+Calibration on the same 657 triples ($37.3\%$ correct) was poor:
+expected calibration error (ECE, ten equal-width bins) $=0.333$ and
+Brier score $=0.297$ (Figure~\ref{fig:reliability};
+Table~\ref{tab:s1-calibration})
+% [EVID-036]
+. No triple was correct in the $0.6$--$0.7$ bin ($n=68$) or the
+$0.8$--$0.9$ bin ($n=16$). Single-valued predicates accounted for 56 of
+68 and 15 of 16 triples in these bins, with a median of zero competing
+values. In the $0.9$--$1.0$ bin ($n=114$), $86.8\%$ of triples were
+correct at a mean confidence of $0.978$
+% [SLDE-AFT_Section7_Results_revised.docx; EVID-036]
+.
+
+\begin{figure}[htbp]
+\centering
+\fbox{\parbox{0.85\linewidth}{\centering\vspace{1em}
+\textbf{TODO -- figure pending.} Reliability diagram of
+conflict-adjusted scores (657 triples, ten equal-width bins): bars of
+observed fraction correct per confidence bin; dashed diagonal $y=x$;
+bin counts above bars. Data source:
+\texttt{outputs/dec003\_real\_calibration/calibration\_bins\_real.csv}
+(not committed to this repository). Remove this placeholder and insert
+the rendered figure once that file is available.
+\vspace{1em}}}
+\caption{Reliability diagram of conflict-adjusted scores (657 triples,
+ten equal-width bins). Bars show the fraction of correct triples per
+bin; the dashed line marks perfect calibration.}
+\label{fig:reliability}
+% [SLDE-AFT_Section7_Results_revised.docx, Figure 7.2 -- placeholder in
+% the source document itself, not only in this manuscript]
+\end{figure}
+
+\subsection{Provenance Filtering}
+\label{sec:results-provenance}
+
+Of 475 above-threshold triples in the 200-product run, 444 had at
+least one structured observation and 31 had unstructured observations
+only (Table~\ref{tab:provenance}). All 444 were correct and all 31
+were incorrect, so requiring structured corroboration increased
+precision from $93.5\%$ to $100.0\%$. The 31 excluded triples had each
+been observed 2--21 times; 13 had a generic category noun (e.g.\
+``laptop device'') as the subject. Because the structured records and
+the gold triples are generated from the same source in this domain
+(Section~\ref{sec:setup-datasets}), this result reflects a noise-free
+structured source; behavior with an erroneous structured source was
+not tested
+% [EVID-029]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{Precision of above-threshold triples by provenance status (200-product run).}
+\label{tab:provenance}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Group & Triples & Precision (\%) \\
+\midrule
+All above-threshold triples & 475 & 93.5 \\
+At least one structured observation (retained) & 444 & 100.0 \\
+Unstructured observations only (removed) & 31 & 0.0 \\
+\bottomrule
+\end{tabular}
+% [EVID-029]
+\end{table}
+
+Across the four iterations of the 50-product run, LLM-only extraction
+$F_1$ on the training products was $0.367$, $0.368$, $0.289$, and
+$0.418$ and did not increase monotonically
+(Table~\ref{tab:s2-iteration})
+% [EVID-013]
+.
+
+\subsection{Module-Level Ablation Study}
+\label{sec:results-ablation}
+
+Table~\ref{tab:ablation-n50} compares the full pipeline with variants
+lacking the feedback controller or using max-merge in place of the
+Noisy-OR PKB, at $N=50$ products (10 held-out test products) over five
+seeds. Neither variant differed significantly from the full pipeline
+in held-out test $F_1$. The 95\% CIs of the differences spanned
+$-0.245$ to $+0.156$ (no feedback controller) and $-0.146$ to $+0.213$
+(max-merge), so the data are compatible with no effect and with
+differences of up to about $0.2$ $F_1$ in either direction. The same
+conclusion held at $N=20$ (4 test products; all $p \ge 0.31$) and for
+training $F_1$ at both scales (Table~\ref{tab:s3-ablation-full}). The
+direction of the difference for the variant without the feedback
+controller reversed between scales ($+0.142$ at $N=20$; $-0.045$ at
+$N=50$), whereas the max-merge variant scored higher than the full
+pipeline at both scales ($+0.147$; $+0.033$)
+% [EVID-020; EVID-039]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{Held-out test $F_1$ of ablated configurations at $N=50$ (five
+seeds; paired comparisons with the full pipeline).}
+\label{tab:ablation-n50}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Configuration & $F_1$, mean (SD) & $\Delta F_1$ [95\% CI] & $t(4)$ & $p$ & Wilcoxon $p$ \\
+\midrule
+Full pipeline & 0.345 (0.104) & --- & --- & --- & --- \\
+Without feedback controller & 0.301 (0.193) & $-0.045\ [-0.245, 0.156]$ & $-0.62$ & 0.571 & 0.625 \\
+Without PKB (max-merge) & 0.378 (0.195) & $+0.033\ [-0.146, 0.213]$ & $0.51$ & 0.635 & 1.000 \\
+\bottomrule
+\end{tabular}
+% [EVID-039; SD converted from EVID-039's logged population SD to
+% sample SD -- see the note at the end of this subsection]
+\end{table}
+
+\noindent\emph{Note.} $\Delta$, difference from the full pipeline. $t$
+statistics and CIs were derived from the logged paired mean differences
+and $p$-values. The unstructured-only and structured-only variants have
+no held-out evaluation by design (Table~\ref{tab:s3-ablation-full}).
+With five seeds, a paired $t$-test has 80\% power at $\alpha=0.05$ only
+for standardized effects of about $1.7$ SD; the experiment therefore
+excludes only large effects of either component.
+
+\paragraph{Standard-deviation correction (verified this session, stated
+plainly rather than silently applied).} EVID-039's own table reports
+these $F_1$ standard deviations as ``pop.\ std'' (population SD,
+$\text{ddof}=0$) -- e.g.\ $0.0934$ for the full pipeline's held-out test
+$F_1$, not the $0.104$ sample SD ($\text{ddof}=1$) shown in
+Table~\ref{tab:ablation-n50} above. The values in
+Table~\ref{tab:ablation-n50} and Table~\ref{tab:s3-ablation-full} are
+the population values converted to sample SD ($\times\sqrt{n/(n-1)}$,
+$n=5$); recomputed independently this session and confirmed to match
+($0.0934 \times \sqrt{5/4} = 0.1044 \approx 0.104$). This does not
+change any $F_1$ mean, $t$-statistic, or $p$-value already reported,
+only the SD figures shown alongside them -- flagged here since
+Section~\ref{sec:setup-statistics} cites \texttt{scripts/dec006\_5seed\_stats.py}'s
+$\text{ddof}=1$ sample-SD convention as this project's standard, and
+the originally-logged EVID-039/EVID-040 SD figures were not produced
+with that convention; both this subsection and
+Section~\ref{sec:results-finetuning} below use the corrected sample-SD
+values.
+
+\subsection{Automated Fine-Tuning Evaluation}
+\label{sec:results-finetuning}
+
+Mistral-7B-Instruct-v0.3 was fine-tuned with QLoRA on 90 synthetic
+examples from the 200-product run and evaluated on a held-out set of 8
+products. The base model (greedy decoding) predicted 46 triples, 7 of
+them correct ($P=0.152$, $R=0.125$, $F_1=0.137$). An earlier evaluation
+in which two intended test products also appeared in the training data
+was withdrawn, and both products were excluded
+% [EVID-026, EVID-027, EVID-028]
+.
+
+In a seed-42 search, precision increased with training epochs,
+reaching $1.000$ at 5 and 8 epochs, while recall stayed at $0.125$
+(Figure~\ref{fig:finetuning}a; Table~\ref{tab:s4-epoch-search}). No
+alternative LoRA rank or learning rate exceeded the default
+configuration (rank 16, $\alpha=32$, learning rate $2\times10^{-4}$;
+Table~\ref{tab:s5-lora-search}), and recall was $0.125$ in all nine
+training runs. Over five seeds (Table~\ref{tab:finetune-5seed};
+Figure~\ref{fig:finetuning}b), the 5-epoch configuration exceeded the
+base model in every seed ($\Delta F_1=+0.064$, 95\% CI
+$[0.037,0.091]$, $t(4)=6.57$, $p=0.003$), whereas the 3-epoch
+configuration exceeded it in four of five seeds ($\Delta F_1=+0.044$,
+95\% CI $[-0.005,0.093]$, $t(4)=2.51$, $p=0.066$). The two
+configurations did not differ significantly from each other
+($\Delta F_1=+0.020$, 95\% CI $[-0.045,0.085]$, $p=0.446$). At 5
+epochs with seed 42, the model predicted 7 triples, all correct
+% [EVID-037; EVID-038; EVID-040]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{Five-seed fine-tuning results on the 8-product test set.}
+\label{tab:finetune-5seed}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Configuration & $F_1$, mean (SD) & $\Delta F_1$ [95\% CI] & $t(4)$ & $p$ & Wilcoxon $p$ & Seeds $>$ base \\
+\midrule
+Base model & 0.137 & --- & --- & --- & --- & --- \\
+3 epochs & 0.181 (0.039) & $+0.044\ [-0.005, 0.093]$ & 2.51 & 0.066 & 0.125 & 4/5 \\
+5 epochs & 0.201 (0.022) & $+0.064\ [0.037, 0.091]$ & 6.57 & 0.003 & 0.063 & 5/5 \\
+5 vs.\ 3 epochs (paired) & --- & $+0.020\ [-0.045, 0.085]$ & 0.84 & 0.446 & 0.625 & --- \\
+\bottomrule
+\end{tabular}
+% [EVID-040; SD corrected to sample SD, see the note in
+% Section~\ref{sec:results-ablation} -- EVID-040's logged 0.0194 for the
+% 5-epoch configuration is the population SD; the sample SD is 0.0217,
+% independently recomputed this session from the per-seed values in
+% Table~\ref{tab:s6-per-seed} and confirmed to match ($t(4)=6.57$ is
+% consistent only with the sample-SD figure, not 0.0194]
+\end{table}
+
+\noindent\emph{Note.} The base model is decoded greedily and yields a
+single deterministic score; comparisons with it are one-sample $t$-tests.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/fig_finetuning.png}
+\caption{Fine-tuning results. (a) Precision, recall, and $F_1$ against
+training epochs (seed 42). (b) Test $F_1$ per seed for the 3- and
+5-epoch configurations; the dashed line marks the base model.}
+\label{fig:finetuning}
+% [SLDE-AFT_Section7_Results_revised.docx, Figure 7.3]
+\end{figure}
+
+These fine-tuning results are exploratory. The epoch and LoRA settings
+were selected on the same 8-product test set used for the five-seed
+evaluation, so the configuration was tuned on the evaluation data
+(the AUDIT.md A2 / DEC-024 caveat stated in
+Section~\ref{sec:setup-statistics}, restated here as instructed by
+that same ground rule). The one-sample tests also treat the base score
+as fixed and capture variation across training seeds but not across
+test products, of which there are 8 (7 base-model true positives). A
+follow-up that selects settings on the 20-product validation split and
+tests once on the 40-product test split of the 200-product dataset has
+been specified but not run
+% [Decision log.md, DEC-024]
+.
+
+\subsection{Closed-Loop Integration Test}
+\label{sec:results-closedloop}
+
+From an exactly reconstructed four-iteration state of the 200-product
+run, a fifth iteration was run with the base extractor (control) and
+with the fine-tuned model (treatment; Table~\ref{tab:closedloop}).
+Relative to the starting state, $F_1$ decreased by $0.008$ in the
+control arm and by less than $0.001$ in the treatment arm, and the
+treatment added 24 net new above-threshold triples against 5 for the
+control
+% [EVID-030]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{Knowledge-base quality after a fifth iteration from an
+identical starting state (200-product run).}
+\label{tab:closedloop}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Arm & KB size & $P$ & $R$ & $F_1$ \\
+\midrule
+Iteration 4 (starting state) & 475 & 0.935 & 0.244 & 0.387 \\
+Iteration 5, base extractor (control) & 480 & 0.908 & 0.240 & 0.379 \\
+Iteration 5, fine-tuned model (treatment) & 499 & 0.898 & 0.246 & 0.386 \\
+\bottomrule
+\end{tabular}
+% [EVID-030]
+\end{table}
+
+The treatment used a single seed (43), the best of three in the
+standalone evaluation. The two arms also differ in model family: the
+control uses Llama-3.1-8B-Instruct and the treatment a QLoRA adapter on
+Mistral-7B-Instruct-v0.3, so the difference between arms cannot be
+attributed to fine-tuning alone
+% [EVID-030]
+. This closed-loop recall is computed against \texttt{gold\_structured}
+(Section~\ref{sec:setup-metrics}), not the \texttt{gold\_unstructured}
+denominator DEC-026 uses below -- the two are not comparable numbers.
+
+\subsection{Scalability Analysis}
+\label{sec:results-scalability}
+
+For a single unguided extraction pass, total runtime increased
+approximately linearly from 92\,s at $N=20$ to 799\,s at $N=200$, and
+mean per-document latency remained between $3.98$ and $4.60$\,s while
+the knowledge base grew to 2,814 entries (Figure~\ref{fig:scalability};
+Table~\ref{tab:s7-scalability}). In a separate benchmark, per-call
+latency of the candidate-acceptance routine increased $72.7$-fold for
+an $80$-fold increase in observations (100 to 8,000), compared with
+$2.9$-fold for an indexed variant with the same aggregation mathematics
+that is not used in the pipeline (Table~\ref{tab:s8-complexity})
+% [EVID-023; EVID-036]
+.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/fig_scalability.png}
+\caption{Scalability of a single unguided extraction pass (seed 42):
+(a) total runtime and knowledge-base size; (b) mean and maximum
+per-document latency.}
+\label{fig:scalability}
+% [SLDE-AFT_Section7_Results_revised.docx, Figure 7.4]
+\end{figure}
+
+Each size was run once, and the full four-iteration loop was not
+profiled beyond $N=200$. Memory use could not be measured reliably
+because all sizes ran in one process, and GPU utilization during
+fine-tuning was not recorded
+% [EVID-023]
+.
 
 \subsection{DEC-026: Aggregation-Rule Comparison}
 \label{sec:results-dec026}
@@ -1239,6 +1649,194 @@ R3$-$R2 & B (2241) & $+0.0270\ [0.0076,0.0519]$ & $0.0000\ [0.0000,0.0000]$ & $+
 % TODO: not yet written -- data/code availability, funding, competing
 % interests, author contributions. Leave TODO markers for the user to
 % supply text where required.
+
+\appendix
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{table}{0}
+
+\section{Supplementary Material for Section~\ref{sec:results}}
+\label{sec:supplementary}
+
+Tables S1--S8 give the detailed values summarized in
+Section~\ref{sec:results}. Scores are given to four decimal places as
+recorded
+% [SLDE-AFT_Section7_Supplementary.docx]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{Calibration bins of conflict-adjusted scores (657 gold-labelled
+triples; ECE $=0.3332$, Brier $=0.2969$).}
+\label{tab:s1-calibration}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Confidence bin & Triples & Mean confidence & Fraction correct \\
+\midrule
+0.6--0.7 & 68 & [add] & 0.000 \\
+0.8--0.9 & 16 & [add] & 0.000 \\
+0.9--1.0 & 114 & 0.978 & 0.868 \\
+Remaining bins & [add] & [add] & [add] \\
+\bottomrule
+\end{tabular}
+
+\noindent\emph{Note.} Complete from
+\texttt{calibration\_bins\_real.csv} before submission (not committed
+to this repository).
+% [EVID-036; SLDE-AFT_Section7_Supplementary.docx]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{LLM-only extraction on training products per iteration, and
+held-out base-extractor $F_1$ (single seed).}
+\label{tab:s2-iteration}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Iteration / split & $P$ & $R$ & $F_1$ & KB size \\
+\midrule
+Iteration 1 (unguided) & 0.4771 & 0.2980 & 0.3668 & 534 \\
+Iteration 2 (guided) & 0.4713 & 0.3020 & 0.3682 & 576 \\
+Iteration 3 (guided) & 0.3944 & 0.2286 & 0.2894 & 613 \\
+Iteration 4 (guided) & 0.5088 & 0.3551 & 0.4183 & 657 \\
+50-product run, validation (5 products) & --- & --- & 0.597 & --- \\
+50-product run, test (10 products) & --- & --- & 0.197 & --- \\
+200-product run, validation (20 products) & --- & --- & 0.561 & --- \\
+200-product run, test (40 products) & --- & --- & 0.413 & --- \\
+\bottomrule
+\end{tabular}
+% [EVID-013; 200-product validation/test values verified against
+% Decision log.md's DEC-006 scale-up entry: "val 0.5610, test 0.4126"]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Full ablation results: mean (SD) over five seeds, and paired
+comparisons with the full pipeline.}
+\label{tab:s3-ablation-full}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Configuration / comparison & $N=20$ & $N=50$ \\
+\midrule
+\multicolumn{3}{@{}l}{\emph{Held-out test $F_1$}} \\
+Full pipeline & 0.2914 (0.3349) & 0.3451 (0.1044) \\
+Without feedback controller & 0.4335 (0.1833) & 0.3005 (0.1932) \\
+Without PKB (max-merge) & 0.4388 (0.2866) & 0.3783 (0.1950) \\
+$\Delta$ without feedback [95\% CI]; $p$ ($t$/Wilcoxon) & $+0.142\ [-0.400, 0.684]$; $0.507/0.438$ & $-0.045\ [-0.245, 0.156]$; $0.571/0.625$ \\
+$\Delta$ without PKB [95\% CI]; $p$ ($t$/Wilcoxon) & $+0.147\ [-0.297, 0.592]$; $0.409/0.438$ & $+0.033\ [-0.146, 0.213]$; $0.635/1.000$ \\
+\multicolumn{3}{@{}l}{\emph{Training $F_1$}} \\
+Full pipeline & 0.4233 (0.1379) & 0.4070 (0.1206) \\
+Without feedback controller & 0.2878 (0.1867) & 0.3328 (0.0464) \\
+Without PKB (max-merge) & 0.3437 (0.1258) & 0.3761 (0.1372) \\
+Unstructured only & 0.4572 (0.0987) & 0.4478 (0.0884) \\
+$\Delta$ without feedback [95\% CI]; $p$ ($t$/Wilcoxon) & $-0.136\ [-0.536, 0.265]$; $0.400/0.438$ & $-0.074\ [-0.266, 0.118]$; $0.343/0.313$ \\
+$\Delta$ without PKB [95\% CI]; $p$ ($t$/Wilcoxon) & $-0.080\ [-0.291, 0.132]$; $0.354/0.313$ & $-0.031\ [-0.245, 0.183]$; $0.709/0.813$ \\
+\bottomrule
+\end{tabular}
+
+\noindent\emph{Note.} $N=20$ used 4 held-out test products and $N=50$
+used 10. $N=50$ SDs are sample SDs converted from the logged population
+SDs (Section~\ref{sec:results-ablation}'s correction note); $N=20$ SDs
+are as logged. CIs are derived from logged mean differences and paired
+$p$-values. The structured-only variant has no LLM component and was
+not scored.
+% [EVID-020; EVID-039]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Epoch search (seed 42; rank 16, $\alpha=32$, learning rate
+$2\times10^{-4}$; 8-product test set).}
+\label{tab:s4-epoch-search}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Configuration & $P$ & $R$ & $F_1$ \\
+\midrule
+Base model & 0.1522 & 0.1250 & 0.1373 \\
+2 epochs & 0.2121 & 0.1250 & 0.1573 \\
+3 epochs & 0.5385 & 0.1250 & 0.2029 \\
+5 epochs & 1.0000 & 0.1250 & 0.2222 \\
+8 epochs & 1.0000 & 0.1250 & 0.2222 \\
+\bottomrule
+\end{tabular}
+% [EVID-037]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{LoRA hyperparameter search at 5 epochs (seed 42; 8-product test set).}
+\label{tab:s5-lora-search}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Setting & $P$ & $R$ & $F_1$ \\
+\midrule
+Rank 8, $\alpha=16$, lr $2\times10^{-4}$ & 0.7778 & 0.1250 & 0.2154 \\
+Rank 16, $\alpha=32$, lr $2\times10^{-4}$ (default) & 1.0000 & 0.1250 & 0.2222 \\
+Rank 32, $\alpha=64$, lr $2\times10^{-4}$ & 0.7000 & 0.1250 & 0.2121 \\
+Rank 16, $\alpha=32$, lr $1\times10^{-4}$ & 0.2258 & 0.1250 & 0.1609 \\
+Rank 16, $\alpha=32$, lr $3\times10^{-4}$ & 0.3684 & 0.1250 & 0.1867 \\
+\bottomrule
+\end{tabular}
+% [EVID-038]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Per-seed test $F_1$ at 3 and 5 epochs (8-product test set;
+base model $F_1=0.1373$).}
+\label{tab:s6-per-seed}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Seed & 3 epochs & 5 epochs ($P$ / $R$ / $F_1$) \\
+\midrule
+42 & 0.2029 & 1.0000 / 0.1250 / 0.2222 \\
+43 & 0.2090 & 0.4667 / 0.1250 / 0.1972 \\
+44 & 0.1124 & 1.0000 / 0.1250 / 0.2222 \\
+45 & 0.1935 & 1.0000 / 0.1071 / 0.1935 \\
+46 & 0.1892 & 0.2692 / 0.1250 / 0.1707 \\
+Mean (sample SD) & 0.1814 (0.0393) & 0.2012 (0.0217) \\
+\bottomrule
+\end{tabular}
+% [EVID-034 (3 epochs); EVID-040 (5 epochs); 5-epoch sample SD
+% 0.0217 independently recomputed this session from these per-seed
+% values -- EVID-040's logged 0.0194 is the population SD, see
+% Section~\ref{sec:results-ablation}'s correction note]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Scalability of a single unguided extraction pass (seed 42).}
+\label{tab:s7-scalability}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+$N$ & Runtime (s) & Mean latency (s) & Max latency (s) & KB size & Conflicts & Above $\tau$ & Failed calls \\
+\midrule
+20 & 92.14 & 4.598 & 12.35 & 284 & 8 & 37 & 9 (45\%) \\
+50 & 199.04 & 3.976 & 9.69 & 737 & 59 & 106 & 17 (34\%) \\
+100 & 405.84 & 4.053 & 9.17 & 1,455 & 117 & 263 & 24 (24\%) \\
+200 & 799.06 & 3.988 & 20.12 & 2,814 & 187 & 547 & 53 (26.5\%) \\
+\bottomrule
+\end{tabular}
+
+\noindent\emph{Note.} The failure rate reflects a deliberately unguided
+single pass and is not comparable with guided multi-iteration runs.
+% [EVID-023]
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Growth in per-call latency of candidate acceptance (100 to
+8,000 observations).}
+\label{tab:s8-complexity}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Implementation & Growth in observations & Growth in per-call latency \\
+\midrule
+Production routine (linear scan over accepted candidates) & 80$\times$ & 72.7$\times$ \\
+Indexed variant (benchmark only, not in pipeline) & 80$\times$ & 2.9$\times$ \\
+\bottomrule
+\end{tabular}
+% [EVID-036]
+\end{table}
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}
