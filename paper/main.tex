@@ -11,6 +11,9 @@
 \usepackage{booktabs}
 \usepackage{hyperref}
 
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
 \title{SLDE-AFT: A Self-Learning Dual-Source Knowledge Extraction and Automated Fine-Tuning System}
 \author{Shashank Kumar Sadashiva \and Ahmed Ebada}
 \date{}
@@ -218,12 +221,12 @@ $C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with a default
 shrinkage $\lambda=0.75$, followed by a mutual-exclusivity penalty
 $C(t) = C_{\mathrm{agg}}(t) / (m(t)+1)$. This is notationally and
 mathematically identical to SLDE-AFT's Conservative Noisy-OR aggregation
-with mutual-exclusivity penalty (Section~4; the same default shrinkage of
+with mutual-exclusivity penalty (Section~5; the same default shrinkage of
 0.75 is independently confirmed in this project's own
 \texttt{scripts/dec003\_product\_probkb\_run.py}). This paper does not claim
 priority or originality for this formula, and does not claim it is novel or
 absent from prior extraction-KB systems: DySECT is a published, citable
-counter-example to any such claim. What Section~4 contributes instead is
+counter-example to any such claim. What Section~5 contributes instead is
 a formal derivation and proofs of this formula's boundedness, monotonicity,
 and saturation properties, and the rival-ceiling result
 $C(t) < 1/(m(t)+1) \le 0.5$ for any contested single-valued-predicate slot
@@ -276,14 +279,14 @@ automated mechanism aimed at synthetic-data quality, verified to measurably
 change training-data precision on real data (Section~7), not a substitute
 for DySECT's manual interface but a different kind of gate entirely. The
 confidence aggregation formula itself is not unique to SLDE-AFT, as stated
-above; the formal analysis of that formula (Section~4) is what this paper
+above; the formal analysis of that formula (Section~5) is what this paper
 contributes on top of it.
 
 \paragraph{Empirical comparability.} The two systems' empirical evaluations
 use different benchmarks, base models, and metrics: DySECT reports a
 5--8 percentage point recall lift from KB-guided extraction with no
 retraining, and recall improvements on DocRED across GPT-4.1, GPT-4.1-mini,
-LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's evaluation (Sections~5--7) uses
+LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's evaluation (Sections~6--8) uses
 CaRB, DocRED, and BioRED with a different set of base models and a
 seed-based statistical protocol. No direct numerical comparison between the
 two systems is made in this paper as a result; a controlled head-to-head
@@ -321,12 +324,360 @@ positions SLDE-AFT's architecture against it.
 % TODO: not yet written.
 
 \section{Formal Analysis of the Aggregation Rule}
-% TODO: not yet written.
+\label{sec:formal-analysis}
+
+\subsection{Definition and Attribution}
+\label{sec:formal-analysis-definition}
+
+As established in Section~\ref{sec:related-work-dysect}, the confidence
+aggregation rule used throughout this paper is not original to it:
+\citet{aminnaseri2026dysect}'s Equations 1--2 define the identical
+formula, under the identical default shrinkage. This paper cites that
+formula rather than claiming it. For a functionally single-valued
+predicate slot with candidate object $t$ supported by observations with
+self-reported confidences $c_1,\dots,c_n \in [0,1]$
+% [EVID-041, "confidence is self-reported, not derived from calibration
+% or token probabilities" -- verified against src/extractors/openrouter_llm.py]
+and shrinkage $\lambda \in (0,1]$ (default $\lambda=0.75$
+% [scripts/dec003_product_probkb_run.py, scripts/dec006_scaleup_probkb_run.py --
+% independently confirmed default, matching aminnaseri2026dysect Eq. 1]
+), the \emph{conservative Noisy-OR support} is
+\begin{equation}
+A(t) \;=\; 1 - \prod_{i=1}^{n} \bigl(1 - \lambda c_i\bigr).
+\label{eq:noisyor}
+\end{equation}
+For a slot designated functionally single-valued, with $m(t)$ competing
+object values already accepted for the same (subject, predicate) slot,
+the admitted confidence is
+\begin{equation}
+C(t) \;=\; \frac{A(t)}{m(t) + 1}.
+\label{eq:conflict}
+\end{equation}
+For a non-functional predicate (only \texttt{has\_color} in the
+product-domain configuration
+% [configs/functional_predicates_product_domain.json]
+), $C(t) = A(t)$ unconditionally: no mutual-exclusivity penalty is
+applied, since multiple simultaneous values are legitimate. A candidate
+is admitted into the knowledge base when $C(t) \ge \tau$, with
+$\tau=0.88$ the project's standing operating threshold
+% [scripts/dec003_product_probkb_run.py, scripts/dec006_scaleup_probkb_run.py]
+throughout the experiments in Sections~\ref{sec:experimental-setup}--\ref{sec:results}.
+What this paper contributes on top of Equations~\ref{eq:noisyor}--\ref{eq:conflict}
+is (i) formal proofs of properties stated but not proved in
+\citet{aminnaseri2026dysect}'s presentation of the same rule, and (ii) an
+empirical test, on two independent real-data snapshots, of whether a
+corrected rule can outperform it. Both are given below.
+
+\subsection{Formal Properties}
+\label{sec:formal-analysis-properties}
+
+\begin{proposition}[Range and boundedness]
+For any non-empty finite multiset of confidences $c_1,\dots,c_n \in [0,1]$
+and $\lambda \in (0,1]$, $A(t) \in [0,1)$ whenever at least one $c_i < 1$,
+and $A(t) \to 1$ only in the limit $n\to\infty$ with every $c_i$ bounded
+away from $0$. Consequently $C(t) \in [0,1)$ for every functionally
+single-valued slot with $m(t) \ge 0$.
+\end{proposition}
+\begin{proof}
+Each factor $(1-\lambda c_i) \in (0,1]$ since $\lambda c_i \in [0,1]$, so
+the product $\prod_i(1-\lambda c_i) \in (0,1]$ and is strictly positive
+for finite $n$; hence $A(t) = 1 - \prod_i(1-\lambda c_i) < 1$ strictly for
+every finite observation set. $A(t) \ge 0$ follows since each factor is
+$\le 1$, so the product is $\le 1$. Dividing by $m(t)+1 \ge 1$ preserves
+$C(t) \in [0,1)$.
+\end{proof}
+
+\begin{proposition}[Order-invariance]
+$A(t)$ depends only on the multiset $\{c_1,\dots,c_n\}$, not on the order
+in which observations are accumulated.
+\end{proposition}
+\begin{proof}
+Multiplication is commutative, so $\prod_i(1-\lambda c_i)$ is invariant
+under any permutation of the index set $i=1,\dots,n$.
+\end{proof}
+
+\begin{proposition}[Monotonicity in evidence]
+\label{prop:monotone}
+Adding an observation with confidence $c_{n+1} > 0$ to an existing set of
+$n$ observations strictly increases $A(t)$; $A(t)$ is non-decreasing in
+$n$ and strictly increasing whenever every added observation has
+$c_i > 0$.
+\end{proposition}
+\begin{proof}
+Let $A_n = 1-\prod_{i=1}^n(1-\lambda c_i)$. Then
+$A_{n+1} - A_n = \prod_{i=1}^n(1-\lambda c_i) \cdot \lambda c_{n+1} > 0$
+whenever $c_{n+1} > 0$, since $\prod_{i=1}^n(1-\lambda c_i) > 0$ by the
+boundedness proposition above.
+\end{proof}
+
+\begin{proposition}[Saturation under repeated observation]
+\label{prop:saturation}
+If the same confidence $c$ is observed $n$ times, $A_n = 1-(1-\lambda c)^n
+\to 1$ as $n \to \infty$, geometrically, at rate $(1-\lambda c)$: the
+residual $1 - A_n = (1-\lambda c)^n$ decreases by the constant factor
+$(1-\lambda c)$ with every additional identical observation.
+\end{proposition}
+\begin{proof}
+Immediate from Equation~\ref{eq:noisyor} with $c_i=c$ for all $i$.
+\end{proof}
+
+\begin{proposition}[Corroboration requirement]
+\label{prop:corroboration}
+With $\lambda=0.75$ and $\tau=0.88$, no single observation, regardless of
+its confidence, is sufficient for admission: a triple requires at least
+two corroborating observations to reach $\tau$.
+\end{proposition}
+\begin{proof}
+A single observation with the maximum possible confidence $c_1=1$ yields
+$A(t) = \lambda = 0.75 < \tau = 0.88$ from Equation~\ref{eq:noisyor} with
+$n=1$. More generally, admission with $n$ observations each at $c=1$
+requires $1-(1-\lambda)^n \ge \tau$, i.e.\ $n \ge \ln(1-\tau)/\ln(1-\lambda)
+= \ln(0.12)/\ln(0.25) \approx 1.53$, so $n \ge 2$.
+\end{proof}
+This property is visible directly in the project's own data: a
+functionally single-valued triple supported by exactly one observation
+(the common case for a structured-only fact, fixed confidence $0.98$
+% [EVID-041, src/extractors/structured.py -- structured confidence
+% fixed at 0.98]
+) scores $A(t) = \lambda \times 0.98 = 0.735$ under
+Equation~\ref{eq:noisyor} -- below $\tau=0.88$ regardless of how
+trustworthy that single structured source is, exactly as
+Proposition~\ref{prop:corroboration} predicts.
+
+\begin{proposition}[Conflict-penalty properties]
+\label{prop:conflict}
+For fixed $A(t)$, $C(t) = A(t)/(m(t)+1)$ is strictly decreasing in
+$m(t)$, and $C(t) = A(t)$ exactly when $m(t)=0$ (no penalty when the slot
+is uncontested).
+\end{proposition}
+\begin{proof}
+$\partial C(t)/\partial m(t) = -A(t)/(m(t)+1)^2 < 0$ for $A(t) > 0$, and
+$C(t)|_{m(t)=0} = A(t)/1 = A(t)$ directly from Equation~\ref{eq:conflict}.
+\end{proof}
+
+\begin{proposition}[Rival ceiling]
+\label{prop:ceiling}
+For any functionally single-valued predicate slot with $m(t) \ge 1$
+competing object values, $C(t) < 1/(m(t)+1) \le 0.5$, independent of how
+much observational support $A(t)$ accumulates.
+\end{proposition}
+\begin{proof}
+By the boundedness proposition, $A(t) < 1$ for any finite observation
+set. Hence $C(t) = A(t)/(m(t)+1) < 1/(m(t)+1)$. For $m(t) \ge 1$,
+$1/(m(t)+1) \le 1/2$.
+\end{proof}
+
+\begin{corollary}
+\label{cor:ceiling-consequence}
+With $\tau = 0.88 > 0.5$, a contested functionally single-valued slot
+($m(t) \ge 1$) can never be admitted under Equations~\ref{eq:noisyor}--\ref{eq:conflict},
+regardless of how many corroborating observations accumulate for the
+leading candidate. Combined with the fact that no candidate is ever
+deleted or pruned from the accepted-candidates store anywhere in
+\texttt{src/probkb\_v2\_adapter.py} or \texttt{src/pkb\_instrumentation.py}
+% [Results Summary.md, Claim 3 -- verified directly, no del/pop/remove
+% on the accepted dict]
+, a genuinely contested functional slot is not merely slow to resolve
+under this rule: it is structurally unresolvable at $\tau=0.88$.
+\end{corollary}
+
+\begin{proposition}[Independence assumption and repeated observation]
+\label{prop:independence}
+Equation~\ref{eq:noisyor} is a Noisy-OR combination rule, which assumes
+each $c_i$ is drawn from a conditionally independent evidence source.
+This assumption is violated when the same extractor, invoked at
+temperature $0$, is asked to re-read the same source text: the output is
+deterministic, so repeated invocations produce byte-identical
+observations that are treated by Equation~\ref{eq:noisyor} as though they
+were independent corroboration, inflating $A(t)$ by
+Proposition~\ref{prop:saturation}'s saturation dynamic regardless of
+whether the underlying claim is correct.
+\end{proposition}
+This is not merely a theoretical caveat: 31 unstructured-only triples in
+the DEC-018 200-product snapshot were observed 2--21 times each by
+exactly this mechanism, all 31 incorrect against gold
+% [EVID-029]
+, and the same snapshot's real-data expected calibration error is
+$0.3332$
+% [EVID-036]
+, both consistent with repeated non-independent observation being
+mistaken for corroboration. Section~\ref{sec:formal-analysis-empirical}
+tests a corrected rule that aggregates over distinct sources instead of
+repeat observations, directly targeting this violated assumption.
+
+\subsection{Computational Complexity}
+\label{sec:formal-analysis-complexity}
+
+The production candidate-acceptance path is empirically $O(N)$ per call
+and $O(N^2)$ cumulative over $N$ accumulated observations
+% [EVID-036]
+, caused by a linear scan over every previously accepted candidate in
+\texttt{src/pkb\_instrumentation.accepted\_slot\_keys} on every new
+observation -- measured at $72.7\times$ latency growth for $80\times$
+more observations
+% [EVID-036]
+. An indexed alternative (same aggregation mathematics, keyed by
+normalized (subject, predicate) slot rather than scanned linearly)
+achieves $O(1)$ per call and $O(N)$ cumulative
+% [EVID-036]
+; it was implemented illustratively but not wired into the evaluated
+system. This is not a limiting factor at the scale evaluated in this
+paper ($N$ in the hundreds, Section~\ref{sec:experimental-setup}), where
+LLM API latency dominates wall-clock time
+% [EVID-036, cross-referenced against DEC-008's linear end-to-end runtime
+% finding]
+, but is stated here as a forward-looking scalability property of the
+current implementation, separate from the aggregation rule's own
+mathematical properties above.
+
+\subsection{Empirical Validation: The Ceiling, Tested Corrections, and Their Results}
+\label{sec:formal-analysis-empirical}
+
+Corollary~\ref{cor:ceiling-consequence} is a proof, not a measurement: it
+establishes that the ceiling \emph{must} block every contested
+single-valued slot, but says nothing about whether contested slots
+actually arise on real data, nor whether a corrected rule can do better.
+Both questions were tested directly
+% [DEC-026, EVID-041]
+, offline, by replaying stored observations from two independent
+gold-labeled snapshots -- 657 triples from 35 products
+% [EVID-013, EVID-014, EVID-036]
+and 2241 triples from 140 products
+% [EVID-029, EVID-030]
+-- through six scoring rules applied to the identical observations (only
+the aggregation formula varies), each with its own validation-selected
+threshold and a subject-level (product-level) held-out test split (35
+and 92 test-split subjects respectively), plus every rule re-evaluated
+at the fixed pipeline threshold $\tau=0.88$
+% [EVID-041]
+.
+
+\paragraph{The ceiling is confirmed empirically, at both thresholds
+tested.} The published rule (Equations~\ref{eq:noisyor}--\ref{eq:conflict})
+admits exactly zero contested single-valued-predicate slots on either
+test split, at either its own F1-selected threshold or the fixed
+$\tau=0.88$
+% [EVID-041]
+. An unconstrained max-merge baseline ($C(t)=\max_i c_i$, no conflict
+handling), evaluated identically, admits 6 and 40 contested slots at its
+own F1-selected threshold and 20 and 69 at $\tau=0.88$, on the two
+datasets respectively
+% [EVID-041]
+-- confirming that it is the ceiling, and not an absence of contested
+slots in the data, that accounts for the published rule's zero.
+
+\paragraph{Tested corrections that are not claimed as contributions.} Two
+candidate corrections to Equation~\ref{eq:conflict} were tested and are
+reported here as null or negative results, not as improvements:
+\begin{itemize}
+  \item An evidence-share reformulation, $C(t) = A(t)^2 / \sum_j A(t_j)$
+  summed over every candidate $j$ in the same slot, removes the
+  algebraic ceiling of Proposition~\ref{prop:ceiling} (it reduces
+  correctly to $C(t)=A(t)$ when $m(t)=0$, matching
+  Proposition~\ref{prop:conflict}) but is an exact empirical null: it
+  produces an admitted set identical to Equation~\ref{eq:conflict} on
+  both datasets (bootstrap 95\% CI for the $F_1$ difference exactly
+  $[0.0000,0.0000]$ over $10{,}000$ subject resamples)
+  % [EVID-041]
+  , because no observed contested-slot score in either dataset approaches
+  the operating threshold (maximum observed score $0.581$ against
+  $\tau=0.73$ on the 657-triple dataset)
+  % [EVID-041]
+  .
+  \item An unsquared variant, $C(t) = A(t)/\sum_j A(t_j)$, was tested
+  afterward as an exploratory, post-hoc check and is a negative result:
+  it degenerates to $C(t)=1$ for every uncontested slot ($m(t)=0
+  \Rightarrow \sum_j A(t_j) = A(t) \Rightarrow C(t)=1$ regardless of the
+  actual evidence strength), discarding real signal on $495$ of $495$
+  uncontested functional-predicate rows in the 657-triple dataset
+  % [EVID-041]
+  , and its $F_1$ is significantly worse than the published rule on one
+  dataset (95\% CI $[-0.0870,-0.0118]$) and not significantly different
+  on the other
+  % [EVID-041]
+  . This failure is itself a formal, not merely empirical, result: any
+  share-based replacement for Equation~\ref{eq:conflict} must satisfy
+  $C(t)=A(t)$ when $m(t)=0$ to avoid this degeneracy -- the squared form
+  above satisfies this reduction and the unsquared form does not, which
+  is why one is empirically inert and the other is empirically harmful,
+  independent of which snapshot either is evaluated on
+  % [EVID-041]
+  .
+\end{itemize}
+
+\paragraph{The corrected rule: distinct-source aggregation.} The one
+tested correction that is claimed as a contribution targets
+Proposition~\ref{prop:independence}'s violated-independence source of
+error directly, rather than the ceiling: aggregate
+Equation~\ref{eq:noisyor} over confidences from distinct
+$(\text{source\_type}, \text{source\_id})$ pairs (deduplicating repeated
+observations from the same source, keeping the maximum confidence per
+source) instead of over every repeat observation, leaving
+Equation~\ref{eq:conflict}'s conflict handling otherwise unchanged. At
+the pipeline's fixed operating threshold $\tau=0.88$ -- the threshold
+this paper's other results use, and therefore the relevant comparison --
+this correction yields a statistically significant precision gain over
+the published rule at \emph{exactly unchanged} recall on both datasets
+(bootstrap 95\% CI for the recall difference exactly $[0.0000,0.0000]$
+on both):
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Dataset & Precision diff.\ (95\% CI) & Recall diff.\ (95\% CI) & $F_1$ diff.\ (95\% CI) \\
+\midrule
+657 triples / 35 products & $+0.1060\ [0.0321, 0.2267]$ & $0.0000\ [0.0000, 0.0000]$ & $+0.0192\ [0.0057, 0.0395]$ \\
+2241 triples / 140 products & $+0.0270\ [0.0076, 0.0519]$ & $0.0000\ [0.0000, 0.0000]$ & $+0.0059\ [0.0016, 0.0115]$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+% [EVID-041, tau=0.88 fixed-threshold bootstrap, 10,000 resamples over test-split subjects]
+Both the precision and $F_1$ intervals exclude zero on both independent
+datasets. The same correction also improves $F_1$ at each dataset's own
+F1-selected threshold (+0.0106 $[0.0028,0.0222]$ and +0.0039
+$[0.0013,0.0075]$ respectively)
+% [EVID-041]
+, so the effect is not an artifact of threshold selection. An
+unconstrained max-merge baseline also outperforms the published rule at
+its own F1-selected threshold, matching the same direction already found
+in this project's $N{=}50$ closed-loop ablation
+% [EVID-039, AUDIT.md A1]
+, but that advantage does not survive at the shared $\tau=0.88$ operating
+threshold (bootstrap $F_1$-difference CI includes zero on both datasets,
+driven by a significant precision loss that offsets a significant recall
+gain)
+% [EVID-041]
+and is not reported as a corrected rule here, only as further empirical
+confirmation of Proposition~\ref{prop:ceiling} (Section~\ref{sec:formal-analysis-empirical},
+above).
+
+\subsection{Summary}
+\label{sec:formal-analysis-summary}
+
+Three claims follow from this section. First, the aggregation formula
+(Equations~\ref{eq:noisyor}--\ref{eq:conflict}) and its default shrinkage
+$\lambda=0.75$ are \citet{aminnaseri2026dysect}'s, cited here, not
+claimed as this paper's contribution (Section~\ref{sec:related-work-dysect}).
+Second, this paper's contribution is the formal analysis above --
+boundedness, order-invariance, monotonicity, the corroboration
+requirement, saturation, the conflict-penalty properties, and the rival
+ceiling with its structural-unresolvability corollary -- together with
+the empirical demonstration that this ceiling blocks every contested
+single-valued slot on two independent real-data snapshots, at both the
+F1-selected and the fixed pipeline threshold. Third, the corrected rule
+this paper proposes is distinct-source aggregation
+(Section~\ref{sec:formal-analysis-empirical}), reported with its
+measured precision and $F_1$ gain over the published rule at
+$\tau=0.88$ and the corresponding 95\% confidence intervals above; the
+two other candidate corrections tested (evidence-share and its unsquared
+variant) are reported as tested and null or negative, not as
+contributions of this paper.
 
 \section{Experimental Setup}
+\label{sec:experimental-setup}
 % TODO: not yet written.
 
 \section{Results}
+\label{sec:results}
 % TODO: not yet written -- awaiting the user's Section 7 Word document
 % (6 tables, 4 figures) and its supplementary material (Tables S1-S8),
 % per the task's "Existing material to reconcile against" instruction.
