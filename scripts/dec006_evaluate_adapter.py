@@ -105,7 +105,20 @@ def main():
     parser.add_argument("--n-products", type=int, default=50)
     parser.add_argument("--training-data-path", default=SYNTHETIC_TRAIN_PATH,
                          help="Used only for the leakage guard -- excludes any test product also present here")
+    parser.add_argument("--eval-split", choices=["val", "test"], default="test",
+                         help="DEC-027: evaluate on the validation split (hyperparameter selection) "
+                              "or the test split (confirmatory run). Defaults to test so existing "
+                              "usage (N=50, no --eval-split) is unaffected.")
+    parser.add_argument("--strict-leakage-guard", action="store_true",
+                         help="DEC-027: abort with a non-zero exit if any held-out product leaks "
+                              "into the training data, instead of silently excluding it. Uses "
+                              "src/dec027_leakage_guard.py; only meaningful with --n-products 200.")
     args = parser.parse_args()
+
+    if args.strict_leakage_guard:
+        from src.dec027_leakage_guard import assert_no_leakage
+        assert_no_leakage(args.training_data_path, n_products=args.n_products)
+        print("DEC-027 strict leakage guard: PASSED (no held-out product in the training data).")
 
     import torch
     from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -129,7 +142,7 @@ def main():
     ):
         products[idx] = (unstructured_row, gold_unstructured)
 
-    test_idx = sorted(i for i in products if split.get(i) == "test")
+    test_idx = sorted(i for i in products if split.get(i) == args.eval_split)
 
     trained_subjects = load_trained_subjects(args.training_data_path)
     leaked_idx = [i for i in test_idx if products[i][0]["product_name"] in trained_subjects]
@@ -180,7 +193,13 @@ def main():
     print(f"Adapter: {args.adapter or '(base model only)'}")
     print(f"P={metrics['precision']:.4f} R={metrics['recall']:.4f} F1={metrics['f1']:.4f}")
 
-    out_dir = Path("outputs/dec006_eval") / (Path(args.adapter).name if args.adapter else "base_model")
+    adapter_name = Path(args.adapter).name if args.adapter else "base_model"
+    # DEC-027: suffix with the eval split whenever it's non-default (val),
+    # so a val-split grid-search evaluation never overwrites the same
+    # adapter's later test-split confirmatory evaluation.
+    out_dir = Path("outputs/dec006_eval") / (
+        adapter_name if args.eval_split == "test" else f"{adapter_name}_{args.eval_split}"
+    )
     out_dir.mkdir(parents=True, exist_ok=True)
     with open(out_dir / "predictions.json", "w") as f:
         json.dump(predictions, f, indent=2)

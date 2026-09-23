@@ -1447,15 +1447,34 @@ bin; the dashed line marks perfect calibration.}
 Of 475 above-threshold triples in the 200-product run, 444 had at
 least one structured observation and 31 had unstructured observations
 only (Table~\ref{tab:provenance}). All 444 were correct and all 31
-were incorrect, so requiring structured corroboration increased
-precision from $93.5\%$ to $100.0\%$. The 31 excluded triples had each
-been observed 2--21 times; 13 had a generic category noun (e.g.\
-``laptop device'') as the subject. Because the structured records and
-the gold triples are generated from the same source in this domain
-(Section~\ref{sec:setup-datasets}), this result reflects a noise-free
-structured source; behavior with an erroneous structured source was
-not tested
+were incorrect against \texttt{gold\_structured} (all 13 structured
+facts per product -- the set the filter's own validation script scores
+against, since a structured-corroboration criterion is naturally
+checked against the full structured record, not only the subset of
+facts a given text passage happens to mention), so requiring structured
+corroboration increased precision from $93.5\%$ to $100.0\%$
 % [EVID-029]
+. Scored instead against \texttt{gold\_unstructured} -- the narrower
+set the same snapshot's own \texttt{gold\_label} column uses
+(Section~\ref{sec:setup-metrics}) -- the same comparison gives
+$92.6\%$ to $99.1\%$ instead, not $93.5\%$ to $100.0\%$; both figures
+are given here because the two gold sets are not interchangeable and
+this manuscript reports \texttt{gold\_structured} as primary
+throughout this subsection
+% [EVID-043 -- verified directly both ways via scripts/reproduce\_all.py;
+% the two-gold-set distinction is the same shape of issue as the
+% gold\_structured/gold\_unstructured recall-denominator distinction
+% already stated in Section~\ref{sec:setup-metrics} for a different
+% mechanism]
+. The 31 excluded triples had each been observed 2--21 times; 13 had a
+generic category noun (e.g.\ ``laptop device'') as the subject. The
+structured records and the gold triples are generated from the same
+source in this domain (Section~\ref{sec:setup-datasets}), so this
+result alone reflects a noise-free structured source; a companion test
+under a deliberately corrupted structured source (DEC-028) confirms
+the filter's precision advantage survives, with a decaying but still
+statistically significant margin, at corruption rates up to 20\%
+% [EVID-042]
 .
 
 \begin{table}[htbp]
@@ -1466,12 +1485,19 @@ not tested
 \toprule
 Group & Triples & Precision (\%) \\
 \midrule
-All above-threshold triples & 475 & 93.5 \\
-At least one structured observation (retained) & 444 & 100.0 \\
-Unstructured observations only (removed) & 31 & 0.0 \\
+All above-threshold triples & 475 & 93.5 (92.6) \\
+At least one structured observation (retained) & 444 & 100.0 (99.1) \\
+Unstructured observations only (removed) & 31 & 0.0 (0.0) \\
 \bottomrule
 \end{tabular}
-% [EVID-029]
+
+\noindent\emph{Note.} Precision against \texttt{gold\_structured}
+(primary); the figure in parentheses is the same computation against
+\texttt{gold\_unstructured} instead -- see the surrounding text and
+Section~\ref{sec:setup-metrics} for why these are two different, not
+interchangeable, gold sets in this project.
+% [EVID-029 (gold_structured); EVID-043 (gold_unstructured, verified via
+% scripts/reproduce_all.py)]
 \end{table}
 
 Across the four iterations of the 50-product run, LLM-only extraction

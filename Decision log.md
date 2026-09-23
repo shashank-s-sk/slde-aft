@@ -2434,6 +2434,50 @@ here. If the user prefers the filtered set as primary instead, say so
 before approval; this is a reversible choice at this stage, not after
 training starts.
 
+**Test-set gold triple count, stated before running so recall is
+interpretable afterwards (per user instruction, 2026-09-23):** the 40
+test-split products carry **280 `gold_unstructured` triples total, 7
+per product exactly** (every product's generated text visibly mentions
+7 of 13 predicates by design; verified directly by generating all 200
+products at seed 42 and summing `len(gold_unstructured)` over the 40
+test-split indices from `data/product_split_200.csv` -- not assumed
+uniform, checked: min and max per product are both 7). This is the
+recall denominator `scripts/dec006_evaluate_adapter.py`'s own
+evaluator uses (`Triple` objects built from `gold_unstructured`,
+verified directly against that script). A test-split recall of, e.g.,
+0.10 therefore means 28 of these 280 triples were recovered, not a
+fraction of some other, larger or smaller gold set -- stated
+explicitly so this DEC's recall numbers are not read against the
+wrong denominator the way DEC-030/EVID-043 found had already happened
+once in this project for the provenance filter's `gold_structured`
+vs. `gold_unstructured` distinction.
+
+**Leakage guard, built and demonstrated before running (per user
+instruction, 2026-09-23):** `src/dec027_leakage_guard.py` (reusing
+`scripts/dec006_evaluate_adapter.py`'s own `load_trained_subjects()`,
+not reimplemented) and `tests/test_dec027_leakage_guard.py`. Both
+committed tests pass: (1) the actual committed training file
+(`product_domain_synth_train_90unfiltered.jsonl`) contains no
+validation/test product -- clean, verified, not assumed; (2) a planted
+violation (one held-out product's own training example injected into
+a `tmp_path` scratch copy) is correctly caught. **Demonstrated live, not
+only via the pytest suite**: a scratch file
+(`outputs/_scratch_dec027_leakage_demo.jsonl`, injecting product
+"Auralex Headphones Air 147", a real validation/test product) was
+built, run through `assert_no_leakage()` uncaught, and produced:
+
+```
+AssertionError: DEC-027 leakage guard FAILED: 1 validation/test product(s)
+found as a training-example subject in
+'outputs/_scratch_dec027_leakage_demo.jsonl': ['Auralex Headphones Air 147']
+```
+
+The scratch file was then deleted and the real training file
+re-verified clean (`assert_no_leakage` on the committed file: no
+exception, "Clean: no leakage in the real committed training file.").
+The training/evaluation runbook aborts on this same assertion before
+any GPU time is spent, per the original pre-registration.
+
 ## Design
 
 1. **Validation-only grid search (seed 42 only, matching DEC-022
