@@ -674,7 +674,357 @@ contributions of this paper.
 
 \section{Experimental Setup}
 \label{sec:experimental-setup}
-% TODO: not yet written.
+
+\subsection{Datasets}
+\label{sec:setup-datasets}
+
+\paragraph{Synthetic product domain.} The primary evaluation domain is a
+deterministic synthetic consumer-product generator
+(\texttt{src/datasets/product\_generator.py}), seeded with
+\texttt{random.seed(42)}
+% [src/datasets/product_generator.py -- generate_products()]
+, over a fixed 13-predicate schema (\texttt{manufactured\_by},
+\texttt{belongs\_to\_category}, \texttt{has\_price\_usd},
+\texttt{has\_screen\_size\_inch}, \texttt{has\_ram\_gb},
+\texttt{has\_storage\_gb}, \texttt{has\_battery\_life\_hours},
+\texttt{has\_weight\_kg}, \texttt{has\_color}, \texttt{made\_of\_material},
+\texttt{target\_market\_region}, \texttt{supports\_fast\_charging},
+\texttt{has\_noise\_cancellation})
+% [src/datasets/product_generator.py -- ALLOWED_PREDICATES]
+. For each product, the generator draws brand, category, color,
+material, region, and 8 numeric attributes from fixed pools, producing
+(i) a structured record with all 13 facts, (ii) an unstructured text
+paragraph that verbalizes a random 7-of-13 subset of those facts as
+prose sentences, and (iii) gold triples: \texttt{gold\_structured} (all
+13 facts) and \texttt{gold\_unstructured} (the subset actually
+verbalized in the text). \textbf{The structured records and the gold
+triples used to score every product-domain result come from the same
+generator function}
+% [src/datasets/product_generator.py -- both gold_structured and the
+% structured record are built from the identical drawn attribute values,
+% same generate_product_record() call]
+-- stated explicitly here since it underlies the provenance-filter
+circularity caveat discussed in Section~9 (Limitations).
+
+Two dataset sizes are used, both split 70/10/20 (train/val/test) with
+\texttt{random.Random(7)} (a seed distinct from the generation seed)
+% [src/leakage_split.py]
+: a 50-product superset (35 train / 5 val / 10 test,
+\texttt{data/product\_split.csv})
+% [EVID-013]
+used for the canonical DEC-003 instrumented run and the fine-tuning
+evaluation split, and a 200-product superset (140 train / 20 val / 40
+test, \texttt{data/product\_split\_200.csv})
+% [scripts/dec006_scaleup_probkb_run.py; 140/20/40 counts also verified
+% in DEC-024's Decision log entry]
+used for the DEC-006 scale-up and DEC-026's second replay dataset.
+Leakage rules, applied identically across every experiment that uses
+either split
+% [src/leakage_split.py -- save_product_split()]
+: test-split products are evaluated on unstructured-text extraction
+only, never seeded into the knowledge base with their own structured
+facts; test-split products are never used in synthetic training data,
+fine-tuning data, few-shot examples, feedback-controller exemplars, or
+threshold selection; val-split products may be used for threshold
+selection and hyperparameter tuning; train-split products may seed the
+knowledge base and generate synthetic supervision.
+
+\paragraph{Public benchmarks.} \textbf{CaRB}: 548 of the benchmark's 641
+test-split sentences
+% [EVID-035]
+, selected by exact-string match between \texttt{data/CaRB/data/test.txt}
+and its gold annotation file \texttt{test.tsv}; the excluded 93 sentences
+are a pre-existing whitespace/quoting mismatch between those two files,
+not a deliberate exclusion
+% [EVID-035, Limitations]
+. \textbf{DocRED}: a 15-document pilot
+% [Decision log.md, DEC-020]
+drawn (seed 42, biased toward documents with at least one multi-evidence
+gold triple -- 845 of 998 human-annotated dev-split documents qualify)
+% [Decision log.md, DEC-020]
+from the official 998-document human-annotated dev split
+(\texttt{thunlp/DocRED} via its Hugging Face mirror)
+% [Decision log.md, DEC-020]
+, yielding 189 gold triples and 356 observations (one observation per
+(head, relation, tail, evidence-sentence) tuple), of which 106 (56\%)
+have two or more evidence sentences
+% [Decision log.md, DEC-020]
+-- i.e.\ genuine multi-observation corroboration for the PKB to
+aggregate over, exercising the framework's aggregation mechanism, not
+only its extractor. \textbf{BioRED}: 15 abstracts
+% [EVID-024]
+from the official 100-document Dev split (PubTator format, obtained from
+NCBI's public FTP distribution)
+% [EVID-024]
+, an extractor-only pilot -- no PKB aggregation is applied to BioRED
+(Section~\ref{sec:setup-hyperparameters}), unlike DocRED and the product
+domain.
+
+\subsection{Models and Hardware}
+\label{sec:setup-models}
+
+The pipeline's extractor, used for every product-domain run and both
+public-benchmark pilots (DocRED, BioRED), is \texttt{meta-llama/} \texttt{llama-3.1-8b-instruct}
+via OpenRouter, temperature $0.0$
+% [EVID-013; src/extractors/openrouter_llm.py default temperature=0.0]
+. On CaRB, this model is compared against four external systems, all via
+OpenRouter, all on the full 548-sentence sample: \texttt{deepseek/deepseek-v3.2}
+% [EVID-035]
+; and three further systems evaluated only on the original 30-sentence
+CaRB pilot sample (not re-run at full scale; the 30-sentence numbers
+remain the only ones available for these three)
+% [EVID-032; EVID-035, Limitations]
+: \texttt{openai/gpt-4o}, \texttt{anthropic/claude-sonnet-5}, and
+\texttt{google/gemini-2.5-pro}
+% [EVID-032]
+. \texttt{Babelscape/rebel-large} was also attempted as a comparison
+system and found task-incompatible with CaRB's open-domain span-based
+scoring (REBEL is a closed, Wikidata-schema relation extractor); its raw
+F1 against CaRB's scorer is not a meaningful number and is not reported
+as a comparison point
+% [EVID-033]
+.
+
+The fine-tuning base model is \texttt{mistralai/Mistral-7B-Instruct-v0.3}
+(chosen over \texttt{meta-llama/Llama-3.1-8B-Instruct} specifically to
+avoid a Hugging Face gated-repository approval wait)
+% [EVID-026]
+, adapted with QLoRA: rank 16, alpha 32, dropout 0.05, learning rate
+$2\times10^{-4}$, batch size 2 with gradient accumulation 4, bf16
+throughout
+% [EVID-026]
+. Epoch count was swept over $\{2,3,5,8\}$
+% [EVID-037]
+; the winning configuration (epochs $=5$, all other hyperparameters
+unchanged) is used for the headline fine-tuning result
+(Section~\ref{sec:results})
+% [EVID-037, EVID-040]
+. Training and local-adapter evaluation ran on rented RunPod GPU
+instances -- an RTX 4090 (24GB) primarily
+% [EVID-026, EVID-037]
+, with an RTX 3090 substituted for some runs after RTX 4090 pods failed
+GPU sanity checks
+% [EVID-028]
+; runtime is not compared across GPU types.
+
+\subsection{Hyperparameters and Prompts}
+\label{sec:setup-hyperparameters}
+
+The aggregation rule (Equations~\ref{eq:noisyor}--\ref{eq:conflict},
+Section~\ref{sec:formal-analysis}) is applied with different
+hyperparameters in different settings, not a single fixed pair
+throughout the paper: the \textbf{product domain} uses shrinkage
+$\lambda=0.75$ and admission threshold $\tau=0.88$
+% [scripts/dec003_product_probkb_run.py, scripts/dec006_scaleup_probkb_run.py]
+, the same default \citet{aminnaseri2026dysect} report; \textbf{DocRED}
+uses $\lambda=0.5$ and $\tau=0.70$, recalibrated down from the product
+domain's defaults because $\tau=0.88$ would require four or more
+corroborating observations under $\lambda=0.5$
+(Proposition~\ref{prop:corroboration}'s argument applied with these
+values), which DocRED's evidence structure rarely supplies, whereas
+$\tau=0.70$ is reachable with two
+% [Decision log.md, DEC-020]
+; no functional-predicate conflict-adjustment policy is applied to
+DocRED (\texttt{configs/docred\_functional\_predicates.json} is left
+empty), so only Equation~\ref{eq:noisyor}'s Noisy-OR support is used
+there, not Equation~\ref{eq:conflict}'s conflict penalty
+% [Decision log.md, DEC-020]
+; \textbf{BioRED} uses neither value, since no PKB aggregation is
+applied to it at all (Section~\ref{sec:setup-datasets}). The
+product-domain closed loop runs 4 extraction iterations for train-split
+products (structured facts seed the knowledge base at iteration 1 only;
+the LLM re-extracts every iteration, guided from iteration 2 onward by a
+feedback hint built from the accumulated knowledge base); held-out
+val/test-split products receive exactly one unstructured-only extraction
+pass, guided only by the trained knowledge base's locked context, never
+by their own structured facts
+% [EVID-013]
+. DocRED and BioRED do not use this iterative loop: each document is
+processed once, with DocRED's multiple evidence sentences per fact (not
+multiple extraction iterations) supplying the Noisy-OR aggregation's
+repeated observations.
+
+Two distinct prompt templates are used, with two different
+self-reported confidence ranges -- in both cases the confidence value is
+produced by the model itself in response to a prompt instruction, not
+derived from token probabilities, log-likelihoods, or any external
+calibration procedure
+% [EVID-041; verified directly against src/extractors/openrouter_llm.py]
+: the core pipeline's extraction prompt
+(\texttt{src/extractors/} \texttt{openrouter\_llm.py}) instructs a
+confidence between $0.80$ and $0.96$
+% [src/extractors/openrouter_llm.py, line 35]
+, while the fine-tuning data-generation and evaluation prompt
+(\texttt{src/prompts.py}, used identically for building synthetic
+training examples and for evaluating the fine-tuned model, so the two
+tasks match) instructs a confidence between $0.85$ and $0.99$
+% [src/prompts.py, line 28]
+-- a deliberately different range from the pipeline prompt, not a typo,
+and stated here so neither range is mistaken for the other when
+confidence values are discussed in Section~\ref{sec:results}. CaRB,
+DocRED, and BioRED each use their own dedicated open-information-
+extraction prompt (\texttt{prompts/openie\_carb\_v1.txt}
+% [EVID-021]
+, \texttt{prompts/openie\_docred\_v1.txt}
+% [Decision log.md, DEC-020]
+, \texttt{prompts/openie\_biored\_v1.txt}
+% [EVID-024]
+respectively), each schema-appropriate to its domain (CaRB's is
+open-phrase, DocRED's and BioRED's enumerate their respective closed
+relation sets).
+
+\subsection{Metrics}
+\label{sec:setup-metrics}
+
+Unless stated otherwise, triples are scored by normalized exact-match
+set comparison (\texttt{src/evaluator.py}: subject/predicate/object
+lower-cased and whitespace-normalized, then intersected as sets for
+true/false positives and false negatives)
+% [src/evaluator.py]
+, used throughout the product domain and as this project's own internal
+CaRB metric. \textbf{CaRB} results are reported from two scorers, not
+one: this internal exact-match evaluator, which is known to undercount
+matches that the official scorer accepts
+% [EVID-031]
+, and the official \texttt{CaRB} scorer (lenient span-overlap matching,
+reporting AUC and an optimal precision/recall/F1 operating point) -- the
+official scorer is the number this paper cites for CaRB
+% [EVID-031, EVID-035]
+; its AUC should be read as a single-point approximation, since no
+per-triple confidence score is produced beyond one operating point, not
+as a full precision-recall curve
+% [EVID-035, Limitations]
+. \textbf{BioRED} is reported under two matching rules together, never
+the strict rule alone: strict exact-match, and a relaxed containment
+match (predicate exact; subject/object considered matching if either
+normalized string contains the other) -- the strict rule alone
+understates performance by roughly 14$\times$ in true positives found on
+this pilot, driven by span-boundary differences between predicted and
+gold mention text, not by the pipeline finding substantially fewer
+correct facts
+% [EVID-024]
+. \textbf{DocRED} is scored under its own official evaluation convention
+(entity-pair and relation-type match via coreference-resolved entities,
+using each entity's first surface mention as its representative form)
+% [Decision log.md, DEC-020]
+, not the CaRB-style internal evaluator.
+
+\paragraph{Recall denominator.} Because this paper reports recall
+figures with more than one possible denominator, the definition is
+stated once here, at its first appearance
+(Section~\ref{sec:formal-analysis-empirical}'s DEC-026 results are the
+first in this paper to require it), so no later recall number needs to
+be inferred rather than looked up. DEC-026's recall is $TP/(TP+FN)$
+against \texttt{gold\_unstructured} facts for train-split products,
+imported directly from the same \texttt{normalize\_gold()} logic the
+original DEC-003/DEC-006 run scripts use for their own gold sets -- the
+identical set those scripts' own \texttt{gold\_label} snapshot column is
+built from (verified: zero mismatches against that column across both
+snapshots)
+% [EVID-041]
+. This denominator is \emph{directly comparable} to EVID-014's whole-KB
+admission recall on the same 657-triple snapshot, at the same $\tau=0.88$
+(both use the identical gold set and the identical snapshot)
+% [EVID-041]
+, but is \emph{not} comparable to two other recall figures elsewhere in
+this paper's results: EVID-013's held-out validation/test recall is
+computed on different, non-train-split products, from a single raw
+unstructured-extraction pass with no confidence-threshold admission step
+at all -- an extraction-recall quantity, not an admission-recall one
+% [EVID-013; EVID-041]
+; and DEC-019's closed-loop recall (Section~\ref{sec:results}) is
+computed against \texttt{gold\_structured} -- every structured-column
+fact per product, a materially larger and stricter denominator than
+\texttt{gold\_unstructured} -- verified directly against
+\texttt{scripts/} \texttt{dec019\_closedloop\_compare.py}'s own gold
+construction, not assumed
+% [EVID-041]
+. Wherever a recall number appears in Section~\ref{sec:results}, its
+specific denominator is named next to it rather than left implicit.
+
+\subsection{Statistical Protocol}
+\label{sec:setup-statistics}
+
+\paragraph{Five-seed confirmatory comparisons.} The fine-tuning and
+closed-loop-ablation results use five seeds, $42$--$46$
+% [EVID-020, EVID-039, EVID-040]
+, reporting the mean and \emph{sample} standard deviation ($\text{ddof}=1$)
+% [scripts/dec006_5seed_stats.py]
+across seeds, a one-sample $t$-test against a fixed base-model score, and
+a paired $t$-test plus Wilcoxon signed-rank test between two
+configurations evaluated on the same seeds
+% [scripts/dec006_5seed_stats.py; EVID-040]
+. At $n=5$, the Wilcoxon signed-rank test has a floor of $p=0.0625$: this
+is the smallest $p$-value the test can report at this sample size,
+reached when every one of the 5 paired differences has the same sign
+(the maximum-strength result available, not an artifact of a weak
+effect)
+% [EVID-040]
+; this floor is reached in EVID-040's fine-tuned-vs-base comparison
+(5/5 seeds positive) and should not be read as a weaker result than the
+accompanying $t$-test's $p=0.0028$.
+
+\paragraph{Tuning-leakage caveat (AUDIT.md A2).} The epoch/LoRA
+hyperparameter grid used to select the epochs$=5$ configuration
+(Stages~1--2) and the five-seed confirmatory run that reports
+$p=0.0028$ against it (Stage~3) both evaluate on the identical
+8-product test split -- 8, not the full 10 test-split products from
+Section~\ref{sec:setup-datasets}'s 50-product superset, because an
+automated leakage guard excludes any test product whose name is also
+found embedded in the fine-tuning training data, and excludes 2 of the
+10 here
+% [scripts/dec006_evaluate_adapter.py; EVID-037]
+. There is no independent validation split separating which
+configuration was selected from how well it was confirmed. DEC-024
+pre-registers the fix (select hyperparameters on the 200-product
+superset's 20-product validation split, confirm once on its untouched
+40-product test split) but was scoped and not run, by explicit user
+decision to proceed with this disclosed limitation rather than spend
+further GPU time
+% [Decision log.md, DEC-024]
+; Section~\ref{sec:results}'s citation of $p=0.0028$ carries this
+caveat every time it is stated, not as an aside.
+
+\paragraph{Bootstrap confidence intervals.} This paper's one realized
+use of bootstrap confidence intervals is DEC-026's aggregation-rule
+comparison (Section~\ref{sec:formal-analysis-empirical}): a
+subject-level (product-level) cluster bootstrap, $10{,}000$ resamples
+with replacement drawn over test-split subjects, with true/false
+positive/negative counts summed per resample from each subject's own
+counts (so a subject drawn more than once contributes its counts that
+many times) before precision, recall, and $F_1$ are recomputed from the
+resampled totals; the reported 95\% CI is the $[2.5,97.5]$ percentile
+interval of the resulting distribution
+% [EVID-041; scripts/dec026_aggregation_rules_replay.py]
+. A separate paired-bootstrap-over-products protocol was specified for
+the fine-tuning comparison, following this project's own established
+convention for separating seed-level variance from test-set-level
+uncertainty, but -- like the rest of DEC-024 -- was never executed
+% [Decision log.md, DEC-024]
+; Section~\ref{sec:results} does not describe the fine-tuning result as
+bootstrap-confirmed.
+
+\paragraph{Null-result convention.} Applied consistently across DEC-005,
+DEC-023, DEC-024's design, and DEC-026: $p \ge 0.05$ (or, for a
+bootstrap comparison, a 95\% CI that includes zero) is reported as a
+null result exactly as found, with no re-running, additional seeds, or
+post-hoc adjustment undertaken to chase significance
+% [README.md, ground rule 5]
+.
+
+\subsection{Note on DEC-026}
+\label{sec:setup-dec026-note}
+
+DEC-026 (Section~\ref{sec:formal-analysis-empirical}) is a
+\textbf{replay} over knowledge-base snapshots already saved by the
+DEC-003 and DEC-006 product-domain runs described in
+Section~\ref{sec:setup-datasets}: it re-scores already-collected
+observations under six aggregation formulas, computing every quantity
+reported for it from those saved CSV files. No API calls and no GPU
+time were spent obtaining any DEC-026 result; its cost is the
+wall-clock time of a local Python/pandas script
+% [EVID-041; Decision log.md, DEC-026]
+.
 
 \section{Results}
 \label{sec:results}
