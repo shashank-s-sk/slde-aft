@@ -51,6 +51,10 @@ outputs/*
 !outputs/dec020_docred_pilot/
 !outputs/dec023_ablation_n50/
 !outputs/dec026_aggregation_rules/
+# DEC-027 (2026-09-23): the leakage-free fine-tuning run's own outputs --
+# adapter weight files inside it stay excluded by the *.safetensors/*.bin
+# rules below, same as outputs/dec006_adapters/.
+!outputs/dec027_leakage_free_finetuning/
 data/raw/
 *.h5
 *.pkl
