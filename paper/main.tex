@@ -1632,12 +1632,202 @@ R3$-$R2 & B (2241) & $+0.0270\ [0.0076,0.0519]$ & $0.0000\ [0.0000,0.0000]$ & $+
 
 \section{Discussion}
 \label{sec:discussion}
-% TODO: not yet written. Carry forward from Section 2.7 / Learnings.md:
-% DySECT reports consistent recall IMPROVEMENTS from KB-guided extraction
-% on DocRED (Table 1, all four models), whereas SLDE-AFT's own DocRED
-% pilot (DEC-020) found the PKB aggregation mechanism REDUCED recall
-% (naive baseline 0.032 -> PKB-aggregated 0.005). State this contrast
-% honestly here -- do not write it yet, per the task's staged order.
+
+This section interprets the results reported in
+Section~\ref{sec:results}; no new numbers are introduced here beyond
+those already given there.
+
+\subsection{Divergence from DySECT's Reported DocRED Recall Gains}
+\label{sec:discussion-docred}
+
+\citet{aminnaseri2026dysect} report a consistent recall
+\emph{improvement} from KB-guided extraction on DocRED across all four
+evaluated models (Section~\ref{sec:related-work-dysect}), whereas
+SLDE-AFT's own DocRED pilot found that PKB aggregation \emph{reduced}
+$F_1$ relative to a no-aggregation baseline (precision rose from
+$0.034$ to $0.333$, but recall fell from $0.032$ to $0.005$;
+Table~\ref{tab:docred-results}). These two results are not a controlled
+comparison of the same mechanism, and at least four differences between
+the two evaluations could account for the opposite direction; this
+paper offers them as candidate explanations, not as a tested account of
+which one is responsible, since distinguishing between them would
+require rerunning one evaluation under the other's protocol, which was
+not done:
+
+\begin{itemize}
+\item \textbf{Different extractors.} \citet{aminnaseri2026dysect}
+evaluate GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's
+DocRED pilot uses only \texttt{meta-llama/llama-3.1-8b-instruct}
+(Section~\ref{sec:setup-models}), a smaller model in none of their four.
+\item \textbf{Different aggregation hyperparameters, and a different
+underlying question.} DySECT's reported recall is extraction recall
+under KB-guided \emph{prompting} (more triples found when the prompt is
+augmented with hierarchical abstractions), not recall after a
+confidence-threshold \emph{admission} step. SLDE-AFT's DocRED pilot
+measures the latter, at $\lambda=0.5$, $\tau=0.70$
+(Section~\ref{sec:setup-hyperparameters}) rather than the product
+domain's $\lambda=0.75$, $\tau=0.88$ -- the two papers' recall numbers
+may not be measuring the same quantity at all.
+\item \textbf{Pilot scale.} SLDE-AFT's pilot uses 15 documents
+(Section~\ref{sec:setup-datasets}); \citet{aminnaseri2026dysect}'s
+DocRED setup uses a 500-document evaluation set and a further 100
+documents to seed the knowledge base -- substantially more accumulated
+evidence for the knowledge integrator to work with before any
+comparison is made.
+\item \textbf{Exact-string matching versus entity-linked keys.}
+\citet{aminnaseri2026dysect}'s knowledge integrator ``merges
+semantically equivalent facts''
+% [aminnaseri2026dysect, Section 2.2 -- verified directly against the
+% PDF; the paper does not specify the exact matching mechanism behind
+% this merging, so no more specific claim than "semantically
+% equivalent" is made here]
+, which does not require two extractions to share identical surface
+text. SLDE-AFT's PKB accepts a candidate key
+only on an exact, lower-cased string match of subject, predicate, and
+object, with no entity-linking or paraphrase normalization
+% [Decision log.md, DEC-020]
+. On open Wikipedia text, where the same fact is often phrased
+differently across its supporting sentences, this could cause genuine
+corroboration to be split across several never-matching keys rather
+than aggregated -- the root cause identified when this pilot was run
+% [Decision log.md, DEC-020]
+, offered here as one candidate explanation among four, not a
+demonstrated cause relative to the other three.
+\end{itemize}
+
+\subsection{The Rival Ceiling Generalizes Beyond This Data}
+\label{sec:discussion-ceiling}
+
+DEC-026 found zero contested single-valued-predicate slots admitted
+under R2 (the published rule) on either dataset, at either the
+F1-selected or the fixed $\tau=0.88$ threshold, against 6 and 40 such
+admissions under the unconstrained R1 baseline
+(Section~\ref{sec:formal-analysis-empirical}). This is not an empirical
+regularity specific to the two product-domain snapshots tested: it
+follows directly from Equation~\ref{eq:conflict}'s algebraic form
+(Proposition~\ref{prop:ceiling}, Corollary~\ref{cor:ceiling-consequence}),
+which gives $C(t) < 1/(m(t)+1) \le 0.5$ for any slot with $m(t)\ge 1$
+competing values, independent of domain, extractor, or how much
+evidence accumulates. Consequently, the ceiling applies to \emph{any}
+deployment of Equations~\ref{eq:noisyor}--\ref{eq:conflict} with
+$\tau \ge 0.5$, not only to the two snapshots DEC-026 replayed -- those
+snapshots confirm empirically that the ceiling has a real, non-vacuous
+effect (contested slots do arise and R1 does admit some of them), not
+that the ceiling itself is data-dependent.
+
+\subsection{Why the Repeat-Counting Correction Succeeds Where Evidence-Share Does Not}
+\label{sec:discussion-r3}
+
+R3 (distinct-source aggregation) is the one tested correction with a
+statistically robust improvement over R2 at the fixed operating
+threshold (Table~\ref{tab:dec026-bootstrap-tau088}); R4 (evidence-share)
+is an exact null and R6 (its unsquared variant) is negative
+(Section~\ref{sec:formal-analysis-empirical}). One mechanistic account
+consistent with all three results, and with Proposition~\ref{prop:independence}'s
+independence-assumption argument, is that the defect these three rules
+target is not the same defect: Equation~\ref{eq:noisyor} treats every
+repeated observation as independent evidence, but repeated invocations
+of one extractor at temperature 0 re-reading the same source text are
+not independent -- they are deterministic repeats
+(Proposition~\ref{prop:independence}). R3 corrects this at the
+\emph{input} to the aggregation, by deduplicating repeated observations
+from the same source before Equation~\ref{eq:noisyor} is applied. R4
+and R6 instead rescale the \emph{output} of the same, already
+over-counted $A(t)$ -- they change how a contested slot's confidence is
+divided, not how many times a repeated observation is counted in the
+first place, so neither corrects the mechanism the independence
+violation actually damages. R6's specific failure mode illustrates why
+rescaling the output is not merely insufficient but can actively hurt:
+because $A(t)/A(t)=1$ for any uncontested slot regardless of the
+evidence behind it, an unsquared share collapses to a constant on
+exactly the slots where the input actually carries information
+(Section~\ref{sec:formal-analysis-empirical}) -- a structural property
+of that formula, not an artifact of R6 being tested on this particular
+data (Section~\ref{sec:formal-analysis-empirical}'s conclusion). This
+account is offered as the explanation consistent with the measured
+pattern across R3, R4, and R6; it was not independently tested against
+alternative accounts of the same three results.
+
+\subsection{What the Ablations Do and Do Not Show}
+\label{sec:discussion-ablations}
+
+Two distinct null findings both concern whether the Noisy-Or PKB
+mechanism helps the pipeline, and neither should be read as stronger
+than it is. First, the module-level ablation
+(Section~\ref{sec:results-ablation}) found no significant difference
+between the full pipeline and a max-merge variant at $N=20$ or $N=50$,
+over five seeds. With only five seeds, this design has 80\% power at
+$\alpha=0.05$ only for standardized effects of about $1.7$ SD,
+equivalent to roughly $0.29$--$0.30$ absolute $F_1$ given the observed
+variance
+% [AUDIT.md; Decision log.md, DEC-023/DEC-024]
+-- a large effect. The null result rules out an effect of that size or
+larger; it does not establish that no smaller, still practically
+meaningful effect exists. Second, and separately, DEC-026's own
+max-merge baseline (R1) numerically exceeded the published rule (R2) in
+$F_1$ when each rule was evaluated at its own independently-selected
+threshold (Section~\ref{sec:formal-analysis-empirical}), matching the
+module-level ablation's direction -- but this advantage did not survive
+when both rules were compared at the single, shared $\tau=0.88$
+operating threshold instead (Table~\ref{tab:dec026-bootstrap-tau088}):
+R1's precision loss and recall gain at that threshold are each
+individually significant but cancel in $F_1$, whose confidence interval
+includes zero on both datasets. Taken together, these two results do
+not show that the Noisy-Or PKB mechanism is unnecessary; they show that
+this project's tests, at the sample sizes and threshold-selection
+procedures used, have not detected a case where removing it reliably
+helps either.
+
+\subsection{Why Fine-Tuning Raised Precision but Not Recall}
+\label{sec:discussion-finetuning}
+
+At 5 epochs with seed 42, the fine-tuned model predicted 7 triples, all
+correct; the base model predicted 46 triples, of which the same 7 were
+correct (Section~\ref{sec:results-finetuning}) -- the fine-tuned model's
+true positives are a subset of the base model's, not a different or
+larger set. This is consistent with how the fine-tuning data was
+built: the synthetic training examples are generated from the
+knowledge base's own high-confidence triples
+(Section~\ref{sec:related-work-dysect}'s shared-capability description
+of this mechanism), i.e.\ from facts the extractor had already found
+and the PKB had already accepted, not from facts absent from its prior
+extractions. Training on this data can teach the model to state
+already-discoverable facts more reliably and suppress spurious
+alternatives -- raising precision -- but it supplies no exposure to
+facts the extractor never found in the first place, which would be
+needed to raise recall. The five-seed results
+(Section~\ref{sec:results-finetuning}) are consistent with this account
+(precision-driven improvement, recall unchanged in the per-seed
+detail available) but do not, on their own, rule out other
+explanations for the same pattern.
+
+\subsection{Why Calibration Is Poor}
+\label{sec:discussion-calibration}
+
+Two mechanisms are consistent with the poor calibration reported in
+Section~\ref{sec:results-calibration} (ECE $=0.333$, zero correct
+triples in the $0.6$--$0.7$ and $0.8$--$0.9$ bins). First, the
+per-observation confidence entering Equation~\ref{eq:noisyor} is
+self-reported by the extractor within a fixed, prompt-imposed range
+($0.80$--$0.96$;
+Section~\ref{sec:setup-hyperparameters}/\ref{sec:results-calibration}),
+not derived from token probabilities or any calibration procedure
+(Section~\ref{sec:setup-hyperparameters}) -- the input signal was never
+designed to be a calibrated probability, so a poorly calibrated output
+is an expected consequence of that input, not only of the aggregation
+rule applied to it. Second, Proposition~\ref{prop:saturation}'s
+saturation dynamic applies identically whether repeated observations of
+a triple are correct or not: a repeated, incorrect extraction
+accumulates confidence the same way a repeated, correct one does,
+inflating scores on the same identical error rather than reflecting
+genuine corroboration (Proposition~\ref{prop:independence}). This is
+directly consistent with the two worst-calibrated bins being almost
+entirely single-valued-predicate triples with a median of zero
+competing values (Section~\ref{sec:results-calibration}) -- exactly the
+uncontested case where nothing in Equation~\ref{eq:conflict} can ever
+challenge a confidently repeated wrong answer. Both mechanisms are
+offered as consistent explanations for the observed calibration curve;
+neither was isolated experimentally from the other in this paper.
 
 \section{Limitations}
 % TODO: not yet written.
