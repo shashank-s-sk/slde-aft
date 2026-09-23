@@ -2578,6 +2578,12 @@ before starting, per standing project convention.
 DEC-027: APPROVED (2026-09-23), unfiltered training set confirmed as
   primary, supersession clause added above. Queued third (after
   DEC-028, DEC-030), before DEC-029, per user-specified run order.
+  **EXECUTED (2026-09-23), COMPLETE -- see EVID-044.** Primary
+  pre-registered result: NULL (paired bootstrap point estimate -0.0214,
+  95% CI [-0.0417, -0.0034], excludes zero on the negative side).
+  Per the supersession clause above, this null supersedes EVID-040's
+  exploratory positive result as the manuscript's headline fine-tuning
+  claim.
 
 ---
 

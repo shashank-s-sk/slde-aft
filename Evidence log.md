@@ -4173,3 +4173,162 @@ None required for DEC-030 itself. If DEC-027/029 results are added to
 the manuscript later, extend `.gitignore`'s exception list and
 `scripts/reproduce_all.py`'s checks to cover them, following the same
 pattern used here.
+
+# EVID-044 — DEC-027: Leakage-Free Fine-Tuning Evaluation (PRIMARY RESULT: NULL)
+
+## Experiment
+
+- Decision: DEC-027, executed on a rented RunPod GPU (RTX 4090) per its
+  pre-registration. Fixes the confound flagged in AUDIT.md A2:
+  EVID-040's headline fine-tuning result selected its winning
+  hyperparameters and confirmed them on the *same* 8-product test set.
+  This run separates the two: a 20-product **validation** split for
+  grid search, an untouched 40-product **test** split (280
+  `gold_unstructured` triples, 7/product, stated in the pre-registration
+  before running) for confirmation only.
+- Training data: the same 90-example **unfiltered** synthetic set used
+  by EVID-037/038/040 (design choice flagged for review in the
+  pre-registration, to isolate the leakage-selection fix from any
+  training-data-composition change).
+- Leakage guard (`src/dec027_leakage_guard.py`): asserted clean on the
+  real training file at the start of the pod run (hard-abort on
+  failure, before any GPU time is spent); demonstrated live to fail
+  correctly on a planted violation before this run started (pasted in
+  Decision log.md's DEC-027 entry).
+- Grid search (validation split, seed 42 only): epochs in {2,3,5,8} ->
+  winner **epochs=8** (val F1=0.7444, beating epochs=5's 0.7217 and
+  epochs=3's 0.6459); LoRA grid at epochs=8 (rank in {8,32}, lr in
+  {1e-4,3e-4}) -> winner **default (rank=16/alpha=32/lr=2e-4)**, tied
+  with rank=32/lr=3e-4 at F1=0.7336 within the pre-registered 0.01
+  tie-tolerance, resolved to the simpler default config per the
+  pre-registered tie-break rule.
+- Confirmatory run: the winning config (epochs=8, rank=16/alpha=32/lr=2e-4)
+  trained at seeds 42-46 (seed 42 reused from the grid, not retrained),
+  each evaluated exactly once on the 40-product test split. Fresh base
+  model evaluated once on the same test split.
+
+## Actual
+
+**Base model (test split, fresh eval):** P=0.5677, R=0.4643, F1=0.5108
+(TP=130, FP=99, FN=150, gold=280, predicted=229).
+
+| Seed | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| 42 | 0.8722 | 0.4143 | 0.5617 |
+| 43 | 0.8939 | 0.4214 | 0.5728 |
+| 44 | 0.8207 | 0.4250 | 0.5600 |
+| 45 | 0.7733 | 0.4143 | 0.5395 |
+| 46 | 0.7041 | 0.4250 | 0.5301 |
+
+**Mean whole-set F1 = 0.5528 (sample SD 0.0175)** vs. base F1=0.5108.
+
+**Primary, pre-registered test — paired bootstrap over the 40 test
+products** (mean per-product F1 difference, fine-tuned minus base,
+averaged across the 5 seeds; 10,000 resamples, seed 20270927):
+
+- **Point estimate: -0.0214** (fine-tuned *worse* per product, on average)
+- **95% CI: [-0.0417, -0.0034] — excludes zero**, on the negative side
+- Pre-registered positive criterion (CI excludes 0 AND point estimate
+  >= +0.03) is **not met** — the sign itself is reversed from what a
+  positive result requires.
+- Test-product sample SD: 0.0623 (vs. training-seed sample SD of
+  whole-set F1: 0.0175 — reported separately per the pre-registration;
+  which product is in the test set matters more to the outcome than
+  which training seed was used).
+
+**Secondary, descriptive only — whole-set F1 vs. base:** one-sample
+t=5.370, **p=0.0058**; Wilcoxon p=0.0625 (the n=5 floor). Mean diff
++0.0420, positive and significant on this test.
+
+## Result
+
+**NULL on the pre-registered primary criterion — and the CI is
+entirely on the negative side, not merely inconclusive.** Per DEC-027's
+"What counts as a null" clause, **this supersedes EVID-040's
+exploratory positive result (epochs=5, p=0.0028 vs. base) as the
+manuscript's headline fine-tuning claim.** EVID-040's positive result
+is demoted to "an earlier, tuning-leakage-affected exploration" per the
+pre-registration's own language — not deleted, but no longer the
+headline evidence.
+
+**A genuine tension that must be reported, not resolved by picking the
+more favorable number:** the primary (per-product, macro) bootstrap is
+significantly negative, while the secondary (whole-set, micro)
+comparison is significantly positive. Both are computed correctly from
+the same underlying predictions; they disagree because they weight the
+data differently (macro: every product counts equally; micro: every
+predicted/gold triple counts equally, so products with more triples
+dominate). The pre-registration named the paired bootstrap as primary
+specifically to avoid exactly this kind of aggregate-level result being
+taken at face value, so the primary's null stands as the reported
+result.
+
+## Interpretation
+
+- **Mechanism, visible directly in the P/R breakdown:** fine-tuning
+  moves precision up sharply (0.568 -> 0.70-0.89 across seeds) but
+  **recall goes down, not up** (0.464 base vs. 0.414-0.425 across all
+  5 seeds — every single seed has lower recall than the base model).
+  This is the same precision-dominant pattern noted in every prior
+  fine-tuning result in this project (EVID-034/037/038/040), but here,
+  with a properly separated validation/test split and a much larger
+  (280 vs. 56 triple) test set, the recall cost is visible clearly
+  enough to show it is not offset by the precision gain on a
+  per-product basis for a meaningful share of the 40 test products,
+  even though it is offset in the aggregate (micro) count.
+  This is the direct mechanistic explanation for why the primary and
+  secondary tests disagree: aggregate/micro F1 is pulled up by the
+  precision gain on products with many predicted triples, while the
+  per-product/macro view — which the pre-registration deliberately
+  chose as primary — shows the recall cost outweighs the precision
+  gain for the median product.
+- **Directly answers AUDIT.md A2 as intended:** separating
+  hyperparameter selection from confirmation, on a held-out test split
+  neither grid search nor the confirmatory run ever touched, changes
+  the conclusion. EVID-040's positive result cannot be shown to have
+  been an artifact of test-set-specific tuning in any strict sense
+  (grid search used the validation split, not the test split, so there
+  is no direct leakage in EVID-040's own procedure by this project's
+  usual definition) — but this independent, properly-separated
+  replication does not reproduce a positive effect on the primary,
+  pre-registered metric, and that is the honest answer this DEC was
+  designed to surface.
+- The manuscript's fine-tuning narrative must now read: an early,
+  smaller-scale, single-split exploration (EVID-034/037/038/040) found
+  a significant whole-set improvement; a larger, leakage-free,
+  properly split, pre-registered replication (this result) does not
+  confirm a positive effect on its primary metric, and the CI leans
+  negative. This is not "fine-tuning doesn't work" — it is "the effect
+  this project can currently support, on the primary, most conservative
+  test, is a null with a mild negative lean," which is a materially
+  weaker and more honest claim than what EVID-040 alone would suggest.
+
+## Limitations
+
+- n=5 confirmatory seeds remains small; the Wilcoxon p=0.0625 floor is
+  a real power ceiling at this n, same caveat as every prior DEC-006/022
+  fine-tuning result.
+- The grid search used seed 42 only (matching DEC-022 Stages 1-2's own
+  precedent) — the winning config was not itself selected via a
+  multi-seed validation procedure, only confirmed across seeds
+  afterward. A multi-seed grid search is a natural follow-up if this
+  result is revisited.
+- Uses the unfiltered 90-example training set, not DEC-018's
+  provenance-filtered set, by deliberate pre-registered design (to
+  isolate the leakage-selection fix). Whether the provenance-filtered
+  training data changes this picture (for better or worse) remains
+  untested, same open item DEC-022/EVID-040 already flagged.
+- The primary/secondary disagreement is real and reported, not an
+  artifact of a coding bug — both statistics were computed from the
+  same `predictions.json` files and manually spot-checked against the
+  printed per-seed P/R/F1 numbers above.
+
+## Next step
+
+Update Results Summary.md's fine-tuning claim and paper/main.tex's
+fine-tuning subsection to report this result as the headline
+fine-tuning evidence, with EVID-040 explicitly demoted per the
+pre-registered supersession clause, and the primary/secondary
+divergence stated plainly rather than only citing whichever number is
+favorable. DEC-029 (higher-powered ablation) remains queued next per
+the original task's run order, pending confirmation to proceed.

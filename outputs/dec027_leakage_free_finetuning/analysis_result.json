@@ -1,0 +1,31 @@
+{
+  "n_test_products": 40,
+  "n_gold_triples_total": 280,
+  "base_whole_f1": 0.5108055009823184,
+  "seed_whole_f1": [
+    0.5617433414043583,
+    0.5728155339805826,
+    0.56,
+    0.5395348837209303,
+    0.5300668151447662
+  ],
+  "training_seed_sample_sd": 0.01750143424654282,
+  "one_sample_ttest": {
+    "t": 5.36952367153108,
+    "p": 0.005809168709368162
+  },
+  "wilcoxon": {
+    "stat": 0.0,
+    "p": 0.0625
+  },
+  "primary_bootstrap": {
+    "point_estimate": -0.021446886446886457,
+    "ci_lower": -0.041731684981685,
+    "ci_upper": -0.003433379120879135,
+    "excludes_zero": true,
+    "test_product_sample_sd": 0.062296910640304154,
+    "min_effect_of_interest": 0.03,
+    "is_positive": false,
+    "n_bootstrap": 10000
+  }
+}
