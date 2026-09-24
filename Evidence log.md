@@ -4268,7 +4268,11 @@ duplicate triples within its own predictions. Both conventions:
 The global convention flatters the base model more than the fine-tuned
 ones, because the base model repeats the most wrong triples across
 products. Under per-product counting the micro gain is larger (+0.071
-vs. +0.042). The reported micro figures stay on the global convention
+vs. +0.042). For this comparison the global convention is therefore
+the more *conservative* of the two for fine-tuning: it absorbs more of
+the base model's repeated false positives across products than the
+fine-tuned models', which shrinks the measured micro gain. The
+reported micro figures stay on the global convention
 for continuity with every earlier DEC-006/022 result. Neither convention
 touches the primary: the paired bootstrap already scores each product
 separately.
@@ -4416,3 +4420,158 @@ pre-registered supersession clause, and the primary/secondary
 divergence stated plainly rather than only citing whichever number is
 favorable. DEC-029 (higher-powered ablation) remains queued next per
 the original task's run order, pending confirmation to proceed.
+
+
+---
+
+# EVID-045 — DEC-029: Higher-Powered Module Ablation, 30 Seeds (RESULT: NULL for both modules, achieved MDE ~0.08 F1)
+
+## Experiment
+
+- Decision: DEC-029, as pre-registered. Extends DEC-023/EVID-039's
+  5-seed N=50 ablation to **30 seeds** (DEC-023's 42-46 plus 25 new,
+  47-71). Same N=50 product superset and split, same model, same
+  held-out test F1 metric. Only the 3 pre-registered configs were run
+  (`full`, `without_feedback`, `without_prob_kb`).
+- `scripts/dec029_ablation_extended.py` is `scripts/dec023_ablation_n50.py`
+  with only the seed list, config list and output directory changed.
+  Outputs go to `outputs/dec029_ablation_extended/`. EVID-039's files
+  were read, never modified.
+- `scripts/dec029_analyze.py` combines the 30 seeds and computes the
+  pre-registered statistics:
+  - paired t-test and Wilcoxon signed-rank against `full`;
+  - 95% CI from a paired bootstrap over seeds (10,000 resamples,
+    percentile interval);
+  - the achieved minimum detectable effect (MDE): paired t-test,
+    alpha=0.05 two-sided, 80% power.
+
+  The required Cohen's d is solved from the noncentral t
+  distribution. It reproduces AUDIT.md's d=1.682 at n=5 and the
+  pre-registered MDE table exactly (0.286 at n=5, 0.090 at n=30 with
+  SD 0.17). The MDE is reported two ways:
+  - (a) the pre-registered / AUDIT.md method: d times the ablated
+    config's own sample SD;
+  - (b) d times the SD of the paired differences, which is the SD a
+    paired t-test actually uses.
+- Cost: **$0.24**. This is the sum of per-call costs in the final
+  75 call logs ($0.2409), plus a negligible amount for failed calls
+  that were later retried. The pre-registered estimate was $0.246,
+  under the $0.30 threshold that set 30 seeds as the target.
+
+## Actual (30 seeds, held-out test F1)
+
+| Config | Mean | Sample SD |
+|---|---:|---:|
+| full | 0.3633 | 0.1629 |
+| without_feedback | 0.3311 | 0.1534 |
+| without_prob_kb | 0.4108 | 0.1609 |
+
+Required Cohen's d at n=30 (80% power): **0.529**.
+
+| Comparison vs. full | Mean diff | 95% bootstrap CI | Paired t p | Wilcoxon p | Seeds above full | MDE (a) condition SD | MDE (b) paired-diff SD |
+|---|---:|---|---:|---:|---:|---:|---:|
+| without_feedback | **-0.0322** | **[-0.0896, +0.0234]** | 0.2826 | 0.3818 | 13/30 | 0.0812 | 0.0853 |
+| without_prob_kb | **+0.0475** | **[-0.0025, +0.1013]** | 0.0866 | 0.1460 | 18/30 | 0.0852 | 0.0776 |
+
+## Result
+
+**Null for both modules.** Both 95% CIs include zero and both
+p >= 0.05, so under DEC-029's "what counts as a null" clause both
+results are reported exactly as found at 30 seeds, with no further
+seed extension.
+
+- **What the null now rules out:** with 30 seeds the achieved MDE is
+  **~0.08 F1** (0.078-0.085 across both methods and comparisons), down
+  from ~0.29-0.30 at n=5 (AUDIT.md). Neither module is shown to have an
+  effect of about 0.08 F1 or larger at 80% power. Effects smaller than
+  that are not ruled out.
+- **Direction:**
+  - without_feedback is below full (-0.032). The 95% CI allows a harm
+    from removing the feedback controller of up to about 0.09 F1, and
+    a benefit of up to about 0.02.
+  - without_prob_kb is *above* full (+0.048), and the CI only just
+    includes zero (upper bound +0.101, lower bound -0.0025). Removing
+    the probabilistic KB is not shown to hurt. If anything, the data
+    lean toward the full pipeline doing slightly *worse* with the
+    probabilistic KB than without it. This is not significant and must
+    not be reported as a finding, but it rules out claiming the
+    probabilistic KB improves held-out F1.
+- **Consistent across the two seed blocks:** the original 5 seeds
+  (42-46) give -0.045 / +0.033, and the 25 new seeds (47-71) give
+  -0.030 / +0.050. Same signs, similar sizes.
+
+## Retry-rule sensitivity (reported, not resolved in the favourable direction)
+
+The runner inherits DEC-023's rule: any (config, seed) run with >=20%
+failed calls (almost all "no JSON array found in model output", i.e.
+unparsable model output, not HTTP failures; all 11,625 calls in the final
+call logs returned HTTP 200) is re-run. The re-run replays the cached successful
+calls and retries only the failed ones. Four runs crossed the
+threshold, three of them in without_prob_kb. In the three runs where
+the retry changed the held-out result, F1 went up:
+
+| Run | Failed calls, first pass | First-pass held-out F1 | After retry |
+|---|---:|---:|---:|
+| without_prob_kb seed 53 | 43/155 | 0.4065 | 0.4923 |
+| without_prob_kb seed 68 | 43/155 | 0.2478 | 0.4885 |
+| without_prob_kb seed 71 | 31/155 | 0.3243 | 0.3902 |
+| without_feedback seed 59 | 32/155 | 0.3390 | 0.3390 (unchanged) |
+
+No `full` run crossed the threshold, so the rule is applied
+asymmetrically and favours without_prob_kb. Using first-pass values
+throughout (no retries anywhere):
+
+| Comparison vs. full | Mean diff | 95% CI | t p | Wilcoxon p | MDE (a) / (b) |
+|---|---:|---|---:|---:|---:|
+| without_feedback | -0.0322 | [-0.0896, +0.0234] | 0.2826 | 0.3818 | 0.0812 / 0.0853 |
+| without_prob_kb | +0.0344 | [-0.0104, +0.0819] | 0.1625 | 0.2054 | 0.0861 / 0.0696 |
+
+The conclusion is the same under both versions: both nulls, same
+signs, MDE ~0.07-0.09. The headline table above uses the inherited
+rule because that is the procedure DEC-023/EVID-039 used. The
+without_prob_kb difference is **+0.034 to +0.048 depending on the
+retry rule**, and should be cited with that range. Mean final
+call-error rates: full 6.4%, without_feedback 7.7%, without_prob_kb
+9.6% (max 19.4%).
+
+## Run reliability (documented, not hidden)
+
+- **Memory stop:** at about 15:50, Claude Code stopped the 6 parallel
+  processes because the whole machine was critically low on memory.
+  The processes themselves used about 33 MB each. 43/75 runs were
+  complete, and every finished call was cached. Resumed at 16:05:45
+  with 3 processes. Loss: at most one in-flight call per process.
+- **Network crashes:** the without_prob_kb process crashed twice
+  (16:44 `ReadTimeout` after 90 s; 17:10 `ChunkedEncodingError`).
+  `src/extractors/openrouter_llm.py:100` calls `requests.post` outside
+  the error handling, so a network error ends the process instead of
+  being recorded as a failed call. It was restarted from the cache
+  both times; only the interrupted call was retried. The code was not
+  patched mid-experiment, so that all 75 runs share one procedure.
+  This is a known gap to fix before any future API run.
+- **Summary files:** runs are recorded in per-shard
+  `all_runs_summary__*.csv` files, which `dec029_analyze.py` reads
+  together. The retry pass overwrote the first-pass rows for seeds
+  59/68/71 in those files. The first-pass values above were recovered
+  from the run logs (`run_log__*_resume*.txt`); seed 53's first pass is
+  still in `all_runs_summary__without_prob_kb_47-59.csv`.
+- **Timing:** 13:58:31 start to 18:20:28 end of the retry pass
+  (4 h 22 min wall-clock, including the ~15 min memory stop). See
+  Learnings.md for the full timeline.
+
+## Limitations
+
+- The MDE applies to held-out test F1 on the N=50 product set with
+  this model. Effects below ~0.08 F1 are not ruled out.
+- The retry rule is applied unevenly across configs (see above).
+- The generation seed also changes the synthetic product set, as in
+  DEC-023, so seed variance mixes training randomness with
+  product-set variation.
+
+## Next step
+
+Update Results Summary.md Claim 4 and paper/main.tex's ablation
+subsection to report the 30-seed null with the achieved MDE (~0.08 F1)
+in place of the n=5 caveat, including the retry-rule sensitivity range
+for without_prob_kb. Fix the unhandled-network-error gap in
+`openrouter_llm.py` before the next API-cost experiment.

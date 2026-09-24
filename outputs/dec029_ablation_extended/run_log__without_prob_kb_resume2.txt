@@ -1,0 +1,76 @@
+
+=== without_prob_kb / seed 47: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 48: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 49: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 50: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 51: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 52: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 53: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 54: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 55: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 56 ===
+  final_iter_f1=0.49370277078085645 held_out_test_f1=0.576271186440678 n_calls=155 n_errors=2
+
+=== without_prob_kb / seed 57 ===
+  final_iter_f1=0.30403800475059384 held_out_test_f1=0.606060606060606 n_calls=155 n_errors=16
+
+=== without_prob_kb / seed 58 ===
+Traceback (most recent call last):
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 937, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\response.py", line 1260, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\response.py", line 1430, in read_chunked
+    self._update_chunk_length()
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\response.py", line 1354, in _update_chunk_length
+    raise ProtocolError("Response ended prematurely") from None
+urllib3.exceptions.ProtocolError: Response ended prematurely
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\slde-aft\scripts\dec029_ablation_extended.py", line 168, in <module>
+    main()
+  File "E:\slde-aft\scripts\dec029_ablation_extended.py", line 126, in main
+    result = run_experiment(config, api_key=api_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\slde-aft\src\experiment_runner.py", line 250, in run_experiment
+    result = do_llm_call(idx, unstructured_row["text"], locked_context, feedback_hint,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\slde-aft\src\experiment_runner.py", line 180, in do_llm_call
+    result = extract_unstructured_llm(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\slde-aft\src\extractors\openrouter_llm.py", line 159, in extract_unstructured_llm
+    call_result = call_openrouter_for_triples(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\slde-aft\src\extractors\openrouter_llm.py", line 100, in call_openrouter_for_triples
+    r = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\sessions.py", line 827, in send
+    r.content
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1042, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 939, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: Response ended prematurely

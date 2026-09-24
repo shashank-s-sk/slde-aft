@@ -1,0 +1,64 @@
+
+=== without_feedback / seed 47: SKIPPED (already clean) ===
+
+=== without_feedback / seed 48: SKIPPED (already clean) ===
+
+=== without_feedback / seed 49: SKIPPED (already clean) ===
+
+=== without_feedback / seed 50: SKIPPED (already clean) ===
+
+=== without_feedback / seed 51: SKIPPED (already clean) ===
+
+=== without_feedback / seed 52: SKIPPED (already clean) ===
+
+=== without_feedback / seed 53: SKIPPED (already clean) ===
+
+=== without_feedback / seed 54 ===
+  final_iter_f1=0.4664879356568364 held_out_test_f1=0.4770642201834863 n_calls=155 n_errors=1
+
+=== without_feedback / seed 55 ===
+  final_iter_f1=0.43967828418230565 held_out_test_f1=0.3789473684210526 n_calls=155 n_errors=19
+
+=== without_feedback / seed 56 ===
+  final_iter_f1=0.41489361702127664 held_out_test_f1=0.49090909090909096 n_calls=155 n_errors=5
+
+=== without_feedback / seed 57 ===
+  final_iter_f1=0.21875 held_out_test_f1=0.4528301886792453 n_calls=155 n_errors=10
+
+=== without_feedback / seed 58 ===
+  final_iter_f1=0.29444444444444445 held_out_test_f1=0.08928571428571427 n_calls=155 n_errors=12
+
+=== without_feedback / seed 59 ===
+  final_iter_f1=0.49635036496350365 held_out_test_f1=0.3389830508474576 n_calls=155 n_errors=32
+
+=== without_feedback / seed 60: SKIPPED (already clean) ===
+
+=== without_feedback / seed 61: SKIPPED (already clean) ===
+
+=== without_feedback / seed 62: SKIPPED (already clean) ===
+
+=== without_feedback / seed 63: SKIPPED (already clean) ===
+
+=== without_feedback / seed 64: SKIPPED (already clean) ===
+
+=== without_feedback / seed 65: SKIPPED (already clean) ===
+
+=== without_feedback / seed 66: SKIPPED (already clean) ===
+
+=== without_feedback / seed 67 ===
+  final_iter_f1=0.3662790697674418 held_out_test_f1=0.19642857142857142 n_calls=155 n_errors=5
+
+=== without_feedback / seed 68 ===
+  final_iter_f1=0.3367875647668394 held_out_test_f1=0.25490196078431376 n_calls=155 n_errors=12
+
+=== without_feedback / seed 69 ===
+  final_iter_f1=0.441025641025641 held_out_test_f1=0.43333333333333335 n_calls=155 n_errors=8
+
+=== without_feedback / seed 70 ===
+  final_iter_f1=0.41225626740947074 held_out_test_f1=0.24242424242424243 n_calls=155 n_errors=15
+
+=== without_feedback / seed 71 ===
+  final_iter_f1=0.38095238095238093 held_out_test_f1=0.2201834862385321 n_calls=155 n_errors=21
+
+TOTAL: 1705 calls, $0.029650
+Saved to outputs\dec029_ablation_extended/all_runs_summary__without_feedback_47-71.csv

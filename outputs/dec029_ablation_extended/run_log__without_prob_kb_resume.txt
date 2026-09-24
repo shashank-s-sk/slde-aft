@@ -1,0 +1,109 @@
+
+=== without_prob_kb / seed 47: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 48: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 49: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 50: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 51: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 52: SKIPPED (already clean) ===
+
+=== without_prob_kb / seed 53 ===
+  final_iter_f1=0.47619047619047616 held_out_test_f1=0.4923076923076923 n_calls=155 n_errors=7
+
+=== without_prob_kb / seed 54 ===
+  final_iter_f1=0.6136865342163356 held_out_test_f1=0.5954198473282444 n_calls=155 n_errors=4
+
+=== without_prob_kb / seed 55 ===
+  final_iter_f1=0.568075117370892 held_out_test_f1=0.5511811023622046 n_calls=155 n_errors=13
+
+=== without_prob_kb / seed 56 ===
+Traceback (most recent call last):
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\http\client.py", line 1428, in getresponse
+    response.begin()
+  File "C:\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\http\client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\util\retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='openrouter.ai', port=443): Read timed out. (read timeout=90)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "E:\slde-aft\scripts\dec029_ablation_extended.py", line 168, in <module>
+    main()
+  File "E:\slde-aft\scripts\dec029_ablation_extended.py", line 126, in main
+    result = run_experiment(config, api_key=api_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\slde-aft\src\experiment_runner.py", line 250, in run_experiment
+    result = do_llm_call(idx, unstructured_row["text"], locked_context, feedback_hint,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\slde-aft\src\experiment_runner.py", line 180, in do_llm_call
+    result = extract_unstructured_llm(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\slde-aft\src\extractors\openrouter_llm.py", line 159, in extract_unstructured_llm
+    call_result = call_openrouter_for_triples(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\slde-aft\src\extractors\openrouter_llm.py", line 100, in call_openrouter_for_triples
+    r = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91988\AppData\Roaming\Python\Python312\site-packages\requests\adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='openrouter.ai', port=443): Read timed out. (read timeout=90)

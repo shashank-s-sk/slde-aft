@@ -1,0 +1,96 @@
+{
+  "n_seeds": 30,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "dropped_seeds": [],
+  "required_cohens_d_80pct_power": 0.5292356151129549,
+  "required_cohens_d_at_n5_check": 1.6819969659555623,
+  "configs": {
+    "full": {
+      "mean": 0.3633289844204809,
+      "sample_sd": 0.16286480092499941
+    },
+    "without_feedback": {
+      "mean": 0.33110095587369825,
+      "sample_sd": 0.15343001531460473
+    },
+    "without_prob_kb": {
+      "mean": 0.410808294907809,
+      "sample_sd": 0.16094164664355376
+    }
+  },
+  "comparisons": {
+    "without_feedback_vs_full": {
+      "mean_diff_vs_full": -0.03222802854678267,
+      "bootstrap_95ci": [
+        -0.08961074757969137,
+        0.023397968565999943
+      ],
+      "ci_excludes_zero": false,
+      "paired_t": {
+        "t": -1.0949275994492895,
+        "p": 0.28255913642832337
+      },
+      "wilcoxon": {
+        "stat": 189.0,
+        "p": 0.3817984350025654
+      },
+      "sd_condition": 0.15343001531460473,
+      "sd_paired_diff": 0.16121630533262338,
+      "mde_preregistered_condition_sd": 0.08120062853181494,
+      "mde_paired_diff_sd": 0.08532141051894888,
+      "n_seeds_condition_beats_full": 13
+    },
+    "without_prob_kb_vs_full": {
+      "mean_diff_vs_full": 0.04747931048732807,
+      "bootstrap_95ci": [
+        -0.002517515777523664,
+        0.10125767884477066
+      ],
+      "ci_excludes_zero": false,
+      "paired_t": {
+        "t": 1.773573293854039,
+        "p": 0.0866366830530284
+      },
+      "wilcoxon": {
+        "stat": 161.0,
+        "p": 0.1459994912147522
+      },
+      "sd_condition": 0.16094164664355376,
+      "sd_paired_diff": 0.14662765536004613,
+      "mde_preregistered_condition_sd": 0.08517605135869301,
+      "mde_paired_diff_sd": 0.07760057737704437,
+      "n_seeds_condition_beats_full": 18
+    }
+  }
+}

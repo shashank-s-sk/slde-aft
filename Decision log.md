@@ -2891,7 +2891,8 @@ significance beyond the 30 seeds approved here.
 
 ## Status
 
-DEC-029: APPROVED (2026-09-23), 30 total seeds (25 new: 47-71)
+DEC-029: RUN (2026-09-24) -- see EVID-045. Null for both modules at 30 seeds,
+  achieved MDE ~0.08 F1; cost $0.24. Originally APPROVED (2026-09-23), 30 total seeds (25 new: 47-71)
   confirmed as the run target at ~$0.246, with the pre-registered MDE
   table above added before running. Queued last (after DEC-028,
   DEC-030, DEC-027), the only DEC in this batch with real API cost.
