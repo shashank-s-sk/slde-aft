@@ -1004,7 +1004,12 @@ have two or more evidence sentences
 % [Decision log.md, DEC-020]
 -- i.e.\ genuine multi-observation corroboration for the PKB to
 aggregate over, exercising the framework's aggregation mechanism, not
-only its extractor. \textbf{BioRED}: 15 abstracts
+only its extractor. The pilot sent only these gold evidence sentences to
+the extractor, not every sentence of each document. This is an oracle
+setting: it tells the extractor which sentences contain a relation, so
+the pilot's figures are not those of a deployed system
+% [Decision log.md, DEC-020, DEC-031]
+. \textbf{BioRED}: 15 abstracts
 % [EVID-024]
 from the official 100-document Dev split (PubTator format, obtained from
 NCBI's public FTP distribution)
@@ -1360,7 +1365,8 @@ therefore reported
 . GenIE, InstructUIE, DyGIE++, and TACRED were outside the scope of
 this evaluation.
 
-On a 15-document DocRED pilot (189 gold triples, 356 observations),
+On a 15-document DocRED pilot (189 gold triples, 356 observations;
+gold evidence sentences only, an oracle setting),
 admitting only PKB-aggregated triples with scores $\ge 0.70$ increased
 precision from $0.034$ to $0.333$ but reduced recall from $0.032$ to
 $0.005$, lowering $F_1$ from $0.033$ to $0.010$
@@ -1375,7 +1381,7 @@ run on BioRED
 
 \begin{table}[htbp]
 \centering
-\caption{DocRED pilot (15 development documents; $\lambda=0.5$, $\tau=0.70$).}
+\caption{DocRED pilot (15 development documents, gold evidence sentences only; $\lambda=0.5$, $\tau=0.70$).}
 \label{tab:docred-results}
 \begin{tabular}{@{}lccc@{}}
 \toprule

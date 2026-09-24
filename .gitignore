@@ -66,3 +66,4 @@ adapters/
 checkpoints/
 !outputs/dec029_ablation_extended/
 outputs/dec029_ablation_extended/**/call_cache.jsonl
+!outputs/dec031_docred/

@@ -27,6 +27,8 @@ just says where each DEC currently stands and what's left.
 | 023 | N=50 Ablation Confirmatory Run (Claim #4, point #5) | DONE | Null result replicates at N=50: without_feedback p=0.57/0.63, without_prob_kb p=0.63/1.0 (t/Wilcoxon) — EVID-039. Variance shrank 3.6x vs N=20 (std 0.335→0.093). **Correction (AUDIT.md, 2026-09-20): n=5 seeds only detects effects >=~0.29-0.30 F1 (Cohen's d=1.68 needed for 80% power) — not "properly powered" for small-to-moderate effects, just a tighter measurement than N=20** | None — per DEC-023's pre-registered commitment, no further re-runs; reframe claim #4 as "tested at two scales, no effect >=~0.3 F1 detected either time" |
 | 024 | Fine-Tuning Hyperparameter Selection Without Tuning-Leakage | PRE-REGISTERED, DEFERRED | User chose to write the manuscript now with an honest tuning-leakage caveat instead of running this fix | Available as future work / a revision-stage improvement if needed; not run |
 | 025 | Closed-Loop Retest With the Headline (epochs=5) Fine-Tuned Model | SCOPED, NOT YET RUN | DEC-019's closed-loop test (EVID-030) used the now-superseded epochs=3 seed-43 adapter, not the paper's actual epochs=5 headline model (EVID-040) — Claims #1 and #2 have never been jointly tested | Needs a rented GPU pod + explicit go-ahead to spend; scripts ready (`scripts/dec025_closedloop_*.py`) |
+| 029 | Higher-Powered Module Ablation (30 seeds) | DONE | Null for both modules; achieved MDE 0.070-0.086 F1 (EVID-045) | Written into Results Summary/main.tex |
+| 031 | DocRED at Scale With a Normalised Matching Key | PRE-REGISTERED, cost approved | — | Run extraction (6,861 calls, ~$0.13), then offline analysis |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -2984,6 +2986,149 @@ DEC-030: RUN, COMPLETE (2026-09-23). All five items done: 22
   including 5 adapter `.safetensors` files, were already committed
   before any `outputs/` gitignore rule existed -- left in place, not
   rewritten out of history, documented in `docs/reproduction.md`.
+
+---
+
+# DEC-031 — DocRED at Scale With a Normalised Matching Key (pre-registered 2026-09-24, before any extraction)
+
+## Why is this required?
+
+The manuscript currently *speculates* that exact-string matching caused
+DEC-020's DocRED result: on the 15-document pilot, PKB aggregation
+lowered F1 from 0.033 (no aggregation) to 0.010, because the same fact
+phrased differently in different sentences was rarely pooled into one
+candidate. This DEC tests that explanation at scale, and runs R3
+(DEC-026's distinct-source rule) outside the synthetic product domain
+for the first time. The paper's claim about R3 depends on this.
+
+## Decisions (user-approved, 2026-09-24)
+
+- **Documents:** all **845** DocRED dev documents with at least one
+  gold triple supported by 2+ evidence sentences. This is DEC-020's own
+  eligibility rule. An earlier estimate said 843 using a slightly
+  different count; 845 is the figure from the pilot's rule. It includes
+  the 15 pilot documents.
+- **Sentences (PRIMARY: all):** one extraction call for **every
+  sentence** of those documents: 6,861 calls. The pilot sent only gold
+  evidence sentences, which is an oracle: it tells the extractor which
+  sentences contain a relation. An **evidence-only arm** (the 3,918
+  gold-evidence sentences, a subset of the same extractions, no extra
+  calls) is reported solely for comparability with the pilot. The
+  manuscript's pilot text now says the pilot used this oracle setting.
+- **Extraction:** identical to DEC-020: `meta-llama/llama-3.1-8b-instruct`,
+  `prompts/openie_docred_v1.txt`, temperature 0, max_tokens 1024, one
+  sentence per call with no document context
+  (`scripts/dec031_docred_extract.py`). Crash-safe per-call cache,
+  sharded across processes. Network failures are re-requested.
+  **Unparsable model output is never re-requested**, for any sentence,
+  so no arm or document gets extra attempts (the DEC-029 retry-asymmetry
+  lesson, EVID-045).
+- **Matching-key arms**, all computed offline from the same extractions
+  (`src/dec031_docred.py`):
+  - **(a) exact:** the PKB adapter's current key (strip + lowercase).
+  - **(b) normalised (PRIMARY for the matching-key hypothesis;
+    deployable, no gold resources):** Unicode NFKC, casefold, drop a
+    possessive 's, delete periods and apostrophes ("U.S." -> "us"),
+    replace every other Unicode punctuation character with a space,
+    collapse whitespace, strip, drop one leading "the"/"a"/"an".
+  - **(c) gold-alias assisted: ORACLE UPPER BOUND, labelled as such
+    everywhere.** A string whose (b) form equals the (b) form of a
+    mention of exactly one gold entity in the document is keyed to
+    that entity; ambiguous forms fall back to (b). It uses DocRED gold
+    annotations and cannot support any claim about what a deployed
+    system would achieve.
+- **Aggregation rules:** R2 (conservative Noisy-Or over every
+  observation) and R3 (the same over distinct source sentences). Both
+  use confidence 1.0 per observation, shrinkage 0.5, and admit at
+  tau = 0.70, i.e. 2+ observations (R2) or 2+ distinct sentences (R3).
+  These are DEC-020's parameters, fixed and not tuned (no validation
+  split). No conflict penalty: `configs/docred_functional_predicates.json`
+  is empty as in DEC-020, so the rival ceiling does not operate here.
+- **Baseline:** no aggregation. Every extracted triple is admitted.
+
+## Evaluation (identical for every arm)
+
+- **Primary evaluator:** per document, an admitted item matches gold
+  fact (head, relation, tail) when its predicate equals the relation
+  name and its subject/object (b)-forms equal the (b)-form of *any*
+  gold mention of the head/tail entity. Items are mapped to
+  evaluation keys (the matched gold fact, else the item's own
+  (b)-normalised triple) and deduplicated per document before counting.
+  So no arm gains or loses from how it spells or groups a fact.
+  Counts are summed over documents (micro).
+  - Using gold mentions *in evaluation* is standard for DocRED and
+    applies equally to every arm, including no-aggregation. It is
+    separate from arm (c), which uses gold mentions *in aggregation*.
+- **Secondary evaluator (continuity with DEC-020):** exact match
+  against gold triples written with each entity's first mention.
+- **Reported for every arm and both sentence settings:** precision,
+  recall, F1 (both evaluators); admitted-item count; contested slots
+  (a (subject, predicate) with 2+ distinct object keys) among all
+  candidates and among admitted items; the number of documents in
+  which anything was admitted.
+- **Diagnostics:**
+  - **G2** = gold facts that the raw extractions recover from 2+
+    distinct sentences, i.e. the facts aggregation could corroborate.
+  - **Pooled rate** = the share of G2 facts that an admitted item
+    recovers.
+  - **Within-sentence duplicate observations** per key: if there are
+    none, R3 is identical to R2 by construction.
+- **Statistics:** paired bootstrap over documents, 10,000 resamples
+  (seed 20310924). Pooled counts are recomputed per resample, and the
+  95% percentile CI of each difference is reported.
+
+## What confirms and what refutes the matching-key explanation (primary setting: all sentences, R2, primary evaluator)
+
+- **CONFIRMED (deployable form):** norm-minus-exact F1 > 0 with 95% CI
+  excluding 0, **and** the pooled rate on G2 is higher under (b) with
+  CI excluding 0.
+  - Strength is graded by the share of the naive-minus-exact F1 gap
+    that (b) closes: >=50% means "largely explains"; <50% means
+    "partially explains".
+  - If PKB-(b) F1 is also not significantly below no aggregation,
+    exact-string matching fully accounts for the pilot's failure.
+- **ORACLE-ONLY:** (b) fails the test above but (c) passes it. Then
+  the problem is entity resolution, not surface spelling. The
+  deployable claim is not supported, and (c) is reported only as an
+  upper bound.
+- **REFUTED (the explanation is wrong):** neither (b) nor (c) raises
+  F1 or the pooled rate over (a) with a CI excluding 0. In that case
+  the failure is not caused by the matching key. The expected
+  alternative is that the extractor rarely recovers the same fact from
+  two or more sentences (a small G2). The report will say so and give
+  G2 as a share of all gold facts.
+- **INCOMPLETE:** (b) or (c) passes, but PKB-(c) F1 is still
+  significantly below no aggregation. Then matching explains at most
+  part of the failure, and the rest is attributed to low
+  multi-sentence recovery (G2).
+- Any of these outcomes is reported as found. The evidence-only
+  setting is reported alongside, but it does not decide the verdict.
+
+## R3 (first out-of-domain test of the corrected rule)
+
+Primary R3 comparison: R3 minus R2 F1 under key (b), all sentences.
+- **Positive:** CI excludes 0 above. The corrected rule helps out of
+  domain.
+- **Null:** CI includes 0.
+- **Untestable here:** key (b) has zero within-sentence duplicate
+  observations, so R3 is identical to R2 by construction. That is
+  reported as such, not as a null.
+- **Negative:** CI excludes 0 below. Reported as found.
+R3 is also reported under keys (a) and (c).
+
+## Cost / time
+
+- 6,861 calls at the pilot's $0.0000185/call gives **~$0.13**,
+  user-approved.
+- ~3 h with 3 parallel processes (DEC-029: 6 were unstable on this
+  PC's 6 GB of RAM).
+- The analysis is offline and zero-cost.
+
+## Status
+
+DEC-031: PRE-REGISTERED (2026-09-24), cost approved; extraction not yet
+started at the time of this commit.
+
 
 DEC-014 (evaluation protocol & leakage control)
 
