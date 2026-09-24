@@ -289,18 +289,38 @@ Cost: $0.0520 total for both systems at full scale.
 
 **Domain generalization — BioRED biomedical pilot (DEC-009, EVID-024):** strict exact-match F1=0.0074 is misleadingly low (mostly a gold-construction/boundary-mismatch artifact, same family of issue as the CaRB correction above). Relaxed containment-match F1=0.1029 (14x more true positives found) is the fairer read: the biomedical domain is genuinely harder than the product domain, but not a near-total failure. **Report both numbers together with this explanation — never the strict number alone**, which would be a misleading characterization.
 
-**Framework-level validation on DocRED (DEC-020, EVID-030's public-data counterpart, new):** the first time the actual PKB/Noisy-Or framework — not just the raw extractor — was tested on public data, using a 15-document pilot from DocRED's human-annotated dev split (189 gold triples, 356 observations, cost $0.00131).
+**Framework-level validation on DocRED at scale (DEC-031, EVID-046; supersedes DEC-020's 15-document pilot).** The PKB/Noisy-Or framework, not just the extractor, run on all 845 eligible DocRED dev documents, extracting from **every sentence** (6,861 calls, $0.21). The pilot sent only gold evidence sentences, an oracle setting. Three matching keys: exact; normalised (deployable, primary); gold-alias (**oracle upper bound only**). R2 and R3 on each, all from the same extractions. Primary evaluator: alias-aware and identical for every arm.
 
-| | Precision | Recall | F1 |
-|---|---:|---:|---:|
-| Naive baseline (no aggregation) | 0.034 | 0.032 | **0.033** |
-| PKB-aggregated (≥0.70 confidence) | 0.333 | 0.005 | **0.010** |
+| Arm (all sentences) | P | R | F1 | Admitted (correct) | Docs admitting anything |
+|---|---:|---:|---:|---:|---:|
+| No aggregation | 0.036 | 0.057 | **0.044** | 17,914 (645) | 845 |
+| exact key, R2 | 0.060 | 0.001 | 0.002 | 184 (11) | 135 |
+| normalised key, R2 | 0.058 | 0.001 | 0.002 | 191 (11) | 139 |
+| gold-alias key, R2 (oracle) | 0.117 | 0.003 | 0.005 | 248 (29) | 184 |
+| exact key, R3 | 0.250 | 0.001 | 0.002 | 36 (9) | 32 |
+| gold-alias key, R3 (oracle) | 0.406 | 0.003 | 0.005 | 69 (28) | 64 |
 
-**Honest verdict: aggregation raises precision ~10x but collapses recall so far that F1 gets worse, not better** — a real, diagnosed negative result, not a null one. Root cause traced directly (not just observed): the PKB's aggregation key requires an EXACT string match on subject/predicate/object. In the product domain, the same fact is named consistently across sources, so repeated observations corroborate each other. On open Wikipedia text, the model phrases the same fact slightly differently across its own evidence sentences often enough that they almost never produce byte-identical triples — so genuine corroboration is rarely recognized as such, and almost nothing crosses the accept threshold.
+- **The exact-string explanation does not hold.** The pilot blamed exact-string keying for aggregation lowering F1. At scale:
+  - normalisation closes **~0%** of the gap to no aggregation (recall and pooled rate identical to exact);
+  - even the gold-alias oracle closes only **7.3%**;
+  - every PKB arm stays far below no aggregation (oracle: −0.039 F1, CI [−0.044, −0.034]).
 
-**Hyperparameters differ from the product-domain runs (state this explicitly when comparing the two settings):** the DocRED pilot used **shrinkage=0.5, threshold=0.70**, versus **shrinkage=0.75, threshold=0.88** in the canonical product-domain run (`scripts/dec003_product_probkb_run.py`). This was a deliberate, documented recalibration for DocRED's sparser evidence structure (see DEC-020), not an oversight — but it means the two settings' numbers are not directly comparable as an apples-to-apples test of the same aggregation configuration on two domains; the domain-transfer finding above is about the matching-key mechanism, not a controlled hyperparameter comparison.
+  Pre-registered outcome: ORACLE-ONLY + INCOMPLETE. The primary normalised-vs-exact CI excludes zero only mechanically: normalisation admits 7 extra false positives, giving an F1 difference of −0.000001.
+- **The finding: cross-sentence corroboration is scarce in the extractions.**
+  - Only **29 of 11,344 gold facts (0.26%)** are recovered from two or more sentences. An aggregation rule that requires corroboration cannot admit facts that are never corroborated, whatever the key.
+  - The text itself does not lack corroboration: **50.2%** of gold facts have 2+ evidence sentences in the annotations.
+  - The bottleneck is the extractor's recall (645 of 11,344 facts recovered at all), compounded across sentences.
+- **Half the output is off-schema:** only 49.2% of extracted triples use a DocRED relation name, so about half are false positives before any aggregation.
+- **R3 out of domain: a precision gain, not an F1 gain.**
+  - Precision rises with R3: 0.060→0.250 with the exact key (+0.190, CI [+0.084, +0.315]), and 0.117→0.406 with the oracle key (+0.289, CI [+0.204, +0.384]).
+  - The cause is removing 154-194 within-sentence duplicate observations. This is the repeat-counting defect R3 targets, now shown on real text.
+  - The counts are small: 36 admitted, 9 correct. The pre-registered F1 test is a null (−0.0003, CI [−0.0009, +0.00003]), and the precision comparison was a secondary analysis.
 
-**Suggested framing:** "Testing the framework's Noisy-Or aggregation on DocRED reveals a real limitation: exact-string-match corroboration, effective in the product domain's consistently-named entities, fails to recognize the same fact when phrased differently across evidence sentences in open text — aggregation improves precision roughly 10-fold but at a severe recall cost, indicating the current implementation does not transfer to open-domain multi-sentence text without an entity-linking or paraphrase-aware matching key."
+**Hyperparameters differ from the product-domain runs (state this when comparing the two settings):** DocRED uses **shrinkage=0.5, threshold=0.70**, versus **0.75 / 0.88** in the product domain. This is DEC-020's documented recalibration, kept fixed in DEC-031. No conflict penalty is applied on DocRED, so the rival ceiling does not operate there.
+
+**Suggested framing:** "On 845 DocRED documents, PKB aggregation lowers F1 relative to no aggregation under every matching key tested. This includes an oracle key built from gold entity mentions, which closes only 7% of the gap, so the failure is not caused by how facts are matched. It is caused by the absence of corroboration in the extractions: the sentence-level extractor recovers only 29 of 11,344 gold facts from two or more sentences, although half the facts have multiple supporting sentences in the text. Distinct-source counting (R3) raises the precision of what is admitted roughly fourfold by discarding within-sentence repeats, the same defect it corrects in the product domain, but on counts too small to move F1."
+
+**Earlier pilot (DEC-020, historical, superseded):** 15 documents, gold evidence sentences only. Naive F1 0.033 vs. PKB 0.010. Its exact-string root-cause diagnosis is superseded by the result above.
 
 This is a genuine, citable answer to professor feedback point #10 ("where the framework may fail") — use it in Limitations, not just Discussion.
 
@@ -322,7 +342,7 @@ This is a genuine, citable answer to professor feedback point #10 ("where the fr
 
 | # | Point | Where it's addressed here |
 |---|---|---|
-| 1 | Strengthen experimental evaluation (public benchmarks) | CaRB now full-scale (DEC-001, EVID-035, N=548); DocRED framework-level pilot (DEC-020, new — tests the framework, not just the extractor); BioRED domain pilot (DEC-009). TACRED scoped and explicitly declined with a documented reason (DEC-021). REBEL-benchmark (the dataset)/Universal-IE still not attempted, lowest priority |
+| 1 | Strengthen experimental evaluation (public benchmarks) | CaRB now full-scale (DEC-001, EVID-035, N=548); DocRED framework-level test at 845 documents (DEC-031/EVID-046, supersedes the DEC-020 pilot; aggregation fails from scarce cross-sentence corroboration, not the matching key); BioRED domain pilot (DEC-009). TACRED scoped and explicitly declined with a documented reason (DEC-021). REBEL-benchmark (the dataset)/Universal-IE still not attempted, lowest priority |
 | 2 | Compare against SOTA methods | DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro all done (DEC-002, EVID-031/032/035) — 4 of 8 named systems covered, DeepSeek now at full CaRB scale too. REBEL attempted and found task-incompatible with CaRB scoring (EVID-033, real finding, not a gap). GenIE/InstructUIE (likely same incompatibility)/DyGIE++ (AllenNLP) not attempted |
 | 3 | Improve mathematical contribution | DEC-003's Noisy-Or result — a real, positive real-data finding, but **not an unqualified "strongest claim"** (in tension with the N=50 ablation, AUDIT.md A1); real-data calibration (ECE=0.3332) and computational complexity analysis now done (EVID-036). The rival-ceiling failure mode is now empirically confirmed AND a corrected rule (source-count) is tested and shown to help, on two datasets (DEC-026, EVID-041) — a second candidate fix (evidence-share) tested and found to be a null, reported honestly. Formal derivation/boundedness proof/convergence discussion (steps 2-4) still needed — pure math-writing, not experiments |
 | 4 | Proper ablation study | DEC-004/005 — done, honest null result |

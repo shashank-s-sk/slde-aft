@@ -990,24 +990,20 @@ and its gold annotation file \texttt{test.tsv}; the excluded 93 sentences
 are a pre-existing whitespace/quoting mismatch between those two files,
 not a deliberate exclusion
 % [EVID-035, Limitations]
-. \textbf{DocRED}: a 15-document pilot
-% [Decision log.md, DEC-020]
-drawn (seed 42, biased toward documents with at least one multi-evidence
-gold triple -- 845 of 998 human-annotated dev-split documents qualify)
-% [Decision log.md, DEC-020]
-from the official 998-document human-annotated dev split
-(\texttt{thunlp/DocRED} via its Hugging Face mirror)
-% [Decision log.md, DEC-020]
-, yielding 189 gold triples and 356 observations (one observation per
-(head, relation, tail, evidence-sentence) tuple), of which 106 (56\%)
-have two or more evidence sentences
-% [Decision log.md, DEC-020]
--- i.e.\ genuine multi-observation corroboration for the PKB to
-aggregate over, exercising the framework's aggregation mechanism, not
-only its extractor. The pilot sent only these gold evidence sentences to
-the extractor, not every sentence of each document. This is an oracle
-setting: it tells the extractor which sentences contain a relation, so
-the pilot's figures are not those of a deployed system
+. \textbf{DocRED}: all 845 documents of the official 998-document
+human-annotated dev split (\texttt{thunlp/DocRED} via its Hugging Face
+mirror) that contain at least one gold fact supported by two or more
+evidence sentences. These documents have 6,861 sentences and 11,344 gold
+facts (entity-level head, relation, tail), of which 5,691 (50.2\%) have
+two or more evidence sentences in the gold annotations. That is genuine
+multi-sentence corroboration in the text for the PKB to aggregate over,
+exercising the framework's aggregation mechanism, not only its
+extractor. The extractor is run on every sentence
+% [Decision log.md, DEC-031; EVID-046]
+. An earlier 15-document pilot from the same pool sent only the gold
+evidence sentences to the extractor, an oracle setting that tells the
+extractor which sentences contain a relation. It is superseded by the
+845-document run and is reported only as historical context
 % [Decision log.md, DEC-020, DEC-031]
 . \textbf{BioRED}: 15 abstracts
 % [EVID-024]
@@ -1022,7 +1018,7 @@ domain.
 \label{sec:setup-models}
 
 The pipeline's extractor, used for every product-domain run and both
-public-benchmark pilots (DocRED, BioRED), is \texttt{meta-llama/} \texttt{llama-3.1-8b-instruct}
+public-benchmark DocRED run and BioRED pilot, is \texttt{meta-llama/} \texttt{llama-3.1-8b-instruct}
 via OpenRouter, temperature $0.0$
 % [EVID-013; src/extractors/openrouter_llm.py default temperature=0.0]
 . On CaRB, this model is compared against four external systems, all via
@@ -1165,11 +1161,16 @@ this pilot, driven by span-boundary differences between predicted and
 gold mention text, not by the pipeline finding substantially fewer
 correct facts
 % [EVID-024]
-. \textbf{DocRED} is scored under its own official evaluation convention
-(entity-pair and relation-type match via coreference-resolved entities,
-using each entity's first surface mention as its representative form)
-% [Decision log.md, DEC-020]
-, not the CaRB-style internal evaluator.
+. \textbf{DocRED} is scored per document against gold entities rather
+than strings. A predicted triple matches a gold fact when its relation
+name matches and its subject and object, after the string normalisation
+defined in Section~\ref{sec:results-docred}, equal the normalised form of
+any gold mention of the head and tail entities. Predictions are
+deduplicated per gold fact, and the same evaluator is used for every
+aggregation arm. Exact matching against each entity's first mention, as
+in the earlier pilot, is reported as a secondary measure
+% [Decision log.md, DEC-031; EVID-046]
+.
 
 \paragraph{Recall denominator.} Because this paper reports recall
 figures with more than one possible denominator, the definition is
@@ -1306,7 +1307,7 @@ wall-clock time of a local Python/pandas script
 This section reports the outcome of each experiment; interpretation is
 deferred to Section~\ref{sec:discussion}. All LLM extraction used
 pinned model identifiers at temperature 0. Product-domain runs used
-$\lambda=0.75$ and $\tau=0.88$, and the DocRED pilot used $\lambda=0.5$
+$\lambda=0.75$ and $\tau=0.88$, and the DocRED runs used $\lambda=0.5$
 and $\tau=0.70$ (Section~\ref{sec:setup-hyperparameters}). Multi-seed
 results are reported as mean (sample SD) over seeds 42--46, with 95\%
 confidence intervals for differences and two-sided $p$-values; with
@@ -1365,12 +1366,68 @@ therefore reported
 . GenIE, InstructUIE, DyGIE++, and TACRED were outside the scope of
 this evaluation.
 
-On a 15-document DocRED pilot (189 gold triples, 356 observations;
-gold evidence sentences only, an oracle setting),
-admitting only PKB-aggregated triples with scores $\ge 0.70$ increased
-precision from $0.034$ to $0.333$ but reduced recall from $0.032$ to
-$0.005$, lowering $F_1$ from $0.033$ to $0.010$
-(Table~\ref{tab:docred-results})
+\paragraph{DocRED at scale.}\label{sec:results-docred}
+On the 845 DocRED documents, extracting from every sentence (6,861
+calls), PKB aggregation lowered $F_1$ relative to no aggregation under
+every matching key tested (Table~\ref{tab:docred-results}). Three keys
+were compared on the same extractions. The first is the PKB's existing
+exact key (lower-cased, stripped). The second is a deployable string
+normalisation: Unicode NFKC, case folding, removal of possessives,
+periods and apostrophes, other punctuation replaced by spaces,
+whitespace collapsed, and one leading article dropped. The third keys
+each string to the gold entity whose mention it matches. This gold-alias
+key uses the gold annotations and is an oracle upper bound, not a
+deployable method. Normalisation left recall unchanged: it admitted 7
+more items than the exact key, all false positives, and closed about 0\%
+of the $F_1$ gap to no aggregation. The oracle key raised $F_1$ by
+$0.0031$ (95\% CI $[0.0017, 0.0047]$), closing 7.3\% of that gap, and
+remained $0.039$ below no aggregation (95\% CI $[-0.044, -0.034]$). Of
+the 11,344 gold facts, only 29 (0.26\%) were recovered by the extractions
+from two or more distinct sentences. Only 49.2\% of the 18,104
+extracted triples used one of DocRED's relation names
+% [EVID-046]
+.
+
+Counting distinct source sentences (R3) rather than every observation
+(R2) raised the precision of admitted triples from $0.060$ to $0.250$
+with the exact key ($+0.190$, 95\% CI $[0.084, 0.315]$) and from $0.117$
+to $0.406$ with the oracle key ($+0.289$, $[0.204, 0.384]$), by
+discarding 154 and 194 within-sentence duplicate observations
+respectively. The counts are small (36 triples admitted, 9 correct, with
+the exact key), R3 lost a few true positives (11 to 9), and the
+pre-registered $F_1$ comparison did not exclude zero ($-0.0003$,
+$[-0.0009, 0.00003]$). The precision comparison was a secondary
+analysis
+% [EVID-046; Decision log.md, DEC-031]
+. Restricting the same extractions to gold evidence sentences, the
+earlier pilot's oracle setting, gave the same pattern
+(no aggregation $F_1=0.056$, every PKB arm $\le 0.005$)
+% [EVID-046]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{DocRED, 845 development documents, all sentences
+($\lambda=0.5$, $\tau=0.70$). The gold-alias key is an oracle upper
+bound.}
+\label{tab:docred-results}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Method & $P$ & $R$ & $F_1$ & Admitted & Correct \\
+\midrule
+No aggregation & 0.036 & 0.057 & 0.044 & 17,914 & 645 \\
+PKB, exact key (R2) & 0.060 & 0.001 & 0.002 & 184 & 11 \\
+PKB, normalised key (R2) & 0.058 & 0.001 & 0.002 & 191 & 11 \\
+PKB, gold-alias key (R2, oracle) & 0.117 & 0.003 & 0.005 & 248 & 29 \\
+PKB, exact key (R3) & 0.250 & 0.001 & 0.002 & 36 & 9 \\
+PKB, gold-alias key (R3, oracle) & 0.406 & 0.003 & 0.005 & 69 & 28 \\
+\bottomrule
+\end{tabular}
+% [EVID-046; outputs/dec031_docred/analysis_result.json]
+\end{table}
+
+\noindent The earlier 15-document pilot (gold evidence sentences only)
+had reported $F_1$ of $0.033$ without and $0.010$ with aggregation
 % [Decision log.md, DEC-020]
 . On a 15-document BioRED pilot, $F_1$ was $0.007$ under strict
 exact matching and $0.103$ under relaxed containment matching, which
@@ -1378,22 +1435,6 @@ recovered 14 times as many true positives; no external baseline was
 run on BioRED
 % [EVID-024]
 .
-
-\begin{table}[htbp]
-\centering
-\caption{DocRED pilot (15 development documents, gold evidence sentences only; $\lambda=0.5$, $\tau=0.70$).}
-\label{tab:docred-results}
-\begin{tabular}{@{}lccc@{}}
-\toprule
-Method & $P$ & $R$ & $F_1$ \\
-\midrule
-No aggregation & 0.034 & 0.032 & 0.033 \\
-PKB aggregation (score $\ge 0.70$) & 0.333 & 0.005 & 0.010 \\
-\bottomrule
-\end{tabular}
-% [Decision log.md, DEC-020]
-\end{table}
-
 \subsection{Probabilistic Knowledge Base: Real-Data Validation and Calibration}
 \label{sec:results-calibration}
 
@@ -2048,62 +2089,59 @@ This section interprets the results reported in
 Section~\ref{sec:results}; no new numbers are introduced here beyond
 those already given there.
 
-\subsection{Divergence from DySECT's Reported DocRED Recall Gains}
+\subsection{Why Aggregation Fails on DocRED, and the Divergence from DySECT}
 \label{sec:discussion-docred}
+
+On 845 DocRED documents, PKB aggregation lowered $F_1$ relative to no
+aggregation under every matching key, including an oracle key built from
+gold entity mentions (Section~\ref{sec:results-docred}). An earlier
+account in this project attributed the same result, on a 15-document
+pilot, to exact-string matching: the same fact phrased differently in
+different sentences would never share a key. The larger run tested that
+account directly and does not support it. A deployable normalised key
+closed none of the gap, and the oracle key closed 7.3\%. Pooling was not
+the bottleneck: the oracle key already pooled 28 of the 29 gold facts
+that the extractions recovered from more than one sentence
+% [EVID-046]
+.
+
+The failure comes from the scarcity of cross-sentence corroboration in
+what the extractor produces. Half of DocRED's gold facts have two or
+more supporting sentences in the text, but the sentence-level extractor
+recovered only 645 of 11,344 facts at all, and only 29 from two or more
+sentences. An aggregation rule that admits a fact only when it is
+corroborated cannot admit facts that are never corroborated, whatever
+the key (Proposition~\ref{prop:corroboration}). On DocRED the binding
+constraint is therefore extractor recall, compounded across sentences,
+not the aggregation rule's matching. In the product domain the same fact
+is extracted repeatedly across iterations and sources, so the constraint
+does not bind there. The framework's aggregation stage therefore adds
+value only when the extractor recovers the same fact from more than one
+source often enough. This is a boundary condition of the design, and a
+stronger or document-level extractor would move it
+% [EVID-046]
+.
 
 \citet{aminnaseri2026dysect} report a consistent recall
 \emph{improvement} from KB-guided extraction on DocRED across all four
-evaluated models (Section~\ref{sec:related-work-dysect}), whereas
-SLDE-AFT's own DocRED pilot found that PKB aggregation \emph{reduced}
-$F_1$ relative to a no-aggregation baseline (precision rose from
-$0.034$ to $0.333$, but recall fell from $0.032$ to $0.005$;
-Table~\ref{tab:docred-results}). These two results are not a controlled
-comparison of the same mechanism, and at least four differences between
-the two evaluations could account for the opposite direction; this
-paper offers them as candidate explanations, not as a tested account of
-which one is responsible, since distinguishing between them would
-require rerunning one evaluation under the other's protocol, which was
-not done:
+evaluated models (Section~\ref{sec:related-work-dysect}). The two results
+are not a controlled comparison of the same mechanism, and two
+differences in design may account for the opposite direction; neither
+was tested here:
 
 \begin{itemize}
 \item \textbf{Different extractors.} \citet{aminnaseri2026dysect}
-evaluate GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's
-DocRED pilot uses only \texttt{meta-llama/llama-3.1-8b-instruct}
+evaluate GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT
+uses only \texttt{meta-llama/llama-3.1-8b-instruct}
 (Section~\ref{sec:setup-models}), a smaller model in none of their four.
-\item \textbf{Different aggregation hyperparameters, and a different
-underlying question.} DySECT's reported recall is extraction recall
-under KB-guided \emph{prompting} (more triples found when the prompt is
-augmented with hierarchical abstractions), not recall after a
-confidence-threshold \emph{admission} step. SLDE-AFT's DocRED pilot
+Given the finding above, extractor recall is likely to matter most.
+\item \textbf{A different underlying question.} DySECT's reported recall
+is extraction recall under KB-guided \emph{prompting} (more triples
+found when the prompt is augmented with hierarchical abstractions), not
+recall after a confidence-threshold \emph{admission} step. SLDE-AFT
 measures the latter, at $\lambda=0.5$, $\tau=0.70$
-(Section~\ref{sec:setup-hyperparameters}) rather than the product
-domain's $\lambda=0.75$, $\tau=0.88$ -- the two papers' recall numbers
-may not be measuring the same quantity at all.
-\item \textbf{Pilot scale.} SLDE-AFT's pilot uses 15 documents
-(Section~\ref{sec:setup-datasets}); \citet{aminnaseri2026dysect}'s
-DocRED setup uses a 500-document evaluation set and a further 100
-documents to seed the knowledge base -- substantially more accumulated
-evidence for the knowledge integrator to work with before any
-comparison is made.
-\item \textbf{Exact-string matching versus entity-linked keys.}
-\citet{aminnaseri2026dysect}'s knowledge integrator ``merges
-semantically equivalent facts''
-% [aminnaseri2026dysect, Section 2.2 -- verified directly against the
-% PDF; the paper does not specify the exact matching mechanism behind
-% this merging, so no more specific claim than "semantically
-% equivalent" is made here]
-, which does not require two extractions to share identical surface
-text. SLDE-AFT's PKB accepts a candidate key
-only on an exact, lower-cased string match of subject, predicate, and
-object, with no entity-linking or paraphrase normalization
-% [Decision log.md, DEC-020]
-. On open Wikipedia text, where the same fact is often phrased
-differently across its supporting sentences, this could cause genuine
-corroboration to be split across several never-matching keys rather
-than aggregated -- the root cause identified when this pilot was run
-% [Decision log.md, DEC-020]
-, offered here as one candidate explanation among four, not a
-demonstrated cause relative to the other three.
+(Section~\ref{sec:setup-hyperparameters}), so the two papers' recall
+numbers may not measure the same quantity.
 \end{itemize}
 
 \subsection{The Rival Ceiling Generalizes Beyond This Data}
@@ -2157,7 +2195,15 @@ of that formula, not an artifact of R6 being tested on this particular
 data (Section~\ref{sec:formal-analysis-empirical}'s conclusion). This
 account is offered as the explanation consistent with the measured
 pattern across R3, R4, and R6; it was not independently tested against
-alternative accounts of the same three results.
+alternative accounts of the same three results. The same defect appears
+outside the product domain. On DocRED, the extractor emitted the same
+triple more than once from a single sentence 154 times (exact key), and
+R2 counted these repeats as corroboration. R3 discarded them and raised
+the precision of admitted triples from $0.060$ to $0.250$, although on
+too few triples to change $F_1$
+(Section~\ref{sec:results-docred})
+% [EVID-046]
+.
 
 \subsection{What the Ablations Do and Do Not Show}
 \label{sec:discussion-ablations}

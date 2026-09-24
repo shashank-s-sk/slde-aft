@@ -1,0 +1,652 @@
+{
+  "n_docs_total": 845,
+  "n_docs_complete": 845,
+  "extraction": {
+    "records": 6861,
+    "network_failed": 0,
+    "content_errors": 283,
+    "cost_usd": 0.21110616499999998
+  },
+  "settings": {
+    "all": {
+      "methods": {
+        "naive": {
+          "primary": {
+            "precision": 0.036065757101319616,
+            "recall": 0.05685825105782793,
+            "f1": 0.04413576022991652,
+            "tp": 645,
+            "fp": 17239,
+            "fn": 10699
+          },
+          "secondary_first_mention": {
+            "precision": 0.024119256322930042,
+            "recall": 0.038502673796791446,
+            "f1": 0.02965912601695788,
+            "tp": 432,
+            "fp": 17479,
+            "fn": 10788
+          },
+          "admitted": 17914,
+          "docs_with_any_admitted": 845,
+          "contested_slots_candidates": 0,
+          "contested_slots_admitted": 0,
+          "g2_facts": 29,
+          "g2_pooled": 29,
+          "pooled_rate": 1.0
+        },
+        "exact_R2": {
+          "primary": {
+            "precision": 0.059782608695652176,
+            "recall": 0.0009696755994358251,
+            "f1": 0.0019083969465648854,
+            "tp": 11,
+            "fp": 173,
+            "fn": 11333
+          },
+          "secondary_first_mention": {
+            "precision": 0.03804347826086957,
+            "recall": 0.0006238859180035651,
+            "f1": 0.001227639424763241,
+            "tp": 7,
+            "fp": 177,
+            "fn": 11213
+          },
+          "admitted": 184,
+          "docs_with_any_admitted": 135,
+          "contested_slots_candidates": 2507,
+          "contested_slots_admitted": 9,
+          "g2_facts": 29,
+          "g2_pooled": 10,
+          "pooled_rate": 0.3448275862068966,
+          "within_sentence_duplicate_observations": 154
+        },
+        "exact_R3": {
+          "primary": {
+            "precision": 0.25,
+            "recall": 0.0007933709449929478,
+            "f1": 0.0015817223198594025,
+            "tp": 9,
+            "fp": 27,
+            "fn": 11335
+          },
+          "secondary_first_mention": {
+            "precision": 0.16666666666666666,
+            "recall": 0.0005347593582887701,
+            "f1": 0.0010660980810234541,
+            "tp": 6,
+            "fp": 30,
+            "fn": 11214
+          },
+          "admitted": 36,
+          "docs_with_any_admitted": 32,
+          "contested_slots_candidates": 2507,
+          "contested_slots_admitted": 2,
+          "g2_facts": 29,
+          "g2_pooled": 9,
+          "pooled_rate": 0.3103448275862069
+        },
+        "norm_R2": {
+          "primary": {
+            "precision": 0.05759162303664921,
+            "recall": 0.0009696755994358251,
+            "f1": 0.0019072388383181622,
+            "tp": 11,
+            "fp": 180,
+            "fn": 11333
+          },
+          "secondary_first_mention": {
+            "precision": 0.03664921465968586,
+            "recall": 0.0006238859180035651,
+            "f1": 0.001226886337744282,
+            "tp": 7,
+            "fp": 184,
+            "fn": 11213
+          },
+          "admitted": 191,
+          "docs_with_any_admitted": 139,
+          "contested_slots_candidates": 2506,
+          "contested_slots_admitted": 9,
+          "g2_facts": 29,
+          "g2_pooled": 10,
+          "pooled_rate": 0.3448275862068966,
+          "within_sentence_duplicate_observations": 161
+        },
+        "norm_R3": {
+          "primary": {
+            "precision": 0.25,
+            "recall": 0.0007933709449929478,
+            "f1": 0.0015817223198594025,
+            "tp": 9,
+            "fp": 27,
+            "fn": 11335
+          },
+          "secondary_first_mention": {
+            "precision": 0.16666666666666666,
+            "recall": 0.0005347593582887701,
+            "f1": 0.0010660980810234541,
+            "tp": 6,
+            "fp": 30,
+            "fn": 11214
+          },
+          "admitted": 36,
+          "docs_with_any_admitted": 32,
+          "contested_slots_candidates": 2506,
+          "contested_slots_admitted": 2,
+          "g2_facts": 29,
+          "g2_pooled": 9,
+          "pooled_rate": 0.3103448275862069
+        },
+        "alias_R2": {
+          "primary": {
+            "precision": 0.11693548387096774,
+            "recall": 0.0025564174894217207,
+            "f1": 0.005003450655624568,
+            "tp": 29,
+            "fp": 219,
+            "fn": 11315
+          },
+          "secondary_first_mention": {
+            "precision": 0.04838709677419355,
+            "recall": 0.0010695187165775401,
+            "f1": 0.0020927799093128706,
+            "tp": 12,
+            "fp": 236,
+            "fn": 11208
+          },
+          "admitted": 248,
+          "docs_with_any_admitted": 184,
+          "contested_slots_candidates": 2532,
+          "contested_slots_admitted": 14,
+          "g2_facts": 29,
+          "g2_pooled": 28,
+          "pooled_rate": 0.9655172413793104,
+          "within_sentence_duplicate_observations": 194
+        },
+        "alias_R3": {
+          "primary": {
+            "precision": 0.4057971014492754,
+            "recall": 0.002468265162200282,
+            "f1": 0.004906685358801367,
+            "tp": 28,
+            "fp": 41,
+            "fn": 11316
+          },
+          "secondary_first_mention": {
+            "precision": 0.15942028985507245,
+            "recall": 0.000980392156862745,
+            "f1": 0.001948799716538223,
+            "tp": 11,
+            "fp": 58,
+            "fn": 11209
+          },
+          "admitted": 69,
+          "docs_with_any_admitted": 64,
+          "contested_slots_candidates": 2532,
+          "contested_slots_admitted": 2,
+          "g2_facts": 29,
+          "g2_pooled": 28,
+          "pooled_rate": 0.9655172413793104
+        }
+      },
+      "comparisons": [
+        {
+          "comparison": "PRIMARY matching key: norm vs exact (R2), F1",
+          "a": "exact_R2",
+          "b": "norm_R2",
+          "metric": "f1",
+          "diff": -1.1581082467232353e-06,
+          "ci95": [
+            -2.766377160743965e-06,
+            -2.3228391670872698e-07
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "norm vs exact (R2), recall",
+          "a": "exact_R2",
+          "b": "norm_R2",
+          "metric": "recall",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "norm vs exact (R2), pooled rate on G2",
+          "a": "exact_R2",
+          "b": "norm_R2",
+          "metric": "pooled",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "ORACLE alias vs exact (R2), F1",
+          "a": "exact_R2",
+          "b": "alias_R2",
+          "metric": "f1",
+          "diff": 0.003095053709059683,
+          "ci95": [
+            0.001699265191248018,
+            0.0047103472636222145
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "ORACLE alias vs exact (R2), pooled rate on G2",
+          "a": "exact_R2",
+          "b": "alias_R2",
+          "metric": "pooled",
+          "diff": 0.6206896551724138,
+          "ci95": [
+            0.42307692307692313,
+            0.7948717948717948
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "exact (R2) vs naive, F1",
+          "a": "naive",
+          "b": "exact_R2",
+          "metric": "f1",
+          "diff": -0.04222736328335163,
+          "ci95": [
+            -0.04732837493410541,
+            -0.037416279275641465
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "norm (R2) vs naive, F1",
+          "a": "naive",
+          "b": "norm_R2",
+          "metric": "f1",
+          "diff": -0.042228521391598356,
+          "ci95": [
+            -0.04732889928204012,
+            -0.037416995891411606
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "ORACLE alias (R2) vs naive, F1",
+          "a": "naive",
+          "b": "alias_R2",
+          "metric": "f1",
+          "diff": -0.03913230957429195,
+          "ci95": [
+            -0.04415912725196842,
+            -0.03440968804797086
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "PRIMARY R3 vs R2 (norm key), F1",
+          "a": "norm_R2",
+          "b": "norm_R3",
+          "metric": "f1",
+          "diff": -0.00032551651845875973,
+          "ci95": [
+            -0.0008540633722292504,
+            2.7638424805094667e-05
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "R3 vs R2 (exact key), F1",
+          "a": "exact_R2",
+          "b": "exact_R3",
+          "metric": "f1",
+          "diff": -0.00032667462670548297,
+          "ci95": [
+            -0.0008551964936521472,
+            2.6273844538848106e-05
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "R3 vs R2 (ORACLE alias key), F1",
+          "a": "alias_R2",
+          "b": "alias_R3",
+          "metric": "f1",
+          "diff": -9.676529682320096e-05,
+          "ci95": [
+            -0.0004616274807877673,
+            0.00010234418413130461
+          ],
+          "ci_excludes_zero": false
+        }
+      ],
+      "share_of_naive_gap_closed_R2": {
+        "norm": -2.7425540139746917e-05,
+        "alias": 0.07329497909427664
+      }
+    },
+    "evidence": {
+      "methods": {
+        "naive": {
+          "primary": {
+            "precision": 0.054807364473235594,
+            "recall": 0.05668194640338505,
+            "f1": 0.05572889582249957,
+            "tp": 643,
+            "fp": 11089,
+            "fn": 10701
+          },
+          "secondary_first_mention": {
+            "precision": 0.036586403471454094,
+            "recall": 0.03832442067736185,
+            "f1": 0.03743525007617638,
+            "tp": 430,
+            "fp": 11323,
+            "fn": 10790
+          },
+          "admitted": 11755,
+          "docs_with_any_admitted": 845,
+          "contested_slots_candidates": 0,
+          "contested_slots_admitted": 0,
+          "g2_facts": 25,
+          "g2_pooled": 25,
+          "pooled_rate": 1.0
+        },
+        "exact_R2": {
+          "primary": {
+            "precision": 0.06923076923076923,
+            "recall": 0.0007933709449929478,
+            "f1": 0.0015687641624542443,
+            "tp": 9,
+            "fp": 121,
+            "fn": 11335
+          },
+          "secondary_first_mention": {
+            "precision": 0.046153846153846156,
+            "recall": 0.0005347593582887701,
+            "f1": 0.0010572687224669603,
+            "tp": 6,
+            "fp": 124,
+            "fn": 11214
+          },
+          "admitted": 130,
+          "docs_with_any_admitted": 94,
+          "contested_slots_candidates": 1653,
+          "contested_slots_admitted": 6,
+          "g2_facts": 25,
+          "g2_pooled": 7,
+          "pooled_rate": 0.28,
+          "within_sentence_duplicate_observations": 106
+        },
+        "exact_R3": {
+          "primary": {
+            "precision": 0.25925925925925924,
+            "recall": 0.0006170662905500705,
+            "f1": 0.0012312021809867207,
+            "tp": 7,
+            "fp": 20,
+            "fn": 11337
+          },
+          "secondary_first_mention": {
+            "precision": 0.18518518518518517,
+            "recall": 0.000445632798573975,
+            "f1": 0.0008891259891526628,
+            "tp": 5,
+            "fp": 22,
+            "fn": 11215
+          },
+          "admitted": 27,
+          "docs_with_any_admitted": 24,
+          "contested_slots_candidates": 1653,
+          "contested_slots_admitted": 1,
+          "g2_facts": 25,
+          "g2_pooled": 7,
+          "pooled_rate": 0.28
+        },
+        "norm_R2": {
+          "primary": {
+            "precision": 0.06766917293233082,
+            "recall": 0.0007933709449929478,
+            "f1": 0.0015683540995033544,
+            "tp": 9,
+            "fp": 124,
+            "fn": 11335
+          },
+          "secondary_first_mention": {
+            "precision": 0.045112781954887216,
+            "recall": 0.0005347593582887701,
+            "f1": 0.0010569893420241346,
+            "tp": 6,
+            "fp": 127,
+            "fn": 11214
+          },
+          "admitted": 133,
+          "docs_with_any_admitted": 97,
+          "contested_slots_candidates": 1653,
+          "contested_slots_admitted": 6,
+          "g2_facts": 25,
+          "g2_pooled": 7,
+          "pooled_rate": 0.28,
+          "within_sentence_duplicate_observations": 109
+        },
+        "norm_R3": {
+          "primary": {
+            "precision": 0.25925925925925924,
+            "recall": 0.0006170662905500705,
+            "f1": 0.0012312021809867207,
+            "tp": 7,
+            "fp": 20,
+            "fn": 11337
+          },
+          "secondary_first_mention": {
+            "precision": 0.18518518518518517,
+            "recall": 0.000445632798573975,
+            "f1": 0.0008891259891526628,
+            "tp": 5,
+            "fp": 22,
+            "fn": 11215
+          },
+          "admitted": 27,
+          "docs_with_any_admitted": 24,
+          "contested_slots_candidates": 1653,
+          "contested_slots_admitted": 1,
+          "g2_facts": 25,
+          "g2_pooled": 7,
+          "pooled_rate": 0.28
+        },
+        "alias_R2": {
+          "primary": {
+            "precision": 0.14857142857142858,
+            "recall": 0.0022919605077574047,
+            "f1": 0.004514280753537633,
+            "tp": 26,
+            "fp": 149,
+            "fn": 11318
+          },
+          "secondary_first_mention": {
+            "precision": 0.06285714285714286,
+            "recall": 0.000980392156862745,
+            "f1": 0.0019306713470820535,
+            "tp": 11,
+            "fp": 164,
+            "fn": 11209
+          },
+          "admitted": 175,
+          "docs_with_any_admitted": 130,
+          "contested_slots_candidates": 1670,
+          "contested_slots_admitted": 8,
+          "g2_facts": 25,
+          "g2_pooled": 24,
+          "pooled_rate": 0.96,
+          "within_sentence_duplicate_observations": 128
+        },
+        "alias_R3": {
+          "primary": {
+            "precision": 0.4528301886792453,
+            "recall": 0.0021156558533145277,
+            "f1": 0.00421163464069492,
+            "tp": 24,
+            "fp": 29,
+            "fn": 11320
+          },
+          "secondary_first_mention": {
+            "precision": 0.18867924528301888,
+            "recall": 0.00089126559714795,
+            "f1": 0.0017741506253880954,
+            "tp": 10,
+            "fp": 43,
+            "fn": 11210
+          },
+          "admitted": 53,
+          "docs_with_any_admitted": 49,
+          "contested_slots_candidates": 1670,
+          "contested_slots_admitted": 1,
+          "g2_facts": 25,
+          "g2_pooled": 24,
+          "pooled_rate": 0.96
+        }
+      },
+      "comparisons": [
+        {
+          "comparison": "PRIMARY matching key: norm vs exact (R2), F1",
+          "a": "exact_R2",
+          "b": "norm_R2",
+          "metric": "f1",
+          "diff": -4.1006295088989383e-07,
+          "ci95": [
+            -1.11086621483487e-06,
+            0.0
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "norm vs exact (R2), recall",
+          "a": "exact_R2",
+          "b": "norm_R2",
+          "metric": "recall",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "norm vs exact (R2), pooled rate on G2",
+          "a": "exact_R2",
+          "b": "norm_R2",
+          "metric": "pooled",
+          "diff": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "ORACLE alias vs exact (R2), F1",
+          "a": "exact_R2",
+          "b": "alias_R2",
+          "metric": "f1",
+          "diff": 0.002945516591083389,
+          "ci95": [
+            0.0015614954811753506,
+            0.004542233687020762
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "ORACLE alias vs exact (R2), pooled rate on G2",
+          "a": "exact_R2",
+          "b": "alias_R2",
+          "metric": "pooled",
+          "diff": 0.6799999999999999,
+          "ci95": [
+            0.47619047619047616,
+            0.8571428571428572
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "exact (R2) vs naive, F1",
+          "a": "naive",
+          "b": "exact_R2",
+          "metric": "f1",
+          "diff": -0.054160131660045324,
+          "ci95": [
+            -0.06070710501443148,
+            -0.048095375581929535
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "norm (R2) vs naive, F1",
+          "a": "naive",
+          "b": "norm_R2",
+          "metric": "f1",
+          "diff": -0.05416054172299621,
+          "ci95": [
+            -0.06070725543307538,
+            -0.0480957408082651
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "ORACLE alias (R2) vs naive, F1",
+          "a": "naive",
+          "b": "alias_R2",
+          "metric": "f1",
+          "diff": -0.05121461506896194,
+          "ci95": [
+            -0.057623171701401334,
+            -0.04528172626225674
+          ],
+          "ci_excludes_zero": true
+        },
+        {
+          "comparison": "PRIMARY R3 vs R2 (norm key), F1",
+          "a": "norm_R2",
+          "b": "norm_R3",
+          "metric": "f1",
+          "diff": -0.0003371519185166338,
+          "ci95": [
+            -0.0008675370600677046,
+            1.5176445274957634e-05
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "R3 vs R2 (exact key), F1",
+          "a": "exact_R2",
+          "b": "exact_R3",
+          "metric": "f1",
+          "diff": -0.0003375619814675237,
+          "ci95": [
+            -0.0008679537850920923,
+            1.4788332895913478e-05
+          ],
+          "ci_excludes_zero": false
+        },
+        {
+          "comparison": "R3 vs R2 (ORACLE alias key), F1",
+          "a": "alias_R2",
+          "b": "alias_R3",
+          "metric": "f1",
+          "diff": -0.00030264611284271277,
+          "ci95": [
+            -0.0008308021846563078,
+            5.380537955192855e-05
+          ],
+          "ci_excludes_zero": false
+        }
+      ],
+      "share_of_naive_gap_closed_R2": {
+        "norm": -7.571306389426725e-06,
+        "alias": 0.054385329222830105
+      }
+    }
+  }
+}

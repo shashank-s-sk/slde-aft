@@ -4575,3 +4575,183 @@ subsection to report the 30-seed null with the achieved MDE (~0.08 F1)
 in place of the n=5 caveat, including the retry-rule sensitivity range
 for without_prob_kb. Fix the unhandled-network-error gap in
 `openrouter_llm.py` before the next API-cost experiment.
+
+
+---
+
+# EVID-046 — DEC-031: DocRED at Scale (845 docs). The Matching Key Does Not Explain the Failure; Cross-Sentence Corroboration Is Scarce in the Extractions; R3 Raises Precision Out of Domain
+
+## Experiment
+
+- Decision: DEC-031, pre-registered in Decision log.md and committed
+  (8715f35) before any extraction.
+- **Documents:** all 845 DocRED dev documents that meet DEC-020's
+  eligibility rule (at least one gold fact with 2+ evidence
+  sentences). They contain 11,344 gold facts at entity level.
+- **Extraction:** every one of the 6,861 sentences, one call each.
+  Model `meta-llama/llama-3.1-8b-instruct`, prompt
+  `prompts/openie_docred_v1.txt`, temperature 0, max_tokens 1024, as in
+  DEC-020. Run 2026-09-24 18:51-19:34 with 3 parallel processes.
+  **Cost $0.2111**, above the $0.13 estimate; the user approved the
+  overrun during the run. 0 network failures. 283 calls (4.1%) returned
+  unparsable output and were kept as-is, not retried.
+- **Arms and evaluation:** all arms computed offline from the same
+  extractions (`scripts/dec031_docred_analyze.py`):
+  - matching keys (a) exact, (b) normalised (primary, deployable) and
+    (c) gold-alias (ORACLE upper bound);
+  - rules R2 and R3;
+  - a no-aggregation baseline;
+  - sentence settings "all" (primary) and "evidence only" (the pilot's
+    oracle setting).
+
+  The primary evaluator is alias-aware and identical for every arm.
+  The secondary evaluator is DEC-020's first-mention exact match.
+  Statistics: paired bootstrap over documents, 10,000 resamples.
+
+## Actual (all sentences, primary evaluator)
+
+| Arm | P | R | F1 | TP | Admitted | Docs admitting anything | Contested slots, candidates / admitted | G2 pooled |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| No aggregation | 0.0361 | 0.0569 | 0.0441 | 645 | 17,914 | 845 | — | 29/29 |
+| exact, R2 | 0.0598 | 0.0010 | 0.0019 | 11 | 184 | 135 | 2,507 / 9 | 10/29 |
+| exact, R3 | 0.2500 | 0.0008 | 0.0016 | 9 | 36 | 32 | 2,507 / 2 | 9/29 |
+| norm, R2 | 0.0576 | 0.0010 | 0.0019 | 11 | 191 | 139 | 2,506 / 9 | 10/29 |
+| norm, R3 | 0.2500 | 0.0008 | 0.0016 | 9 | 36 | 32 | 2,506 / 2 | 9/29 |
+| alias, R2 (ORACLE) | 0.1169 | 0.0026 | 0.0050 | 29 | 248 | 184 | 2,532 / 14 | 28/29 |
+| alias, R3 (ORACLE) | 0.4058 | 0.0025 | 0.0049 | 28 | 69 | 64 | 2,532 / 2 | 28/29 |
+
+- Secondary (first-mention) F1: no aggregation 0.0297, exact R2
+  0.0012, norm R2 0.0012, alias R2 0.0021.
+- Evidence-only setting (for pilot comparability): no aggregation
+  F1 0.0557, exact R2 0.0016, norm R2 0.0016, alias R2 0.0045. G2 = 25.
+  Every comparison below has the same sign and significance there.
+- Contested slots are descriptive only. No conflict penalty is applied
+  on DocRED (the functional-predicate config is empty), so the rival
+  ceiling does not operate here.
+
+Pre-registered comparisons (all sentences; difference is B − A):
+
+| Comparison | Diff | 95% CI |
+|---|---:|---|
+| **norm vs exact, R2, F1 (PRIMARY)** | −0.000001 | [−0.000003, −0.000000] |
+| norm vs exact, R2, recall | 0 | [0, 0] |
+| norm vs exact, R2, pooled rate on G2 | 0 | [0, 0] |
+| ORACLE alias vs exact, R2, F1 | +0.0031 | [+0.0017, +0.0047] |
+| ORACLE alias vs exact, R2, pooled rate | +0.621 | [+0.423, +0.795] |
+| exact R2 vs no aggregation, F1 | −0.0422 | [−0.0473, −0.0374] |
+| norm R2 vs no aggregation, F1 | −0.0422 | [−0.0473, −0.0374] |
+| ORACLE alias R2 vs no aggregation, F1 | −0.0391 | [−0.0442, −0.0344] |
+| **R3 vs R2, norm key, F1 (PRIMARY R3)** | −0.0003 | [−0.0009, +0.00003] |
+| R3 vs R2, exact key, F1 | −0.0003 | [−0.0009, +0.00003] |
+| R3 vs R2, ORACLE alias key, F1 | −0.0001 | [−0.0005, +0.0001] |
+
+Share of the no-aggregation-vs-exact F1 gap closed (R2): normalised
+**~0%** (−0.00003%); ORACLE alias **7.3%**.
+
+## Result
+
+### 1. The matching-key explanation does not account for the DocRED failure
+
+**Pre-registered outcome: ORACLE-ONLY and INCOMPLETE.**
+- Normalisation, the deployable key, fails the confirmation test: it
+  changes neither recall nor the pooled rate.
+- The gold-alias oracle passes it: F1 and pooled rate both rise, with
+  CIs excluding 0.
+- But every PKB arm, the oracle included, stays far below no
+  aggregation (oracle −0.039 F1). That is the pre-registered
+  "incomplete" case.
+
+In plain terms, the explanation the manuscript previously offered is
+wrong as an account of the failure. That explanation was that
+exact-string matching split corroboration across never-matching keys.
+Normalisation closes about 0% of the gap, and even oracle entity
+resolution closes only 7.3%.
+
+This is not labelled "REFUTED". The pre-registration reserves that
+label for the case where neither the normalised nor the oracle key
+improves on exact, and the oracle does improve (from a tiny base).
+
+**The primary CI "excluding zero" is mechanical.** Normalisation
+admits 7 more items than exact (191 vs. 184), and all 7 are false
+positives. True positives, recall and the pooled rate are identical,
+so the F1 difference is −0.000001. This is reported as an artefact of
+7 extra false positives, not as a meaningful negative effect.
+
+### 2. The finding: cross-sentence corroboration is scarce in the extractions
+
+- **Only 29 of 11,344 gold facts (0.26%)** are recovered by the
+  extractions from two or more distinct sentences (G2). That caps what
+  an aggregation rule requiring corroboration can admit.
+  - Under R3 the cap is strict: 2+ distinct sentences are required.
+  - Under R2, repeated observations *within* a single sentence can
+    also reach the threshold, but that adds almost nothing (11 true
+    positives under exact R2, 10 of them from G2).
+- No matching key can raise this cap. The oracle key already pools
+  28 of the 29 G2 facts, and recall is still 0.0026.
+- **The scarcity is in the extractions, not the text.** In the gold
+  annotations, **5,691 of 11,344 facts (50.2%)** have 2+ evidence
+  sentences. The extractor rarely recovers the same fact from two of
+  them: it recovers only 645 gold facts at all (recall 0.057). So the
+  binding constraint is extractor recall, compounded across sentences,
+  not the aggregation key.
+
+### 3. R3 out of domain: a large precision gain, with no F1 gain
+
+- **The pre-registered R3 test (F1, norm key) is a null:** −0.0003,
+  CI [−0.0009, +0.00003].
+- R3 was testable by the pre-registered definition. There are 154
+  (exact), 161 (norm) and 194 (oracle) within-sentence duplicate
+  observations: the same triple emitted more than once from one
+  sentence, which R2 counts as corroboration.
+- **Secondary, not pre-registered as the R3 criterion:** R3 raises
+  precision sharply.
+
+| Key | R2 precision (admitted / correct) | R3 precision (admitted / correct) | R3 − R2 precision [95% CI] |
+|---|---|---|---|
+| exact | 0.060 (184 / 11) | 0.250 (36 / 9) | +0.190 [+0.084, +0.315] |
+| norm | 0.058 (191 / 11) | 0.250 (36 / 9) | +0.192 [+0.086, +0.319] |
+| ORACLE alias | 0.117 (248 / 29) | 0.406 (69 / 28) | +0.289 [+0.204, +0.384] |
+
+  The gain comes from removing the within-sentence duplicate
+  observations. This is the repeat-counting defect R3 targets (DEC-026,
+  EVID-041), now shown on real public text rather than the synthetic
+  product domain.
+- The absolute counts are small: 36 items admitted and 9 correct
+  (exact/norm). R3 also costs a few true positives (11 → 9; 29 → 28),
+  so the F1 differences do not exclude zero.
+- In DEC-026, R3's gain came at unchanged recall. Here it comes with a
+  small recall loss.
+
+### 4. About half of the extractor's output is off-schema
+
+Only **49.2%** of the 18,104 extracted triples use one of DocRED's 96
+relation names as the predicate (e.g. "based in" instead of
+"headquarters location"). The rest are false positives before any
+aggregation, under every arm. This is part of why precision without
+aggregation is 0.036.
+
+## Supersedes
+
+- This replaces DEC-020's 15-document pilot as the DocRED result.
+- The pilot's root-cause statement (exact-string matching) is
+  superseded by §1-2 above. It appears in: Decision log.md (DEC-020
+  section and dashboard row 020); Results Summary.md (DocRED block);
+  paper/main.tex (DocRED results and the Discussion's divergence
+  subsection). Those passages are updated in the same commit as this
+  entry.
+- The pilot's figures stay valid for its own oracle setting (gold
+  evidence sentences only, 15 documents).
+
+## Limitations
+
+- One extractor (Llama-3.1-8B), sentence-level extraction with no
+  document context. A stronger or document-level extractor could
+  recover more facts from multiple sentences, and the corroboration
+  cap would move with it.
+- Fixed tau = 0.70 (DEC-020's value; not tuned).
+- R3's precision CIs rest on 36-69 admitted items.
+
+## Next step
+
+None queued from this DEC. Results Summary.md and paper/main.tex are
+updated with this entry.

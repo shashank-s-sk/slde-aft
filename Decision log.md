@@ -21,14 +21,14 @@ just says where each DEC currently stands and what's left.
 | 013 | Writing Refinement | NOT STARTED | — | Writing task — deferred |
 | 018 | Provenance Filter (Claim #5) | DONE | Filtering raises training-data precision vs. gold from 93.5%→100% (drops 31/475 triples, all wrong) — EVID-029. Now the default in `dec006_regenerate_synth_data.py` | Optionally re-run DEC-006 fine-tuning on the filtered (444-triple) data to check if subject-copying failures decrease |
 | 019 | Closed-Loop Integration Test (Claim #1) | DONE | Treatment (fine-tuned model closes the loop) ~FLAT vs. pre-closure baseline (F1 0.3869→0.3864) but BEATS control/no-fine-tuning (F1 0.3791, -0.0073) — EVID-030. Closing the loop does no harm and modestly beats the realistic alternative | Repeat with seeds 42/44 as separate treatment arms to check this holds across seeds; a sustained multi-cycle loop is a bigger follow-up |
-| 020 | Framework-Level Validation on DocRED | DONE (pilot) | Naive F1=0.0329 vs. PKB-aggregated F1=0.0104 (worse) — PKB's exact-string-match aggregation rarely corroborates the same fact across differently-phrased evidence sentences on open text. Real, diagnosed limitation, cost $0.00131 | Genuine finding for Limitations (point #10); a fuzzy/entity-linked matching key would be the natural fix if pursued further |
+| 020 | Framework-Level Validation on DocRED | DONE (pilot) | Naive F1=0.0329 vs. PKB-aggregated F1=0.0104 (worse) — PKB's exact-string-match aggregation rarely corroborates the same fact across differently-phrased evidence sentences on open text. Real, diagnosed limitation, cost $0.00131 | Genuine finding for Limitations (point #10); a fuzzy/entity-linked matching key would be the natural fix if pursued further **Superseded by DEC-031/EVID-046: exact-string explanation does not hold at 845 docs** |
 | 021 | Extractor-Only Validation on TACRED | **NOT PURSUED** (user decision, 2026-09-18) | — | Dropped — CaRB + DocRED already cover two benchmark task types; add one Limitations sentence (see DEC-021 section) so this reads as a scope decision, not a gap |
 | 022 | Epoch / LoRA Hyperparameter Grid (Claim #2, point #6) | **DONE — all 3 stages** | **epochs=5 config SIGNIFICANT vs. base** (one-sample t-test p=0.0028, 5-seed mean F1=0.2012 vs base 0.1373) — EVID-037/038/040. First fine-tuning config in the project to cross p<0.05. Not proven significantly better than the old epochs=3 config specifically (p=0.45/0.63) | None required. Optional: re-test epochs=5 on DEC-018's provenance-filtered data |
 | 023 | N=50 Ablation Confirmatory Run (Claim #4, point #5) | DONE | Null result replicates at N=50: without_feedback p=0.57/0.63, without_prob_kb p=0.63/1.0 (t/Wilcoxon) — EVID-039. Variance shrank 3.6x vs N=20 (std 0.335→0.093). **Correction (AUDIT.md, 2026-09-20): n=5 seeds only detects effects >=~0.29-0.30 F1 (Cohen's d=1.68 needed for 80% power) — not "properly powered" for small-to-moderate effects, just a tighter measurement than N=20** | None — per DEC-023's pre-registered commitment, no further re-runs; reframe claim #4 as "tested at two scales, no effect >=~0.3 F1 detected either time" |
 | 024 | Fine-Tuning Hyperparameter Selection Without Tuning-Leakage | PRE-REGISTERED, DEFERRED | User chose to write the manuscript now with an honest tuning-leakage caveat instead of running this fix | Available as future work / a revision-stage improvement if needed; not run |
 | 025 | Closed-Loop Retest With the Headline (epochs=5) Fine-Tuned Model | SCOPED, NOT YET RUN | DEC-019's closed-loop test (EVID-030) used the now-superseded epochs=3 seed-43 adapter, not the paper's actual epochs=5 headline model (EVID-040) — Claims #1 and #2 have never been jointly tested | Needs a rented GPU pod + explicit go-ahead to spend; scripts ready (`scripts/dec025_closedloop_*.py`) |
 | 029 | Higher-Powered Module Ablation (30 seeds) | DONE | Null for both modules; achieved MDE 0.070-0.086 F1 (EVID-045) | Written into Results Summary/main.tex |
-| 031 | DocRED at Scale With a Normalised Matching Key | PRE-REGISTERED, cost approved | — | Run extraction (6,861 calls, ~$0.13), then offline analysis |
+| 031 | DocRED at Scale With a Normalised Matching Key | DONE (EVID-046) | Matching key does not explain the failure (norm closes ~0% of gap, oracle 7.3%); only 29/11,344 gold facts recovered from 2+ sentences; R3 precision 0.06->0.25, F1 null | Supersedes DEC-020's pilot |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -1595,6 +1595,14 @@ Results: NAIVE baseline (dedup union, no aggregation): P=0.0341
   (naive vs. PKB) and this mechanism, not just the F1 delta.
   See `outputs/dec020_docred_extract_and_pkb/summary.json` for full
   per-document detail.
+  **SUPERSEDED (2026-09-24) by DEC-031/EVID-046:** the root-cause
+  diagnosis above (exact-string keying) does not hold at 845 documents.
+  A normalised key closes ~0% of the no-aggregation gap, and even a
+  gold-alias oracle key closes only 7.3%. The binding constraint is that
+  the extractor recovers only 29 of 11,344 gold facts from 2+ sentences
+  (50.2% have 2+ evidence sentences in the gold annotations). This pilot
+  also sent only gold evidence sentences to the extractor (an oracle
+  setting). The text above is kept as the historical record.
 
 # DEC-021 — Extractor-Only Validation on TACRED (Public Closed-Schema Benchmark)
 
@@ -3128,6 +3136,12 @@ R3 is also reported under keys (a) and (c).
 
 DEC-031: PRE-REGISTERED (2026-09-24), cost approved; extraction not yet
 started at the time of this commit.
+
+DEC-031: RUN (2026-09-24) -- see EVID-046. 845 docs, 6,861 calls, $0.2111.
+  Pre-registered outcome: ORACLE-ONLY + INCOMPLETE -- the matching key does not
+  explain the DocRED failure (normalised key closes ~0% of the gap, oracle 7.3%);
+  only 29/11,344 gold facts are recovered from 2+ sentences. R3 F1: null;
+  R3 precision +0.19 to +0.29 (secondary).
 
 
 DEC-014 (evaluation protocol & leakage control)
