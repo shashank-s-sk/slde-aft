@@ -29,6 +29,7 @@ just says where each DEC currently stands and what's left.
 | 025 | Closed-Loop Retest With the Headline (epochs=5) Fine-Tuned Model | SCOPED, NOT YET RUN | DEC-019's closed-loop test (EVID-030) used the now-superseded epochs=3 seed-43 adapter, not the paper's actual epochs=5 headline model (EVID-040) — Claims #1 and #2 have never been jointly tested | Needs a rented GPU pod + explicit go-ahead to spend; scripts ready (`scripts/dec025_closedloop_*.py`) |
 | 029 | Higher-Powered Module Ablation (30 seeds) | DONE | Null for both modules; achieved MDE 0.070-0.086 F1 (EVID-045) | Written into Results Summary/main.tex |
 | 031 | DocRED at Scale With a Normalised Matching Key | DONE (EVID-046) | Matching key does not explain the failure (norm closes ~0% of gap, oracle 7.3%); only 29/11,344 gold facts recovered from 2+ sentences; R3 precision 0.06->0.25, F1 null | Supersedes DEC-020's pilot |
+| 032 | BioRED at Scale (extractor recall vs. corroboration) | PRE-REGISTERED, approved ($1.98) | — | Run extraction, then offline analysis |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3142,6 +3143,191 @@ DEC-031: RUN (2026-09-24) -- see EVID-046. 845 docs, 6,861 calls, $0.2111.
   explain the DocRED failure (normalised key closes ~0% of the gap, oracle 7.3%);
   only 29/11,344 gold facts are recovered from 2+ sentences. R3 F1: null;
   R3 precision +0.19 to +0.29 (secondary).
+
+---
+
+# DEC-032 — BioRED at Scale: Extractor Recall vs. Corroboration in a Second Public Domain (pre-registered 2026-09-24; NOT RUN until approved)
+
+## Why is this required?
+
+DEC-031 (EVID-046) found that on DocRED the binding constraint on PKB
+aggregation is extractor recall compounded across sentences, not the
+matching key. The extractions recover only 29 of 11,344 gold facts from
+2+ sentences, although 50.2% have 2+ evidence sentences in the text.
+This DEC tests whether the same pattern holds in a second public
+domain, biomedical abstracts. It also replaces the 15-abstract DEC-009
+pilot (EVID-024), and runs R3 on a second out-of-domain corpus. If the
+pattern repeats, that is a cross-domain finding; if it does not, that
+is equally informative.
+
+## Did the pilot use an oracle setting?
+
+**No evidence-sentence oracle, but the pilot is not comparable in
+another way.** DEC-009 sent each **whole abstract** (title + abstract)
+in one call per document and gave the model no gold information (no
+evidence sentences, no entities). That is not the kind of oracle
+DEC-020 used on DocRED. But whole-abstract extraction gives one source
+per document, so nothing could be aggregated. The pilot never tested
+the framework, only the extractor.
+
+Two further pilot facts to state plainly:
+- **Its prompt listed only 6 of BioRED's 8 relation types.**
+  Drug_Interaction and Conversion were missing (14 of 4,906 gold facts
+  in this corpus, 0.3%), so those facts were unreachable.
+- **Its strict evaluator required argument order.** BioRED relations
+  are unordered pairs.
+
+## Corpus
+
+- **All 500 Train + Dev abstracts:** 400 + 100, 5,462 sentences,
+  **4,906** unique gold facts (unordered concept pairs with a relation
+  type). The Test split is never used, per DEC-009's rule.
+- **Sentences:** the title is sentence 0. The abstract is split by the
+  fixed regex in `src/dec032_biored.py::SENTENCE_SPLIT`: a split after
+  `.`, `!` or `?` followed by whitespace and an upper-case letter, digit
+  or opening bracket, except after "e.g.", "i.e.", "et al.", "vs.",
+  "Fig.", "approx." or "ca.".
+- **Annotation-level corroboration, computed before any extraction
+  (zero cost).** BioRED has no evidence-sentence annotations, so the
+  measure is whether the two gold concepts are *co-mentioned* in a
+  sentence (from the annotated mention offsets):
+  - **35.1%** of gold facts are co-mentioned in 2+ sentences. This is
+    the annotation-level corroboration rate, against DocRED's 50.2%
+    evidence-based rate. It is a proxy: co-mention is necessary for a
+    sentence to state the relation, but it does not prove it does.
+  - **89.7%** are co-mentioned in at least one sentence. This is the
+    most that sentence-level extraction could ever reach.
+
+## Design (follows DEC-031)
+
+- **Primary setting: every sentence, one call each.** Prompt
+  `prompts/openie_biored_sent_v1.txt`. It is the pilot's prompt with
+  two changes: it says "one sentence" instead of "title and abstract",
+  and it lists all **8** relation types (see the diff in the commit).
+  The pilot's 6-type list was an omission, not a design choice.
+- **Pilot-continuity setting: whole abstract, one call each.** Pilot
+  prompt `openie_biored_v1.txt`, unchanged. Reported as no aggregation
+  only.
+- **Extractors:**
+  - `meta-llama/llama-3.1-8b-instruct`, the pipeline's extractor.
+  - **External baseline: `deepseek/deepseek-v3.2`** (DEC-002's
+    external baseline). Same prompts, same sentences, same abstracts,
+    so the numbers can be read against a much stronger model.
+  - Both use temperature 0 and max_tokens 1024.
+- **Crash-safe and parallel:** `scripts/dec032_biored_extract.py`,
+  with DEC-031's per-call cache and sharding. Unparsable output is
+  never re-requested.
+- **Arms**, all recomputed offline from the same extractions
+  (`scripts/dec032_biored_analyze.py`), for each extractor:
+  - **no aggregation:** every extracted triple admitted;
+  - **R2:** conservative Noisy-Or over every observation;
+  - **R3:** the same over distinct source sentences.
+
+  Both rules use confidence 1.0 per observation, shrinkage 0.5, and
+  admit at tau = 0.70 (2+ observations / 2+ distinct sentences). These
+  are the DocRED values; nothing is tuned. The matching key is DEC-031's
+  normalised key (b). DEC-031 showed the key is not the binding factor,
+  so a single deployable key is used. No conflict penalty (no BioRED
+  functional-predicate policy exists), so contested slots are
+  descriptive.
+- **Evaluators.** All work per document, with unordered argument
+  pairs and predictions deduplicated per gold fact:
+  - **PRIMARY: alias-aware exact.** The predicate equals the relation
+    type, and subject/object equal, after DEC-031 normalisation, *any*
+    annotated mention of the two gold concepts. BioRED annotates every
+    mention with its concept ID, so this is the principled analogue of
+    DEC-031's evaluator.
+  - **Secondary, as the pilot reported: strict and relaxed.**
+    - strict: exact match to each concept's first mention;
+    - relaxed containment: either string contains the other, the
+      pilot's heuristic.
+
+  Relaxed is not primary because containment matches short strings
+  loosely (e.g. "p53" inside any longer mention).
+- **Reported per extractor and arm:** P/R/F1 under all three
+  evaluators; admitted count; contested slots among candidates and
+  among admitted items; documents admitting anything.
+
+## Measured FIRST, before any aggregation result (per extractor, sentence level)
+
+1. Extractor recall: no aggregation, primary evaluator.
+2. Extraction-level corroboration: **G2** = gold facts the extractions
+   recover from 2+ distinct sentences, as a share of the 4,906 gold
+   facts, with a bootstrap CI.
+3. Annotation-level corroboration for contrast: 35.1% (2+ sentences);
+   89.7% (1+).
+4. **rho = G2 share / 35.1%**, how much of the corroboration available
+   in the text the extractions actually realise.
+5. The share of extracted triples whose predicate is one of the 8
+   BioRED relation types (DocRED: 49.2%).
+
+## Extractor-recall-constraint hypothesis (H_ER)
+
+"Aggregation that requires corroboration fails because the extractor
+rarely recovers the same fact from 2+ sources, not because the text
+lacks corroboration." Decided on Llama at sentence level, primary
+evaluator. Statistics: paired bootstrap over documents, 10,000
+resamples.
+
+- **CONFIRMED:** rho < 0.2 **and** R2 F1 < no-aggregation F1 with the
+  CI excluding 0. The extractions realise under a fifth of the
+  available corroboration, and aggregation loses.
+- **REFUTED, if either holds:**
+  - rho >= 0.5 and R2 F1 is still significantly below no aggregation.
+    Corroboration is recovered, yet aggregation fails, so the
+    constraint is elsewhere.
+  - R2 F1 is not below no aggregation (CI includes 0 or is above 0).
+    The predicted failure does not occur.
+- **PARTIAL:** 0.2 <= rho < 0.5 with R2 significantly below no
+  aggregation.
+- **Secondary, cross-extractor check (DeepSeek):** H_ER predicts that a
+  stronger extractor realises more corroboration. It predicts a higher
+  G2 share than Llama (CI of the difference excluding 0), and a smaller
+  R2-minus-no-aggregation F1 gap. This is reported as supporting or not
+  supporting H_ER. It does not decide the verdict.
+
+## R3: testable or untestable
+
+- **Primary R3 comparison:** R3 minus R2 F1, Llama, sentence level.
+  - Positive: CI excludes 0 above.
+  - Null: CI includes 0.
+  - Negative: CI excludes 0 below.
+- **Pre-registered secondary: R3 minus R2 precision.** After DEC-031,
+  where the precision gain appeared but was not the pre-registered
+  test, it is named in advance here.
+- **Untestable:** zero within-sentence duplicate observations. Then R3
+  is identical to R2 by construction, and this is reported as
+  "untestable here", not as a null.
+- **Too thin to interpret:** R2 and R3 admit fewer than 20 items each.
+  Reported with the counts, and no direction is claimed.
+- The same comparisons are reported for DeepSeek.
+
+## Cost / time estimate (DEC-031 per-call figures)
+
+- Llama: $0.0000308/call, from DEC-031 ($0.2111 / 6,861).
+- DeepSeek: 9.7x Llama per call, the ratio measured on full-scale CaRB
+  ($0.0000860 vs. $0.0000089), giving $0.000299/call.
+- Whole-abstract calls: $0.0000339 (Llama, measured in the pilot) and
+  $0.000329 (DeepSeek).
+- Throughput: DEC-031 ran 6,861 calls in 43 min with 3 processes (~160
+  calls/min). DeepSeek's latency on CaRB was similar to Llama's (mean
+  3.5 s vs. 3.3 s).
+
+| Component | Calls | Cost |
+|---|---:|---:|
+| Llama, sentences | 5,462 | $0.17 |
+| DeepSeek, sentences | 5,462 | $1.63 |
+| Llama, whole abstracts | 500 | $0.02 |
+| DeepSeek, whole abstracts | 500 | $0.16 |
+| **Total** | **11,924** | **~$1.98** |
+
+About 75 min with 3 processes. The analysis is offline and zero-cost.
+
+## Status
+
+DEC-032: PRE-REGISTERED (2026-09-24). User approved the full design and
+~$1.98 cost (2026-09-24); extraction not yet started at the time of this commit.
+
 
 
 DEC-014 (evaluation protocol & leakage control)
