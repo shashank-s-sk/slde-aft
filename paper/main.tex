@@ -400,7 +400,7 @@ closed loop of this kind evaluated against the rigor its component
 claims require: a formal analysis of the aggregation rule's properties
 and failure modes, tested against an offline replay of two independent
 real-data snapshots (Section~\ref{sec:formal-analysis}); a
-module-level ablation across two scales and five seeds
+module-level ablation across two scales and up to thirty seeds
 (Section~\ref{sec:results-ablation}); a multi-seed statistical
 protocol with confidence intervals and explicit power limits, stated
 rather than implied
@@ -1202,9 +1202,10 @@ specific denominator is named next to it rather than left implicit.
 \subsection{Statistical Protocol}
 \label{sec:setup-statistics}
 
-\paragraph{Five-seed confirmatory comparisons.} The fine-tuning and
-closed-loop-ablation results use five seeds, $42$--$46$
-% [EVID-020, EVID-039, EVID-040, EVID-044]
+\paragraph{Multi-seed confirmatory comparisons.} The fine-tuning
+results and the $N=20$ ablation use five seeds, $42$--$46$; the $N=50$
+ablation uses thirty, $42$--$71$
+% [EVID-020, EVID-039, EVID-040, EVID-044, EVID-045]
 , reporting the mean and \emph{sample} standard deviation ($\text{ddof}=1$)
 % [scripts/dec006_5seed_stats.py]
 across seeds, a one-sample $t$-test against a fixed base-model score, and
@@ -1527,55 +1528,90 @@ $0.418$ and did not increase monotonically
 
 Table~\ref{tab:ablation-n50} compares the full pipeline with variants
 lacking the feedback controller or using max-merge in place of the
-Noisy-OR PKB, at $N=50$ products (10 held-out test products) over five
-seeds. Neither variant differed significantly from the full pipeline
-in held-out test $F_1$. The 95\% CIs of the differences spanned
-$-0.245$ to $+0.156$ (no feedback controller) and $-0.146$ to $+0.213$
-(max-merge), so the data are compatible with no effect and with
-differences of up to about $0.2$ $F_1$ in either direction. The same
-conclusion held at $N=20$ (4 test products; all $p \ge 0.31$) and for
-training $F_1$ at both scales (Table~\ref{tab:s3-ablation-full}). The
-direction of the difference for the variant without the feedback
-controller reversed between scales ($+0.142$ at $N=20$; $-0.045$ at
-$N=50$), whereas the max-merge variant scored higher than the full
-pipeline at both scales ($+0.147$; $+0.033$)
+Noisy-OR PKB, at $N=50$ products (10 held-out test products) over
+thirty seeds (42--71): the five seeds of the original run plus 25
+added to raise statistical power, with the design otherwise unchanged
+% [EVID-039; EVID-045; Decision log.md, DEC-029]
+. Neither variant differed significantly from the full pipeline in
+held-out test $F_1$.
+
+Removing the feedback controller lowered held-out $F_1$ by $0.032$
+(95\% CI $[-0.090, 0.023]$, $p=0.28$), a null result. Removing the
+Noisy-OR PKB raised it by $0.034$ (95\% CI $[-0.010, 0.082]$,
+$p=0.16$). The point estimate therefore favours removing the PKB, and
+the interval only just includes zero. This agrees with the
+aggregation-rule replay, in which max-merge matched or exceeded the
+Noisy-OR rule (Section~\ref{sec:formal-analysis-empirical}), and with
+the rival ceiling (Proposition~\ref{prop:ceiling}), which blocks
+contested single-valued slots that max-merge admits. On this evidence
+the paper cannot claim that the probabilistic knowledge base improves
+held-out $F_1$
+% [EVID-045; EVID-041]
+.
+
+The PKB figure uses each run's first pass. The run protocol, inherited
+from the original ablation, re-runs any configuration--seed pair in
+which at least 20\% of extraction calls fail (unparsable model output;
+every API call returned HTTP 200), retrying only the failed calls. Four
+of the 75 new runs triggered it. Three of them were runs without the
+PKB, and no full-pipeline run triggered it. In all three the retry
+raised held-out $F_1$, so the rule was applied unevenly in the
+direction of the observed effect. With retries included, the PKB
+difference is $+0.048$ (95\% CI $[-0.003, 0.101]$, $p=0.087$), still
+not significant. The feedback-controller result is identical under
+both versions
+% [EVID-045]
+.
+
+With thirty seeds, a paired $t$-test has 80\% power at $\alpha=0.05$
+for a standardized effect of $d=0.53$. Given the observed variance,
+this is an absolute difference of $0.070$--$0.086$ $F_1$ (range over
+both comparisons, using either the ablated configuration's SD or the
+SD of the paired differences), compared with about $0.29$ at five
+seeds. The null therefore rules out an effect of either component of
+roughly $0.08$ $F_1$ or larger, not only a large one. It does not rule
+out smaller effects
+% [EVID-045; AUDIT.md]
+. The five-seed results at $N=20$ and $N=50$
+(Table~\ref{tab:s3-ablation-full}) point the same way: all $p \ge 0.31$,
+and the max-merge variant scored higher than the full pipeline at both
+scales ($+0.147$; $+0.033$)
 % [EVID-020; EVID-039]
 .
 
 \begin{table}[htbp]
 \centering
-\caption{Held-out test $F_1$ of ablated configurations at $N=50$ (five
+\caption{Held-out test $F_1$ of ablated configurations at $N=50$ (thirty
 seeds; paired comparisons with the full pipeline).}
 \label{tab:ablation-n50}
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
-Configuration & $F_1$, mean (SD) & $\Delta F_1$ [95\% CI] & $t(4)$ & $p$ & Wilcoxon $p$ \\
+Configuration & $F_1$, mean (SD) & $\Delta F_1$ [95\% CI] & $t(29)$ & $p$ & Wilcoxon $p$ \\
 \midrule
-Full pipeline & 0.345 (0.104) & --- & --- & --- & --- \\
-Without feedback controller & 0.301 (0.193) & $-0.045\ [-0.245, 0.156]$ & $-0.62$ & 0.571 & 0.625 \\
-Without PKB (max-merge) & 0.378 (0.195) & $+0.033\ [-0.146, 0.213]$ & $0.51$ & 0.635 & 1.000 \\
+Full pipeline & 0.363 (0.163) & --- & --- & --- & --- \\
+Without feedback controller & 0.331 (0.153) & $-0.032\ [-0.090, 0.023]$ & $-1.09$ & 0.283 & 0.382 \\
+Without PKB (max-merge) & 0.398 (0.163) & $+0.034\ [-0.010, 0.082]$ & $1.43$ & 0.163 & 0.205 \\
+\quad retry-inclusive & 0.411 (0.161) & $+0.048\ [-0.003, 0.101]$ & $1.77$ & 0.087 & 0.146 \\
 \bottomrule
 \end{tabular}
-% [EVID-039; SD converted from EVID-039's logged population SD to
-% sample SD -- see the note at the end of this subsection]
+% [EVID-045; scripts/dec029_analyze.py]
 \end{table}
 
-\noindent\emph{Note.} $\Delta$, difference from the full pipeline. $t$
-statistics and CIs were derived from the logged paired mean differences
-and $p$-values. The unstructured-only and structured-only variants have
-no held-out evaluation by design (Table~\ref{tab:s3-ablation-full}).
-With five seeds, a paired $t$-test has 80\% power at $\alpha=0.05$ only
-for standardized effects of about $1.7$ SD; the experiment therefore
-excludes only large effects of either component.
+\noindent\emph{Note.} $\Delta$, difference from the full pipeline; CIs
+from a paired bootstrap over seeds (10,000 resamples). The PKB row uses
+first-pass results. The retry-inclusive row applies the inherited
+$\geq$20\%-failed-call retry rule, which was triggered unevenly across
+configurations (see text). The unstructured-only and structured-only
+variants were not part of this extension and have no held-out
+evaluation by design (Table~\ref{tab:s3-ablation-full}).
 
 \paragraph{Standard-deviation correction (verified this session, stated
 plainly rather than silently applied).} EVID-039's own table reports
 these $F_1$ standard deviations as ``pop.\ std'' (population SD,
 $\text{ddof}=0$) -- e.g.\ $0.0934$ for the full pipeline's held-out test
-$F_1$, not the $0.104$ sample SD ($\text{ddof}=1$) shown in
-Table~\ref{tab:ablation-n50} above. The values in
-Table~\ref{tab:ablation-n50} and Table~\ref{tab:s3-ablation-full} are
-the population values converted to sample SD ($\times\sqrt{n/(n-1)}$,
+$F_1$, not the $0.104$ sample SD ($\text{ddof}=1$) shown for the
+five-seed $N=50$ run in Table~\ref{tab:s3-ablation-full}. The values in
+Table~\ref{tab:s3-ablation-full} are the population values converted to sample SD ($\times\sqrt{n/(n-1)}$,
 $n=5$); recomputed independently this session and confirmed to match
 ($0.0934 \times \sqrt{5/4} = 0.1044 \approx 0.104$). This does not
 change any $F_1$ mean, $t$-statistic, or $p$-value already reported,
@@ -2120,19 +2156,18 @@ alternative accounts of the same three results.
 \subsection{What the Ablations Do and Do Not Show}
 \label{sec:discussion-ablations}
 
-Two distinct null findings both concern whether the Noisy-Or PKB
+Two distinct results both concern whether the Noisy-Or PKB
 mechanism helps the pipeline, and neither should be read as stronger
 than it is. First, the module-level ablation
-(Section~\ref{sec:results-ablation}) found no significant difference
-between the full pipeline and a max-merge variant at $N=20$ or $N=50$,
-over five seeds. With only five seeds, this design has 80\% power at
-$\alpha=0.05$ only for standardized effects of about $1.7$ SD,
-equivalent to roughly $0.29$--$0.30$ absolute $F_1$ given the observed
-variance
-% [AUDIT.md; Decision log.md, DEC-023/DEC-024]
--- a large effect. The null result rules out an effect of that size or
-larger; it does not establish that no smaller, still practically
-meaningful effect exists. Second, and separately, DEC-026's own
+(Section~\ref{sec:results-ablation}), extended to thirty seeds, found
+no significant difference between the full pipeline and a max-merge
+variant ($+0.034$ for max-merge, 95\% CI $[-0.010, 0.082]$). At thirty
+seeds the design detects effects of about $0.07$--$0.09$ absolute
+$F_1$ with 80\% power, against about $0.29$ at five seeds
+% [EVID-045; AUDIT.md]
+. So an effect of that size in the PKB's favour is ruled out, but a
+smaller one is not, and the point estimate points the other way.
+Second, and separately, DEC-026's own
 max-merge baseline (R1) numerically exceeded the published rule (R2) in
 $F_1$ when each rule was evaluated at its own independently-selected
 threshold (Section~\ref{sec:formal-analysis-empirical}), matching the
@@ -2141,11 +2176,19 @@ when both rules were compared at the single, shared $\tau=0.88$
 operating threshold instead (Table~\ref{tab:dec026-bootstrap-tau088}):
 R1's precision loss and recall gain at that threshold are each
 individually significant but cancel in $F_1$, whose confidence interval
-includes zero on both datasets. Taken together, these two results do
-not show that the Noisy-Or PKB mechanism is unnecessary; they show that
-this project's tests, at the sample sizes and threshold-selection
-procedures used, have not detected a case where removing it reliably
-helps either.
+includes zero on both datasets. Taken together, these results do
+not show that the Noisy-Or PKB mechanism is unnecessary or harmful:
+neither comparison reaches significance. They do mean that this paper
+cannot claim the mechanism improves held-out $F_1$: every comparison
+favours max-merge or finds no difference. The rival ceiling
+(Proposition~\ref{prop:ceiling}) offers one mechanism that can hold
+back recall under the Noisy-Or rule but not under max-merge, although
+it has not been shown to cause the ablation difference. The feedback
+controller's ablation is a plain null ($-0.032$, 95\% CI
+$[-0.090, 0.023]$): neither a benefit nor a cost of about $0.08$ $F_1$
+or more is supported
+% [EVID-045]
+.
 
 \subsection{Why Fine-Tuning Raised Precision but Lowered Recall}
 \label{sec:discussion-finetuning}
@@ -2291,8 +2334,9 @@ Iteration 4 (guided) & 0.5088 & 0.3551 & 0.4183 & 657 \\
 
 \begin{table}[htbp]
 \centering
-\caption{Full ablation results: mean (SD) over five seeds, and paired
-comparisons with the full pipeline.}
+\caption{Five-seed ablation results at $N=20$ and $N=50$: mean (SD)
+and paired comparisons with the full pipeline (the thirty-seed $N=50$
+result is in Table~\ref{tab:ablation-n50}).}
 \label{tab:s3-ablation-full}
 \begin{tabular}{@{}lll@{}}
 \toprule

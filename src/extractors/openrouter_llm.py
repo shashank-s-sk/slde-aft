@@ -10,11 +10,8 @@ import json
 import re
 import time
 
-import requests
-
 from src.datasets.product_generator import ALLOWED_PREDICATES
-
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+from src.extractors.openrouter_http import post_with_network_retry
 
 
 def build_prompt(text: str, locked_context=None, feedback_hint: str | None = None) -> str:
@@ -97,7 +94,7 @@ def call_openrouter_for_triples(
     }
 
     t0 = time.perf_counter()
-    r = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=timeout)
+    r, network_retries, network_error = post_with_network_retry(headers, payload, timeout)
     latency_s = time.perf_counter() - t0
 
     result = {
@@ -107,9 +104,14 @@ def call_openrouter_for_triples(
         "cost_usd": None,
         "prompt_tokens": None,
         "completion_tokens": None,
-        "http_status": r.status_code,
+        "http_status": r.status_code if r is not None else None,
         "error": None,
+        "network_retries": network_retries,
     }
+
+    if r is None:
+        result["error"] = network_error
+        return result
 
     try:
         response_json = r.json()

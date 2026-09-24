@@ -17,9 +17,8 @@ import re
 import time
 from pathlib import Path
 
-import requests
+from src.extractors.openrouter_http import post_with_network_retry
 
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 DEFAULT_PROMPT_TEMPLATE = Path("prompts/openie_carb_v1.txt").read_text(encoding="utf-8")
 
 
@@ -52,13 +51,17 @@ def extract_openie_triples(
     }
 
     t0 = time.perf_counter()
-    r = requests.post(OPENROUTER_URL, headers=headers, json=payload, timeout=timeout)
+    r, network_retries, network_error = post_with_network_retry(headers, payload, timeout)
     latency_s = time.perf_counter() - t0
 
     result = {
-        "triples": [], "error": None, "http_status": r.status_code,
-        "latency_s": latency_s, "cost_usd": None,
+        "triples": [], "error": None, "http_status": r.status_code if r is not None else None,
+        "latency_s": latency_s, "cost_usd": None, "network_retries": network_retries,
     }
+
+    if r is None:
+        result["error"] = network_error
+        return result
 
     try:
         response_json = r.json()
