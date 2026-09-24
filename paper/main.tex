@@ -1217,11 +1217,11 @@ reached when every one of the 5 paired differences has the same sign
 (the maximum-strength result available, not an artifact of a weak
 effect)
 % [EVID-040]
-; this floor is reached in both the earlier EVID-040 fine-tuned-vs-base
-comparison (5/5 seeds positive) and DEC-027's own secondary,
-descriptive whole-set comparison (EVID-044, also 5/5 seeds positive),
-and should not be read as a weaker result than the accompanying
-$t$-tests in either case.
+; this floor is reached in DEC-027's secondary, descriptive
+whole-set comparison (EVID-044, 5/5 seeds positive) and in the
+superseded, tuned-on-test EVID-040 comparison, and in both cases it
+reflects the $n=5$ limit rather than a weaker effect than the
+accompanying $t$-tests.
 
 \paragraph{Tuning-leakage caveat (AUDIT.md A2) and its resolution
 (DEC-027).} The epoch/LoRA hyperparameter grid used to select the
@@ -1243,8 +1243,8 @@ pre-registered leakage-guard unit test
 training before any GPU time is spent if a held-out product is found
 in the training data
 % [Decision log.md, DEC-027; EVID-044]
-. The leakage-free replication's primary, pre-registered test is a
-null (95\% CI on the negative side) and supersedes the earlier
+. The leakage-free replication's primary, pre-registered test is
+negative (95\% CI excludes zero on the negative side) and supersedes the earlier
 $p=0.0028$ result as this paper's headline fine-tuning claim
 (Section~\ref{sec:results-finetuning});
 Section~\ref{sec:results}'s citation of the earlier $p=0.0028$ result
@@ -1269,7 +1269,8 @@ this project's own established convention for separating seed-level
 variance from test-set-level uncertainty
 % [Decision log.md, DEC-027; EVID-044]
 ; Section~\ref{sec:results-finetuning} reports this as the primary
-fine-tuning result, a null with a negative-leaning CI.
+fine-tuning result, which is negative (95\% CI excludes zero on the
+negative side).
 
 \paragraph{Null-result convention.} Applied consistently across DEC-005,
 DEC-023, DEC-024's design, and DEC-026: $p \ge 0.05$ (or, for a
@@ -1605,10 +1606,18 @@ On the validation split, a seed-42 epoch search selected 8 epochs
 (rank 16, $\alpha=32$, learning rate $2\times10^{-4}$; $F_1=0.744$,
 ahead of 5 epochs at $F_1=0.722$ and 3 epochs at $F_1=0.646$), and a
 follow-up LoRA search at 8 epochs found no configuration exceeding
-this default beyond the pre-registered 0.01 tie tolerance (rank 32,
-learning rate $3\times10^{-4}$ tied at $F_1=0.734$ and was not
-preferred, per the pre-registered tie-break toward the simpler
-configuration)
+this default (rank 32 and learning rate $3\times10^{-4}$ both reached
+$F_1=0.734$, $0.011$ lower, so the pre-registered $0.01$ tie rule was
+not triggered)
+% [EVID-044]
+. Validation recall was flat across every configuration with at least
+5 epochs ($R=0.593$--$0.600$, i.e.\ 83--84 of 140 gold triples), so
+selection was decided by precision alone: the top three configurations
+were within $0.011$ $F_1$ on 20 products, separated only by the number
+of false positives (0 vs.\ 5). Selecting on $F_1$ therefore chose the
+most conservative adapter, the one that made the fewest validation
+predictions (83), and on 20 products the choice among the top
+configurations is close to arbitrary
 % [EVID-044]
 . On the untouched test split, a fresh base-model evaluation scored
 $P=0.568$, $R=0.464$, $F_1=0.511$; the winning configuration, trained
@@ -1646,7 +1655,7 @@ the five seeds) over the 40 test products, 10,000 resamples -- gives a
 point estimate of $-0.021$, 95\% CI $[-0.042, -0.003]$: the interval
 excludes zero on the negative side, and the pre-registered positive
 criterion (CI excludes zero \emph{and} point estimate $\geq 0.03$) is
-not met. This is a null result on this paper's primary,
+not met. This is a negative result on this paper's primary,
 pre-registered fine-tuning test, and per the DEC-027 pre-registration
 it supersedes the earlier 8-product result below as the headline
 fine-tuning claim
@@ -1655,25 +1664,49 @@ fine-tuning claim
 
 A secondary, descriptive comparison of whole-test-set $F_1$ against the
 same base score is, by contrast, positive ($t(4)=5.37$, $p=0.006$;
-Wilcoxon $p=0.063$, the $n=5$ floor). The two tests disagree because
-they weight the test data differently: the primary bootstrap weights
-every test product equally, while the whole-set comparison implicitly
-weights products by how many triples they contribute. Because recall
-fell in every seed while precision rose sharply
-(Section~\ref{sec:discussion-finetuning}), the net per-product effect
-is negative for a majority of test products even though the pooled
-triple count still favors the fine-tuned model. The pre-registration
-specified the per-product bootstrap as primary for exactly this
-reason, so the null is reported as this paper's result rather than the
-more favorable pooled comparison
+Wilcoxon $p=0.063$, the $n=5$ floor). Every test product has exactly
+7 gold triples, so the two tests do not disagree because of gold
+weighting. They disagree because of where the change falls. The base
+model scores $F_1=0$ on 21 of the 40 products while still making 134
+false positives there. The fine-tuned model cuts these to about 33,
+often by predicting nothing for the product. Pooled precision credits
+each removed false positive, but those products stay at $F_1=0$, so the
+per-product mean does not move. On the 19 products the base model gets
+partly right, true positives fall from 130 to 117.6 (seed mean) while
+false positives there were already near zero (3 to 0.6), so nothing
+offsets the recall loss. Twenty-eight products are unchanged, nine are
+worse (about 1.4 true positives lost each), and three are better. The
+pre-registration specified the per-product bootstrap as primary, so the
+negative result is reported as this paper's result, not the more
+favorable pooled comparison
+% [EVID-044]
+.
+
+The pooled figures above use the evaluator's convention of scoring all
+products' predictions as one global set, in which an identical
+incorrect triple predicted for several products counts as a single
+false positive. Scoring each product separately and summing counts it
+once per product. True positives are identical under both conventions
+(130 for the base model), but the base model repeats 38 incorrect
+triples across products (mostly ones with a generic subject such as
+``smartwatch device''), so its false positives are 99 under the global
+convention and 137 under the per-product convention. Per-product
+counting gives base $F_1=0.475$ against a seed mean of $0.546$
+($+0.071$, $t(4)=7.01$, $p=0.002$); the global convention reported in
+Table~\ref{tab:finetune-dec027} gives $0.511$ against $0.553$
+($+0.042$, $p=0.006$). The primary bootstrap already scores products
+separately and is unaffected
 % [EVID-044]
 .
 
 \noindent\emph{Note.} The base model is decoded greedily and yields a
 single deterministic score; comparisons with it are one-sample $t$-tests.
 
-\paragraph{Earlier, tuning-leakage-affected exploration (historical
-context, not the headline result).} Mistral-7B-Instruct-v0.3 was
+\paragraph{Earlier exploration, tuned on its own test set
+(superseded; historical context only).} The results in this paragraph
+selected hyperparameters and then tested significance on the same
+8-product test set. They are superseded by the negative result above
+and are not a current finding. Mistral-7B-Instruct-v0.3 was
 fine-tuned with QLoRA on the same 90 synthetic examples and evaluated
 on an earlier, 8-product test set. The base model (greedy decoding)
 predicted 46 triples, 7 of them correct ($P=0.152$, $R=0.125$,
@@ -1689,9 +1722,14 @@ reaching $1.000$ at 5 and 8 epochs, while recall stayed at $0.125$
 alternative LoRA rank or learning rate exceeded the default
 configuration (rank 16, $\alpha=32$, learning rate $2\times10^{-4}$;
 Table~\ref{tab:s5-lora-search}), and recall was $0.125$ in all nine
-training runs. Over five seeds (Table~\ref{tab:finetune-5seed};
-Figure~\ref{fig:finetuning}b), the 5-epoch configuration exceeded the
-base model in every seed ($\Delta F_1=+0.064$, 95\% CI
+training runs. This flat recall does not show that fine-tuning leaves
+recall unchanged. The base model found only 7 of 56 gold triples, so a
+loss of about 10\% of true positives, the size measured in DEC-027,
+is less than one triple and could not appear on this set. Over five
+seeds (Table~\ref{tab:finetune-5seed};
+Figure~\ref{fig:finetuning}b), and with the configuration tuned on the
+same test set, the 5-epoch configuration exceeded the base model in
+every seed ($\Delta F_1=+0.064$, 95\% CI
 $[0.037,0.091]$, $t(4)=6.57$, $p=0.003$), whereas the 3-epoch
 configuration exceeded it in four of five seeds ($\Delta F_1=+0.044$,
 95\% CI $[-0.005,0.093]$, $t(4)=2.51$, $p=0.066$). The two
@@ -1703,7 +1741,7 @@ epochs with seed 42, the model predicted 7 triples, all correct
 
 \begin{table}[htbp]
 \centering
-\caption{Five-seed fine-tuning results on the earlier 8-product test set (historical; superseded by Table~\ref{tab:finetune-dec027}).}
+\caption{Five-seed fine-tuning results on the earlier 8-product test set, with hyperparameters tuned on that same test set (historical; superseded by the negative result in Table~\ref{tab:finetune-dec027}).}
 \label{tab:finetune-5seed}
 \begin{tabular}{@{}lrrrrrr@{}}
 \toprule
@@ -2122,8 +2160,8 @@ teach the model to state already-discoverable facts more reliably and
 suppress spurious alternatives -- raising precision -- but it supplies
 no exposure to facts the extractor never found in the first place,
 which would be needed to raise recall. In the earlier, 8-product
-exploration, this appeared as precision gains with recall held exactly
-flat: at 5 epochs with seed 42, the fine-tuned model predicted 7
+exploration (tuned on its own test set and superseded), this appeared
+as precision gains with recall held exactly flat: at 5 epochs with seed 42, the fine-tuned model predicted 7
 triples, all correct, and the base model predicted 46 triples, of
 which the same 7 were correct (Section~\ref{sec:results-finetuning}) --
 the fine-tuned model's true positives were a subset of the base
@@ -2139,14 +2177,16 @@ on the PKB's own high-confidence subset narrows what the model states,
 which suppresses false positives (raising precision) but can also
 suppress some previously-recovered true positives that fall outside
 the narrower, PKB-derived training distribution (lowering recall) --
-and the larger, properly held-out test set appears to have been needed
-to detect the recall cost at all: with only 8 test products and 7
-base-model true positives, a small recall loss on a subset of products
-was not resolvable. This recall cost is also the direct explanation for
-why the primary, per-product bootstrap (Section~\ref{sec:results-finetuning})
-is negative while the pooled whole-set comparison is positive: the
-precision gain dominates the pooled triple count, but the recall loss
-outweighs it for the median individual product. These accounts are
+and the larger, properly held-out test set was needed to detect the
+recall cost at all: with 7 base-model true positives, a loss of about
+10\% of true positives is less than one triple. The selection
+procedure also favored this outcome: validation recall was flat across
+configurations, so $F_1$-based selection chose on precision alone and
+picked the most conservative adapter. The recall cost explains the
+negative per-product bootstrap (Section~\ref{sec:results-finetuning}).
+The positive pooled comparison comes mainly from false positives
+removed on products where the base model had no correct triples, which
+changes pooled precision but not those products' per-product $F_1$. These accounts are
 consistent with the available per-seed detail but do not, on their
 own, rule out other explanations for the same pattern.
 

@@ -4198,10 +4198,25 @@ pattern used here.
 - Grid search (validation split, seed 42 only): epochs in {2,3,5,8} ->
   winner **epochs=8** (val F1=0.7444, beating epochs=5's 0.7217 and
   epochs=3's 0.6459); LoRA grid at epochs=8 (rank in {8,32}, lr in
-  {1e-4,3e-4}) -> winner **default (rank=16/alpha=32/lr=2e-4)**, tied
-  with rank=32/lr=3e-4 at F1=0.7336 within the pre-registered 0.01
-  tie-tolerance, resolved to the simpler default config per the
-  pre-registered tie-break rule.
+  {1e-4,3e-4}) -> winner **default (rank=16/alpha=32/lr=2e-4)** at
+  val F1=0.7444, outright (not a tie): rank=32 and lr=3e-4 both reached
+  F1=0.7336, rank=8 0.7273, lr=1e-4 0.6694. *Correction (2026-09-24):
+  an earlier version of this entry said the default "tied with
+  rank=32/lr=3e-4 within the pre-registered 0.01 tie-tolerance" and was
+  resolved by the tie-break rule. That was wrong: the gap is 0.0108,
+  just outside 0.01, so the tie-break rule never applied. The winner is
+  unchanged because the default had the highest validation F1.*
+- **Validation selection was decided by precision alone.** Recall on
+  the 20-product validation split (140 gold triples) is flat across
+  every configuration with >=5 epochs (0.593-0.600, i.e. 83-84 of 140
+  true positives); only epochs=2 differs (0.564). The top three
+  configurations are within 0.011 F1 of each other (0.7444, 0.7336,
+  0.7336), and the winner was separated from the runners-up only by
+  its false-positive count on validation (0 vs. 5). F1-based selection
+  therefore amounted to picking the most conservative adapter: the
+  winner made the fewest validation predictions of any configuration
+  (83; P=1.000). On 20 products, a margin this small makes the choice
+  among the top configurations close to arbitrary.
 - Confirmatory run: the winning config (epochs=8, rank=16/alpha=32/lr=2e-4)
   trained at seeds 42-46 (seed 42 reused from the grid, not retrained),
   each evaluated exactly once on the 40-product test split. Fresh base
@@ -4221,6 +4236,42 @@ pattern used here.
 | 46 | 0.7041 | 0.4250 | 0.5301 |
 
 **Mean whole-set F1 = 0.5528 (sample SD 0.0175)** vs. base F1=0.5108.
+
+**Micro counting convention, and the 99 vs. 137 false-positive gap
+(resolved 2026-09-24).** The micro numbers above (and in
+`run_summary.json`) come from `scripts/dec006_evaluate_adapter.py`,
+which pools every product's predictions into **one global set** before
+scoring (`src/evaluator.py::compute_precision_recall_f1` builds
+`pred_set`/`gold_set` over all 40 products). An identical wrong triple
+predicted for several products therefore counts as **one** false
+positive. Scoring each product separately and summing (the same
+per-product convention the primary bootstrap uses) counts it once per
+product. True positives are identical under both conventions (130
+base; 116-119 per seed), because all 280 gold triples are distinct.
+The whole gap is repeated false positives across products: the base
+model repeats 38 wrong triples, mostly ones with a generic or truncated
+subject (e.g. "smartwatch device", "technova smartphone max 1"). So
+137 per-product FPs become 99 globally (137 - 38 = 99). The per-seed
+gaps close the same way (4, 0, 4, 9, 11 repeats). No product has
+duplicate triples within its own predictions. Both conventions:
+
+| Model | Global-set (reported) P / F1 | Per-product-sum P / F1 |
+|---|---|---|
+| Base | 0.5677 / 0.5108 (FP=99) | 0.4869 / 0.4753 (FP=137) |
+| Seed 42 | 0.8722 / 0.5617 | 0.8467 / 0.5564 |
+| Seed 43 | 0.8939 / 0.5728 | 0.8939 / 0.5728 |
+| Seed 44 | 0.8207 / 0.5600 | 0.7987 / 0.5548 |
+| Seed 45 | 0.7733 / 0.5395 | 0.7296 / 0.5285 |
+| Seed 46 | 0.7041 / 0.5301 | 0.6611 / 0.5174 |
+| **Seed mean** | **0.5528** (+0.0420; t=5.370, p=0.0058) | **0.5460** (+0.0707; t=7.014, p=0.0022) |
+
+The global convention flatters the base model more than the fine-tuned
+ones, because the base model repeats the most wrong triples across
+products. Under per-product counting the micro gain is larger (+0.071
+vs. +0.042). The reported micro figures stay on the global convention
+for continuity with every earlier DEC-006/022 result. Neither convention
+touches the primary: the paired bootstrap already scores each product
+separately.
 
 **Primary, pre-registered test — paired bootstrap over the 40 test
 products** (mean per-product F1 difference, fine-tuned minus base,
@@ -4255,10 +4306,30 @@ headline evidence.
 more favorable number:** the primary (per-product, macro) bootstrap is
 significantly negative, while the secondary (whole-set, micro)
 comparison is significantly positive. Both are computed correctly from
-the same underlying predictions; they disagree because they weight the
-data differently (macro: every product counts equally; micro: every
-predicted/gold triple counts equally, so products with more triples
-dominate). The pre-registration named the paired bootstrap as primary
+the same underlying predictions. They disagree because of *where* each
+statistic registers the change (per-product decomposition, computed
+2026-09-24 from the same `predictions.json` files; every product has
+exactly 7 gold triples, so gold weighting plays no part):
+- **Micro rises because false positives disappear on products the base
+  model already failed.** The base model scores F1=0 on 21 of the 40
+  products. It still predicts there, making 134 false positives
+  (per-product count); the fine-tuned seeds cut this to 33.2 on
+  average, often by predicting nothing for the product (70 of 200
+  seed-product cells are empty). Pooling triples, micro precision
+  credits every one of those removed false positives. Per product,
+  those 21 products go from F1=0 to F1=0, so macro does not move.
+- **Macro falls because of the recall loss on the products the base
+  model gets right.** On the 19 products where the base model scores
+  above zero, true positives fall from 130 to 117.6 (seed mean), and
+  false positives there were already near zero (3 -> 0.6). So nothing
+  offsets the lost true positives. 28 of 40 products are unchanged
+  (median per-product difference = 0), 9 are worse (each losing ~1.4
+  true positives on average), and 3 are better.
+
+*Correction (2026-09-24): an earlier version of this paragraph said
+micro and macro diverge because "products with more triples
+dominate." That was wrong: every test product has exactly 7 gold
+triples.* The pre-registration named the paired bootstrap as primary
 specifically to avoid exactly this kind of aggregate-level result being
 taken at face value, so the primary's null stands as the reported
 result.
@@ -4269,30 +4340,35 @@ result.
   moves precision up sharply (0.568 -> 0.70-0.89 across seeds) but
   **recall goes down, not up** (0.464 base vs. 0.414-0.425 across all
   5 seeds — every single seed has lower recall than the base model).
-  This is the same precision-dominant pattern noted in every prior
-  fine-tuning result in this project (EVID-034/037/038/040), but here,
-  with a properly separated validation/test split and a much larger
-  (280 vs. 56 triple) test set, the recall cost is visible clearly
-  enough to show it is not offset by the precision gain on a
-  per-product basis for a meaningful share of the 40 test products,
-  even though it is offset in the aggregate (micro) count.
-  This is the direct mechanistic explanation for why the primary and
-  secondary tests disagree: aggregate/micro F1 is pulled up by the
-  precision gain on products with many predicted triples, while the
-  per-product/macro view — which the pre-registration deliberately
-  chose as primary — shows the recall cost outweighs the precision
-  gain for the median product.
+  This is the first recall drop that is **consistent across all seeds
+  on a leakage-free split**. It is not the first time recall has
+  moved in this project: EVID-026 (0.30 -> 0.17), EVID-027 (0.30 ->
+  0.27, later superseded for leakage by EVID-028), and EVID-028 seed 44
+  (0.125 -> 0.089) all showed drops. On the 8-product set used by
+  EVID-034/037/038/040, recall sat at 0.125 in almost every run
+  because the base model found only 7 of 56 gold triples. A loss of
+  about 10% of true positives, the size seen here, is less than one
+  triple out of 7, so that set could not show it. With 130 base true
+  positives on 280 gold, the loss is 11-14 triples and visible in every
+  seed. The per-product decomposition in the Result section links this
+  recall cost to the negative primary.
+- **The selection procedure pushed toward this outcome.** Validation
+  recall was flat across configurations (see Experiment), so F1-based
+  selection chose on precision alone and picked the most conservative
+  adapter, the one that predicts least. On the test split, that
+  conservatism shows up as the recall loss above.
 - **Directly answers AUDIT.md A2 as intended:** separating
   hyperparameter selection from confirmation, on a held-out test split
   neither grid search nor the confirmatory run ever touched, changes
-  the conclusion. EVID-040's positive result cannot be shown to have
-  been an artifact of test-set-specific tuning in any strict sense
-  (grid search used the validation split, not the test split, so there
-  is no direct leakage in EVID-040's own procedure by this project's
-  usual definition) — but this independent, properly-separated
-  replication does not reproduce a positive effect on the primary,
-  pre-registered metric, and that is the honest answer this DEC was
-  designed to surface.
+  the conclusion. EVID-040's hyperparameters were chosen by grids
+  (EVID-037/038) scored on the **same 8-product test set** that
+  EVID-040 then used for confirmation, so EVID-040 was tuned on its own
+  test set. This separated, pre-registered replication does not
+  reproduce a positive effect on the primary metric.
+  *Correction (2026-09-24): an earlier version of this bullet said
+  EVID-040's grid search "used the validation split, not the test
+  split." That was wrong and contradicted this entry's own Experiment
+  section: DEC-022 had no validation split.*
 - The manuscript's fine-tuning narrative must now read: an early,
   smaller-scale, single-split exploration (EVID-034/037/038/040) found
   a significant whole-set improvement; a larger, leakage-free,
@@ -4318,6 +4394,14 @@ result.
   isolate the leakage-selection fix). Whether the provenance-filtered
   training data changes this picture (for better or worse) remains
   untested, same open item DEC-022/EVID-040 already flagged.
+- Software versions: no fine-tuning run in this project pinned
+  torch/transformers/trl/bitsandbytes (`requirements-finetune.txt` is
+  unpinned; torch comes from the RunPod template image). Only PEFT
+  versions can be recovered, from adapter metadata: DEC-027 used 0.21.0
+  throughout. The original DEC-006 seed-42 adapter used 0.20.0, and the
+  EVID-040 (DEC-022 Stage 3) adapters are not in the repo, so their
+  versions cannot be checked. `scripts/dec027_pod_runbook.sh` now
+  writes `pip freeze` to `outputs/<run>/pip_freeze.txt` for future runs.
 - The primary/secondary disagreement is real and reported, not an
   artifact of a coding bug — both statistics were computed from the
   same `predictions.json` files and manually spot-checked against the

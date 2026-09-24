@@ -27,6 +27,11 @@ git checkout q1-rework
 echo "=== Step 3: Install dependencies ==="
 pip install -q -r requirements.txt -r requirements-finetune.txt
 
+# requirements-finetune.txt is unpinned and torch comes from the pod
+# template, so record the exact package versions this run used.
+mkdir -p outputs/dec027_leakage_free_finetuning
+pip freeze > outputs/dec027_leakage_free_finetuning/pip_freeze.txt
+
 echo "=== Step 4: Set PYTHONPATH ==="
 export PYTHONPATH=$(pwd)
 
