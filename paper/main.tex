@@ -30,7 +30,7 @@
 
 \begin{document}
 
-\title[Confidence Aggregation in Closed-Loop Information Extraction]{Confidence Aggregation in Closed-Loop Information Extraction: Formal Analysis and Empirical Evaluation}
+\title[Corroboration-Gated Confidence Aggregation]{Corroboration-Gated Confidence Aggregation in Closed-Loop Information Extraction}
 
 % TODO(authors): affiliations, emails, and the corresponding author (*)
 % are required by the template and are not yet supplied.
@@ -68,9 +68,9 @@ into extraction through prompt augmentation and fine-tuning on
 knowledge-base-derived data); the aggregation rule, a conservative
 Noisy-OR with a mutual-exclusivity penalty for single-valued predicates
 (their Equations 1--2); its default shrinkage $\lambda=0.75$; and the
-``Encouraging'' and ``Prohibitive'' names for the two feedback
-directions, recovering missed facts and suppressing false ones
-(Section~\ref{sec:related-work-dysect}). This paper does not claim
+``Encouraging'' and ``Prohibitive'' names of its two feedback modes,
+which this project's original design adopted for its own feedback
+directions (Section~\ref{sec:related-work-dysect}). This paper does not claim
 any of these, or that such a system has not been built before.
 
 What such a loop has not had is a controlled evaluation of whether its
@@ -169,28 +169,25 @@ extractors cast extraction as sequence generation, from REBEL
 \citep{paolini2021tanl}; universal frameworks unify extraction tasks under
 one model \citep{lu2022uie,wang2023instructuie}; and joint, open-world,
 and zero-shot methods broaden coverage
-\citep{wadden2019dygiepp,zhang2022oamine,levy2017zeroshot}. These methods
-generally treat extraction as a terminal step rather than as input to
-further adaptation.
+\citep{wadden2019dygiepp,zhang2022oamine,levy2017zeroshot}; all treat
+extraction as a terminal step.
 
 \paragraph{Knowledge and retrieval.} Retrieval-augmented generation
 grounds generation in retrieved evidence
 \citep{lewis2020rag,guu2020realm,asai2023selfrag}, including graph-based
-memories \citep{gutierrez2024hipporag,edge2025graphrag}, but uses that
-knowledge at inference time rather than to adapt the extractor.
-Probabilistic soft logic \citep{bach2017psl} and knowledge-graph surveys
-\citep{ji2021kgsurvey,nguyen2020kgcsurvey} treat confidence-aware
-population and uncertainty management as open problems, and attribution
-methods \citep{ribeiro2016lime,zhao2023explainability} are largely post
-hoc.
+memories \citep{gutierrez2024hipporag,edge2025graphrag}, only at
+inference time. Knowledge-graph population work treats confidence and
+uncertainty as open problems \citep{bach2017psl,ji2021kgsurvey,nguyen2020kgcsurvey},
+and attribution methods are largely post hoc
+\citep{ribeiro2016lime,zhao2023explainability}.
 
 \paragraph{Adaptation.} Parameter-efficient fine-tuning reduces the cost
 of adapting pretrained models \citep{devlin2019bert,houlsby2019peft,
 lester2021prompttuning,hu2021lora,dettmers2023qlora}, and instruction and
 preference tuning broaden what fine-tuning teaches
-\citep{wei2022flan,ouyang2022instructgpt,rafailov2023dpo}, but all rely on
+\citep{wei2022flan,ouyang2022instructgpt,rafailov2023dpo}, all from
 curated supervision. Self-improvement methods generate their own
-feedback or training data
+supervision
 \citep{madaan2023selfrefine,gulcehre2023rest,chen2024spin,wang2023selfinstruct,schick2023toolformer},
 and continual learning addresses the stability of sequential adaptation
 \citep{wang2024continuallearning,li2017lwf}; none maintains a persistent
@@ -219,12 +216,22 @@ analysed here is DySECT's: its Equations 1--2 define
 $C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with default
 shrinkage $\lambda=0.75$, followed by the mutual-exclusivity penalty
 $C(t) = C_{\mathrm{agg}}(t)/(m(t)+1)$, which is the rule evaluated
-throughout this paper (Section~\ref{sec:formal-analysis}). DySECT's
-``Encouraging'' and ``Prohibitive'' feedback modes, recovering missed
-facts and suppressing false ones, are the two directions of the
-evaluated feedback controller, although the implementation does not
-use those labels in code (Section~\ref{sec:framework-feedback}). The
-closed loop, the probabilistic confidence layer, prompt-augmentation
+throughout this paper (Section~\ref{sec:formal-analysis}). DySECT
+names its two prompt-feedback modes (its Section 4): an
+\emph{Encouraging} (positive) mode, which injects high-confidence
+sub-concepts and representative relations as positive examples to
+encourage extraction of further instances of similar concept families,
+and a \emph{Prohibitive} (negative) mode, which marks well-covered or
+saturated sub-concepts as already extracted so that the model avoids
+redundant patterns. The original design of the implementation evaluated
+here adopted both names, and it also specified the same KNN-based
+clustering over embeddings that DySECT uses to build its concept
+hierarchy (its Section 2.2). The names are therefore DySECT's, not this
+project's coinage. The implemented feedback controller does not use them
+in code, and its false-pattern block, which flags accepted facts known
+to be wrong, differs in purpose from DySECT's Prohibitive mode, which
+discourages redundant re-extraction (Section~\ref{sec:framework-feedback}).
+The closed loop, the probabilistic confidence layer, prompt-augmentation
 feedback, and fine-tuning on knowledge-base-derived data are likewise
 DySECT's design. This paper claims none of them; its contributions are
 the formal analysis of the rule and the evaluation.
@@ -327,10 +334,11 @@ call site passes it the \emph{training-split gold labels}
 any uncertainty or disagreement internal to the knowledge base, so the
 loop is not self-supervised: it presupposes labelled training data,
 which exists here only because the domain is synthetic
-(Section~\ref{sec:limitations}). The two directions correspond to
-DySECT's ``Encouraging'' and ``Prohibitive'' modes
-(Section~\ref{sec:related-work-dysect}), although those labels do not
-appear in the code.
+(Section~\ref{sec:limitations}). The original design named these
+directions after DySECT's ``Encouraging'' and ``Prohibitive'' modes, but
+those labels do not appear in the code, and the false-pattern block
+differs in purpose from DySECT's Prohibitive mode
+(Section~\ref{sec:related-work-dysect}).
 
 \subsection{Synthetic Supervision, Provenance Filtering, and Fine-Tuning}
 \label{sec:framework-finetuning}
