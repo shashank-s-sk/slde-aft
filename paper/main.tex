@@ -2405,7 +2405,133 @@ neither was isolated experimentally from the other in this paper.
 
 \section{Limitations}
 \label{sec:limitations}
-% TODO: not yet written.
+
+\paragraph{A synthetic primary domain.} Every product-domain result
+comes from a deterministic synthetic generator in which the structured
+records, the text, and both gold sets are produced by the same function
+(Section~\ref{sec:setup-datasets}). The domain names each fact
+consistently across sources, is fully labelled, and has a fixed
+13-predicate schema, which real product data would not. The two public
+corpora (Sections~\ref{sec:results-docred}
+and~\ref{sec:results-biored}) show how differently the aggregation stage
+behaves on real text: on both, aggregation lowered $F_1$ relative to no
+aggregation. The product-domain numbers should therefore be read as
+results under favourable conditions, not as estimates for deployment.
+
+\paragraph{The provenance gate was tested against a generator-derived
+source.} The filter's rise in precision from $93.5\%$ to $100.0\%$ was
+measured with a structured source generated from the same attribute
+values as the gold triples (Section~\ref{sec:results-provenance}), so
+the structured source was never wrong
+% [EVID-029]
+. DEC-028 partly mitigates this by corrupting the structured source at
+5\%, 10\%, and 20\%: the filter's precision advantage decayed from
+$+0.991$ to $+0.823$ (95\% CI $[0.688, 0.911]$) but remained
+significant at every rate
+% [EVID-042]
+. That corruption was injected at random by this project, however, and
+an independent real-world structured source may be wrong in correlated
+ways that random corruption does not model.
+
+\paragraph{The feedback loop is not self-supervised.} The feedback
+controller builds its hint from the training-split gold labels: missing
+facts and false patterns are computed against the known answers
+(Section~\ref{sec:framework-feedback})
+% [src/feedback_builder.py; src/experiment_runner.py]
+. The closed loop as implemented presupposes labelled training data,
+which exists here only because the domain is synthetic. A deployment
+without gold labels would need a feedback signal derived from the
+knowledge base itself, which was not built or tested.
+
+\paragraph{Ablation power.} With thirty seeds the module ablation
+detects effects of $0.070$--$0.086$ absolute $F_1$ with 80\% power
+(Section~\ref{sec:results-ablation}). Smaller effects of the feedback
+controller or the probabilistic knowledge base, in either direction,
+are not ruled out
+% [EVID-045]
+.
+
+\paragraph{The closed-loop test is a single seed with a model-family
+confound.} The closed-loop integration test used one seed (43, the best
+of three in the standalone evaluation) and compared a Llama-3.1-8B
+control with a treatment arm fine-tuned from Mistral-7B, so any
+difference between the arms cannot be attributed to fine-tuning alone
+(Section~\ref{sec:results-closedloop})
+% [EVID-030]
+. It was not repeated across seeds or with a Llama-based adapter.
+
+\paragraph{Self-reported confidence from two prompt templates.} The
+extraction prompt asks the model for a confidence between $0.80$ and
+$0.96$, and the fine-tuning data-generation and evaluation prompt for
+one between $0.85$ and $0.99$
+(Section~\ref{sec:setup-hyperparameters}). Neither value is derived
+from token probabilities or calibrated, and the two ranges are not on a
+common scale, so confidence values from the two paths are not
+comparable. The aggregated score is poorly calibrated on real data (ECE
+$=0.333$; Section~\ref{sec:results-calibration})
+% [EVID-036; EVID-041]
+.
+
+\paragraph{Software versions.} No fine-tuning run in this project
+pinned the versions of torch, transformers, trl, or bitsandbytes,
+including the DEC-027 run that supplies the headline fine-tuning result.
+Only the PEFT version can be recovered, from adapter metadata (0.21.0
+for every DEC-027 adapter; 0.20.0 for the first DEC-006 adapter). A
+record of every installed version is written for runs after DEC-027 only
+% [EVID-044]
+. The API-hosted extractors are fixed by model identifier alone, and
+the provider could change the model served behind an identifier.
+
+\paragraph{The scope of the repeat-counting correction.} R3 corrects
+the counting of repeated observations from one source, so it acts only
+when the extractor emits the same fact more than once from a single
+source. On BioRED it raised the precision of Llama-3.1-8B's admitted
+triples by $0.054$ (138 repeats) but had no measurable effect for
+DeepSeek-V3.2 (6 repeats). With Llama-3.1-8B its $F_1$ was slightly
+lower than R2's, because some discarded repeats were correct
+(Sections~\ref{sec:results-biored} and~\ref{sec:discussion-r3})
+% [EVID-041; EVID-046; EVID-047]
+. Its benefit depends on the extractor, and it does not address the
+scarcity of corroboration across sources.
+
+\paragraph{Small admitted counts on DocRED.} On DocRED, R3's precision
+gain rests on very few triples: 36 admitted and 9 correct with the exact
+key. Its confidence interval is correspondingly wide ($+0.190$, 95\% CI
+$[0.084, 0.315]$), and its $F_1$ did not differ from R2's
+(Section~\ref{sec:results-docred})
+% [EVID-046]
+. More generally, both public-corpus runs used sentence-level
+extraction without document context, a single fixed admission
+threshold ($\tau=0.70$), and, on BioRED, co-mention as a proxy for
+annotation-level corroboration.
+
+\paragraph{Unmeasured resource use.} Memory use could not be measured
+reliably, because every scale ran in a single process, and GPU
+utilisation during fine-tuning was not recorded
+(Section~\ref{sec:results-scalability})
+% [EVID-023]
+. The scalability claims cover runtime only.
+
+\paragraph{An unindexed candidate scan.} The evaluated implementation
+scans every previously accepted candidate on each new observation,
+which is $O(N)$ per call and $O(N^2)$ cumulative
+(Section~\ref{sec:formal-analysis-complexity}). An indexed variant with
+the same aggregation mathematics was benchmarked but not integrated
+into the pipeline
+% [EVID-036]
+. This does not limit the scales evaluated here, where API latency
+dominates, but would at larger scale.
+
+\paragraph{The weakest extractor on CaRB.} The pipeline's extractor,
+Llama-3.1-8B-Instruct, scored $F_1=0.467$ on CaRB against $0.571$ for
+DeepSeek-V3.2, and ranked last of five systems in the 30-sentence pilot
+(Section~\ref{sec:results-benchmarks})
+% [EVID-032; EVID-035]
+. Every aggregation, filtering, and fine-tuning result in this paper
+sits on top of that extractor. The public-corpus results show that
+extractor recall, not the aggregation rule, is the binding constraint
+on the framework's aggregation stage, so a stronger extractor could
+change several of these results.
 
 \section{Conclusion}
 \label{sec:conclusion}
