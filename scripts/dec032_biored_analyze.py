@@ -54,7 +54,11 @@ def load_run(path: Path) -> tuple[dict[int, dict[int, list[dict]]], dict]:
         for line in f.read_text(encoding="utf-8").splitlines():
             if not line.strip():
                 continue
-            rec = json.loads(line)
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                stats["truncated_lines"] = stats.get("truncated_lines", 0) + 1
+                continue  # cut off when a process was stopped; the call was redone
             if rec["http_status"] is None:
                 stats["network_failed"] += 1
                 continue

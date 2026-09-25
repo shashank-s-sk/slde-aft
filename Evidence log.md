@@ -4755,3 +4755,189 @@ aggregation is 0.036.
 
 None queued from this DEC. Results Summary.md and paper/main.tex are
 updated with this entry.
+
+
+---
+
+# EVID-047 — DEC-032: BioRED at Scale (500 abstracts, external baseline). The Extractor-Recall Constraint Replicates in a Second Domain; R3 Acts Only Where the Extractor Repeats Itself
+
+## Experiment
+
+- Decision: DEC-032, pre-registered and user-approved; committed
+  (938079a) before any extraction.
+- **Corpus:** all 500 BioRED Train + Dev abstracts (Test never used).
+  5,462 sentences, 4,906 gold facts (unordered concept pairs with a
+  relation type).
+- **Extractors:** `meta-llama/llama-3.1-8b-instruct` (the pipeline's
+  extractor) and the external baseline `deepseek/deepseek-v3.2`
+  (DEC-002's). Same prompts and inputs for both.
+- **Units:** every sentence (primary; prompt
+  `openie_biored_sent_v1.txt`, all 8 relation types), plus every whole
+  abstract (the pilot's setting and prompt, for continuity).
+- **Arms, all offline from the same extractions:** no aggregation, R2,
+  R3. DEC-031's normalised key; shrinkage 0.5, tau 0.70.
+- **Evaluators:** primary = alias-aware (any annotated mention,
+  unordered pairs). Strict (first mention) and relaxed containment are
+  reported as the pilot did.
+- **Run:** 2026-09-24 19:52-22:33. The original 3 processes were
+  restructured into two groups of 3 (one per model). Claude Code
+  stopped them at about 21:25 because the whole PC was low on memory;
+  the run was resumed with 3 processes from the per-call cache. 11,924
+  calls; 0 network failures; 0 cut-off lines. Unparsable output:
+  Llama 103 (sentences) + 90 (abstracts); DeepSeek 1 + 5.
+- **Cost: $0.686** against the approved **$1.98** estimate. The
+  estimate assumed DeepSeek costs 9.7x Llama per call (measured on
+  CaRB). The actual multiplier here was **5.2x** ($0.0000808 vs.
+  $0.0000156 per sentence call), and Llama itself cost half DEC-031's
+  per-call figure because the BioRED prompt is shorter.
+
+## Measured first (sentence level)
+
+| | Llama | DeepSeek |
+|---|---:|---:|
+| Extractor recall (no aggregation, primary evaluator) | 0.0964 | 0.0968 |
+| G2 = gold facts recovered from 2+ sentences | 37 = **0.75%** [0.49%, 1.06%] | 66 = **1.35%** [1.00%, 1.72%] |
+| Annotation-level: co-mentioned in 2+ sentences | 35.1% | 35.1% |
+| Annotation-level: co-mentioned in 1+ sentence | 89.7% | 89.7% |
+| **rho** = G2 share / 35.1% | **0.022** | **0.038** |
+| Extracted triples with a valid BioRED relation type | **96.6%** | **100.0%** |
+| Within-sentence duplicate observations | 138 | 6 |
+
+- The annotation-level rate uses **co-mention** as a proxy (BioRED has
+  no evidence-sentence annotations). It is therefore an upper bound on
+  sentences that state the relation, not a count of them.
+- Valid relation types: 96.6% on BioRED, against 49.2% on DocRED.
+  BioRED's closed schema has 8 types rather than 96, and the extractor
+  follows it almost exactly. Off-schema output is not the problem here.
+
+## Arms (sentence level; P / R / F1, primary evaluator)
+
+| Model, arm | P | R | F1 | Admitted (correct) | Docs admitting anything | Contested slots, candidates / admitted | Strict F1 | Relaxed F1 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Llama, no aggregation | 0.036 | 0.096 | **0.053** | 13,034 (473) | 499 | — | 0.030 | 0.107 |
+| Llama, R2 | 0.127 | 0.007 | **0.012** | 256 (32) | 151 | 2,731 / 25 | 0.006 | 0.012 |
+| Llama, R3 | 0.181 | 0.005 | **0.010** | 146 (26) | 101 | 2,731 / 8 | 0.005 | 0.008 |
+| DeepSeek, no aggregation | 0.069 | 0.097 | **0.081** | 6,934 (475) | 496 | — | 0.047 | 0.158 |
+| DeepSeek, R2 | 0.296 | 0.009 | **0.017** | 144 (42) | 99 | 1,217 / 13 | 0.010 | 0.017 |
+| DeepSeek, R3 | 0.299 | 0.008 | **0.016** | 139 (41) | 96 | 1,217 / 13 | 0.010 | 0.016 |
+
+Whole abstracts, no aggregation (pilot continuity):
+- Llama: P 0.050, R 0.048, F1 0.049 (strict 0.028, relaxed 0.096).
+- DeepSeek: P 0.092, R 0.086, F1 0.089 (strict 0.060, relaxed 0.172).
+
+Contested slots are descriptive only (no conflict penalty applies).
+
+Pre-registered comparisons (paired bootstrap over documents, 10,000
+resamples):
+
+| Comparison | Llama | DeepSeek |
+|---|---|---|
+| R2 − no aggregation, F1 | −0.0405 [−0.0489, −0.0326] | −0.0641 [−0.0776, −0.0516] |
+| R3 − no aggregation, F1 | −0.0426 [−0.0507, −0.0349] | −0.0645 [−0.0780, −0.0519] |
+| **R3 − R2, F1 (primary R3)** | **−0.0021 [−0.0048, −0.0002]** | −0.0004 [−0.0012, +0.00002] |
+| R3 − R2, precision (pre-registered secondary) | **+0.054 [+0.015, +0.094]** | +0.004 [−0.011, +0.016] |
+| G2 share, DeepSeek − Llama | +0.0059 [+0.0021, +0.0098] | |
+
+## Result
+
+### 1. Extractor-recall constraint: CONFIRMED on Llama by the pre-registered rule
+
+rho = 0.022 (< 0.2), and R2 F1 is below no aggregation with the CI
+excluding zero (−0.041). The extractions realise about 2% of the
+corroboration available in the text (0.75% of gold facts recovered
+from 2+ sentences, against 35.1% co-mentioned in 2+ sentences), and
+aggregation that requires corroboration discards almost everything.
+This replicates DEC-031's DocRED finding in a second domain:
+- DocRED: 29 of 11,344 facts; 0.26% G2 against 50.2% at annotation
+  level.
+- BioRED: 37 of 4,906; 0.75% against 35.1%.
+
+**The DeepSeek check split, stated plainly.**
+- DeepSeek recovers significantly **more** corroborated facts than
+  Llama (1.35% vs. 0.75%, difference CI excluding zero). The first
+  prediction is met.
+- Yet its aggregation gap is **larger**, not smaller (−0.064 vs.
+  −0.040). The second prediction is not met.
+
+The reason is arithmetic. Both extractors still realise only a tiny
+share of the available corroboration (rho 0.038 for DeepSeek, also
+far below 0.2), so R2 ends near the same F1 for both (0.012 vs.
+0.017). The gap is therefore dominated by each model's no-aggregation
+F1, and DeepSeek's is higher (0.081 vs. 0.053) because its precision
+is higher at the same recall (0.069 vs. 0.036; recall 0.097 vs.
+0.096). A better extractor has more to lose when aggregation discards
+nearly everything.
+
+So the gap prediction was badly specified as a test of the
+hypothesis. It does not by itself point to a second cause of the
+failure. The data are consistent with the corroboration constraint
+binding for both extractors. A stronger extractor raises G2
+measurably, but by far too little (1.35% of facts) to make
+corroboration-gated admission competitive at this scale.
+
+### 2. R3 is scope-limited: it acts only where the extractor repeats itself within a source
+
+R3 corrects repeat-counting: it collapses repeated observations from
+the same source. So it can only act when the extractor emits the same
+triple more than once from one sentence.
+- **Llama: 138 within-sentence duplicates.**
+  - R3 raises precision by +0.054 [+0.015, +0.094] (0.127 → 0.181;
+    admitted 256 → 146, correct 32 → 26).
+  - It also loses true positives, so the pre-registered F1 comparison
+    is **Negative**: −0.0021 [−0.0048, −0.0002].
+- **DeepSeek: 6 duplicates.**
+  - R3 changes almost nothing: precision +0.004 [−0.011, +0.016],
+    admitted 144 → 139.
+  - F1 is **Null**: −0.0004 [−0.0012, +0.00002].
+
+Together with DocRED (154-194 duplicates, precision 0.06 → 0.25,
+F1 null) and the product domain (DEC-026, F1 gain at unchanged
+recall), this is the honest scope of the corrected rule:
+- R3 removes a real defect, the counting of deterministic repeats as
+  independent corroboration.
+- Its effect scales with how often the extractor repeats itself.
+- It gives no benefit with an extractor that does not repeat.
+- Where the repeats included correct facts, it can cost recall.
+
+### 3. Cost
+
+$0.686 against the $1.98 estimate. DeepSeek's actual per-call
+multiplier was 5.2x Llama, not the 9.7x assumed from CaRB.
+
+### 4. The pilot is superseded
+
+The pilot correction stands regardless of these results. DEC-009's
+15-abstract pilot (EVID-024) sent **each whole abstract in a single
+call**, so every document had exactly one source and nothing could be
+aggregated. The pilot tested the extractor only, never the framework.
+It also:
+- listed 6 of BioRED's 8 relation types;
+- scored with an order-sensitive strict evaluator on unordered
+  relations;
+- ran no external baseline.
+
+This 500-abstract run, with an external baseline and sentence-level
+sources, replaces it as the BioRED result everywhere (Decision log
+DEC-009, Results Summary, paper/main.tex).
+
+## Other observations (descriptive, not pre-registered)
+
+- On whole abstracts, Llama's recall (0.048) is half its sentence-level
+  recall (0.096); DeepSeek's (0.086) is close to its sentence-level
+  recall (0.097).
+- Relaxed containment roughly doubles no-aggregation F1 for both
+  extractors, as in the pilot. It barely changes the aggregated arms,
+  whose few admitted triples mostly match exactly.
+
+## Limitations
+
+- Co-mention is a proxy for annotation-level corroboration.
+- One fixed threshold (tau 0.70), not tuned.
+- Sentence-level extraction loses cross-sentence context. 10.3% of
+  gold facts are never co-mentioned in any sentence, so they are
+  unreachable at this unit.
+
+## Next step
+
+None queued from this DEC. Results Summary.md and paper/main.tex are
+updated with this entry.

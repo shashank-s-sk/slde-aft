@@ -287,7 +287,35 @@ Cost: $0.0520 total for both systems at full scale.
 
 **Scalability (DEC-008, EVID-023):** runtime scales linearly with N (no quadratic blowup) up to N=200; mean per-document latency stays flat (~4.0s) regardless of accumulated KB size (grew to 2,814 entries) — the key positive scalability claim. Memory measurement from this pass is unusable (methodology flaw: sequential runs in one process contaminate GC-affected deltas) — don't cite memory numbers from EVID-023.
 
-**Domain generalization — BioRED biomedical pilot (DEC-009, EVID-024):** strict exact-match F1=0.0074 is misleadingly low (mostly a gold-construction/boundary-mismatch artifact, same family of issue as the CaRB correction above). Relaxed containment-match F1=0.1029 (14x more true positives found) is the fairer read: the biomedical domain is genuinely harder than the product domain, but not a near-total failure. **Report both numbers together with this explanation — never the strict number alone**, which would be a misleading characterization.
+**Second domain — BioRED at scale (DEC-032, EVID-047; supersedes the DEC-009 pilot).** 500 BioRED Train+Dev abstracts (5,462 sentences, 4,906 gold facts). Two extractors on the same inputs: Llama-3.1-8B (the pipeline's) and the **external baseline DeepSeek-V3.2**. Every sentence is extracted, plus whole abstracts for pilot continuity. Cost $0.686. The primary evaluator matches any annotated mention of a gold concept, with unordered pairs. Strict first-mention and relaxed containment are also reported, as in the pilot.
+
+| Sentence level | P | R | F1 | Admitted (correct) |
+|---|---:|---:|---:|---:|
+| Llama, no aggregation | 0.036 | 0.096 | **0.053** | 13,034 (473) |
+| Llama, R2 | 0.127 | 0.007 | 0.012 | 256 (32) |
+| Llama, R3 | 0.181 | 0.005 | 0.010 | 146 (26) |
+| DeepSeek, no aggregation | 0.069 | 0.097 | **0.081** | 6,934 (475) |
+| DeepSeek, R2 | 0.296 | 0.009 | 0.017 | 144 (42) |
+| DeepSeek, R3 | 0.299 | 0.008 | 0.016 | 139 (41) |
+
+- **Measured first:**
+  - Extractor recall is 0.096 (Llama) and 0.097 (DeepSeek).
+  - Only **0.75%** (Llama) / **1.35%** (DeepSeek) of gold facts are recovered from 2+ sentences, although **35.1%** are co-mentioned in 2+ sentences (co-mention proxy; no evidence annotations exist).
+  - rho = 0.022 / 0.038.
+  - 96.6% / 100% of extracted triples use a valid BioRED relation type, against 49.2% on DocRED, so off-schema output is not the issue here.
+- **Extractor-recall constraint: CONFIRMED on Llama by the pre-registered rule.** rho < 0.2, and R2 is below no aggregation (−0.041, CI [−0.049, −0.033]). **This replicates DocRED in a second domain:** the text offers corroboration, and the extractor realises almost none of it.
+- **The DeepSeek check split.**
+  - DeepSeek recovers significantly more corroborated facts (+0.0059, CI [+0.0021, +0.0098]).
+  - Yet it has a *larger* aggregation gap (−0.064 vs. −0.040).
+  - This is arithmetic, not a second cause: both extractors' R2 lands near F1 ≈ 0.01-0.02, so the gap tracks no-aggregation F1, which is higher for DeepSeek (0.081 vs. 0.053; higher precision at equal recall).
+  - The "smaller gap" prediction was badly specified. A stronger extractor raises corroboration measurably, but nowhere near enough.
+- **R3 is scope-limited.** It collapses repeats within a source, so it only acts when the extractor duplicates itself.
+  - **Llama (138 within-sentence duplicates):** precision +0.054, CI [+0.015, +0.094], but F1 is **Negative** by the pre-registered rule (−0.0021, CI [−0.0048, −0.0002]) because R3 also drops true positives (32→26).
+  - **DeepSeek (6 duplicates):** precision +0.004 [−0.011, +0.016], F1 **Null**.
+- **The pilot is superseded.** It sent each whole abstract in one call, so every document had one source and nothing could be aggregated: it tested the extractor only, never the framework. It also listed 6 of 8 relation types, used an order-sensitive strict evaluator, and had no baseline. Its numbers (strict F1 0.007, relaxed 0.103, n=15) are historical only.
+
+**Suggested framing:** "On 500 BioRED abstracts, a second public domain, corroboration-gated aggregation again lowers F1 relative to no aggregation, for both the pipeline's extractor and a much stronger external baseline (DeepSeek-V3.2). As on DocRED, the constraint is extraction, not the text. A third of gold facts are co-mentioned in two or more sentences, but the extractors recover only 0.75-1.35% of facts from more than one sentence. The stronger extractor recovers more corroborated facts but still far too few, and because its unaggregated output is more precise it loses more when aggregation discards nearly everything. Distinct-source counting (R3) raises precision only where the extractor repeats itself within a sentence (Llama: +0.054), and has no effect with an extractor that does not (DeepSeek)."
+
 
 **Framework-level validation on DocRED at scale (DEC-031, EVID-046; supersedes DEC-020's 15-document pilot).** The PKB/Noisy-Or framework, not just the extractor, run on all 845 eligible DocRED dev documents, extracting from **every sentence** (6,861 calls, $0.21). The pilot sent only gold evidence sentences, an oracle setting. Three matching keys: exact; normalised (deployable, primary); gold-alias (**oracle upper bound only**). R2 and R3 on each, all from the same extractions. Primary evaluator: alias-aware and identical for every arm.
 
@@ -342,7 +370,7 @@ This is a genuine, citable answer to professor feedback point #10 ("where the fr
 
 | # | Point | Where it's addressed here |
 |---|---|---|
-| 1 | Strengthen experimental evaluation (public benchmarks) | CaRB now full-scale (DEC-001, EVID-035, N=548); DocRED framework-level test at 845 documents (DEC-031/EVID-046, supersedes the DEC-020 pilot; aggregation fails from scarce cross-sentence corroboration, not the matching key); BioRED domain pilot (DEC-009). TACRED scoped and explicitly declined with a documented reason (DEC-021). REBEL-benchmark (the dataset)/Universal-IE still not attempted, lowest priority |
+| 1 | Strengthen experimental evaluation (public benchmarks) | CaRB now full-scale (DEC-001, EVID-035, N=548); DocRED framework-level test at 845 documents (DEC-031/EVID-046, supersedes the DEC-020 pilot; aggregation fails from scarce cross-sentence corroboration, not the matching key); BioRED second domain at 500 abstracts with an external baseline (DEC-032/EVID-047, supersedes the DEC-009 pilot; the extractor-recall constraint replicates). TACRED scoped and explicitly declined with a documented reason (DEC-021). REBEL-benchmark (the dataset)/Universal-IE still not attempted, lowest priority |
 | 2 | Compare against SOTA methods | DeepSeek-V3.2, GPT-4o, Claude Sonnet 5, Gemini 2.5 Pro all done (DEC-002, EVID-031/032/035) — 4 of 8 named systems covered, DeepSeek now at full CaRB scale too. REBEL attempted and found task-incompatible with CaRB scoring (EVID-033, real finding, not a gap). GenIE/InstructUIE (likely same incompatibility)/DyGIE++ (AllenNLP) not attempted |
 | 3 | Improve mathematical contribution | DEC-003's Noisy-Or result — a real, positive real-data finding, but **not an unqualified "strongest claim"** (in tension with the N=50 ablation, AUDIT.md A1); real-data calibration (ECE=0.3332) and computational complexity analysis now done (EVID-036). The rival-ceiling failure mode is now empirically confirmed AND a corrected rule (source-count) is tested and shown to help, on two datasets (DEC-026, EVID-041) — a second candidate fix (evidence-share) tested and found to be a null, reported honestly. Formal derivation/boundedness proof/convergence discussion (steps 2-4) still needed — pure math-writing, not experiments |
 | 4 | Proper ablation study | DEC-004/005 — done, honest null result |
@@ -350,7 +378,7 @@ This is a genuine, citable answer to professor feedback point #10 ("where the fr
 | 6 | Improve fine-tuning section | DEC-006/018/022/027 — AUDIT.md A2's tuning-leakage limitation directly fixed by DEC-027's independent validation/test split; the leakage-free primary result (EVID-044) is negative (CI excludes zero below), superseding EVID-040's earlier p=0.0028 result. Previously-untested asks (additional epochs, LoRA hyperparameter tuning) fully investigated via a systematic grid in both DEC-022 and DEC-027 |
 | 7 | Add error analysis with examples | DEC-007 (general) + DEC-018/EVID-029 (concrete provenance-filtering examples, exactly what this point asks for) |
 | 8 | Evaluate scalability | DEC-008 — done, positive result, memory data unusable |
-| 9 | Validate on multiple domains | DEC-009 (BioRED) — one additional domain, pilot scale only |
+| 9 | Validate on multiple domains | **Addressed.** DEC-032/EVID-047: BioRED as a second public domain at 500 abstracts, with an external baseline (DeepSeek-V3.2), full aggregation arms and pre-registered tests. Supersedes the 15-abstract DEC-009 pilot, which tested the extractor only. The DocRED result (DEC-031) is a third public corpus |
 | 10 | Strengthen discussion (why precision/recall behave as they do) | Claim #2's precision-vs-recall mechanistic finding directly answers this |
 | 11 | Improve novelty positioning | Not started (writing task, DEC-011) |
 | 12 | Improve reproducibility | Not started (packaging task, DEC-012) — this file plus the Evidence log's EVID-xxx trail already provide most of the substance |

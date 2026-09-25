@@ -54,7 +54,10 @@ def done_calls(path: Path) -> set[tuple[int, int]]:
     if path.exists():
         for line in path.read_text(encoding="utf-8").splitlines():
             if line.strip():
-                rec = json.loads(line)
+                try:
+                    rec = json.loads(line)
+                except json.JSONDecodeError:
+                    continue  # a line cut off when the process was stopped; redo that call
                 if rec["http_status"] is not None:
                     done.add((rec["doc_idx"], rec["unit_id"]))
     return done

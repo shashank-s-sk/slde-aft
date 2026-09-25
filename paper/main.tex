@@ -1005,22 +1005,32 @@ evidence sentences to the extractor, an oracle setting that tells the
 extractor which sentences contain a relation. It is superseded by the
 845-document run and is reported only as historical context
 % [Decision log.md, DEC-020, DEC-031]
-. \textbf{BioRED}: 15 abstracts
-% [EVID-024]
-from the official 100-document Dev split (PubTator format, obtained from
-NCBI's public FTP distribution)
-% [EVID-024]
-, an extractor-only pilot -- no PKB aggregation is applied to BioRED
-(Section~\ref{sec:setup-hyperparameters}), unlike DocRED and the product
-domain.
+. \textbf{BioRED}: all 500 abstracts of the official Train (400) and
+Dev (100) splits (PubTator format, obtained from NCBI's public FTP
+distribution); the Test split is not used. They contain 5,462 sentences
+(the title plus the abstract, split by a fixed rule) and 4,906 gold
+facts, each an unordered pair of annotated concepts with one of eight
+relation types. BioRED does not annotate evidence sentences. As a proxy,
+35.1\% of gold facts have both concepts mentioned together in two or
+more sentences, and 89.7\% in at least one
+% [Decision log.md, DEC-032; EVID-047]
+. An earlier 15-abstract pilot sent each whole abstract to the
+extractor in a single call, so every document had one source and no
+aggregation was possible. It tested the extractor only, never the
+framework, and is superseded
+% [EVID-024; EVID-047]
+.
 
 \subsection{Models and Hardware}
 \label{sec:setup-models}
 
-The pipeline's extractor, used for every product-domain run and both
-public-benchmark DocRED run and BioRED pilot, is \texttt{meta-llama/} \texttt{llama-3.1-8b-instruct}
+The pipeline's extractor, used for every product-domain run and for
+the DocRED and BioRED runs, is \texttt{meta-llama/} \texttt{llama-3.1-8b-instruct}
 via OpenRouter, temperature $0.0$
 % [EVID-013; src/extractors/openrouter_llm.py default temperature=0.0]
+. On BioRED, it is compared against \texttt{deepseek/deepseek-v3.2} as an
+external baseline, given the same prompts and inputs
+% [Decision log.md, DEC-032]
 . On CaRB, this model is compared against four external systems, all via
 OpenRouter, all on the full 548-sentence sample: \texttt{deepseek/deepseek-v3.2}
 % [EVID-035]
@@ -1087,8 +1097,10 @@ DocRED (\texttt{configs/docred\_functional\_predicates.json} is left
 empty), so only Equation~\ref{eq:noisyor}'s Noisy-OR support is used
 there, not Equation~\ref{eq:conflict}'s conflict penalty
 % [Decision log.md, DEC-020]
-; \textbf{BioRED} uses neither value, since no PKB aggregation is
-applied to it at all (Section~\ref{sec:setup-datasets}). The
+; \textbf{BioRED} uses the DocRED values ($\lambda=0.5$, $\tau=0.70$)
+and likewise no conflict penalty
+% [Decision log.md, DEC-032]
+. The
 product-domain closed loop runs 4 extraction iterations for train-split
 products (structured facts seed the knowledge base at iteration 1 only;
 the LLM re-extracts every iteration, guided from iteration 2 onward by a
@@ -1098,9 +1110,9 @@ pass, guided only by the trained knowledge base's locked context, never
 by their own structured facts
 % [EVID-013]
 . DocRED and BioRED do not use this iterative loop: each document is
-processed once, with DocRED's multiple evidence sentences per fact (not
-multiple extraction iterations) supplying the Noisy-OR aggregation's
-repeated observations.
+processed once, one extraction call per sentence, and the same fact
+extracted from several sentences (not from several extraction
+iterations) supplies the Noisy-OR aggregation's repeated observations.
 
 Two distinct prompt templates are used, with two different
 self-reported confidence ranges -- in both cases the confidence value is
@@ -1125,8 +1137,10 @@ extraction prompt (\texttt{prompts/openie\_carb\_v1.txt}
 % [EVID-021]
 , \texttt{prompts/openie\_docred\_v1.txt}
 % [Decision log.md, DEC-020]
-, \texttt{prompts/openie\_biored\_v1.txt}
-% [EVID-024]
+, \texttt{prompts/openie\_biored\_sent\_v1.txt}, a per-sentence version
+of the earlier pilot's \texttt{prompts/openie\_biored\_v1.txt} that lists
+all eight BioRED relation types where the pilot's listed six
+% [Decision log.md, DEC-032]
 respectively), each schema-appropriate to its domain (CaRB's is
 open-phrase, DocRED's and BioRED's enumerate their respective closed
 relation sets).
@@ -1152,15 +1166,14 @@ official scorer is the number this paper cites for CaRB
 per-triple confidence score is produced beyond one operating point, not
 as a full precision-recall curve
 % [EVID-035, Limitations]
-. \textbf{BioRED} is reported under two matching rules together, never
-the strict rule alone: strict exact-match, and a relaxed containment
-match (predicate exact; subject/object considered matching if either
-normalized string contains the other) -- the strict rule alone
-understates performance by roughly 14$\times$ in true positives found on
-this pilot, driven by span-boundary differences between predicted and
-gold mention text, not by the pipeline finding substantially fewer
-correct facts
-% [EVID-024]
+. \textbf{BioRED} is scored in the same way as DocRED (described next), against gold
+concepts rather than strings. A predicted triple matches a gold fact
+when its relation type matches and its two arguments, in either order,
+equal after normalisation any annotated mention of the two concepts.
+Exact matching against each concept's first mention and a relaxed
+containment match (either normalised string contains the other), the
+earlier pilot's two rules, are reported as secondary measures
+% [Decision log.md, DEC-032; EVID-047]
 . \textbf{DocRED} is scored per document against gold entities rather
 than strings. A predicted triple matches a gold fact when its relation
 name matches and its subject and object, after the string normalisation
@@ -1429,12 +1442,62 @@ PKB, gold-alias key (R3, oracle) & 0.406 & 0.003 & 0.005 & 69 & 28 \\
 \noindent The earlier 15-document pilot (gold evidence sentences only)
 had reported $F_1$ of $0.033$ without and $0.010$ with aggregation
 % [Decision log.md, DEC-020]
-. On a 15-document BioRED pilot, $F_1$ was $0.007$ under strict
-exact matching and $0.103$ under relaxed containment matching, which
-recovered 14 times as many true positives; no external baseline was
-run on BioRED
-% [EVID-024]
 .
+
+\paragraph{BioRED at scale.}\label{sec:results-biored}
+On 500 BioRED abstracts, extracting from every sentence, aggregation
+lowered $F_1$ relative to no aggregation for both the pipeline's
+extractor and the external baseline (Table~\ref{tab:biored-results}).
+With Llama-3.1-8B, R2 was $0.041$ below no aggregation (95\% CI
+$[-0.049, -0.033]$); with DeepSeek-V3.2 it was $0.064$ below
+($[-0.078, -0.052]$). The two extractors had almost the same recall
+without aggregation ($0.096$ and $0.097$), but DeepSeek-V3.2 was nearly
+twice as precise ($0.069$ against $0.036$). Only 0.75\% of gold facts
+(Llama-3.1-8B) and 1.35\% (DeepSeek-V3.2) were recovered from two or
+more sentences, against 35.1\% whose concepts are co-mentioned in two
+or more sentences. The difference between the extractors was
+significant ($+0.0059$, 95\% CI $[0.0021, 0.0098]$). Unlike on DocRED,
+96.6\% (Llama-3.1-8B) and 100\% (DeepSeek-V3.2) of extracted triples
+used a valid relation type
+% [EVID-047]
+.
+
+R3 raised the precision of Llama-3.1-8B's admitted triples by $0.054$
+(95\% CI $[0.015, 0.094]$), discarding 138 within-sentence duplicate
+observations. It also lost true positives (32 to 26), and its $F_1$ was
+lower than R2's ($-0.0021$, $[-0.0048, -0.0002]$). DeepSeek-V3.2
+produced only 6 within-sentence duplicates, and R3 changed neither its
+precision ($+0.004$, $[-0.011, 0.016]$) nor its $F_1$ ($-0.0004$,
+$[-0.0012, 0.00002]$)
+% [EVID-047]
+. Extracting from each whole abstract in one call instead, the earlier
+pilot's setting, gave $F_1$ of $0.049$ (Llama-3.1-8B) and $0.089$
+(DeepSeek-V3.2) without aggregation. Under the pilot's relaxed
+containment rule, no-aggregation $F_1$ roughly doubled for both
+extractors at sentence level ($0.107$ and $0.158$)
+% [EVID-047]
+.
+
+\begin{table}[htbp]
+\centering
+\caption{BioRED, 500 abstracts, sentence-level extraction
+($\lambda=0.5$, $\tau=0.70$); DeepSeek-V3.2 is the external baseline.}
+\label{tab:biored-results}
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Extractor & Method & $P$ & $R$ & $F_1$ & Admitted & Correct \\
+\midrule
+Llama-3.1-8B & No aggregation & 0.036 & 0.096 & 0.053 & 13,034 & 473 \\
+ & R2 & 0.127 & 0.007 & 0.012 & 256 & 32 \\
+ & R3 & 0.181 & 0.005 & 0.010 & 146 & 26 \\
+DeepSeek-V3.2 & No aggregation & 0.069 & 0.097 & 0.081 & 6,934 & 475 \\
+ & R2 & 0.296 & 0.009 & 0.017 & 144 & 42 \\
+ & R3 & 0.299 & 0.008 & 0.016 & 139 & 41 \\
+\bottomrule
+\end{tabular}
+% [EVID-047; outputs/dec032_biored/analysis_result.json]
+\end{table}
+
 \subsection{Probabilistic Knowledge Base: Real-Data Validation and Calibration}
 \label{sec:results-calibration}
 
@@ -2089,7 +2152,7 @@ This section interprets the results reported in
 Section~\ref{sec:results}; no new numbers are introduced here beyond
 those already given there.
 
-\subsection{Why Aggregation Fails on DocRED, and the Divergence from DySECT}
+\subsection{Why Aggregation Fails on DocRED and BioRED, and the Divergence from DySECT}
 \label{sec:discussion-docred}
 
 On 845 DocRED documents, PKB aggregation lowered $F_1$ relative to no
@@ -2120,6 +2183,21 @@ value only when the extractor recovers the same fact from more than one
 source often enough. This is a boundary condition of the design, and a
 stronger or document-level extractor would move it
 % [EVID-046]
+.
+
+The same pattern holds on BioRED, a second domain with different text,
+a different relation schema, and an external baseline
+(Section~\ref{sec:results-biored}). A third of BioRED's gold facts are
+co-mentioned in two or more sentences, but the extractors recovered only
+0.75\% (Llama-3.1-8B) and 1.35\% (DeepSeek-V3.2) of facts from more than
+one sentence, and aggregation lowered $F_1$ for both. The stronger
+extractor recovered significantly more corroborated facts but still far
+too few. It also lost more $F_1$ to aggregation, because both extractors'
+aggregated output ended near the same low $F_1$ while DeepSeek-V3.2's
+unaggregated output was more precise. A larger aggregation loss for the
+stronger extractor therefore reflects its better baseline, not a second
+cause of failure
+% [EVID-047]
 .
 
 \citet{aminnaseri2026dysect} report a consistent recall
@@ -2203,6 +2281,18 @@ the precision of admitted triples from $0.060$ to $0.250$, although on
 too few triples to change $F_1$
 (Section~\ref{sec:results-docred})
 % [EVID-046]
+.
+
+This also defines R3's scope. Because it corrects repeat-counting, it
+acts only when the extractor emits the same triple more than once from
+a single source. On BioRED, Llama-3.1-8B did so 138 times and R3 raised
+its precision by $0.054$. DeepSeek-V3.2 did so 6 times and R3 had no
+measurable effect (Section~\ref{sec:results-biored}). Where the discarded
+repeats include correct facts, R3 can also cost recall: on BioRED its
+$F_1$ with Llama-3.1-8B was slightly lower than R2's. R3 is therefore a
+correction for extractors that repeat themselves within a source, not a
+general improvement to aggregation
+% [EVID-047]
 .
 
 \subsection{What the Ablations Do and Do Not Show}

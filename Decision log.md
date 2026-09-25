@@ -14,7 +14,7 @@ just says where each DEC currently stands and what's left.
 | 006 | Fine-Tuning (LoRA/QLoRA) | DONE (5-seed, matches DEC-005 convention) | 4/5 seeds improve, mean F1 +0.044 (0.137→0.181), std now smaller than the effect; one-sample t-test p=0.066 (trending, not conventionally significant), Wilcoxon p=0.125 — EVID-034, strongest signal DEC-006 has produced | Optional: 1-2 more seeds could reach significance; separately, re-test on DEC-018's provenance-filtered data (not yet done) |
 | 007 | Systematic Error Analysis | DONE | Zero pure false negatives in product train set; conflict adjustment resolves hallucination-vs-hallucination (108) not correct-vs-incorrect (1) — EVID-022 | Held-out val/test FN analysis + final example curation for the paper |
 | 008 | Scalability Evaluation | DONE (single-pass scope) | Runtime linear to N=200; per-doc latency flat ~4s regardless of KB size — EVID-023 | Memory measurement is broken (methodology flaw, needs isolated subprocess); full closed-loop scalability untested |
-| 009 | Domain Generalization (BioRED) | DONE (pilot, n=15) | Strict F1=0.0074 (misleading, boundary-mismatch artifact); relaxed F1=0.1029 — EVID-024 | Pilot-scale only; no external baseline on BioRED yet |
+| 009 | Domain Generalization (BioRED) | DONE (pilot, n=15) | Strict F1=0.0074 (misleading, boundary-mismatch artifact); relaxed F1=0.1029 — EVID-024 | Pilot-scale only; no external baseline on BioRED yet **Superseded by DEC-032/EVID-047 (500 abstracts, external baseline).** |
 | 010 | Strengthen Discussion | NOT STARTED | — | Writing task — deferred until all experiments done, per [[feedback_experiments_before_writing]] |
 | 011 | Novelty Positioning | NOT STARTED | — | Writing task — deferred |
 | 012 | Reproducibility Package | NOT STARTED | — | Packaging task — do near the end, before submission |
@@ -29,7 +29,7 @@ just says where each DEC currently stands and what's left.
 | 025 | Closed-Loop Retest With the Headline (epochs=5) Fine-Tuned Model | SCOPED, NOT YET RUN | DEC-019's closed-loop test (EVID-030) used the now-superseded epochs=3 seed-43 adapter, not the paper's actual epochs=5 headline model (EVID-040) — Claims #1 and #2 have never been jointly tested | Needs a rented GPU pod + explicit go-ahead to spend; scripts ready (`scripts/dec025_closedloop_*.py`) |
 | 029 | Higher-Powered Module Ablation (30 seeds) | DONE | Null for both modules; achieved MDE 0.070-0.086 F1 (EVID-045) | Written into Results Summary/main.tex |
 | 031 | DocRED at Scale With a Normalised Matching Key | DONE (EVID-046) | Matching key does not explain the failure (norm closes ~0% of gap, oracle 7.3%); only 29/11,344 gold facts recovered from 2+ sentences; R3 precision 0.06->0.25, F1 null | Supersedes DEC-020's pilot |
-| 032 | BioRED at Scale (extractor recall vs. corroboration) | PRE-REGISTERED, approved ($1.98) | — | Run extraction, then offline analysis |
+| 032 | BioRED at Scale (extractor recall vs. corroboration) | DONE (EVID-047) | Extractor-recall constraint replicates (Llama rho 0.022); R3 acts only with within-source duplicates (Llama precision +0.054, DeepSeek null) | Supersedes the DEC-009 pilot |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -886,6 +886,11 @@ Results: Strict exact-match F1=0.0074 is misleadingly low — mostly a
   genuinely harder than the product domain, but not a near-total failure.
 Remaining: n=15 is pilot-scale only; real entity linking not attempted
   (first-mention proxy used instead); no external baseline on BioRED yet.
+**SUPERSEDED (2026-09-25) by DEC-032/EVID-047:** this pilot sent each whole abstract
+  in one call, so every document had one source and nothing could be aggregated --
+  it tested the extractor only, never the framework. It also listed 6 of 8 relation
+  types and used an order-sensitive strict evaluator. The 500-abstract, sentence-level
+  run with a DeepSeek-V3.2 baseline replaces it.
 
 # DEC-010 — Strengthen Results Discussion
 
@@ -3327,6 +3332,11 @@ About 75 min with 3 processes. The analysis is offline and zero-cost.
 
 DEC-032: PRE-REGISTERED (2026-09-24). User approved the full design and
 ~$1.98 cost (2026-09-24); extraction not yet started at the time of this commit.
+
+DEC-032: RUN (2026-09-24) -- see EVID-047. 11,924 calls, $0.686. Extractor-recall
+  constraint CONFIRMED on Llama (rho 0.022; R2 below no aggregation). DeepSeek recovers
+  more corroborated facts (1.35% vs 0.75%) but has a larger gap (its no-aggregation F1 is
+  higher). R3: Llama F1 Negative, precision +0.054; DeepSeek F1 Null (6 duplicates).
 
 
 

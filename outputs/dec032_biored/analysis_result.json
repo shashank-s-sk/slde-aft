@@ -1,0 +1,426 @@
+{
+  "n_docs": 500,
+  "n_sentences": 5462,
+  "n_gold_facts": 4906,
+  "annotation_comention_2plus_share": 0.3505911129229515,
+  "annotation_comention_1plus_share": 0.8966571545046882,
+  "models": {
+    "llama": {
+      "sentence": {
+        "docs_complete": 500,
+        "extraction": {
+          "records": 5462,
+          "network_failed": 0,
+          "content_errors": 103,
+          "cost_usd": 0.08531686100000044
+        },
+        "measured_first": {
+          "extractor_recall": 0.09641255605381166,
+          "g2_facts": 37,
+          "g2_share": {
+            "value": 0.007541785568691398,
+            "ci95": [
+              0.004883486413192527,
+              0.010621273351887544
+            ],
+            "ci_excludes_zero": true
+          },
+          "valid_relation_share": 0.9663935042478009,
+          "rho_g2_over_annotation": 0.021511627906976746,
+          "within_sentence_duplicate_observations": 138
+        },
+        "arms": {
+          "naive": {
+            "alias": {
+              "precision": 0.03643506393467879,
+              "recall": 0.09641255605381166,
+              "f1": 0.052884615384615384,
+              "tp": 473,
+              "fp": 12509,
+              "fn": 4433
+            },
+            "strict": {
+              "precision": 0.020379912327924327,
+              "recall": 0.054015491235222174,
+              "f1": 0.029594058853090625,
+              "tp": 265,
+              "fp": 12738,
+              "fn": 4641
+            },
+            "relaxed": {
+              "precision": 0.07399560577526679,
+              "recall": 0.19221361598043213,
+              "f1": 0.1068555240793201,
+              "tp": 943,
+              "fp": 11801,
+              "fn": 3963
+            },
+            "admitted": 13034,
+            "any": 499,
+            "contested_candidates": 0,
+            "contested_admitted": 0
+          },
+          "R2": {
+            "alias": {
+              "precision": 0.12648221343873517,
+              "recall": 0.006522625356706074,
+              "f1": 0.012405504942818375,
+              "tp": 32,
+              "fp": 221,
+              "fn": 4874
+            },
+            "strict": {
+              "precision": 0.06274509803921569,
+              "recall": 0.003261312678353037,
+              "f1": 0.006200348769618291,
+              "tp": 16,
+              "fp": 239,
+              "fn": 4890
+            },
+            "relaxed": {
+              "precision": 0.12598425196850394,
+              "recall": 0.006522625356706074,
+              "f1": 0.012403100775193798,
+              "tp": 32,
+              "fp": 222,
+              "fn": 4874
+            },
+            "admitted": 256,
+            "any": 151,
+            "contested_candidates": 2731,
+            "contested_admitted": 25
+          },
+          "R3": {
+            "alias": {
+              "precision": 0.18055555555555555,
+              "recall": 0.005299633102323685,
+              "f1": 0.010297029702970298,
+              "tp": 26,
+              "fp": 118,
+              "fn": 4880
+            },
+            "strict": {
+              "precision": 0.0896551724137931,
+              "recall": 0.0026498165511618424,
+              "f1": 0.005147495545436547,
+              "tp": 13,
+              "fp": 132,
+              "fn": 4893
+            },
+            "relaxed": {
+              "precision": 0.14583333333333334,
+              "recall": 0.004280472890338361,
+              "f1": 0.008316831683168316,
+              "tp": 21,
+              "fp": 123,
+              "fn": 4885
+            },
+            "admitted": 146,
+            "any": 101,
+            "contested_candidates": 2731,
+            "contested_admitted": 8
+          }
+        },
+        "comparisons": {
+          "R2_vs_naive_F1": {
+            "value": -0.04047911044179701,
+            "ci95": [
+              -0.04887163909663845,
+              -0.0325523802455485
+            ],
+            "ci_excludes_zero": true
+          },
+          "R3_vs_naive_F1": {
+            "value": -0.042587585681645085,
+            "ci95": [
+              -0.05072781838480716,
+              -0.03492501884184652
+            ],
+            "ci_excludes_zero": true
+          },
+          "R3_vs_R2_F1 (PRIMARY R3)": {
+            "value": -0.0021084752398480774,
+            "ci95": [
+              -0.004760590700585329,
+              -0.0001484810850106362
+            ],
+            "ci_excludes_zero": true
+          },
+          "R3_vs_R2_precision (secondary)": {
+            "value": 0.05407334211682038,
+            "ci95": [
+              0.01521777342621797,
+              0.09378308688716801
+            ],
+            "ci_excludes_zero": true
+          }
+        }
+      },
+      "abstract": {
+        "docs_complete": 500,
+        "extraction": {
+          "records": 500,
+          "network_failed": 0,
+          "content_errors": 90,
+          "cost_usd": 0.02217793599999997
+        },
+        "measured_first": {
+          "extractor_recall": 0.0474928658785161,
+          "g2_facts": 0,
+          "g2_share": {
+            "value": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "ci_excludes_zero": false
+          },
+          "valid_relation_share": 0.976039016115352,
+          "rho_g2_over_annotation": 0.0
+        },
+        "arms": {
+          "naive": {
+            "alias": {
+              "precision": 0.05018307129011415,
+              "recall": 0.0474928658785161,
+              "f1": 0.04880092156246728,
+              "tp": 233,
+              "fp": 4410,
+              "fn": 4673
+            },
+            "strict": {
+              "precision": 0.029044750430292598,
+              "recall": 0.027517325723603752,
+              "f1": 0.02826041448607913,
+              "tp": 135,
+              "fp": 4513,
+              "fn": 4771
+            },
+            "relaxed": {
+              "precision": 0.09958415408185599,
+              "recall": 0.0927435792906645,
+              "f1": 0.09604221635883904,
+              "tp": 455,
+              "fp": 4114,
+              "fn": 4451
+            },
+            "admitted": 4649,
+            "any": 410,
+            "contested_candidates": 0,
+            "contested_admitted": 0
+          }
+        },
+        "comparisons": {}
+      }
+    },
+    "deepseek": {
+      "sentence": {
+        "docs_complete": 500,
+        "extraction": {
+          "records": 5462,
+          "network_failed": 0,
+          "content_errors": 1,
+          "cost_usd": 0.441305894630001
+        },
+        "measured_first": {
+          "extractor_recall": 0.09682022013860579,
+          "g2_facts": 66,
+          "g2_share": {
+            "value": 0.013452914798206279,
+            "ci95": [
+              0.010014597169751905,
+              0.017234570899955413
+            ],
+            "ci_excludes_zero": true
+          },
+          "valid_relation_share": 0.9998591152437306,
+          "rho_g2_over_annotation": 0.03837209302325582,
+          "within_sentence_duplicate_observations": 6
+        },
+        "arms": {
+          "naive": {
+            "alias": {
+              "precision": 0.06923189039498616,
+              "recall": 0.09682022013860579,
+              "f1": 0.08073425681992012,
+              "tp": 475,
+              "fp": 6386,
+              "fn": 4431
+            },
+            "strict": {
+              "precision": 0.04038795599305153,
+              "recall": 0.056869139828781085,
+              "f1": 0.04723209751142712,
+              "tp": 279,
+              "fp": 6629,
+              "fn": 4627
+            },
+            "relaxed": {
+              "precision": 0.1371172516803585,
+              "recall": 0.1871178149205055,
+              "f1": 0.15826221877424362,
+              "tp": 918,
+              "fp": 5777,
+              "fn": 3988
+            },
+            "admitted": 6934,
+            "any": 496,
+            "contested_candidates": 0,
+            "contested_admitted": 0
+          },
+          "R2": {
+            "alias": {
+              "precision": 0.29577464788732394,
+              "recall": 0.008560945780676722,
+              "f1": 0.01664025356576862,
+              "tp": 42,
+              "fp": 100,
+              "fn": 4864
+            },
+            "strict": {
+              "precision": 0.18309859154929578,
+              "recall": 0.005299633102323685,
+              "f1": 0.010301109350237717,
+              "tp": 26,
+              "fp": 116,
+              "fn": 4880
+            },
+            "relaxed": {
+              "precision": 0.29577464788732394,
+              "recall": 0.008560945780676722,
+              "f1": 0.01664025356576862,
+              "tp": 42,
+              "fp": 100,
+              "fn": 4864
+            },
+            "admitted": 144,
+            "any": 99,
+            "contested_candidates": 1217,
+            "contested_admitted": 13
+          },
+          "R3": {
+            "alias": {
+              "precision": 0.29927007299270075,
+              "recall": 0.008357113738279657,
+              "f1": 0.016260162601626018,
+              "tp": 41,
+              "fp": 96,
+              "fn": 4865
+            },
+            "strict": {
+              "precision": 0.18248175182481752,
+              "recall": 0.005095801059926621,
+              "f1": 0.009914733293674401,
+              "tp": 25,
+              "fp": 112,
+              "fn": 4881
+            },
+            "relaxed": {
+              "precision": 0.29927007299270075,
+              "recall": 0.008357113738279657,
+              "f1": 0.016260162601626018,
+              "tp": 41,
+              "fp": 96,
+              "fn": 4865
+            },
+            "admitted": 139,
+            "any": 96,
+            "contested_candidates": 1217,
+            "contested_admitted": 13
+          }
+        },
+        "comparisons": {
+          "R2_vs_naive_F1": {
+            "value": -0.0640940032541515,
+            "ci95": [
+              -0.07755397653123805,
+              -0.05155133992529851
+            ],
+            "ci_excludes_zero": true
+          },
+          "R3_vs_naive_F1": {
+            "value": -0.0644740942182941,
+            "ci95": [
+              -0.07798726427301461,
+              -0.05187720715148499
+            ],
+            "ci_excludes_zero": true
+          },
+          "R3_vs_R2_F1 (PRIMARY R3)": {
+            "value": -0.00038009096414260216,
+            "ci95": [
+              -0.0012265458327013886,
+              2.399081834233525e-05
+            ],
+            "ci_excludes_zero": false
+          },
+          "R3_vs_R2_precision (secondary)": {
+            "value": 0.003495425105376815,
+            "ci95": [
+              -0.010853134479271978,
+              0.016151096058596118
+            ],
+            "ci_excludes_zero": false
+          }
+        }
+      },
+      "abstract": {
+        "docs_complete": 500,
+        "extraction": {
+          "records": 500,
+          "network_failed": 0,
+          "content_errors": 5,
+          "cost_usd": 0.13685880500000006
+        },
+        "measured_first": {
+          "extractor_recall": 0.08560945780676722,
+          "g2_facts": 0,
+          "g2_share": {
+            "value": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "ci_excludes_zero": false
+          },
+          "valid_relation_share": 1.0,
+          "rho_g2_over_annotation": 0.0
+        },
+        "arms": {
+          "naive": {
+            "alias": {
+              "precision": 0.09212546611098925,
+              "recall": 0.08560945780676722,
+              "f1": 0.08874801901743264,
+              "tp": 420,
+              "fp": 4139,
+              "fn": 4486
+            },
+            "strict": {
+              "precision": 0.0623768877216021,
+              "recall": 0.058092132083163474,
+              "f1": 0.06015831134564644,
+              "tp": 285,
+              "fp": 4284,
+              "fn": 4621
+            },
+            "relaxed": {
+              "precision": 0.18033154121863798,
+              "recall": 0.16408479412963717,
+              "f1": 0.1718249733191035,
+              "tp": 805,
+              "fp": 3659,
+              "fn": 4101
+            },
+            "admitted": 4570,
+            "any": 495,
+            "contested_candidates": 0,
+            "contested_admitted": 0
+          }
+        },
+        "comparisons": {}
+      }
+    }
+  },
+  "baseline_note": "DeepSeek vs Llama comparisons are descriptive (same prompt, same sentences)."
+}
