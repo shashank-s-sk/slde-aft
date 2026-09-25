@@ -429,7 +429,8 @@ above; the formal analysis of that formula (Section~\ref{sec:formal-analysis}) i
 contributes on top of it.
 
 \paragraph{Empirical comparability.} The two systems' empirical evaluations
-use different benchmarks, base models, and metrics: DySECT reports a
+use different benchmarks, base models, and metrics: DySECT
+\citep{aminnaseri2026dysect} reports a
 5--8 percentage point recall lift from KB-guided extraction with no
 retraining, and recall improvements on DocRED across GPT-4.1, GPT-4.1-mini,
 LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's evaluation
@@ -1127,10 +1128,10 @@ framework, and is superseded
 \label{sec:setup-models}
 
 The pipeline's extractor, used for every product-domain run and for
-the DocRED and BioRED runs, is \texttt{meta-llama/} \texttt{llama-3.1-8b-instruct}
+the DocRED and BioRED runs, is \texttt{meta-llama/} \texttt{llama-3.1-8b-instruct} \citep{grattafiori2024llama3}
 via OpenRouter, temperature $0.0$
 % [EVID-013; src/extractors/openrouter_llm.py default temperature=0.0]
-. On BioRED, it is compared against \texttt{deepseek/deepseek-v3.2} as an
+. On BioRED, it is compared against \texttt{deepseek/deepseek-v3.2} \citep{deepseekai2025deepseekv32} as an
 external baseline, given the same prompts and inputs
 % [Decision log.md, DEC-032]
 . On CaRB, this model is compared against four external systems, all via
@@ -1140,8 +1141,9 @@ OpenRouter, all on the full 548-sentence sample: \texttt{deepseek/deepseek-v3.2}
 CaRB pilot sample (not re-run at full scale; the 30-sentence numbers
 remain the only ones available for these three)
 % [EVID-032; EVID-035, Limitations]
-: \texttt{openai/gpt-4o}, \texttt{anthropic/claude-sonnet-5}, and
-\texttt{google/gemini-2.5-pro}
+: \texttt{openai/gpt-4o} \citep{openai2024gpt4o}, \texttt{anthropic/claude-sonnet-5}
+\citep{anthropic2026claudesonnet5}, and \texttt{google/gemini-2.5-pro}
+\citep{comanici2025gemini25}
 % [EVID-032]
 . \texttt{Babelscape/rebel-large} was also attempted as a comparison
 system and found task-incompatible with CaRB's open-domain span-based
@@ -1151,7 +1153,7 @@ as a comparison point
 % [EVID-033]
 .
 
-The fine-tuning base model is \texttt{mistralai/Mistral-7B-Instruct-v0.3}
+The fine-tuning base model is \texttt{mistralai/Mistral-7B-Instruct-v0.3} \citep{jiang2023mistral}
 (chosen over \texttt{meta-llama/Llama-3.1-8B-Instruct} specifically to
 avoid a Hugging Face gated-repository approval wait)
 % [EVID-026]

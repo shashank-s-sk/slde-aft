@@ -11,12 +11,15 @@
 % Entries not yet needed (not cited in Section 2) are added incrementally as
 % later sections are written, per the task's section-by-section order.
 
-@incollection{hutter2019automl,
+@book{hutter2019automl,
   title     = {Automated Machine Learning: Methods, Systems, Challenges},
   editor    = {Hutter, Frank and Kotthoff, Lars and Vanschoren, Joaquin},
+  series    = {The Springer Series on Challenges in Machine Learning},
   year      = {2019},
-  publisher = {Springer},
-  address   = {Cham}
+  publisher = {Springer International Publishing},
+  address   = {Cham},
+  doi       = {10.1007/978-3-030-05318-5},
+  note      = {Verified 2026-09-25 against the Crossref record for this DOI: an edited book (not a chapter), editors Hutter, Kotthoff and Vanschoren, series as given. Changed from @incollection, which required a booktitle and author it does not have.}
 }
 
 @article{elsken2019nas,
@@ -374,4 +377,60 @@
   publisher = {Association for Computational Linguistics},
   doi       = {10.18653/v1/D19-1651},
   note      = {Verified 2026-09-25 against the ACL Anthology record (aclanthology.org/D19-1651.bib), the publisher's own. Pages 6262--6267 per the Anthology; the Crossref record for the same DOI lists 6261--6266, off by one.}
+}
+
+@misc{grattafiori2024llama3,
+  title         = {The {Llama} 3 Herd of Models},
+  author        = {Grattafiori, Aaron and Dubey, Abhimanyu and others},
+  year          = {2024},
+  eprint        = {2407.21783},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  note          = {Verified 2026-09-25 against the arXiv record (title, first authors, 2024-07-31). The model used is meta-llama/llama-3.1-8b-instruct, which OpenRouter maps to meta-llama/Meta-Llama-3.1-8B-Instruct.}
+}
+
+@misc{jiang2023mistral,
+  title         = {Mistral 7{B}},
+  author        = {Jiang, Albert Q. and Sablayrolles, Alexandre and others},
+  year          = {2023},
+  eprint        = {2310.06825},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  note          = {Verified 2026-09-25 against the arXiv record (title, first authors, 2023-10-10). The fine-tuning base model is mistralai/Mistral-7B-Instruct-v0.3.}
+}
+
+@misc{openai2024gpt4o,
+  title         = {{GPT-4o} System Card},
+  author        = {{OpenAI}},
+  year          = {2024},
+  eprint        = {2410.21276},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  note          = {Verified 2026-09-25 against the arXiv record (title, OpenAI as author, 2024-10-25).}
+}
+
+@misc{comanici2025gemini25,
+  title         = {Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities},
+  author        = {Comanici, Gheorghe and Bieber, Eric and others},
+  year          = {2025},
+  eprint        = {2507.06261},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  note          = {Verified 2026-09-25 against the arXiv record (title, first authors, 2025-07-07).}
+}
+
+@misc{deepseekai2025deepseekv32,
+  title        = {{DeepSeek-V3.2}: Pushing the Frontier of Open Large Language Models},
+  author       = {{DeepSeek-AI}},
+  year         = {2025},
+  howpublished = {\url{https://huggingface.co/deepseek-ai/DeepSeek-V3.2}},
+  note         = {Citation block copied from the official model repository README (deepseek-ai/DeepSeek-V3.2), verified 2026-09-25; OpenRouter maps deepseek/deepseek-v3.2 to this repository. The repository links a technical report at assets/paper.pdf.}
+}
+
+@misc{anthropic2026claudesonnet5,
+  title        = {Claude {Sonnet} 5},
+  author       = {{Anthropic}},
+  year         = {2026},
+  howpublished = {Model documentation, \url{https://platform.claude.com/docs/en/models/sonnet-5/overview}},
+  note         = {Anthropic's own model documentation, accessed 2026-09-25 (Models overview lists Claude Sonnet 5, API ID claude-sonnet-5). The page gives no publication date; the year is the year of access.}
 }

@@ -98,3 +98,22 @@ the corresponding source is fixed.
   author list, page numbers where given) were taken directly from
   `refrence master copy.xlsx`'s `Full_Reference` field, not reconstructed
   from memory.
+
+## Resolved 2026-09-25: model citations and hutter2019automl
+
+- Llama 3 (arXiv:2407.21783), Mistral 7B (arXiv:2310.06825), GPT-4o
+  System Card (arXiv:2410.21276) and Gemini 2.5 (arXiv:2507.06261):
+  verified against the arXiv API records (title, first authors, date).
+- DeepSeek-V3.2: citation block copied from the official
+  deepseek-ai/DeepSeek-V3.2 repository README; OpenRouter's
+  deepseek/deepseek-v3.2 maps to that repository.
+- Claude Sonnet 5: cited to Anthropic's model documentation page
+  (platform.claude.com/docs/en/models/sonnet-5/overview). The page has
+  no publication date, so the bib year is the year of access (2026).
+- GPT-4.1, GPT-4.1-mini, Kimi K2.5 and LLaMA-3.3 70B are named in
+  DySECT without any citation of their own (checked in the arXiv HTML
+  of 2603.06915v2). They are cited "as DySECT reports them": every
+  mention in main.tex sits next to a citation of aminnaseri2026dysect.
+- hutter2019automl: changed from @incollection to @book (an edited
+  volume); editors, series, publisher and DOI verified against Crossref.
+  BibTeX's "empty author / empty booktitle" warnings are gone.
