@@ -30,7 +30,7 @@
 
 \begin{document}
 
-\title[SLDE-AFT: Evaluating a Closed-Loop Extraction Design]{SLDE-AFT: A Self-Learning Dual-Source Knowledge Extraction and Automated Fine-Tuning System}
+\title[Confidence Aggregation in Closed-Loop Information Extraction]{Confidence Aggregation in Closed-Loop Information Extraction: Formal Analysis and Empirical Evaluation}
 
 % TODO(authors): affiliations, emails, and the corresponding author (*)
 % are required by the template and are not yet supplied.
@@ -38,12 +38,10 @@
 \author[1]{\fnm{Ahmed} \sur{Ebada}}\email{TODO}
 \affil*[1]{\orgdiv{TODO}, \orgname{TODO}, \orgaddress{\city{TODO}, \country{TODO}}}
 
-% TODO(abstract): not yet written. LRE asks for 150--250 words; the
-% template's guidance is unstructured, with no citations or equations.
-\abstract{TODO: abstract not yet written.}
+% 243 words (LRE: 150--250); no citations or equations, per the template.
+\abstract{Closed-loop information extraction pools facts extracted by a language model in a knowledge base that scores each fact by its supporting evidence, and feeds that knowledge base back into the extractor. This paper analyses the conservative Noisy-OR aggregation rule with a mutual-exclusivity penalty that the DySECT system published for this purpose, and evaluates an independent implementation of the design. It proves the rule's boundedness, monotonicity and saturation, and a rival ceiling: for a single-valued predicate, a contested slot with m rival values scores below 1/(m+1), at most 0.5, so it cannot be admitted at any threshold of 0.5 or more. On two real-data snapshots the rule admitted no contested slots where a max-merge baseline admitted 6 and 40, and none under a structured source corrupted at up to 20\%. Counting distinct sources instead of repeated observations raised the precision of admitted facts by 0.03 to 0.11 in the product domain and by 0.05 to 0.29 on DocRED and BioRED, but only where the extractor repeats a fact within a source. A controlled, partly pre-registered evaluation found no end-to-end benefit from the loop's mechanisms: removing the feedback controller or the probabilistic knowledge base had no significant effect over thirty seeds, and leakage-free fine-tuning lowered per-product F1 on its primary metric. On DocRED and BioRED, aggregation lowered F1 for both extractors tested, because they recovered under 1.4\% of gold facts from more than one sentence: extractor recall, not the matching key, is the binding constraint.}
 
-% TODO(keywords): not yet chosen (typically 4--6).
-\keywords{TODO}
+\keywords{information extraction, knowledge base population, confidence aggregation, Noisy-OR, closed-loop learning, large language models}
 
 \maketitle
 
@@ -159,388 +157,102 @@ Section~\ref{sec:conclusion} concludes.
 \section{Related Work}
 \label{sec:related-work}
 
-The work presented in this paper intersects six established research
-paradigms: automated machine learning \citep{hutter2019automl,elsken2019nas,feurer2022autosklearn2,he2021automlsurvey}, information
-extraction \citep{banko2007openie,lu2022uie,josifoski2022genie,liu2024openiesurvey}, retrieval-augmented generation \citep{guu2020realm,lewis2020rag}, parameter-efficient
-fine-tuning \citep{houlsby2019peft,lester2021prompttuning,hu2021lora,dettmers2023qlora}, feedback-based self-improvement \citep{wang2023selfinstruct,madaan2023selfrefine,gulcehre2023rest,chen2024spin}, and probabilistic knowledge
-representation \citep{bach2017psl,ji2021kgsurvey,nguyen2020kgcsurvey}. Each paradigm addresses a partial subset of the
-capabilities that SLDE-AFT integrates within a single architecture; the
-subsections below review each in turn, and Section~\ref{sec:related-work-dysect}
-discusses the one system in the literature that spans the largest share of
-these capabilities at once.
+\subsection{Background}
 
-\subsection{Automated Machine Learning}
+\paragraph{Extraction.} Open information extraction derives relational
+triples without predefined relation types
+\citep{banko2007openie,liu2024openiesurvey}, while document-level and
+sentence-level benchmarks such as DocRED \citep{yao2019docred} and TACRED
+\citep{zhang2017tacred} standardised schema-guided evaluation. Generative
+extractors cast extraction as sequence generation, from REBEL
+\citep{cabot2021rebel} and GenIE \citep{josifoski2022genie} to TANL
+\citep{paolini2021tanl}; universal frameworks unify extraction tasks under
+one model \citep{lu2022uie,wang2023instructuie}; and joint, open-world,
+and zero-shot methods broaden coverage
+\citep{wadden2019dygiepp,zhang2022oamine,levy2017zeroshot}. These methods
+generally treat extraction as a terminal step rather than as input to
+further adaptation.
 
-Automated machine learning (AutoML) emerged to reduce human effort in
-constructing supervised learning pipelines by automating model selection,
-hyperparameter optimisation, and architecture search \citep{hutter2019automl,he2021automlsurvey}.
-Bayesian-optimisation-based frameworks such as Auto-Sklearn \citep{feurer2015autosklearn}
-and its successor Auto-Sklearn~2.0 \citep{feurer2022autosklearn2} introduced
-meta-learning-guided warm starting and portfolio construction to reduce
-pipeline search time substantially. Ensemble-driven systems such as
-AutoGluon \citep{erickson2020autogluon} extended automation to tabular
-prediction tasks through multi-layer stacking, while commercial platforms
-such as Amazon SageMaker Autopilot \citep{das2020sagemaker} enabled
-transparent, editable pipeline generation at deployment scale. Neural
-architecture search methods \citep{elsken2019nas} further widened the
-automation boundary to model structure itself. Despite these advances, AutoML
-frameworks treat data extraction as a fixed upstream preprocessing step: the
-adaptive boundary begins at feature engineering and ends at model deployment,
-leaving the connection between heterogeneous source ingestion, knowledge
-accumulation, and iterative model adaptation outside the automation scope
-addressed by the closed-loop design described in Section~\ref{sec:framework}.
+\paragraph{Knowledge and retrieval.} Retrieval-augmented generation
+grounds generation in retrieved evidence
+\citep{lewis2020rag,guu2020realm,asai2023selfrag}, including graph-based
+memories \citep{gutierrez2024hipporag,edge2025graphrag}, but uses that
+knowledge at inference time rather than to adapt the extractor.
+Probabilistic soft logic \citep{bach2017psl} and knowledge-graph surveys
+\citep{ji2021kgsurvey,nguyen2020kgcsurvey} treat confidence-aware
+population and uncertainty management as open problems, and attribution
+methods \citep{ribeiro2016lime,zhao2023explainability} are largely post
+hoc.
 
-\subsection{Information Extraction and Relation Extraction}
-
-Information extraction research has pursued two broad trajectories:
-schema-free open extraction and schema-guided structured extraction. Open
-Information Extraction systems \citep{banko2007openie,liu2024openiesurvey}
-showed that relational triples could be extracted from large text corpora
-without predefining relation types, using lightweight linguistic processing
-and redundancy-based confidence estimation. Document-level relation
-extraction benchmarks such as DocRED \citep{yao2019docred} established
-evaluation standards for reasoning across sentence boundaries, while
-supervised relation classification datasets such as TACRED
-\citep{zhang2017tacred} became widely adopted benchmarks for sentence-level
-relation extraction. Generative extraction architectures reformulated triple
-extraction as sequence-to-structure generation: REBEL \citep{cabot2021rebel}
-reformulated end-to-end relation extraction as autoregressive triplet
-generation, GenIE \citep{josifoski2022genie} extended this to
-schema-constrained decoding at large entity-relation scale, and TANL
-\citep{paolini2021tanl} treated structured prediction as translation between
-augmented natural languages. Universal IE frameworks \citep{lu2022uie,wang2023instructuie}
-unified heterogeneous extraction tasks under a single architecture via
-structured extraction languages and multi-task instruction tuning. Joint
-extraction systems such as DyGIE++ \citep{wadden2019dygiepp} improved the
-integration of entity and relation extraction, while open-world attribute
-discovery systems such as OA-Mine \citep{zhang2022oamine} enabled discovery
-of previously unseen attributes beyond predefined schemas. Zero-shot relation
-extraction approaches \citep{levy2017zeroshot} demonstrated that
-question-template reformulation can facilitate extraction of previously
-unseen relation types without retraining. These approaches improve
-extraction accuracy, coverage, schema flexibility, or generalisation
-capability, but they generally treat extraction as a terminal process and do
-not leverage accumulated extracted knowledge to drive iterative model
-adaptation through an automated feedback loop.
-
-\subsection{Retrieval-Augmented Generation}
-
-Retrieval-augmented generation (RAG) addresses the knowledge limitations of
-parametric language models by augmenting generation with dynamically
-retrieved external evidence, reducing hallucination and improving factual
-grounding. The RAG framework of \citet{lewis2020rag} demonstrated that dense
-passage retrieval combined with sequence-to-sequence generation improves
-factual accuracy on knowledge-intensive question-answering and reasoning
-tasks. REALM \citep{guu2020realm} integrated retrieval directly into language
-model pre-training, enabling differentiable retrieval learning while
-decoupling parametric knowledge from external evidence sources. SELF-RAG
-\citep{asai2023selfrag} introduced adaptive retrieval and self-reflection
-tokens that let the model critique its own outputs and selectively retrieve
-evidence, improving factual attribution. HippoRAG \citep{gutierrez2024hipporag}
-proposed a neurobiologically inspired long-term memory architecture combining
-knowledge graph construction with personalised PageRank retrieval, improving
-multi-hop reasoning. GraphRAG \citep{edge2025graphrag} extended RAG toward
-graph-structured community summarisation, enabling retrieval over
-hierarchically organised entity relationships. Despite these advances,
-existing RAG frameworks primarily focus on retrieval-enhanced inference and
-generally treat retrieved knowledge as a transient resource used only during
-generation; accumulated knowledge is not typically used to drive iterative
-extraction improvement, automated supervision generation, or continuous
-model adaptation.
-
-\subsection{Parameter-Efficient Fine-Tuning}
-
-The pretrain-then-fine-tune paradigm established by BERT \citep{devlin2019bert}
-demonstrated that large-scale bidirectional pretraining followed by
-task-specific adaptation can achieve strong downstream NLP performance;
-however, adaptation typically relies on task-specific labelled datasets.
-Instruction tuning via FLAN \citep{wei2022flan} and RLHF-aligned adaptation
-via InstructGPT \citep{ouyang2022instructgpt} showed that natural-language
-task descriptions and preference signals can generalise fine-tuned behaviour
-to unseen tasks, yet both approaches depend on large-scale human annotation.
-Parameter-efficient fine-tuning (PEFT) methods substantially reduced
-adaptation costs by updating only a small subset of model parameters.
-Representative approaches include adapter layers \citep{houlsby2019peft},
-soft prompt tuning \citep{lester2021prompttuning}, LoRA \citep{hu2021lora},
-and QLoRA \citep{dettmers2023qlora}, which progressively improved parameter
-efficiency while preserving downstream performance. Direct Preference
-Optimization \citep{rafailov2023dpo} replaced reward modelling with a
-simpler binary classification objective. Although these approaches
-significantly reduce adaptation overhead, they generally rely on externally
-curated supervision and are initiated through manually defined training
-workflows; the automatic generation of supervision signals from accumulated
-extracted knowledge, and the continuous triggering of model adaptation from
-that signal, remain largely unexplored by this line of work.
-
-\subsection{Feedback-Based and Self-Improving Learning}
-
-A growing line of research investigates how language models can improve
-their own outputs through iterative self-generated feedback, without
-additional human supervision. SELF-REFINE \citep{madaan2023selfrefine}
-showed that a single model acting as both generator and critic can improve
-output quality through training-free iterative refinement. Reinforced
-Self-Training \citep{gulcehre2023rest} proposed a Grow-Improve loop in which
-the model generates candidate outputs, filters them by reward score, and
-retrains on high-quality examples offline, reducing the cost of RLHF.
-Self-Play Fine-Tuning \citep{chen2024spin} enabled iterative self-improvement
-by training a model to distinguish its own outputs from human-quality
-references, without additional human data. SELF-INSTRUCT
-\citep{wang2023selfinstruct} introduced a self-bootstrapping pipeline for
-synthetic instruction generation that reduces annotation dependency.
-Toolformer \citep{schick2023toolformer} showed that language models can
-acquire external tool-use capabilities through self-supervised data
-generation. Continual learning research \citep{wang2024continuallearning}
-and Learning without Forgetting \citep{li2017lwf} address stability-plasticity
-trade-offs in sequential adaptation settings. These approaches improve
-generation quality, self-supervision, or adaptation efficiency, but they
-generally operate on transient model outputs and do not maintain a
-persistent structured knowledge repository that accumulates extracted facts
-and converts them into supervision signals for continuous model adaptation.
-
-\subsection{Probabilistic Knowledge Representation and Explainability}
-
-Principled uncertainty modelling over extracted facts matters for systems
-that must decide which knowledge to trust, accumulate, and reuse for
-downstream adaptation. Probabilistic Soft Logic \citep{bach2017psl} provided
-a scalable framework for soft reasoning over structured relational domains
-using hinge-loss Markov random fields, showing that confidence-weighted
-inference over structured variables is both theoretically grounded and
-practically efficient. Knowledge graph surveys \citep{ji2021kgsurvey,nguyen2020kgcsurvey}
-identify confidence-aware extraction, knowledge base population, and
-uncertainty management as persistent challenges in scalable knowledge-centric
-systems. Explainability research has established principled attribution
-methods: LIME \citep{ribeiro2016lime} provides locally faithful
-model-agnostic explanations through input perturbation, and LLM
-explainability surveys \citep{zhao2023explainability} extend attribution
-taxonomies to the prompting and fine-tuning paradigms of large language
-models. These works show that confidence modelling and attribution are
-tractable and important, but they operate primarily as post-hoc or offline
-analysis tools; the integration of provenance traceability and
-confidence-aware filtering as \emph{active} components of a continuous
-extraction and adaptation pipeline is comparatively underexplored.
+\paragraph{Adaptation.} Parameter-efficient fine-tuning reduces the cost
+of adapting pretrained models \citep{devlin2019bert,houlsby2019peft,
+lester2021prompttuning,hu2021lora,dettmers2023qlora}, and instruction and
+preference tuning broaden what fine-tuning teaches
+\citep{wei2022flan,ouyang2022instructgpt,rafailov2023dpo}, but all rely on
+curated supervision. Self-improvement methods generate their own
+feedback or training data
+\citep{madaan2023selfrefine,gulcehre2023rest,chen2024spin,wang2023selfinstruct,schick2023toolformer},
+and continual learning addresses the stability of sequential adaptation
+\citep{wang2024continuallearning,li2017lwf}; none maintains a persistent
+structured knowledge base as the source of supervision. AutoML automates
+model selection and search
+\citep{hutter2019automl,he2021automlsurvey,feurer2015autosklearn,feurer2022autosklearn2,erickson2020autogluon,das2020sagemaker,elsken2019nas}
+but treats data extraction as a fixed upstream step.
 
 \subsection{Closest Prior System: DySECT}
 \label{sec:related-work-dysect}
 
-The system closest to SLDE-AFT in the published literature is DySECT, a
-Dynamic Self-Evolving Extraction and Curation Toolkit, presented in a paper
-titled ``A Dynamic Self-Evolving Extraction System''
-\citep{aminnaseri2026dysect}. DySECT incrementally populates a self-expanding
-knowledge base with triples extracted by an LLM, aggregates them with a
-probabilistic confidence and graph-based reasoning layer built on top of
-Theo \citep{mitchell1989theo}, and feeds the enriched knowledge base back
-into the extractor through prompt tuning, few-shot example sampling, or
-fine-tuning on knowledge-base-derived synthetic data -- forming, in the
-authors' own description, a closed loop in which extraction improves
-knowledge and knowledge improves extraction. Table~1 of
-\citet{aminnaseri2026dysect} reports that, at the first KB-guided iteration,
-recall improves by 5--8 percentage points over the no-feedback baseline
-across all four evaluated models (GPT-4.1: 22.80\%$\to$30.62\%; GPT-4.1-mini:
+DySECT \citep{aminnaseri2026dysect} populates a self-expanding knowledge
+base with LLM-extracted triples, scores them with a probabilistic
+confidence and reasoning layer built on Theo \citep{mitchell1989theo},
+and feeds the knowledge base back into the extractor through prompt
+tuning, few-shot sampling, or fine-tuning on knowledge-base-derived
+synthetic data. On DocRED it reports recall gains of 5--8 percentage
+points at the first knowledge-base-guided iteration for all four models
+it evaluates (GPT-4.1: 22.80\%$\to$30.62\%; GPT-4.1-mini:
 12.72\%$\to$20.22\%; Kimi~K2.5: 32.03\%$\to$37.85\%; LLaMA-3.3~70B:
-23.23\%$\to$28.78\%, positive-feedback mode), on DocRED. DySECT also keeps
-its knowledge base explicitly inspectable, letting a user review triples,
-confidence statistics, and hierarchical structure, and manually validate,
-invalidate, or add knowledge.
+23.23\%$\to$28.78\%), and its knowledge base can be inspected and
+curated by a user.
 
-\paragraph{The confidence aggregation formula is not merely similar --
-it is the same formula.} \citet{aminnaseri2026dysect}'s Equations 1--2 define
-$C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with a default
-shrinkage $\lambda=0.75$, followed by a mutual-exclusivity penalty
-$C(t) = C_{\mathrm{agg}}(t) / (m(t)+1)$. This is notationally and
-mathematically identical to SLDE-AFT's Conservative Noisy-OR aggregation
-with mutual-exclusivity penalty (Section~\ref{sec:formal-analysis}; the same default shrinkage of
-0.75 is independently confirmed in this project's own
-\texttt{scripts/dec003\_product\_probkb\_run.py}). This paper does not claim
-priority or originality for this formula, and does not claim it is novel or
-absent from prior extraction-KB systems: DySECT is a published, citable
-counter-example to any such claim. What Section~\ref{sec:formal-analysis} contributes instead is
-a formal derivation and proofs of this formula's boundedness, monotonicity,
-and saturation properties, and the rival-ceiling result
-$C(t) < 1/(m(t)+1) \le 0.5$ for any contested single-valued-predicate slot
--- properties stated but not proved in \citet{aminnaseri2026dysect}'s
-description of the same formula.
+\paragraph{What this paper takes from DySECT.} The aggregation rule
+analysed here is DySECT's: its Equations 1--2 define
+$C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with default
+shrinkage $\lambda=0.75$, followed by the mutual-exclusivity penalty
+$C(t) = C_{\mathrm{agg}}(t)/(m(t)+1)$, which is the rule evaluated
+throughout this paper (Section~\ref{sec:formal-analysis}). DySECT's
+``Encouraging'' and ``Prohibitive'' feedback modes, recovering missed
+facts and suppressing false ones, are the two directions of the
+evaluated feedback controller, although the implementation does not
+use those labels in code (Section~\ref{sec:framework-feedback}). The
+closed loop, the probabilistic confidence layer, prompt-augmentation
+feedback, and fine-tuning on knowledge-base-derived data are likewise
+DySECT's design. This paper claims none of them; its contributions are
+the formal analysis of the rule and the evaluation.
 
-\paragraph{Capabilities SLDE-AFT shares with DySECT.} Four elements of
-DySECT's design, as described by \citet{aminnaseri2026dysect}, are also
-present and verified in SLDE-AFT's implementation (Section~\ref{sec:framework}): a
-\emph{closed loop} in which extraction populates a knowledge base and the
-knowledge base feeds back into extraction; a \emph{probabilistic confidence}
-layer over accumulated triples, rather than treating every extraction as
-equally trustworthy; \emph{prompt-augmentation feedback}, in which the
-current state of the knowledge base is used to steer the extractor's next
-pass; and \emph{synthetic training data generated from high-confidence
-knowledge-base triples} to fine-tune the extractor, rather than from an
-externally curated dataset.
+\paragraph{Differences.} DySECT describes two capabilities that the
+evaluated implementation does not have, KNN-based hierarchical concept
+abstraction and a human curation interface
+(Section~\ref{sec:framework-gaps}). Conversely, the evaluated
+implementation seeds the knowledge base from structured records as well
+as text, and gates fine-tuning data on structured corroboration
+(Section~\ref{sec:framework}); DySECT describes neither. The two
+evaluations use different benchmarks, models, and metrics, so no direct
+numerical comparison is made.
 
-\paragraph{A second naming match, alongside the formula match above.}
-\citet{aminnaseri2026dysect}'s Section 4 (``Feedback Modes'') names its two
-prompt-augmentation directions \emph{Encouraging (positive)} mode --
-high-confidence subconcepts and representative relations injected as
-positive examples, encouraging extraction of further instances in similar
-concept families -- and \emph{Prohibitive (negative)} mode -- well-covered
-or saturated subconcepts marked as already extracted, to discourage
-redundant re-extraction. This is the identical naming (``Encouraging
-Mode'' / ``Prohibitive Mode'') SLDE-AFT's own architecture design
-specifies for its Feedback Controller's two directions -- Encouraging Mode
-injecting high-confidence exemplar triples for underrepresented predicates,
-Prohibitive Mode flagging false-positive extraction patterns to avoid
-% [SLDE_AFT_Revised_Contribution_Document.docx, SLDE.docx -- both use this
-% exact "Encouraging Mode"/"Prohibitive Mode" naming for the Feedback
-% Controller's two directions, independently of this citation check]
-. As with the aggregation formula, this naming is not presented as
-SLDE-AFT's own coinage: \citet{aminnaseri2026dysect} is a published,
-citable source using the identical terms. One implementation-level
-difference is worth stating precisely rather than left implied: the
-evaluated codebase's feedback builder
-(\texttt{src/feedback\_builder.py}) constructs a missing-fact /
-false-pattern / undercovered-predicate hint block without using either
-literal mode label in code -- the ``Encouraging''/``Prohibitive'' naming
-appears in both projects' design-level description of the mechanism, not
-necessarily in SLDE-AFT's shipped variable or function names
-% [src/feedback_builder.py -- verified directly, no "encouraging" or
-% "prohibitive" string anywhere in the module]
-.
-
-\paragraph{Capabilities DySECT reports that SLDE-AFT's implementation does
-not have.} \citet{aminnaseri2026dysect} describe two further capabilities
-that were also specified in SLDE-AFT's original architecture design but are
-not present in the implementation evaluated in this paper, verified directly
-against the current codebase: \emph{hierarchical knowledge abstraction} and
-a \emph{human curation interface}.
-
-For hierarchical abstraction, the specific mechanism matches, not just the
-general capability: \citet{aminnaseri2026dysect}'s Section 2.2 (``Knowledge
-Base Growth'') states that their knowledge integrator ``structures the
-KB's concepts into more interpretable hierarchies,'' and that ``for any
-node with a large or semantically heterogeneous set of children, we apply
-KNN-based clustering over the children's embeddings to group conceptually
-similar nodes into coherent clusters,'' with an LLM then proposing a label
-for each cluster that becomes a new intermediate node in the hierarchy.
-SLDE-AFT's own architecture design specifies the same method: ``Automatic
-hierarchical abstraction via KNN clustering and LLM-based subconcept
-labeling''
-% [SLDE_AFT_Revised_Contribution_Document.docx -- exact quoted phrase,
-% verified directly in the document's own text]
--- KNN clustering over embeddings, followed by LLM-generated cluster
-labels, in both cases. No such clustering or hierarchy-construction code
-exists in SLDE-AFT's evaluated implementation, so this is stated as a
-specified-but-unimplemented capability, not a claim that SLDE-AFT
-implements a KNN-based hierarchy of its own.
-
-For the human curation interface, SLDE-AFT's design document specified an
-analogous human validation interface with character-level source offsets
-and a model-version registry with rollback; none of these are implemented
-in the evaluated system either.
-
-These are stated here as an honest scope limitation of the current
-implementation relative to DySECT, not as a design decision, and are
-revisited in Section~\ref{sec:limitations} (Limitations).
-
-\paragraph{Implemented capabilities not described in DySECT.} Two
-elements of SLDE-AFT's design have no counterpart described in
-\citet{aminnaseri2026dysect}. First, dual-source structured seeding: SLDE-AFT
-ingests structured records (CSV/JSON) through a deterministic schema-based
-extraction path at a fixed high confidence, in addition to the LLM-based
-unstructured path, before both sources are aggregated by the same
-probabilistic mechanism (Section~\ref{sec:framework}); DySECT's knowledge base is populated
-from LLM extraction alone. Second, provenance as an automated training-data
-gate: rather than a human curation step, SLDE-AFT's provenance layer
-automatically withholds a triple from becoming fine-tuning training data
-unless it has structured corroboration (Section~\ref{sec:framework}, Section~\ref{sec:results}) -- an
-automated mechanism aimed at synthetic-data quality, verified to measurably
-change training-data precision on real data (Section~\ref{sec:results}), not a substitute
-for DySECT's manual interface but a different kind of gate entirely. The
-confidence aggregation formula itself is not unique to SLDE-AFT, as stated
-above; the formal analysis of that formula (Section~\ref{sec:formal-analysis}) is what this paper
-contributes on top of it.
-
-\paragraph{Empirical comparability.} The two systems' empirical evaluations
-use different benchmarks, base models, and metrics: DySECT
-\citep{aminnaseri2026dysect} reports a
-5--8 percentage point recall lift from KB-guided extraction with no
-retraining, and recall improvements on DocRED across GPT-4.1, GPT-4.1-mini,
-LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's evaluation
-(Sections~\ref{sec:setup-datasets}--\ref{sec:results}) uses CaRB
-\citep{bhardwaj2019carb}, DocRED \citep{yao2019docred}, and BioRED
-\citep{luo2022biored} with a different set of base models and a
-seed-based statistical protocol. No direct numerical comparison between the
-two systems is made in this paper as a result; a controlled head-to-head
-evaluation on a shared benchmark is identified as future work in
-Section~\ref{sec:conclusion}.
-
-\subsection{Synthesis}
-
-Across the paradigms reviewed above, a consistent pattern emerges: each
-research tradition addresses one layer of the extraction-knowledge-adaptation
-problem in relative isolation. AutoML research automates model selection and
-optimisation while leaving knowledge acquisition outside the automation
-boundary \citep{hutter2019automl,feurer2022autosklearn2}. Information
-extraction systems improve fact discovery but generally treat extracted
-knowledge as a terminal output rather than a reusable learning signal
-\citep{banko2007openie,lu2022uie,liu2024openiesurvey}. RAG improves grounding
-but keeps the retriever static \citep{lewis2020rag,asai2023selfrag}.
-Fine-tuning reduces adaptation cost but requires manually curated
-supervision and manually triggered training \citep{hu2021lora,dettmers2023qlora}.
-Self-improving systems refine outputs but lack a structured, persistent
-knowledge substrate \citep{madaan2023selfrefine,gulcehre2023rest}. Provenance
-and confidence-modelling systems record attribution but do not typically use
-it as an active training-data filter \citep{bach2017psl,ribeiro2016lime}.
-DySECT \citep{aminnaseri2026dysect} is the one system in this review that
-combines several of these layers into a closed loop, and the preceding
-subsection states plainly where SLDE-AFT's design overlaps with it and where
-it differs. Section~\ref{sec:gap} formalises the resulting cross-paradigm gap and
-positions this paper's evaluation against it.
-
-% ------------------------------------------------------------------
-\section{Cross-Paradigm Research Gap}
+\subsection{Evaluation Gap}
 \label{sec:gap}
 
-The six paradigms reviewed in Section~\ref{sec:related-work} each
-address one part of the extraction-knowledge-adaptation cycle, and
-\citet{aminnaseri2026dysect} already closes that cycle: a closed loop
-in which LLM extraction populates a probabilistically-scored knowledge
-base, and the knowledge base feeds back into extraction through prompt
-augmentation, few-shot sampling, and optionally fine-tuning
-(Section~\ref{sec:related-work-dysect}). The gap this paper addresses
-is therefore not that no system forms such a loop -- one does, and is
-cited throughout this paper as prior work, not distinguished from it by
-the existence of a loop alone.
-
-The gap is in what has been evaluated about such a loop once it exists.
-\citet{aminnaseri2026dysect}'s own evaluation reports a recall
-improvement from KB-guided prompting, aggregated across four extractor
-models on one benchmark, under a single run per configuration
-(Section~\ref{sec:related-work-dysect}). It does not report a
-module-level ablation isolating which component of the loop
-(aggregation, feedback, fine-tuning) is responsible for a measured
-change; a multi-seed statistical protocol distinguishing a real effect
-from run-to-run variance; a calibration measurement of the confidence
-scores the aggregation rule produces; or a held-out generalization test
-separating documents used to build the knowledge base from documents
-used to measure it. Symmetrically, this paper does not claim
-\citet{aminnaseri2026dysect}'s own design contributions -- its
-KNN-based hierarchical sub-concept abstraction, its human curation
-interface -- as untested weaknesses of that system: SLDE-AFT's own
-implementation lacks both (Section~\ref{sec:framework}), so this is not
-a comparison this paper is positioned to adjudicate either way.
-
-What SLDE-AFT contributes, then, is not a first closed loop, but a
-closed loop of this kind evaluated against the rigor its component
-claims require: a formal analysis of the aggregation rule's properties
-and failure modes, tested against an offline replay of two independent
-real-data snapshots (Section~\ref{sec:formal-analysis}); a
-module-level ablation across two scales and up to thirty seeds
-(Section~\ref{sec:results-ablation}); a multi-seed statistical
-protocol with confidence intervals and explicit power limits, stated
-rather than implied
-(Section~\ref{sec:setup-statistics}, Section~\ref{sec:discussion-ablations});
-a real-data calibration measurement
-(Section~\ref{sec:results-calibration}); and a leakage-controlled
-held-out evaluation with the leakage rules stated explicitly
-(Section~\ref{sec:setup-datasets}). Section~\ref{sec:framework}
-describes exactly what the evaluated implementation contains, and
-Section~\ref{sec:limitations} states plainly where it still falls
-short of the design this gap analysis motivates.
+A closed loop of this kind therefore already exists. What its published
+evaluation does not include is a module-level ablation isolating which
+component (aggregation, feedback, fine-tuning) is responsible for a
+change; a multi-seed protocol separating real effects from run-to-run
+variance; a calibration measurement of the scores the aggregation rule
+produces; a held-out test separating the documents that build the
+knowledge base from those that measure it; and proofs of the rule's
+properties. This paper supplies each of these for an independent
+implementation (Sections~\ref{sec:formal-analysis}--\ref{sec:results}).
+It does not assess DySECT's hierarchical abstraction or curation
+interface, which the evaluated implementation lacks.
 
 \section{Evaluated Framework}
 \label{sec:framework}
@@ -560,168 +272,92 @@ original design but not implemented (Section~\ref{sec:framework-gaps})
 are not shown.}
 \label{fig:architecture}
 % [scripts/make_paper_figures.py; module list verified against src/ and
-% scripts/ in this section]
+% scripts/]
 \end{figure}
 
-This section describes only what the evaluated implementation
-contains (Figure~\ref{fig:architecture}), verified directly against \texttt{src/} and \texttt{scripts/}
-this session; a capability specified in the original architecture
-design but absent from the code is stated as such, not implied.
+This section describes what the evaluated implementation contains
+(Figure~\ref{fig:architecture}); capabilities specified in the original
+design but absent from the code are listed in
+Section~\ref{sec:framework-gaps}.
 
 \subsection{Dual-Source Extraction}
 \label{sec:framework-extraction}
 
-Two extraction paths are implemented for the product domain. The
-structured path (\texttt{src/extractors/structured.py}) maps CSV-column
-values to the domain's 13 predicates deterministically, at a fixed
-confidence of $0.98$, with no LLM call. The unstructured path
-(\texttt{src/extractors/openrouter\_llm.py}) prompts a pinned LLM via
-OpenRouter at temperature 0 to extract triples from free text, with a
-self-reported confidence the prompt restricts to $0.80$--$0.96$
-(Section~\ref{sec:setup-hyperparameters}). Both paths write to the same
-triple schema, which the probabilistic knowledge base then aggregates
-jointly. A separate, prompt-parameterized extractor
-(\texttt{src/extractors/openrouter\_openie.py}) is used for CaRB,
-DocRED, and BioRED, taking its prompt template as data rather than
-hard-coding it, so the same code path serves an open-phrase prompt
-(CaRB) or a closed, schema-constrained one (DocRED, BioRED)
-% [src/extractors/openrouter_openie.py]
-. Two distinct prompt templates are used across the codebase with two
-different self-reported confidence ranges: the core extraction prompt
-restricts confidence to $0.80$--$0.96$
-(\texttt{src/extractors/openrouter\_llm.py}), while the fine-tuning
-data-generation and evaluation prompt restricts it to $0.85$--$0.99$
-(\texttt{src/prompts.py}) -- stated in detail in
-Section~\ref{sec:setup-hyperparameters}, restated here as part of what
-the extraction modules themselves implement.
-
-There is no dedicated ingestion module (format detection, schema
-inference, or chunking): each pipeline reads its own fixed input shape
-directly -- Python dictionaries built from CSV/TSV-style records for
-the product domain and CaRB
-(\texttt{src/datasets/product\_generator.py},
-\texttt{src/datasets/carb\_adapter.py}), JSON for DocRED
-(\texttt{src/datasets/docred\_adapter.py}), and plain-text PubTator
-files for BioRED (\texttt{src/datasets/biored\_adapter.py}). No PDF,
-DOCX, or SQL ingestion code exists anywhere in \texttt{src/} or
-\texttt{scripts/}, verified by direct search of both directories.
+For the product domain, a structured path
+(\texttt{src/extractors/structured.py}) maps record fields to the 13
+predicates deterministically, at a fixed confidence of $0.98$, and an
+unstructured path (\texttt{src/extractors/openrouter\_llm.py}) prompts a
+pinned LLM at temperature 0, which self-reports a confidence in
+$[0.80, 0.96]$. Both write to one triple schema. A prompt-parameterised
+extractor (\texttt{src/extractors/openrouter\_openie.py}) serves CaRB,
+DocRED, and BioRED. The fine-tuning data-generation and evaluation
+prompt (\texttt{src/prompts.py}) uses a different self-reported range,
+$[0.85, 0.99]$ (Section~\ref{sec:setup-hyperparameters}). Each pipeline
+reads its own fixed input format (records for the product domain and
+CaRB, JSON for DocRED, PubTator for BioRED); there is no general
+ingestion module and no PDF, DOCX, or SQL support.
+% [src/datasets/*.py; verified by direct search of src/ and scripts/]
 
 \subsection{Probabilistic Knowledge Base}
 \label{sec:framework-pkb}
 
-The Noisy-OR aggregation and conflict-adjustment formulas
-(Equations~\ref{eq:noisyor}--\ref{eq:conflict}) are implemented in
-\texttt{src/pkb\_math.py}, and applied per accepted candidate by
-\texttt{src/pkb\_instrumentation.py}'s \texttt{refresh\_slot\_scores}.
-\texttt{src/probkb\_v2\_adapter.py}'s \texttt{CandidateBufferAdapter}
-wraps this into a stateful knowledge base: every accepted observation is
-kept (no code path in \texttt{src/probkb\_v2\_adapter.py} or
-\texttt{src/pkb\_instrumentation.py} deletes, pops, or removes an
-accepted candidate, verified directly
-% [Results Summary.md, Claim 3 -- verified this session and again here]
-), so the knowledge base grows monotonically. A second adapter,
-\texttt{src/deterministic\_kb\_adapter.py}'s
-\texttt{DeterministicKBAdapter}, implements max-merge (confidence is the
-maximum over observations, no conflict handling) behind the identical
-interface, so \texttt{src/experiment\_runner.py} can swap between the
-two knowledge-base variants for the ablation in
-Section~\ref{sec:results-ablation} without branching logic elsewhere.
-\texttt{src/pkb\_replay.py} reconstructs a knowledge base's exact
-end-of-iteration state by replaying its saved
-\texttt{observations\_iteration\_N.csv} files through fresh
-\texttt{accept\_candidate()} calls, used for the closed-loop test
-(Section~\ref{sec:results-closedloop}) and DEC-026
-(Section~\ref{sec:formal-analysis-empirical}) without any new
-extraction.
+Equations~\ref{eq:noisyor}--\ref{eq:conflict} are implemented in
+\texttt{src/pkb\_math.py} and applied to each candidate by
+\texttt{src/pkb\_instrumentation.py}.
+\texttt{src/probkb\_v2\_adapter.py} keeps every accepted observation; no
+code path deletes an accepted candidate, so the knowledge base grows
+monotonically. A max-merge adapter
+(\texttt{src/deterministic\_kb\_adapter.py}) implements the same
+interface for the ablation (Section~\ref{sec:results-ablation}), and
+\texttt{src/pkb\_replay.py} reconstructs any saved end-of-iteration state
+from stored observations, used for the closed-loop test and the offline
+rule comparison (Sections~\ref{sec:results-closedloop}
+and~\ref{sec:formal-analysis-empirical}).
 
 \subsection{Feedback Controller}
 \label{sec:framework-feedback}
 
-\texttt{src/feedback\_builder.py}'s \texttt{build\_feedback\_hint}
-constructs the prompt hint used to guide re-extraction: a
-missing-facts block (gold keys not yet accepted), a
-false-pattern block (accepted keys not in gold), and an
-undercovered-predicate block (predicates with fewer than two accepted
-observations), assembled from plain-text templates with no named
-``mode'' in the code. This function's second argument is
-\texttt{gold\_keys}, and every call site that builds a real feedback
-hint -- \texttt{scripts/dec003\_product\_probkb\_run.py},
-\texttt{src/experiment\_runner.py}, and the corresponding calls in the
-other product-domain run scripts -- passes it the \emph{train-split}
-gold key set, verified directly this session
-% [scripts/dec003_product_probkb_run.py, lines 184-186 and 218-220;
-% src/experiment_runner.py -- build_feedback_hint(kb.as_key_set(),
-% train_gold_keys, ALLOWED_PREDICATES) at both the per-iteration and
-% held-out-pass call sites]
-. The feedback signal is therefore computed against the known gold
-answers for the products it is guiding re-extraction on, not against
-any uncertainty or disagreement measure internal to the knowledge base
-itself -- the closed loop's feedback stage is not self-supervised in
-the sense of operating without ground truth; it presupposes gold labels
-for the training split are available, which they are only because this
-is a synthetic, fully-labeled domain
-(Section~\ref{sec:setup-datasets}). This is stated here because it
-changes what ``closed-loop'' can honestly be claimed to mean for this
-implementation, and is revisited in Section~\ref{sec:limitations}. The
-design documents' and \citet{aminnaseri2026dysect}'s ``Encouraging''
-and ``Prohibitive'' mode names
-(Section~\ref{sec:related-work-dysect}) describe the same two
-directions this hint encodes (recover missing facts; suppress false
-patterns) but do not appear anywhere in \texttt{src/feedback\_builder.py}
--- verified directly, no such string exists in that module -- so this
-paper uses the code's own unnamed missing-fact / false-pattern /
-coverage-gap description here, not the design documents' mode names,
-for what is actually implemented.
+\texttt{src/feedback\_builder.py} builds the hint that guides
+re-extraction from three blocks: missing facts (gold keys not yet
+accepted), false patterns (accepted keys not in gold), and
+under-covered predicates (fewer than two accepted observations). Every
+call site passes it the \emph{training-split gold labels}
+% [scripts/dec003_product_probkb_run.py; src/experiment_runner.py]
+. The feedback is therefore computed against known answers, not against
+any uncertainty or disagreement internal to the knowledge base, so the
+loop is not self-supervised: it presupposes labelled training data,
+which exists here only because the domain is synthetic
+(Section~\ref{sec:limitations}). The two directions correspond to
+DySECT's ``Encouraging'' and ``Prohibitive'' modes
+(Section~\ref{sec:related-work-dysect}), although those labels do not
+appear in the code.
 
 \subsection{Synthetic Supervision, Provenance Filtering, and Fine-Tuning}
 \label{sec:framework-finetuning}
 
-Synthetic fine-tuning examples are built from the knowledge base's own
-above-threshold triples, grouped per product into the same
-paragraph-in / JSON-array-out shape the evaluation harness uses
-(\texttt{scripts/dec006\_regenerate\_synth\_data.py}, using
-\texttt{src/prompts.py}'s shared prompt builder)
-% [scripts/dec006_regenerate_synth_data.py; EVID-026's docstring
-% documents an earlier, superseded per-relation Instruction/Response
-% template in src/synthetic_data_generator.py that taught a different
-% task shape than evaluation and produced F1=0.0000 as a direct result
-% -- not used for any result in Section 7]
-. By default, a triple is included only if at least one of its
-observations has \texttt{source\_type == "structured"}
-(\texttt{src/provenance\_filter.py}'s
-\texttt{has\_structured\_corroboration}), gating training-data inclusion
-on provenance rather than confidence alone
-(Section~\ref{sec:results-provenance}). Fine-tuning itself
-(\texttt{scripts/dec006\_lora\_finetune.py}, QLoRA on
-Mistral-7B-Instruct-v0.3, Section~\ref{sec:setup-models}) is invoked
-explicitly by a user-run script on a rented GPU pod; no code in
-\texttt{src/} or \texttt{scripts/} monitors recall or knowledge-base
-growth and triggers a fine-tuning run automatically, and no adapter
-registry or rollback mechanism exists -- both were specified in the
-original architecture design (a recall-drop/KB-stagnation trigger and a
-versioned adapter registry) but are absent from every fine-tuning
-script in this repository, verified by direct search
-(\texttt{grep} for ``registry''/``rollback''/``auto\_trigger'' across
-\texttt{src/} and \texttt{scripts/} returns no matches).
+Synthetic fine-tuning examples are built from the knowledge base's
+above-threshold triples, grouped per product into the paragraph-in,
+JSON-out shape used for evaluation
+(\texttt{scripts/dec006\_regenerate\_synth\_data.py}). By default a
+triple is included only if at least one of its observations comes from
+the structured source (\texttt{src/provenance\_filter.py};
+Section~\ref{sec:results-provenance}). Fine-tuning
+(\texttt{scripts/dec006\_lora\_finetune.py}; QLoRA on
+Mistral-7B-Instruct-v0.3) is started manually on a rented GPU; no code
+triggers it automatically from recall or knowledge-base growth, and
+there is no adapter registry or rollback.
+% [grep for registry/rollback/auto_trigger across src/ and scripts/: none]
 
 \subsection{What Was Specified but Not Implemented}
 \label{sec:framework-gaps}
 
-Six elements of the original architecture design have no corresponding
-code in the implementation evaluated in this paper, each verified by
-direct search rather than assumed absent: KNN-based hierarchical
-sub-concept abstraction (Section~\ref{sec:related-work-dysect});
-auto-triggered fine-tuning and an adapter registry with rollback
-(Section~\ref{sec:framework-finetuning}); character-level source
-offsets (provenance is stored as a truncated text snippet,
-\texttt{src/probkb\_v2\_adapter.py}, not a character span); a human
-validation interface for inspecting, approving, or rejecting individual
-triples (no such interface, CLI or otherwise, exists in
-\texttt{src/} or \texttt{scripts/}); and ingestion beyond CSV, JSON,
-and plain text (Section~\ref{sec:framework-extraction}). These are
-stated here as an honest scope boundary of the implementation this
-paper evaluates, not as a design decision, and are revisited together
-with their consequences in Section~\ref{sec:limitations}.
+Six elements of the original design have no code in the evaluated
+implementation: KNN-based hierarchical concept abstraction;
+automatically triggered fine-tuning; an adapter registry with rollback;
+character-level source offsets (provenance is stored as a truncated text
+snippet); a human validation interface; and ingestion beyond CSV, JSON,
+and plain text. They are scope limits of what this paper evaluates
+(Section~\ref{sec:limitations}).
 
 \section{Formal Analysis of the Aggregation Rule}
 \label{sec:formal-analysis}
@@ -729,19 +365,15 @@ with their consequences in Section~\ref{sec:limitations}.
 \subsection{Definition and Attribution}
 \label{sec:formal-analysis-definition}
 
-As established in Section~\ref{sec:related-work-dysect}, the confidence
-aggregation rule used throughout this paper is not original to it:
-\citet{aminnaseri2026dysect}'s Equations 1--2 define the identical
-formula, under the identical default shrinkage. This paper cites that
-formula rather than claiming it. For a functionally single-valued
-predicate slot with candidate object $t$ supported by observations with
-self-reported confidences $c_1,\dots,c_n \in [0,1]$
-% [EVID-041, "confidence is self-reported, not derived from calibration
-% or token probabilities" -- verified against src/extractors/openrouter_llm.py]
-and shrinkage $\lambda \in (0,1]$ (default $\lambda=0.75$
-% [scripts/dec003_product_probkb_run.py, scripts/dec006_scaleup_probkb_run.py --
-% independently confirmed default, matching aminnaseri2026dysect Eq. 1]
-), the \emph{conservative Noisy-OR support} is
+The aggregation rule is \citet{aminnaseri2026dysect}'s (their
+Equations 1--2), with their default shrinkage
+(Section~\ref{sec:related-work-dysect}); this paper cites it rather
+than claiming it. For a slot with candidate object $t$ supported by
+observations with self-reported confidences
+$c_1,\dots,c_n \in [0,1]$ and shrinkage $\lambda \in (0,1]$ (default
+$\lambda=0.75$)
+% [scripts/dec003_product_probkb_run.py; matches aminnaseri2026dysect Eq. 1]
+, the \emph{conservative Noisy-OR support} is
 \begin{equation}
 A(t) \;=\; 1 - \prod_{i=1}^{n} \bigl(1 - \lambda c_i\bigr).
 \label{eq:noisyor}
@@ -753,20 +385,13 @@ the admitted confidence is
 C(t) \;=\; \frac{A(t)}{m(t) + 1}.
 \label{eq:conflict}
 \end{equation}
-For a non-functional predicate (only \texttt{has\_color} in the
-product-domain configuration
-% [configs/functional_predicates_product_domain.json]
-), $C(t) = A(t)$ unconditionally: no mutual-exclusivity penalty is
-applied, since multiple simultaneous values are legitimate. A candidate
-is admitted into the knowledge base when $C(t) \ge \tau$, with
-$\tau=0.88$ the project's standing operating threshold
-% [scripts/dec003_product_probkb_run.py, scripts/dec006_scaleup_probkb_run.py]
-throughout the experiments in Sections~\ref{sec:experimental-setup}--\ref{sec:results}.
-What this paper contributes on top of Equations~\ref{eq:noisyor}--\ref{eq:conflict}
-is (i) formal proofs of properties stated but not proved in
-\citet{aminnaseri2026dysect}'s presentation of the same rule, and (ii) an
-empirical test, on two independent real-data snapshots, of whether a
-corrected rule can outperform it. Both are given below.
+For a non-functional predicate (only \texttt{has\_color} in the product
+domain), $C(t) = A(t)$. A candidate is admitted when $C(t) \ge \tau$,
+with $\tau=0.88$ in the product domain
+% [configs/functional_predicates_product_domain.json; scripts/dec003_product_probkb_run.py]
+. This section proves properties stated but not proved in
+\citet{aminnaseri2026dysect}, and tests offline whether a corrected rule
+outperforms the published one.
 
 \subsection{Formal Properties}
 \label{sec:formal-analysis-properties}
@@ -834,15 +459,10 @@ $n=1$. More generally, admission with $n$ observations each at $c=1$
 requires $1-(1-\lambda)^n \ge \tau$, i.e.\ $n \ge \ln(1-\tau)/\ln(1-\lambda)
 = \ln(0.12)/\ln(0.25) \approx 1.53$, so $n \ge 2$.
 \end{proof}
-This property is visible directly in the project's own data: a
-functionally single-valued triple supported by exactly one observation
-(the common case for a structured-only fact, fixed confidence $0.98$
-% [EVID-041, src/extractors/structured.py -- structured confidence
-% fixed at 0.98]
-) scores $A(t) = \lambda \times 0.98 = 0.735$ under
-Equation~\ref{eq:noisyor} -- below $\tau=0.88$ regardless of how
-trustworthy that single structured source is, exactly as
-Proposition~\ref{prop:corroboration} predicts.
+For example, a fact supported only by one structured observation (fixed
+confidence $0.98$) scores $A(t) = 0.735$, below $\tau$, however
+trustworthy that source is.
+% [EVID-041; src/extractors/structured.py]
 
 \begin{proposition}[Conflict-penalty properties]
 \label{prop:conflict}
@@ -870,16 +490,18 @@ $1/(m(t)+1) \le 1/2$.
 \begin{corollary}
 \label{cor:ceiling-consequence}
 With $\tau = 0.88 > 0.5$, a contested functionally single-valued slot
-($m(t) \ge 1$) can never be admitted under Equations~\ref{eq:noisyor}--\ref{eq:conflict},
-regardless of how many corroborating observations accumulate for the
-leading candidate. Combined with the fact that no candidate is ever
-deleted or pruned from the accepted-candidates store anywhere in
-\texttt{src/probkb\_v2\_adapter.py} or \texttt{src/pkb\_instrumentation.py}
-% [Results Summary.md, Claim 3 -- verified directly, no del/pop/remove
-% on the accepted dict]
-, a genuinely contested functional slot is not merely slow to resolve
-under this rule: it is structurally unresolvable at $\tau=0.88$.
+($m(t) \ge 1$) can never be admitted under
+Equations~\ref{eq:noisyor}--\ref{eq:conflict}, regardless of how many
+corroborating observations accumulate for the leading candidate. Since
+the implementation never deletes an accepted candidate
+(Section~\ref{sec:framework-pkb}), a contested functional slot is not
+merely slow to resolve: it is structurally unresolvable at $\tau=0.88$.
 \end{corollary}
+
+The ceiling depends only on the algebraic form of
+Equation~\ref{eq:conflict}, not on the domain, the extractor, or the
+amount of evidence, so it holds for any deployment of the rule with
+$\tau \ge 0.5$ (Figure~\ref{fig:ceiling}).
 
 \begin{proposition}[Independence assumption and repeated observation]
 \label{prop:independence}
@@ -893,184 +515,92 @@ were independent corroboration, inflating $A(t)$ by
 Proposition~\ref{prop:saturation}'s saturation dynamic regardless of
 whether the underlying claim is correct.
 \end{proposition}
-This is not merely a theoretical caveat: 31 unstructured-only triples in
-the DEC-018 200-product snapshot were observed 2--21 times each by
-exactly this mechanism, all 31 incorrect against gold
+The violation is observable in the data: in the 200-product snapshot, 31
+unstructured-only triples were observed 2--21 times each by this
+mechanism, and all 31 were incorrect
 % [EVID-029]
-, and the same snapshot's real-data expected calibration error is
-$0.3332$
-% [EVID-036]
-, both consistent with repeated non-independent observation being
-mistaken for corroboration. Section~\ref{sec:formal-analysis-empirical}
-tests a corrected rule that aggregates over distinct sources instead of
-repeat observations, directly targeting this violated assumption.
+. The same rule's scores are poorly calibrated on real data (expected
+calibration error $0.333$; Section~\ref{sec:results-calibration}).
+The computational cost of the implementation is analysed in
+Supplementary Section~S3.
 
-\subsection{Computational Complexity}
-\label{sec:formal-analysis-complexity}
-
-The production candidate-acceptance path is empirically $O(N)$ per call
-and $O(N^2)$ cumulative over $N$ accumulated observations
-% [EVID-036]
-, caused by a linear scan over every previously accepted candidate in
-\texttt{src/pkb\_instrumentation.accepted\_slot\_keys} on every new
-observation -- measured at $72.7\times$ latency growth for $80\times$
-more observations
-% [EVID-036]
-. An indexed alternative (same aggregation mathematics, keyed by
-normalized (subject, predicate) slot rather than scanned linearly)
-achieves $O(1)$ per call and $O(N)$ cumulative
-% [EVID-036]
-; it was implemented illustratively but not wired into the evaluated
-system. This is not a limiting factor at the scale evaluated in this
-paper ($N$ in the hundreds, Section~\ref{sec:experimental-setup}), where
-LLM API latency dominates wall-clock time
-% [EVID-036, cross-referenced against DEC-008's linear end-to-end runtime
-% finding]
-, but is stated here as a forward-looking scalability property of the
-current implementation, separate from the aggregation rule's own
-mathematical properties above.
-
-\subsection{Empirical Validation: The Ceiling, Tested Corrections, and Their Results}
+\subsection{Empirical Validation: The Ceiling and Tested Corrections}
 \label{sec:formal-analysis-empirical}
 
-Corollary~\ref{cor:ceiling-consequence} is a proof, not a measurement: it
-establishes that the ceiling \emph{must} block every contested
-single-valued slot, but says nothing about whether contested slots
-actually arise on real data, nor whether a corrected rule can do better.
-Both questions were tested directly
-% [DEC-026, EVID-041]
-, offline, by replaying stored observations from two independent
-gold-labeled snapshots -- 657 triples from 35 products
-% [EVID-013, EVID-014, EVID-036]
-and 2241 triples from 140 products
-% [EVID-029, EVID-030]
--- through six scoring rules applied to the identical observations (only
-the aggregation formula varies), each with its own validation-selected
-threshold and a subject-level (product-level) held-out test split (35
-and 92 test-split subjects respectively), plus every rule re-evaluated
-at the fixed pipeline threshold $\tau=0.88$
-% [EVID-041]
-.
+Corollary~\ref{cor:ceiling-consequence} says the ceiling must block every
+contested single-valued slot, but not whether such slots arise on real
+data or whether a corrected rule does better. Both were tested offline
+(DEC-026) by replaying the stored observations of two independent
+gold-labelled snapshots, 657 triples from 35 products (dataset A) and
+2,241 triples from 140 products (dataset B), through six rules applied
+to identical observations: R1, max-merge ($C(t)=\max_i c_i$, no conflict
+handling); R2, the published rule; R3, distinct-source counting
+(below); R4, an evidence-share reformulation
+$C(t)=A(t)^2/\sum_j A(t_j)$ over the candidates $j$ of a slot; R5, R3 and
+R4 combined; and R6, the unsquared share $A(t)/\sum_j A(t_j)$. Each rule
+is evaluated at its own validation-selected threshold and at the fixed
+$\tau=0.88$, on held-out subjects (35 and 92), with 95\% confidence
+intervals from 10,000 bootstrap resamples over subjects. The full
+per-rule tables are in Supplementary Section~S2.
+% [EVID-041; EVID-013/014/036 (dataset A); EVID-029/030 (dataset B)]
 
-\paragraph{The ceiling is confirmed empirically, at both thresholds
-tested.} The published rule (Equations~\ref{eq:noisyor}--\ref{eq:conflict})
-admits exactly zero contested single-valued-predicate slots on either
-test split, at either its own F1-selected threshold or the fixed
-$\tau=0.88$
+\paragraph{The ceiling is confirmed.} R2 admits no contested
+single-valued slot on either dataset at either threshold. Max-merge,
+evaluated identically, admits 6 and 40 at its selected thresholds and
+20 and 69 at $\tau=0.88$. It is therefore the ceiling, not an absence of
+contested slots, that accounts for R2's zero. Max-merge's higher $F_1$
+at its own selected threshold does not survive at $\tau=0.88$, where its
+significant precision loss offsets its significant recall gain
+(Table~\ref{tab:dec026-bootstrap-tau088}).
 % [EVID-041]
-. An unconstrained max-merge baseline ($C(t)=\max_i c_i$, no conflict
-handling), evaluated identically, admits 6 and 40 contested slots at its
-own F1-selected threshold and 20 and 69 at $\tau=0.88$, on the two
-datasets respectively
+
+\paragraph{Two corrections that do not help.} R4 removes the algebraic
+ceiling and reduces correctly to $C(t)=A(t)$ when $m(t)=0$, but its
+admitted set is identical to R2's on both datasets ($F_1$ difference
+CI exactly $[0,0]$), because no observed contested-slot score comes
+near the threshold (maximum $0.581$ against a selected $\tau=0.73$ on
+dataset A). R6, tested afterwards as an exploratory check, degenerates
+to $C(t)=1$ for every uncontested slot (495 of 495 such rows in dataset
+A), and its $F_1$ is significantly below R2's on dataset A (95\% CI
+$[-0.087, -0.012]$) and not significantly different on B. Any
+share-based replacement for Equation~\ref{eq:conflict} must reduce to
+$A(t)$ when $m(t)=0$ to avoid this degeneracy; R4 does and R6 does not.
+Neither is claimed as a contribution.
 % [EVID-041]
--- confirming that it is the ceiling, and not an absence of contested
-slots in the data, that accounts for the published rule's zero.
 
-\paragraph{Tested corrections that are not claimed as contributions.} Two
-candidate corrections to Equation~\ref{eq:conflict} were tested and are
-reported here as null or negative results, not as improvements:
-\begin{itemize}
-  \item An evidence-share reformulation, $C(t) = A(t)^2 / \sum_j A(t_j)$
-  summed over every candidate $j$ in the same slot, removes the
-  algebraic ceiling of Proposition~\ref{prop:ceiling} (it reduces
-  correctly to $C(t)=A(t)$ when $m(t)=0$, matching
-  Proposition~\ref{prop:conflict}) but is an exact empirical null: it
-  produces an admitted set identical to Equation~\ref{eq:conflict} on
-  both datasets (bootstrap 95\% CI for the $F_1$ difference exactly
-  $[0.0000,0.0000]$ over $10{,}000$ subject resamples)
-  % [EVID-041]
-  , because no observed contested-slot score in either dataset approaches
-  the operating threshold (maximum observed score $0.581$ against
-  $\tau=0.73$ on the 657-triple dataset)
-  % [EVID-041]
-  .
-  \item An unsquared variant, $C(t) = A(t)/\sum_j A(t_j)$, was tested
-  afterward as an exploratory, post-hoc check and is a negative result:
-  it degenerates to $C(t)=1$ for every uncontested slot ($m(t)=0
-  \Rightarrow \sum_j A(t_j) = A(t) \Rightarrow C(t)=1$ regardless of the
-  actual evidence strength), discarding real signal on $495$ of $495$
-  uncontested functional-predicate rows in the 657-triple dataset
-  % [EVID-041]
-  , and its $F_1$ is significantly worse than the published rule on one
-  dataset (95\% CI $[-0.0870,-0.0118]$) and not significantly different
-  on the other
-  % [EVID-041]
-  . This failure is itself a formal, not merely empirical, result: any
-  share-based replacement for Equation~\ref{eq:conflict} must satisfy
-  $C(t)=A(t)$ when $m(t)=0$ to avoid this degeneracy -- the squared form
-  above satisfies this reduction and the unsquared form does not, which
-  is why one is empirically inert and the other is empirically harmful,
-  independent of which snapshot either is evaluated on
-  % [EVID-041]
-  .
-\end{itemize}
+\paragraph{The corrected rule: distinct-source counting (R3).} R3
+targets the independence violation of
+Proposition~\ref{prop:independence} rather than the ceiling: it applies
+Equation~\ref{eq:noisyor} over distinct
+$(\text{source\_type}, \text{source\_id})$ pairs, keeping each source's
+maximum confidence, and leaves Equation~\ref{eq:conflict} unchanged. At
+$\tau=0.88$ it raises precision significantly on both datasets at
+exactly unchanged recall, and raises $F_1$ significantly
+(Table~\ref{tab:dec026-bootstrap-tau088}). It also raises $F_1$ at each
+dataset's own selected threshold ($+0.0106$, 95\% CI $[0.0028,0.0222]$;
+$+0.0039$, $[0.0013,0.0075]$), so the gain does not depend on threshold
+selection. Its effect outside the product domain is reported in
+Sections~\ref{sec:results-docred} and~\ref{sec:results-biored}.
+% [EVID-041]
 
-\paragraph{The corrected rule: distinct-source aggregation.} The one
-tested correction that is claimed as a contribution targets
-Proposition~\ref{prop:independence}'s violated-independence source of
-error directly, rather than the ceiling: aggregate
-Equation~\ref{eq:noisyor} over confidences from distinct
-$(\text{source\_type}, \text{source\_id})$ pairs (deduplicating repeated
-observations from the same source, keeping the maximum confidence per
-source) instead of over every repeat observation, leaving
-Equation~\ref{eq:conflict}'s conflict handling otherwise unchanged. At
-the pipeline's fixed operating threshold $\tau=0.88$ -- the threshold
-this paper's other results use, and therefore the relevant comparison --
-this correction yields a statistically significant precision gain over
-the published rule at \emph{exactly unchanged} recall on both datasets
-(bootstrap 95\% CI for the recall difference exactly $[0.0000,0.0000]$
-on both):
-\begin{center}
-\begin{tabular}{@{}lccc@{}}
+\begin{table}[htbp]
+\centering
+\caption{Differences from the published rule (R2) at the fixed
+threshold $\tau=0.88$, with 95\% bootstrap confidence intervals (10,000
+resamples over test-split subjects). A: 657 triples; B: 2,241 triples.}
+\label{tab:dec026-bootstrap-tau088}
+\begin{tabular}{@{}llrrr@{}}
 \toprule
-Dataset & Precision diff.\ (95\% CI) & Recall diff.\ (95\% CI) & $F_1$ diff.\ (95\% CI) \\
+Comparison & Dataset & $P$ diff. (95\% CI) & $R$ diff. (95\% CI) & $F_1$ diff. (95\% CI) \\
 \midrule
-657 triples / 35 products & $+0.1060\ [0.0321, 0.2267]$ & $0.0000\ [0.0000, 0.0000]$ & $+0.0192\ [0.0057, 0.0395]$ \\
-2241 triples / 140 products & $+0.0270\ [0.0076, 0.0519]$ & $0.0000\ [0.0000, 0.0000]$ & $+0.0059\ [0.0016, 0.0115]$ \\
+R1$-$R2 & A & $-0.385\ [-0.480,-0.246]$ & $+0.605\ [0.407,0.798]$ & $+0.081\ [-0.115,0.299]$ \\
+R1$-$R2 & B & $-0.451\ [-0.492,-0.403]$ & $+0.548\ [0.444,0.650]$ & $+0.019\ [-0.089,0.130]$ \\
+R3$-$R2 & A & $+0.106\ [0.032,0.227]$ & $0.000\ [0.000,0.000]$ & $+0.019\ [0.006,0.040]$ \\
+R3$-$R2 & B & $+0.027\ [0.008,0.052]$ & $0.000\ [0.000,0.000]$ & $+0.006\ [0.002,0.012]$ \\
 \bottomrule
 \end{tabular}
-\end{center}
-% [EVID-041, tau=0.88 fixed-threshold bootstrap, 10,000 resamples over test-split subjects]
-Both the precision and $F_1$ intervals exclude zero on both independent
-datasets. The same correction also improves $F_1$ at each dataset's own
-F1-selected threshold (+0.0106 $[0.0028,0.0222]$ and +0.0039
-$[0.0013,0.0075]$ respectively)
 % [EVID-041]
-, so the effect is not an artifact of threshold selection. An
-unconstrained max-merge baseline also outperforms the published rule at
-its own F1-selected threshold, matching the same direction already found
-in this project's $N{=}50$ closed-loop ablation
-% [EVID-039, AUDIT.md A1]
-, but that advantage does not survive at the shared $\tau=0.88$ operating
-threshold (bootstrap $F_1$-difference CI includes zero on both datasets,
-driven by a significant precision loss that offsets a significant recall
-gain)
-% [EVID-041]
-and is not reported as a corrected rule here, only as further empirical
-confirmation of Proposition~\ref{prop:ceiling} (Section~\ref{sec:formal-analysis-empirical},
-above).
-
-\subsection{Summary}
-\label{sec:formal-analysis-summary}
-
-Three claims follow from this section. First, the aggregation formula
-(Equations~\ref{eq:noisyor}--\ref{eq:conflict}) and its default shrinkage
-$\lambda=0.75$ are \citet{aminnaseri2026dysect}'s, cited here, not
-claimed as this paper's contribution (Section~\ref{sec:related-work-dysect}).
-Second, this paper's contribution is the formal analysis above --
-boundedness, order-invariance, monotonicity, the corroboration
-requirement, saturation, the conflict-penalty properties, and the rival
-ceiling with its structural-unresolvability corollary -- together with
-the empirical demonstration that this ceiling blocks every contested
-single-valued slot on two independent real-data snapshots, at both the
-F1-selected and the fixed pipeline threshold. Third, the corrected rule
-this paper proposes is distinct-source aggregation
-(Section~\ref{sec:formal-analysis-empirical}), reported with its
-measured precision and $F_1$ gain over the published rule at
-$\tau=0.88$ and the corresponding 95\% confidence intervals above; the
-two other candidate corrections tested (evidence-share and its unsquared
-variant) are reported as tested and null or negative, not as
-contributions of this paper.
+\end{table}
 
 \section{Experimental Setup}
 \label{sec:experimental-setup}
@@ -1078,429 +608,227 @@ contributions of this paper.
 \subsection{Datasets}
 \label{sec:setup-datasets}
 
-\paragraph{Synthetic product domain.} The primary evaluation domain is a
+\paragraph{Synthetic product domain.} The primary domain is a
 deterministic synthetic consumer-product generator
-(\texttt{src/datasets/product\_generator.py}), seeded with
-\texttt{random.seed(42)}
-% [src/datasets/product_generator.py -- generate_products()]
-, over a fixed 13-predicate schema (\texttt{manufactured\_by},
+(\texttt{src/datasets/product\_generator.py}, \texttt{random.seed(42)})
+over a fixed 13-predicate schema (\texttt{manufactured\_by},
 \texttt{belongs\_to\_category}, \texttt{has\_price\_usd},
 \texttt{has\_screen\_size\_inch}, \texttt{has\_ram\_gb},
 \texttt{has\_storage\_gb}, \texttt{has\_battery\_life\_hours},
 \texttt{has\_weight\_kg}, \texttt{has\_color}, \texttt{made\_of\_material},
 \texttt{target\_market\_region}, \texttt{supports\_fast\_charging},
-\texttt{has\_noise\_cancellation})
-% [src/datasets/product_generator.py -- ALLOWED_PREDICATES]
-. For each product, the generator draws brand, category, color,
-material, region, and 8 numeric attributes from fixed pools, producing
-(i) a structured record with all 13 facts, (ii) an unstructured text
-paragraph that verbalizes a random 7-of-13 subset of those facts as
-prose sentences, and (iii) gold triples: \texttt{gold\_structured} (all
-13 facts) and \texttt{gold\_unstructured} (the subset actually
-verbalized in the text). \textbf{The structured records and the gold
-triples used to score every product-domain result come from the same
-generator function}
-% [src/datasets/product_generator.py -- both gold_structured and the
-% structured record are built from the identical drawn attribute values,
-% same generate_product_record() call]
--- stated explicitly here since it underlies the provenance-filter
-circularity caveat discussed in Section~\ref{sec:limitations} (Limitations).
+\texttt{has\_noise\_cancellation}). For each product it draws brand,
+category, colour, material, region, and eight numeric attributes from
+fixed pools, and produces (i) a structured record with all 13 facts,
+(ii) a text paragraph verbalising a random 7 of the 13, and (iii) two
+gold sets: \texttt{gold\_structured} (all 13 facts) and
+\texttt{gold\_unstructured} (the facts verbalised in the text).
+\textbf{The structured records and the gold triples come from the same
+generator call}, which matters for the provenance filter
+(Section~\ref{sec:limitations}).
+% [src/datasets/product_generator.py]
 
-Two dataset sizes are used, both split 70/10/20 (train/val/test) with
-\texttt{random.Random(7)} (a seed distinct from the generation seed)
-% [src/leakage_split.py]
-: a 50-product superset (35 train / 5 val / 10 test,
-\texttt{data/product\_split.csv})
-% [EVID-013]
-used for the canonical DEC-003 instrumented run and the fine-tuning
-evaluation split, and a 200-product superset (140 train / 20 val / 40
-test, \texttt{data/product\_split\_200.csv})
-% [scripts/dec006_scaleup_probkb_run.py; 140/20/40 counts also verified
-% in DEC-024's Decision log entry]
-used for the DEC-006 scale-up and DEC-026's second replay dataset.
-Leakage rules, applied identically across every experiment that uses
-either split
-% [src/leakage_split.py -- save_product_split()]
-: test-split products are evaluated on unstructured-text extraction
-only, never seeded into the knowledge base with their own structured
-facts; test-split products are never used in synthetic training data,
-fine-tuning data, few-shot examples, feedback-controller exemplars, or
-threshold selection; val-split products may be used for threshold
-selection and hyperparameter tuning; train-split products may seed the
-knowledge base and generate synthetic supervision.
+Two sizes are used, both split 70/10/20 (train/validation/test) with
+\texttt{random.Random(7)}, a seed distinct from the generation seed
+(\texttt{src/leakage\_split.py}): 50 products (35/5/10;
+\texttt{data/product\_split.csv}) and 200 products (140/20/40;
+\texttt{data/product\_split\_200.csv}). The same leakage rules apply to
+every experiment. Test products are evaluated on text extraction only
+and are never seeded with their own structured facts, and they are
+never used for synthetic training data, fine-tuning, few-shot examples,
+feedback exemplars, or threshold selection. Validation products may be
+used for threshold and hyperparameter selection. Training products may
+seed the knowledge base and generate synthetic supervision.
 
-\paragraph{Public benchmarks.} \textbf{CaRB} \citep{bhardwaj2019carb}: 548 of the benchmark's 641
-test-split sentences
+\paragraph{Public benchmarks.} \textbf{CaRB} \citep{bhardwaj2019carb}:
+548 of the 641 test sentences, those whose text matches between the
+sentence and gold-annotation files (Supplementary Section~S1).
 % [EVID-035]
-, selected by exact-string match between \texttt{data/CaRB/data/test.txt}
-and its gold annotation file \texttt{test.tsv}; the excluded 93 sentences
-are a pre-existing whitespace/quoting mismatch between those two files,
-not a deliberate exclusion
-% [EVID-035, Limitations]
-. \textbf{DocRED}: all 845 documents of the official 998-document
-human-annotated dev split (\texttt{thunlp/DocRED} via its Hugging Face
-mirror) that contain at least one gold fact supported by two or more
-evidence sentences. These documents have 6,861 sentences and 11,344 gold
-facts (entity-level head, relation, tail), of which 5,691 (50.2\%) have
-two or more evidence sentences in the gold annotations. That is genuine
-multi-sentence corroboration in the text for the PKB to aggregate over,
-exercising the framework's aggregation mechanism, not only its
-extractor. The extractor is run on every sentence
+\textbf{DocRED} \citep{yao2019docred}: the 845 documents of the
+998-document human-annotated development split (\texttt{thunlp/DocRED})
+that contain at least one gold fact supported by two or more evidence
+sentences, with 6,861 sentences and 11,344 entity-level gold facts, of
+which 5,691 (50.2\%) have two or more evidence sentences. The extractor
+is run on every sentence.
 % [Decision log.md, DEC-031; EVID-046]
-. An earlier 15-document pilot from the same pool sent only the gold
-evidence sentences to the extractor, an oracle setting that tells the
-extractor which sentences contain a relation. It is superseded by the
-845-document run and is reported only as historical context
-% [Decision log.md, DEC-020, DEC-031]
-. \textbf{BioRED} \citep{luo2022biored}: all 500 abstracts of the official Train (400) and
-Dev (100) splits (PubTator format, obtained from NCBI's public FTP
-distribution); the Test split is not used. They contain 5,462 sentences
-(the title plus the abstract, split by a fixed rule) and 4,906 gold
-facts, each an unordered pair of annotated concepts with one of eight
-relation types. BioRED does not annotate evidence sentences. As a proxy,
-35.1\% of gold facts have both concepts mentioned together in two or
-more sentences, and 89.7\% in at least one
+An earlier 15-document pilot sent only the gold evidence sentences to
+the extractor, an oracle setting that tells it which sentences contain
+a relation; it is superseded.
+% [Decision log.md, DEC-020]
+\textbf{BioRED} \citep{luo2022biored}: all 500 abstracts of the Train
+(400) and Dev (100) splits (PubTator format); the Test split is not
+used. They contain 5,462 sentences (the title plus the abstract, split
+by a fixed rule) and 4,906 gold facts, each an unordered pair of
+annotated concepts with one of eight relation types. BioRED has no
+evidence-sentence annotations; as a proxy, 35.1\% of gold facts have
+both concepts mentioned together in two or more sentences, and 89.7\%
+in at least one.
 % [Decision log.md, DEC-032; EVID-047]
-. An earlier 15-abstract pilot sent each whole abstract to the
-extractor in a single call, so every document had one source and no
-aggregation was possible. It tested the extractor only, never the
-framework, and is superseded
+An earlier 15-abstract pilot sent each whole abstract in one call, so
+every document had one source and nothing could be aggregated; it
+tested the extractor only and is superseded.
 % [EVID-024; EVID-047]
-.
 
 \subsection{Models and Hardware}
 \label{sec:setup-models}
 
-The pipeline's extractor, used for every product-domain run and for
-the DocRED and BioRED runs, is \texttt{meta-llama/} \texttt{llama-3.1-8b-instruct} \citep{grattafiori2024llama3}
-via OpenRouter, temperature $0.0$
-% [EVID-013; src/extractors/openrouter_llm.py default temperature=0.0]
-. On BioRED, it is compared against \texttt{deepseek/deepseek-v3.2} \citep{deepseekai2025deepseekv32} as an
-external baseline, given the same prompts and inputs
+The pipeline's extractor, used for every product-domain, DocRED, and
+BioRED run, is \texttt{meta-llama/llama-3.1-8b-instruct}
+\citep{grattafiori2024llama3} via OpenRouter at temperature $0$.
+% [EVID-013; src/extractors/openrouter_llm.py]
+On BioRED it is compared with \texttt{deepseek/deepseek-v3.2}
+\citep{deepseekai2025deepseekv32} as an external baseline, given the
+same prompts and inputs.
 % [Decision log.md, DEC-032]
-. On CaRB, this model is compared against four external systems, all via
-OpenRouter, all on the full 548-sentence sample: \texttt{deepseek/deepseek-v3.2}
-% [EVID-035]
-; and three further systems evaluated only on the original 30-sentence
-CaRB pilot sample (not re-run at full scale; the 30-sentence numbers
-remain the only ones available for these three)
-% [EVID-032; EVID-035, Limitations]
-: \texttt{openai/gpt-4o} \citep{openai2024gpt4o}, \texttt{anthropic/claude-sonnet-5}
-\citep{anthropic2026claudesonnet5}, and \texttt{google/gemini-2.5-pro}
-\citep{comanici2025gemini25}
-% [EVID-032]
-. \texttt{Babelscape/rebel-large} was also attempted as a comparison
-system and found task-incompatible with CaRB's open-domain span-based
-scoring (REBEL is a closed, Wikidata-schema relation extractor); its raw
-F1 against CaRB's scorer is not a meaningful number and is not reported
-as a comparison point
-% [EVID-033]
-.
-
-The fine-tuning base model is \texttt{mistralai/Mistral-7B-Instruct-v0.3} \citep{jiang2023mistral}
-(chosen over \texttt{meta-llama/Llama-3.1-8B-Instruct} specifically to
-avoid a Hugging Face gated-repository approval wait)
+On CaRB it is compared with \texttt{deepseek/deepseek-v3.2} on all 548
+sentences, and with \texttt{openai/gpt-4o} \citep{openai2024gpt4o},
+\texttt{anthropic/claude-sonnet-5} \citep{anthropic2026claudesonnet5},
+and \texttt{google/gemini-2.5-pro} \citep{comanici2025gemini25} on the
+30-sentence pilot only (Supplementary Section~S1).
+% [EVID-032; EVID-035]
+The fine-tuning base model is \texttt{mistralai/Mistral-7B-Instruct-v0.3}
+\citep{jiang2023mistral}, adapted with QLoRA: rank 16, $\alpha=32$,
+dropout 0.05, learning rate $2\times10^{-4}$, batch size 2 with gradient
+accumulation 4, bf16.
 % [EVID-026]
-, adapted with QLoRA: rank 16, alpha 32, dropout 0.05, learning rate
-$2\times10^{-4}$, batch size 2 with gradient accumulation 4, bf16
-throughout
-% [EVID-026]
-. Epoch count was swept over $\{2,3,5,8\}$ in both the earlier,
-8-product exploration and DEC-027's leakage-free, validation-split
-grid search; the earlier exploration's winning configuration was
-epochs $=5$
-% [EVID-037, EVID-040]
-, while DEC-027's independent validation-split search selected epochs
-$=8$ (all other hyperparameters unchanged) as the configuration used
-for the headline, leakage-free fine-tuning result
-(Section~\ref{sec:results})
+The leakage-free evaluation selected 8 epochs on its validation split
+from $\{2,3,5,8\}$ (Section~\ref{sec:results-finetuning}).
 % [EVID-044]
-. Training and local-adapter evaluation ran on rented RunPod GPU
-instances -- an RTX 4090 (24GB) primarily
-% [EVID-026, EVID-037]
-, with an RTX 3090 substituted for some runs after RTX 4090 pods failed
-GPU sanity checks
-% [EVID-028]
-; runtime is not compared across GPU types.
+Training and adapter evaluation ran on rented RTX 4090 and RTX 3090 GPUs.
 
 \subsection{Hyperparameters and Prompts}
 \label{sec:setup-hyperparameters}
 
-The aggregation rule (Equations~\ref{eq:noisyor}--\ref{eq:conflict},
-Section~\ref{sec:formal-analysis}) is applied with different
-hyperparameters in different settings, not a single fixed pair
-throughout the paper: the \textbf{product domain} uses shrinkage
-$\lambda=0.75$ and admission threshold $\tau=0.88$
-% [scripts/dec003_product_probkb_run.py, scripts/dec006_scaleup_probkb_run.py]
-, the same default \citet{aminnaseri2026dysect} report; \textbf{DocRED}
-uses $\lambda=0.5$ and $\tau=0.70$, recalibrated down from the product
-domain's defaults because $\tau=0.88$ would require four or more
-corroborating observations under $\lambda=0.5$
-(Proposition~\ref{prop:corroboration}'s argument applied with these
-values), which DocRED's evidence structure rarely supplies, whereas
-$\tau=0.70$ is reachable with two
-% [Decision log.md, DEC-020]
-; no functional-predicate conflict-adjustment policy is applied to
-DocRED (\texttt{configs/docred\_functional\_predicates.json} is left
-empty), so only Equation~\ref{eq:noisyor}'s Noisy-OR support is used
-there, not Equation~\ref{eq:conflict}'s conflict penalty
-% [Decision log.md, DEC-020]
-; \textbf{BioRED} uses the DocRED values ($\lambda=0.5$, $\tau=0.70$)
-and likewise no conflict penalty
-% [Decision log.md, DEC-032]
-. The
-product-domain closed loop runs 4 extraction iterations for train-split
-products (structured facts seed the knowledge base at iteration 1 only;
-the LLM re-extracts every iteration, guided from iteration 2 onward by a
-feedback hint built from the accumulated knowledge base); held-out
-val/test-split products receive exactly one unstructured-only extraction
-pass, guided only by the trained knowledge base's locked context, never
-by their own structured facts
+The product domain uses shrinkage $\lambda=0.75$ and admission threshold
+$\tau=0.88$, the default \citet{aminnaseri2026dysect} report.
+% [scripts/dec003_product_probkb_run.py; scripts/dec006_scaleup_probkb_run.py]
+DocRED and BioRED use $\lambda=0.5$ and $\tau=0.70$, so that two
+corroborating observations suffice for admission (Supplementary
+Section~S1), and no conflict penalty, because no functional-predicate
+policy is defined for them
+(\texttt{configs/docred\_functional\_predicates.json} is empty).
+% [Decision log.md, DEC-020, DEC-032]
+The product-domain loop runs four extraction iterations on training
+products: structured facts seed the knowledge base at iteration 1 only,
+and the LLM re-extracts at every iteration, guided from iteration 2 by
+the feedback hint. Validation and test products receive one
+text-only extraction pass, guided only by the trained knowledge base's
+locked context.
 % [EVID-013]
-. DocRED and BioRED do not use this iterative loop: each document is
-processed once, one extraction call per sentence, and the same fact
-extracted from several sentences (not from several extraction
-iterations) supplies the Noisy-OR aggregation's repeated observations.
+DocRED and BioRED documents are processed once, with one extraction call
+per sentence; the same fact extracted from several sentences supplies
+the repeated observations.
 
-Two distinct prompt templates are used, with two different
-self-reported confidence ranges -- in both cases the confidence value is
-produced by the model itself in response to a prompt instruction, not
-derived from token probabilities, log-likelihoods, or any external
-calibration procedure
-% [EVID-041; verified directly against src/extractors/openrouter_llm.py]
-: the core pipeline's extraction prompt
-(\texttt{src/extractors/} \texttt{openrouter\_llm.py}) instructs a
-confidence between $0.80$ and $0.96$
-% [src/extractors/openrouter_llm.py, line 35]
-, while the fine-tuning data-generation and evaluation prompt
-(\texttt{src/prompts.py}, used identically for building synthetic
-training examples and for evaluating the fine-tuned model, so the two
-tasks match) instructs a confidence between $0.85$ and $0.99$
-% [src/prompts.py, line 28]
--- a deliberately different range from the pipeline prompt, not a typo,
-and stated here so neither range is mistaken for the other when
-confidence values are discussed in Section~\ref{sec:results}. CaRB,
-DocRED, and BioRED each use their own dedicated open-information-
-extraction prompt (\texttt{prompts/openie\_carb\_v1.txt}
-% [EVID-021]
-, \texttt{prompts/openie\_docred\_v1.txt}
-% [Decision log.md, DEC-020]
-, \texttt{prompts/openie\_biored\_sent\_v1.txt}, a per-sentence version
-of the earlier pilot's \texttt{prompts/openie\_biored\_v1.txt} that lists
-all eight BioRED relation types where the pilot's listed six
-% [Decision log.md, DEC-032]
-respectively), each schema-appropriate to its domain (CaRB's is
-open-phrase, DocRED's and BioRED's enumerate their respective closed
-relation sets).
+Confidence is self-reported by the model in response to a prompt
+instruction, not derived from token probabilities or calibrated
+% [EVID-041]
+. The pipeline's extraction prompt (\texttt{src/extractors/openrouter\_llm.py})
+asks for a confidence between $0.80$ and $0.96$; the fine-tuning
+data-generation and evaluation prompt (\texttt{src/prompts.py}, shared by
+both so the tasks match) asks for one between $0.85$ and $0.99$. The two
+ranges are deliberately different and are not comparable. CaRB, DocRED,
+and BioRED use their own prompts (\texttt{prompts/openie\_carb\_v1.txt},
+\texttt{openie\_docred\_v1.txt}, and \texttt{openie\_biored\_sent\_v1.txt}, a
+per-sentence version of the BioRED pilot's prompt listing all eight
+relation types where the pilot listed six); CaRB's is open-phrase, and
+the others enumerate their closed relation sets.
+% [EVID-021; Decision log.md, DEC-020, DEC-032]
 
 \subsection{Metrics}
 \label{sec:setup-metrics}
 
-Unless stated otherwise, triples are scored by normalized exact-match
-set comparison (\texttt{src/evaluator.py}: subject/predicate/object
-lower-cased and whitespace-normalized, then intersected as sets for
-true/false positives and false negatives)
-% [src/evaluator.py]
-, used throughout the product domain and as this project's own internal
-CaRB metric. \textbf{CaRB} results are reported from two scorers, not
-one: this internal exact-match evaluator, which is known to undercount
-matches that the official scorer accepts
-% [EVID-031]
-, and the official \texttt{CaRB} scorer (lenient span-overlap matching,
-reporting AUC and an optimal precision/recall/F1 operating point) -- the
-official scorer is the number this paper cites for CaRB
-% [EVID-031, EVID-035]
-; its AUC should be read as a single-point approximation, since no
-per-triple confidence score is produced beyond one operating point, not
-as a full precision-recall curve
-% [EVID-035, Limitations]
-. \textbf{BioRED} is scored in the same way as DocRED (described next), against gold
-concepts rather than strings. A predicted triple matches a gold fact
-when its relation type matches and its two arguments, in either order,
-equal after normalisation any annotated mention of the two concepts.
-Exact matching against each concept's first mention and a relaxed
-containment match (either normalised string contains the other), the
-earlier pilot's two rules, are reported as secondary measures
-% [Decision log.md, DEC-032; EVID-047]
-. \textbf{DocRED} is scored per document against gold entities rather
-than strings. A predicted triple matches a gold fact when its relation
-name matches and its subject and object, after the string normalisation
-defined in Section~\ref{sec:results-docred}, equal the normalised form of
-any gold mention of the head and tail entities. Predictions are
-deduplicated per gold fact, and the same evaluator is used for every
-aggregation arm. Exact matching against each entity's first mention, as
-in the earlier pilot, is reported as a secondary measure
-% [Decision log.md, DEC-031; EVID-046]
-.
+Unless stated otherwise, triples are scored by normalised exact-match
+set comparison (\texttt{src/evaluator.py}: lower-cased and
+whitespace-normalised subject, predicate, and object, intersected as
+sets). \textbf{CaRB} is reported under the official scorer (lenient span
+matching; AUC and an optimal precision/recall/$F_1$ point), which this
+paper cites; the internal exact-match evaluator is known to undercount
+matches the official scorer accepts.
+% [EVID-031; EVID-035]
+\textbf{DocRED} is scored per document against gold entities rather than
+strings: a predicted triple matches a gold fact when its relation name
+matches and its subject and object, after the normalisation defined in
+Section~\ref{sec:results-docred}, equal the normalised form of any gold
+mention of the head and tail entities. Predictions are deduplicated per
+gold fact, and the same evaluator is used for every aggregation arm.
+\textbf{BioRED} is scored the same way against gold concepts, matching
+either argument order. For both, exact matching against each entity's
+first mention (and, for BioRED, a relaxed containment match) is a
+secondary measure, as in the earlier pilots.
+% [Decision log.md, DEC-031, DEC-032; EVID-046; EVID-047]
 
-\paragraph{Recall denominator.} Because this paper reports recall
-figures with more than one possible denominator, the definition is
-stated once here, at its first appearance
-(Section~\ref{sec:formal-analysis-empirical}'s DEC-026 results are the
-first in this paper to require it), so no later recall number needs to
-be inferred rather than looked up. DEC-026's recall is $TP/(TP+FN)$
-against \texttt{gold\_unstructured} facts for train-split products,
-imported directly from the same \texttt{normalize\_gold()} logic the
-original DEC-003/DEC-006 run scripts use for their own gold sets -- the
-identical set those scripts' own \texttt{gold\_label} snapshot column is
-built from (verified: zero mismatches against that column across both
-snapshots)
+\paragraph{Recall denominators.} Recall is $TP/(TP+FN)$, and its gold
+set is named wherever it appears. The offline rule comparison
+(Section~\ref{sec:formal-analysis-empirical}) uses
+\texttt{gold\_unstructured} facts of training products; the closed-loop
+test uses the larger \texttt{gold\_structured} set; and held-out
+extraction recall (no admission step) is measured on other products.
+These figures are not comparable with one another (Supplementary
+Section~S1).
 % [EVID-041]
-. This denominator is \emph{directly comparable} to EVID-014's whole-KB
-admission recall on the same 657-triple snapshot, at the same $\tau=0.88$
-(both use the identical gold set and the identical snapshot)
-% [EVID-041]
-, but is \emph{not} comparable to two other recall figures elsewhere in
-this paper's results: EVID-013's held-out validation/test recall is
-computed on different, non-train-split products, from a single raw
-unstructured-extraction pass with no confidence-threshold admission step
-at all -- an extraction-recall quantity, not an admission-recall one
-% [EVID-013; EVID-041]
-; and DEC-019's closed-loop recall (Section~\ref{sec:results}) is
-computed against \texttt{gold\_structured} -- every structured-column
-fact per product, a materially larger and stricter denominator than
-\texttt{gold\_unstructured} -- verified directly against
-\texttt{scripts/} \texttt{dec019\_closedloop\_compare.py}'s own gold
-construction, not assumed
-% [EVID-041]
-. Wherever a recall number appears in Section~\ref{sec:results}, its
-specific denominator is named next to it rather than left implicit.
 
 \subsection{Statistical Protocol}
 \label{sec:setup-statistics}
 
-\paragraph{Multi-seed confirmatory comparisons.} The fine-tuning
-results and the $N=20$ ablation use five seeds, $42$--$46$; the $N=50$
-ablation uses thirty, $42$--$71$
-% [EVID-020, EVID-039, EVID-040, EVID-044, EVID-045]
-, reporting the mean and \emph{sample} standard deviation ($\text{ddof}=1$)
-% [scripts/dec006_5seed_stats.py]
-across seeds, a one-sample $t$-test against a fixed base-model score, and
-a paired $t$-test plus Wilcoxon signed-rank test between two
-configurations evaluated on the same seeds
-% [scripts/dec006_5seed_stats.py; EVID-040]
-. At $n=5$, the Wilcoxon signed-rank test has a floor of $p=0.0625$: this
-is the smallest $p$-value the test can report at this sample size,
-reached when every one of the 5 paired differences has the same sign
-(the maximum-strength result available, not an artifact of a weak
-effect)
-% [EVID-040]
-; this floor is reached in DEC-027's secondary, descriptive
-whole-set comparison (EVID-044, 5/5 seeds positive) and in the
-superseded, tuned-on-test EVID-040 comparison, and in both cases it
-reflects the $n=5$ limit rather than a weaker effect than the
-accompanying $t$-tests.
+\paragraph{Multi-seed comparisons.} The fine-tuning results and the
+$N=20$ ablation use five seeds ($42$--$46$); the $N=50$ ablation uses
+thirty ($42$--$71$). We report the mean and sample standard deviation
+($\text{ddof}=1$) across seeds, a one-sample $t$-test against a fixed
+base-model score, and a paired $t$-test with a Wilcoxon signed-rank test
+between configurations evaluated on the same seeds. At five seeds the
+Wilcoxon test cannot report $p<0.0625$ (Supplementary Section~S1).
+% [scripts/dec006_5seed_stats.py; EVID-020; EVID-039; EVID-044; EVID-045]
 
-\paragraph{Tuning-leakage caveat (AUDIT.md A2) and its resolution
-(DEC-027).} The epoch/LoRA hyperparameter grid used to select the
-earlier epochs$=5$ configuration (Stages~1--2) and the five-seed
-confirmatory run that reported $p=0.0028$ against it (Stage~3) both
-evaluated on the identical 8-product test split -- 8, not the full 10
-test-split products from Section~\ref{sec:setup-datasets}'s 50-product
-superset, because an automated leakage guard excludes any test product
-whose name is also found embedded in the fine-tuning training data,
-and excludes 2 of the 10 here
-% [scripts/dec006_evaluate_adapter.py; EVID-037]
-. There was no independent validation split separating which
-configuration was selected from how well it was confirmed. DEC-024
-pre-registered the fix (select hyperparameters on the 200-product
-superset's 20-product validation split, confirm once on its untouched
-40-product test split); it was executed as DEC-027, with an additional
-pre-registered leakage-guard unit test
-(\texttt{tests/test\_dec027\_leakage\_guard.py}) that hard-aborts
-training before any GPU time is spent if a held-out product is found
-in the training data
-% [Decision log.md, DEC-027; EVID-044]
-. The leakage-free replication's primary, pre-registered test is
-negative (95\% CI excludes zero on the negative side) and supersedes the earlier
-$p=0.0028$ result as this paper's headline fine-tuning claim
-(Section~\ref{sec:results-finetuning});
-Section~\ref{sec:results}'s citation of the earlier $p=0.0028$ result
-is retained only as historical context and carries this supersession
-note every time it is stated, not as an aside.
+\paragraph{Minimum detectable effect.} For every null result we report
+the smallest effect a paired $t$-test could detect with 80\% power at
+$\alpha=0.05$, with the required Cohen's $d$ solved from the noncentral
+$t$ distribution, using both the ablated configuration's standard
+deviation and that of the paired differences.
+% [scripts/dec029_analyze.py]
 
-\paragraph{Bootstrap confidence intervals.} DEC-026's aggregation-rule
-comparison (Section~\ref{sec:formal-analysis-empirical}) uses a
-subject-level (product-level) cluster bootstrap, $10{,}000$ resamples
-with replacement drawn over test-split subjects, with true/false
-positive/negative counts summed per resample from each subject's own
-counts (so a subject drawn more than once contributes its counts that
-many times) before precision, recall, and $F_1$ are recomputed from the
-resampled totals; the reported 95\% CI is the $[2.5,97.5]$ percentile
-interval of the resulting distribution
+\paragraph{Bootstrap confidence intervals.} The offline rule comparison
+uses a subject-level cluster bootstrap: 10,000 resamples of test-split
+subjects with replacement, summing each subject's true/false
+positive/negative counts before recomputing precision, recall, and
+$F_1$, with the $[2.5, 97.5]$ percentile interval as the 95\% CI.
 % [EVID-041; scripts/dec026_aggregation_rules_replay.py]
-. DEC-027's fine-tuning comparison uses a paired bootstrap over the 40
-test products instead (mean per-product $F_1$ difference, fine-tuned
-minus base, averaged across the five confirmatory seeds; $10{,}000$
-resamples, same $[2.5,97.5]$ percentile-interval convention), following
-this project's own established convention for separating seed-level
-variance from test-set-level uncertainty
-% [Decision log.md, DEC-027; EVID-044]
-; Section~\ref{sec:results-finetuning} reports this as the primary
-fine-tuning result, which is negative (95\% CI excludes zero on the
-negative side).
+The leakage-free fine-tuning evaluation uses a paired bootstrap over its
+40 test products (mean per-product $F_1$ difference, fine-tuned minus
+base, averaged over five seeds). The DocRED and BioRED runs use a paired
+bootstrap over documents.
+% [Decision log.md, DEC-027, DEC-031, DEC-032]
 
-\paragraph{Null-result convention.} Applied consistently across DEC-005,
-DEC-023, DEC-024's design, and DEC-026: $p \ge 0.05$ (or, for a
-bootstrap comparison, a 95\% CI that includes zero) is reported as a
-null result exactly as found, with no re-running, additional seeds, or
-post-hoc adjustment undertaken to chase significance
-% [README.md, ground rule 5]
-.
-
-\subsection{Note on DEC-026}
-\label{sec:setup-dec026-note}
-
-DEC-026 (Section~\ref{sec:formal-analysis-empirical}) is a
-\textbf{replay} over knowledge-base snapshots already saved by the
-DEC-003 and DEC-006 product-domain runs described in
-Section~\ref{sec:setup-datasets}: it re-scores already-collected
-observations under six aggregation formulas, computing every quantity
-reported for it from those saved CSV files. No API calls and no GPU
-time were spent obtaining any DEC-026 result; its cost is the
-wall-clock time of a local Python/pandas script
-% [EVID-041; Decision log.md, DEC-026]
-.
+\paragraph{Pre-registration and nulls.} The leakage-free fine-tuning
+evaluation, the thirty-seed ablation, and the DocRED and BioRED runs
+were pre-registered, with primary metrics and decision rules fixed
+before any result was seen. A result with $p \ge 0.05$, or a bootstrap
+CI including zero, is reported as a null exactly as found, without
+re-running, adding seeds, or post-hoc adjustment.
+% [Decision log.md, DEC-027, DEC-029, DEC-031, DEC-032; README.md ground rule 5]
 
 \section{Results}
 \label{sec:results}
 
 This section reports the outcome of each experiment; interpretation is
-deferred to Section~\ref{sec:discussion}. All LLM extraction used
-pinned model identifiers at temperature 0. Product-domain runs used
-$\lambda=0.75$ and $\tau=0.88$, and the DocRED runs used $\lambda=0.5$
-and $\tau=0.70$ (Section~\ref{sec:setup-hyperparameters}). Multi-seed
-results are reported as mean (sample SD) over seeds 42--46, with 95\%
-confidence intervals for differences and two-sided $p$-values; with
-five paired observations the smallest attainable Wilcoxon signed-rank
-$p$-value is $0.063$ (Section~\ref{sec:setup-statistics}). Scores are
-given to three decimal places. Supplementary Tables S1--S8
-(Appendix~\ref{sec:supplementary}) give the per-configuration,
-per-seed, and per-size values
-% [SLDE-AFT_Section7_Results_revised.docx]
-.
+in Section~\ref{sec:discussion}. Scores are given to three decimal
+places, and 95\% confidence intervals accompany every comparison.
+Per-configuration, per-seed, and per-size values are in the
+Supplementary Material.
 
 \subsection{Public Benchmark Evaluation}
 \label{sec:results-benchmarks}
 
-On CaRB, the extractor was scored with the official scorer on 548 of
-the 641 test sentences; 93 were excluded because CaRB's sentence and
-gold-annotation files differ in whitespace and quoting
-% [EVID-035]
-. SLDE-AFT's Llama-3.1-8B-Instruct extractor obtained $F_1=0.467$,
-$0.104$ below DeepSeek-V3.2 ($0.571$; Table~\ref{tab:carb-results}). In
-a 30-sentence pilot of five systems it ranked last ($0.496$), $0.062$
-below DeepSeek-V3.2 ($0.558$). Full-scale $F_1$ differed from pilot
-$F_1$ by $-0.029$ for Llama-3.1-8B and $+0.013$ for DeepSeek-V3.2.
-Gemini 2.5 Pro required a budget of 3,072 output tokens and still
-returned no valid output for 5 of the 30 pilot sentences
+On CaRB, under the official scorer, the pipeline's Llama-3.1-8B-Instruct
+extractor obtained $F_1=0.467$, $0.104$ below DeepSeek-V3.2 ($0.571$;
+Table~\ref{tab:carb-results}), and it ranked last of five systems in the
+30-sentence pilot ($0.496$).
 % [EVID-032; EVID-035]
-.
 
 \begin{table}[htbp]
 \centering
 \caption{CaRB results under the official scorer: 30-sentence pilot and
-full evaluation on 548 sentences.}
+full evaluation on 548 sentences. Systems are ordered by pilot $F_1$;
+``---'' denotes not evaluated at full scale.}
 \label{tab:carb-results}
 \begin{tabular}{@{}l ccc ccc@{}}
 \toprule
@@ -1512,42 +840,32 @@ DeepSeek-V3.2 & 0.713 & 0.458 & 0.558 & 0.713 & 0.477 & 0.571 \\
 Gemini 2.5 Pro & 0.773 & 0.401 & 0.528 & --- & --- & --- \\
 Claude Sonnet 5 & 0.642 & 0.446 & 0.527 & --- & --- & --- \\
 GPT-4o & 0.736 & 0.384 & 0.504 & --- & --- & --- \\
-Llama-3.1-8B-Instruct (SLDE-AFT) & 0.652 & 0.401 & 0.496 & 0.589 & 0.387 & 0.467 \\
+Llama-3.1-8B-Instruct (pipeline) & 0.652 & 0.401 & 0.496 & 0.589 & 0.387 & 0.467 \\
 \bottomrule
 \end{tabular}
 % [EVID-032; EVID-035]
 \end{table}
 
-\noindent\emph{Note.} $P$, precision; $R$, recall. Systems are ordered
-by pilot $F_1$; ``---'' denotes not evaluated at full scale. REBEL
-generates relations from a fixed inventory and cannot be scored against
-CaRB's free-text predicates (raw $F_1=0.000$); no REBEL baseline is
-therefore reported
-% [EVID-033]
-. GenIE, InstructUIE, DyGIE++, and TACRED were outside the scope of
-this evaluation.
-
 \paragraph{DocRED at scale.}\label{sec:results-docred}
 On the 845 DocRED documents, extracting from every sentence (6,861
 calls), PKB aggregation lowered $F_1$ relative to no aggregation under
 every matching key tested (Table~\ref{tab:docred-results}). Three keys
-were compared on the same extractions. The first is the PKB's existing
-exact key (lower-cased, stripped). The second is a deployable string
-normalisation: Unicode NFKC, case folding, removal of possessives,
-periods and apostrophes, other punctuation replaced by spaces,
-whitespace collapsed, and one leading article dropped. The third keys
-each string to the gold entity whose mention it matches. This gold-alias
-key uses the gold annotations and is an oracle upper bound, not a
-deployable method. Normalisation left recall unchanged: it admitted 7
-more items than the exact key, all false positives, and closed about 0\%
-of the $F_1$ gap to no aggregation. The oracle key raised $F_1$ by
-$0.0031$ (95\% CI $[0.0017, 0.0047]$), closing 7.3\% of that gap, and
-remained $0.039$ below no aggregation (95\% CI $[-0.044, -0.034]$). Of
-the 11,344 gold facts, only 29 (0.26\%) were recovered by the extractions
-from two or more distinct sentences. Only 49.2\% of the 18,104
-extracted triples used one of DocRED's relation names
+were compared on the same extractions: the PKB's existing exact key
+(lower-cased, stripped); a deployable string normalisation (Unicode
+NFKC, case folding, removal of possessives, periods, and apostrophes,
+other punctuation replaced by spaces, whitespace collapsed, and one
+leading article dropped); and a gold-alias key that maps each string to
+the gold entity whose mention it matches, which uses the gold
+annotations and is an oracle upper bound, not a deployable method.
+Normalisation left recall unchanged: it admitted 7 more items than the
+exact key, all false positives, and closed about 0\% of the $F_1$ gap to
+no aggregation. The oracle key raised $F_1$ by $0.0031$ (95\% CI
+$[0.0017, 0.0047]$), closing 7.3\% of that gap, and remained $0.039$
+below no aggregation ($[-0.044, -0.034]$). Of the 11,344 gold facts,
+only 29 (0.26\%) were recovered by the extractions from two or more
+distinct sentences. Only 49.2\% of the 18,104 extracted triples used one
+of DocRED's relation names.
 % [EVID-046]
-.
 
 Counting distinct source sentences (R3) rather than every observation
 (R2) raised the precision of admitted triples from $0.060$ to $0.250$
@@ -1557,14 +875,10 @@ discarding 154 and 194 within-sentence duplicate observations
 respectively. The counts are small (36 triples admitted, 9 correct, with
 the exact key), R3 lost a few true positives (11 to 9), and the
 pre-registered $F_1$ comparison did not exclude zero ($-0.0003$,
-$[-0.0009, 0.00003]$). The precision comparison was a secondary
-analysis
+$[-0.0009, 0.00003]$); the precision comparison was a secondary
+analysis. The pilot's evidence-sentence setting gives the same pattern
+(Supplementary Section~S7).
 % [EVID-046; Decision log.md, DEC-031]
-. Restricting the same extractions to gold evidence sentences, the
-earlier pilot's oracle setting, gave the same pattern
-(no aggregation $F_1=0.056$, every PKB arm $\le 0.005$)
-% [EVID-046]
-.
 
 \begin{table}[htbp]
 \centering
@@ -1587,11 +901,6 @@ PKB, gold-alias key (R3, oracle) & 0.406 & 0.003 & 0.005 & 69 & 28 \\
 % [EVID-046; outputs/dec031_docred/analysis_result.json]
 \end{table}
 
-\noindent The earlier 15-document pilot (gold evidence sentences only)
-had reported $F_1$ of $0.033$ without and $0.010$ with aggregation
-% [Decision log.md, DEC-020]
-.
-
 \paragraph{BioRED at scale.}\label{sec:results-biored}
 On 500 BioRED abstracts, extracting from every sentence, aggregation
 lowered $F_1$ relative to no aggregation for both the pipeline's
@@ -1601,30 +910,23 @@ $[-0.049, -0.033]$); with DeepSeek-V3.2 it was $0.064$ below
 ($[-0.078, -0.052]$). The two extractors had almost the same recall
 without aggregation ($0.096$ and $0.097$), but DeepSeek-V3.2 was nearly
 twice as precise ($0.069$ against $0.036$). Only 0.75\% of gold facts
-(Llama-3.1-8B) and 1.35\% (DeepSeek-V3.2) were recovered from two or
-more sentences, against 35.1\% whose concepts are co-mentioned in two
-or more sentences. The difference between the extractors was
-significant ($+0.0059$, 95\% CI $[0.0021, 0.0098]$). Unlike on DocRED,
-96.6\% (Llama-3.1-8B) and 100\% (DeepSeek-V3.2) of extracted triples
-used a valid relation type
+(Llama-3.1-8B) and 1.35\% (DeepSeek-V3.2) were recovered from two or more
+sentences, against 35.1\% whose concepts are co-mentioned in two or more
+sentences; the difference between the extractors was significant
+($+0.0059$, 95\% CI $[0.0021, 0.0098]$). Unlike on DocRED, 96.6\%
+(Llama-3.1-8B) and 100\% (DeepSeek-V3.2) of extracted triples used a
+valid relation type.
 % [EVID-047]
-.
 
 R3 raised the precision of Llama-3.1-8B's admitted triples by $0.054$
 (95\% CI $[0.015, 0.094]$), discarding 138 within-sentence duplicate
 observations. It also lost true positives (32 to 26), and its $F_1$ was
-lower than R2's ($-0.0021$, $[-0.0048, -0.0002]$). DeepSeek-V3.2
-produced only 6 within-sentence duplicates, and R3 changed neither its
-precision ($+0.004$, $[-0.011, 0.016]$) nor its $F_1$ ($-0.0004$,
-$[-0.0012, 0.00002]$)
+lower than R2's ($-0.0021$, $[-0.0048, -0.0002]$). DeepSeek-V3.2 produced
+only 6 within-sentence duplicates, and R3 changed neither its precision
+($+0.004$, $[-0.011, 0.016]$) nor its $F_1$ ($-0.0004$,
+$[-0.0012, 0.00002]$). Whole-abstract extraction and the pilot's
+evaluators are reported in Supplementary Section~S7.
 % [EVID-047]
-. Extracting from each whole abstract in one call instead, the earlier
-pilot's setting, gave $F_1$ of $0.049$ (Llama-3.1-8B) and $0.089$
-(DeepSeek-V3.2) without aggregation. Under the pilot's relaxed
-containment rule, no-aggregation $F_1$ roughly doubled for both
-extractors at sentence level ($0.107$ and $0.158$)
-% [EVID-047]
-.
 
 \begin{table}[htbp]
 \centering
@@ -1658,42 +960,35 @@ value, $F_1$ decreased from $0.185$ to $0.167$, and 108 of these 117
 conflicts were between two incorrect values, whereas one was between a
 correct and an incorrect value
 % [EVID-014]
-.
-
-The per-observation confidence entering the aggregation is
-self-reported by the LLM, which the extraction prompt restricts to
-$0.80$--$0.96$
-% [src/extractors/openrouter_llm.py, line 35]
-. For single-valued predicates (12 of 13), a slot with at least one
-competing value has a final score below $1/(m+1) \le 0.5$
-(Section~\ref{sec:formal-analysis}, Proposition~\ref{prop:ceiling}), so
-it cannot reach $\tau=0.88$ while the rival persists
-(Figure~\ref{fig:ceiling}). The effect of this ceiling on recall was
-not measured directly here (Section~\ref{sec:formal-analysis-empirical}
-measures it offline via DEC-026, Section~\ref{sec:results-dec026}).
+. For single-valued predicates (12 of 13), a slot with a competing
+value cannot reach $\tau=0.88$ while the rival persists
+(Proposition~\ref{prop:ceiling}; Figure~\ref{fig:ceiling}); the offline
+replay measures this directly
+(Section~\ref{sec:formal-analysis-empirical}).
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\linewidth]{figures/fig_rival_ceiling.png}
+\includegraphics[width=0.62\linewidth]{figures/fig_rival_ceiling.pdf}
 \caption{Final score of a candidate as agreeing observations
-accumulate, for zero, one, and two competing values ($\lambda=0.75$;
-each observation $c=0.90$). Curves are computed analytically from
-Equations~\ref{eq:noisyor}--\ref{eq:conflict}.}
+accumulate, for $m=0$, $1$, and $2$ competing values ($\lambda=0.75$;
+each observation $c=0.90$), computed from
+Equations~\ref{eq:noisyor}--\ref{eq:conflict}. With a competing value
+the score stays below $1/(m+1)$ and never reaches $\tau=0.88$.}
 \label{fig:ceiling}
-% [SLDE-AFT_Section7_Results_revised.docx, Figure 7.1]
+% [scripts/make_paper_figures.py, analytical from src/pkb_math.py]
 \end{figure}
 
 Calibration on the same 657 triples ($37.3\%$ correct) was poor:
 expected calibration error (ECE, ten equal-width bins) $=0.333$ and
-Brier score $=0.297$ (Figure~\ref{fig:reliability};
-Table~\ref{tab:s1-calibration})
+Brier score $=0.297$ (Figure~\ref{fig:reliability}; per-bin values in
+Supplementary Section~S8)
 % [EVID-036]
 . No triple was correct in the $0.6$--$0.7$ bin ($n=68$) or the
 $0.8$--$0.9$ bin ($n=16$). Single-valued predicates accounted for 56 of
 68 and 15 of 16 triples in these bins, with a median of zero competing
 values. In the $0.9$--$1.0$ bin ($n=114$), $86.8\%$ of triples were
 correct at a mean confidence of $0.978$
-% [SLDE-AFT_Section7_Results_revised.docx; EVID-036]
+% [EVID-036]
 .
 
 \begin{figure}[htbp]
@@ -1712,47 +1007,34 @@ bin; the dashed line marks perfect calibration.}
 \label{sec:results-provenance}
 
 Of 475 above-threshold triples in the 200-product run, 444 had at
-least one structured observation and 31 had unstructured observations
-only (Table~\ref{tab:provenance}). All 444 were correct and all 31
-were incorrect against \texttt{gold\_structured} (all 13 structured
-facts per product -- the set the filter's own validation script scores
-against, since a structured-corroboration criterion is naturally
-checked against the full structured record, not only the subset of
-facts a given text passage happens to mention), so requiring structured
-corroboration increased precision from $93.5\%$ to $100.0\%$
-% [EVID-029]
-. Scored instead against \texttt{gold\_unstructured} -- the narrower
-set the same snapshot's own \texttt{gold\_label} column uses
-(Section~\ref{sec:setup-metrics}) -- the same comparison gives
-$92.6\%$ to $99.1\%$ instead, not $93.5\%$ to $100.0\%$; both figures
-are given here because the two gold sets are not interchangeable and
-this manuscript reports \texttt{gold\_structured} as primary
-throughout this subsection
-% [EVID-043 -- verified directly both ways via scripts/reproduce\_all.py;
-% the two-gold-set distinction is the same shape of issue as the
-% gold\_structured/gold\_unstructured recall-denominator distinction
-% already stated in Section~\ref{sec:setup-metrics} for a different
-% mechanism]
-. The 31 excluded triples had each been observed 2--21 times; 13 had a
-generic category noun (e.g.\ ``laptop device'') as the subject. The
-structured records and the gold triples are generated from the same
-source in this domain (Section~\ref{sec:setup-datasets}), so this
-result alone reflects a noise-free structured source; a companion test
-under a deliberately corrupted structured source (DEC-028) confirms
-the filter's precision advantage survives, with a decaying but still
-statistically significant margin, at corruption rates up to 20\%
+least one structured observation and 31 had only unstructured
+observations (Table~\ref{tab:provenance}). Against
+\texttt{gold\_structured}, all 444 were correct and all 31 incorrect, so
+requiring structured corroboration raised precision from $93.5\%$ to
+$100.0\%$; against the narrower \texttt{gold\_unstructured} set the same
+comparison gives $92.6\%$ to $99.1\%$. The two gold sets are not
+interchangeable, and \texttt{gold\_structured} is primary here because a
+structured-corroboration criterion is checked against the full
+structured record.
+% [EVID-029 (gold_structured); EVID-043 (gold_unstructured, via scripts/reproduce_all.py)]
+The 31 excluded triples had each been observed 2--21 times; 13 had a
+generic category noun (e.g.\ ``laptop device'') as the subject. Because
+the structured records and the gold triples share a generator
+(Section~\ref{sec:setup-datasets}), this result reflects a noise-free
+structured source. Under a deliberately corrupted structured source
+(DEC-028), the filter's precision advantage decays but remains
+significant at corruption rates up to 20\%. Corruption also creates
+contested single-valued slots, on average 21.8, 43.6, and 84.2 at 5\%,
+10\%, and 20\%; the published rule admitted none of them at any rate, as
+Proposition~\ref{prop:ceiling} requires, while the same rule without its
+conflict penalty admitted 19.2, 36.4, and 68.6.
 % [EVID-042]
-. Corruption also creates contested single-valued slots, on average
-21.8, 43.6, and 84.2 at 5\%, 10\%, and 20\%. The published rule
-admitted none of them at any rate, as Proposition~\ref{prop:ceiling}
-requires, while the same rule without its conflict penalty admitted
-19.2, 36.4, and 68.6
-% [EVID-042]
-.
 
 \begin{table}[htbp]
 \centering
-\caption{Precision of above-threshold triples by provenance status (200-product run).}
+\caption{Precision of above-threshold triples by provenance status
+(200-product run), against \texttt{gold\_structured}; in parentheses,
+against \texttt{gold\_unstructured}.}
 \label{tab:provenance}
 \begin{tabular}{@{}lcc@{}}
 \toprule
@@ -1763,83 +1045,65 @@ At least one structured observation (retained) & 444 & 100.0 (99.1) \\
 Unstructured observations only (removed) & 31 & 0.0 (0.0) \\
 \bottomrule
 \end{tabular}
-
-\noindent\emph{Note.} Precision against \texttt{gold\_structured}
-(primary); the figure in parentheses is the same computation against
-\texttt{gold\_unstructured} instead -- see the surrounding text and
-Section~\ref{sec:setup-metrics} for why these are two different, not
-interchangeable, gold sets in this project.
-% [EVID-029 (gold_structured); EVID-043 (gold_unstructured, verified via
-% scripts/reproduce_all.py)]
+% [EVID-029; EVID-043]
 \end{table}
 
 Across the four iterations of the 50-product run, LLM-only extraction
-$F_1$ on the training products was $0.367$, $0.368$, $0.289$, and
-$0.418$ and did not increase monotonically
-(Table~\ref{tab:s2-iteration})
+$F_1$ on the training products was $0.367$, $0.368$, $0.289$, and $0.418$
+and did not increase monotonically (Supplementary Section~S8).
 % [EVID-013]
-.
 
 \subsection{Module-Level Ablation Study}
 \label{sec:results-ablation}
 
 Table~\ref{tab:ablation-n50} compares the full pipeline with variants
 lacking the feedback controller or using max-merge in place of the
-Noisy-OR PKB, at $N=50$ products (10 held-out test products) over
-thirty seeds (42--71): the five seeds of the original run plus 25
-added to raise statistical power, with the design otherwise unchanged
+Noisy-OR PKB, at $N=50$ products (10 held-out test products) over thirty
+seeds ($42$--$71$): the five seeds of the original run plus 25 added to
+raise statistical power, with the design otherwise unchanged.
 % [EVID-039; EVID-045; Decision log.md, DEC-029]
-. Neither variant differed significantly from the full pipeline in
-held-out test $F_1$.
-
-Removing the feedback controller lowered held-out $F_1$ by $0.032$
-(95\% CI $[-0.090, 0.023]$, $p=0.28$), a null result. Removing the
-Noisy-OR PKB raised it by $0.034$ (95\% CI $[-0.010, 0.082]$,
-$p=0.16$). The point estimate therefore favours removing the PKB, and
-the interval only just includes zero. This agrees with the
-aggregation-rule replay, in which max-merge matched or exceeded the
-Noisy-OR rule (Section~\ref{sec:formal-analysis-empirical}), and with
-the rival ceiling (Proposition~\ref{prop:ceiling}), which blocks
-contested single-valued slots that max-merge admits. On this evidence
-the paper cannot claim that the probabilistic knowledge base improves
-held-out $F_1$
+Neither variant differed significantly from the full pipeline in
+held-out test $F_1$. Removing the feedback controller lowered it by
+$0.032$ (95\% CI $[-0.090, 0.023]$, $p=0.28$). Removing the Noisy-OR PKB
+raised it by $0.034$ ($[-0.010, 0.082]$, $p=0.16$): the point estimate
+favours removing the PKB, and the interval only just includes zero. This
+agrees with the offline replay, in which max-merge matched or exceeded
+the Noisy-OR rule (Section~\ref{sec:formal-analysis-empirical}), and with
+the rival ceiling, which blocks contested single-valued slots that
+max-merge admits. On this evidence the paper cannot claim that the
+probabilistic knowledge base improves held-out $F_1$.
 % [EVID-045; EVID-041]
-.
 
 The PKB figure uses each run's first pass. The run protocol, inherited
-from the original ablation, re-runs any configuration--seed pair in
-which at least 20\% of extraction calls fail (unparsable model output;
-every API call returned HTTP 200), retrying only the failed calls. Four
-of the 75 new runs triggered it. Three of them were runs without the
-PKB, and no full-pipeline run triggered it. In all three the retry
-raised held-out $F_1$, so the rule was applied unevenly in the
-direction of the observed effect. With retries included, the PKB
-difference is $+0.048$ (95\% CI $[-0.003, 0.101]$, $p=0.087$), still
-not significant. The feedback-controller result is identical under
-both versions
+from the original ablation, re-runs any configuration--seed pair in which
+at least 20\% of extraction calls fail (unparsable model output; every
+API call returned HTTP 200), retrying only the failed calls. Four of the
+75 new runs triggered it: three without the PKB and none of the full
+pipeline, and in all three the retry raised held-out $F_1$, so the rule
+was applied unevenly in the direction of the observed effect. With
+retries included, the PKB difference is $+0.048$ ($[-0.003, 0.101]$,
+$p=0.087$), still not significant. The feedback-controller result is
+identical under both versions.
 % [EVID-045]
-.
 
-With thirty seeds, a paired $t$-test has 80\% power at $\alpha=0.05$
-for a standardized effect of $d=0.53$. Given the observed variance,
-this is an absolute difference of $0.070$--$0.086$ $F_1$ (range over
-both comparisons, using either the ablated configuration's SD or the
-SD of the paired differences), compared with about $0.29$ at five
+With thirty seeds, a paired $t$-test has 80\% power at $\alpha=0.05$ for
+a standardised effect of $d=0.53$, an absolute difference of
+$0.070$--$0.086$ $F_1$ at the observed variance (range over both
+comparisons and both standard deviations), against about $0.29$ at five
 seeds. The null therefore rules out an effect of either component of
-roughly $0.08$ $F_1$ or larger, not only a large one. It does not rule
-out smaller effects
-% [EVID-045; AUDIT.md]
-. The five-seed results at $N=20$ and $N=50$
-(Table~\ref{tab:s3-ablation-full}) point the same way: all $p \ge 0.31$,
-and the max-merge variant scored higher than the full pipeline at both
-scales ($+0.147$; $+0.033$)
-% [EVID-020; EVID-039]
-.
+roughly $0.08$ $F_1$ or larger, but not smaller effects. The earlier
+five-seed runs at $N=20$ and $N=50$ point the same way (Supplementary
+Section~S4).
+% [EVID-045; EVID-020; EVID-039]
 
 \begin{table}[htbp]
 \centering
 \caption{Held-out test $F_1$ of ablated configurations at $N=50$ (thirty
-seeds; paired comparisons with the full pipeline).}
+seeds; paired comparisons with the full pipeline). $\Delta$, difference
+from the full pipeline; CIs from a paired bootstrap over seeds (10,000
+resamples). The PKB row uses first-pass results; the retry-inclusive row
+applies the inherited retry rule, which was triggered unevenly across
+configurations (see text).}
 \label{tab:ablation-n50}
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
@@ -1854,84 +1118,50 @@ Without PKB (max-merge) & 0.398 (0.163) & $+0.034\ [-0.010, 0.082]$ & $1.43$ & 0
 % [EVID-045; scripts/dec029_analyze.py]
 \end{table}
 
-\noindent\emph{Note.} $\Delta$, difference from the full pipeline; CIs
-from a paired bootstrap over seeds (10,000 resamples). The PKB row uses
-first-pass results. The retry-inclusive row applies the inherited
-$\geq$20\%-failed-call retry rule, which was triggered unevenly across
-configurations (see text). The unstructured-only and structured-only
-variants were not part of this extension and have no held-out
-evaluation by design (Table~\ref{tab:s3-ablation-full}).
-
-\paragraph{Standard-deviation correction (verified this session, stated
-plainly rather than silently applied).} EVID-039's own table reports
-these $F_1$ standard deviations as ``pop.\ std'' (population SD,
-$\text{ddof}=0$) -- e.g.\ $0.0934$ for the full pipeline's held-out test
-$F_1$, not the $0.104$ sample SD ($\text{ddof}=1$) shown for the
-five-seed $N=50$ run in Table~\ref{tab:s3-ablation-full}. The values in
-Table~\ref{tab:s3-ablation-full} are the population values converted to sample SD ($\times\sqrt{n/(n-1)}$,
-$n=5$); recomputed independently this session and confirmed to match
-($0.0934 \times \sqrt{5/4} = 0.1044 \approx 0.104$). This does not
-change any $F_1$ mean, $t$-statistic, or $p$-value already reported,
-only the SD figures shown alongside them -- flagged here since
-Section~\ref{sec:setup-statistics} cites \texttt{scripts/dec006\_5seed\_stats.py}'s
-$\text{ddof}=1$ sample-SD convention as this project's standard, and
-the originally-logged EVID-039/EVID-040 SD figures were not produced
-with that convention; both this subsection and
-Section~\ref{sec:results-finetuning} below use the corrected sample-SD
-values.
-
 \subsection{Automated Fine-Tuning Evaluation}
 \label{sec:results-finetuning}
 
-An earlier fine-tuning evaluation (reported below as historical
-context) selected its epoch and LoRA hyperparameters on the same
-8-product test set later used to report significance against the base
-model -- a tuning-leakage confound (AUDIT.md A2). DEC-027 repeats the
-evaluation with hyperparameters selected on an independent 20-product
-validation split and confirmed, once, on an untouched 40-product test
-split of the 200-product dataset (280 gold triples), using a
-pre-registered paired bootstrap over test products as the primary
-statistical test; this is the paper's headline fine-tuning result
+The fine-tuning evaluation selects hyperparameters on an independent
+20-product validation split and confirms once on an untouched 40-product
+test split of the 200-product dataset (280 gold triples), with a
+pre-registered paired bootstrap over test products as the primary test
+(DEC-027). An earlier exploration that selected and tested on the same
+8-product set is superseded and reported only in Supplementary
+Section~S5.
 % [Decision log.md, DEC-027; EVID-044]
-.
 
-On the validation split, a seed-42 epoch search selected 8 epochs
-(rank 16, $\alpha=32$, learning rate $2\times10^{-4}$; $F_1=0.744$,
-ahead of 5 epochs at $F_1=0.722$ and 3 epochs at $F_1=0.646$), and a
-follow-up LoRA search at 8 epochs found no configuration exceeding
-this default (rank 32 and learning rate $3\times10^{-4}$ both reached
-$F_1=0.734$, $0.011$ lower, so the pre-registered $0.01$ tie rule was
-not triggered)
+On the validation split, a seed-42 epoch search selected 8 epochs (rank
+16, $\alpha=32$, learning rate $2\times10^{-4}$; $F_1=0.744$, ahead of 5
+epochs at $0.722$ and 3 at $0.646$), and a follow-up LoRA search found no
+configuration exceeding this default (rank 32 and learning rate
+$3\times10^{-4}$ both reached $0.734$, $0.011$ lower, so the
+pre-registered $0.01$ tie rule was not triggered). Validation recall was
+flat across every configuration with at least 5 epochs ($R=0.593$--$0.600$,
+83--84 of 140 gold triples), so selection was decided by precision alone:
+the top three configurations were within $0.011$ $F_1$ on 20 products,
+separated only by false positives (0 vs.\ 5). Selecting on $F_1$
+therefore chose the most conservative adapter, the one that made the
+fewest validation predictions (83), and on 20 products the choice among
+the top configurations is close to arbitrary.
 % [EVID-044]
-. Validation recall was flat across every configuration with at least
-5 epochs ($R=0.593$--$0.600$, i.e.\ 83--84 of 140 gold triples), so
-selection was decided by precision alone: the top three configurations
-were within $0.011$ $F_1$ on 20 products, separated only by the number
-of false positives (0 vs.\ 5). Selecting on $F_1$ therefore chose the
-most conservative adapter, the one that made the fewest validation
-predictions (83), and on 20 products the choice among the top
-configurations is close to arbitrary
+On the test split, a fresh base-model evaluation scored $P=0.568$,
+$R=0.464$, $F_1=0.511$; the selected configuration, trained at five
+seeds, scored $F_1=0.530$--$0.573$ (Table~\ref{tab:finetune-dec027}),
+raising precision in every seed ($P=0.704$--$0.894$) but \emph{lowering}
+recall in every seed ($R=0.414$--$0.425$).
 % [EVID-044]
-. On the untouched test split, a fresh base-model evaluation scored
-$P=0.568$, $R=0.464$, $F_1=0.511$; the winning configuration, trained
-at five seeds, scored $F_1=0.530$--$0.573$ (Table~\ref{tab:finetune-dec027}),
-raising precision in every seed ($P=0.704$--$0.894$) but
-\emph{lowering} recall in every seed ($R=0.414$--$0.425$ vs.\ base
-$0.464$)
-% [EVID-044]
-.
 
 \begin{table}[htbp]
 \centering
-\caption{DEC-027 leakage-free confirmatory run: base model vs.\ five
-fine-tuned seeds on the untouched 40-product test split (280 gold
-triples).}
+\caption{Leakage-free confirmatory run: base model and five fine-tuned
+seeds on the untouched 40-product test split (280 gold triples). The base
+model is decoded greedily and gives one deterministic score.}
 \label{tab:finetune-dec027}
 \begin{tabular}{@{}lccc@{}}
 \toprule
 Configuration & $P$ & $R$ & $F_1$ \\
 \midrule
-Base model (fresh eval) & 0.568 & 0.464 & 0.511 \\
+Base model (fresh evaluation) & 0.568 & 0.464 & 0.511 \\
 Fine-tuned, seed 42 & 0.872 & 0.414 & 0.562 \\
 Fine-tuned, seed 43 & 0.894 & 0.421 & 0.573 \\
 Fine-tuned, seed 44 & 0.821 & 0.425 & 0.560 \\
@@ -1942,142 +1172,40 @@ Fine-tuned, seed 46 & 0.704 & 0.425 & 0.530 \\
 % [EVID-044]
 \end{table}
 
-The pre-registered primary test -- a paired bootstrap of the mean
-per-product $F_1$ difference (fine-tuned minus base, averaged across
-the five seeds) over the 40 test products, 10,000 resamples -- gives a
-point estimate of $-0.021$, 95\% CI $[-0.042, -0.003]$: the interval
-excludes zero on the negative side, and the pre-registered positive
-criterion (CI excludes zero \emph{and} point estimate $\geq 0.03$) is
-not met. This is a negative result on this paper's primary,
-pre-registered fine-tuning test, and per the DEC-027 pre-registration
-it supersedes the earlier 8-product result below as the headline
-fine-tuning claim
+The pre-registered primary test, a paired bootstrap of the mean
+per-product $F_1$ difference (fine-tuned minus base, averaged over the
+five seeds) over the 40 test products with 10,000 resamples, gives
+$-0.021$, 95\% CI $[-0.042, -0.003]$. The interval excludes zero on the
+negative side, and the pre-registered positive criterion (CI excluding
+zero \emph{and} a point estimate $\ge 0.03$) is not met. This is a
+negative result on the primary, pre-registered fine-tuning test, and it
+supersedes the earlier exploration.
 % [EVID-044]
-.
 
-A secondary, descriptive comparison of whole-test-set $F_1$ against the
-same base score is, by contrast, positive ($t(4)=5.37$, $p=0.006$;
-Wilcoxon $p=0.063$, the $n=5$ floor). Every test product has exactly
-7 gold triples, so the two tests do not disagree because of gold
-weighting. They disagree because of where the change falls. The base
-model scores $F_1=0$ on 21 of the 40 products while still making 134
-false positives there. The fine-tuned model cuts these to about 33,
-often by predicting nothing for the product. Pooled precision credits
-each removed false positive, but those products stay at $F_1=0$, so the
-per-product mean does not move. On the 19 products the base model gets
-partly right, true positives fall from 130 to 117.6 (seed mean) while
-false positives there were already near zero (3 to 0.6), so nothing
-offsets the recall loss. Twenty-eight products are unchanged, nine are
-worse (about 1.4 true positives lost each), and three are better. The
-pre-registration specified the per-product bootstrap as primary, so the
-negative result is reported as this paper's result, not the more
-favorable pooled comparison
+A secondary, descriptive comparison of pooled test-set $F_1$ with the
+base score is, by contrast, positive ($t(4)=5.37$, $p=0.006$; Wilcoxon
+$p=0.063$, the five-seed floor). Every test product has exactly 7 gold
+triples, so the two tests do not disagree because of gold weighting but
+because of where the change falls. The base model scores $F_1=0$ on 21 of
+the 40 products while making 134 false positives there, which the
+fine-tuned model cuts to about 33, often by predicting nothing for the
+product. Pooled precision credits each removed false positive, but those
+products stay at $F_1=0$. On the 19 products the base model gets partly
+right, true positives fall from 130 to 117.6 (seed mean) while false
+positives were already near zero (3 to 0.6), so nothing offsets the
+recall loss. Twenty-eight products are unchanged, nine are worse (about
+1.4 true positives lost each), and three are better.
 % [EVID-044]
-.
-
-The pooled figures above use the evaluator's convention of scoring all
-products' predictions as one global set, in which an identical
-incorrect triple predicted for several products counts as a single
-false positive. Scoring each product separately and summing counts it
-once per product. True positives are identical under both conventions
-(130 for the base model), but the base model repeats 38 incorrect
-triples across products (mostly ones with a generic subject such as
-``smartwatch device''), so its false positives are 99 under the global
-convention and 137 under the per-product convention. Per-product
-counting gives base $F_1=0.475$ against a seed mean of $0.546$
-($+0.071$, $t(4)=7.01$, $p=0.002$); the global convention reported in
-Table~\ref{tab:finetune-dec027} gives $0.511$ against $0.553$
-($+0.042$, $p=0.006$). The primary bootstrap already scores products
-separately and is unaffected
+The pooled figures follow the evaluator's convention of scoring all
+products' predictions as one set, in which an incorrect triple repeated
+across products counts once. The base model repeats 38 incorrect triples
+across products, so its false positives are 99 under this convention and
+137 when each product is scored separately; per-product counting gives
+$0.475$ against a seed mean of $0.546$ ($+0.071$, $p=0.002$), against the
+reported $0.511$ and $0.553$ ($+0.042$). The pooled convention is thus
+the more conservative one for fine-tuning, and the primary bootstrap,
+which scores products separately, is unaffected.
 % [EVID-044]
-.
-
-\noindent\emph{Note.} The base model is decoded greedily and yields a
-single deterministic score; comparisons with it are one-sample $t$-tests.
-
-\paragraph{Earlier exploration, tuned on its own test set
-(superseded; historical context only).} The results in this paragraph
-selected hyperparameters and then tested significance on the same
-8-product test set. They are superseded by the negative result above
-and are not a current finding. Mistral-7B-Instruct-v0.3 was
-fine-tuned with QLoRA on the same 90 synthetic examples and evaluated
-on an earlier, 8-product test set. The base model (greedy decoding)
-predicted 46 triples, 7 of them correct ($P=0.152$, $R=0.125$,
-$F_1=0.137$). An earlier evaluation in which two intended test
-products also appeared in the training data was withdrawn, and both
-products were excluded
-% [EVID-026, EVID-027, EVID-028]
-.
-
-In a seed-42 search, precision increased with training epochs,
-reaching $1.000$ at 5 and 8 epochs, while recall stayed at $0.125$
-(Figure~\ref{fig:finetuning}a; Table~\ref{tab:s4-epoch-search}). No
-alternative LoRA rank or learning rate exceeded the default
-configuration (rank 16, $\alpha=32$, learning rate $2\times10^{-4}$;
-Table~\ref{tab:s5-lora-search}), and recall was $0.125$ in all nine
-training runs. This flat recall does not show that fine-tuning leaves
-recall unchanged. The base model found only 7 of 56 gold triples, so a
-loss of about 10\% of true positives, the size measured in DEC-027,
-is less than one triple and could not appear on this set. Over five
-seeds (Table~\ref{tab:finetune-5seed};
-Figure~\ref{fig:finetuning}b), and with the configuration tuned on the
-same test set, the 5-epoch configuration exceeded the base model in
-every seed ($\Delta F_1=+0.064$, 95\% CI
-$[0.037,0.091]$, $t(4)=6.57$, $p=0.003$), whereas the 3-epoch
-configuration exceeded it in four of five seeds ($\Delta F_1=+0.044$,
-95\% CI $[-0.005,0.093]$, $t(4)=2.51$, $p=0.066$). The two
-configurations did not differ significantly from each other
-($\Delta F_1=+0.020$, 95\% CI $[-0.045,0.085]$, $p=0.446$). At 5
-epochs with seed 42, the model predicted 7 triples, all correct
-% [EVID-037; EVID-038; EVID-040]
-.
-
-\begin{table}[htbp]
-\centering
-\caption{Five-seed fine-tuning results on the earlier 8-product test set, with hyperparameters tuned on that same test set (historical; superseded by the negative result in Table~\ref{tab:finetune-dec027}).}
-\label{tab:finetune-5seed}
-\begin{tabular}{@{}lrrrrrr@{}}
-\toprule
-Configuration & $F_1$, mean (SD) & $\Delta F_1$ [95\% CI] & $t(4)$ & $p$ & Wilcoxon $p$ & Seeds $>$ base \\
-\midrule
-Base model & 0.137 & --- & --- & --- & --- & --- \\
-3 epochs & 0.181 (0.039) & $+0.044\ [-0.005, 0.093]$ & 2.51 & 0.066 & 0.125 & 4/5 \\
-5 epochs & 0.201 (0.022) & $+0.064\ [0.037, 0.091]$ & 6.57 & 0.003 & 0.063 & 5/5 \\
-5 vs.\ 3 epochs (paired) & --- & $+0.020\ [-0.045, 0.085]$ & 0.84 & 0.446 & 0.625 & --- \\
-\bottomrule
-\end{tabular}
-% [EVID-040; SD corrected to sample SD, see the note in
-% Section~\ref{sec:results-ablation} -- EVID-040's logged 0.0194 for the
-% 5-epoch configuration is the population SD; the sample SD is 0.0217,
-% independently recomputed this session from the per-seed values in
-% Table~\ref{tab:s6-per-seed} and confirmed to match ($t(4)=6.57$ is
-% consistent only with the sample-SD figure, not 0.0194]
-\end{table}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.9\linewidth]{figures/fig_finetuning.png}
-\caption{Earlier, tuning-leakage-affected fine-tuning exploration
-(historical context; Table~\ref{tab:finetune-dec027} above is the
-headline result). (a) Precision, recall, and $F_1$ against training
-epochs (seed 42). (b) Test $F_1$ per seed for the 3- and 5-epoch
-configurations; the dashed line marks the base model.}
-\label{fig:finetuning}
-% [SLDE-AFT_Section7_Results_revised.docx, Figure 7.3]
-\end{figure}
-
-These earlier results are exploratory and superseded. The epoch and
-LoRA settings were selected on the same 8-product test set used for
-the five-seed evaluation, so the configuration was tuned on the
-evaluation data (the AUDIT.md A2 / DEC-024 caveat stated in
-Section~\ref{sec:setup-statistics}, restated here as instructed by
-that same ground rule). The one-sample tests also treat the base score
-as fixed and capture variation across training seeds but not across
-test products, of which there were only 8 (7 base-model true
-positives) -- one of the reasons DEC-027's independent validation/test
-split and larger, 40-product test set were run as a follow-up
-% [Decision log.md, DEC-024, DEC-027]
-.
 
 \subsection{Closed-Loop Integration Test}
 \label{sec:results-closedloop}
@@ -2085,12 +1213,15 @@ split and larger, 40-product test set were run as a follow-up
 From an exactly reconstructed four-iteration state of the 200-product
 run, a fifth iteration was run with the base extractor (control) and
 with the fine-tuned model (treatment; Table~\ref{tab:closedloop}).
-Relative to the starting state, $F_1$ decreased by $0.008$ in the
-control arm and by less than $0.001$ in the treatment arm, and the
-treatment added 24 net new above-threshold triples against 5 for the
-control
+Relative to the starting state, $F_1$ decreased by $0.008$ in the control
+arm and by less than $0.001$ in the treatment arm, and the treatment
+added 24 net new above-threshold triples against 5 for the control. The
+treatment used a single seed (43, the best of three in the standalone
+evaluation), and the arms differ in model family (a Llama-3.1-8B control
+against a QLoRA adapter on Mistral-7B), so the difference cannot be
+attributed to fine-tuning alone. Recall here is against
+\texttt{gold\_structured} (Section~\ref{sec:setup-metrics}).
 % [EVID-030]
-.
 
 \begin{table}[htbp]
 \centering
@@ -2109,446 +1240,160 @@ Iteration 5, fine-tuned model (treatment) & 499 & 0.898 & 0.246 & 0.386 \\
 % [EVID-030]
 \end{table}
 
-The treatment used a single seed (43), the best of three in the
-standalone evaluation. The two arms also differ in model family: the
-control uses Llama-3.1-8B-Instruct and the treatment a QLoRA adapter on
-Mistral-7B-Instruct-v0.3, so the difference between arms cannot be
-attributed to fine-tuning alone
-% [EVID-030]
-. This closed-loop recall is computed against \texttt{gold\_structured}
-(Section~\ref{sec:setup-metrics}), not the \texttt{gold\_unstructured}
-denominator DEC-026 uses below -- the two are not comparable numbers.
-
-\subsection{Scalability Analysis}
+\subsection{Scalability}
 \label{sec:results-scalability}
 
-For a single unguided extraction pass, total runtime increased
-approximately linearly from 92\,s at $N=20$ to 799\,s at $N=200$, and
-mean per-document latency remained between $3.98$ and $4.60$\,s while
-the knowledge base grew to 2,814 entries (Figure~\ref{fig:scalability};
-Table~\ref{tab:s7-scalability}). In a separate benchmark, per-call
-latency of the candidate-acceptance routine increased $72.7$-fold for
-an $80$-fold increase in observations (100 to 8,000), compared with
-$2.9$-fold for an indexed variant with the same aggregation mathematics
-that is not used in the pipeline (Table~\ref{tab:s8-complexity})
-% [EVID-023; EVID-036]
-.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.9\linewidth]{figures/fig_scalability.png}
-\caption{Scalability of a single unguided extraction pass (seed 42):
-(a) total runtime and knowledge-base size; (b) mean and maximum
-per-document latency.}
-\label{fig:scalability}
-% [SLDE-AFT_Section7_Results_revised.docx, Figure 7.4]
-\end{figure}
-
-Each size was run once, and the full four-iteration loop was not
-profiled beyond $N=200$. Memory use could not be measured reliably
-because all sizes ran in one process, and GPU utilization during
-fine-tuning was not recorded
+For a single unguided extraction pass, runtime grew approximately
+linearly from 92\,s at $N=20$ to 799\,s at $N=200$, with mean
+per-document latency between $3.98$ and $4.60$\,s as the knowledge base
+grew to 2,814 entries (Supplementary Section~S6). Each size was run
+once; memory use could not be measured reliably, and GPU utilisation was
+not recorded.
 % [EVID-023]
-.
-
-\subsection{DEC-026: Aggregation-Rule Comparison}
-\label{sec:results-dec026}
-
-This subsection reports the DEC-026 replay (Section~\ref{sec:formal-analysis-empirical})
-in full: report only, no interpretation -- the ceiling proof, the
-mechanistic explanation of each rule's behavior, and what may be
-concluded from these numbers are given in
-Section~\ref{sec:formal-analysis-empirical} and
-Section~\ref{sec:discussion}, not repeated here. Six rules (R1--R6,
-defined in Section~\ref{sec:formal-analysis-empirical}) are applied to
-the identical stored observations of two independent snapshots --
-Dataset A (657 triples, 35 test-split subjects) and Dataset B (2241
-triples, 92 test-split subjects) -- at two thresholds each: the
-rule's own validation-selected threshold (``F1-selected'') and the
-pipeline's fixed operating threshold $\tau=0.88$ (Section~\ref{sec:setup-hyperparameters}).
-R4, R5, and R6 are tested rules, reported here exactly as R1--R3 are;
-none of the three is claimed as a contribution
-(Section~\ref{sec:formal-analysis-summary}).
-
-\begin{table}[htbp]
-\centering
-\caption{Dataset A (657 triples): precision, recall, and $F_1$ at each
-rule's own F1-selected threshold and at the fixed $\tau=0.88$, side by
-side.}
-\label{tab:dec026-a-metrics}
-\begin{tabular}{@{}lc ccc ccc@{}}
-\toprule
-& & \multicolumn{3}{c}{F1-selected} & \multicolumn{3}{c}{Fixed $\tau=0.88$} \\
-\cmidrule(lr){3-5} \cmidrule(lr){6-8}
-Rule & $\tau_{\text{sel}}$ & $P$ & $R$ & $F_1$ & $P$ & $R$ & $F_1$ \\
-\midrule
-R1 (max-merge) & 0.98 & 0.5385 & 1.0000 & 0.7000 & 0.4389 & 1.0000 & 0.6100 \\
-R2 (published) & 0.73 & 0.5095 & 0.9571 & 0.6650 & 0.8333 & 0.3929 & 0.5340 \\
-R3 (source-count) & 0.73 & 0.5214 & 0.9571 & 0.6751 & 0.9322 & 0.3929 & 0.5528 \\
-R4 (evidence-share) & 0.73 & 0.5095 & 0.9571 & 0.6650 & 0.8333 & 0.3929 & 0.5340 \\
-R5 (R3+R4) & 0.73 & 0.5214 & 0.9571 & 0.6751 & 0.9322 & 0.3929 & 0.5528 \\
-R6 (unsquared, exploratory) & 0.73 & 0.4621 & 0.9571 & 0.6233 & 0.4674 & 0.9214 & 0.6202 \\
-\bottomrule
-\end{tabular}
-% [EVID-041]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Dataset B (2241 triples): precision, recall, and $F_1$ at each
-rule's own F1-selected threshold and at the fixed $\tau=0.88$, side by
-side.}
-\label{tab:dec026-b-metrics}
-\begin{tabular}{@{}lc ccc ccc@{}}
-\toprule
-& & \multicolumn{3}{c}{F1-selected} & \multicolumn{3}{c}{Fixed $\tau=0.88$} \\
-\cmidrule(lr){3-5} \cmidrule(lr){6-8}
-Rule & $\tau_{\text{sel}}$ & $P$ & $R$ & $F_1$ & $P$ & $R$ & $F_1$ \\
-\midrule
-R1 (max-merge) & 0.98 & 0.5308 & 1.0000 & 0.6935 & 0.4481 & 1.0000 & 0.6188 \\
-R2 (published) & 0.73 & 0.5102 & 0.9317 & 0.6593 & 0.9012 & 0.4534 & 0.6033 \\
-R3 (source-count) & 0.73 & 0.5149 & 0.9317 & 0.6632 & 0.9280 & 0.4534 & 0.6092 \\
-R4 (evidence-share) & 0.73 & 0.5102 & 0.9317 & 0.6593 & 0.9012 & 0.4534 & 0.6033 \\
-R5 (R3+R4) & 0.73 & 0.5149 & 0.9317 & 0.6632 & 0.9280 & 0.4534 & 0.6092 \\
-R6 (unsquared, exploratory) & 0.58 & 0.4894 & 0.9524 & 0.6465 & 0.5023 & 0.8986 & 0.6444 \\
-\bottomrule
-\end{tabular}
-% [EVID-041]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Admitted-triple counts and contested single-valued-predicate
-slots with at least one candidate admitted, both datasets, both
-thresholds.}
-\label{tab:dec026-admitted}
-\begin{tabular}{@{}llcc cc@{}}
-\toprule
-& & \multicolumn{2}{c}{F1-selected} & \multicolumn{2}{c}{Fixed $\tau=0.88$} \\
-\cmidrule(lr){3-4} \cmidrule(lr){5-6}
-Dataset & Rule & Admitted & Contested slots & Admitted & Contested slots \\
-\midrule
-A (657) & R1 & 260 & 6 & 319 & 20 \\
-A (657) & R2 & 263 & 0 & 66 & 0 \\
-A (657) & R3 & 257 & 0 & 59 & 0 \\
-A (657) & R4 & 263 & 0 & 66 & 0 \\
-A (657) & R5 & 257 & 0 & 59 & 0 \\
-A (657) & R6 & 290 & 0 & 276 & 0 \\
-\midrule
-B (2241) & R1 & 910 & 40 & 1078 & 69 \\
-B (2241) & R2 & 882 & 0 & 243 & 0 \\
-B (2241) & R3 & 874 & 0 & 236 & 0 \\
-B (2241) & R4 & 882 & 0 & 243 & 0 \\
-B (2241) & R5 & 874 & 0 & 236 & 0 \\
-B (2241) & R6 & 940 & 10 & 864 & 0 \\
-\bottomrule
-\end{tabular}
-% [EVID-041]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Bootstrap 95\% CI for $F_1(\text{rule}) - F_1(\text{R2})$ at
-each rule's own F1-selected threshold, $10{,}000$ resamples over
-test-split subjects.}
-\label{tab:dec026-bootstrap-f1sel}
-\begin{tabular}{@{}llrrc@{}}
-\toprule
-Dataset & Rule & Mean diff. & 95\% CI & Excludes 0 \\
-\midrule
-A (657) & R1 & $+0.0359$ & $[0.0154, 0.0641]$ & Yes \\
-A (657) & R3 & $+0.0106$ & $[0.0028, 0.0222]$ & Yes \\
-A (657) & R4 & $+0.0000$ & $[0.0000, 0.0000]$ & No \\
-A (657) & R5 & $+0.0106$ & $[0.0028, 0.0222]$ & Yes \\
-A (657) & R6 & $-0.0429$ & $[-0.0870, -0.0118]$ & Yes \\
-\midrule
-B (2241) & R1 & $+0.0341$ & $[0.0191, 0.0496]$ & Yes \\
-B (2241) & R3 & $+0.0039$ & $[0.0013, 0.0075]$ & Yes \\
-B (2241) & R4 & $+0.0000$ & $[0.0000, 0.0000]$ & No \\
-B (2241) & R5 & $+0.0039$ & $[0.0013, 0.0075]$ & Yes \\
-B (2241) & R6 & $-0.0131$ & $[-0.0303, 0.0015]$ & No \\
-\bottomrule
-\end{tabular}
-% [EVID-041]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Bootstrap 95\% CI for precision, recall, and $F_1$
-differences against R2 at the fixed $\tau=0.88$ operating threshold,
-$10{,}000$ resamples over test-split subjects. Reported for R1 and R3
-against R2, per the comparison requested for this subsection.}
-\label{tab:dec026-bootstrap-tau088}
-\begin{tabular}{@{}llrrr@{}}
-\toprule
-Comparison & Dataset & $P$ diff. (95\% CI) & $R$ diff. (95\% CI) & $F_1$ diff. (95\% CI) \\
-\midrule
-R1$-$R2 & A (657) & $-0.3847\ [-0.4803,-0.2460]$ & $+0.6052\ [0.4071,0.7983]$ & $+0.0809\ [-0.1147,0.2989]$ \\
-R1$-$R2 & B (2241) & $-0.4510\ [-0.4918,-0.4026]$ & $+0.5476\ [0.4435,0.6496]$ & $+0.0193\ [-0.0889,0.1298]$ \\
-R3$-$R2 & A (657) & $+0.1060\ [0.0321,0.2267]$ & $0.0000\ [0.0000,0.0000]$ & $+0.0192\ [0.0057,0.0395]$ \\
-R3$-$R2 & B (2241) & $+0.0270\ [0.0076,0.0519]$ & $0.0000\ [0.0000,0.0000]$ & $+0.0059\ [0.0016,0.0115]$ \\
-\bottomrule
-\end{tabular}
-% [EVID-041]
-\end{table}
 
 \section{Discussion}
 \label{sec:discussion}
 
-This section interprets the results reported in
-Section~\ref{sec:results}; no new numbers are introduced here beyond
-those already given there.
-
 \subsection{Why Aggregation Fails on DocRED and BioRED, and the Divergence from DySECT}
 \label{sec:discussion-docred}
 
-On 845 DocRED documents, PKB aggregation lowered $F_1$ relative to no
-aggregation under every matching key, including an oracle key built from
-gold entity mentions (Section~\ref{sec:results-docred}). An earlier
-account in this project attributed the same result, on a 15-document
-pilot, to exact-string matching: the same fact phrased differently in
-different sentences would never share a key. The larger run tested that
-account directly and does not support it. A deployable normalised key
-closed none of the gap, and the oracle key closed 7.3\%. Pooling was not
-the bottleneck: the oracle key already pooled 28 of the 29 gold facts
-that the extractions recovered from more than one sentence
+An earlier account in this project attributed the DocRED result, on a
+15-document pilot, to exact-string matching: the same fact phrased
+differently in different sentences would never share a key. The
+845-document run tested that account and does not support it. A
+deployable normalised key closed none of the gap to no aggregation, and
+the oracle key closed 7.3\%, although it already pooled 28 of the 29 gold
+facts that the extractions recovered from more than one sentence
+(Section~\ref{sec:results-docred}).
 % [EVID-046]
-.
 
-The failure comes from the scarcity of cross-sentence corroboration in
-what the extractor produces. Half of DocRED's gold facts have two or
-more supporting sentences in the text, but the sentence-level extractor
-recovered only 645 of 11,344 facts at all, and only 29 from two or more
-sentences. An aggregation rule that admits a fact only when it is
-corroborated cannot admit facts that are never corroborated, whatever
-the key (Proposition~\ref{prop:corroboration}). On DocRED the binding
-constraint is therefore extractor recall, compounded across sentences,
-not the aggregation rule's matching. In the product domain the same fact
-is extracted repeatedly across iterations and sources, so the constraint
-does not bind there. The framework's aggregation stage therefore adds
-value only when the extractor recovers the same fact from more than one
-source often enough. This is a boundary condition of the design, and a
-stronger or document-level extractor would move it
-% [EVID-046]
-.
+The failure comes instead from the scarcity of cross-sentence
+corroboration in what the extractor produces. Half of DocRED's gold
+facts have two or more supporting sentences, but the sentence-level
+extractor recovered only 645 of 11,344 facts at all and 29 from two or
+more sentences. A rule that admits a fact only when it is corroborated
+cannot admit facts that are never corroborated, whatever the key
+(Proposition~\ref{prop:corroboration}). The binding constraint is
+therefore extractor recall, compounded across sentences. The same
+pattern holds on BioRED, with different text, a different schema, and an
+external baseline (Section~\ref{sec:results-biored}): a third of its gold
+facts are co-mentioned in two or more sentences, but the extractors
+recovered only 0.75\% and 1.35\% of facts from more than one sentence.
+The stronger extractor recovered significantly more corroborated facts,
+but far too few, and it lost more $F_1$ to aggregation only because its
+unaggregated output was more precise while both aggregated outputs ended
+near the same low $F_1$. In the product domain, by contrast, the same
+fact is extracted repeatedly across iterations and sources, so the
+constraint does not bind. The aggregation stage therefore adds value only
+when the extractor recovers the same fact from more than one source often
+enough; a stronger or document-level extractor would move this boundary.
+% [EVID-046; EVID-047]
 
-The same pattern holds on BioRED, a second domain with different text,
-a different relation schema, and an external baseline
-(Section~\ref{sec:results-biored}). A third of BioRED's gold facts are
-co-mentioned in two or more sentences, but the extractors recovered only
-0.75\% (Llama-3.1-8B) and 1.35\% (DeepSeek-V3.2) of facts from more than
-one sentence, and aggregation lowered $F_1$ for both. The stronger
-extractor recovered significantly more corroborated facts but still far
-too few. It also lost more $F_1$ to aggregation, because both extractors'
-aggregated output ended near the same low $F_1$ while DeepSeek-V3.2's
-unaggregated output was more precise. A larger aggregation loss for the
-stronger extractor therefore reflects its better baseline, not a second
-cause of failure
-% [EVID-047]
-.
-
-\citet{aminnaseri2026dysect} report a consistent recall
-\emph{improvement} from KB-guided extraction on DocRED across all four
-evaluated models (Section~\ref{sec:related-work-dysect}). The two results
-are not a controlled comparison of the same mechanism, and two
-differences in design may account for the opposite direction; neither
-was tested here:
-
-\begin{itemize}
-\item \textbf{Different extractors.} \citet{aminnaseri2026dysect}
-evaluate GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT
-uses only \texttt{meta-llama/llama-3.1-8b-instruct}
-(Section~\ref{sec:setup-models}), a smaller model in none of their four.
-Given the finding above, extractor recall is likely to matter most.
-\item \textbf{A different underlying question.} DySECT's reported recall
-is extraction recall under KB-guided \emph{prompting} (more triples
-found when the prompt is augmented with hierarchical abstractions), not
-recall after a confidence-threshold \emph{admission} step. SLDE-AFT
-measures the latter, at $\lambda=0.5$, $\tau=0.70$
-(Section~\ref{sec:setup-hyperparameters}), so the two papers' recall
-numbers may not measure the same quantity.
-\end{itemize}
-
-\subsection{The Rival Ceiling Generalizes Beyond This Data}
-\label{sec:discussion-ceiling}
-
-DEC-026 found zero contested single-valued-predicate slots admitted
-under R2 (the published rule) on either dataset, at either the
-F1-selected or the fixed $\tau=0.88$ threshold, against 6 and 40 such
-admissions under the unconstrained R1 baseline
-(Section~\ref{sec:formal-analysis-empirical}). This is not an empirical
-regularity specific to the two product-domain snapshots tested: it
-follows directly from Equation~\ref{eq:conflict}'s algebraic form
-(Proposition~\ref{prop:ceiling}, Corollary~\ref{cor:ceiling-consequence}),
-which gives $C(t) < 1/(m(t)+1) \le 0.5$ for any slot with $m(t)\ge 1$
-competing values, independent of domain, extractor, or how much
-evidence accumulates. Consequently, the ceiling applies to \emph{any}
-deployment of Equations~\ref{eq:noisyor}--\ref{eq:conflict} with
-$\tau \ge 0.5$, not only to the two snapshots DEC-026 replayed -- those
-snapshots confirm empirically that the ceiling has a real, non-vacuous
-effect (contested slots do arise and R1 does admit some of them), not
-that the ceiling itself is data-dependent.
+\citet{aminnaseri2026dysect} report a recall \emph{improvement} from
+knowledge-base-guided extraction on DocRED for all four models they
+evaluate. The two results are not a controlled comparison, and two
+differences, neither tested here, may explain the opposite direction.
+First, their extractors (GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and
+Kimi~K2.5) are all larger than the Llama-3.1-8B used here, and the
+finding above suggests extractor recall matters most. Second, their
+recall is extraction recall under knowledge-base-guided
+\emph{prompting}, whereas this paper measures recall after a
+confidence-threshold \emph{admission} step, so the two figures may not
+measure the same quantity.
 
 \subsection{Why the Repeat-Counting Correction Succeeds Where Evidence-Share Does Not}
 \label{sec:discussion-r3}
 
-R3 (distinct-source aggregation) is the one tested correction with a
-statistically robust improvement over R2 at the fixed operating
-threshold (Table~\ref{tab:dec026-bootstrap-tau088}); R4 (evidence-share)
-is an exact null and R6 (its unsquared variant) is negative
-(Section~\ref{sec:formal-analysis-empirical}). One mechanistic account
-consistent with all three results, and with Proposition~\ref{prop:independence}'s
-independence-assumption argument, is that the defect these three rules
-target is not the same defect: Equation~\ref{eq:noisyor} treats every
-repeated observation as independent evidence, but repeated invocations
-of one extractor at temperature 0 re-reading the same source text are
-not independent -- they are deterministic repeats
+R3 is the one tested correction with a robust gain over R2 at the fixed
+threshold (Table~\ref{tab:dec026-bootstrap-tau088}); R4 is an exact null
+and R6 is negative (Section~\ref{sec:formal-analysis-empirical}). An
+account consistent with all three is that they target different
+defects. Equation~\ref{eq:noisyor} treats every repeated observation as
+independent evidence, but repeated readings of the same source by one
+extractor at temperature 0 are deterministic repeats
 (Proposition~\ref{prop:independence}). R3 corrects this at the
-\emph{input} to the aggregation, by deduplicating repeated observations
-from the same source before Equation~\ref{eq:noisyor} is applied. R4
-and R6 instead rescale the \emph{output} of the same, already
-over-counted $A(t)$ -- they change how a contested slot's confidence is
-divided, not how many times a repeated observation is counted in the
-first place, so neither corrects the mechanism the independence
-violation actually damages. R6's specific failure mode illustrates why
-rescaling the output is not merely insufficient but can actively hurt:
-because $A(t)/A(t)=1$ for any uncontested slot regardless of the
-evidence behind it, an unsquared share collapses to a constant on
-exactly the slots where the input actually carries information
-(Section~\ref{sec:formal-analysis-empirical}) -- a structural property
-of that formula, not an artifact of R6 being tested on this particular
-data (Section~\ref{sec:formal-analysis-empirical}'s conclusion). This
-account is offered as the explanation consistent with the measured
-pattern across R3, R4, and R6; it was not independently tested against
-alternative accounts of the same three results. The same defect appears
-outside the product domain. On DocRED, the extractor emitted the same
-triple more than once from a single sentence 154 times (exact key), and
-R2 counted these repeats as corroboration. R3 discarded them and raised
-the precision of admitted triples from $0.060$ to $0.250$, although on
-too few triples to change $F_1$
-(Section~\ref{sec:results-docred})
-% [EVID-046]
-.
+\emph{input} to the aggregation, by collapsing repeats from the same
+source. R4 and R6 rescale the \emph{output} of the already over-counted
+$A(t)$, changing how a contested slot's confidence is divided but not
+how often a repeat is counted. R6 shows that rescaling the output can
+also hurt: because $A(t)/A(t)=1$ for any uncontested slot, it collapses
+to a constant exactly where the input carries information. This account
+fits the measured pattern but was not tested against alternatives.
 
-This also defines R3's scope. Because it corrects repeat-counting, it
-acts only when the extractor emits the same triple more than once from
-a single source. On BioRED, Llama-3.1-8B did so 138 times and R3 raised
-its precision by $0.054$. DeepSeek-V3.2 did so 6 times and R3 had no
-measurable effect (Section~\ref{sec:results-biored}). Where the discarded
-repeats include correct facts, R3 can also cost recall: on BioRED its
-$F_1$ with Llama-3.1-8B was slightly lower than R2's. R3 is therefore a
+The same defect appears outside the product domain, and it defines R3's
+scope. On DocRED the extractor emitted the same triple more than once
+from a single sentence 154 times (exact key), and R3 raised the precision
+of admitted triples from $0.060$ to $0.250$, on too few triples to change
+$F_1$. On BioRED, Llama-3.1-8B repeated itself 138 times and R3 raised
+its precision by $0.054$; DeepSeek-V3.2 did so 6 times and R3 had no
+measurable effect. Where the discarded repeats include correct facts,
+R3 can cost recall, as with Llama-3.1-8B on BioRED. R3 is therefore a
 correction for extractors that repeat themselves within a source, not a
-general improvement to aggregation
-% [EVID-047]
-.
+general improvement to aggregation.
+% [EVID-046; EVID-047]
 
 \subsection{What the Ablations Do and Do Not Show}
 \label{sec:discussion-ablations}
 
-Two distinct results both concern whether the Noisy-Or PKB
-mechanism helps the pipeline, and neither should be read as stronger
-than it is. First, the module-level ablation
-(Section~\ref{sec:results-ablation}), extended to thirty seeds, found
-no significant difference between the full pipeline and a max-merge
-variant ($+0.034$ for max-merge, 95\% CI $[-0.010, 0.082]$). At thirty
-seeds the design detects effects of about $0.07$--$0.09$ absolute
-$F_1$ with 80\% power, against about $0.29$ at five seeds
-% [EVID-045; AUDIT.md]
-. So an effect of that size in the PKB's favour is ruled out, but a
-smaller one is not, and the point estimate points the other way.
-Second, and separately, DEC-026's own
-max-merge baseline (R1) numerically exceeded the published rule (R2) in
-$F_1$ when each rule was evaluated at its own independently-selected
-threshold (Section~\ref{sec:formal-analysis-empirical}), matching the
-module-level ablation's direction -- but this advantage did not survive
-when both rules were compared at the single, shared $\tau=0.88$
-operating threshold instead (Table~\ref{tab:dec026-bootstrap-tau088}):
-R1's precision loss and recall gain at that threshold are each
-individually significant but cancel in $F_1$, whose confidence interval
-includes zero on both datasets. Taken together, these results do
-not show that the Noisy-Or PKB mechanism is unnecessary or harmful:
-neither comparison reaches significance. They do mean that this paper
-cannot claim the mechanism improves held-out $F_1$: every comparison
-favours max-merge or finds no difference. The rival ceiling
-(Proposition~\ref{prop:ceiling}) offers one mechanism that can hold
-back recall under the Noisy-Or rule but not under max-merge, although
-it has not been shown to cause the ablation difference. The feedback
+Two results bear on whether the Noisy-OR PKB helps. The thirty-seed
+ablation found no significant difference between the full pipeline and a
+max-merge variant ($+0.034$ for max-merge, 95\% CI $[-0.010, 0.082]$).
+Its detectable effect is about $0.07$--$0.09$ absolute $F_1$, against
+about $0.29$ at five seeds, so an effect of that size in the PKB's favour
+is ruled out, a smaller one is not, and the point estimate points the
+other way. Separately, in the offline replay max-merge exceeded the
+published rule at its own selected threshold but not at the shared
+$\tau=0.88$, where its significant precision loss and recall gain cancel
+in $F_1$ (Table~\ref{tab:dec026-bootstrap-tau088}). Neither comparison
+shows that the PKB is unnecessary or harmful, but every comparison
+favours max-merge or finds no difference, so the paper cannot claim that
+it improves held-out $F_1$. The rival ceiling is one mechanism that can
+hold back recall under the Noisy-OR rule but not under max-merge; it has
+not been shown to cause the ablation difference. The feedback
 controller's ablation is a plain null ($-0.032$, 95\% CI
-$[-0.090, 0.023]$): neither a benefit nor a cost of about $0.08$ $F_1$
-or more is supported
-% [EVID-045]
-.
+$[-0.090, 0.023]$): neither a benefit nor a cost of about $0.08$ $F_1$ or
+more is supported.
+% [EVID-045; EVID-041]
 
 \subsection{Why Fine-Tuning Raised Precision but Lowered Recall}
 \label{sec:discussion-finetuning}
 
-This is consistent with how the fine-tuning data was built: the
-synthetic training examples are generated from the knowledge base's
-own high-confidence triples (Section~\ref{sec:related-work-dysect}'s
-shared-capability description of this mechanism), i.e.\ from facts the
-extractor had already found and the PKB had already accepted, not from
-facts absent from its prior extractions. Training on this data can
-teach the model to state already-discoverable facts more reliably and
-suppress spurious alternatives -- raising precision -- but it supplies
-no exposure to facts the extractor never found in the first place,
-which would be needed to raise recall. In the earlier, 8-product
-exploration (tuned on its own test set and superseded), this appeared
-as precision gains with recall held exactly flat: at 5 epochs with seed 42, the fine-tuned model predicted 7
-triples, all correct, and the base model predicted 46 triples, of
-which the same 7 were correct (Section~\ref{sec:results-finetuning}) --
-the fine-tuned model's true positives were a subset of the base
-model's, not a different or larger set.
-
-DEC-027's leakage-free, 40-product replication
-(Section~\ref{sec:results-finetuning}) sharpens this account rather
-than only confirming it: precision rose sharply in every seed
-($P=0.704$--$0.894$ vs.\ base $0.568$), but recall now \emph{fell} in
-every seed as well ($R=0.414$--$0.425$ vs.\ base $0.464$), rather than
-staying flat. The same mechanism explains both patterns -- fine-tuning
-on the PKB's own high-confidence subset narrows what the model states,
-which suppresses false positives (raising precision) but can also
-suppress some previously-recovered true positives that fall outside
-the narrower, PKB-derived training distribution (lowering recall) --
-and the larger, properly held-out test set was needed to detect the
-recall cost at all: with 7 base-model true positives, a loss of about
-10\% of true positives is less than one triple. The selection
-procedure also favored this outcome: validation recall was flat across
-configurations, so $F_1$-based selection chose on precision alone and
-picked the most conservative adapter. The recall cost explains the
-negative per-product bootstrap (Section~\ref{sec:results-finetuning}).
-The positive pooled comparison comes mainly from false positives
-removed on products where the base model had no correct triples, which
-changes pooled precision but not those products' per-product $F_1$. These accounts are
-consistent with the available per-seed detail but do not, on their
-own, rule out other explanations for the same pattern.
+This is consistent with how the fine-tuning data was built: from the
+knowledge base's own high-confidence triples, that is, from facts the
+extractor had already found and the PKB had already accepted. Such data
+can teach the model to state already-discoverable facts more reliably
+and to suppress spurious alternatives, raising precision, but it gives no
+exposure to facts the extractor never found, which would be needed to
+raise recall. It can also suppress previously recovered true positives
+that fall outside the narrower training distribution, lowering recall,
+as in every seed of the leakage-free evaluation. That cost was invisible
+on the superseded 8-product set, where the base model had only 7 true
+positives. Selection also favoured this outcome: validation recall was
+flat across configurations, so $F_1$-based selection chose on precision
+alone and picked the most conservative adapter. The recall loss explains
+the negative per-product result; the positive pooled comparison comes
+mainly from false positives removed on products where the base model had
+no correct triples. These accounts fit the per-seed detail but do not, on
+their own, rule out other explanations.
+% [EVID-044]
 
 \subsection{Why Calibration Is Poor}
 \label{sec:discussion-calibration}
 
-Two mechanisms are consistent with the poor calibration reported in
-Section~\ref{sec:results-calibration} (ECE $=0.333$, zero correct
-triples in the $0.6$--$0.7$ and $0.8$--$0.9$ bins). First, the
-per-observation confidence entering Equation~\ref{eq:noisyor} is
-self-reported by the extractor within a fixed, prompt-imposed range
-($0.80$--$0.96$;
-Section~\ref{sec:setup-hyperparameters}/\ref{sec:results-calibration}),
-not derived from token probabilities or any calibration procedure
-(Section~\ref{sec:setup-hyperparameters}) -- the input signal was never
-designed to be a calibrated probability, so a poorly calibrated output
-is an expected consequence of that input, not only of the aggregation
-rule applied to it. Second, Proposition~\ref{prop:saturation}'s
-saturation dynamic applies identically whether repeated observations of
-a triple are correct or not: a repeated, incorrect extraction
-accumulates confidence the same way a repeated, correct one does,
-inflating scores on the same identical error rather than reflecting
-genuine corroboration (Proposition~\ref{prop:independence}). This is
-directly consistent with the two worst-calibrated bins being almost
-entirely single-valued-predicate triples with a median of zero
-competing values (Section~\ref{sec:results-calibration}) -- exactly the
-uncontested case where nothing in Equation~\ref{eq:conflict} can ever
-challenge a confidently repeated wrong answer. Both mechanisms are
-offered as consistent explanations for the observed calibration curve;
-neither was isolated experimentally from the other in this paper.
+Two mechanisms are consistent with the poor calibration (ECE $=0.333$;
+no correct triples in the $0.6$--$0.7$ and $0.8$--$0.9$ bins). First, the
+input confidence is self-reported by the extractor within a
+prompt-imposed range, not derived from token probabilities or calibrated
+(Section~\ref{sec:setup-hyperparameters}), so a poorly calibrated output
+is expected from the input alone. Second, saturation
+(Proposition~\ref{prop:saturation}) applies whether repeated
+observations are correct or not, so a repeated incorrect extraction
+accumulates confidence exactly like a repeated correct one
+(Proposition~\ref{prop:independence}). This fits the two worst bins being
+almost entirely single-valued-predicate triples with a median of zero
+competing values, the uncontested case in which nothing in
+Equation~\ref{eq:conflict} can challenge a confidently repeated wrong
+answer. Neither mechanism was isolated experimentally.
 
 \section{Limitations}
 \label{sec:limitations}
@@ -2662,7 +1507,7 @@ utilisation during fine-tuning was not recorded
 \paragraph{An unindexed candidate scan.} The evaluated implementation
 scans every previously accepted candidate on each new observation,
 which is $O(N)$ per call and $O(N^2)$ cumulative
-(Section~\ref{sec:formal-analysis-complexity}). An indexed variant with
+(Supplementary Section~S3). An indexed variant with
 the same aggregation mathematics was benchmarked but not integrated
 into the pipeline
 % [EVID-036]
@@ -2686,70 +1531,51 @@ change several of these results.
 This paper evaluated a closed-loop extraction design in which a
 language-model extractor populates a probabilistically scored knowledge
 base that feeds back into extraction, a design and aggregation rule
-attributed throughout to \citet{aminnaseri2026dysect}. Its four
-contributions answer the four research questions. First, a formal
-analysis of the published conservative Noisy-OR rule shows that any
-contested slot of a single-valued predicate scores below
-$1/(m+1) \le 0.5$ and can never be admitted at a threshold of $0.5$ or
-more (RQ1). Second, this ceiling blocked every contested slot on two
-real-data snapshots and under a structured source corrupted at up to
-20\%, where the same rule without its conflict penalty admitted most of
-them. Third, counting distinct sources rather than repeated
-observations raised the precision of admitted facts on the product
-domain, DocRED, and BioRED. It does so only when the extractor repeats a
-fact within a single source, and it had no effect for an extractor that
-rarely did (RQ2). Fourth, a controlled evaluation found no end-to-end
-benefit from the loop's mechanisms. Removing the feedback controller or
+attributed throughout to \citet{aminnaseri2026dysect}. A formal analysis
+of the published conservative Noisy-OR rule shows that any contested slot
+of a single-valued predicate scores below $1/(m+1) \le 0.5$ and can never
+be admitted at a threshold of $0.5$ or more (RQ1); this ceiling blocked
+every contested slot on two real-data snapshots and under a structured
+source corrupted at up to 20\%. Counting distinct sources rather than
+repeated observations raised the precision of admitted facts on the
+product domain, DocRED, and BioRED, but only where the extractor repeats
+a fact within a source (RQ2). A controlled evaluation found no end-to-end
+benefit from the loop's mechanisms: removing the feedback controller or
 the probabilistic knowledge base had no significant effect at thirty
-seeds, leakage-free fine-tuning was negative on its pre-registered
-primary metric (RQ3), and on DocRED and BioRED aggregation lowered $F_1$
-relative to no aggregation for both extractors tested (RQ4). The binding
-constraint on real text is extractor recall: the extractors recovered
-fewer than 1.4\% of gold facts from more than one sentence, so an
-aggregation rule that requires corroboration had almost nothing to
-admit.
+seeds, and leakage-free fine-tuning was negative on its pre-registered
+primary metric (RQ3). On DocRED and BioRED, aggregation lowered $F_1$
+relative to no aggregation for both extractors tested, because the
+extractors recovered fewer than 1.4\% of gold facts from more than one
+sentence, leaving a corroboration-gated rule almost nothing to admit
+(RQ4).
 
-These results leave several questions open, and each could be settled
-by a specific experiment:
+Each open question could be settled by a specific experiment:
 
 \begin{itemize}
-\item \textbf{Would aggregation help with a stronger extractor?}
-Section~\ref{sec:discussion-docred} attributes the public-corpus failure
-to extractor recall. A direct test is to repeat the DocRED and BioRED
-runs with document-level extraction and stronger extractors, measure
-the share of gold facts recovered from two or more sources for each,
+\item \textbf{Would aggregation help with a stronger extractor?} Repeat
+the DocRED and BioRED runs with document-level and stronger extractors,
 and check whether aggregation's $F_1$ relative to no aggregation rises
-as that share rises. If it does not, the constraint lies elsewhere.
-\item \textbf{Can the loop work without gold labels?} The feedback
-controller computes its hint against training-split gold labels
-(Section~\ref{sec:framework-feedback}). Replacing that signal with one
-derived from the knowledge base itself, such as disagreement or low
-aggregated confidence, and repeating the thirty-seed ablation would show
-whether a self-supervised version helps, hurts, or matches the current
-null.
-\item \textbf{Do the modules have small effects?} The ablation rules out
-effects of about $0.08$ $F_1$ or larger. Detecting an effect of $0.04$
-with 80\% power would need about 110--130 seeds at the observed
-variance, which at the measured cost per run is under one US dollar of
-API calls.
-\item \textbf{Does fine-tuning help once its known confounds are
-removed?} The closed-loop test compared a Mistral-based adapter with a
-Llama-based control on one seed, and every fine-tuning run used
-training data that had not passed the provenance filter. Repeating the
-closed-loop test across seeds with an adapter on the control's own base
-model, and the leakage-free evaluation with provenance-filtered data,
-would separate the effect of fine-tuning from both confounds.
+with the share of gold facts recovered from two or more sources. If it
+does not, the constraint lies elsewhere.
+\item \textbf{Can the loop work without gold labels?} Replace the
+feedback controller's gold-label signal
+(Section~\ref{sec:framework-feedback}) with one derived from the
+knowledge base, such as disagreement or low aggregated confidence, and
+repeat the thirty-seed ablation.
+\item \textbf{Do the modules have small effects?} Detecting a $0.04$
+$F_1$ effect with 80\% power would need about 110--130 seeds at the
+observed variance, under one US dollar of API calls at the measured cost
+per run.
+\item \textbf{Does fine-tuning help once its confounds are removed?}
+Repeat the closed-loop test across seeds with an adapter on the
+control's own base model, and the leakage-free evaluation with
+provenance-filtered training data.
 \item \textbf{Does the provenance gate hold against a real structured
-source?} Its precision gain was measured against a generator-derived
-source and random corruption. Testing it with an independently
-produced structured source, whose errors may be correlated with the
-text's, would show whether the gain survives realistic noise.
-\item \textbf{Can the scores be calibrated?} The aggregated score is
-poorly calibrated (ECE $=0.333$) and built from self-reported
-confidences. Repeating the calibration measurement with confidences
-derived from token probabilities would show how much of the
-miscalibration comes from the input signal and how much from the
-aggregation rule.
+source?} Test it with an independently produced structured source whose
+errors may be correlated with the text's.
+\item \textbf{Can the scores be calibrated?} Repeat the calibration
+measurement with confidences derived from token probabilities, to
+separate the input signal's contribution from the aggregation rule's.
 \end{itemize}
 
 \noindent Taken together, the evidence supports the formal properties of
@@ -2775,197 +1601,6 @@ the journal accepts it).
 \item \textbf{Author contribution}: TODO.
 \end{itemize}
 
-\begin{appendices}
-\renewcommand{\thetable}{S\arabic{table}}
-\renewcommand{\theHtable}{S\arabic{table}} % distinct hyperref targets for S-tables
-\setcounter{table}{0}
-
-\section{Supplementary Material for Section~\ref{sec:results}}
-\label{sec:supplementary}
-
-Tables S1--S8 give the detailed values summarized in
-Section~\ref{sec:results}. Scores are given to four decimal places as
-recorded
-% [SLDE-AFT_Section7_Supplementary.docx]
-.
-
-\begin{table}[htbp]
-\centering
-\caption{Calibration bins of conflict-adjusted scores (657 gold-labelled
-triples; ECE $=0.3332$, Brier $=0.2969$).}
-\label{tab:s1-calibration}
-\begin{tabular}{@{}lccc@{}}
-\toprule
-Confidence bin & Triples & Mean confidence & Fraction correct \\
-\midrule
-0.6--0.7 & 68 & [add] & 0.000 \\
-0.8--0.9 & 16 & [add] & 0.000 \\
-0.9--1.0 & 114 & 0.978 & 0.868 \\
-Remaining bins & [add] & [add] & [add] \\
-\bottomrule
-\end{tabular}
-
-\noindent\emph{Note.} Complete from
-\texttt{calibration\_bins\_real.csv} before submission (not committed
-to this repository).
-% [EVID-036; SLDE-AFT_Section7_Supplementary.docx]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{LLM-only extraction on training products per iteration, and
-held-out base-extractor $F_1$ (single seed).}
-\label{tab:s2-iteration}
-\begin{tabular}{@{}lcccc@{}}
-\toprule
-Iteration / split & $P$ & $R$ & $F_1$ & KB size \\
-\midrule
-Iteration 1 (unguided) & 0.4771 & 0.2980 & 0.3668 & 534 \\
-Iteration 2 (guided) & 0.4713 & 0.3020 & 0.3682 & 576 \\
-Iteration 3 (guided) & 0.3944 & 0.2286 & 0.2894 & 613 \\
-Iteration 4 (guided) & 0.5088 & 0.3551 & 0.4183 & 657 \\
-50-product run, validation (5 products) & --- & --- & 0.597 & --- \\
-50-product run, test (10 products) & --- & --- & 0.197 & --- \\
-200-product run, validation (20 products) & --- & --- & 0.561 & --- \\
-200-product run, test (40 products) & --- & --- & 0.413 & --- \\
-\bottomrule
-\end{tabular}
-% [EVID-013; 200-product validation/test values verified against
-% Decision log.md's DEC-006 scale-up entry: "val 0.5610, test 0.4126"]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Five-seed ablation results at $N=20$ and $N=50$: mean (SD)
-and paired comparisons with the full pipeline (the thirty-seed $N=50$
-result is in Table~\ref{tab:ablation-n50}).}
-\label{tab:s3-ablation-full}
-\begin{tabular}{@{}lll@{}}
-\toprule
-Configuration / comparison & $N=20$ & $N=50$ \\
-\midrule
-\multicolumn{3}{@{}l}{\emph{Held-out test $F_1$}} \\
-Full pipeline & 0.2914 (0.3349) & 0.3451 (0.1044) \\
-Without feedback controller & 0.4335 (0.1833) & 0.3005 (0.1932) \\
-Without PKB (max-merge) & 0.4388 (0.2866) & 0.3783 (0.1950) \\
-$\Delta$ without feedback [95\% CI]; $p$ ($t$/Wilcoxon) & $+0.142\ [-0.400, 0.684]$; $0.507/0.438$ & $-0.045\ [-0.245, 0.156]$; $0.571/0.625$ \\
-$\Delta$ without PKB [95\% CI]; $p$ ($t$/Wilcoxon) & $+0.147\ [-0.297, 0.592]$; $0.409/0.438$ & $+0.033\ [-0.146, 0.213]$; $0.635/1.000$ \\
-\multicolumn{3}{@{}l}{\emph{Training $F_1$}} \\
-Full pipeline & 0.4233 (0.1379) & 0.4070 (0.1206) \\
-Without feedback controller & 0.2878 (0.1867) & 0.3328 (0.0464) \\
-Without PKB (max-merge) & 0.3437 (0.1258) & 0.3761 (0.1372) \\
-Unstructured only & 0.4572 (0.0987) & 0.4478 (0.0884) \\
-$\Delta$ without feedback [95\% CI]; $p$ ($t$/Wilcoxon) & $-0.136\ [-0.536, 0.265]$; $0.400/0.438$ & $-0.074\ [-0.266, 0.118]$; $0.343/0.313$ \\
-$\Delta$ without PKB [95\% CI]; $p$ ($t$/Wilcoxon) & $-0.080\ [-0.291, 0.132]$; $0.354/0.313$ & $-0.031\ [-0.245, 0.183]$; $0.709/0.813$ \\
-\bottomrule
-\end{tabular}
-
-\noindent\emph{Note.} $N=20$ used 4 held-out test products and $N=50$
-used 10. $N=50$ SDs are sample SDs converted from the logged population
-SDs (Section~\ref{sec:results-ablation}'s correction note); $N=20$ SDs
-are as logged. CIs are derived from logged mean differences and paired
-$p$-values. The structured-only variant has no LLM component and was
-not scored.
-% [EVID-020; EVID-039]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Epoch search (seed 42; rank 16, $\alpha=32$, learning rate
-$2\times10^{-4}$; 8-product test set).}
-\label{tab:s4-epoch-search}
-\begin{tabular}{@{}lccc@{}}
-\toprule
-Configuration & $P$ & $R$ & $F_1$ \\
-\midrule
-Base model & 0.1522 & 0.1250 & 0.1373 \\
-2 epochs & 0.2121 & 0.1250 & 0.1573 \\
-3 epochs & 0.5385 & 0.1250 & 0.2029 \\
-5 epochs & 1.0000 & 0.1250 & 0.2222 \\
-8 epochs & 1.0000 & 0.1250 & 0.2222 \\
-\bottomrule
-\end{tabular}
-% [EVID-037]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{LoRA hyperparameter search at 5 epochs (seed 42; 8-product test set).}
-\label{tab:s5-lora-search}
-\begin{tabular}{@{}lccc@{}}
-\toprule
-Setting & $P$ & $R$ & $F_1$ \\
-\midrule
-Rank 8, $\alpha=16$, lr $2\times10^{-4}$ & 0.7778 & 0.1250 & 0.2154 \\
-Rank 16, $\alpha=32$, lr $2\times10^{-4}$ (default) & 1.0000 & 0.1250 & 0.2222 \\
-Rank 32, $\alpha=64$, lr $2\times10^{-4}$ & 0.7000 & 0.1250 & 0.2121 \\
-Rank 16, $\alpha=32$, lr $1\times10^{-4}$ & 0.2258 & 0.1250 & 0.1609 \\
-Rank 16, $\alpha=32$, lr $3\times10^{-4}$ & 0.3684 & 0.1250 & 0.1867 \\
-\bottomrule
-\end{tabular}
-% [EVID-038]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Per-seed test $F_1$ at 3 and 5 epochs (8-product test set;
-base model $F_1=0.1373$).}
-\label{tab:s6-per-seed}
-\begin{tabular}{@{}lcc@{}}
-\toprule
-Seed & 3 epochs & 5 epochs ($P$ / $R$ / $F_1$) \\
-\midrule
-42 & 0.2029 & 1.0000 / 0.1250 / 0.2222 \\
-43 & 0.2090 & 0.4667 / 0.1250 / 0.1972 \\
-44 & 0.1124 & 1.0000 / 0.1250 / 0.2222 \\
-45 & 0.1935 & 1.0000 / 0.1071 / 0.1935 \\
-46 & 0.1892 & 0.2692 / 0.1250 / 0.1707 \\
-Mean (sample SD) & 0.1814 (0.0393) & 0.2012 (0.0217) \\
-\bottomrule
-\end{tabular}
-% [EVID-034 (3 epochs); EVID-040 (5 epochs); 5-epoch sample SD
-% 0.0217 independently recomputed this session from these per-seed
-% values -- EVID-040's logged 0.0194 is the population SD, see
-% Section~\ref{sec:results-ablation}'s correction note]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Scalability of a single unguided extraction pass (seed 42).}
-\label{tab:s7-scalability}
-\begin{tabular}{@{}lrrrrrrr@{}}
-\toprule
-$N$ & Runtime (s) & Mean latency (s) & Max latency (s) & KB size & Conflicts & Above $\tau$ & Failed calls \\
-\midrule
-20 & 92.14 & 4.598 & 12.35 & 284 & 8 & 37 & 9 (45\%) \\
-50 & 199.04 & 3.976 & 9.69 & 737 & 59 & 106 & 17 (34\%) \\
-100 & 405.84 & 4.053 & 9.17 & 1,455 & 117 & 263 & 24 (24\%) \\
-200 & 799.06 & 3.988 & 20.12 & 2,814 & 187 & 547 & 53 (26.5\%) \\
-\bottomrule
-\end{tabular}
-
-\noindent\emph{Note.} The failure rate reflects a deliberately unguided
-single pass and is not comparable with guided multi-iteration runs.
-% [EVID-023]
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Growth in per-call latency of candidate acceptance (100 to
-8,000 observations).}
-\label{tab:s8-complexity}
-\begin{tabular}{@{}lcc@{}}
-\toprule
-Implementation & Growth in observations & Growth in per-call latency \\
-\midrule
-Production routine (linear scan over accepted candidates) & 80$\times$ & 72.7$\times$ \\
-Indexed variant (benchmark only, not in pipeline) & 80$\times$ & 2.9$\times$ \\
-\bottomrule
-\end{tabular}
-% [EVID-036]
-\end{table}
-
-\end{appendices}
 
 \bibliography{references}
 

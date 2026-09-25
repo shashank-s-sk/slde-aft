@@ -1,4 +1,4 @@
-# Length-reduction plan (proposed 2026-09-25; NOT applied, awaiting approval)
+# Length-reduction plan (proposed 2026-09-25; APPLIED 2026-09-25 with two changes -- see the end of this file)
 
 Baseline under the sn-jnl template: **50 pages**, of which pages 1-41 are
 the main text (~14,660 prose words + ~1,150 words in tables/figures),
@@ -52,3 +52,36 @@ figures and exposition, plus the current appendix.
 Items most likely to draw reviewer objection if moved: F1 (the
 superseded fine-tuning exploration) and D2 (the full DEC-026 tables).
 Both stay one click away in the ESM, with pointers from the main text.
+
+## Applied 2026-09-25 (with the user's two changes)
+
+- Experimental Setup kept datasets, splits, leakage rules, models,
+  hyperparameters, prompts, metrics, recall denominators and the full
+  statistical protocol in the main text; only rationale and procedural
+  detail moved (ESM S1). A minimum-detectable-effect paragraph and a
+  pre-registration paragraph were added to the protocol.
+- Working limit: KAIS's 15,000 words.
+
+| Section | Words before | Words after | Pages (sn-jnl) |
+|---|---:|---:|---|
+| Introduction | 754 | 754 | 2 |
+| Related Work (incl. former Gap section) | 2,657 | 540 | 3-4 |
+| Evaluated Framework | 947 | 437 | 5-6 |
+| Formal Analysis | 1,622 | 1,015 | 7-10 |
+| Experimental Setup | 2,304 | 1,217 | 11-13 |
+| Results | 3,075 | 1,826 | 14-20 |
+| Discussion | 1,840 | 1,094 | 21-22 |
+| Limitations | 823 | 825 | 23-24 |
+| Conclusion | 623 | 437 | 25 |
+| **Prose total** | **14,660** | **8,192** | |
+
+Main text: 32 pages (was 50), including title/abstract page, Declarations
+and references. Table/figure words 664 (was ~1,700). Abstract 243 words.
+Reference list ~3,650 words. Whole manuscript including references
+~12,750 words, under KAIS's 15,000.
+
+ESM (paper/supplementary.tex, 9 pages): S1 extended setup; S2 full
+DEC-026 tables; S3 computational complexity; S4 five-seed ablation and SD
+correction; S5 superseded 8-product fine-tuning exploration (with its
+tuned-on-test caveat, tables and figure); S6 scalability; S7 DocRED/BioRED
+pilot-continuity settings; S8 calibration bins and iteration metrics.

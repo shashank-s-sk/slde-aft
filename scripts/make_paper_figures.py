@@ -1,4 +1,9 @@
-"""Builds two manuscript figures from committed sources only.
+"""Builds all five manuscript figures (vector PDF + 300-dpi PNG).
+
+  fig_rival_ceiling  analytical, from src/pkb_math.py
+  fig_scalability    outputs/dec008_scalability/scalability_summary.csv (committed)
+  fig_finetuning     values logged in Evidence log.md (EVID-034/037/040); the
+                     5-epoch adapters were not committed, see FT_* below
 
   paper/figures/fig_reliability.{pdf,png}
       Reliability diagram from outputs/dec003_real_calibration/
@@ -139,8 +144,125 @@ def architecture() -> None:
     plt.close(fig)
 
 
+# Categorical slots 1-3 of the dataviz reference palette (validated as an
+# all-pairs set); each series also gets its own marker and dash so the
+# figures stay legible in grayscale print.
+SERIES = [("#2a78d6", "o", "-"), ("#eb6834", "s", "--"), ("#1baf7a", "^", ":")]
+
+
+def save(fig, name):
+    fig.tight_layout()
+    for ext in ("pdf", "png"):
+        fig.savefig(FIG_DIR / f"{name}.{ext}", dpi=300)
+    plt.close(fig)
+
+
+def rival_ceiling() -> None:
+    """Analytical: C(t) = A(t)/(m+1), A(t) = 1 - (1 - lambda*c)^n, from
+    src/pkb_math.py, with lambda=0.75 and every observation c=0.90."""
+    from src.pkb_math import conservative_noisy_or
+
+    ns = list(range(1, 9))
+    fig, ax = plt.subplots(figsize=(4.6, 3.3))
+    ax.axhline(0.88, color=MUTED, lw=0.9, ls="--")
+    ax.text(2.6, 0.845, r"threshold $\tau=0.88$", va="top", fontsize=7.5, color=MUTED)
+    ax.axhline(0.5, color=MUTED, lw=0.9, ls=":")
+    ax.text(3.2, 0.535, r"$1/(m+1)$ bound for $m=1$", va="bottom", fontsize=7.5, color=MUTED)
+    for m, (col, mk, ls) in zip((0, 1, 2), SERIES):
+        ys = [conservative_noisy_or([0.9] * n, shrinkage=0.75) / (m + 1) for n in ns]
+        ax.plot(ns, ys, color=col, marker=mk, ms=4, lw=1.6, ls=ls)
+        ax.text(ns[-1] + 0.15, ys[-1] - 0.035, f"m = {m}", fontsize=7.5, color=TEXT)
+    ax.set_xlim(0.7, 9.2)
+    ax.set_ylim(0, 1.02)
+    ax.set_xticks(ns)
+    ax.set_xlabel("Agreeing observations of the candidate")
+    ax.set_ylabel("Final score $C(t)$")
+    ax.yaxis.grid(True, color=GRID, lw=0.6)
+    ax.set_axisbelow(True)
+    save(fig, "fig_rival_ceiling")
+
+
+def scalability() -> None:
+    """From the committed outputs/dec008_scalability/scalability_summary.csv.
+    Runtime and latency are separate panels (no second y-axis); knowledge-
+    base size is labelled on the runtime points."""
+    d = pd.read_csv("outputs/dec008_scalability/scalability_summary.csv")
+    fig, (a, b) = plt.subplots(1, 2, figsize=(7.0, 2.8))
+    a.plot(d.n_products, d.total_runtime_s, color=INK, marker="o", ms=4, lw=1.6)
+    for _, r in d.iterrows():
+        a.text(r.n_products + 6, r.total_runtime_s - 25, f"KB {int(r.kb_size):,}", ha="left",
+               va="top", fontsize=6.8, color=MUTED)
+    a.set_xlabel("Products (N)")
+    a.set_ylabel("Total runtime (s)")
+    a.set_ylim(0, 900)
+    a.set_title("(a) Runtime and KB size", fontsize=8.5, loc="left", color=TEXT)
+    for (col, mk, ls), key, lab in zip(SERIES, ("mean_latency_s_per_doc", "max_latency_s"),
+                                       ("mean", "max")):
+        b.plot(d.n_products, d[key], color=col, marker=mk, ms=4, lw=1.6, ls=ls)
+        b.text(d.n_products.iloc[-1] + 6, d[key].iloc[-1], lab, va="center", fontsize=7.5, color=TEXT)
+    b.set_xlabel("Products (N)")
+    b.set_ylabel("Latency per document (s)")
+    b.set_ylim(0, 22)
+    b.set_xlim(0, 235)
+    b.set_title("(b) Per-document latency", fontsize=8.5, loc="left", color=TEXT)
+    for ax in (a, b):
+        ax.set_xticks(list(d.n_products))
+        ax.yaxis.grid(True, color=GRID, lw=0.6)
+        ax.set_axisbelow(True)
+    save(fig, "fig_scalability")
+
+
+# Values for the superseded 8-product fine-tuning exploration, as logged in
+# Evidence log.md (EVID-037 epoch sweep; EVID-034 3-epoch seeds; EVID-040
+# 5-epoch seeds). The 5-epoch adapters and their evaluation files were run
+# on a rented pod and are not in this repository, so these numbers are the
+# logged values, not recomputed here.
+FT_BASE = 0.1373
+FT_EPOCHS = {0: (0.1522, 0.1250, 0.1373), 2: (0.2121, 0.1250, 0.1573), 3: (0.5385, 0.1250, 0.2029),
+             5: (1.0000, 0.1250, 0.2222), 8: (1.0000, 0.1250, 0.2222)}
+FT_SEEDS = {"3 epochs": [0.2029, 0.2090, 0.1124, 0.1935, 0.1892],
+            "5 epochs": [0.2222, 0.1972, 0.2222, 0.1935, 0.1707]}
+
+
+def finetuning() -> None:
+    fig, (a, b) = plt.subplots(1, 2, figsize=(7.0, 2.8))
+    eps = sorted(FT_EPOCHS)
+    for i, ((col, mk, ls), lab) in enumerate(zip(SERIES, ("precision", "recall", "$F_1$"))):
+        ys = [FT_EPOCHS[e][i] for e in eps]
+        a.plot(eps, ys, color=col, marker=mk, ms=4, lw=1.6, ls=ls)
+        a.text(eps[-1] + 0.3, ys[-1] + (0.03 if i == 1 else 0), lab, va="center", fontsize=7.5,
+               color=TEXT)
+    a.set_xticks(eps)
+    a.set_xticklabels(["base"] + [str(e) for e in eps[1:]])
+    a.set_xlim(-0.4, 10)
+    a.set_ylim(0, 1.05)
+    a.set_xlabel("Training epochs (seed 42)")
+    a.set_title("(a) Epoch sweep", fontsize=8.5, loc="left", color=TEXT)
+    seeds = [42, 43, 44, 45, 46]
+    # seeds are categories, not a sequence: dots, no joining lines
+    for k, ((col, mk, _), (lab, vals)) in enumerate(zip(SERIES, FT_SEEDS.items())):
+        xs = [s + (-0.12 if k == 0 else 0.12) for s in seeds]
+        b.plot(xs, vals, color=col, marker=mk, ms=5.5, lw=0, label=lab)
+    b.legend(frameon=False, fontsize=7.5, loc="lower left", ncol=2)
+    b.axhline(FT_BASE, color=MUTED, lw=0.9, ls="--")
+    b.text(46.9, FT_BASE + 0.004, "base model", fontsize=7, color=MUTED, va="bottom", ha="right")
+    b.set_xticks(seeds)
+    b.set_xlim(41.7, 47.3)
+    b.set_ylim(0.08, 0.25)
+    b.set_xlabel("Seed")
+    b.set_ylabel("Test $F_1$")
+    b.set_title("(b) Test $F_1$ per seed", fontsize=8.5, loc="left", color=TEXT)
+    for ax in (a, b):
+        ax.yaxis.grid(True, color=GRID, lw=0.6)
+        ax.set_axisbelow(True)
+    save(fig, "fig_finetuning")
+
+
 if __name__ == "__main__":
     FIG_DIR.mkdir(parents=True, exist_ok=True)
     reliability()
     architecture()
+    rival_ceiling()
+    scalability()
+    finetuning()
     print("wrote", sorted(p.name for p in FIG_DIR.glob("fig_*")))
