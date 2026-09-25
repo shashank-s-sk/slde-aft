@@ -1,24 +1,50 @@
-% SLDE-AFT manuscript -- article-class skeleton.
-% TODO: swap this preamble for the Springer journal's official LaTeX
-% template (e.g. svjour3/sn-jnl) once the target journal is confirmed;
-% article class is a placeholder for drafting only.
-\documentclass[11pt]{article}
-\usepackage[utf8]{inputenc}
+% SLDE-AFT manuscript -- Springer Nature sn-jnl template (v3.1, Dec 2024).
+%
+% ==================== TARGET JOURNAL: EDIT THIS BLOCK ONLY ====================
+% Keep exactly ONE \documentclass line active. Both journals are Springer
+% Nature titles using sn-jnl; the only journal-dependent setting in this
+% file is the reference style (class option). Numbered style
+% (sn-mathphys-num) is set for both until each journal's required style is
+% confirmed in its submission guidelines (see paper/UNVERIFIED.md). For
+% author-year, swap the option to sn-mathphys-ay (or sn-basic).
+%
+% Language Resources and Evaluation (LRE):
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+% Knowledge and Information Systems (KAIS):
+%\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+% ============================================================================
+%
+% The class loads natbib (with the style chosen above) and hyperref, and
+% sets the bibliography style; do not load those again here.
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
-\usepackage[numbers,sort&compress]{natbib}
 \usepackage{booktabs}
-\usepackage{hyperref}
+\usepackage[title]{appendix}
 
+\theoremstyle{thmstyleone}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
 
-\title{SLDE-AFT: A Self-Learning Dual-Source Knowledge Extraction and Automated Fine-Tuning System}
-\author{Shashank Kumar Sadashiva \and Ahmed Ebada}
-\date{}
+\raggedbottom
 
 \begin{document}
+
+\title[SLDE-AFT: Evaluating a Closed-Loop Extraction Design]{SLDE-AFT: A Self-Learning Dual-Source Knowledge Extraction and Automated Fine-Tuning System}
+
+% TODO(authors): affiliations, emails, and the corresponding author (*)
+% are required by the template and are not yet supplied.
+\author*[1]{\fnm{Shashank Kumar} \sur{Sadashiva}}\email{TODO}
+\author[1]{\fnm{Ahmed} \sur{Ebada}}\email{TODO}
+\affil*[1]{\orgdiv{TODO}, \orgname{TODO}, \orgaddress{\city{TODO}, \country{TODO}}}
+
+% TODO(abstract): not yet written. LRE asks for 150--250 words; the
+% template's guidance is unstructured, with no citations or equations.
+\abstract{TODO: abstract not yet written.}
+
+% TODO(keywords): not yet chosen (typically 4--6).
+\keywords{TODO}
+
 \maketitle
 
 % ------------------------------------------------------------------
@@ -519,8 +545,26 @@ short of the design this gap analysis motivates.
 \section{Evaluated Framework}
 \label{sec:framework}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/fig_architecture.pdf}
+\caption{The evaluated pipeline, as implemented. Structured records and
+text are extracted separately and pooled as observations in a
+probabilistic knowledge base using the aggregation rule of
+\citet{aminnaseri2026dysect}. The feedback controller builds its hint
+from training-split gold labels. Admitted triples with structured
+corroboration become synthetic training data for QLoRA fine-tuning, which
+is run manually; the resulting adapter was fed back to extraction only in
+the closed-loop integration test (dashed). Components specified in the
+original design but not implemented (Section~\ref{sec:framework-gaps})
+are not shown.}
+\label{fig:architecture}
+% [scripts/make_paper_figures.py; module list verified against src/ and
+% scripts/ in this section]
+\end{figure}
+
 This section describes only what the evaluated implementation
-contains, verified directly against \texttt{src/} and \texttt{scripts/}
+contains (Figure~\ref{fig:architecture}), verified directly against \texttt{src/} and \texttt{scripts/}
 this session; a capability specified in the original architecture
 design but absent from the code is stated as such, not implied.
 
@@ -1654,21 +1698,14 @@ correct at a mean confidence of $0.978$
 
 \begin{figure}[htbp]
 \centering
-\fbox{\parbox{0.85\linewidth}{\centering\vspace{1em}
-\textbf{TODO -- figure pending.} Reliability diagram of
-conflict-adjusted scores (657 triples, ten equal-width bins): bars of
-observed fraction correct per confidence bin; dashed diagonal $y=x$;
-bin counts above bars. Data source:
-\texttt{outputs/dec003\_real\_calibration/calibration\_bins\_real.csv}
-(not committed to this repository). Remove this placeholder and insert
-the rendered figure once that file is available.
-\vspace{1em}}}
+\includegraphics[width=0.62\linewidth]{figures/fig_reliability.pdf}
 \caption{Reliability diagram of conflict-adjusted scores (657 triples,
 ten equal-width bins). Bars show the fraction of correct triples per
 bin; the dashed line marks perfect calibration.}
 \label{fig:reliability}
-% [SLDE-AFT_Section7_Results_revised.docx, Figure 7.2 -- placeholder in
-% the source document itself, not only in this manuscript]
+% [outputs/dec003_real_calibration/calibration_bins_real.csv, regenerated
+% by scripts/dec003_real_data_calibration.py from the committed snapshot;
+% drawn by scripts/make_paper_figures.py]
 \end{figure}
 
 \subsection{Provenance Filtering}
@@ -2720,12 +2757,25 @@ the aggregation rule and the narrow, scope-limited value of the
 distinct-source correction. It does not support the claim that the
 closed loop, as designed and implemented here, improves extraction.
 
-\section*{Declarations}
-% TODO: not yet written -- data/code availability, funding, competing
-% interests, author contributions. Leave TODO markers for the user to
-% supply text where required.
+\backmatter
 
-\appendix
+\section*{Declarations}
+% TODO(declarations): every item below is required by the template and
+% still needs the authors' text. Suggested content is in the comments.
+\begin{itemize}
+\item \textbf{Funding}: TODO.
+\item \textbf{Competing interests}: TODO.
+\item \textbf{Ethics approval and consent to participate}: TODO (no human
+participants or personal data were involved; state "Not applicable" if
+the journal accepts it).
+\item \textbf{Consent for publication}: TODO.
+\item \textbf{Data availability}: TODO. % Suggested: the synthetic product data are regenerated by src/datasets/product_generator.py; DocRED, BioRED and CaRB are public; all extraction outputs and analysis results are in the project repository.
+\item \textbf{Materials availability}: TODO.
+\item \textbf{Code availability}: TODO. % Suggested: repository URL and commit, with scripts/reproduce_all.py (DEC-030).
+\item \textbf{Author contribution}: TODO.
+\end{itemize}
+
+\begin{appendices}
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theHtable}{S\arabic{table}} % distinct hyperref targets for S-tables
 \setcounter{table}{0}
@@ -2915,7 +2965,8 @@ Indexed variant (benchmark only, not in pipeline) & 80$\times$ & 2.9$\times$ \\
 % [EVID-036]
 \end{table}
 
-\bibliographystyle{unsrtnat}
+\end{appendices}
+
 \bibliography{references}
 
 \end{document}

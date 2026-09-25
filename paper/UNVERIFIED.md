@@ -117,3 +117,23 @@ the corresponding source is fixed.
 - hutter2019automl: changed from @incollection to @book (an edited
   volume); editors, series, publisher and DOI verified against Crossref.
   BibTeX's "empty author / empty booktitle" warnings are gone.
+
+## Open 2026-09-25: target-journal requirements (Stage 5)
+
+Springer's journal guideline pages (link.springer.com/journal/10579 and
+/10115 submission-guidelines) refused automated access (cookie wall), so
+these could only be confirmed via search snippets and must be checked in
+a browser before submission:
+- **Reference style** for LRE and for KAIS. main.tex uses Springer's
+  numbered style (sn-mathphys-num) for both as a placeholder; switching
+  to author-year is a one-word change in the class option.
+- **Required declarations** for each journal. main.tex lists the
+  template's standard set (funding, competing interests, ethics,
+  consent, data/materials/code availability, author contribution).
+- Confirmed via search snippet only: LRE asks for a 150--250-word
+  abstract; KAIS limits manuscripts to 15,000 words (5,000 for short
+  papers), per its editorial FAQ (kais.zhonghuapu.com).
+- **Figure formats**: Springer's general artwork guidance favours vector
+  (EPS/PDF) for line art. fig_finetuning.png, fig_rival_ceiling.png and
+  fig_scalability.png are 300-dpi raster images carried over from the
+  Word draft with no generating script in the repository.
