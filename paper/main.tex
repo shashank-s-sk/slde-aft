@@ -58,7 +58,8 @@ measurement, a held-out test separating the documents that build the
 knowledge base from those that measure it, or proofs of the aggregation
 rule's properties. This paper provides that evaluation for an
 independent implementation of the design, on a synthetic product domain
-and two public corpora, DocRED \citep{yao2019docred} and BioRED. It asks
+and two public corpora, DocRED \citep{yao2019docred} and BioRED
+\citep{luo2022biored}. It asks
 four questions, each matching what was tested:
 
 \begin{enumerate}
@@ -409,7 +410,7 @@ These are stated here as an honest scope limitation of the current
 implementation relative to DySECT, not as a design decision, and are
 revisited in Section~\ref{sec:limitations} (Limitations).
 
-\paragraph{Capabilities unique to SLDE-AFT, verified as implemented.} Two
+\paragraph{Implemented capabilities not described in DySECT.} Two
 elements of SLDE-AFT's design have no counterpart described in
 \citet{aminnaseri2026dysect}. First, dual-source structured seeding: SLDE-AFT
 ingests structured records (CSV/JSON) through a deterministic schema-based
@@ -432,8 +433,9 @@ use different benchmarks, base models, and metrics: DySECT reports a
 5--8 percentage point recall lift from KB-guided extraction with no
 retraining, and recall improvements on DocRED across GPT-4.1, GPT-4.1-mini,
 LLaMA-3.3~70B, and Kimi~K2.5; SLDE-AFT's evaluation
-(Sections~\ref{sec:setup-datasets}--\ref{sec:results}) uses CaRB,
-DocRED, and BioRED with a different set of base models and a
+(Sections~\ref{sec:setup-datasets}--\ref{sec:results}) uses CaRB
+\citep{bhardwaj2019carb}, DocRED \citep{yao2019docred}, and BioRED
+\citep{luo2022biored} with a different set of base models and a
 seed-based statistical protocol. No direct numerical comparison between the
 two systems is made in this paper as a result; a controlled head-to-head
 evaluation on a shared benchmark is identified as future work in
@@ -460,7 +462,7 @@ DySECT \citep{aminnaseri2026dysect} is the one system in this review that
 combines several of these layers into a closed loop, and the preceding
 subsection states plainly where SLDE-AFT's design overlaps with it and where
 it differs. Section~\ref{sec:gap} formalises the resulting cross-paradigm gap and
-positions SLDE-AFT's architecture against it.
+positions this paper's evaluation against it.
 
 % ------------------------------------------------------------------
 \section{Cross-Paradigm Research Gap}
@@ -513,7 +515,7 @@ describes exactly what the evaluated implementation contains, and
 Section~\ref{sec:limitations} states plainly where it still falls
 short of the design this gap analysis motivates.
 
-\section{Proposed Framework}
+\section{Evaluated Framework}
 \label{sec:framework}
 
 This section describes only what the evaluated implementation
@@ -1082,7 +1084,7 @@ threshold selection; val-split products may be used for threshold
 selection and hyperparameter tuning; train-split products may seed the
 knowledge base and generate synthetic supervision.
 
-\paragraph{Public benchmarks.} \textbf{CaRB}: 548 of the benchmark's 641
+\paragraph{Public benchmarks.} \textbf{CaRB} \citep{bhardwaj2019carb}: 548 of the benchmark's 641
 test-split sentences
 % [EVID-035]
 , selected by exact-string match between \texttt{data/CaRB/data/test.txt}
@@ -1105,7 +1107,7 @@ evidence sentences to the extractor, an oracle setting that tells the
 extractor which sentences contain a relation. It is superseded by the
 845-document run and is reported only as historical context
 % [Decision log.md, DEC-020, DEC-031]
-. \textbf{BioRED}: all 500 abstracts of the official Train (400) and
+. \textbf{BioRED} \citep{luo2022biored}: all 500 abstracts of the official Train (400) and
 Dev (100) splits (PubTator format, obtained from NCBI's public FTP
 distribution); the Test split is not used. They contain 5,462 sentences
 (the title plus the abstract, split by a fixed rule) and 4,906 gold
@@ -2723,6 +2725,7 @@ closed loop, as designed and implemented here, improves extraction.
 
 \appendix
 \renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theHtable}{S\arabic{table}} % distinct hyperref targets for S-tables
 \setcounter{table}{0}
 
 \section{Supplementary Material for Section~\ref{sec:results}}
