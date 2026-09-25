@@ -23,10 +23,110 @@
 
 % ------------------------------------------------------------------
 \section{Introduction}
-% TODO: not yet written. Per the task's order of work, Section 1 is
-% written last, once Sections 2-9 are settled. Do not draft contribution
-% claims here until the Results/Discussion sections determine what each
-% claim can honestly say.
+\label{sec:introduction}
+
+Large language models can extract relational facts from text without
+task-specific training, but their output is noisy, and the same fact is
+often extracted inconsistently across documents and runs. One response
+is to close the loop between extraction and knowledge: store extracted
+triples in a knowledge base that scores each fact by how much evidence
+supports it, admit only well-supported facts, and feed the knowledge
+base back into the extractor through prompting, feedback on missed and
+spurious facts, and fine-tuning on the knowledge base's own
+high-confidence contents. If it works, extraction improves the knowledge
+base and the knowledge base improves extraction.
+
+This design is not new. DySECT \citep{aminnaseri2026dysect} describes
+such a closed loop. The loop evaluated in this paper follows it, and its
+components are attributed to that work throughout: the architecture
+(extraction into a probabilistically scored knowledge base, fed back
+into extraction through prompt augmentation and fine-tuning on
+knowledge-base-derived data); the aggregation rule, a conservative
+Noisy-OR with a mutual-exclusivity penalty for single-valued predicates
+(their Equations 1--2); its default shrinkage $\lambda=0.75$; and the
+``Encouraging'' and ``Prohibitive'' names for the two feedback
+directions, recovering missed facts and suppressing false ones
+(Section~\ref{sec:related-work-dysect}). This paper does not claim
+any of these, or that such a system has not been built before.
+
+What such a loop has not had is a controlled evaluation of whether its
+mechanisms do what they are designed to do
+(Section~\ref{sec:gap}). The published evaluation reports a recall gain
+from knowledge-base-guided prompting on one benchmark, without a
+module-level ablation, a multi-seed statistical protocol, a calibration
+measurement, a held-out test separating the documents that build the
+knowledge base from those that measure it, or proofs of the aggregation
+rule's properties. This paper provides that evaluation for an
+independent implementation of the design, on a synthetic product domain
+and two public corpora, DocRED \citep{yao2019docred} and BioRED. It asks
+four questions, each matching what was tested:
+
+\begin{enumerate}
+\item[\textbf{RQ1}] What formal properties does the published
+aggregation rule have, and can it admit a contested value for a
+single-valued predicate, one for which rival values have also been
+observed?
+\item[\textbf{RQ2}] Does counting distinct sources rather than repeated
+observations improve the precision of what the rule admits, and under
+what conditions does that correction act?
+\item[\textbf{RQ3}] In a controlled evaluation with held-out data,
+multiple seeds, and pre-registered tests, do the loop's mechanisms --
+the feedback controller, probabilistic aggregation, and fine-tuning on
+knowledge-base-derived data -- improve extraction?
+\item[\textbf{RQ4}] On real text, does aggregation that requires
+corroboration improve on no aggregation, and if not, what limits it?
+\end{enumerate}
+
+\noindent The paper makes four contributions:
+
+\begin{enumerate}
+\item[(i)] A formal analysis of the published conservative Noisy-OR
+aggregation rule, including the \emph{rival-ceiling} result: for a
+single-valued predicate, any contested slot scores below
+$1/(m+1) \le 0.5$, where $m \ge 1$ is the number of rival values, and so
+cannot be admitted at any threshold at or above $0.5$
+(Section~\ref{sec:formal-analysis}).
+\item[(ii)] An empirical demonstration that the ceiling blocks contested
+slots: on two real-data snapshots the published rule admitted none,
+against 6 and 40 for a max-merge baseline, and it admitted none under a
+structured source corrupted at controlled rates of 5\%, 10\%, and 20\%
+(Sections~\ref{sec:formal-analysis-empirical}
+and~\ref{sec:results-provenance}).
+\item[(iii)] A corrected rule based on distinct-source counting, with
+measured precision gains -- on the product domain at the operating
+threshold, and on DocRED and BioRED -- and an explicit scope limit: it
+acts only when the extractor repeats a fact within a single source, and
+had no measurable effect for an extractor that rarely did
+(Sections~\ref{sec:formal-analysis-empirical},
+\ref{sec:results-docred}, and~\ref{sec:results-biored}).
+\item[(iv)] An independent controlled evaluation of the closed-loop
+design, finding no end-to-end benefit from its mechanisms. Removing the
+feedback controller or the probabilistic knowledge base had no
+significant effect at thirty seeds; a leakage-free fine-tuning
+evaluation is negative on its pre-registered primary metric; and on
+DocRED and BioRED, with two extractors, aggregation lowered $F_1$
+relative to no aggregation. The binding constraint on aggregation over
+real text is extractor recall, not the key used to match facts: the
+extractors recovered only 0.26\% (DocRED) and 0.75--1.35\% (BioRED) of
+gold facts from more than one sentence, although 50.2\% of DocRED's
+gold facts have two or more evidence sentences and 35.1\% of BioRED's
+are co-mentioned in two or more sentences
+(Sections~\ref{sec:results-ablation}, \ref{sec:results-finetuning},
+\ref{sec:results-docred}, and~\ref{sec:results-biored}).
+\end{enumerate}
+
+The rest of the paper is organised as follows.
+Section~\ref{sec:related-work} reviews related work, including DySECT
+in detail, and Section~\ref{sec:gap} states the evaluation gap this
+paper addresses. Section~\ref{sec:framework} describes the evaluated
+implementation, including what was specified but not built.
+Section~\ref{sec:formal-analysis} analyses the aggregation rule and
+tests corrected rules offline. Section~\ref{sec:experimental-setup}
+describes the datasets, models, and statistical protocol,
+Section~\ref{sec:results} reports the results, and
+Section~\ref{sec:discussion} interprets them.
+Section~\ref{sec:limitations} states the limitations, and
+Section~\ref{sec:conclusion} concludes.
 
 % ------------------------------------------------------------------
 \section{Related Work}
@@ -1600,6 +1700,12 @@ result alone reflects a noise-free structured source; a companion test
 under a deliberately corrupted structured source (DEC-028) confirms
 the filter's precision advantage survives, with a decaying but still
 statistically significant margin, at corruption rates up to 20\%
+% [EVID-042]
+. Corruption also creates contested single-valued slots, on average
+21.8, 43.6, and 84.2 at 5\%, 10\%, and 20\%. The published rule
+admitted none of them at any rate, as Proposition~\ref{prop:ceiling}
+requires, while the same rule without its conflict penalty admitted
+19.2, 36.4, and 68.6
 % [EVID-042]
 .
 
