@@ -2641,7 +2641,80 @@ change several of these results.
 
 \section{Conclusion}
 \label{sec:conclusion}
-% TODO: not yet written.
+
+This paper evaluated a closed-loop extraction design in which a
+language-model extractor populates a probabilistically scored knowledge
+base that feeds back into extraction, a design and aggregation rule
+attributed throughout to \citet{aminnaseri2026dysect}. Its four
+contributions answer the four research questions. First, a formal
+analysis of the published conservative Noisy-OR rule shows that any
+contested slot of a single-valued predicate scores below
+$1/(m+1) \le 0.5$ and can never be admitted at a threshold of $0.5$ or
+more (RQ1). Second, this ceiling blocked every contested slot on two
+real-data snapshots and under a structured source corrupted at up to
+20\%, where the same rule without its conflict penalty admitted most of
+them. Third, counting distinct sources rather than repeated
+observations raised the precision of admitted facts on the product
+domain, DocRED, and BioRED. It does so only when the extractor repeats a
+fact within a single source, and it had no effect for an extractor that
+rarely did (RQ2). Fourth, a controlled evaluation found no end-to-end
+benefit from the loop's mechanisms. Removing the feedback controller or
+the probabilistic knowledge base had no significant effect at thirty
+seeds, leakage-free fine-tuning was negative on its pre-registered
+primary metric (RQ3), and on DocRED and BioRED aggregation lowered $F_1$
+relative to no aggregation for both extractors tested (RQ4). The binding
+constraint on real text is extractor recall: the extractors recovered
+fewer than 1.4\% of gold facts from more than one sentence, so an
+aggregation rule that requires corroboration had almost nothing to
+admit.
+
+These results leave several questions open, and each could be settled
+by a specific experiment:
+
+\begin{itemize}
+\item \textbf{Would aggregation help with a stronger extractor?}
+Section~\ref{sec:discussion-docred} attributes the public-corpus failure
+to extractor recall. A direct test is to repeat the DocRED and BioRED
+runs with document-level extraction and stronger extractors, measure
+the share of gold facts recovered from two or more sources for each,
+and check whether aggregation's $F_1$ relative to no aggregation rises
+as that share rises. If it does not, the constraint lies elsewhere.
+\item \textbf{Can the loop work without gold labels?} The feedback
+controller computes its hint against training-split gold labels
+(Section~\ref{sec:framework-feedback}). Replacing that signal with one
+derived from the knowledge base itself, such as disagreement or low
+aggregated confidence, and repeating the thirty-seed ablation would show
+whether a self-supervised version helps, hurts, or matches the current
+null.
+\item \textbf{Do the modules have small effects?} The ablation rules out
+effects of about $0.08$ $F_1$ or larger. Detecting an effect of $0.04$
+with 80\% power would need about 110--130 seeds at the observed
+variance, which at the measured cost per run is under one US dollar of
+API calls.
+\item \textbf{Does fine-tuning help once its known confounds are
+removed?} The closed-loop test compared a Mistral-based adapter with a
+Llama-based control on one seed, and every fine-tuning run used
+training data that had not passed the provenance filter. Repeating the
+closed-loop test across seeds with an adapter on the control's own base
+model, and the leakage-free evaluation with provenance-filtered data,
+would separate the effect of fine-tuning from both confounds.
+\item \textbf{Does the provenance gate hold against a real structured
+source?} Its precision gain was measured against a generator-derived
+source and random corruption. Testing it with an independently
+produced structured source, whose errors may be correlated with the
+text's, would show whether the gain survives realistic noise.
+\item \textbf{Can the scores be calibrated?} The aggregated score is
+poorly calibrated (ECE $=0.333$) and built from self-reported
+confidences. Repeating the calibration measurement with confidences
+derived from token probabilities would show how much of the
+miscalibration comes from the input signal and how much from the
+aggregation rule.
+\end{itemize}
+
+\noindent Taken together, the evidence supports the formal properties of
+the aggregation rule and the narrow, scope-limited value of the
+distinct-source correction. It does not support the claim that the
+closed loop, as designed and implemented here, improves extraction.
 
 \section*{Declarations}
 % TODO: not yet written -- data/code availability, funding, competing
