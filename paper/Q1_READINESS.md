@@ -19,9 +19,11 @@ as a methods paper in a top-tier venue. The biggest avoidable
 weaknesses:
 - the central real-text finding rests on one extraction protocol
   (sentence-level, 8B model, non-standard DocRED scoring);
-- there is no error-analysis section, although the data for one exists.
+- ~~there is no error-analysis section~~ (done 2026-09-25: Section 6.8,
+  ESM S9).
 
-Both are fixable at low cost before submission (see "What remains weak").
+The first is fixable at low cost before submission (see "What remains
+weak").
 
 ---
 
