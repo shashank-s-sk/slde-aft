@@ -30,6 +30,7 @@ just says where each DEC currently stands and what's left.
 | 029 | Higher-Powered Module Ablation (30 seeds) | DONE | Null for both modules; achieved MDE 0.070-0.086 F1 (EVID-045) | Written into Results Summary/main.tex |
 | 031 | DocRED at Scale With a Normalised Matching Key | DONE (EVID-046) | Matching key does not explain the failure (norm closes ~0% of gap, oracle 7.3%); only 29/11,344 gold facts recovered from 2+ sentences; R3 precision 0.06->0.25, F1 null | Supersedes DEC-020's pilot |
 | 032 | BioRED at Scale (extractor recall vs. corroboration) | DONE (EVID-047) | Extractor-recall constraint replicates (Llama rho 0.022); R3 acts only with within-source duplicates (Llama precision +0.054, DeepSeek null) | Supersedes the DEC-009 pilot |
+| 033 | Is the corroboration bottleneck a protocol artefact? | APPROVED (option B), running | — | Run option B (~$1.34, hard cap $1.80), then EVID-048 |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3337,6 +3338,166 @@ DEC-032: RUN (2026-09-24) -- see EVID-047. 11,924 calls, $0.686. Extractor-recal
   constraint CONFIRMED on Llama (rho 0.022; R2 below no aggregation). DeepSeek recovers
   more corroborated facts (1.35% vs 0.75%) but has a larger gap (its no-aggregation F1 is
   higher). R3: Llama F1 Negative, precision +0.054; DeepSeek F1 Null (6 duplicates).
+
+---
+
+# DEC-033 — Is the Corroboration Bottleneck an Artefact of the Extraction Protocol? (pre-registered 2026-09-26; NOT RUN until approved)
+
+## Why is this required?
+
+DEC-031/032 (EVID-046/047) concluded that on real text the binding
+constraint on aggregation is extractor recall compounded across
+sentences. A reviewer can object that the protocol produced this
+bottleneck:
+- every public-corpus result used **sentence-level** extraction with no
+  document context;
+- the extractor was mostly an **8B** model.
+
+This DEC tests that objection directly, with a document-level
+extraction arm and a stronger-extractor arm on both corpora.
+
+## A finding from building this DEC (pre-run, zero cost)
+
+On DocRED, **50.2%** of gold facts have 2+ gold evidence sentences, but
+only **3.4%** have both entities *named* in 2+ sentences. Most second
+evidence sentences refer to an entity by pronoun or other coreference
+("It is part of the Skai Group").
+- Sentence-level extraction scored by entity mention cannot corroborate
+  such facts, so the manuscript's contrast of "0.26% recovered against
+  50.2% available" overstates what that protocol could ever achieve.
+- **This is corrected in the manuscript regardless of this DEC's
+  outcome:** the 3.4% figure is reported next to 50.2%.
+- BioRED's 35.1% is already a co-mention figure (co-mention of named
+  concepts), so its comparison is unaffected.
+
+## Arms (corpus x extractor x unit)
+
+| | Llama-3.1-8B, sentence | DeepSeek-V3.2, sentence | Llama-3.1-8B, document | DeepSeek-V3.2, document |
+|---|---|---|---|---|
+| DocRED (845 docs) | reused (DEC-031) | **new** (see scope options) | **new** | **new** |
+| BioRED (500 abstracts) | reused (DEC-032) | reused (DEC-032) | **new** | **new** |
+
+- **Document level** (`prompts/openie_docred_doc_v1.txt`,
+  `openie_biored_doc_v1.txt`, a minimal edit of the sentence prompts):
+  - one call per document, with sentences numbered [0], [1], ...;
+  - the model may extract relations whose entities are in different
+    sentences, and must list **all** supporting sentence numbers for
+    each triple;
+  - each cited sentence is one source;
+  - a triple citing no valid sentence gets a single document-level
+    source and can never be corroborated;
+  - max_tokens 2048.
+- Temperature 0 throughout.
+- Unparsable output is recorded and not re-requested; network failures
+  are re-requested.
+- Code: `scripts/dec033_extract.py`, `scripts/dec033_analyze.py`,
+  `src/dec033_protocol.py`.
+
+## Measures (per arm; the Llama sentence arm is the reference)
+
+- **Extractor recall**: no aggregation, primary evaluator of DEC-031/032.
+- **Corroboration (G2)**, as a share of all gold facts:
+  - **G2 raw**: a correct triple with 2+ distinct sources.
+  - **G2 verified (PRIMARY)**: counting only sources that genuinely
+    support the fact. On DocRED these are gold evidence sentences; on
+    BioRED, sentences co-mentioning both concepts.
+  - The verified measure stops a model from inflating corroboration by
+    citing arbitrary sentences.
+  - For the reused arms, G2 verified is 19 of 11,344 (DocRED Llama; 29
+    raw), 36 of 4,906 (BioRED Llama; 37 raw) and 66 of 4,906 (BioRED
+    DeepSeek; 66 raw).
+- **rho** = G2 verified share / annotation-level rate:
+  - DocRED: 50.2% (2+ gold evidence sentences);
+  - BioRED: 35.1% (2+ co-mentions);
+  - DocRED rho against the 3.4% named-co-mention rate is also reported,
+    descriptively.
+- **Aggregation gap** = F1(R3) − F1(no aggregation). The rule is R3
+  (distinct sources); R2 is also reported. Normalised key, τ = 0.70,
+  shrinkage 0.5, as DEC-031/032.
+- **Citation validity** (document arms): the share of cited sentences
+  that are gold evidence (DocRED) or co-mention both concepts (BioRED).
+- **Statistics**: paired bootstrap over documents, 10,000 resamples,
+  for each new arm minus the Llama sentence arm *on the same
+  documents*:
+  - the difference in G2 verified share;
+  - the difference in gap.
+
+## Decision rules (fixed before any extraction)
+
+Applied per corpus, to the best new arm (the one with the highest G2
+verified share):
+
+- **The extractor-recall conclusion is WEAKENED (the bottleneck was
+  substantially an artefact of the protocol)** if a new arm:
+  - raises the G2 verified share, with its CI excluding 0; **and**
+  - reaches rho ≥ 0.2; **and**
+  - narrows the aggregation gap, with the CI of the gap difference
+    excluding 0 on the positive side.
+
+  The paper will then say plainly: *"a document-level or stronger
+  extractor substantially raises the corroboration rate and narrows the
+  aggregation gap; the constraint observed at sentence level is in large
+  part an artefact of that protocol."*
+- **OVERTURNED:** as for WEAKENED, **and** that arm's own gap has a CI
+  that includes 0 or lies above it, meaning aggregation matches or beats
+  no aggregation. The paper's claim that aggregation fails on real text
+  is then withdrawn for that corpus and protocol.
+- **STANDS** if every new arm has rho < 0.2 **and** a gap significantly
+  below 0 (CI excluding 0) on both corpora.
+- **PARTIAL** otherwise, for example:
+  - G2 rises significantly but rho stays below 0.2;
+  - the gap narrows significantly but stays significantly negative.
+
+  The paper will then say that a stronger or document-level extractor
+  relieves the constraint but does not remove it, with the numbers.
+
+The verdict is reported per corpus, and both corpora are reported in
+full whatever the verdict.
+
+## Scope options and cost
+
+Per-call costs are scaled from the measured DEC-031/032 figures and the
+measured prompt and document lengths:
+- Llama: $0.0000308 per DocRED sentence call;
+- DeepSeek: 5.2x Llama;
+- document calls: from the measured BioRED whole-abstract calls, scaled
+  for DocRED's longer prompt and the longer outputs with evidence.
+
+| Arm | Calls | Est. cost |
+|---|---:|---:|
+| DocRED, Llama, document | 845 | $0.08 |
+| DocRED, DeepSeek, document | 845 | $0.48 |
+| BioRED, Llama, document | 500 | $0.04 |
+| BioRED, DeepSeek, document | 500 | $0.22 |
+| DocRED, DeepSeek, sentence — all 845 docs | 6,861 | $1.10 |
+| DocRED, DeepSeek, sentence — pre-registered random 400 docs (seed 20330926) | 3,236 | $0.52 |
+
+- **Option A (full):** ~$1.92. The OpenRouter balance is $2.12, so this
+  **needs a credit top-up** to run safely.
+- **Option B (recommended; fits the balance):** all four document arms
+  plus DocRED DeepSeek sentence-level on the pre-registered random
+  400-document subset, ~$1.34, with a **hard total cap of $1.80** split
+  across processes. Subset comparisons use the same 400 documents in
+  the reference arm.
+- **Option C (cheapest):** the four document arms only, ~$0.82. The
+  DocRED stronger-extractor test is then document-level only, so model
+  and protocol effects are confounded on DocRED; BioRED still has the
+  full 2x2.
+
+Order: the document arms first (cheapest and most informative), then
+the DocRED sentence arm. If the cap stops an arm early, only its
+complete documents are analysed, and the report states the coverage and
+that it is not a random subset.
+
+Time: about 2–2.5 h with 3 parallel processes (memory limit on this PC).
+
+## Status
+
+DEC-033: PRE-REGISTERED (2026-09-26). **APPROVED by the user 2026-09-26:
+option B** (four document arms + DocRED DeepSeek sentence-level on the
+pre-registered random 400-document subset; ~$1.34, hard total cap $1.80).
+Pre-registration committed before any paid call.
+
 
 
 

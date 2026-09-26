@@ -30,9 +30,14 @@ def extract_openie_triples(
     temperature: float = 0.0,
     max_tokens: int = 512,
     timeout: int = 90,
+    keep_evidence: bool = False,
 ) -> dict:
     """Returns dict with: triples (list of {subject,predicate,object}),
-    error, http_status, latency_s, cost_usd, raw_content_on_error."""
+    error, http_status, latency_s, cost_usd, raw_content_on_error.
+
+    keep_evidence (DEC-033 document-level prompts): also keep each item's
+    "evidence" field, normalised to a sorted list of distinct integer
+    sentence indices (non-integer entries are dropped)."""
 
     template = prompt_template if prompt_template is not None else DEFAULT_PROMPT_TEMPLATE
     prompt = template.replace("{SENTENCE}", sentence)
@@ -102,10 +107,21 @@ def extract_openie_triples(
     triples = []
     for item in arr if isinstance(arr, list) else []:
         if all(k in item for k in ("subject", "predicate", "object")):
-            triples.append({
+            triple = {
                 "subject": str(item["subject"]).strip(),
                 "predicate": str(item["predicate"]).strip(),
                 "object": str(item["object"]).strip(),
-            })
+            }
+            if keep_evidence:
+                ev = item.get("evidence", [])
+                ev = ev if isinstance(ev, list) else [ev]
+                idx = set()
+                for e in ev:
+                    try:
+                        idx.add(int(e))
+                    except (TypeError, ValueError):
+                        continue
+                triple["evidence"] = sorted(idx)
+            triples.append(triple)
     result["triples"] = triples
     return result

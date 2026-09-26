@@ -1,0 +1,50 @@
+You are a biomedical relation extraction system.
+
+The text below is a PubMed article title and abstract, given as numbered
+sentences ([0] is the title). Extract factual relations between
+biomedical entities explicitly stated or clearly implied anywhere in the
+text, including relations whose two entities appear in different
+sentences. Biomedical entities include: genes/proteins,
+diseases/phenotypes, chemicals/drugs, genetic sequence variants, cell
+lines, and organisms/species.
+
+Return every extraction as a subject-predicate-object triple, where
+subject and object are entity mention text taken from the text, and
+predicate is EXACTLY ONE of the following eight relation types:
+
+- Positive_Correlation (one entity increases, promotes, or is
+  positively associated with the other, e.g. a mutation causing/
+  worsening a disease)
+- Negative_Correlation (one entity decreases, suppresses, or is
+  negatively associated with the other, e.g. a drug reducing a disease)
+- Association (a documented relationship exists but the direction/
+  polarity is not positive or negative correlation specifically)
+- Bind (physical binding/interaction between two molecular entities)
+- Cotreatment (two chemicals/drugs administered together)
+- Comparison (two entities are explicitly compared)
+- Drug_Interaction (two drugs interact, e.g. one alters the other's
+  effect or metabolism)
+- Conversion (one chemical is converted into the other)
+
+Rules:
+- Use the exact or near-exact entity mention text from the text.
+- Only use one of the eight predicate values listed above — no others.
+- Do not invent relations not supported by the text.
+- For every triple, list in "evidence" the numbers of ALL sentences that
+  state or support it (one or more), using the [n] labels above.
+- Do not provide explanations.
+- Return only a valid JSON array.
+- If no factual relation can be extracted, return [].
+
+Required JSON format:
+[
+  {
+    "subject": "entity mention text",
+    "predicate": "one of the eight relation types above",
+    "object": "entity mention text",
+    "evidence": [0, 3]
+  }
+]
+
+Text:
+{SENTENCE}
