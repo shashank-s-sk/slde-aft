@@ -15,14 +15,33 @@ the corresponding source is fixed.
   it has been left out of `references.bib` (journal field only, no
   `arXiv:` number). Verify on arxiv.org before submission and add the
   identifier back.
-- **`das2020sagemaker` (Amazon SageMaker Autopilot) arXiv identifier.**
-  Same situation as above -- database gives "2020, arXiv" with no
-  identifier; not verified this session; left out of the `.bib` entry.
 - **`edge2025graphrag` (GraphRAG) arXiv identifier.** Database gives
   "2025, arXiv" / "Preprint" with no identifier; not verified this
   session; left out of the `.bib` entry.
 
 ## Resolved since the first pass
+
+- **`das2020sagemaker` arXiv identifier (resolved 2026-09-27).** Found by
+  a title search of the arXiv API: arXiv:2012.08483 (25 authors). Added
+  to `references.bib` with the author list from that record.
+- **Eight author lists ending in "and others" (resolved 2026-09-27).**
+  LRE requires APA 7 (all authors up to 20; with more, the first 19, an
+  ellipsis, and the last). Each list was replaced with the one in its
+  arXiv API record: InstructGPT (2203.02155, 20), Self-Refine
+  (2303.17651, 16), InstructUIE (2304.08085, 14), ReST (2308.08998, 14),
+  Mistral 7B (2310.06825, 18), SageMaker Autopilot (2012.08483, 25),
+  Llama 3 (2407.21783, 561), Gemini 2.5 (2507.06261, 3,435). For the
+  three with more than 20 authors, the first 20 and the last are stored.
+  `paper/sn-apacite.bst` was changed locally from APA 6's limit of 7 to
+  APA 7's 20, so these print as the first 19, an ellipsis, and the last.
+  Compound surnames (Le Paine, Le Scao, El Sayed, Renard Lavaud) are
+  braced; "Tiago Cardal Pais" (Gemini 2.5, 16th author) is split as
+  surname "Pais" by BibTeX's default, because the arXiv record does not
+  mark the surname.
+- **Internal verification notes printed in the reference list (fixed
+  2026-09-27).** The `note` fields held internal verification remarks,
+  which the bibliography styles print. They were renamed to
+  `verification`, which BibTeX ignores.
 
 - **Ji et al. (knowledge graph survey) volume/issue/pages.** A second
   instruction flagged that "the old reference list gives 32(5):2429-2443

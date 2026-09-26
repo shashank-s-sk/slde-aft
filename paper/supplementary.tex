@@ -31,6 +31,28 @@ pre-existing mismatch, not a selection. The official CaRB scorer's AUC is
 a single-point approximation, since the extractors produce one operating
 point rather than a confidence-ranked list.
 
+\begin{table}[htbp]
+\centering
+\caption{CaRB results under the official scorer: 30-sentence pilot and
+full evaluation on 548 sentences. Systems are ordered by pilot $F_1$;
+``---'' denotes not evaluated at full scale.}
+\label{tab:s1-carb}
+\begin{tabular}{@{}l ccc ccc@{}}
+\toprule
+& \multicolumn{3}{c}{Pilot ($n=30$)} & \multicolumn{3}{c}{Full ($n=548$)} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+System & $P$ & $R$ & $F_1$ & $P$ & $R$ & $F_1$ \\
+\midrule
+DeepSeek-V3.2 & 0.713 & 0.458 & 0.558 & 0.713 & 0.477 & 0.571 \\
+Gemini 2.5 Pro & 0.773 & 0.401 & 0.528 & --- & --- & --- \\
+Claude Sonnet 5 & 0.642 & 0.446 & 0.527 & --- & --- & --- \\
+GPT-4o & 0.736 & 0.384 & 0.504 & --- & --- & --- \\
+Llama-3.1-8B-Instruct (pipeline) & 0.652 & 0.401 & 0.496 & 0.589 & 0.387 & 0.467 \\
+\bottomrule
+\end{tabular}
+% [EVID-032; EVID-035]
+\end{table}
+
 \paragraph{Comparison systems.} \texttt{Babelscape/rebel-large} was
 attempted as a CaRB comparison system and found incompatible with CaRB's
 open-domain, span-based scoring: REBEL is a closed, Wikidata-schema

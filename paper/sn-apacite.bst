@@ -2906,8 +2906,11 @@ FUNCTION {authors.reflist.apa6}
 { 'field  :=
   'dot    :=
   field  num.names$  'numnames :=
-  numnames  #7  >
-    { #7        'format.num.names := }
+  % LOCAL CHANGE (2026-09-27, for LRE, which requires APA 7): list up to
+  % 20 authors; with more, the first 19, an ellipsis, and the last. The
+  % distributed file used APA 6's limit of 7 (first 6, ellipsis, last).
+  numnames  #20  >
+    { #20       'format.num.names := }
     { numnames  'format.num.names := }
   if$
   "\begin{APACrefauthors}%"

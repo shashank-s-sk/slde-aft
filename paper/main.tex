@@ -151,42 +151,33 @@ Section~\ref{sec:limitations} states the limitations.
 
 \subsection{Background}
 
-\paragraph{Extraction.} Open information extraction derives relational
-triples without predefined relation types
-\citep{banko2007openie,liu2024openiesurvey}, while document-level and
-sentence-level benchmarks such as DocRED \citep{yao2019docred} and TACRED
-\citep{zhang2017tacred} standardised schema-guided evaluation. Generative
-extractors cast extraction as sequence generation, from REBEL
-\citep{cabot2021rebel} and GenIE \citep{josifoski2022genie} to TANL
-\citep{paolini2021tanl}; universal frameworks unify extraction tasks under
-one model \citep{lu2022uie,wang2023instructuie}; and joint, open-world,
-and zero-shot methods broaden coverage
-\citep{wadden2019dygiepp,zhang2022oamine,levy2017zeroshot}; all treat
-extraction as a terminal step.
+\paragraph{Extraction.} Open extraction derives triples without
+predefined relation types \citep{banko2007openie,liu2024openiesurvey};
+DocRED \citep{yao2019docred} and TACRED \citep{zhang2017tacred}
+standardised schema-guided evaluation. Generative
+\citep{cabot2021rebel,josifoski2022genie,paolini2021tanl}, universal
+\citep{lu2022uie,wang2023instructuie}, joint, open-world, and zero-shot
+extractors \citep{wadden2019dygiepp,zhang2022oamine,levy2017zeroshot}
+all treat extraction as a terminal step.
 
-\paragraph{Knowledge and retrieval.} Retrieval-augmented generation
-grounds generation in retrieved evidence
-\citep{lewis2020rag,guu2020realm,asai2023selfrag}, including graph-based
-memories \citep{gutierrez2024hipporag,edge2025graphrag}, only at
-inference time. Knowledge-graph population work treats confidence and
-uncertainty as open problems \citep{bach2017psl,ji2021kgsurvey,nguyen2020kgcsurvey},
-and attribution methods are largely post hoc
-\citep{ribeiro2016lime,zhao2023explainability}.
+\paragraph{Knowledge and retrieval.} Retrieval-augmented generation,
+including graph-based memories, uses retrieved evidence only at
+inference time
+\citep{lewis2020rag,guu2020realm,asai2023selfrag,gutierrez2024hipporag,edge2025graphrag}.
+Knowledge-graph population treats confidence as an open problem
+\citep{bach2017psl,ji2021kgsurvey,nguyen2020kgcsurvey}, and attribution
+is largely post hoc \citep{ribeiro2016lime,zhao2023explainability}.
 
-\paragraph{Adaptation.} Parameter-efficient fine-tuning reduces the cost
-of adapting pretrained models \citep{devlin2019bert,houlsby2019peft,
-lester2021prompttuning,hu2021lora,dettmers2023qlora}, and instruction and
-preference tuning broaden what fine-tuning teaches
-\citep{wei2022flan,ouyang2022instructgpt,rafailov2023dpo}, all from
-curated supervision. Self-improvement methods generate their own
-supervision
+\paragraph{Adaptation.} Parameter-efficient, instruction, and preference
+tuning adapt pretrained models from curated supervision
+\citep{devlin2019bert,houlsby2019peft,lester2021prompttuning,hu2021lora,dettmers2023qlora,wei2022flan,ouyang2022instructgpt,rafailov2023dpo}.
+Self-improvement methods generate their own supervision
 \citep{madaan2023selfrefine,gulcehre2023rest,chen2024spin,wang2023selfinstruct,schick2023toolformer},
-and continual learning addresses the stability of sequential adaptation
+and continual learning stabilises sequential adaptation
 \citep{wang2024continuallearning,li2017lwf}; none maintains a persistent
-structured knowledge base as the source of supervision. AutoML automates
-model selection and search
+structured knowledge base as the source of supervision. AutoML
 \citep{hutter2019automl,he2021automlsurvey,feurer2015autosklearn,feurer2022autosklearn2,erickson2020autogluon,das2020sagemaker,elsken2019nas}
-but treats data extraction as a fixed upstream step.
+treats data extraction as a fixed upstream step.
 
 \subsection{Closest Prior System: DySECT}
 \label{sec:related-work-dysect}
@@ -793,33 +784,14 @@ per-seed, and per-size values are in the Supplementary Material.
 \subsection{Extractor Quality on CaRB}
 \label{sec:results-benchmarks}
 
-On CaRB, under the official scorer, the pipeline's Llama-3.1-8B-Instruct
-extractor obtained $F_1=0.467$, $0.104$ below DeepSeek-V3.2 ($0.571$;
-Table~\ref{tab:carb-results}), and it ranked last of five systems in the
-30-sentence pilot ($0.496$).
+On all 548 CaRB sentences, under the official scorer, the pipeline's
+Llama-3.1-8B-Instruct extractor obtained $P=0.589$, $R=0.387$,
+$F_1=0.467$, $0.104$ below DeepSeek-V3.2 ($P=0.713$, $R=0.477$,
+$F_1=0.571$). In the 30-sentence pilot it ranked last of five systems
+($F_1=0.496$, against $0.504$ for GPT-4o, $0.527$ for Claude Sonnet 5,
+$0.528$ for Gemini 2.5 Pro, and $0.558$ for DeepSeek-V3.2); the full
+table is in Supplementary Section~S1.
 % [EVID-032; EVID-035]
-
-\begin{table}[htbp]
-\centering
-\caption{CaRB results under the official scorer: 30-sentence pilot and
-full evaluation on 548 sentences. Systems are ordered by pilot $F_1$;
-``---'' denotes not evaluated at full scale.}
-\label{tab:carb-results}
-\begin{tabular}{@{}l ccc ccc@{}}
-\toprule
-& \multicolumn{3}{c}{Pilot ($n=30$)} & \multicolumn{3}{c}{Full ($n=548$)} \\
-\cmidrule(lr){2-4} \cmidrule(lr){5-7}
-System & $P$ & $R$ & $F_1$ & $P$ & $R$ & $F_1$ \\
-\midrule
-DeepSeek-V3.2 & 0.713 & 0.458 & 0.558 & 0.713 & 0.477 & 0.571 \\
-Gemini 2.5 Pro & 0.773 & 0.401 & 0.528 & --- & --- & --- \\
-Claude Sonnet 5 & 0.642 & 0.446 & 0.527 & --- & --- & --- \\
-GPT-4o & 0.736 & 0.384 & 0.504 & --- & --- & --- \\
-Llama-3.1-8B-Instruct (pipeline) & 0.652 & 0.401 & 0.496 & 0.589 & 0.387 & 0.467 \\
-\bottomrule
-\end{tabular}
-% [EVID-032; EVID-035]
-\end{table}
 
 \subsection{Aggregation on DocRED}
 \label{sec:results-docred}
@@ -1710,32 +1682,20 @@ still lowered $F_1$ in every configuration.
 Each open question could be settled by a specific experiment:
 
 \begin{itemize}
-\item \textbf{Would aggregation help with a much stronger extractor?}
-Document-level extraction with DeepSeek-V3.2 raised corroboration but
-reached under a tenth of the annotated rate. Repeat the check with the
-largest available extractors, or with coreference resolved before
-extraction, and test whether aggregation's $F_1$ relative to no
-aggregation reaches zero as the share of gold facts recovered from two
-or more sources rises.
-\item \textbf{Can the loop work without gold labels?} Replace the
-feedback controller's gold-label signal
-(Section~\ref{sec:framework-feedback}) with one derived from the
-knowledge base, such as disagreement or low aggregated confidence, and
-repeat the thirty-seed ablation.
-\item \textbf{Do the modules have small effects?} Detecting a $0.04$
-$F_1$ effect with 80\% power would need about 110--130 seeds at the
-observed variance, under one US dollar of API calls at the measured cost
-per run.
-\item \textbf{Does fine-tuning help once its confounds are removed?}
-Repeat the closed-loop test across seeds with an adapter on the
-control's own base model, and the leakage-free evaluation with
-provenance-filtered training data.
-\item \textbf{Does the provenance gate hold against a real structured
-source?} Test it with an independently produced structured source whose
-errors may be correlated with the text's.
-\item \textbf{Can the scores be calibrated?} Repeat the calibration
-measurement with confidences derived from token probabilities, to
-separate the input signal's contribution from the aggregation rule's.
+\item \textbf{A much stronger extractor.} Repeat the protocol check
+with the largest available extractors, or with coreference resolved
+before extraction, and test whether aggregation's gap to no aggregation
+closes as corroboration rises.
+\item \textbf{A loop without gold labels, tested for small effects.}
+Derive the feedback signal from the knowledge base itself, such as
+disagreement or low aggregated confidence, and repeat the ablation with
+the 110--130 seeds needed to detect a $0.04$ $F_1$ effect.
+\item \textbf{Fine-tuning and provenance without confounds.} Repeat the
+closed-loop test across seeds with an adapter on the control's own base
+model and provenance-filtered training data, and test the provenance gate against an independently produced
+structured source.
+\item \textbf{Calibrated scores.} Repeat the calibration measurement
+with confidences derived from token probabilities.
 \end{itemize}
 
 \noindent Taken together, the evidence supports the formal properties of
