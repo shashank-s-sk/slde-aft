@@ -8,18 +8,21 @@ the corresponding source is fixed.
 
 ## Section 2 (Related Work)
 
-- **`erickson2020autogluon` (AutoGluon-Tabular) arXiv identifier.** The
-  reference database (`refrence master copy.xlsx`) records only "2020,
-  arXiv" with no identifier. I recalled a plausible arXiv number from
-  training-data memory but did not verify it via search this session, so
-  it has been left out of `references.bib` (journal field only, no
-  `arXiv:` number). Verify on arxiv.org before submission and add the
-  identifier back.
-- **`edge2025graphrag` (GraphRAG) arXiv identifier.** Database gives
-  "2025, arXiv" / "Preprint" with no identifier; not verified this
-  session; left out of the `.bib` entry.
+None open. (The AutoGluon-Tabular and GraphRAG identifiers were resolved
+on 2026-09-27; see below.)
 
 ## Resolved since the first pass
+
+- **`erickson2020autogluon` and `edge2025graphrag` identifiers (resolved
+  2026-09-27).** Both were found by title search of the arXiv API, and
+  neither has a journal or conference version in Crossref.
+  - AutoGluon-Tabular is arXiv:2003.06505 (7 authors, 2020-03-13); the
+    entry's authors already matched.
+  - GraphRAG is arXiv:2404.16130 (10 authors, matching). It was first
+    posted 2024-04-24; v2 is dated 2025-02-19, so the entry's 2025 is the
+    cited version.
+  - The GraphRAG title was corrected to v2's "A Graph RAG Approach"
+    (previously "A GraphRAG Approach").
 
 - **`das2020sagemaker` arXiv identifier (resolved 2026-09-27).** Found by
   a title search of the arXiv API: arXiv:2012.08483 (25 authors). Added
