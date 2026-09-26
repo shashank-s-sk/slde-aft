@@ -5,13 +5,13 @@
   fig_finetuning     values logged in Evidence log.md (EVID-034/037/040); the
                      5-epoch adapters were not committed, see FT_* below
 
-  paper/figures/fig_reliability.{pdf,png}
+  paper/fig_reliability.{pdf,png}
       Reliability diagram from outputs/dec003_real_calibration/
       calibration_bins_real.csv, which scripts/dec003_real_data_calibration.py
       regenerates from the committed snapshot
       outputs/dec003_product_probkb_v2/train_kb/pkb_snapshot_iteration_4.csv.
 
-  paper/figures/fig_architecture.{pdf,png}
+  paper/fig_architecture.{pdf,png}
       Figure 1: the evaluated (as-built) pipeline, drawn from the module
       list verified against src/ and scripts/ in the manuscript's
       "Evaluated Framework" section. Only implemented components appear.
@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
-FIG_DIR = Path("paper/figures")
+FIG_DIR = Path("paper")
 INK = "#1f4e79"      # single data hue (dark blue; reads as dark grey in print)
 TEXT = "#1a1a1a"
 MUTED = "#6b6b6b"

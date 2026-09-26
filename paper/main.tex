@@ -11,6 +11,15 @@
 % Language Resources and Evaluation (LRE) -- the confirmed venue; its
 % guidelines require APA 7 author-date references (sn-apa):
 \documentclass[pdflatex,sn-apa]{sn-jnl}
+% SUBMISSION CHECKLIST (not yet done, on purpose):
+% - [referee]: add to the class options ONLY when the journal requests the
+%   peer-review stage (the template manual asks for double spacing then);
+%   not used for initial submission.
+% - Upload sn-apacite.bst (locally modified for APA 7: 20 authors) and
+%   main.bbl with the sources; the stock copy would truncate long author
+%   lists APA-6 style.
+% - Figure files sit next to this file (no subfolder), as the template
+%   manual requires; upload them at the same level.
 % Knowledge and Information Systems (KAIS):
 %\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 % ============================================================================
@@ -249,7 +258,7 @@ interface, which the evaluated implementation lacks.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{figures/fig_architecture.pdf}
+\includegraphics[width=\linewidth]{fig_architecture.pdf}
 \caption{The evaluated pipeline, as implemented. Structured records and
 text are extracted separately and pooled as observations in a
 probabilistic knowledge base using the aggregation rule of
@@ -990,7 +999,7 @@ replay measures this directly
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.62\linewidth]{figures/fig_rival_ceiling.pdf}
+\includegraphics[width=0.62\linewidth]{fig_rival_ceiling.pdf}
 \caption{Final score of a candidate as agreeing observations
 accumulate, for $m=0$, $1$, and $2$ competing values ($\lambda=0.75$;
 each observation $c=0.90$), computed from
@@ -1015,7 +1024,7 @@ correct at a mean confidence of $0.978$
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.62\linewidth]{figures/fig_reliability.pdf}
+\includegraphics[width=0.62\linewidth]{fig_reliability.pdf}
 \caption{Reliability diagram of conflict-adjusted scores (657 triples,
 ten equal-width bins). Bars show the fraction of correct triples per
 bin; the dashed line marks perfect calibration.}
