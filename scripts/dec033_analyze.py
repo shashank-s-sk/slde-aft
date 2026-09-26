@@ -111,6 +111,19 @@ def main():
               f"gap={s['gap_R3']:+.4f}")
 
     rng = np.random.default_rng(SEED)
+    # Each arm's own gap F1(R3) - F1(no aggregation), with a bootstrap CI
+    # (needed by the OVERTURNED and STANDS decision rules).
+    for (corpus, model, unit), counts in per_arm.items():
+        ids = sorted(counts)
+        idx = rng.integers(0, len(ids), size=(N_BOOT, len(ids)))
+        f = lambda sel, arm: D.prf(*(sum(counts[i][arm][k] for i in sel) for k in ("tp", "fp", "fn")))["f1"]
+        own = lambda sel: f(sel, "R3") - f(sel, "naive")
+        boots = np.array([own([ids[j] for j in row]) for row in idx])
+        lo, hi = np.percentile(boots, [2.5, 97.5])
+        key = "/".join((corpus, model, unit))
+        result["arms"][key]["gap_R3_ci"] = [float(own(ids)), float(lo), float(hi)]
+        print(f"  own gap {key}: {own(ids):+.4f} [{lo:+.4f}, {hi:+.4f}]")
+
     for (corpus, model, unit), counts in per_arm.items():
         base_key = (corpus, "llama", "sentence")
         if (model, unit) == ("llama", "sentence") or base_key not in per_arm:

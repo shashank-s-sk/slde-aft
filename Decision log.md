@@ -30,7 +30,7 @@ just says where each DEC currently stands and what's left.
 | 029 | Higher-Powered Module Ablation (30 seeds) | DONE | Null for both modules; achieved MDE 0.070-0.086 F1 (EVID-045) | Written into Results Summary/main.tex |
 | 031 | DocRED at Scale With a Normalised Matching Key | DONE (EVID-046) | Matching key does not explain the failure (norm closes ~0% of gap, oracle 7.3%); only 29/11,344 gold facts recovered from 2+ sentences; R3 precision 0.06->0.25, F1 null | Supersedes DEC-020's pilot |
 | 032 | BioRED at Scale (extractor recall vs. corroboration) | DONE (EVID-047) | Extractor-recall constraint replicates (Llama rho 0.022); R3 acts only with within-source duplicates (Llama precision +0.054, DeepSeek null) | Supersedes the DEC-009 pilot |
-| 033 | Is the corroboration bottleneck a protocol artefact? | APPROVED (option B), running | — | Run option B (~$1.34, hard cap $1.80), then EVID-048 |
+| 033 | Is the corroboration bottleneck a protocol artefact? | RUN (option B, $0.945) | EVID-048 (pending) | Write EVID-048 after user review of results |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3497,6 +3497,17 @@ DEC-033: PRE-REGISTERED (2026-09-26). **APPROVED by the user 2026-09-26:
 option B** (four document arms + DocRED DeepSeek sentence-level on the
 pre-registered random 400-document subset; ~$1.34, hard total cap $1.80).
 Pre-registration committed before any paid call.
+
+DEC-033: RUN complete (2026-09-26), total cost $0.9447. Per-shard caps
+stopped two BioRED DeepSeek document shards 17 abstracts early; they were
+completed within the $1.80 total cap by reallocating the DocRED document
+arm's unused share. Unparsable responses (not re-requested, as
+pre-registered): DocRED DeepSeek document 1/845, BioRED DeepSeek document
+3/500, DocRED Llama document 107/845, BioRED Llama document 94/500,
+DocRED DeepSeek sentence 0/3,236. Analysis addition: each arm's own-gap
+bootstrap CI, required by the OVERTURNED/STANDS rules, was not computed by
+the committed analysis script and was added before the final analysis.
+Results: EVID-048 (pending).
 
 
 
