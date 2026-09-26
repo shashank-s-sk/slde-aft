@@ -40,6 +40,79 @@ Gemini 2.5 Pro were evaluated on the original 30-sentence CaRB pilot
 only; Gemini 2.5 Pro needed a 3,072-token output budget and still
 returned no valid output for 5 of the 30 sentences. GenIE, InstructUIE, DyGIE++, and TACRED were outside the scope of this evaluation.
 
+\begin{sloppypar}
+\paragraph{Code map.} Structured extraction:
+\texttt{src/extractors/structured.py}. LLM extraction (product domain):
+\texttt{src/extractors/openrouter\_llm.py}. Prompt-parameterised
+extraction (CaRB, DocRED, BioRED):
+\texttt{src/extractors/openrouter\_openie.py}. Aggregation equations:
+\texttt{src/pkb\_math.py}, applied per candidate by
+\texttt{src/pkb\_instrumentation.py}; knowledge-base adapter:
+\texttt{src/probkb\_v2\_adapter.py}; max-merge adapter:
+\texttt{src/deterministic\_kb\_adapter.py}; state replay:
+\texttt{src/pkb\_replay.py}. Feedback controller:
+\texttt{src/feedback\_builder.py}. Synthetic training data:
+\texttt{scripts/dec006\_regenerate\_synth\_data.py}; provenance filter:
+\texttt{src/provenance\_filter.py}; fine-tuning:
+\texttt{scripts/dec006\_lora\_finetune.py}. Input formats: records for
+the product domain and CaRB, JSON for DocRED, PubTator for BioRED.
+
+\paragraph{Product-domain schema.} The generator's 13 predicates are
+\texttt{manufactured\_by}, \texttt{belongs\_to\_category},
+\texttt{has\_price\_usd}, \texttt{has\_screen\_size\_inch},
+\texttt{has\_ram\_gb}, \texttt{has\_storage\_gb},
+\texttt{has\_battery\_life\_hours}, \texttt{has\_weight\_kg},
+\texttt{has\_color}, \texttt{made\_of\_material},
+\texttt{target\_market\_region}, \texttt{supports\_fast\_charging}, and
+\texttt{has\_noise\_cancellation}. For each product it draws brand,
+category, colour, material, region, and eight numeric attributes from
+fixed pools.
+
+\paragraph{Prompts.} The pipeline's extraction prompt is in
+\texttt{src/extractors/openrouter\_llm.py}; the fine-tuning
+data-generation and evaluation prompt, shared by both so the tasks
+match, is \texttt{src/prompts.py}. CaRB, DocRED, and BioRED use
+\texttt{prompts/openie\_carb\_v1.txt}, \texttt{openie\_docred\_v1.txt},
+and \texttt{openie\_biored\_sent\_v1.txt} (a per-sentence version of the
+BioRED pilot's prompt listing all eight relation types where the pilot
+listed six); the document-level check uses
+\texttt{openie\_docred\_doc\_v1.txt} and \texttt{openie\_biored\_doc\_v1.txt}
+(Section~S11).
+\end{sloppypar}
+
+\paragraph{QLoRA settings.} Rank 16, $\alpha=32$, dropout 0.05, learning
+rate $2\times10^{-4}$, batch size 2 with gradient accumulation 4, bf16.
+The leakage-free evaluation selected 8 epochs from $\{2,3,5,8\}$ on its
+validation split.
+
+\paragraph{Leakage-free fine-tuning: selection detail.} On the
+20-product validation split, a seed-42 epoch search selected 8 epochs
+(rank 16, $\alpha=32$, learning rate $2\times10^{-4}$; $F_1=0.744$, ahead
+of 5 epochs at $0.722$ and 3 at $0.646$), and a follow-up LoRA search
+found no configuration exceeding this default (rank 32 and learning rate
+$3\times10^{-4}$ both reached $0.734$, $0.011$ lower, so the
+pre-registered $0.01$ tie rule was not triggered). Validation recall was
+flat across every configuration with at least 5 epochs
+($R=0.593$--$0.600$, 83--84 of 140 gold triples), so selection was
+decided by precision alone: the top three configurations were within
+$0.011$ $F_1$, separated only by false positives (0 vs.\ 5). Selecting on
+$F_1$ therefore chose the most conservative adapter, the one that made
+the fewest validation predictions (83).
+% [EVID-044]
+
+\paragraph{Leakage-free fine-tuning: pooled scoring convention.} The
+pooled figures follow the evaluator's convention of scoring all
+products' predictions as one set, in which an incorrect triple repeated
+across products counts once. The base model repeats 38 incorrect
+triples across products, so its false positives are 99 under this
+convention and 137 when each product is scored separately; per-product
+counting gives $0.475$ against a seed mean of $0.546$ ($+0.071$,
+$p=0.002$), against the reported $0.511$ and $0.553$ ($+0.042$). The
+pooled convention is thus the more conservative one for fine-tuning,
+and the primary bootstrap, which scores products separately, is
+unaffected.
+% [EVID-044]
+
 \paragraph{Fine-tuning base model and hardware.}
 Mistral-7B-Instruct-v0.3 was chosen over Llama-3.1-8B-Instruct to avoid
 a gated-repository approval wait. Training and adapter evaluation ran on
@@ -482,7 +555,12 @@ single pass and is not comparable with guided multi-iteration runs.
 
 These settings reproduce the earlier pilots' conditions on the same
 extractions, for comparison with them. They do not decide any
-pre-registered verdict.
+pre-registered verdict. Both pilots are superseded. The 15-document
+DocRED pilot sent only the gold evidence sentences to the extractor, an
+oracle setting that tells it which sentences contain a relation. The
+15-abstract BioRED pilot sent each whole abstract in one call, so every
+document had one source and nothing could be aggregated; it tested the
+extractor only.
 
 \paragraph{DocRED, gold evidence sentences only.} Restricting the 845-document
 extractions to the 3,918 gold evidence sentences (the 15-document
@@ -681,5 +759,51 @@ for every extractor and unit, R3 has far lower $F_1$ and Ign $F_1$ than
 no aggregation, in both variants. Ign $F_1$ is within 0.002 of $F_1$
 throughout, because few correct predictions are facts that also appear
 in the training set.
+
+\section{Protocol Check: Design}
+\label{sec:s11}
+
+\paragraph{Configurations.} The check (DEC-033) crosses two extractors,
+Llama-3.1-8B and DeepSeek-V3.2, with two units, sentence and whole
+document, on DocRED and BioRED. The Llama-3.1-8B sentence-level runs on
+both corpora and the DeepSeek-V3.2 sentence-level run on BioRED are
+reused from the main runs; DeepSeek-V3.2 at sentence level on DocRED was
+run on a pre-registered random 400 of the 845 documents, for cost. All
+configurations use the main runs' aggregation settings (normalised key,
+$\lambda=0.5$, $\tau=0.70$), temperature 0, and R3 as the primary rule.
+
+\paragraph{Document-level extraction.} Each document is sent in one
+call with its sentences numbered, using a minimal edit of the
+sentence-level prompt. The extractor may extract relations whose
+entities appear in different sentences and must list every sentence
+that supports each triple. Each cited sentence counts as one source; a
+triple that cites no valid sentence gets a single document-level source
+and can never be corroborated. Unparsable output is recorded and not
+re-requested, and the document then counts as having no extractions.
+
+\paragraph{Verified corroboration.} A gold fact counts as corroborated
+when it is recovered from two or more cited sentences that genuinely
+support it: gold evidence sentences on DocRED, sentences in which both
+concepts are mentioned on BioRED. This stops a model from inflating
+corroboration by citing arbitrary sentences. Of the sentences cited for
+triples that match a gold fact, 89.8\% (Llama-3.1-8B) and 96.6\%
+(DeepSeek-V3.2) met this test on DocRED, and 83.9\% and 81.7\% on BioRED.
+$\rho$ divides the corroborated share by the annotation-level rate
+(DocRED 50.2\%, BioRED 35.1\%).
+
+\paragraph{Decision rules, fixed before any extraction.} Applied per
+corpus to the configuration with the highest corroborated share, with
+paired bootstrap CIs over documents (10,000 resamples) against the
+Llama-3.1-8B sentence-level configuration on the same documents:
+\emph{weakened} if it raises corroboration (CI excluding zero), reaches
+$\rho \ge 0.2$, and narrows the gap to no aggregation (CI excluding
+zero); \emph{overturned} if, in addition, its own gap CI includes or
+lies above zero; \emph{stands} if every new configuration has
+$\rho < 0.2$ and a gap significantly below zero on both corpora;
+\emph{partial} otherwise. The pre-registration's examples of a partial
+outcome include a gap that narrows significantly but stays
+significantly negative, which also satisfies the stands rule; the
+overlap is reported in the main text.
+% [Decision log.md, DEC-033; EVID-048]
 
 \end{document}
