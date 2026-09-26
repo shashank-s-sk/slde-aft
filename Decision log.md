@@ -31,6 +31,7 @@ just says where each DEC currently stands and what's left.
 | 031 | DocRED at Scale With a Normalised Matching Key | DONE (EVID-046) | Matching key does not explain the failure (norm closes ~0% of gap, oracle 7.3%); only 29/11,344 gold facts recovered from 2+ sentences; R3 precision 0.06->0.25, F1 null | Supersedes DEC-020's pilot |
 | 032 | BioRED at Scale (extractor recall vs. corroboration) | DONE (EVID-047) | Extractor-recall constraint replicates (Llama rho 0.022); R3 acts only with within-source duplicates (Llama precision +0.054, DeepSeek null) | Supersedes the DEC-009 pilot |
 | 033 | Is the corroboration bottleneck a protocol artefact? | DONE: STANDS by the pre-registered rule, with partial relief on BioRED ($0.945) | EVID-048 | None |
+| 034 | DocRED under official-style metrics (descriptive, no new extraction) | DONE ($0) | EVID-049 | None |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3510,6 +3511,47 @@ the committed analysis script and was added before the final analysis.
 Results: EVID-048. Verdict: STANDS by the pre-registered rule on both
 corpora, with partial relief on BioRED (user-approved framing; the rule
 overlap for BioRED DeepSeek document is disclosed there).
+
+---
+
+# DEC-034 — DocRED Under Official-Style Metrics (descriptive; zero API cost; user-approved 2026-09-26)
+
+## Why is this required?
+
+Q1_READINESS weakness 1 lists "report DocRED under its official metric,
+or state the non-comparability prominently". The user approved (2026-09-26):
+- a main-text sentence stating that the DocRED numbers are not
+  comparable to published DocRED results;
+- official-style F1, Ign F1 and evidence F1 for the 845 already-extracted
+  documents, in the supplement, with the out-of-schema and
+  unmatched-entity caveats stated;
+- **no** extraction of the remaining 153 development documents ($0.10),
+  since it would not buy comparability with the literature either way.
+
+## Design (descriptive only; no hypothesis, no decision rule)
+
+- Metrics and arithmetic as in DocRED's official evaluation script:
+  relation F1; Ign F1 (precision ignoring correct facts whose
+  mention-name triple appears in `train_annotated.json`, downloaded from
+  the same thunlp/docred HuggingFace mirror as `dev.json`); evidence F1.
+- Conversion of open triples: entity strings link to an entity only when
+  their normalised form matches a mention of exactly one entity (the
+  DEC-031 alias index); predicates must be DocRED relation names.
+  Anything else is "unscorable".
+- Two variants: strict (unscorable dropped; flatters precision) and
+  penalised (each distinct unscorable triple counted as a false
+  positive).
+- Evidence = source sentences (sentence arms) or cited sentences
+  (document arms).
+- Arms: every DocRED arm on disk (DEC-031, DEC-033), outputs "no
+  aggregation" and R3 (normalised key, tau 0.70).
+- Code: `src/docred_official.py`, `scripts/docred_official_score.py`,
+  `tests/test_docred_official.py`.
+
+## Status
+
+DEC-034: DONE (2026-09-26). Results: EVID-049. Supplementary Section S10
+and one main-text sentence (Section 5, DocRED setup).
 
 
 

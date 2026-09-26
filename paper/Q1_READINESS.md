@@ -133,8 +133,10 @@ inaccurate. Fixed in this commit.**
      Discussion and future work).
    - Still open: the Llama document arms lost 12.7% / 18.8% of documents
      to unparsable JSON (in Limitations).
-   - Still open: report DocRED under its official metric, or state the
-     non-comparability prominently.
+   - ~~Report DocRED under its official metric, or state the
+     non-comparability prominently.~~ **Done 2026-09-26 (DEC-034,
+     EVID-049):** non-comparability stated in the main text; official
+     F1 / Ign F1 / evidence F1 in ESM S10; conclusions unchanged.
 2. ~~No error-analysis section~~ **Done 2026-09-25** (Section 6.8, ESM S9).
 3. **The formal contribution is thin.** The ceiling is a direct
    consequence of the formula. *Mitigation:* reframe it as a *design

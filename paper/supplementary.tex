@@ -613,4 +613,73 @@ Boundary error (CaRB) & Predicted (all households, had, someone living alone \ld
 \end{tabular}
 \end{table}
 
+\section{DocRED Under Official-Style Metrics}
+\label{sec:s10}
+
+\paragraph{Why and how.} The main-text DocRED results use an
+entity-aware evaluator over open (subject, predicate, object) strings.
+Table~\ref{tab:s10-official} re-scores the same saved extractions with
+the metrics of the official evaluation script released with DocRED:
+relation $F_1$; Ign $F_1$, whose precision
+ignores correct facts whose mention-name triple also appears in the
+annotated training set; and evidence $F_1$ over the sentences given as
+support. No new extraction was run. Each extracted triple is converted
+to (head entity, tail entity, relation identifier): an entity string
+must match a mention of exactly one entity in the document after the
+string normalisation of the main text's normalised key, and the predicate must be a DocRED
+relation name. Evidence is the sentence a triple was extracted from, or
+the sentences the document-level extractor cited.
+% [Decision log.md, DEC-034; EVID-049; scripts/docred_official_score.py]
+
+\paragraph{Caveats.} Two kinds of prediction cannot be expressed in the
+official format: triples whose predicate is not a DocRED relation name
+(out-of-schema relations), and triples with an entity string that
+matches no single gold entity (unmatched entities). They make up
+39.7--81.1\% of the unaggregated predictions. The \emph{strict} variant
+drops them, as the official script never sees them, which inflates
+precision; the \emph{penalised} variant counts each distinct one as a
+false positive. The scores cover the 845 documents of the main
+analysis (400 for DeepSeek-V3.2 at sentence level), not the full
+998-document development split, and they are not comparable to
+published DocRED results: those systems are trained on DocRED and
+given the gold entities, whereas these extractors are zero-shot, open,
+and given no entity list.
+
+\begin{table}[htbp]
+\centering
+\caption{Official-style DocRED scores for the saved extractions
+(development documents; $\lambda=0.5$, $\tau=0.70$, normalised key for
+R3). Scorable: predictions expressible in the official format.
+$^{a}$Random 400 of 845 documents.}
+\label{tab:s10-official}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrrrrrr@{}}
+\toprule
+ & & & & \multicolumn{3}{c}{Strict} & \multicolumn{2}{c}{Penalised} & \\
+\cmidrule(lr){5-7}\cmidrule(lr){8-9}
+Extractor, unit & Output & Scorable & Unscorable & $P$ & $F_1$ & Ign $F_1$ & $F_1$ & Ign $F_1$ & Evi $F_1$ \\
+\midrule
+Llama-3.1-8B, sentence & None & 3,374 & 14,501 & 0.183 & 0.084 & 0.084 & 0.042 & 0.042 & 0.056 \\
+ & R3 & 23 & 13 & 0.391 & 0.002 & 0.002 & 0.002 & 0.002 & 0.002 \\
+DeepSeek-V3.2, sentence$^{a}$ & None & 1,563 & 2,026 & 0.379 & 0.172 & 0.171 & 0.133 & 0.131 & 0.114 \\
+ & R3 & 6 & 1 & 0.500 & 0.001 & 0.001 & 0.001 & 0.001 & 0.001 \\
+Llama-3.1-8B, document & None & 2,866 & 5,850 & 0.200 & 0.081 & 0.080 & 0.057 & 0.057 & 0.054 \\
+ & R3 & 222 & 229 & 0.302 & 0.012 & 0.012 & 0.011 & 0.011 & 0.011 \\
+DeepSeek-V3.2, document & None & 6,678 & 4,392 & 0.292 & 0.217 & 0.216 & 0.174 & 0.173 & 0.157 \\
+ & R3 & 373 & 243 & 0.306 & 0.020 & 0.020 & 0.019 & 0.019 & 0.021 \\
+\bottomrule
+\end{tabular}
+% [EVID-049; outputs/docred_official/official_scores.json]
+\end{table}
+
+Recall under these metrics is 0.055 (Llama-3.1-8B, sentence), 0.111
+(DeepSeek-V3.2, sentence), 0.050 (Llama-3.1-8B, document), and 0.172
+(DeepSeek-V3.2, document) without aggregation, close to the main-text
+evaluator's. The main-text conclusion holds under these metrics too:
+for every extractor and unit, R3 has far lower $F_1$ and Ign $F_1$ than
+no aggregation, in both variants. Ign $F_1$ is within 0.002 of $F_1$
+throughout, because few correct predictions are facts that also appear
+in the training set.
+
 \end{document}

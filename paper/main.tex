@@ -667,6 +667,14 @@ evidence sentences refer to an entity by a pronoun or other
 coreference, which extraction from a single sentence, scored by entity
 name, cannot match. The extractor is run on every sentence.
 % [Decision log.md, DEC-031; EVID-046; EVID-048]
+These DocRED scores are not comparable to published DocRED results:
+those systems are trained on DocRED and given the gold entities,
+whereas the extractors here are zero-shot, open, and given no entity
+list, and the evaluation covers 845 of the 998 development documents.
+Supplementary Section~S10 reports the official metrics ($F_1$, Ign
+$F_1$, evidence $F_1$) for the same extractions, with the caveats of
+that conversion; the conclusions are unchanged.
+% [Decision log.md, DEC-034; EVID-049]
 An earlier 15-document pilot sent only the gold evidence sentences to
 the extractor, an oracle setting that tells it which sentences contain
 a relation; it is superseded.

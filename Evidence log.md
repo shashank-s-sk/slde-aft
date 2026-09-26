@@ -5183,3 +5183,53 @@ the conclusion does not depend on how they are handled.
 
 None queued from this DEC. Results Summary.md and paper/main.tex are
 updated with this entry.
+
+
+---
+
+# EVID-049 — DEC-034: DocRED Under Official-Style Metrics. The Conclusions Hold; the Scores Are Not Comparable to the DocRED Literature
+
+## Experiment
+
+- Decision: DEC-034 (descriptive, zero API cost). Re-scores the saved
+  DocRED extractions of DEC-031 and DEC-033 with the official DocRED
+  metrics (F1, Ign F1, evidence F1).
+- 845 development documents (400 for DeepSeek sentence); 11,344 gold
+  relations on the 845.
+- Output: `outputs/docred_official/official_scores.json`.
+
+## Results
+
+| Extractor, unit | Output | Scorable | Unscorable | Strict P / R / F1 | Strict Ign F1 | Penalised F1 / Ign F1 | Evidence F1 |
+|---|---|---:|---:|---|---:|---|---:|
+| Llama, sentence | none | 3,374 | 14,501 (81.1%) | 0.183 / 0.055 / 0.084 | 0.084 | 0.042 / 0.042 | 0.056 |
+| Llama, sentence | R3 | 23 | 13 | 0.391 / 0.001 / 0.002 | 0.002 | 0.002 / 0.002 | 0.002 |
+| DeepSeek, sentence (400 docs) | none | 1,563 | 2,026 (56.5%) | 0.379 / 0.111 / 0.172 | 0.171 | 0.133 / 0.131 | 0.114 |
+| DeepSeek, sentence (400 docs) | R3 | 6 | 1 | 0.500 / 0.001 / 0.001 | 0.001 | 0.001 / 0.001 | 0.001 |
+| Llama, document | none | 2,866 | 5,850 (67.1%) | 0.200 / 0.050 / 0.081 | 0.080 | 0.057 / 0.057 | 0.054 |
+| Llama, document | R3 | 222 | 229 | 0.302 / 0.006 / 0.012 | 0.012 | 0.011 / 0.011 | 0.011 |
+| DeepSeek, document | none | 6,678 | 4,392 (39.7%) | 0.292 / 0.172 / 0.217 | 0.216 | 0.174 / 0.173 | 0.157 |
+| DeepSeek, document | R3 | 373 | 243 | 0.306 / 0.010 / 0.020 | 0.020 | 0.019 / 0.019 | 0.021 |
+
+## Result
+
+- **The paper's conclusions hold under the official metrics.** For every
+  extractor and unit, R3 has far lower F1 and Ign F1 than no
+  aggregation, in both variants.
+- Recall matches the primary evaluator closely (e.g. Llama sentence
+  0.055 vs. 0.057; the difference is entity strings that match more than
+  one entity, which the official conversion does not link).
+- Ign F1 is within 0.002 of F1 everywhere: few correct predictions are
+  facts also in the training set.
+- **Unscorable predictions are 39.7-81.1% of the unaggregated output**
+  (out-of-schema relations and unmatched entities). The strict variant
+  inflates precision; the penalised variant is the fairer reading.
+- **Not comparable to published DocRED results:** those systems are
+  trained on DocRED and given the gold entities; these extractors are
+  zero-shot, open and given no entity list, and 845 of 998 development
+  documents are scored.
+
+## Next step
+
+None. paper/main.tex (one sentence) and paper/supplementary.tex (S10)
+are updated.
