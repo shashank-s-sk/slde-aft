@@ -1373,9 +1373,13 @@ recovered only 0.75\% and 1.35\% of facts from more than one sentence.
 The stronger extractor recovered significantly more corroborated facts,
 but far too few, and it lost more $F_1$ to aggregation only because its
 unaggregated output was more precise while both aggregated outputs ended
-near the same low $F_1$. In the product domain, by contrast, the same
-fact is extracted repeatedly across iterations and sources, so the
-constraint does not bind. The aggregation stage therefore adds value only
+near the same low $F_1$. The constraint binds in the product domain
+too, but is masked there: every one of the 99 admitted correct facts
+pairs a structured observation with an LLM one, while the 141
+text-stated facts the LLM never extracted stay below the threshold
+(Section~\ref{sec:results-errors}). The structured record supplies the
+second observation that the extractor does not. The aggregation stage
+therefore adds value only
 when the extractor recovers the same fact from more than one source often
 enough; a stronger or document-level extractor would move this boundary.
 % [EVID-046; EVID-047]
