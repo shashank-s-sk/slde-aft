@@ -85,3 +85,33 @@ DEC-026 tables; S3 computational complexity; S4 five-seed ablation and SD
 correction; S5 superseded 8-product fine-tuning exploration (with its
 tuned-on-test caveat, tables and figure); S6 scalability; S7 DocRED/BioRED
 pilot-continuity settings; S8 calibration bins and iteration metrics.
+
+---
+
+## Float sizes, measured 2026-09-26 (for the record; not a cut target)
+
+Measured from a LaTeX build of `paper/main.tex` (commit 8699d1c): each
+float's box height (height + depth) divided by the text height
+(552.7pt). Word-equivalents use KAIS's rule (a full-page figure or table
+= 500 words), kept only as a yardstick now that the venue is LRE.
+
+| Float | Height (pt) | Share of page | Word-equivalents |
+|---|---:|---:|---:|
+| Fig. architecture | 296.1 | 0.54 | 268 |
+| Table dec026-bootstrap-tau088 | 108.4 | 0.20 | 98 |
+| Table carb-results | 132.3 | 0.24 | 120 |
+| Table docred-results | 118.0 | 0.21 | 107 |
+| Table biored-results | 118.0 | 0.21 | 107 |
+| Table protocol-results | 175.3 | 0.32 | 159 |
+| Fig. ceiling | 198.2 | 0.36 | 179 |
+| Fig. reliability | 203.3 | 0.37 | 184 |
+| Table provenance | 98.9 | 0.18 | 89 |
+| Table ablation-n50 | 130.0 | 0.24 | 118 |
+| Table finetune-dec027 | 137.0 | 0.25 | 124 |
+| Table closedloop | 89.3 | 0.16 | 81 |
+| Table errors | 414.5 | 0.75 | 375 |
+| **Total (13 floats)** | | **4.02 pages** | **2,008** |
+
+Totals at this commit: 35 pages; prose ~9,976 words (including title,
+abstract, keywords and the TODO declarations); floats ~2,008
+word-equivalents; references ~3,700 words (54 entries).
