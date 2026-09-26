@@ -119,15 +119,21 @@ inaccurate. Fixed in this commit.**
 
 ## 4. What remains weak (ranked by likely impact on review)
 
-1. **The real-text conclusion rests on one extraction protocol.** Every
-   public-corpus result uses sentence-level extraction without document
-   context, mostly with an 8B model, scored by a custom evaluator.
-   - *Fix, cheap:* add a document-level extraction arm and a stronger
-     extractor arm on DocRED and BioRED (the extraction is cached and
-     sharded; about $1–3 of API calls at measured rates).
-   - Then test whether aggregation's gap to no aggregation shrinks as the
-     corroborated-fact share rises, the paper's own proposed experiment.
-   - Report DocRED under its official metric, or state the
+1. ~~**The real-text conclusion rests on one extraction protocol.**~~
+   **Largely addressed 2026-09-26 (DEC-033, EVID-048, Section 6.1
+   "Document-level and stronger extractors").** A pre-registered 2x2
+   (Llama-3.1-8B / DeepSeek-V3.2 x sentence / document) on both corpora,
+   $0.945. **STANDS by the pre-registered rule, with partial relief on
+   BioRED:** document-level extraction raises corroboration significantly
+   (best rho 0.088), and on BioRED narrows the gap significantly, but
+   aggregation still lowers F1 in all eight configurations. The DocRED
+   3.4% named-co-mention ceiling is now reported next to 50.2%.
+   - Still open: the extractors tested are not the largest available,
+     and coreference is not resolved before extraction (stated in the
+     Discussion and future work).
+   - Still open: the Llama document arms lost 12.7% / 18.8% of documents
+     to unparsable JSON (in Limitations).
+   - Still open: report DocRED under its official metric, or state the
      non-comparability prominently.
 2. ~~No error-analysis section~~ **Done 2026-09-25** (Section 6.8, ESM S9).
 3. **The formal contribution is thin.** The ceiling is a direct

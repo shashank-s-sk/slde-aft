@@ -4973,3 +4973,213 @@ DEC-009, Results Summary, paper/main.tex).
 
 None queued from this DEC. Results Summary.md and paper/main.tex are
 updated with this entry.
+
+
+---
+
+# EVID-048 — DEC-033: Document-Level and Stronger Extractors. The Extractor-Recall Conclusion STANDS by the Pre-Registered Rule, with Partial Relief on BioRED
+
+## Experiment
+
+- Decision: DEC-033, pre-registered and user-approved (option B);
+  committed (a9976b8) before any paid call.
+- **Question:** is the corroboration bottleneck of EVID-046/047 an
+  artefact of the protocol (sentence-level extraction, mostly an 8B
+  model)?
+- **Arms, 2x2 per corpus (extractor x unit):**
+  - Llama-3.1-8B, sentence: reused (DocRED DEC-031; BioRED DEC-032).
+  - DeepSeek-V3.2, sentence: reused on BioRED (DEC-032); **new** on
+    DocRED, on the pre-registered random 400-document subset
+    (seed 20330926; 3,236 calls).
+  - Llama-3.1-8B and DeepSeek-V3.2, document: **new** on both corpora.
+    One call per document, sentences numbered, the model cites every
+    supporting sentence; each cited sentence is one source
+    (`prompts/openie_*_doc_v1.txt`).
+- Same aggregation settings as DEC-031/032: normalised key, tau 0.70,
+  shrinkage 0.5; R3 primary, R2 also reported.
+- **Run:** 2026-09-26 16:15-19:35, 3 processes. 5,926 new calls; 0
+  network failures.
+- **Cost: $0.945** against the ~$1.34 estimate and the $1.80 hard cap.
+  - Per-shard caps stopped two BioRED DeepSeek document shards 17
+    abstracts early; BioRED document calls cost ~$0.00063, not the
+    estimated ~$0.00044.
+  - They were completed within the $1.80 total by reallocating the
+    DocRED document arm's unused share ($0.33 spent of $0.65).
+- **Unparsable responses** (recorded, not re-requested, as
+  pre-registered; the document then counts as having no extractions):
+
+  | Arm | Unparsable |
+  |---|---:|
+  | DocRED DeepSeek document | 1 / 845 (0.1%) |
+  | BioRED DeepSeek document | 3 / 500 (0.6%) |
+  | **DocRED Llama document** | **107 / 845 (12.7%)** |
+  | **BioRED Llama document** | **94 / 500 (18.8%)** |
+  | DocRED DeepSeek sentence | 0 / 3,236 |
+
+  The 8B model often fails to produce valid JSON for a whole document
+  with evidence lists. This lowers the Llama document arms' scores, so
+  those arms are a weaker test of the protocol question than the
+  DeepSeek ones.
+- **Analysis additions after the run, disclosed:**
+  - Each arm's own-gap bootstrap CI. The OVERTURNED and STANDS rules
+    require it, but the committed analysis script did not compute it.
+  - Citation validity, a pre-registered measure the committed script
+    also omitted.
+  - Both were added to `scripts/dec033_analyze.py` before the final
+    analysis. Neither is a new test.
+
+## A pre-run finding: the DocRED ceiling for sentence-level extraction
+
+- 5,691 of 11,344 DocRED gold facts (**50.2%**) have 2+ gold evidence
+  sentences.
+- Only **386 (3.4%)** have both entities *named* in 2+ sentences. Most
+  second evidence sentences refer to an entity by pronoun or other
+  coreference.
+- Sentence-level extraction scored by entity name cannot corroborate
+  the rest, so EVID-046's contrast of "0.26% recovered against 50.2%
+  available" overstates what that protocol could achieve.
+- As pre-registered, the manuscript now reports 3.4% next to 50.2%
+  regardless of this DEC's outcome.
+- BioRED's 35.1% is already a named co-mention rate and is unaffected.
+
+## Results
+
+Verified corroboration (primary) = gold facts recovered from 2+ cited
+sources that genuinely support the fact (DocRED: gold evidence
+sentences; BioRED: sentences co-mentioning both concepts), as a share
+of all gold facts. rho = that share / annotation rate (DocRED 50.2%,
+BioRED 35.1%). Gap = F1(R3) − F1(no aggregation), 95% bootstrap CI over
+documents (10,000 resamples).
+
+| Corpus | Arm | Docs | Recall | G2 raw / verified | Verified share | rho | Gap [95% CI] |
+|---|---|---:|---:|---:|---:|---:|---|
+| DocRED | Llama, sentence (ref.) | 845 | 0.057 | 29 / 19 | 0.17% | 0.003 | −0.043 [−0.048, −0.038] |
+| DocRED | DeepSeek, sentence | 400 | 0.115 | 13 / 12 | 0.23% | 0.004 | −0.137 [−0.151, −0.123] |
+| DocRED | Llama, document | 845 | 0.052 | 83 / 48 | 0.42% | 0.008 | −0.046 [−0.052, −0.039] |
+| DocRED | DeepSeek, document | 845 | 0.182 | 148 / 111 | **0.98%** | **0.020** | −0.160 [−0.171, −0.150] |
+| BioRED | Llama, sentence (ref.) | 500 | 0.096 | 37 / 36 | 0.73% | 0.021 | −0.043 [−0.051, −0.035] |
+| BioRED | DeepSeek, sentence | 500 | 0.097 | 66 / 66 | 1.35% | 0.038 | −0.065 [−0.078, −0.052] |
+| BioRED | Llama, document | 500 | 0.043 | 50 / 37 | 0.75% | 0.022 | −0.028 [−0.037, −0.020] |
+| BioRED | DeepSeek, document | 500 | 0.089 | 194 / 152 | **3.10%** | **0.088** | **−0.026 [−0.038, −0.016]** |
+
+P / R / F1 (normalised key, tau 0.70):
+
+| Corpus | Arm | No aggregation | R2 | R3 |
+|---|---|---|---|---|
+| DocRED | Llama, sentence | 0.036 / 0.057 / 0.044 | 0.058 / 0.001 / 0.002 | 0.250 / 0.001 / 0.002 |
+| DocRED | DeepSeek, sentence | 0.171 / 0.115 / 0.138 | 0.444 / 0.001 / 0.002 | 0.429 / 0.001 / 0.001 |
+| DocRED | Llama, document | 0.068 / 0.052 / 0.059 | 0.164 / 0.007 / 0.014 | 0.176 / 0.007 / 0.014 |
+| DocRED | DeepSeek, document | 0.186 / 0.182 / 0.184 | 0.229 / 0.012 / 0.024 | 0.229 / 0.012 / 0.024 |
+| BioRED | Llama, sentence | 0.036 / 0.096 / 0.053 | 0.126 / 0.007 / 0.012 | 0.181 / 0.005 / 0.010 |
+| BioRED | DeepSeek, sentence | 0.069 / 0.097 / 0.081 | 0.296 / 0.009 / 0.017 | 0.299 / 0.008 / 0.016 |
+| BioRED | Llama, document | 0.050 / 0.043 / 0.046 | 0.088 / 0.011 / 0.020 | 0.092 / 0.010 / 0.018 |
+| BioRED | DeepSeek, document | 0.090 / 0.089 / 0.089 | 0.159 / 0.039 / 0.063 | 0.159 / 0.039 / 0.063 |
+
+Paired comparisons against the Llama sentence arm on the same documents
+(bootstrap, 10,000 resamples):
+
+| Corpus | Arm | Verified-share difference | Gap difference |
+|---|---|---|---|
+| DocRED | DeepSeek, sentence (400 docs) | +0.0002 [−0.0011, +0.0015] | −0.089 [−0.102, −0.076] |
+| DocRED | Llama, document | +0.0026 [+0.0014, +0.0038] | −0.003 [−0.010, +0.003] |
+| DocRED | DeepSeek, document | +0.0081 [+0.0056, +0.0110] | −0.118 [−0.128, −0.108] |
+| BioRED | DeepSeek, sentence | +0.0061 [+0.0024, +0.0100] | −0.022 [−0.035, −0.009] |
+| BioRED | Llama, document | +0.0002 [−0.0039, +0.0041] | +0.015 [+0.002, +0.027] |
+| BioRED | DeepSeek, document | +0.0236 [+0.0169, +0.0314] | **+0.016 [+0.003, +0.029]** |
+
+Citation validity (pre-registered, document arms): of the sentences
+cited for triples that match a gold fact, the share that genuinely
+support it.
+- DocRED: Llama 625 / 696 (89.8%); DeepSeek 2,157 / 2,233 (96.6%).
+- BioRED: Llama 261 / 311 (83.9%); DeepSeek 671 / 821 (81.7%).
+- Triples citing no valid sentence: DocRED Llama 21 of 8,962, DeepSeek
+  0 of 11,114; BioRED Llama 10 of 4,391, DeepSeek 1 of 4,878.
+- The models' citations are mostly genuine, so raw corroboration is not
+  mainly a citation artefact; the verified measure is still the primary
+  one.
+
+## Verdict (pre-registered rules): STANDS on both corpora, with partial relief on BioRED
+
+- **WEAKENED / OVERTURNED: not met.** Both require rho ≥ 0.2 for the
+  best new arm. The best arms reach **0.088** (BioRED DeepSeek
+  document) and **0.020** (DocRED DeepSeek document).
+- **STANDS: met on both corpora.** Every new arm has rho < 0.2, and
+  every arm's own gap has a CI entirely below 0: aggregation still
+  lowers F1 relative to no aggregation in all eight arms.
+- **Disclosure of a rule overlap.** The pre-registration lists "the gap
+  narrows significantly but stays significantly negative" as an
+  example of PARTIAL. BioRED DeepSeek document meets that description
+  (gap difference +0.016 [+0.003, +0.029]; own gap −0.026
+  [−0.038, −0.016]) and also meets the STANDS rule, which is stated
+  first and is satisfied. The rules as written therefore overlap for
+  this arm. The formal verdict is STANDS; reporting only that would
+  hide a real, significant relief, so the result is reported as
+  **"STANDS by the pre-registered rule, with partial relief on
+  BioRED."**
+- **Wording for the paper (user-approved):** a document-level, stronger
+  extractor significantly raises corroboration and narrows the
+  aggregation gap on BioRED, but reaches under a tenth of the annotated
+  corroboration, and aggregation still lowers F1; the constraint is
+  relieved but not removed.
+
+## What the arms show
+
+1. **Document-level extraction, not a stronger model alone, raises
+   corroboration.**
+   - DocRED: DeepSeek at sentence level doubles recall (0.115 vs.
+     0.057) but leaves corroboration unchanged (+0.0002, CI includes
+     0). At document level, both models corroborate significantly more
+     (Llama +0.0026; DeepSeek +0.0081).
+   - BioRED: DeepSeek at document level gives the largest rise
+     (+0.0236, about 4x the reference). Llama at document level does
+     not change corroboration (+0.0002).
+2. **The gap widens on DocRED with the stronger extractor.** DeepSeek's
+   no-aggregation F1 is much higher (0.184 document, 0.138 sentence),
+   while aggregated F1 stays near 0.02, so the gap grows to −0.16. The
+   same arithmetic as EVID-047: a better extractor has more to lose when
+   aggregation discards nearly everything.
+3. **Only on BioRED with DeepSeek at document level does aggregation
+   recover much recall:** R2/R3 recall 0.039, against 0.005-0.011 in
+   every other BioRED arm. It still does not reach no aggregation.
+4. **The DocRED coreference ceiling.** Against the 3.4% of facts named
+   in 2+ sentences, rho is 0.049 (Llama sentence), 0.066 (DeepSeek
+   sentence), 0.124 (Llama document) and **0.288 (DeepSeek document)**
+   (descriptive). Part of the DocRED shortfall is the coreference limit
+   of name-based scoring at sentence level, not only recall; document
+   level moves it, but not far.
+
+## Descriptive, not pre-registered: Llama document arms excluding parse failures
+
+Restricted to documents whose response parsed (descriptive, not
+pre-registered; the primary result is the pre-registered analysis
+above, which counts failures as documents with no extractions):
+- DocRED Llama document, 738 parsed docs: verified share 0.48%, rho
+  **0.010** (descriptive, not pre-registered), recall 0.060, gap
+  −0.048.
+- BioRED Llama document, 406 parsed docs: verified share 0.99%, rho
+  **0.028** (descriptive, not pre-registered), recall 0.056, gap
+  −0.030.
+- DeepSeek document, for completeness: DocRED 844 docs, rho 0.020;
+  BioRED 497 docs, rho 0.089 (both descriptive, not pre-registered).
+
+Excluding the failures does not bring either Llama arm near rho 0.2, so
+the conclusion does not depend on how they are handled.
+
+## Limitations
+
+- The Llama document arms lost 12.7% (DocRED) and 18.8% (BioRED) of
+  documents to unparsable JSON; they are a weaker test than the DeepSeek
+  arms.
+- The DocRED DeepSeek sentence arm covers a random 400 of 845 documents
+  (pre-registered, for cost).
+- One document-level prompt per corpus, not tuned; one threshold (tau
+  0.70), not tuned.
+- Two extractors; the stronger (DeepSeek-V3.2) is still not the largest
+  available. The conclusion is scoped to these extractors and protocols.
+- BioRED verification still uses co-mention as a proxy for support.
+- The pre-registered rules overlap for one arm (disclosed above).
+
+## Next step
+
+None queued from this DEC. Results Summary.md and paper/main.tex are
+updated with this entry.

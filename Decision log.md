@@ -30,7 +30,7 @@ just says where each DEC currently stands and what's left.
 | 029 | Higher-Powered Module Ablation (30 seeds) | DONE | Null for both modules; achieved MDE 0.070-0.086 F1 (EVID-045) | Written into Results Summary/main.tex |
 | 031 | DocRED at Scale With a Normalised Matching Key | DONE (EVID-046) | Matching key does not explain the failure (norm closes ~0% of gap, oracle 7.3%); only 29/11,344 gold facts recovered from 2+ sentences; R3 precision 0.06->0.25, F1 null | Supersedes DEC-020's pilot |
 | 032 | BioRED at Scale (extractor recall vs. corroboration) | DONE (EVID-047) | Extractor-recall constraint replicates (Llama rho 0.022); R3 acts only with within-source duplicates (Llama precision +0.054, DeepSeek null) | Supersedes the DEC-009 pilot |
-| 033 | Is the corroboration bottleneck a protocol artefact? | RUN (option B, $0.945) | EVID-048 (pending) | Write EVID-048 after user review of results |
+| 033 | Is the corroboration bottleneck a protocol artefact? | DONE: STANDS by the pre-registered rule, with partial relief on BioRED ($0.945) | EVID-048 | None |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3507,7 +3507,9 @@ pre-registered): DocRED DeepSeek document 1/845, BioRED DeepSeek document
 DocRED DeepSeek sentence 0/3,236. Analysis addition: each arm's own-gap
 bootstrap CI, required by the OVERTURNED/STANDS rules, was not computed by
 the committed analysis script and was added before the final analysis.
-Results: EVID-048 (pending).
+Results: EVID-048. Verdict: STANDS by the pre-registered rule on both
+corpora, with partial relief on BioRED (user-approved framing; the rule
+overlap for BioRED DeepSeek document is disclosed there).
 
 
 

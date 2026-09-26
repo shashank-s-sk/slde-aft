@@ -72,6 +72,27 @@ def doc_counts(corpus, unit, doc, unit_triples):
     return out
 
 
+def citation_validity(corpus, docs, ext):
+    """Pre-registered measure for document arms: of the sentences cited for
+    triples that match a gold fact, the share that genuinely support it
+    (gold evidence on DocRED; co-mention of both concepts on BioRED)."""
+    cited = valid = triples = no_citation = 0
+    for d in docs:
+        ut, n = ext.get(d["doc_idx"], {}), len(d["sentences"])
+        for t in ut.get(0, []):
+            triples += 1
+            no_citation += not any(0 <= e < n for e in t.get("evidence", []))
+        match = P.matcher(corpus, d)
+        for o in P.observations("document", ut, n):
+            g = None if o["sent_id"] == P.DOC_SOURCE else match((o["subject"], o["predicate"], o["object"]))
+            if g is not None:
+                cited += 1
+                valid += o["sent_id"] in P.fact_sentences(corpus, d, g)
+    return {"citations_on_correct_triples": cited, "valid": valid,
+            "validity": valid / cited if cited else None,
+            "triples": triples, "triples_without_valid_citation": no_citation}
+
+
 def prf(c):
     return D.prf(c["tp"], c["fp"], c["fn"])
 
@@ -104,6 +125,9 @@ def main():
         if corpus == "docred":
             s["rho_vs_named"] = s["g2_verified_share"] / rates["docred_named"]
         s["gap_R3"] = s["R3"]["f1"] - s["naive"]["f1"]
+        if unit == "document":
+            s["citation_validity"] = citation_validity(corpus, complete, ext)
+            print(f"  citation validity {corpus}/{model}: {s['citation_validity']}")
         result["arms"]["/".join((corpus, model, unit))] = s
         print(f"{corpus:6} {model:8} {unit:8} docs={len(complete):3}  recall={s['naive']['recall']:.4f}  "
               f"G2 raw/ver={s['g2_raw']}/{s['g2_verified']} ({100 * s['g2_verified_share']:.2f}%)  "

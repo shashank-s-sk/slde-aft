@@ -337,6 +337,7 @@ Cost: $0.0520 total for both systems at full scale.
 - **The finding: cross-sentence corroboration is scarce in the extractions.**
   - Only **29 of 11,344 gold facts (0.26%)** are recovered from two or more sentences. An aggregation rule that requires corroboration cannot admit facts that are never corroborated, whatever the key.
   - The text itself does not lack corroboration: **50.2%** of gold facts have 2+ evidence sentences in the annotations.
+  - **Corrected 2026-09-26 (DEC-033/EVID-048):** only **3.4%** (386) have both entities *named* in 2+ sentences; most second evidence sentences use a pronoun or other coreference. Sentence-level extraction scored by entity name cannot corroborate the rest, so "0.26% against 50.2%" overstates what that protocol could achieve. Report 3.4% next to 50.2%.
   - The bottleneck is the extractor's recall (645 of 11,344 facts recovered at all), compounded across sentences.
 - **Half the output is off-schema:** only 49.2% of extracted triples use a DocRED relation name, so about half are false positives before any aggregation.
 - **R3 out of domain: a precision gain, not an F1 gain.**
@@ -349,6 +350,27 @@ Cost: $0.0520 total for both systems at full scale.
 **Suggested framing:** "On 845 DocRED documents, PKB aggregation lowers F1 relative to no aggregation under every matching key tested. This includes an oracle key built from gold entity mentions, which closes only 7% of the gap, so the failure is not caused by how facts are matched. It is caused by the absence of corroboration in the extractions: the sentence-level extractor recovers only 29 of 11,344 gold facts from two or more sentences, although half the facts have multiple supporting sentences in the text. Distinct-source counting (R3) raises the precision of what is admitted roughly fourfold by discarding within-sentence repeats, the same defect it corrects in the product domain, but on counts too small to move F1."
 
 **Earlier pilot (DEC-020, historical, superseded):** 15 documents, gold evidence sentences only. Naive F1 0.033 vs. PKB 0.010. Its exact-string root-cause diagnosis is superseded by the result above.
+
+**Protocol check: document-level and stronger extractors (DEC-033, EVID-048).** Is the corroboration bottleneck an artefact of sentence-level extraction with an 8B model? A 2x2 per corpus (Llama-3.1-8B / DeepSeek-V3.2 x sentence / document); document-level calls cite supporting sentences, each cited sentence is a source. Cost $0.945 (option B; DocRED DeepSeek sentence arm on a pre-registered random 400 documents).
+
+| Corpus | Arm | Recall | Verified corroboration | rho | Gap F1(R3) − F1(none) [95% CI] |
+|---|---|---:|---:|---:|---|
+| DocRED | Llama, sentence (ref.) | 0.057 | 0.17% | 0.003 | −0.043 [−0.048, −0.038] |
+| DocRED | DeepSeek, sentence (400 docs) | 0.115 | 0.23% | 0.004 | −0.137 [−0.151, −0.123] |
+| DocRED | Llama, document | 0.052 | 0.42% | 0.008 | −0.046 [−0.052, −0.039] |
+| DocRED | DeepSeek, document | 0.182 | 0.98% | 0.020 | −0.160 [−0.171, −0.150] |
+| BioRED | Llama, sentence (ref.) | 0.096 | 0.73% | 0.021 | −0.043 [−0.051, −0.035] |
+| BioRED | DeepSeek, sentence | 0.097 | 1.35% | 0.038 | −0.065 [−0.078, −0.052] |
+| BioRED | Llama, document | 0.043 | 0.75% | 0.022 | −0.028 [−0.037, −0.020] |
+| BioRED | DeepSeek, document | 0.089 | 3.10% | 0.088 | −0.026 [−0.038, −0.016] |
+
+- **Verdict: STANDS by the pre-registered rule, with partial relief on BioRED.** No arm reaches rho 0.2 (best 0.088), and aggregation lowers F1 in all eight arms (every CI below 0).
+- **Rule overlap, disclosed:** BioRED DeepSeek document significantly narrows the gap (+0.016 [+0.003, +0.029]) while staying significantly negative, which the pre-registration also lists as an example of PARTIAL. STANDS is stated first and is met.
+- Document-level extraction, not a stronger model alone, raises corroboration: on DocRED, DeepSeek at sentence level doubles recall but leaves corroboration unchanged (+0.0002, CI includes 0).
+- Citations are mostly genuine (82-97% of cited sentences on correct triples support the fact).
+- **Llama document arms: 12.7% (DocRED) and 18.8% (BioRED) of responses were unparsable JSON**, counted as no extractions (pre-registered). Excluding them gives rho 0.010 and 0.028 (**descriptive, not pre-registered**).
+
+**Suggested framing:** "A document-level, stronger extractor significantly raises corroboration and narrows the aggregation gap on BioRED, but reaches under a tenth of the annotated corroboration, and aggregation still lowers F1 on both corpora; the constraint is relieved but not removed."
 
 This is a genuine, citable answer to professor feedback point #10 ("where the framework may fail") — use it in Limitations, not just Discussion.
 
