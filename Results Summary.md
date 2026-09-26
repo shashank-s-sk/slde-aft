@@ -283,7 +283,7 @@ Cost: $0.0520 total for both systems at full scale.
 
 ## Other supporting results
 
-**Systematic error analysis (DEC-007, EVID-022):** zero pure false negatives in the product-domain train set (every gold fact was observed at least once across 4 iterations) — recall failures are recoverable, not fundamental misses. Conflict adjustment overwhelmingly resolves hallucination-vs-hallucination conflicts (108 of 117), not correct-vs-incorrect ones (1 of 117) — report this nuance wherever the conflict-resolution mechanism is described.
+**Systematic error analysis (DEC-007, EVID-022):** **Corrected 2026-09-25:** the LLM extracted only 104 of the 245 text-stated training facts (42%) across 4 iterations; the rest were present only through structured seeding (the earlier "zero pure false negatives" claim tested KB presence, not LLM extraction). Of the 117 triples on contested slots, 108 are incorrect and 9 correct, spread over 47 slots (38 with only wrong candidates, 9 with the correct value competing); the earlier "1 of 117" was a misreading. The paper's Error Analysis subsection (Table: errors) and ESM S9 give the corrected counts and curated real examples.
 
 **Scalability (DEC-008, EVID-023):** runtime scales linearly with N (no quadratic blowup) up to N=200; mean per-document latency stays flat (~4.0s) regardless of accumulated KB size (grew to 2,814 entries) — the key positive scalability claim. Memory measurement from this pass is unusable (methodology flaw: sequential runs in one process contaminate GC-affected deltas) — don't cite memory numbers from EVID-023.
 

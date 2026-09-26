@@ -964,9 +964,8 @@ conflict-adjusted scoring increased $F_1$ by $0.043$ relative to
 unadjusted Noisy-OR support (single run). This compares two forms of
 the same rule; it is not a comparison with a no-aggregation or
 max-merge baseline. On the 117 triples with at least one competing
-value, $F_1$ decreased from $0.185$ to $0.167$, and 108 of these 117
-conflicts were between two incorrect values, whereas one was between a
-correct and an incorrect value
+value, $F_1$ decreased from $0.185$ to $0.167$; only 9 of these 117
+triples were correct (Section~\ref{sec:results-errors})
 % [EVID-014]
 . For single-valued predicates (12 of 13), a slot with a competing
 value cannot reach $\tau=0.88$ while the rival persists
@@ -1258,6 +1257,90 @@ grew to 2,814 entries (Supplementary Section~S6). Each size was run
 once; memory use could not be measured reliably, and GPU utilisation was
 not recorded.
 % [EVID-023]
+
+\subsection{Error Analysis}
+\label{sec:results-errors}
+
+Table~\ref{tab:errors} gives one real example per error category, drawn
+from the committed outputs; Supplementary Section~S9 gives the full
+table. In the product domain, the final knowledge base of the 50-product
+run (657 triples from the 35 training products) breaks down as follows,
+scored against the structured record so that correct facts the text does
+not mention are not counted as errors:
+\begin{itemize}
+\item 99 correct triples were admitted, every one supported by both a
+structured and an LLM observation;
+\item 146 correct triples fell below the threshold, 141 of them because
+only the structured source supplied them;
+\item 202 triples were LLM hallucinations, of which 176 were filtered and
+26 admitted;
+\item 210 were correct facts the text does not mention: 208 supplied by
+the structured record alone and filtered, and 2 also extracted by the
+LLM and admitted.
+\end{itemize}
+% [outputs/dec007_error_analysis; re-scored against gold_structured, see EVID-022 correction]
+Across four iterations the LLM extracted only 104 of the 245 facts that
+the training texts state (42\%). The rest entered the knowledge base
+only through structured seeding.
+
+\begin{table}[htbp]
+\centering
+\caption{Error analysis: one real example per category. Scores are
+final conflict-adjusted scores ($\tau=0.88$ in the product domain,
+$0.70$ on DocRED). Full table in Supplementary Section~S9.}
+\label{tab:errors}
+\small
+\begin{tabular}{@{}p{0.17\linewidth}p{0.36\linewidth}p{0.39\linewidth}@{}}
+\toprule
+Category & Example & Why \\
+\midrule
+Correct, admitted & (Auralex Smartphone Max 1, has\_ram\_gb, 32), score 1.00 & Stated in the text and in the record; two sources corroborate. \\
+Correct, not admitted & (TechNova Laptop Air 2, has\_price\_usd, 499), 0.735 & The LLM never extracted it; one observation cannot reach $\tau$ (Prop.~\ref{prop:corroboration}). \\
+Hallucinated, admitted & (laptop device, has\_color, green), 0.96 & Generic subject repeated across texts; repeats inflate the score (Prop.~\ref{prop:independence}). The provenance filter removes it. \\
+Conflicting (all wrong) & TechNova Smartphone Pro 1: battery 8, 10, 12, 14, 18\,h; 0.14--0.19 & The product does not exist: it is the prompt's own example, copied into outputs for other products. The penalty blocks all five. \\
+Conflicting (correct blocked) & (TechNova Laptop Air 17, made\_of\_material, aluminum), 0.486 & A reworded duplicate, ``aluminum construction'', counts as a rival, so the ceiling blocks the correct value. \\
+Score near threshold & (Priced at 299 USD, has\_price\_usd, 299), 0.899 & A sentence fragment is used as the subject, so the triple is wrong, yet it is admitted 0.019 above $\tau$. \\
+Relation-type ambiguity & BioRED: (Apomorphine, Association, Parkinson's disease); gold Negative\_Correlation & Right concept pair, wrong relation type; 811 such Llama predictions on BioRED. \\
+Missed corroboration & DocRED: (Paul Charles Morphy, date of death, 1884), gold evidence in sentences 0 and 17 & Recovered from sentence 17 only; from sentence 0 the model output ``place of death: July 10, 1884''. \\
+Repeat admitted & DocRED: (Dollar General, has part, stores), twice in one sentence & R2 counts the repeat as corroboration and admits a wrong triple; R3 rejects it. \\
+Boundary error & CaRB: predicted (all households, were made up of, individuals); gold subject ``32.7\% of all households'' & The quantifier is dropped, so the match fails. \\
+\bottomrule
+\end{tabular}
+% [outputs/dec007_error_analysis/error_analysis_full.csv; outputs/dec031_docred;
+% outputs/dec032_biored; src/extractors/openrouter_llm.py (prompt example)]
+\end{table}
+
+Three patterns recur. First, most errors that the aggregation rule has
+to handle are the extractor's own artefacts rather than genuine
+disagreements between sources:
+\begin{itemize}
+\item Of the 117 triples on contested single-valued slots, 108 are
+incorrect. The 47 contested slots include 38 on which every candidate is
+wrong.
+\item One non-existent product generates contested slots on its own,
+because the model copies the extraction prompt's example into its
+outputs.
+\item Reworded duplicates of a correct value (``aluminum'' and
+``aluminum construction'') trigger the conflict penalty against the
+correct value, and the rival ceiling then makes it permanently
+inadmissible.
+\end{itemize}
+% [outputs/dec007_error_analysis; EVID-014]
+
+Second, the extractor's low recall, not the aggregation rule, limits
+what can be admitted. In the product domain the LLM never extracted most
+text-stated facts. On DocRED, of 5,691 gold facts with two or more
+evidence sentences, the extractions recovered 117 from exactly one
+sentence and 20 from two or more. The Morphy example shows why: the
+second evidence sentence is read, but the fact is emitted under the
+wrong relation.
+% [outputs/dec031_docred; EVID-046]
+
+Third, schema errors rather than entity errors dominate on real text:
+on BioRED the pipeline's extractor produced 811 triples that connect a
+correct gold concept pair with the wrong relation type, against 473
+fully correct facts.
+% [outputs/dec032_biored; EVID-047]
 
 \section{Discussion}
 \label{sec:discussion}

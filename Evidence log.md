@@ -1388,6 +1388,38 @@ own notes: do not select only favourable examples — the curated set
 here already includes correct, hallucinated, and failed-extraction
 examples from both sources, not a cherry-picked subset).
 
+## Correction (2026-09-25): two claims above are wrong
+
+Re-scoring the same 657 product-domain rows against the structured record
+(`gold_structured`), and separating structured-only from LLM-supported
+triples by their provenance, shows two errors in this entry. The rest of
+the entry stands.
+
+1. **"Zero pure false negatives ... every train gold fact was observed by
+   the LLM at least once" is wrong.** All 245 text-stated training facts
+   are *present in the knowledge base*, but 141 of them are there only
+   because structured seeding put them there. The LLM extracted **104 of
+   245 (42%)** at least once across the four iterations. The original
+   check tested presence in the KB, not LLM extraction.
+2. **The "hallucinated" counts include correct facts.** This entry scored
+   against `gold_unstructured` (the facts the text states), so correct
+   structured-record facts that the text does not mention were labelled
+   "hallucinated":
+   - of the 384 "hallucinated_but_filtered", **208 are correct**
+     (structured-only) and 176 are LLM hallucinations;
+   - of the 28 "hallucinated_triple", 2 are correct and **26** are LLM
+     hallucinations.
+3. For conflicts, the 117 triples on contested slots are **9 correct and
+   108 incorrect**, spread over 47 slots (38 all wrong, 9 with the correct
+   value competing). This matches EVID-014. The manuscript had misread
+   "only 1 is a confirmed gold match at the accepted level" as "one
+   conflict was between a correct and an incorrect value"; corrected in
+   paper/main.tex.
+
+The corrected breakdown and the curated examples are in the manuscript's
+Error Analysis subsection and ESM Section S9. The outputs are now
+committed (`outputs/dec007_error_analysis/`).
+
 # EVID-023 — DEC-008 Scalability Sweep (Scoped: N=20/50/100/200, single-pass)
 
 ## Experiment

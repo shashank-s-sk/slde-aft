@@ -554,4 +554,63 @@ Iteration 4 (guided) & 0.5088 & 0.3551 & 0.4183 & 657 \\
 % Decision log.md's DEC-006 scale-up entry: "val 0.5610, test 0.4126"]
 \end{table}
 
+\section{Error Analysis: Full Table and Counts}
+\label{sec:s9}
+
+\paragraph{Sources and categories.} Product-domain rows are the final
+iteration-4 knowledge base of the 50-product run (657 triples, 35 training
+products), from \texttt{outputs/dec007\_error\_analysis/error\_analysis\_full.csv}.
+The original categorisation (DEC-007) scored triples against
+\texttt{gold\_unstructured}, the facts a product's text states. That
+labelled correct structured-record facts absent from the text as
+``hallucinated''. The counts below re-score every row against the
+structured record and use each triple's provenance to separate
+structured-only from LLM-supported triples. The flag DEC-007 calls
+``ambiguous'' marks a score within $\pm0.03$ of $\tau$; it is reported
+here as a score-near-threshold category, distinct from relation-type
+ambiguity.
+
+\begin{table}[htbp]
+\centering
+\caption{Product-domain final knowledge base (657 triples), re-scored
+against the structured record.}
+\label{tab:s9-counts}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Category & Triples & Source of the observations \\
+\midrule
+Correct, admitted & 99 & structured and LLM \\
+Correct, below threshold & 146 & 141 structured only, 5 both \\
+LLM hallucination, admitted & 26 & LLM only \\
+LLM hallucination, filtered & 176 & LLM only \\
+Correct, not stated in text, filtered & 208 & structured only \\
+Correct, not stated in text, admitted & 2 & structured and LLM \\
+\midrule
+Text-stated training facts extracted by the LLM at least once & 104 of 245 & \\
+Triples on contested single-valued slots & 117 (9 correct) & 47 slots, 38 all wrong \\
+Scores within $\pm0.03$ of $\tau$ & 18 & 13 wrong and admitted \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Additional error examples (all from committed outputs).}
+\label{tab:s9-examples}
+\small
+\begin{tabular}{@{}p{0.17\linewidth}p{0.38\linewidth}p{0.37\linewidth}@{}}
+\toprule
+Category & Example & Why \\
+\midrule
+Hallucinated, admitted & (It is a smartwatch device, has\_ram\_gb, 16), 0.97 & A whole sentence copied as the subject; repeated across texts, so it is admitted. \\
+Hallucinated, filtered & (TechNova Smartphone Pro 1, has\_price\_usd, 199), 0.32 & The prompt's example product, with two rival prices; the penalty keeps it out. \\
+Correct, admitted (CaRB) & (locomotives, pulled, trains) & A short, unambiguous clause with no qualifiers. \\
+Off-schema predicate & DocRED: (Skai TV, based in, Piraeus) & ``based in'' is not a DocRED relation name, so it is scored as a false positive; 50.8\% of DocRED extractions are off-schema. \\
+Relation-type ambiguity & BioRED: (Apomorphine, Bind, Parkinson's disease); gold Negative\_Correlation & A drug and a disease cannot ``bind''; the model picks a schema label without grounding it. \\
+Missed corroboration & DocRED: (Robert Kingsbury Huntington, date of death, 5 June 1942), gold evidence in sentences 0 and 2 & Recovered from sentence 0 only; from sentence 2 the model extracted a different fact (participant of, Battle of Midway). \\
+Boundary error (CaRB) & Predicted (all households, had, someone living alone \ldots); gold subject ``15.7\% of all households'' & Same quantifier-dropping pattern as the main-text example. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \end{document}
