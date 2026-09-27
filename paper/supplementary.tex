@@ -612,23 +612,32 @@ Per-bin calibration values for the reliability diagram, and per-iteration extrac
 \begin{table}[htbp]
 \centering
 \caption{Calibration bins of conflict-adjusted scores (657 gold-labelled
-triples; ECE $=0.3332$, Brier $=0.2969$).}
+triples, 245 correct; ten equal-width bins, the last closed at 1.0;
+ECE $=0.3332$, Brier $=0.2969$). ``---'': empty bin.}
 \label{tab:s1-calibration}
 \begin{tabular}{@{}lccc@{}}
 \toprule
 Confidence bin & Triples & Mean confidence & Fraction correct \\
 \midrule
-0.6--0.7 & 68 & [add] & 0.000 \\
-0.8--0.9 & 16 & [add] & 0.000 \\
+0.0--0.1 & 0 & --- & --- \\
+0.1--0.2 & 15 & 0.169 & 0.000 \\
+0.2--0.3 & 21 & 0.228 & 0.000 \\
+0.3--0.4 & 43 & 0.334 & 0.070 \\
+0.4--0.5 & 28 & 0.471 & 0.179 \\
+0.5--0.6 & 0 & --- & --- \\
+0.6--0.7 & 68 & 0.658 & 0.000 \\
+0.7--0.8 & 352 & 0.735 & 0.392 \\
+0.8--0.9 & 16 & 0.889 & 0.000 \\
 0.9--1.0 & 114 & 0.978 & 0.868 \\
-Remaining bins & [add] & [add] & [add] \\
 \bottomrule
 \end{tabular}
 
-\noindent\emph{Note.} Complete from
-\texttt{calibration\_bins\_real.csv} before submission (not committed
-to this repository).
-% [EVID-036; SLDE-AFT_Section7_Supplementary.docx]
+\noindent\emph{Source.} \texttt{outputs/dec003\_real\_calibration/calibration\_bins\_real.csv}
+and \texttt{ece\_real.json} in the project repository, produced by
+\texttt{scripts/dec003\_real\_data\_calibration.py} from the committed
+iteration-4 knowledge-base snapshot. ECE recomputes from the ten rows
+above; the Brier score is computed per triple from the snapshot.
+% [EVID-036; outputs/dec003_real_calibration/calibration_bins_real.csv; verified 2026-09-27: ECE 0.33319 from the bins, Brier 0.29694 from the per-triple snapshot]
 \end{table}
 
 \begin{table}[htbp]
