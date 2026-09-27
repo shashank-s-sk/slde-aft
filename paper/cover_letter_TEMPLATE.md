@@ -32,12 +32,16 @@ not claim, and evaluates an independent implementation of the design. It:
 - reports a controlled, partly pre-registered evaluation, most of whose
   results are negative or null.
 
-**Why LRE.** The evaluation is on public language resources: CaRB,
-DocRED, and BioRED. It reports DocRED under official-style metrics, and
-it analyses how each resource's annotation (evidence sentences,
-co-mention) bounds what a corroboration-based method can achieve.
-[PLACEHOLDER: authors to confirm or revise this statement of fit with
-LRE's scope.]
+**Why LRE.** The paper's central empirical findings concern what two
+widely used resources, DocRED and BioRED, support for a class of
+extraction methods that aggregate confidence across sources. It measures
+how many gold facts their annotations support from two or more sentences
+(50.2% of DocRED's by evidence sentences but 3.4% by named entities;
+35.1% of BioRED's by co-mention), and shows that extractors realise at
+most 3.1%, so aggregation lowered F1 in every configuration tested. It
+also reports the DocRED extractions under DocRED's official evaluation
+metrics, with the caveats of that mapping, alongside the formal analysis
+of the aggregation rule.
 
 **Reproducibility.** Code, prompts, configurations, extraction outputs,
 and a reproduction script are in

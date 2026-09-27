@@ -50,8 +50,8 @@
 \author[1]{\fnm{Ahmed} \sur{Ebada}}\email{[PLACEHOLDER: email]}
 \affil*[1]{\orgdiv{[PLACEHOLDER: department]}, \orgname{[PLACEHOLDER: institution]}, \orgaddress{\city{[PLACEHOLDER: city]}, \country{[PLACEHOLDER: country]}}}
 
-% 243 words (LRE: 150--250); no citations or equations, per the template.
-\abstract{Closed-loop information extraction pools facts extracted by a language model in a knowledge base that scores each fact by its supporting evidence, and feeds that knowledge base back into the extractor. This paper analyses the conservative Noisy-OR aggregation rule with a mutual-exclusivity penalty that the DySECT system published for this purpose, and evaluates an independent implementation of the design. It proves the rule's boundedness, monotonicity and saturation, and a rival ceiling: for a single-valued predicate, a contested slot with m rival values scores below 1/(m+1), at most 0.5, so it cannot be admitted at any threshold of 0.5 or more. On two real-data snapshots the rule admitted no contested slots where a max-merge baseline admitted 6 and 40, and none under a structured source corrupted at up to 20\%. Counting distinct sources instead of repeated observations raised the precision of admitted facts by 0.03 to 0.11 in the product domain and by 0.05 to 0.29 on DocRED and BioRED, but only where the extractor repeats a fact within a source. A controlled, partly pre-registered evaluation found no end-to-end benefit from the loop's mechanisms: removing the feedback controller or the probabilistic knowledge base had no significant effect over thirty seeds, and leakage-free fine-tuning lowered per-product F1 on its primary metric. On DocRED and BioRED, aggregation lowered F1 for every extractor and protocol tested, because they recovered at most 3.1\% of gold facts from more than one sentence, even with document-level extraction: extractor recall, not the matching key, is the binding constraint.}
+% 249 words (LRE: 150--250); no citations or equations, per the template.
+\abstract{Corroboration-gated aggregation admits an extracted fact only when more than one source supports it, so its value depends on how often a corpus supports a fact repeatedly. In DocRED, 50.2\% of gold facts have two or more evidence sentences, but only 3.4\% name both entities in two or more; in BioRED, 35.1\% are co-mentioned in two or more sentences. Extractors realised little of this: at most 3.1\% of gold facts were recovered from more than one sentence, even with document-level extraction and a stronger model, and aggregation lowered F1 in every configuration. Extractor recall, not the matching key, is the binding constraint. The rule studied is the conservative Noisy-OR with a mutual-exclusivity penalty that the DySECT system published for closed-loop extraction, where a knowledge base scores facts and feeds back into extraction; the paper evaluates an independent implementation of that design. It proves the rule's basic properties and a rival ceiling: a contested single-valued slot with m rival values scores below 1/(m+1), so it is never admitted at thresholds of 0.5 or more. The rule admitted no contested slots on two real-data snapshots, where a max-merge baseline admitted 6 and 40. Counting distinct sources raised the precision of admitted facts only where the extractor repeats a fact within a source. A controlled, partly pre-registered evaluation found no end-to-end benefit from the loop's mechanisms: removing the feedback controller or the probabilistic knowledge base had no significant effect over thirty seeds, and leakage-free fine-tuning lowered per-product F1 on its primary metric.}
 
 \keywords{information extraction, knowledge base population, confidence aggregation, Noisy-OR, closed-loop learning, large language models}
 
@@ -106,7 +106,7 @@ knowledge-base-derived data -- improve extraction?
 corroboration improve on no aggregation, and if not, what limits it?
 \end{enumerate}
 
-\noindent The paper makes four contributions:
+\noindent The paper makes five contributions:
 
 \begin{enumerate}
 \item[(i)] A formal analysis of the published conservative Noisy-OR
@@ -145,6 +145,23 @@ extractor raised these shares significantly, to at most 0.98\% and
 3.10\%, but aggregation still lowered $F_1$ in every configuration
 (Sections~\ref{sec:results-ablation}--\ref{sec:results-finetuning}
 and~\ref{sec:results-docred}--\ref{sec:results-protocol}).
+\item[(v)] A characterisation of how much corroboration two widely used
+resources support for aggregation-based extraction. In DocRED's
+annotations, 50.2\% of gold facts have two or more evidence sentences,
+but only 3.4\% name both entities in two or more, so extraction from
+single sentences scored by entity name is capped far below the
+annotation-level rate; in BioRED, 35.1\% of gold facts are co-mentioned
+in two or more sentences, a proxy, since BioRED has no evidence
+annotations. Separating this annotation-level availability from the
+corroboration that extractors realise (at most 3.1\%) shows where the
+constraint lies: mostly in extraction, and on DocRED partly in
+coreference that name-based scoring cannot follow. The DocRED
+extractions are also mapped to DocRED's official evaluation protocol
+($F_1$, Ign $F_1$, and evidence $F_1$), with its caveats stated:
+published DocRED systems are trained on DocRED and given the gold
+entities, and out-of-schema relations and unmatched entities cannot be
+expressed in the official format (Section~\ref{sec:setup-datasets};
+Supplementary Section~S10).
 \end{enumerate}
 
 Section~\ref{sec:related-work} reviews related work and DySECT,
