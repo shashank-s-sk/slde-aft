@@ -209,6 +209,15 @@ $C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with default
 shrinkage $\lambda=0.75$, followed by the mutual-exclusivity penalty
 $C(t) = C_{\mathrm{agg}}(t)/(m(t)+1)$, which is the rule evaluated
 throughout this paper (Section~\ref{sec:formal-analysis}). DySECT
+additionally exempts a predefined class of fully trusted sources from
+aggregation, setting their confidence to $C(t)=1.0$; in its current
+version the only such sources are human curators
+\citep[Sect.~2.2, footnote~3]{aminnaseri2026dysect}. This paper analyses
+the automatic conservative Noisy-OR path, which governs all LLM-sourced
+evidence in both systems' reported evaluations: DySECT's evaluation
+describes no curator input, and the implementation evaluated here has no
+curation interface.
+% [aminnaseri2026dysect, arXiv:2603.06915v2, p. 3, Sect. 2.2 "Knowledge Base Growth", footnote 3, verified 2026-09-27] DySECT
 names its two prompt-feedback modes (its Section 4): an
 \emph{Encouraging} (positive) mode, which injects high-confidence
 sub-concepts and representative relations as positive examples to
