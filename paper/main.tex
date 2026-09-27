@@ -46,9 +46,9 @@
 % the corresponding author's email, and ORCID identifiers if available
 % (add \orcid{...} after \author if the class version supports it, or
 % list ORCIDs in the cover letter). Replace every [PLACEHOLDER].
-\author*[1]{\fnm{Shashank Kumar} \sur{Sadashiva}}\email{[PLACEHOLDER: email]}
-\author[1]{\fnm{Ahmed} \sur{Ebada}}\email{[PLACEHOLDER: email]}
-\affil*[1]{\orgdiv{[PLACEHOLDER: department]}, \orgname{[PLACEHOLDER: institution]}, \orgaddress{\city{[PLACEHOLDER: city]}, \country{[PLACEHOLDER: country]}}}
+\author*[1]{\fnm{Shashank Kumar} \sur{Sadashiva}}\email{shashankkumarsadashiva@gmail.com}
+\author[1]{\fnm{Ahmed} \sur{Ebada}}\email{[PLACEHOLDER: Prof. Ebada to supply]}
+\affil*[1]{\orgname{Hopn UG}, \orgaddress{\country{Germany}}}
 
 % 244 words (LRE: 150--250); no citations or equations, per the template.
 \abstract{Corroboration-gated aggregation admits an extracted fact only when more than one source supports it. In DocRED, 50.2\% of gold facts have two or more evidence sentences, but only 3.4\% name both entities in two or more; in BioRED, 35.1\% are co-mentioned in two or more sentences. These rates characterise, independently of any algorithm, how much corroboration the two resources' annotations can supply to aggregation-based extraction. Extractors realised little of this: at most 3.1\% of gold facts were recovered from more than one sentence, even with document-level extraction and a stronger model, and aggregation lowered F1 in every configuration. Extractor recall, not the matching key, is the binding constraint. The rule studied is the conservative Noisy-OR with a mutual-exclusivity penalty that the DySECT system published for closed-loop extraction; the paper evaluates an independent implementation of that design. It proves the rule's basic properties and a rival ceiling: a contested single-valued slot with m rival values scores below 1/(m+1), so it is never admitted at thresholds of 0.5 or more. The rule admitted no contested slots on two real-data snapshots, where a max-merge baseline admitted 6 and 40. Counting distinct sources raised the precision of admitted facts only where the extractor repeats a fact within a source. A controlled, partly pre-registered evaluation found no end-to-end benefit from the loop's mechanisms: removing the feedback controller or the probabilistic knowledge base had no significant effect over thirty seeds, and leakage-free fine-tuning lowered per-product F1 on its primary metric.}
