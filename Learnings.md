@@ -182,3 +182,395 @@ significance test design)?
   Lesson: write the EVID entry and flip the status line in the same
   sitting you finish the work, not later — otherwise "what's left"
   has to be re-derived from the filesystem instead of read off the log.
+
+Two problems with Section 2.
+
+1. Sections 2.1-2.6 are placeholders ("[reused from the old draft...]"),
+   not prose. Write them out in full. You may reuse the old draft's
+   wording where it is still accurate, but the section must read as
+   finished text with no bracketed notes. Remove every "first system"
+   and "to the best of our knowledge no existing system" claim.
+2. Show me Section 2.7 (DySECT) in full — it was cut off. Confirm the
+   citation details from the ACL Anthology record before writing it, and
+   state explicitly which capabilities DySECT shares with SLDE-AFT
+   (closed loop, probabilistic KB confidence, prompt-augmentation
+   feedback, synthetic training data from high-confidence triples,
+   hierarchical abstraction, human curation interface) and which are
+   ours (structured seeding at fixed confidence, provenance as a gate on
+   training data, the conservative Noisy-OR rule with shrinkage and the
+   exclusivity penalty plus its formal analysis, and the empirical
+   evaluation).
+
+Also verify the years and venues for Ji et al. and Nguyen: the old
+reference list has both with incomplete details. Put anything you cannot
+confirm in paper/UNVERIFIED.md rather than in the bibliography.
+
+Commit, show me the full text of 2.1-2.7, and stop.
+
+Section 2 is approved with six fixes. Do not start Section 3 yet.
+
+1. The "5-8 percentage points" recall claim for DySECT: I cannot verify
+   this from any public source. Open the paper's Table 1 (DocRED, recall
+   and average extracted triples). If the figure is there, cite it
+   precisely with the models it applies to; if not, delete the sentence
+   and state only that they report consistent recall improvements across
+   models under KB-guided prompting. Record the outcome in
+   paper/UNVERIFIED.md.
+2. Acronym: the abstract expands DySECT as "Dynamic Self-Evolving
+   Extraction and Curation Toolkit"; the paper title is "A Dynamic
+   Self-Evolving Extraction System". Use both correctly.
+3. DySECT's KB is built on Theo (Mitchell et al.), per their repository.
+   Verify and cite Theo if accurate.
+4. Verify Ji et al. (knowledge graph survey): the old reference list gives
+   32(5):2429-2443 with no year; confirm the correct volume, issue, pages
+   and year from IEEE TNNLS before using it.
+5. Two different Wang et al. 2023 papers are cited (InstructUIE, Wang X.
+   et al.; SELF-INSTRUCT, Wang Y. et al.). Give them distinct keys and
+   make sure the numeric citations point to the right entries.
+6. Note for the Discussion (do not write it yet): DySECT evaluates on
+   DocRED and reports recall improvements there, whereas our DocRED pilot
+   found aggregation reduced recall from 0.032 to 0.005. State this
+   contrast honestly when we reach the Discussion.
+
+Then Section 3 (Research Gap). The old draft's Table 1 claims SLDE-AFT is
+the only system satisfying all six capability dimensions. That claim is no
+longer supportable: add DySECT as a column, fill it from Section 2.7, and
+rewrite the section so the gap is stated as what remains untested rather
+than what no system has built. Remove every "no existing system" and
+"first" claim.
+
+Section 2 is approved with six fixes. Do not start Section 3 yet.
+
+1. The "5-8 percentage points" recall claim for DySECT: I cannot verify
+   this from any public source. Open the paper's Table 1 (DocRED, recall
+   and average extracted triples). If the figure is there, cite it
+   precisely with the models it applies to; if not, delete the sentence
+   and state only that they report consistent recall improvements across
+   models under KB-guided prompting. Record the outcome in
+   paper/UNVERIFIED.md.
+2. Acronym: the abstract expands DySECT as "Dynamic Self-Evolving
+   Extraction and Curation Toolkit"; the paper title is "A Dynamic
+   Self-Evolving Extraction System". Use both correctly.
+3. DySECT's KB is built on Theo (Mitchell et al.), per their repository.
+   Verify and cite Theo if accurate.
+4. Verify Ji et al. (knowledge graph survey): the old reference list gives
+   32(5):2429-2443 with no year; confirm the correct volume, issue, pages
+   and year from IEEE TNNLS before using it.
+5. Two different Wang et al. 2023 papers are cited (InstructUIE, Wang X.
+   et al.; SELF-INSTRUCT, Wang Y. et al.). Give them distinct keys and
+   make sure the numeric citations point to the right entries.
+6. Note for the Discussion (do not write it yet): DySECT evaluates on
+   DocRED and reports recall improvements there, whereas our DocRED pilot
+   found aggregation reduced recall from 0.032 to 0.005. State this
+   contrast honestly when we reach the Discussion.
+
+Then Section 3 (Research Gap). The old draft's Table 1 claims SLDE-AFT is
+the only system satisfying all six capability dimensions. That claim is no
+longer supportable: add DySECT as a column, fill it from Section 2.7, and
+rewrite the section so the gap is stated as what remains untested rather
+than what no system has built. Remove every "no existing system" and
+"first" claim.
+
+Section 2 is approved with six fixes. Do not start Section 3 yet.
+
+1. The "5-8 percentage points" recall claim for DySECT: I cannot verify
+   this from any public source. Open the paper's Table 1 (DocRED, recall
+   and average extracted triples). If the figure is there, cite it
+   precisely with the models it applies to; if not, delete the sentence
+   and state only that they report consistent recall improvements across
+   models under KB-guided prompting. Record the outcome in
+   paper/UNVERIFIED.md.
+2. Acronym: the abstract expands DySECT as "Dynamic Self-Evolving
+   Extraction and Curation Toolkit"; the paper title is "A Dynamic
+   Self-Evolving Extraction System". Use both correctly.
+3. DySECT's KB is built on Theo (Mitchell et al.), per their repository.
+   Verify and cite Theo if accurate.
+4. Verify Ji et al. (knowledge graph survey): the old reference list gives
+   32(5):2429-2443 with no year; confirm the correct volume, issue, pages
+   and year from IEEE TNNLS before using it.
+5. Two different Wang et al. 2023 papers are cited (InstructUIE, Wang X.
+   et al.; SELF-INSTRUCT, Wang Y. et al.). Give them distinct keys and
+   make sure the numeric citations point to the right entries.
+6. Note for the Discussion (do not write it yet): DySECT evaluates on
+   DocRED and reports recall improvements there, whereas our DocRED pilot
+   found aggregation reduced recall from 0.032 to 0.005. State this
+   contrast honestly when we reach the Discussion.
+
+Then Section 3 (Research Gap). The old draft's Table 1 claims SLDE-AFT is
+the only system satisfying all six capability dimensions. That claim is no
+longer supportable: add DySECT as a column, fill it from Section 2.7, and
+rewrite the section so the gap is stated as what remains untested rather
+than what no system has built. Remove every "no existing system" and
+"first" claim.
+
+Section 2 is approved with six fixes. Do not start Section 3 yet.
+
+1. The "5-8 percentage points" recall claim for DySECT: I cannot verify
+   this from any public source. Open the paper's Table 1 (DocRED, recall
+   and average extracted triples). If the figure is there, cite it
+   precisely with the models it applies to; if not, delete the sentence
+   and state only that they report consistent recall improvements across
+   models under KB-guided prompting. Record the outcome in
+   paper/UNVERIFIED.md.
+2. Acronym: the abstract expands DySECT as "Dynamic Self-Evolving
+   Extraction and Curation Toolkit"; the paper title is "A Dynamic
+   Self-Evolving Extraction System". Use both correctly.
+3. DySECT's KB is built on Theo (Mitchell et al.), per their repository.
+   Verify and cite Theo if accurate.
+4. Verify Ji et al. (knowledge graph survey): the old reference list gives
+   32(5):2429-2443 with no year; confirm the correct volume, issue, pages
+   and year from IEEE TNNLS before using it.
+5. Two different Wang et al. 2023 papers are cited (InstructUIE, Wang X.
+   et al.; SELF-INSTRUCT, Wang Y. et al.). Give them distinct keys and
+   make sure the numeric citations point to the right entries.
+6. Note for the Discussion (do not write it yet): DySECT evaluates on
+   DocRED and reports recall improvements there, whereas our DocRED pilot
+   found aggregation reduced recall from 0.032 to 0.005. State this
+   contrast honestly when we reach the Discussion.
+
+Then Section 3 (Research Gap). The old draft's Table 1 claims SLDE-AFT is
+the only system satisfying all six capability dimensions. That claim is no
+longer supportable: add DySECT as a column, fill it from Section 2.7, and
+rewrite the section so the gap is stated as what remains untested rather
+than what no system has built. Remove every "no existing system" and
+"first" claim.
+
+Commit, show me the corrected 2.7 and the new Section 3, and stop.
+
+DEC-027 accepted as a negative result. Four things:
+
+1. Report macro (per-product bootstrap, -0.021 [-0.042, -0.003]) as the
+   primary outcome, since that is what was pre-registered. Report micro F1
+   (0.511 -> 0.553, t p = 0.006) alongside it, and explain the divergence:
+   micro pools triples and rewards precision across many products, macro
+   weights products equally and reflects the per-product recall loss.
+   Do not present micro as the headline.
+2. Add the mechanism: recall fell in all 5 seeds (0.464 -> 0.414-0.425),
+   the first time recall has moved in any fine-tuning run; on the 8-product
+   set it was pinned at 0.125 by the small gold count. Validation selection
+   used F1 where recall was flat across configurations, so it effectively
+   selected on precision alone and chose the most conservative adapter.
+3. Add the software-version caveat to EVID-044 in one line: no run in this
+   project pinned torch/transformers/trl/bitsandbytes; only PEFT versions
+   are recoverable from adapter metadata (DEC-027: 0.21.0 throughout).
+   Add `pip freeze > outputs/<run>/pip_freeze.txt` to the runbook.
+4. Add that validation selection was decided by precision alone, with the
+   top three configurations within 0.01 F1 on 20 products.
+
+Then update paper/main.tex and Results Summary.md so EVID-044 supersedes
+EVID-040 as the fine-tuning result, and the claim reads as negative rather
+than exploratory-positive. Commit, push, stop. Do not start DEC-029 yet.
+
+Yes, carry out the instructions with all four of your corrections — they
+are right and mine were wrong. Two additions:
+
+1. Resolve the 99 vs 137 false-positive discrepancy rather than noting it.
+   True positives match exactly, so the gap is entirely in false-positive
+   counting, and the reported micro precision depends on which convention
+   is used. Find the cause (global deduplication of identical triples,
+   predictions with unmatched subjects being dropped, or similar), state it
+   in EVID-044, and say which convention the reported micro numbers use.
+   If the two conventions give different micro F1 values, report both.
+2. When rechecking the EVID-040 citations around main.tex:1053 and
+   1207-1229, make sure no remaining text presents the old +0.064 result as
+   a current finding. EVID-040 should appear only as a superseded
+   exploratory result with its tuning-on-test caveat.
+
+Then commit, push, and stop before DEC-029.
+
+---
+
+## Project memory: DEC-029 run, wait-time log (2026-09-24)
+
+Reference record of how long DEC-029 (30-seed ablation, 25 new seeds
+47-71 x 3 configs = 75 runs x 155 API calls = 11,625 calls) took and how
+long I waited. All times are local (+02:00), taken from file timestamps
+in `outputs/dec029_ablation_extended/`.
+
+**Timeline**
+
+| Time | Event |
+|---|---|
+| 13:58:31 | Run started, sequential (one run at a time) |
+| ~14:00 | First measurement: about 8 s per API call. Projection for sequential: 11,625 x 8.07 s = 93,814 s = **26.1 h** (13-26 h depending on API speed) |
+| 14:01:30 (approx.) | Sequential run stopped after 16 calls (kept in cache, reused, not re-paid) |
+| 14:01:46 | Restarted as **6 parallel shards** (3 configs x seeds 47-59 / 60-71) |
+| 14:15:44 | I asked "is the run finished?" -> 0/75 done, first 6 runs at 116-140/155 calls |
+| 14:17:27-14:20:19 | First 6 runs completed (one per shard) |
+| 14:20:22 | I asked "how much time?" -> 6/75 done, ETA given as ~18:10 |
+| 14:25:07 | This log written |
+
+**Measured duration of the first 6 runs (start 14:01:46)**
+
+| Run | Finished | Duration |
+|---|---|---|
+| without_feedback / seed 47 | 14:17:27 | 15 min 41 s |
+| full / seed 47 | 14:18:11 | 16 min 25 s (had 16 calls already cached) |
+| full / seed 60 | 14:19:45 | 17 min 59 s |
+| without_prob_kb / seed 47 | 14:19:50 | 18 min 04 s |
+| without_prob_kb / seed 60 | 14:19:59 | 18 min 13 s |
+| without_feedback / seed 60 | 14:20:19 | 18 min 33 s |
+| **Mean** | | (15.68 + 16.42 + 17.98 + 18.07 + 18.22 + 18.55) / 6 = **17.49 min per run** |
+
+**Projection from those measurements**
+
+- Sequential: 75 runs x 17.49 min = 1,311.8 min = **21.9 h**
+- Parallel: the longest shards (seeds 47-59) have 13 runs each, so
+  13 x 17.49 min = 227.4 min = **3 h 47 min** after 14:01:46, i.e. an
+  expected finish around **17:49**. The earlier ETA of ~18:10 was more
+  conservative (11.5 rounds x 20 min).
+- Speed-up from parallelising: 21.9 h / 3.8 h = **about 5.8x**.
+- Cost is unaffected by parallelising: ~$0.22 expected ($0.29 worst case).
+
+**What happened after that (actual)**
+
+| Time | Event |
+|---|---|
+| ~15:50 | Run stopped by Claude Code: the whole PC was critically low on memory (only 1.1 of 5.9 GB free). 43/75 runs were done. Nothing lost: every finished call was cached |
+| ~16:06 | While programs were being closed, an editor saved old copies over `Decision log.md`, `AUDIT.md` and a script (plus stray voice-typing text). Found and restored from git at 18:25; damaged copies were backed up |
+| 16:05:45 | Resumed with 3 processes instead of 6 (each process uses only ~33 MB; the memory pressure came from the rest of the PC) |
+| 16:44:48 | without_prob_kb crashed on a network timeout (OpenRouter did not answer within 90 s); restarted from cache |
+| 17:10 | without_prob_kb crashed again (connection dropped mid-response); relaunched with automatic restart |
+| 17:52:09 | full and without_feedback finished (25/25 each) |
+| 18:12:30 | without_prob_kb finished: **75/75 runs done** |
+| 18:13:41-18:20:28 | Retry pass for 3 runs with >=20% failed calls (inherited DEC-023 rule) |
+
+**Actual totals**
+
+- Wall-clock: 13:58:31 -> 18:20:28 = **4 h 21 min 57 s** (15,717 s).
+  - Runs only (to 18:12:30): 4 h 13 min 59 s.
+  - Time lost to the memory stop: ~15 min (last progress ~15:50, resumed 16:05:45).
+- Compared with the projections:
+  - sequential estimate 21.9 h -> actual 4.4 h, about **5x faster**;
+  - first parallel ETA 17:49 -> actual 18:12:30, **23.5 min later**,
+    because of the memory stop, dropping from 6 to 3 processes, and the
+    two network crashes.
+- My waiting: 18 progress checks between 14:15 and 18:12 (~4 h), plus questions about lost data and OpenRouter credits.
+- Cost: **$0.24** (sum of per-call costs in the final call logs:
+  $0.2409). Pre-registered estimate $0.246. OpenRouter balance
+  afterwards: $5.00 - $1.99 used = $3.01 left.
+- Calls: 11,625 in the final logs, all HTTP 200.
+
+**Lessons:**
+- Close other programs *before* a long run, not during it. Closing
+  editors mid-run saved old copies over tracked files. After any
+  interruption, check `git status` for files you did not mean to change.
+- This PC has only ~6 GB RAM. 3 parallel processes were stable; 6
+  were stopped under memory pressure (from the whole PC, not the
+  processes).
+- `openrouter_llm.py` does not catch network errors (timeouts, dropped
+  connections), so one bad connection ends a process. Run with an
+  automatic restart loop until that is fixed.
+- API-bound experiments here are limited by per-call latency
+(3-19 s, mean ~8 s), not by compute or cost. Independent (config, seed)
+runs with their own caches should be sharded in parallel from the start.
+Estimate wall-clock time (calls x mean latency / parallel shards) next to
+the dollar cost before launching.
+
+Approved: add the cache and parallel option, then pre-register DEC-031 with
+these decisions.
+
+Scope: all 843 eligible dev documents, ALL sentences (~6,870 calls, ~$0.13,
+~3 h). Cost is approved.
+
+Sentence selection: all sentences is the primary setting. The pilot sent only
+gold evidence sentences, which is an oracle that tells the extractor which
+sentences contain a relation. Add an evidence-only arm solely for
+comparability with the pilot, and add a line to the manuscript's DocRED pilot
+text stating that the pilot used this oracle setting.
+
+Matching-key arms (all recomputed offline from the same extractions):
+  (a) exact string, as now;
+  (b) pure string normalisation - case/whitespace folding, article and
+      punctuation stripping, no gold resources. This is the deployable arm
+      and the PRIMARY comparison for the matching-key hypothesis;
+  (c) gold-alias assisted, using DocRED's entity mentions - reported as an
+      ORACLE UPPER BOUND and labelled as such everywhere. It cannot support
+      a claim about what a deployed system would achieve.
+Plus R3 (distinct-source counting) on the same extractions: first
+out-of-domain test of the corrected rule.
+
+Report for every arm: precision, recall, F1, admitted counts, contested-slot
+counts and how many admitted anything. Pre-register what confirms and what
+refutes the matching-key explanation, including what result would mean the
+explanation is wrong.
+
+Show me the pre-registration and the normalisation rules before running.
+
+Write up DEC-032 as EVID-047 with this framing:
+
+1. Extractor-recall hypothesis: CONFIRMED on Llama by the pre-registered
+   rule (rho = 0.022, R2 below no aggregation, CI excludes zero). But report
+   the split in the DeepSeek check plainly: DeepSeek recovers MORE
+   corroborated facts (1.35% vs 0.75%, CI excludes zero) yet has a LARGER
+   aggregation gap (-0.064 vs -0.040). State that low extractor recall is
+   necessary but not sufficient to explain the failure, and note the likely
+   reason: DeepSeek's higher no-aggregation F1 (0.081 vs 0.053) means it
+   loses more when aggregation discards nearly everything.
+2. R3 is scope-limited, and say why: it corrects repeat-counting, so it only
+   acts when the extractor duplicates within a source. Llama 138 duplicates
+   -> precision +0.054 [+0.015, +0.094]; DeepSeek 6 duplicates -> +0.004,
+   CI includes zero. F1 is Negative for Llama and Null for DeepSeek by the
+   pre-registered rule. This is the honest scope statement for the corrected
+   rule and should appear in the Discussion too.
+3. Cost was $0.686 against the $1.98 estimate; DeepSeek's actual multiplier
+   was well below the 9.7x assumed.
+4. The pilot correction stands regardless of these results: the 15-document
+   pilot sent whole abstracts in a single call, so each document had one
+   source and nothing could be aggregated. The pilot tested the extractor
+   only, never the framework. Supersede it everywhere it appears.
+
+Then update paper/main.tex and Results Summary.md: BioRED is now a
+500-abstract second domain with an external baseline, and professor point 9
+is addressed. Commit, push, stop.
+
+
+Confirmed venue: Language Resources and Evaluation (LRE), not KAIS. This
+resolves the word-cap uncertainty - LRE does not impose KAIS's 15,000-word
+rule, so do not plan cuts around it. Still measure the float sizes exactly
+for the record, but treat it as informational, not a constraint to cut to.
+
+On DocRED official metrics: yes, do the recommended plan -
+1. Add the one-sentence non-comparability caveat in main text (60-100 words).
+2. Score official-style F1/Ign-F1/Evidence-F1 on the 845 already-extracted
+   documents, in the supplement, with the two caveats stated (out-of-schema
+   relations, unmatched entities).
+3. Skip the $0.10 full-998-document extraction - it doesn't buy
+   comparability with the literature either way, so it's not worth the
+   scope creep this late.
+
+Do not touch the notebooks or Learnings.md - I'll handle those.
+
+After this, check the LRE submission guidelines/template specifically
+(different from KAIS's) and confirm the manuscript matches: reference
+style, structural requirements, declarations format. Report back before
+changing anything.
+changing anything.
+
+Three decisions:
+
+1. Approved: switch to sn-apa (author-date). Recompile and re-check length
+   after the switch, since APA citations add words.
+
+2. Trim toward the 24-27 page target from the earlier length plan, not the
+   current 35. Do NOT cut any experimental result, caveat, or limitation.
+   Cut candidates instead: tighten the DEC-031/032/033 write-ups (report
+   final numbers and the verdict, move step-by-step methodology detail to
+   the supplement where it isn't already there), reduce process narration
+   ("we then checked...", "this confirms..."), and check for redundancy
+   between the three Section-6.1-labeled results paragraphs you just found
+   (DocRED, BioRED, protocol check) - fixing the duplicate-label bug may
+   also surface duplicated framing text across them.
+
+3. Fix the three-way "Section 6.1" label collision first, before anything
+   else: give DocRED, BioRED and the protocol check their own numbered
+   subsections (6.1, 6.2, 6.3 or similar) so cross-references are unique.
+
+4. Draft the cover letter and declarations as TEMPLATES with clearly marked
+   placeholders for: funding source, competing interests, author
+   contributions, ethics/consent (state N/A if genuinely not applicable),
+   and ORCID/homepage links. Do not invent any of these values - I will fill
+   them in with Ebada.
+
+Show me the trimmed length and the section-numbering fix before further
+changes. Commit, push, stop.
