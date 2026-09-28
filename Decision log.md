@@ -32,6 +32,8 @@ just says where each DEC currently stands and what's left.
 | 032 | BioRED at Scale (extractor recall vs. corroboration) | DONE (EVID-047) | Extractor-recall constraint replicates (Llama rho 0.022); R3 acts only with within-source duplicates (Llama precision +0.054, DeepSeek null) | Supersedes the DEC-009 pilot |
 | 033 | Is the corroboration bottleneck a protocol artefact? | DONE: STANDS by the pre-registered rule, with partial relief on BioRED ($0.945) | EVID-048 | None |
 | 034 | DocRED under official-style metrics (descriptive, no new extraction) | DONE ($0) | EVID-049 | None |
+| 035 | DySECT released-code check (feedback round 2) | DONE ($0) | Repeat counting is DySECT's documented design, active in its released KB (87.5% of prompt-eligible generalizations pass 0.5 only via repeats); mutex penalty fired 0/61,676; its m(t) is type-level, not rival values — EVID-050 | Wording approved, held for Stage C (`paper/STAGE_C_NOTES.md`). DEC-035b rerun estimated (~$15 one model / ~$75-80 all four), not approved |
+| 036 | Stronger extractor (DeepSeek-V3.2) + token-logprob confidence on DEC-026 comparison | PRE-REG DRAFT, NOT RUN | Logprobs verified available (Llama-8B, DeepSeek, Llama-70B); est. < $0.50 | Commit pre-reg, then run on approval |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3599,3 +3601,167 @@ Expected Results
 
 Status
 → Accepted / Implementing / Testing / Completed / Superseded
+---
+
+# DEC-035 — Check DySECT's released code (professor feedback round 2, item 1; $0)
+
+## Why is this required?
+
+`new feddback.md` (2026-09-29): "Test our findings on DySECT's released code:
+does it deduplicate by source, and do the ceiling and R3 apply there?"
+Until done, the manuscript must write "in our implementation", not "defect".
+
+## Decision
+
+Static code trace of megagonlabs/dysect @ 8d6c680 plus a zero-cost audit of
+the KB they released (`scripts/dec035_dysect_kb_audit.py`). No rerun of
+their extractor (that would need OpenAI/Fireworks spend and their DocRED
+setup).
+
+## Status
+
+DONE — EVID-050. Repeat counting is DySECT's documented design and is active
+in their released run (87.5% of prompt-eligible generalization edges pass
+only through repeats); the mutual-exclusion penalty never fired; their m(t)
+is a type-level conflict count, not our rival-value count. Wording decision
+pending with the user.
+
+## DEC-035 addendum (2026-09-29): user decisions and DySECT-rerun estimate
+
+- User approved the "by design; we test that independence assumption"
+  wording in place of "defect", and one m(t)-disambiguating sentence at
+  every place the paper equates our m(t) with DySECT's. Both are HELD for the
+  Stage C writing pass; locations are listed in `paper/STAGE_C_NOTES.md`.
+- DEC-035b (rerun DySECT's own DocRED extractor with a source-deduplicated
+  KB) is ESTIMATED ONLY. It is not approved and not run.
+
+### DEC-035b cost/time estimate
+
+Protocol (DySECT Sect. 4 + repo): 500 DocRED train docs (`data_prep.py`,
+random.seed(1)); Positive mode, iteration 1; recall judged per document by
+an LLM judge (gpt-4.1, `eval_dysect.py`). Their iteration-0 extractions are
+not released and iteration 1 reads subjects from them, so three arms per
+model:
+(a) iter-0 base; (b) iter-1 with the released KB (repeat counting);
+(c) iter-1 with the same KB rescored one-observation-per-(source, document).
+Iteration 2 is out of scope: it needs their KB re-integration (O*NET
+files, gpt-4o-mini acquisition loop).
+
+Token assumptions per doc: extraction ~1.7k in / ~0.6k out (4.3k-char
+prompt, their 250-token system prompt, a DocRED doc, the KB concepts);
+judge ~1.2k in / ~0.9k out. Per arm (500 docs): extraction 0.85M in /
+0.30M out; judge 0.60M in / 0.45M out = **$4.80 per arm with gpt-4.1**.
+OpenRouter prices 2026-09-29.
+
+| Extractor | Extraction, 3 arms | Judge (gpt-4.1), 3 arms | Total |
+|---|---:|---:|---:|
+| Llama-3.3-70B ($0.10/$0.32) | ~$0.55 | ~$14.4 | **~$15** |
+| GPT-4.1-mini ($0.40/$1.60) | ~$2.5 | ~$14.4 | ~$17 |
+| Kimi K2.5 ($0.45/$2.25) | ~$3.2 (more if it emits reasoning tokens) | ~$14.4 | ~$18+ |
+| GPT-4.1 ($2/$8) | ~$12.3 | ~$14.4 | ~$27 |
+| All four | ~$18.5 | ~$58 | **~$75-80** |
+
+With a gpt-4.1-mini judge (a deviation from their protocol): ~$1/arm.
+Llama-70B would then total ~$3.5. Wall-clock: ~3,000 calls per model,
+about 1 h at 8-way concurrency.
+
+Recommendation if run: one model, Llama-3.3-70B (cheapest; their Table 1
+base recall of 23.23 gives a sanity check for arm a), with their gpt-4.1
+judge. Expected effect is probably small: the confidence filter only
+decides which of at most 51 (vs 42 deduplicated) concept names enter the
+prompt. A null here says repeat counting does not change DySECT's reported
+recall. It does not say repeat counting is harmless.
+
+---
+
+# DEC-036 — Stronger extractor + token-logprob confidence on the main aggregation comparison (feedback round 2, items 3-4) — PRE-REGISTRATION DRAFT, NOT RUN
+
+## Why is this required?
+
+`new feddback.md`: (3) "Add a token-logprob confidence variant if it is
+cheap. Verbalized confidence in [0.80, 0.96] makes the score almost
+count-driven." (The extractor prompt literally instructs "Output confidence
+between 0.80 and 0.96", `src/extractors/openrouter_llm.py` l.32.)
+(4) "Rerun the main aggregation comparison with one stronger extractor, so
+the conclusion does not rest on an 8B model." The main aggregation
+comparison is DEC-026 (Table 1: R1-R6 on datasets A = product657 and
+B = product200), which rests entirely on Llama-3.1-8B.
+
+## Feasibility checks already done (2026-09-29, total ~$0.0002)
+
+- Token logprobs come back through OpenRouter with
+  `provider.require_parameters=true` for Llama-3.1-8B (Novita), DeepSeek-V3.2
+  (DigitalOcean) and Llama-3.3-70B (Parasail): one probe call each, full
+  per-token logprobs over the JSON output.
+- GPT-4.1, Claude Sonnet 5 and Gemini 2.5 Pro do NOT expose logprobs on
+  OpenRouter. GPT-4o does.
+- Original costs: dataset A 155 calls, $0.0026; dataset B 620 calls, $0.012
+  (Llama-3.1-8B).
+
+## Design
+
+- **Stronger extractor: DeepSeek-V3.2.** It is already the paper's second
+  extractor on CaRB/DocRED/BioRED, it supports logprobs, and it is cheap.
+- **Runs.** Rerun the unchanged DEC-003 (A) and DEC-006 scale-up (B)
+  pipelines: same products, splits, prompt, 4 iterations, temperature 0,
+  tau=0.88, lambda=0.75.
+  - 2 extractors: Llama-3.1-8B (rerun, now with logprobs) and DeepSeek-V3.2.
+  - Datasets A and B.
+  - Every call requests logprobs. For each emitted triple, the run logs the
+    verbalized confidence and a logprob confidence side by side.
+  - One extraction run per cell, so both confidence variants score
+    *identical* observations.
+- **Logprob confidence (fixed before seeing data).** Primary: the
+  geometric-mean token probability over the tokens of the triple's
+  subject, predicate and object string values, exp(mean logprob). Tokens
+  are aligned by character offsets in the reconstructed output. Secondary:
+  the joint probability of the object-value tokens only. A triple whose
+  tokens cannot be aligned keeps its verbalized confidence and is counted
+  and reported.
+- **Replay.** `dec026_aggregation_rules_replay` unchanged (R1-R6, the same
+  bootstrap), once with verbalized and once with logprob observation
+  confidences.
+- **Primary analysis:** R3 minus R2 precision at fixed tau=0.88, DeepSeek,
+  verbalized, datasets A and B (the claim in Table 1 now tested on a
+  stronger extractor).
+  **Secondary:** the same with logprob confidence; all other rule pairs;
+  F1; the Llama rerun (a reproducibility check against the original
+  snapshots, since the provider may differ).
+- **Decision rule.** The Table-1 conclusion "R3 raises precision over R2"
+  holds for a stronger extractor if the DeepSeek bootstrap 95% CI of R3-R2
+  precision excludes 0 in the same direction on at least one dataset with
+  none reversed. It fails if the CIs include 0 on both datasets, or reverse.
+  For logprob: report whether the score stops being count-driven, i.e. the
+  Spearman rho between A(t) and n_obs(t) under logprob vs verbalized
+  confidence. Descriptive, no threshold.
+
+## Cost
+
+Llama rerun A+B ~$0.02. DeepSeek A+B ~$0.25 (the probe cost $0.00013 per
+short call; product texts are longer, so this is an upper-end estimate).
+**Total < $0.50.**
+
+## Status
+
+DRAFT. Awaiting the user's approval to (1) commit this pre-registration
+first, which gives the timestamped commit hash the professor asked for, and
+(2) spend < $0.50 on the runs.
+
+## DEC-035b staged plan (user-approved 2026-09-29; pre-registered here before any run)
+
+- **Step A (approved, ~$3.5): internal go/no-go only, NOT for the paper.**
+  Llama-3.3-70B via OpenRouter, arms a/b/c as above, 500 docs, judged by
+  gpt-4.1-mini with DySECT's judge prompt unchanged.
+  - Outcome: cumulative iteration-1 recall, arm b (released KB, repeat
+    counting) vs arm c (one observation per (source, document)).
+  - **Meaningful = |recall_b - recall_c| >= 2.0 percentage points**, about
+    a third of the smallest KB gain DySECT reports (5-8 pp). Also report a
+    paired per-document bootstrap 95% CI (10,000 resamples).
+  - Below 2.0 pp: no-go. Stop and report the null to the user.
+- **Step B (~$11.50 more): NOT approved.** Only if Step A is meaningful,
+  ask the user to rerun the same model with DySECT's gpt-4.1 judge for a
+  citable number.
+- GPT-4.1-mini, Kimi K2.5 and GPT-4.1 as extractors: not approved; each
+  needs separate approval.
+
+DEC-036 status: user approved commit + run (< $0.50) on 2026-09-29.

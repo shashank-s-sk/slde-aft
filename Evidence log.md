@@ -5233,3 +5233,101 @@ updated with this entry.
 
 None. paper/main.tex (one sentence) and paper/supplementary.tex (S10)
 are updated.
+
+---
+
+# EVID-050 — DySECT's released code and KB: repeat counting is documented design; mutual-exclusion penalty never fired (DEC-035; $0)
+
+## Setup
+
+- Repo: github.com/megagonlabs/dysect, commit 8d6c680 (2026-03-02), cloned 2026-09-29.
+- Paper text: arXiv 2603.06915v2, Sect. 2.2 (Eq. 1-2).
+- Released KB: `kbs/demo_acl_2026_run_dec_25_2025.tar.gz` (9,234 entity files, 61,772 stored triples).
+- Script: `scripts/dec035_dysect_kb_audit.py`; output `outputs/dec035/dysect_kb_audit.json`.
+
+## Code trace (basicLib.py, top-level copy)
+
+- Confidence path: `addValueFullPath` (l.1950) stores each observation under
+  subject||predicate||object||iteration||source||provenance||date, bumps a
+  `frequency` counter, then `overallConfidenceAupdate` (l.1861) ->
+  `findAllConfidenceScores_noLoop` (l.1780) collects every (confidence,
+  frequency) leaf across all iterations, sources, prompts and documents ->
+  `conservativeNoisyOr` (l.1708) expands each leaf `frequency` times
+  (`createListOfConfidenceScores`, l.1699) and returns 1 - prod(1 - 0.75 c).
+  No deduplication by source anywhere. The source name only selects the
+  fully-trusted bypass (returns '1').
+- `updateJson` (l.847), which the earlier chat trace pointed to, is a separate
+  triple-collection store (totalCount); it is NOT on the confidence path.
+- Penalty: C = C_agg/(k+1), where k = `findAllMutuallyExclusiveInstances`
+  (l.1818) = number of concepts declared mutually exclusive with the triple's
+  subject/object type of which the entity is also an instance. It is a
+  TYPE-LEVEL membership conflict, not a count of rival values of a
+  single-valued slot. DySECT's paper: "m(t) is the number of mutually
+  exclusive instances detected for t".
+- Thresholds on stored confidence: only `extract_with_kb_fireworks.py`
+  (l.205-218): generalization concepts with overall confidence >= 0.5 are
+  added to the DocRED prompt. `getEntityByConfidence` (threshold 0.8, for
+  negative examples) is defined but never called.
+- Per-observation confidences are constants: gpt-4o-mini acquisition 0.6
+  (kbManagement.py l.288), DocRED extractor 0.1, seeds 1.
+
+## DySECT's paper states the repeat counting explicitly
+
+Sect. 2.2: "Frequencies are incorporated by treating f_i as repeated
+independent support for the same confidence value", and lambda "prevents
+overconfidence when evidence is noisy or redundant". Repeat counting is
+therefore DySECT's documented design, with shrinkage as its stated
+mitigation, not an undocumented bug.
+
+## KB audit results
+
+| Quantity | Value |
+|---|---:|
+| Stored triples | 61,772 |
+| Stored overall confidence == repeat-counted conservative Noisy-OR (no penalty) | 60,987 (98.7%) |
+| ... == 1 (seed / trusted) | 370 |
+| Mutual-exclusion division fired (integer k>=1) | **0** |
+| Differs with non-integer implied k (stale value, not a penalty) | 319 |
+| Triples with >1 observation | 26,376 |
+| ... of which all from one source | 24,957 (94.6%) |
+| Generalization edges (non-root) | 8,403 |
+| ... admitted at 0.5 (feed the DocRED prompt) | 4,604 |
+| ... admitted at 0.5 if one observation per (source, document) | 574 |
+| ... admitted only through repeated observations of the same (source, document) | **4,030 (87.5% of admitted)** |
+| Distinct concept names admissible: repeat counting vs dedup | 51 vs 42 |
+| DocRED-extractor triples | 7,794; 1,330 repeat within one document, 450 span >1 document |
+
+Why dedup admits so little: a single gpt-4o-mini observation scores
+0.75 x 0.6 = 0.45 < 0.5, so under per-source counting no fact from that one
+source can reach the prompt threshold. The design needs repeat counting to
+admit anything.
+
+## Result
+
+1. **Repeat counting, not source deduplication, is DySECT's behaviour, in
+   both code and paper.** Confirms the chat trace's conclusion, but through
+   a different function (`addValueFullPath`/`findAllConfidenceScores_noLoop`,
+   not `updateJson`).
+2. **It is active, not latent**, in the released run: 87.5% of the
+   generalization edges DySECT's DocRED extractor can inject into prompts
+   pass the 0.5 threshold only because the same source/document was counted
+   more than once. Whether this changes DySECT's reported DocRED F1 is NOT
+   tested here (that needs rerunning their extractor: API cost).
+3. **"Defect" is NOT more defensible.** DySECT documents repeat counting as
+   intended and names shrinkage as its guard. Accurate wording: DySECT counts
+   repeated observations, including re-reads of one source, as independent
+   support by design; this paper tests that independence assumption (R3).
+4. **Rival ceiling: holds algebraically in DySECT's code** (C_agg<1 =>
+   C<1/(k+1)<=0.5 at the code's only threshold, 0.5), with one exception:
+   a trusted/seed triple (C_agg=1) with k=1 scores exactly 0.5 and passes
+   ">= 0.5". But **the penalty never fired in the released KB** (0 of
+   61,676), and DySECT's k counts type-level mutual-exclusion conflicts,
+   whereas this paper's m(t) counts rival values of a designated
+   single-valued slot. The manuscript's "the rule evaluated throughout this
+   paper is DySECT's" must say that m(t) is reinterpreted in our
+   implementation.
+
+## Next step
+
+Manuscript wording is the user's call (report first). Experiment queue
+continues: stronger-extractor rerun, then logprob confidence.
