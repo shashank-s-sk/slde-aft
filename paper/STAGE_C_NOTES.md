@@ -329,3 +329,21 @@ AI declaration still awaiting the user's final approval before insertion.
 - Verification: 0 numbers lost against both the pre-pass-2 file and the
   original pre-trim file (261 in main, 47 in the supplement). All caveat
   phrases are present. The 8 limitation paragraphs are unchanged.
+
+## 13. Stage 3d CLOSED at 23 body pages (user decision, 2026-09-29)
+
+Option (c): accept 23 pages. No third tightening pass, and the protocol
+table is not to be touched. Body cut 38 -> 25 -> 23 pages with no result
+or caveat lost.
+
+## 14. Stage 4 started - cover letter, highlights, author inputs
+
+- `paper/cover_letter_DRAFT.md` replaces the LRE template. It states the
+  evidence scope plainly: single runs on the public corpora; thirty seeds
+  only for the supplement's ablation; DeepSeek the only full-scale
+  external extractor; the others only on 30 CaRB sentences; the rule
+  comparison uses synthetic products and its pre-registration was
+  committed with its results. Two venue "fit" paragraphs (KBS / ESWA).
+- `paper/HIGHLIGHTS_DRAFT.md`: 5 bullets, computed lengths 62-79 chars.
+- `paper/STAGE4_INPUTS.md`: everything needed from the authors in one
+  list.
