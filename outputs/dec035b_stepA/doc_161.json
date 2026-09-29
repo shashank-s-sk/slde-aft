@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_161",
+ "base_raw": "[\n    [\"Lukyamuzi Bashir\", \"PER\", \"date of birth\", \"7 December 1986\", \"TIME\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"position held\", \"music director\", \"MISC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"position held\", \"film director\", \"MISC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"position held\", \"producer\", \"MISC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"country of citizenship\", \"Uganda\", \"LOC\"],\n    [\"Blu*3\", \"MISC\", \"genre\", \"music\", \"MISC\"],\n    [\"Goodlyfe Crew\", \"MISC\", \"genre\", \"music\", \"MISC\"],\n    [\"Iryn Namubiru\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"Chameleone\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"A Pass\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"member of\", \"Channel O\", \"ORG\"],\n    [\"Channel O\", \"ORG\", \"located in the administrative territorial entity\", \"South Africa\", \"LOC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"director\", \"Bala Bala Sese\", \"MISC\"],\n    [\"Usama Mukwaya\", \"PER\", \"author\", \"Bala Bala Sese\", \"MISC\"],\n    [\"Ashraf Ssemwogerere\", \"PER\", \"cast member\", \"Bala Bala Sese\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Lukyamuzi Bashir\", \"PER\", \"date of birth\", \"7 December 1986\", \"TIME\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"country of citizenship\", \"Uganda\", \"LOC\"],\n    [\"Blu*3\", \"MISC\", \"genre\", \"music\", \"MISC\"],\n    [\"Goodlyfe Crew\", \"MISC\", \"genre\", \"music\", \"MISC\"],\n    [\"Iryn Namubiru\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"Chameleone\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"A Pass\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"Channel O\", \"ORG\", \"country of origin\", \"South Africa\", \"LOC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"employer\", \"Channel O\", \"ORG\"],\n    [\"Usama Mukwaya\", \"PER\", \"occupation\", \"writer\", \"MISC\"],\n    [\"Ashraf Ssemwogerere\", \"PER\", \"occupation\", \"actor\", \"MISC\"],\n    [\"Bala Bala Sese\", \"MISC\", \"director\", \"Lukyamuzi Bashir\", \"PER\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"position held\", \"music director\", \"MISC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"position held\", \"film director\", \"MISC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"position held\", \"producer\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 16,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Lukyamuzi Bashir\", \"PER\", \"date of birth\", \"7 December 1986\", \"TIME\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"country of citizenship\", \"Uganda\", \"LOC\"],\n    [\"Blu*3\", \"MISC\", \"genre\", \"music\", \"MISC\"],\n    [\"Goodlyfe Crew\", \"MISC\", \"genre\", \"music\", \"MISC\"],\n    [\"Iryn Namubiru\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"Chameleone\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"A Pass\", \"PER\", \"nationality\", \"Ugandan\", \"MISC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"employer\", \"Channel O\", \"ORG\"],\n    [\"Channel O\", \"ORG\", \"located in the administrative territorial entity\", \"South Africa\", \"LOC\"],\n    [\"Lukyamuzi Bashir\", \"PER\", \"position held\", \"director of photography\", \"MISC\"],\n    [\"Usama Mukwaya\", \"PER\", \"occupation\", \"writer\", \"MISC\"],\n    [\"Ashraf Ssemwogerere\", \"PER\", \"occupation\", \"actor\", \"MISC\"],\n    [\"Bala Bala Sese\", \"MISC\", \"genre\", \"film\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 17,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

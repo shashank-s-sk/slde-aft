@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_457",
+ "base_raw": "[\n    [\"The Grand Magazine\", \"MISC\", \"publisher\", \"George Newnes\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"editor\", \"Alderson Anderson\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"editor\", \"Herbert Greenhough Smith\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"Agatha Christie\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"E. Phillips Oppenheim\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"Baroness Orczy\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"Rafael Sabatini\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"Edgar Wallace\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"P. G. Wodehouse\", \"PER\"],\n    [\"The Grand Magazine of Fiction\", \"MISC\", \"previous name\", \"The Grand Magazine\", \"MISC\"],\n    [\"Herbert Greenhough Smith\", \"PER\", \"employer\", \"The Strand Magazine\", \"MISC\"],\n    [\"The New York Times\", \"ORG\", \"commented on\", \"The Grand Magazine\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"The Grand Magazine\", \"MISC\", \"published by\", \"George Newnes\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"editor\", \"Alderson Anderson\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"editor\", \"Herbert Greenhough Smith\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"contains\", \"fiction\", \"MISC\"],\n    [\"The Grand Magazine\", \"MISC\", \"contains\", \"non-fiction\", \"MISC\"],\n    [\"The Grand Magazine of Fiction\", \"MISC\", \"previous name\", \"The Grand Magazine\", \"MISC\"],\n    [\"Agatha Christie\", \"PER\", \"author\", \"The Grand Magazine\", \"MISC\"],\n    [\"E. Phillips Oppenheim\", \"PER\", \"author\", \"The Grand Magazine\", \"MISC\"],\n    [\"Baroness Orczy\", \"PER\", \"author\", \"The Grand Magazine\", \"MISC\"],\n    [\"Rafael Sabatini\", \"PER\", \"author\", \"The Grand Magazine\", \"MISC\"],\n    [\"Edgar Wallace\", \"PER\", \"author\", \"The Grand Magazine\", \"MISC\"],\n    [\"P. G. Wodehouse\", \"PER\", \"author\", \"The Grand Magazine\", \"MISC\"],\n    [\"The Strand Magazine\", \"MISC\", \"editor\", \"Herbert Greenhough Smith\", \"PER\"],\n    [\"The New York Times\", \"ORG\", \"commented on\", \"The Grand Magazine\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 20,
+  "FN": 4,
+  "recall": 0.3333333333333333,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"The Grand Magazine\", \"MISC\", \"publisher\", \"George Newnes\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"editor\", \"Alderson Anderson\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"editor\", \"Herbert Greenhough Smith\", \"PER\"],\n    [\"The Grand Magazine of Fiction\", \"MISC\", \"previous name\", \"The Grand Magazine\", \"MISC\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"Agatha Christie\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"E. Phillips Oppenheim\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"Baroness Orczy\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"Rafael Sabatini\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"Edgar Wallace\", \"PER\"],\n    [\"The Grand Magazine\", \"MISC\", \"author\", \"P. G. Wodehouse\", \"PER\"],\n    [\"The Strand Magazine\", \"MISC\", \"editor\", \"Herbert Greenhough Smith\", \"PER\"],\n    [\"The New York Times\", \"ORG\", \"commented on\", \"The Grand Magazine\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

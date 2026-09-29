@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_183",
+ "base_raw": "[\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"located in\", \"Charlottetown\", \"LOC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"located in\", \"Prince Edward Island\", \"LOC\"],\n    [\"Commission scolaire de langue fran\u00e7aise\", \"ORG\", \"administers\", \"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"official colours\", \"Blue, White and Red\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"mascot\", \"Jaguar\", \"MISC\"],\n    [\"Jaguars\", \"MISC\", \"sports team of\", \"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\"],\n    [\"Wade MacLauchlan\", \"PER\", \"position held\", \"Premier of Prince Edward Island\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expanded by\", \"Wade MacLauchlan\", \"PER\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion cost\", \"$10 million\", \"NUM\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion size\", \"54,000 square foot\", \"NUM\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion year\", \"2016\", \"TIME\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"part of\", \"Queens County\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"located in\", \"Charlottetown\", \"LOC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"part of\", \"Commission scolaire de langue fran\u00e7aise\", \"ORG\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"official colours\", \"Blue, White and Red\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"mascot\", \"Jaguar\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"sports teams\", \"Jaguars\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion cost\", \"$10 million\", \"NUM\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion size\", \"54,000 square foot\", \"NUM\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion year\", \"2016\", \"TIME\"],\n    [\"Wade MacLauchlan\", \"PER\", \"position held\", \"Premier of Prince Edward Island\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expanded by\", \"Wade MacLauchlan\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 14,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"located in\", \"Charlottetown\", \"LOC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"part of\", \"Commission scolaire de langue fran\u00e7aise\", \"ORG\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"official colours\", \"Blue, White and Red\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"mascot\", \"Jaguar\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"sports teams\", \"Jaguars\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion cost\", \"$10 million\", \"NUM\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion size\", \"54,000 square foot\", \"NUM\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expansion year\", \"2016\", \"TIME\"],\n    [\"Wade MacLauchlan\", \"PER\", \"position held\", \"Premier of Prince Edward Island\", \"MISC\"],\n    [\"\u00c9cole Fran\u00e7ois-Buote\", \"ORG\", \"expanded by\", \"Wade MacLauchlan\", \"PER\"]\n]"
+}

@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_305",
+ "base_raw": "[\n    [\"Raz de Sein\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Raz de Sein\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"Raz de Sein\", \"LOC\", \"part of\", \"France\", \"LOC\"],\n    [\"Isle of Sein\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Isle of Sein\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"Pointe du Raz\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Pointe du Raz\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"La Vieille\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"La Vieille\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"Petite Vieille\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Petite Vieille\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"\u00cele de Sein\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"\u00cele de Sein\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Raz de Sein\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Raz de Sein\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"Raz de Sein\", \"LOC\", \"part of\", \"France\", \"LOC\"],\n    [\"Isle of Sein\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Isle of Sein\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"Pointe du Raz\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Pointe du Raz\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"La Vieille\", \"LOC\", \"located in\", \"Raz de Sein\", \"LOC\"],\n    [\"Petite Vieille\", \"LOC\", \"located in\", \"Raz de Sein\", \"LOC\"],\n    [\"\u00cele de Sein\", \"LOC\", \"located in\", \"Raz de Sein\", \"LOC\"],\n    [\"Atlantic\", \"LOC\", \"connected by\", \"Raz de Sein\", \"LOC\"],\n    [\"English Channel\", \"LOC\", \"connected by\", \"Raz de Sein\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 11,
+  "recall": 0.35294117647058826,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Raz de Sein\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Raz de Sein\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"Isle of Sein\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Isle of Sein\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"Pointe du Raz\", \"LOC\", \"located in\", \"Finist\u00e8re\", \"LOC\"],\n    [\"Pointe du Raz\", \"LOC\", \"located in\", \"Brittany\", \"LOC\"],\n    [\"La Vieille\", \"LOC\", \"located in\", \"Raz de Sein\", \"LOC\"],\n    [\"Petite Vieille\", \"LOC\", \"located in\", \"Raz de Sein\", \"LOC\"],\n    [\"\u00cele de Sein\", \"LOC\", \"located in\", \"Raz de Sein\", \"LOC\"],\n    [\"Atlantic\", \"LOC\", \"connected by\", \"Raz de Sein\", \"LOC\"],\n    [\"English Channel\", \"LOC\", \"connected by\", \"Raz de Sein\", \"LOC\"],\n    [\"France\", \"LOC\", \"contains\", \"Raz de Sein\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 16,
+  "FP": 14,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

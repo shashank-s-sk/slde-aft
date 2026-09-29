@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_493",
+ "base_raw": "[\n    [\"Zoo Interchange\", \"MISC\", \"located in\", \"Milwaukee\", \"LOC\"],\n    [\"Zoo Interchange\", \"MISC\", \"located near\", \"Milwaukee County Zoo\", \"ORG\"],\n    [\"I-94\", \"MISC\", \"part of\", \"Zoo Interchange\", \"MISC\"],\n    [\"I-894\", \"MISC\", \"part of\", \"Zoo Interchange\", \"MISC\"],\n    [\"I-41\", \"MISC\", \"part of\", \"Zoo Interchange\", \"MISC\"],\n    [\"US 41\", \"MISC\", \"part of\", \"Zoo Interchange\", \"MISC\"],\n    [\"US 45\", \"MISC\", \"part of\", \"Zoo Interchange\", \"MISC\"],\n    [\"Downtown Milwaukee\", \"LOC\", \"location of\", \"Zoo Interchange\", \"MISC\"],\n    [\"Chicago\", \"LOC\", \"location of\", \"Zoo Interchange\", \"MISC\"],\n    [\"Madison\", \"LOC\", \"location of\", \"Zoo Interchange\", \"MISC\"],\n    [\"Fond du Lac\", \"LOC\", \"location of\", \"Zoo Interchange\", \"MISC\"],\n    [\"Zoo Interchange\", \"MISC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Zoo Interchange\", \"MISC\", \"state\", \"Wisconsin\", \"LOC\"],\n    [\"Governor Jim Doyle\", \"PER\", \"position held\", \"governor\", \"MISC\"],\n    [\"Governor Jim Doyle\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Governor Jim Doyle\", \"PER\", \"state of residence\", \"Wisconsin\", \"LOC\"],\n    [\"Milwaukee Innercity Congregations Allied for Hope\", \"ORG\", \"member of\", \"Black Health Coalition of Wisconsin\", \"ORG\"],\n    [\"Black Health Coalition of Wisconsin\", \"ORG\", \"member of\", \"Milwaukee Innercity Congregations Allied for Hope\", \"ORG\"],\n    [\"Department of Transportation\", \"ORG\", \"defendant in lawsuit\", \"Milwaukee Innercity Congregations Allied for Hope\", \"ORG\"],\n    [\"Department of Transportation\", \"ORG\", \"defendant in lawsuit\", \"Black Health Coalition of Wisconsin\", \"ORG\"],\n    [\"Zoo Interchange reconstruction\", \"MISC\", \"cost\", \"$1.7 billion\", \"NUM\"],\n    [\"Zoo Interchange reconstruction\", \"MISC\", \"start time\", \"2014\", \"TIME\"],\n    [\"Zoo Interchange reconstruction\", \"MISC\", \"end time\", \"2022\", \"TIME\"],\n    [\"Wisconsin\", \"LOC\", \"user of\", \"drilled shaft foundations\", \"MISC\"],\n    [\"Wisconsin\", \"LOC\", \"user of\", \"3D computer modelling\", \"MISC\"],\n    [\"Zoo Interchange\", \"MISC\", \"first use of\", \"orange pavement markings\", \"MISC\"],\n    [\"Orange pavement markings\", \"MISC\", \"first used in\", \"Zoo Interchange\", \"MISC\"],\n    [\"Zoo Interchange reconstruction\", \"MISC\", \"resulted in lawsuit\", \"Milwaukee Innercity Congregations Allied for Hope vs Department of Transportation\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 24,
+  "FN": 21,
+  "recall": 0.16,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Time",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Zoo Interchange\", \"LOC\", \"located in\", \"Milwaukee\", \"LOC\"],\n    [\"Zoo Interchange\", \"LOC\", \"located in\", \"Wisconsin\", \"LOC\"],\n    [\"I-94\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"I-894\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"I-41\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"US 41\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"US 45\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"Milwaukee County Zoo\", \"ORG\", \"located near\", \"Zoo Interchange\", \"LOC\"],\n    [\"Downtown Milwaukee\", \"LOC\", \"control city\", \"Zoo Interchange\", \"LOC\"],\n    [\"Chicago\", \"LOC\", \"control city\", \"Zoo Interchange\", \"LOC\"],\n    [\"Madison\", \"LOC\", \"control city\", \"Zoo Interchange\", \"LOC\"],\n    [\"Fond du Lac\", \"LOC\", \"control city\", \"Zoo Interchange\", \"LOC\"],\n    [\"Zoo Interchange\", \"LOC\", \"inception\", \"1963\", \"TIME\"],\n    [\"Governor Jim Doyle\", \"PER\", \"advanced reconstruction\", \"Zoo Interchange\", \"LOC\"],\n    [\"Zoo Interchange\", \"LOC\", \"reconstruction started\", \"2014\", \"TIME\"],\n    [\"Zoo Interchange\", \"LOC\", \"expected completion\", \"2018\", \"TIME\"],\n    [\"Zoo Interchange\", \"LOC\", \"actual completion\", \"2022\", \"TIME\"],\n    [\"Wisconsin\", \"LOC\", \"used drilled shaft foundations\", \"Zoo Interchange\", \"LOC\"],\n    [\"Zoo Interchange\", \"LOC\", \"used 3D computer modelling\", \"MISC\", \"MISC\"],\n    [\"Zoo Interchange\", \"LOC\", \"tested orange pavement markings\", \"MISC\", \"MISC\"],\n    [\"Milwaukee Innercity Congregations Allied for Hope\", \"ORG\", \"filed lawsuit\", \"Zoo Interchange\", \"LOC\"],\n    [\"Black Health Coalition of Wisconsin\", \"ORG\", \"filed lawsuit\", \"Zoo Interchange\", \"LOC\"],\n    [\"Department of Transportation\", \"ORG\", \"defendant in lawsuit\", \"Zoo Interchange\", \"LOC\"],\n    [\"Zoo Interchange\", \"LOC\", \"cost\", \"$1.7 billion\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 11,
+  "FP": 37,
+  "FN": 18,
+  "recall": 0.3793103448275862,
+  "n_extracted": 46,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Zoo Interchange\", \"LOC\", \"located in\", \"Milwaukee\", \"LOC\"],\n    [\"Zoo Interchange\", \"LOC\", \"located in\", \"Wisconsin\", \"LOC\"],\n    [\"I-94\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"I-894\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"I-41\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"US 41\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"US 45\", \"MISC\", \"part of\", \"Zoo Interchange\", \"LOC\"],\n    [\"Milwaukee County Zoo\", \"LOC\", \"located near\", \"Zoo Interchange\", \"LOC\"],\n    [\"Downtown Milwaukee\", \"LOC\", \"control city of\", \"Zoo Interchange\", \"LOC\"],\n    [\"Chicago\", \"LOC\", \"control city of\", \"Zoo Interchange\", \"LOC\"],\n    [\"Madison\", \"LOC\", \"control city of\", \"Zoo Interchange\", \"LOC\"],\n    [\"Fond du Lac\", \"LOC\", \"control city of\", \"Zoo Interchange\", \"LOC\"],\n    [\"Zoo Interchange\", \"LOC\", \"date of completion\", \"1963\", \"TIME\"],\n    [\"Jim Doyle\", \"PER\", \"advanced reconstruction of\", \"Zoo Interchange\", \"LOC\"],\n    [\"Zoo Interchange\", \"LOC\", \"reconstruction started\", \"2014\", \"TIME\"],\n    [\"Zoo Interchange\", \"LOC\", \"reconstruction completed\", \"2022\", \"TIME\"],\n    [\"Zoo Interchange\", \"LOC\", \"cost of reconstruction\", \"$1.7 billion\", \"NUM\"],\n    [\"Milwaukee Innercity Congregations Allied for Hope\", \"ORG\", \"filed lawsuit against\", \"department of transportation\", \"ORG\"],\n    [\"Black Health Coalition of Wisconsin\", \"ORG\", \"filed lawsuit against\", \"department of transportation\", \"ORG\"],\n    [\"department of transportation\", \"ORG\", \"resolved lawsuit in\", \"2014\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 32,
+  "FN": 21,
+  "recall": 0.3,
+  "n_extracted": 42,
+  "judge_parse_ok": true
+ }
+}

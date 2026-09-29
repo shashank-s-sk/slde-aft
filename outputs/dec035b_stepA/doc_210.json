@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_210",
+ "base_raw": "[\n    [\"Houston Texans\", \"ORG\", \"located in\", \"Houston\", \"LOC\"],\n    [\"Houston Texans\", \"ORG\", \"league\", \"National Football League\", \"ORG\"],\n    [\"Houston Texans\", \"ORG\", \"division\", \"American Football Conference South\", \"ORG\"],\n    [\"NRG Stadium\", \"LOC\", \"location of\", \"Houston Texans\", \"ORG\"],\n    [\"Bob McNair\", \"PER\", \"owner of\", \"Houston Texans\", \"ORG\"],\n    [\"Houston Oilers\", \"ORG\", \"replaced by\", \"Houston Texans\", \"ORG\"],\n    [\"Tennessee Titans\", \"ORG\", \"formerly known as\", \"Houston Oilers\", \"ORG\"],\n    [\"Houston Texans\", \"ORG\", \"replaces\", \"Houston Oilers\", \"ORG\"],\n    [\"Houston\", \"LOC\", \"formerly home of\", \"Houston Oilers\", \"ORG\"],\n    [\"Nashville\", \"LOC\", \"current home of\", \"Tennessee Titans\", \"ORG\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 11,
+  "recall": 0.08333333333333333,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Houston Texans\", \"ORG\", \"located in\", \"Houston\", \"LOC\"],\n    [\"Houston Texans\", \"ORG\", \"league\", \"National Football League\", \"ORG\"],\n    [\"Houston Texans\", \"ORG\", \"division\", \"American Football Conference South\", \"ORG\"],\n    [\"NRG Stadium\", \"LOC\", \"location of\", \"Houston Texans\", \"ORG\"],\n    [\"Houston Oilers\", \"ORG\", \"replaced by\", \"Houston Texans\", \"ORG\"],\n    [\"Houston Oilers\", \"ORG\", \"located in\", \"Nashville\", \"LOC\"],\n    [\"Tennessee Titans\", \"ORG\", \"formerly known as\", \"Houston Oilers\", \"ORG\"],\n    [\"Bob McNair\", \"PER\", \"owner of\", \"Houston Texans\", \"ORG\"],\n    [\"Houston Texans\", \"ORG\", \"member of\", \"American Football Conference\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 11,
+  "FN": 11,
+  "recall": 0.08333333333333333,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Houston Texans\", \"ORG\", \"located in\", \"Houston\", \"LOC\"],\n    [\"Houston Texans\", \"ORG\", \"league\", \"National Football League\", \"ORG\"],\n    [\"Houston Texans\", \"ORG\", \"division\", \"American Football Conference South\", \"ORG\"],\n    [\"NRG Stadium\", \"LOC\", \"location of\", \"Houston Texans\", \"ORG\"],\n    [\"Houston Oilers\", \"ORG\", \"replaced by\", \"Houston Texans\", \"ORG\"],\n    [\"Houston Oilers\", \"ORG\", \"located in\", \"Nashville\", \"LOC\"],\n    [\"Tennessee Titans\", \"ORG\", \"formerly known as\", \"Houston Oilers\", \"ORG\"],\n    [\"Bob McNair\", \"PER\", \"owner of\", \"Houston Texans\", \"ORG\"],\n    [\"Houston Texans\", \"ORG\", \"member of\", \"American Football Conference\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 11,
+  "FN": 11,
+  "recall": 0.08333333333333333,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ }
+}

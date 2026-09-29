@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_397",
+ "base_raw": "[\n    [\"KeyBank Pavilion\", \"LOC\", \"located in\", \"Burgettstown\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"owner\", \"Live Nation\", \"ORG\"],\n    [\"Billy Joel\", \"PER\", \"performer at\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"Pittsburgh Post-Gazette\", \"ORG\", \"former naming rights holder\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"First Niagara Bank\", \"ORG\", \"former naming rights holder\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"KeyCorp\", \"ORG\", \"owner of\", \"First Niagara Bank\", \"ORG\"],\n    [\"Stage AE\", \"LOC\", \"located in\", \"Pittsburgh\", \"LOC\"],\n    [\"Heinz Field\", \"LOC\", \"located near\", \"Stage AE\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"capacity\", \"23000\", \"NUM\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"distance from Pittsburgh\", \"25 miles\", \"NUM\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 17,
+  "recall": 0.19047619047619047,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"KeyBank Pavilion\", \"LOC\", \"located in\", \"Burgettstown\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"located in the administrative territorial entity\", \"Pennsylvania\", \"LOC\"],\n    [\"Live Nation\", \"ORG\", \"operator\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"Billy Joel\", \"PER\", \"performer\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"Pittsburgh Post-Gazette\", \"ORG\", \"owner of naming rights\", \"Post-Gazette Pavilion\", \"LOC\"],\n    [\"First Niagara Bank\", \"ORG\", \"owner of naming rights\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"KeyCorp\", \"ORG\", \"acquired\", \"First Niagara\", \"ORG\"],\n    [\"Stage AE\", \"LOC\", \"located in\", \"Pittsburgh\", \"LOC\"],\n    [\"Heinz Field\", \"LOC\", \"located in\", \"Pittsburgh\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"owned by\", \"Live Nation\", \"ORG\"],\n    [\"Pittsburgh\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Burgettstown\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 18,
+  "FN": 17,
+  "recall": 0.15,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"KeyBank Pavilion\", \"LOC\", \"located in\", \"Burgettstown\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"near\", \"Pittsburgh\", \"LOC\"],\n    [\"Live Nation\", \"ORG\", \"owner of\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"Billy Joel\", \"PER\", \"performer at\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"Pittsburgh Post-Gazette\", \"ORG\", \"former naming rights holder of\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"First Niagara Bank\", \"ORG\", \"former naming rights holder of\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"KeyCorp\", \"ORG\", \"acquired naming rights of\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"Stage AE\", \"LOC\", \"competitor of\", \"KeyBank Pavilion\", \"LOC\"],\n    [\"Heinz Field\", \"LOC\", \"near\", \"Stage AE\", \"LOC\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"capacity\", \"23000\", \"NUM\"],\n    [\"KeyBank Pavilion\", \"LOC\", \"opened\", \"June 17, 1990\", \"TIME\"],\n    [\"Pittsburgh\", \"LOC\", \"has venue\", \"KeyBank Pavilion\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 18,
+  "recall": 0.21739130434782608,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

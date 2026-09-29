@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_334",
+ "base_raw": "[\n    [\"Albert the Bear\", \"PER\", \"title\", \"Margrave of the Northern March\", \"MISC\"],\n    [\"Charles IV\", \"PER\", \"issued\", \"Golden Bull\", \"MISC\"],\n    [\"House of Hohenzollern\", \"ORG\", \"ruled\", \"Brandenburg\", \"LOC\"],\n    [\"Brandenburg\", \"LOC\", \"part of\", \"Holy Roman Empire\", \"ORG\"],\n    [\"Duchy of Prussia\", \"ORG\", \"in personal union with\", \"Brandenburg\", \"LOC\"],\n    [\"Kingdom of Prussia\", \"ORG\", \"established\", \"1701\", \"TIME\"],\n    [\"Prussian kings\", \"PER\", \"included title\", \"Margrave of Brandenburg\", \"MISC\"],\n    [\"Hohenzollerns\", \"ORG\", \"held title\", \"German Emperors\", \"MISC\"],\n    [\"Brandenburg\", \"LOC\", \"abolished\", \"1806\", \"TIME\"],\n    [\"Holy Roman Empire\", \"ORG\", \"dissolved, abolished or demolished\", \"1806\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Albert the Bear\", \"PER\", \"title\", \"Margrave of the Northern March\", \"MISC\"],\n    [\"Charles IV\", \"PER\", \"issued\", \"Golden Bull\", \"MISC\"],\n    [\"House of Hohenzollern\", \"ORG\", \"ruled\", \"Brandenburg\", \"LOC\"],\n    [\"Duchy of Prussia\", \"ORG\", \"united with\", \"Brandenburg\", \"LOC\"],\n    [\"Kingdom of Prussia\", \"ORG\", \"elevated from\", \"Prussia\", \"LOC\"],\n    [\"Prussia\", \"LOC\", \"part of\", \"Holy Roman Empire\", \"ORG\"],\n    [\"Hohenzollerns\", \"ORG\", \"position held\", \"German Emperors\", \"MISC\"],\n    [\"Brandenburg\", \"LOC\", \"abolished\", \"Holy Roman Empire\", \"ORG\"],\n    [\"Prussian kings\", \"ORG\", \"included title\", \"Margrave of Brandenburg\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 15,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 15,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Albert the Bear\", \"PER\", \"title\", \"Margrave of the Northern March\", \"MISC\"],\n    [\"Charles IV\", \"PER\", \"issued\", \"Golden Bull\", \"MISC\"],\n    [\"House of Hohenzollern\", \"ORG\", \"ruled\", \"Brandenburg\", \"LOC\"],\n    [\"Duchy of Prussia\", \"ORG\", \"united with\", \"Brandenburg\", \"LOC\"],\n    [\"Kingdom of Prussia\", \"ORG\", \"elevated from\", \"Prussia\", \"LOC\"],\n    [\"Prussia\", \"LOC\", \"part of\", \"Holy Roman Empire\", \"ORG\"],\n    [\"Hohenzollerns\", \"ORG\", \"position held\", \"German Emperors\", \"MISC\"],\n    [\"Brandenburg\", \"LOC\", \"abolished\", \"Holy Roman Empire\", \"ORG\"],\n    [\"Prussian kings\", \"ORG\", \"included title\", \"Margrave of Brandenburg\", \"MISC\"]\n]"
+}

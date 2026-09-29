@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_468",
+ "base_raw": "[\n    [\"Lars Sj\u00f6sten\", \"PER\", \"place of birth\", \"Oskarshamn\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"date of birth\", \"7 May 1941\", \"TIME\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"date of death\", \"October 2011\", \"TIME\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"The Golden Circle\", \"LOC\", \"located in\", \"Stockholm\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"member of\", \"Swedish jazz scene\", \"MISC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"award received\", \"Jan Johansson prize\", \"MISC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"award received\", \"Lars Gullin Prize\", \"MISC\"],\n    [\"Lars Gullin\", \"PER\", \"friend\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Ben Webster\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Dexter Gordon\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Art Farmer\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Wayne Shorter\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Bernt Rosengren\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Lars Gullin\", \"PER\", \"employer\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Benny Bailey\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Rolf Ericson\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Bjarne Nerem\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Lee Konitz\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Putte Wickman\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Paris\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Moscow\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Vittoria da Praia\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"genre\", \"jazz\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 21,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Lars Sj\u00f6sten\", \"PER\", \"date of birth\", \"7 May 1941\", \"TIME\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"date of death\", \"October 2011\", \"TIME\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"place of birth\", \"Oskarshamn\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"The Golden Circle\", \"LOC\", \"located in\", \"Stockholm\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"employer\", \"The Golden Circle\", \"ORG\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"member of\", \"Lars Gullin's groups\", \"ORG\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"award received\", \"Jan Johansson prize\", \"MISC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"award received\", \"Lars Gullin Prize\", \"MISC\"],\n    [\"Lars Gullin\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"Ben Webster\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Dexter Gordon\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Art Farmer\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Wayne Shorter\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Bernt Rosengren\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Benny Bailey\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Rolf Ericson\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Bjarne Nerem\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Lee Konitz\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Putte Wickman\", \"PER\", \"collaborator\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Paris\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Moscow\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Vittoria da Praia\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Sweden\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 24,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Lars Sj\u00f6sten\", \"PER\", \"date of birth\", \"7 May 1941\", \"TIME\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"date of death\", \"October 2011\", \"TIME\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"place of birth\", \"Oskarshamn\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"The Golden Circle\", \"LOC\", \"located in\", \"Stockholm\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Ben Webster\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Dexter Gordon\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Art Farmer\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Wayne Shorter\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Bernt Rosengren\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"award received\", \"Jan Johansson prize\", \"MISC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"award received\", \"Lars Gullin Prize\", \"MISC\"],\n    [\"Lars Gullin\", \"PER\", \"friend\", \"Lars Sj\u00f6sten\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Paris\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Moscow\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Vittoria da Praia\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"tour location\", \"Sweden\", \"LOC\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Benny Bailey\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Rolf Ericson\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Bjarne Nerem\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Lee Konitz\", \"PER\"],\n    [\"Lars Sj\u00f6sten\", \"PER\", \"collaborator\", \"Putte Wickman\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 32,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 36,
+  "judge_parse_ok": true
+ }
+}

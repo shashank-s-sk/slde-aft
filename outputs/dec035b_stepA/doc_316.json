@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_316",
+ "base_raw": "[\n    [\"Pymatuning State Park\", \"LOC\", \"located in\", \"Crawford County\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"contains\", \"Pymatuning Lake\", \"LOC\"],\n    [\"Pymatuning Lake\", \"LOC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Pymatuning Laboratory of Ecology\", \"ORG\", \"located in\", \"Pymatuning State Park\", \"LOC\"],\n    [\"University of Pittsburgh\", \"ORG\", \"operator\", \"Pymatuning Laboratory of Ecology\", \"ORG\"],\n    [\"Pymatuning State Park\", \"LOC\", \"accessed by\", \"U.S. Route 6\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"accessed by\", \"U.S. Route 322\", \"LOC\"],\n    [\"Pennsylvania Department of Conservation and Natural Resources\", \"ORG\", \"owner\", \"Pymatuning State Park\", \"LOC\"],\n    [\"Clark Island\", \"LOC\", \"part of\", \"Pymatuning State Park\", \"LOC\"],\n    [\"Blackjack\", \"LOC\", \"part of\", \"Pymatuning State Park\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 13,
+  "recall": 0.23529411764705882,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Higher Education Institutions within Organizations",
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Pymatuning State Park\", \"LOC\", \"located in\", \"Crawford County\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"contains\", \"Pymatuning Lake\", \"LOC\"],\n    [\"Pymatuning Lake\", \"LOC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Pymatuning Laboratory of Ecology\", \"ORG\", \"affiliated with\", \"University of Pittsburgh\", \"ORG\"],\n    [\"Pymatuning State Park\", \"LOC\", \"has part\", \"Clark Island\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"has part\", \"Blackjack\", \"LOC\"],\n    [\"University of Pittsburgh\", \"ORG\", \"has part\", \"Pymatuning Laboratory of Ecology\", \"ORG\"],\n    [\"Pymatuning State Park\", \"LOC\", \"operator\", \"Pennsylvania Department of Conservation and Natural Resources\", \"ORG\"],\n    [\"Pennsylvania Department of Conservation and Natural Resources\", \"ORG\", \"has part\", \"Bureau of Parks\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 38,
+  "recall": 0.07317073170731707,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Pymatuning State Park\", \"LOC\", \"located in\", \"Crawford County\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Pymatuning Lake\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Pymatuning Lake\", \"LOC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Clark Island\", \"LOC\", \"part of\", \"Pymatuning State Park\", \"LOC\"],\n    [\"Blackjack\", \"LOC\", \"part of\", \"Pymatuning State Park\", \"LOC\"],\n    [\"University of Pittsburgh\", \"ORG\", \"operator\", \"Pymatuning Laboratory of Ecology\", \"LOC\"],\n    [\"Pymatuning Laboratory of Ecology\", \"LOC\", \"located in\", \"Pymatuning State Park\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"accessed by\", \"U.S. Route 6\", \"LOC\"],\n    [\"Pymatuning State Park\", \"LOC\", \"accessed by\", \"U.S. Route 322\", \"LOC\"],\n    [\"Pennsylvania Department of Conservation and Natural Resources\", \"ORG\", \"governs\", \"Pymatuning State Park\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 15,
+  "recall": 0.11764705882352941,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

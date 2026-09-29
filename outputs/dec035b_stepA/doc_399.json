@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_399",
+ "base_raw": "[\n    [\"Height of Fashion\", \"MISC\", \"owned by\", \"Queen Elizabeth II\", \"PER\"],\n    [\"Height of Fashion\", \"MISC\", \"breeder\", \"Queen Elizabeth II\", \"PER\"],\n    [\"Height of Fashion\", \"MISC\", \"date of birth\", \"14 April 1979\", \"TIME\"],\n    [\"Height of Fashion\", \"MISC\", \"date of death\", \"29 July 2000\", \"TIME\"],\n    [\"Height of Fashion\", \"MISC\", \"location of death\", \"Kentucky\", \"LOC\"],\n    [\"Unfuwain\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"],\n    [\"Nashwan\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"],\n    [\"Nayef\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 3,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Height of Fashion\", \"MISC\", \"date of birth\", \"14 April 1979\", \"TIME\"],\n    [\"Height of Fashion\", \"MISC\", \"date of death\", \"29 July 2000\", \"TIME\"],\n    [\"Height of Fashion\", \"MISC\", \"owner\", \"Queen Elizabeth II\", \"PER\"],\n    [\"Height of Fashion\", \"MISC\", \"breeder\", \"Queen Elizabeth II\", \"PER\"],\n    [\"Height of Fashion\", \"MISC\", \"country of citizenship\", \"United Kingdom\", \"LOC\"],\n    [\"Unfuwain\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"],\n    [\"Nashwan\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"],\n    [\"Nayef\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"],\n    [\"Height of Fashion\", \"MISC\", \"location of death\", \"Kentucky\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 5,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Height of Fashion\", \"MISC\", \"date of birth\", \"14 April 1979\", \"TIME\"],\n    [\"Height of Fashion\", \"MISC\", \"date of death\", \"29 July 2000\", \"TIME\"],\n    [\"Height of Fashion\", \"MISC\", \"owner\", \"Queen Elizabeth II\", \"PER\"],\n    [\"Height of Fashion\", \"MISC\", \"breeder\", \"Queen Elizabeth II\", \"PER\"],\n    [\"Height of Fashion\", \"MISC\", \"country of origin\", \"France\", \"LOC\"],\n    [\"Height of Fashion\", \"MISC\", \"country of training\", \"United Kingdom\", \"LOC\"],\n    [\"Height of Fashion\", \"MISC\", \"location of death\", \"Kentucky\", \"LOC\"],\n    [\"Unfuwain\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"],\n    [\"Nashwan\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"],\n    [\"Nayef\", \"MISC\", \"parent\", \"Height of Fashion\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 6,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

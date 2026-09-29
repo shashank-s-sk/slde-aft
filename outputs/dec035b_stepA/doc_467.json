@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_467",
+ "base_raw": "[\n    [\"Reisa National Park\", \"LOC\", \"located in\", \"Nordreisa Municipality\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"located in\", \"Troms county\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"established by\", \"royal decree\", \"MISC\"],\n    [\"Reisa National Park\", \"LOC\", \"date of establishment\", \"28 November 1986\", \"TIME\"],\n    [\"Rough-legged buzzard\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Golden eagle\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Kestrels\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Gyrfalcon\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Wolverines\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Lynx\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Arctic fox\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Brown bear\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Reisa river\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Reisadalen\", \"LOC\", \"part of\", \"Reisa National Park\", \"LOC\"],\n    [\"Mollisfossen\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"adjacent to\", \"K\u00e4sivarsi Wilderness Area\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Nj\u00e1lla\u00e1vzi\", \"LOC\", \"part of\", \"Reisa National Park\", \"LOC\"],\n    [\"S\u00e1mi\", \"MISC\", \"language\", \"Nj\u00e1lla\u00e1vzi\", \"MISC\"],\n    [\"Reisa National Park\", \"LOC\", \"contains\", \"Scots pine\", \"MISC\"],\n    [\"Scots pine\", \"MISC\", \"used for\", \"timber\", \"MISC\"],\n    [\"Scots pine\", \"MISC\", \"used for\", \"tar production\", \"MISC\"],\n    [\"Reisa National Park\", \"LOC\", \"provider of\", \"grazing\", \"MISC\"],\n    [\"Reindeer\", \"MISC\", \"found in\", \"Reisa National Park\", \"LOC\"],\n    [\"Kautokeino district\", \"LOC\", \"part of\", \"Finnmark county\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"near\", \"Finnmark county\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 21,
+  "FN": 18,
+  "recall": 0.18181818181818182,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Reisa National Park\", \"LOC\", \"located in\", \"Nordreisa Municipality\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"located in\", \"Troms county\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Reisa river\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Reisadalen\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Mollisfossen\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Kautokeino district\", \"LOC\", \"located in\", \"Finnmark county\", \"LOC\"],\n    [\"K\u00e4sivarsi Wilderness Area\", \"LOC\", \"located in\", \"Finland\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"adjacent to\", \"K\u00e4sivarsi Wilderness Area\", \"LOC\"],\n    [\"Nordreisa Municipality\", \"LOC\", \"located in\", \"Troms county\", \"LOC\"],\n    [\"Finnmark county\", \"LOC\", \"located in\", \"Norway\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"established\", \"28 November 1986\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 23,
+  "FN": 18,
+  "recall": 0.3333333333333333,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Reisa National Park\", \"LOC\", \"located in\", \"Nordreisa Municipality\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"located in\", \"Troms county\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Reisa river\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Reisadalen\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"part of\", \"Kautokeino district\", \"LOC\"],\n    [\"Kautokeino district\", \"LOC\", \"located in\", \"Finnmark county\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"adjacent to\", \"K\u00e4sivarsi Wilderness Area\", \"LOC\"],\n    [\"K\u00e4sivarsi Wilderness Area\", \"LOC\", \"located in\", \"Finland\", \"LOC\"],\n    [\"Nj\u00e1lla\u00e1vzi\", \"LOC\", \"part of\", \"Reisa National Park\", \"LOC\"],\n    [\"Imo\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Mollisfossen\", \"LOC\", \"located in\", \"Reisa National Park\", \"LOC\"],\n    [\"Reisa National Park\", \"LOC\", \"inception\", \"28 November 1986\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 25,
+  "FN": 17,
+  "recall": 0.22727272727272727,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ }
+}

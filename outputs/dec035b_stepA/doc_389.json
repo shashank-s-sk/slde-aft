@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_389",
+ "base_raw": "[\n    [\"Ministry of Home Security\", \"ORG\", \"head of government\", \"Sir John Anderson\", \"PER\"],\n    [\"Ministry of Home Security\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Sir John Anderson\", \"PER\", \"position held\", \"Home Secretary\", \"MISC\"],\n    [\"Ministry of Home Security\", \"ORG\", \"located in the administrative territorial entity\", \"Britain\", \"LOC\"],\n    [\"Herbert Morrison\", \"PER\", \"replaces\", \"Sir John Anderson\", \"PER\"],\n    [\"Neville Chamberlain\", \"PER\", \"reason for resignation\", \"ill-health\", \"MISC\"],\n    [\"Ministry of Home Security\", \"ORG\", \"dissolved, abolished or demolished\", \"May 1945\", \"TIME\"],\n    [\"Ministry of Home Security\", \"ORG\", \"inception\", \"1939\", \"TIME\"],\n    [\"Sir John Anderson\", \"PER\", \"end time\", \"October 1940\", \"TIME\"],\n    [\"Herbert Morrison\", \"PER\", \"start time\", \"October 1940\", \"TIME\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 10,
+  "recall": 0.09090909090909091,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Ministry of Home Security\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Ministry of Home Security\", \"ORG\", \"head of government\", \"Sir John Anderson\", \"PER\"],\n    [\"Sir John Anderson\", \"PER\", \"position held\", \"Home Secretary\", \"MISC\"],\n    [\"Sir John Anderson\", \"PER\", \"position held\", \"Minister of Home Security\", \"MISC\"],\n    [\"Ministry of Home Security\", \"ORG\", \"founded by\", \"British government\", \"ORG\"],\n    [\"Ministry of Home Security\", \"ORG\", \"date of inception\", \"1939\", \"TIME\"],\n    [\"Ministry of Home Security\", \"ORG\", \"located in the administrative territorial entity\", \"Britain\", \"LOC\"],\n    [\"Herbert Morrison\", \"PER\", \"position held\", \"Minister of Home Security\", \"MISC\"],\n    [\"Herbert Morrison\", \"PER\", \"replaces\", \"Sir John Anderson\", \"PER\"],\n    [\"Neville Chamberlain\", \"PER\", \"reason for resignation\", \"ill-health\", \"MISC\"],\n    [\"Ministry of Home Security\", \"ORG\", \"dissolved, abolished or demolished\", \"May 1945\", \"TIME\"],\n    [\"Ministry of Home Security\", \"ORG\", \"parent organization\", \"Home Office\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Ministry of Home Security\", \"ORG\", \"head of government\", \"Sir John Anderson\", \"PER\"],\n    [\"Ministry of Home Security\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Sir John Anderson\", \"PER\", \"position held\", \"Home Secretary\", \"MISC\"],\n    [\"Ministry of Home Security\", \"ORG\", \"located in the administrative territorial entity\", \"Britain\", \"LOC\"],\n    [\"Herbert Morrison\", \"PER\", \"replaces\", \"Sir John Anderson\", \"PER\"],\n    [\"Neville Chamberlain\", \"PER\", \"reason for resignation\", \"ill-health\", \"MISC\"],\n    [\"Ministry of Home Security\", \"ORG\", \"dissolved, abolished or demolished\", \"May 1945\", \"TIME\"],\n    [\"Ministry of Home Security\", \"ORG\", \"inception\", \"1939\", \"TIME\"],\n    [\"Sir John Anderson\", \"PER\", \"end time\", \"October 1940\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ }
+}

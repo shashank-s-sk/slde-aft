@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_20",
+ "base_raw": "[\n    [\"Wendy Boase\", \"PER\", \"date of birth\", \"14 October 1944\", \"TIME\"],\n    [\"Wendy Boase\", \"PER\", \"date of death\", \"15 March 1999\", \"TIME\"],\n    [\"Wendy Boase\", \"PER\", \"place of birth\", \"Melbourne\", \"LOC\"],\n    [\"Wendy Boase\", \"PER\", \"country of birth\", \"Australia\", \"LOC\"],\n    [\"Wendy Boase\", \"PER\", \"position held\", \"editorial director\", \"MISC\"],\n    [\"Wendy Boase\", \"PER\", \"employer\", \"Walker Books\", \"ORG\"],\n    [\"Walker Books\", \"ORG\", \"founder\", \"Wendy Boase\", \"PER\"],\n    [\"Julia Eccleshare\", \"PER\", \"member of\", \"Guardian newspaper\", \"ORG\"],\n    [\"Julia Eccleshare\", \"PER\", \"position held\", \"Children's Book Editor\", \"MISC\"],\n    [\"Anne Marley\", \"PER\", \"position held\", \"Head of Children\u2019s, Youth & Schools Services\", \"MISC\"],\n    [\"Anne Marley\", \"PER\", \"employer\", \"Hampshire Library & Information Service\", \"ORG\"],\n    [\"Branford Boase Award\", \"MISC\", \"named after\", \"Wendy Boase\", \"PER\"],\n    [\"Branford Boase Award\", \"MISC\", \"named after\", \"Henrietta Branford\", \"PER\"],\n    [\"Henrietta Branford\", \"PER\", \"date of death\", \"1999\", \"TIME\"],\n    [\"Henrietta Branford\", \"PER\", \"cause of death\", \"cancer\", \"MISC\"],\n    [\"Wendy Boase\", \"PER\", \"collaborator\", \"Henrietta Branford\", \"PER\"],\n    [\"Fire, Bed, and Bone\", \"MISC\", \"author\", \"Henrietta Branford\", \"PER\"],\n    [\"Fire, Bed, and Bone\", \"MISC\", \"award received\", \"Guardian Children's Fiction Prize\", \"MISC\"],\n    [\"Wendy Boase\", \"PER\", \"assistant\", \"Henrietta Branford\", \"PER\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Locations in Australia and New Zealand",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Wendy Boase\", \"PER\", \"date of birth\", \"14 October 1944\", \"TIME\"],\n    [\"Wendy Boase\", \"PER\", \"date of death\", \"15 March 1999\", \"TIME\"],\n    [\"Wendy Boase\", \"PER\", \"place of birth\", \"Melbourne\", \"LOC\"],\n    [\"Wendy Boase\", \"PER\", \"country of birth\", \"Australia\", \"LOC\"],\n    [\"Wendy Boase\", \"PER\", \"position held\", \"editorial director\", \"MISC\"],\n    [\"Wendy Boase\", \"PER\", \"employer\", \"Walker Books\", \"ORG\"],\n    [\"Walker Books\", \"ORG\", \"founded by\", \"Wendy Boase\", \"PER\"],\n    [\"Wendy Boase\", \"PER\", \"colleague\", \"Henrietta Branford\", \"PER\"],\n    [\"Henrietta Branford\", \"PER\", \"date of death\", \"1999\", \"TIME\"],\n    [\"Julia Eccleshare\", \"PER\", \"position held\", \"Children's Book Editor\", \"MISC\"],\n    [\"Julia Eccleshare\", \"PER\", \"employer\", \"Guardian newspaper\", \"ORG\"],\n    [\"Anne Marley\", \"PER\", \"position held\", \"Head of Children\u2019s, Youth & Schools Services\", \"MISC\"],\n    [\"Anne Marley\", \"PER\", \"employer\", \"Hampshire Library & Information Service\", \"ORG\"],\n    [\"Branford Boase Award\", \"MISC\", \"named after\", \"Wendy Boase\", \"PER\"],\n    [\"Branford Boase Award\", \"MISC\", \"named after\", \"Henrietta Branford\", \"PER\"],\n    [\"Fire, Bed, and Bone\", \"MISC\", \"author\", \"Henrietta Branford\", \"PER\"],\n    [\"Fire, Bed, and Bone\", \"MISC\", \"award received\", \"Guardian Children's Fiction Prize\", \"MISC\"],\n    [\"Wendy Boase\", \"PER\", \"notable work\", \"Fire, Bed, and Bone\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 20,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Wendy Boase\", \"PER\", \"date of birth\", \"14 October 1944\", \"TIME\"],\n    [\"Wendy Boase\", \"PER\", \"date of death\", \"15 March 1999\", \"TIME\"],\n    [\"Wendy Boase\", \"PER\", \"place of birth\", \"Melbourne\", \"LOC\"],\n    [\"Wendy Boase\", \"PER\", \"country of birth\", \"Australia\", \"LOC\"],\n    [\"Wendy Boase\", \"PER\", \"position held\", \"editorial director\", \"MISC\"],\n    [\"Wendy Boase\", \"PER\", \"employer\", \"Walker Books\", \"ORG\"],\n    [\"Walker Books\", \"ORG\", \"co-founder\", \"Wendy Boase\", \"PER\"],\n    [\"Julia Eccleshare\", \"PER\", \"member of\", \"Guardian newspaper\", \"ORG\"],\n    [\"Julia Eccleshare\", \"PER\", \"position held\", \"Children's Book Editor\", \"MISC\"],\n    [\"Anne Marley\", \"PER\", \"position held\", \"Head of Children\u2019s, Youth & Schools Services\", \"MISC\"],\n    [\"Anne Marley\", \"PER\", \"employer\", \"Hampshire Library & Information Service\", \"ORG\"],\n    [\"Henrietta Branford\", \"PER\", \"date of death\", \"1999\", \"TIME\"],\n    [\"Wendy Boase\", \"PER\", \"collaborator\", \"Henrietta Branford\", \"PER\"],\n    [\"Fire, Bed, and Bone\", \"MISC\", \"author\", \"Henrietta Branford\", \"PER\"],\n    [\"Fire, Bed, and Bone\", \"MISC\", \"award received\", \"Guardian Children's Fiction Prize\", \"MISC\"],\n    [\"Branford Boase Award\", \"MISC\", \"named after\", \"Wendy Boase\", \"PER\"],\n    [\"Branford Boase Award\", \"MISC\", \"named after\", \"Henrietta Branford\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

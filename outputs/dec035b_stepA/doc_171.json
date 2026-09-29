@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_171",
+ "base_raw": "[\n    [\"A'isha bint Talhah\", \"PER\", \"father\", \"Talha ibn Ubayd-Allah\", \"PER\"],\n    [\"A'isha bint Talhah\", \"PER\", \"mother\", \"Umm Kulthum bint Abu Bakr\", \"PER\"],\n    [\"Umm Kulthum bint Abu Bakr\", \"PER\", \"father\", \"Abu Bakr\", \"PER\"],\n    [\"Abdullah ibn Abdulrahman ibn Abi Bakr\", \"PER\", \"relation\", \"A'isha bint Talhah\", \"PER\"],\n    [\"Musab ibn Al-Zubayr al-Asadi\", \"PER\", \"spouse\", \"A'isha bint Talhah\", \"PER\"],\n    [\"Umar ibn Ubaydullah al-Taymi\", \"PER\", \"spouse\", \"A'isha bint Talhah\", \"PER\"],\n    [\"A'isha bint Talhah\", \"PER\", \"spouse\", \"Abdullah ibn Abdulrahman ibn Abi Bakr\", \"PER\"],\n    [\"A'isha bint Talhah\", \"PER\", \"spouse\", \"Musab ibn Al-Zubayr al-Asadi\", \"PER\"],\n    [\"A'isha bint Talhah\", \"PER\", \"spouse\", \"Umar ibn Ubaydullah al-Taymi\", \"PER\"],\n    [\"Musab ibn Al-Zubayr al-Asadi\", \"PER\", \"position held\", \"governor of Basra\", \"MISC\"],\n    [\"Abu Bakr\", \"PER\", \"position held\", \"first Sunni Caliph\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"A'isha bint Talhah\", \"PER\", \"father\", \"Talha ibn Ubayd-Allah\", \"PER\"],\n    [\"A'isha bint Talhah\", \"PER\", \"mother\", \"Umm Kulthum bint Abu Bakr\", \"PER\"],\n    [\"Umm Kulthum bint Abu Bakr\", \"PER\", \"father\", \"Abu Bakr\", \"PER\"],\n    [\"Abdullah ibn Abdulrahman ibn Abi Bakr\", \"PER\", \"relation\", \"A'isha bint Talhah\", \"PER\"],\n    [\"Musab ibn Al-Zubayr al-Asadi\", \"PER\", \"spouse\", \"A'isha bint Talhah\", \"PER\"],\n    [\"Umar ibn Ubaydullah al-Taymi\", \"PER\", \"spouse\", \"A'isha bint Talhah\", \"PER\"],\n    [\"Musab ibn Al-Zubayr al-Asadi\", \"PER\", \"position held\", \"governor of Basra\", \"MISC\"],\n    [\"Abu Bakr\", \"PER\", \"position held\", \"first Sunni Caliph\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 11,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"A'isha bint Talhah\", \"PER\", \"father\", \"Talha ibn Ubayd-Allah\", \"PER\"],\n    [\"A'isha bint Talhah\", \"PER\", \"mother\", \"Umm Kulthum bint Abu Bakr\", \"PER\"],\n    [\"Umm Kulthum bint Abu Bakr\", \"PER\", \"father\", \"Abu Bakr\", \"PER\"],\n    [\"Abdullah ibn Abdulrahman ibn Abi Bakr\", \"PER\", \"relation\", \"A'isha bint Talhah\", \"PER\"],\n    [\"Musab ibn Al-Zubayr al-Asadi\", \"PER\", \"spouse\", \"A'isha bint Talhah\", \"PER\"],\n    [\"Umar ibn Ubaydullah al-Taymi\", \"PER\", \"spouse\", \"A'isha bint Talhah\", \"PER\"],\n    [\"Musab ibn Al-Zubayr al-Asadi\", \"PER\", \"position held\", \"governor of Basra\", \"MISC\"],\n    [\"Abu Bakr\", \"PER\", \"position held\", \"first Sunni Caliph\", \"MISC\"]\n]"
+}

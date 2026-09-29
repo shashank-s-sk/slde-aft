@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_365",
+ "base_raw": "[\n    [\"Martti Aiha\", \"PER\", \"place of birth\", \"Pudasj\u00e4rvi\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"location\", \"Fiskars\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"date of birth\", \"1952\", \"TIME\"],\n    [\"Rumba\", \"MISC\", \"located in\", \"Salmisaari\", \"LOC\"],\n    [\"Rumba\", \"MISC\", \"made of\", \"aluminium\", \"MISC\"],\n    [\"Alko\", \"ORG\", \"located in\", \"Salmisaari\", \"LOC\"],\n    [\"Alko\", \"ORG\", \"country\", \"Finland\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"award received\", \"Prince Eugen Medal\", \"MISC\"],\n    [\"Martti Aiha\", \"PER\", \"year of award\", \"2013\", \"TIME\"],\n    [\"Alko\", \"ORG\", \"anniversary\", \"60th anniversary\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Martti Aiha\", \"PER\", \"place of birth\", \"Pudasj\u00e4rvi\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"date of birth\", \"1952\", \"TIME\"],\n    [\"Martti Aiha\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"Rumba\", \"MISC\", \"location\", \"Salmisaari\", \"LOC\"],\n    [\"Rumba\", \"MISC\", \"creator\", \"Martti Aiha\", \"PER\"],\n    [\"Alko\", \"ORG\", \"located in the administrative territorial entity\", \"Finland\", \"LOC\"],\n    [\"Alko\", \"ORG\", \"country\", \"Finland\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"award received\", \"Swedish Prince Eugen Medal\", \"MISC\"],\n    [\"Martti Aiha\", \"PER\", \"year of award\", \"2013\", \"TIME\"],\n    [\"Fiskars\", \"LOC\", \"country\", \"Finland\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Martti Aiha\", \"PER\", \"place of birth\", \"Pudasj\u00e4rvi\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"date of birth\", \"1952\", \"TIME\"],\n    [\"Martti Aiha\", \"PER\", \"location\", \"Fiskars\", \"LOC\"],\n    [\"Rumba\", \"MISC\", \"located in\", \"Salmisaari\", \"LOC\"],\n    [\"Rumba\", \"MISC\", \"creator\", \"Martti Aiha\", \"PER\"],\n    [\"Alko\", \"ORG\", \"located in\", \"Salmisaari\", \"LOC\"],\n    [\"Alko\", \"ORG\", \"country\", \"Finland\", \"LOC\"],\n    [\"Martti Aiha\", \"PER\", \"award received\", \"Swedish Prince Eugen Medal\", \"MISC\"],\n    [\"Martti Aiha\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Alko\", \"ORG\", \"industry\", \"alcohol\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

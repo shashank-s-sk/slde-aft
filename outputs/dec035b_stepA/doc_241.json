@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_241",
+ "base_raw": "[\n    [\"Aye Kyaw\", \"PER\", \"replaced\", \"Myo Thant\", \"PER\"],\n    [\"Aung San Suu Kyi\", \"PER\", \"residence\", \"Rangoon\", \"LOC\"],\n    [\"Yozo Yokota\", \"PER\", \"met with\", \"Aye Kyaw\", \"PER\"],\n    [\"Yozo Yokota\", \"PER\", \"member of\", \"United Nations\", \"ORG\"],\n    [\"Aye Kyaw\", \"PER\", \"member of\", \"Information Committee\", \"ORG\"],\n    [\"Kyi Aung\", \"PER\", \"position held\", \"Minister of Information\", \"MISC\"],\n    [\"State Peace and Development Council\", \"ORG\", \"issued\", \"proclamation\", \"MISC\"],\n    [\"Aye Kyaw\", \"PER\", \"employer\", \"Ministry of Information\", \"ORG\"],\n    [\"Aung San Suu Kyi\", \"PER\", \"country of citizenship\", \"Burma\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 12,
+  "recall": 0.07692307692307693,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in Asia",
+  "Organizations",
+  "Persons",
+  "Persons in Politics"
+ ],
+ "kb_orig_raw": "[\n    [\"Aye Kyaw\", \"PER\", \"replaced\", \"Myo Thant\", \"PER\"],\n    [\"Aung San Suu Kyi\", \"PER\", \"residence\", \"Rangoon\", \"LOC\"],\n    [\"Yozo Yokota\", \"PER\", \"met with\", \"Aye Kyaw\", \"PER\"],\n    [\"Aye Kyaw\", \"PER\", \"member of\", \"State Peace and Development Council\", \"ORG\"],\n    [\"Kyi Aung\", \"PER\", \"position held\", \"Minister of Information\", \"MISC\"],\n    [\"Aye Kyaw\", \"PER\", \"end time\", \"September 1997\", \"TIME\"],\n    [\"Aye Kyaw\", \"PER\", \"start time\", \"June 1995\", \"TIME\"],\n    [\"Soe Nyunt\", \"PER\", \"position held\", \"Deputy Minister of Information\", \"MISC\"],\n    [\"Aung San Suu Kyi\", \"PER\", \"country of citizenship\", \"Burma\", \"LOC\"],\n    [\"Yozo Yokota\", \"PER\", \"position held\", \"United Nations Special Rapporteur\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 12,
+  "recall": 0.07692307692307693,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Aye Kyaw\", \"PER\", \"replaced\", \"Myo Thant\", \"PER\"],\n    [\"Aung San Suu Kyi\", \"PER\", \"residence\", \"Rangoon\", \"LOC\"],\n    [\"Yozo Yokota\", \"PER\", \"met with\", \"Aye Kyaw\", \"PER\"],\n    [\"Aye Kyaw\", \"PER\", \"member of\", \"Information Committee\", \"ORG\"],\n    [\"Yozo Yokota\", \"PER\", \"title\", \"United Nations Special Rapporteur\", \"MISC\"],\n    [\"Kyi Aung\", \"PER\", \"position held\", \"Minister of Information\", \"MISC\"],\n    [\"Aye Kyaw\", \"PER\", \"end time\", \"September 1997\", \"TIME\"],\n    [\"Aye Kyaw\", \"PER\", \"start time\", \"June 1995\", \"TIME\"],\n    [\"Soe Nyunt\", \"PER\", \"position held\", \"Deputy Minister of Information\", \"MISC\"],\n    [\"Aye Kyaw\", \"PER\", \"country of citizenship\", \"Myanmar\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 12,
+  "recall": 0.07692307692307693,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

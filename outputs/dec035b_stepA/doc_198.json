@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_198",
+ "base_raw": "[\n    [\"Make Way for Tomorrow\", \"MISC\", \"director\", \"Leo McCarey\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"writer\", \"Vi\u00f1a Delmar\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"based on\", \"The Years Are So Long\", \"MISC\"],\n    [\"The Years Are So Long\", \"MISC\", \"author\", \"Josephine Lawrence\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"year\", \"1937\", \"TIME\"],\n    [\"Leo McCarey\", \"PER\", \"award received\", \"Academy Award for Best Director\", \"MISC\"],\n    [\"The Awful Truth\", \"MISC\", \"director\", \"Leo McCarey\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"selected for preservation by\", \"United States Library of Congress's National Film Registry\", \"ORG\"],\n    [\"United States Library of Congress's National Film Registry\", \"ORG\", \"location\", \"United States\", \"LOC\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"preservation year\", \"2010\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 10,
+  "recall": 0.23076923076923078,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Make Way for Tomorrow\", \"MISC\", \"director\", \"Leo McCarey\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"year\", \"1937\", \"TIME\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"writer\", \"Vi\u00f1a Delmar\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"based on\", \"The Years Are So Long\", \"MISC\"],\n    [\"The Years Are So Long\", \"MISC\", \"author\", \"Josephine Lawrence\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"selected for preservation by\", \"United States Library of Congress\", \"ORG\"],\n    [\"United States Library of Congress\", \"ORG\", \"location\", \"United States\", \"LOC\"],\n    [\"Leo McCarey\", \"PER\", \"award received\", \"Academy Award for Best Director\", \"MISC\"],\n    [\"The Awful Truth\", \"MISC\", \"director\", \"Leo McCarey\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"genre\", \"drama\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Make Way for Tomorrow\", \"MISC\", \"director\", \"Leo McCarey\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"writer\", \"Vi\u00f1a Delmar\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"based on\", \"The Years Are So Long\", \"MISC\"],\n    [\"The Years Are So Long\", \"MISC\", \"author\", \"Josephine Lawrence\", \"PER\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"release year\", \"1937\", \"TIME\"],\n    [\"Leo McCarey\", \"PER\", \"award received\", \"Academy Award for Best Director\", \"MISC\"],\n    [\"The Awful Truth\", \"MISC\", \"release year\", \"1937\", \"TIME\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"selected for preservation by\", \"United States Library of Congress's National Film Registry\", \"ORG\"],\n    [\"Make Way for Tomorrow\", \"MISC\", \"year selected for preservation\", \"2010\", \"TIME\"],\n    [\"Victor Moore\", \"PER\", \"appears in\", \"Make Way for Tomorrow\", \"MISC\"],\n    [\"Beulah Bondi\", \"PER\", \"appears in\", \"Make Way for Tomorrow\", \"MISC\"],\n    [\"Helen and Noah Leary\", \"PER\", \"play writer\", \"Make Way for Tomorrow\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 10,
+  "recall": 0.23076923076923078,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

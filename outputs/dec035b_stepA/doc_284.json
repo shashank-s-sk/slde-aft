@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_284",
+ "base_raw": "[\n    [\"Brigitte Bierlein\", \"PER\", \"position held\", \"president of the Constitutional Court\", \"MISC\"],\n    [\"Christoph Grabenwarter\", \"PER\", \"position held\", \"vice president of the Constitutional Court\", \"MISC\"],\n    [\"The Constitutional Court\", \"ORG\", \"located in\", \"Republic of Austria\", \"LOC\"],\n    [\"The Constitutional Court\", \"ORG\", \"headquarters location\", \"Austria\", \"LOC\"],\n    [\"Austria\", \"LOC\", \"country of origin\", \"The Constitutional Court\", \"ORG\"],\n    [\"The National Council\", \"ORG\", \"member of\", \"Austrian government\", \"MISC\"],\n    [\"The Federal Council\", \"ORG\", \"member of\", \"Austrian government\", \"MISC\"],\n    [\"Brigitte Bierlein\", \"PER\", \"employer\", \"The Constitutional Court\", \"ORG\"],\n    [\"Christoph Grabenwarter\", \"PER\", \"employer\", \"The Constitutional Court\", \"ORG\"],\n    [\"The Constitutional Court\", \"ORG\", \"part of\", \"Austrian judiciary\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Brigitte Bierlein\", \"PER\", \"position held\", \"president of the Constitutional Court\", \"MISC\"],\n    [\"Christoph Grabenwarter\", \"PER\", \"position held\", \"vice president of the Constitutional Court\", \"MISC\"],\n    [\"The Constitutional Court\", \"ORG\", \"located in\", \"Republic of Austria\", \"LOC\"],\n    [\"The Constitutional Court\", \"ORG\", \"country of citizenship\", \"Austria\", \"LOC\"],\n    [\"Austria\", \"LOC\", \"capital\", \"Vienna\", \"LOC\"],\n    [\"The National Council\", \"ORG\", \"located in\", \"Austria\", \"LOC\"],\n    [\"The Federal Council\", \"ORG\", \"located in\", \"Austria\", \"LOC\"],\n    [\"Brigitte Bierlein\", \"PER\", \"employer\", \"The Constitutional Court\", \"ORG\"],\n    [\"Christoph Grabenwarter\", \"PER\", \"employer\", \"The Constitutional Court\", \"ORG\"],\n    [\"The Constitutional Court\", \"ORG\", \"headquarters location\", \"Austria\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Brigitte Bierlein\", \"PER\", \"position held\", \"president of the Constitutional Court\", \"MISC\"],\n    [\"Christoph Grabenwarter\", \"PER\", \"position held\", \"vice president of the Constitutional Court\", \"MISC\"],\n    [\"The Constitutional Court\", \"ORG\", \"located in\", \"Republic of Austria\", \"LOC\"],\n    [\"The Constitutional Court\", \"ORG\", \"country of jurisdiction\", \"Austria\", \"LOC\"],\n    [\"Austria\", \"LOC\", \"has part\", \"National Council\", \"ORG\"],\n    [\"Austria\", \"LOC\", \"has part\", \"Federal Council\", \"ORG\"],\n    [\"The Constitutional Court\", \"ORG\", \"composed of\", \"14 members\", \"NUM\"],\n    [\"The Constitutional Court\", \"ORG\", \"composed of\", \"6 substitute members\", \"NUM\"],\n    [\"Brigitte Bierlein\", \"PER\", \"date of appointment\", \"February 2018\", \"TIME\"],\n    [\"Christoph Grabenwarter\", \"PER\", \"date of appointment\", \"February 2018\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 17,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_497",
+ "base_raw": "[\n    [\"American Girls\", \"ORG\", \"located in\", \"California\", \"LOC\"],\n    [\"American Girls\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"American Girls\", \"ORG\", \"genre\", \"rock music\", \"MISC\"],\n    [\"Brie Howard\", \"PER\", \"member of\", \"American Girls\", \"ORG\"],\n    [\"Brie Howard\", \"PER\", \"member of\", \"Fanny\", \"ORG\"],\n    [\"Miiko Watanabe\", \"PER\", \"member of\", \"American Girls\", \"ORG\"],\n    [\"Miiko Watanabe\", \"PER\", \"member of\", \"Screamin' Sirens\", \"ORG\"],\n    [\"American Girls\", \"ORG\", \"record label\", \"IRS Records\", \"ORG\"],\n    [\"Go-Go's\", \"ORG\", \"record label\", \"IRS Records\", \"ORG\"],\n    [\"American Girls\", \"ORG\", \"manager\", \"Miles Copeland III\", \"PER\"],\n    [\"Miles Copeland III\", \"PER\", \"brother of\", \"Stewart Copeland\", \"PER\"],\n    [\"American Girls\", \"ORG\", \"opened for\", \"The Lords of the New Church\", \"ORG\"],\n    [\"American Girls\", \"ORG\", \"release year\", \"1986\", \"TIME\"],\n    [\"American Girls\", \"ORG\", \"album\", \"American Girls\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 11,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Time",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"American Girls\", \"ORG\", \"based in\", \"California\", \"LOC\"],\n    [\"American Girls\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"American Girls\", \"ORG\", \"genre\", \"all-women band\", \"MISC\"],\n    [\"Brie Howard\", \"PER\", \"member of\", \"American Girls\", \"ORG\"],\n    [\"Brie Howard\", \"PER\", \"member of\", \"Fanny\", \"ORG\"],\n    [\"Miiko Watanabe\", \"PER\", \"member of\", \"American Girls\", \"ORG\"],\n    [\"Miiko Watanabe\", \"PER\", \"member of\", \"Screamin' Sirens\", \"ORG\"],\n    [\"American Girls\", \"ORG\", \"signed to\", \"IRS Records\", \"ORG\"],\n    [\"Go-Go's\", \"ORG\", \"signed to\", \"IRS Records\", \"ORG\"],\n    [\"American Girls\", \"ORG\", \"released album\", \"American Girls\", \"MISC\"],\n    [\"American Girls\", \"ORG\", \"release year\", \"1986\", \"TIME\"],\n    [\"American Girls\", \"ORG\", \"single\", \"American Girl\", \"MISC\"],\n    [\"American Girls\", \"ORG\", \"song\", \"Androgynous\", \"MISC\"],\n    [\"American Girls\", \"ORG\", \"opened for\", \"The Lords of the New Church\", \"ORG\"],\n    [\"Miles Copeland III\", \"PER\", \"manager of\", \"American Girls\", \"ORG\"],\n    [\"Miles Copeland III\", \"PER\", \"brother of\", \"Stewart Copeland\", \"PER\"],\n    [\"American Girls\", \"ORG\", \"appeared in film\", \"Tough Guys\", \"MISC\"],\n    [\"American Girls\", \"ORG\", \"appeared on soundtrack\", \"Out of Bounds\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 22,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"American Girls\", \"ORG\", \"located in\", \"California\", \"LOC\"],\n    [\"American Girls\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"American Girls\", \"ORG\", \"genre\", \"rock music\", \"MISC\"],\n    [\"Brie Howard\", \"PER\", \"member of\", \"American Girls\", \"ORG\"],\n    [\"Brie Howard\", \"PER\", \"member of\", \"Fanny\", \"ORG\"],\n    [\"Miiko Watanabe\", \"PER\", \"member of\", \"American Girls\", \"ORG\"],\n    [\"Miiko Watanabe\", \"PER\", \"member of\", \"Screamin' Sirens\", \"ORG\"],\n    [\"American Girls\", \"ORG\", \"record label\", \"IRS Records\", \"ORG\"],\n    [\"Go-Go's\", \"ORG\", \"record label\", \"IRS Records\", \"ORG\"],\n    [\"American Girls\", \"ORG\", \"manager\", \"Miles Copeland III\", \"PER\"],\n    [\"Miles Copeland III\", \"PER\", \"brother of\", \"Stewart Copeland\", \"PER\"],\n    [\"American Girls\", \"ORG\", \"opened for\", \"The Lords of the New Church\", \"ORG\"],\n    [\"American Girls\", \"ORG\", \"song\", \"American Girl\", \"MISC\"],\n    [\"American Girls\", \"ORG\", \"song\", \"Androgynous\", \"MISC\"],\n    [\"Tough Guys\", \"MISC\", \"features song\", \"Androgynous\", \"MISC\"],\n    [\"Out of Bounds\", \"MISC\", \"features song\", \"American Girl\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_233",
+ "base_raw": "[\n    [\"Helldivers\", \"MISC\", \"developer\", \"Arrowhead Game Studios\", \"ORG\"],\n    [\"Helldivers\", \"MISC\", \"publisher\", \"Sony Computer Entertainment\", \"ORG\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"March 3, 2015\", \"TIME\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"March 4, 2015\", \"TIME\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation 3\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation Vita\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"genre\", \"top-down shooter\", \"MISC\"],\n    [\"Arrowhead Game Studios\", \"ORG\", \"notable work\", \"Helldivers\", \"MISC\"],\n    [\"Sony Computer Entertainment\", \"ORG\", \"published\", \"Helldivers\", \"MISC\"],\n    [\"Aliens\", \"MISC\", \"influenced\", \"Helldivers\", \"MISC\"],\n    [\"Starship Troopers\", \"MISC\", \"influenced\", \"Helldivers\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"December 7, 2015\", \"TIME\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.7272727272727273,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Helldivers\", \"MISC\", \"developer\", \"Arrowhead Game Studios\", \"ORG\"],\n    [\"Helldivers\", \"MISC\", \"publisher\", \"Sony Computer Entertainment\", \"ORG\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"March 3, 2015\", \"TIME\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"March 4, 2015\", \"TIME\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation 3\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation Vita\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"genre\", \"top-down shooter\", \"MISC\"],\n    [\"Arrowhead Game Studios\", \"ORG\", \"notable work\", \"Helldivers\", \"MISC\"],\n    [\"Sony Computer Entertainment\", \"ORG\", \"published\", \"Helldivers\", \"MISC\"],\n    [\"Aliens\", \"MISC\", \"influenced\", \"Helldivers\", \"MISC\"],\n    [\"Starship Troopers\", \"MISC\", \"influenced\", \"Helldivers\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"December 7, 2015\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.7272727272727273,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.7272727272727273,
+  "n_extracted": 14,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Helldivers\", \"MISC\", \"developer\", \"Arrowhead Game Studios\", \"ORG\"],\n    [\"Helldivers\", \"MISC\", \"publisher\", \"Sony Computer Entertainment\", \"ORG\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"March 3, 2015\", \"TIME\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"March 4, 2015\", \"TIME\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation 3\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"PlayStation Vita\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"genre\", \"top-down shooter\", \"MISC\"],\n    [\"Arrowhead Game Studios\", \"ORG\", \"notable work\", \"Helldivers\", \"MISC\"],\n    [\"Sony Computer Entertainment\", \"ORG\", \"published\", \"Helldivers\", \"MISC\"],\n    [\"Aliens\", \"MISC\", \"influenced\", \"Helldivers\", \"MISC\"],\n    [\"Starship Troopers\", \"MISC\", \"influenced\", \"Helldivers\", \"MISC\"],\n    [\"Helldivers\", \"MISC\", \"release date\", \"December 7, 2015\", \"TIME\"]\n]"
+}

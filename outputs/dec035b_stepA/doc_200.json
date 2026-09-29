@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_200",
+ "base_raw": "[\n    [\"United States Congress\", \"ORG\", \"publisher\", \"United States Statutes at Large\", \"MISC\"],\n    [\"United States Statutes at Large\", \"MISC\", \"instance of\", \"official record\", \"MISC\"],\n    [\"Acts of Congress\", \"MISC\", \"part of\", \"United States Statutes at Large\", \"MISC\"],\n    [\"concurrent resolutions\", \"MISC\", \"part of\", \"United States Statutes at Large\", \"MISC\"],\n    [\"slip law\", \"MISC\", \"part of\", \"United States Statutes at Large\", \"MISC\"],\n    [\"public law\", \"MISC\", \"subclass of\", \"law\", \"MISC\"],\n    [\"private law\", \"MISC\", \"subclass of\", \"law\", \"MISC\"],\n    [\"United States Statutes at Large\", \"MISC\", \"contains administrative territorial entity\", \"U.S. Federal statutes\", \"MISC\"],\n    [\"session law\", \"MISC\", \"part of\", \"United States Statutes at Large\", \"MISC\"],\n    [\"United States Code\", \"MISC\", \"follows\", \"United States Statutes at Large\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"United States Congress\", \"ORG\", \"publisher\", \"United States Statutes at Large\", \"MISC\"],\n    [\"United States Statutes at Large\", \"MISC\", \"contains administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Slip law\", \"MISC\", \"part of\", \"United States Statutes at Large\", \"MISC\"],\n    [\"Public law\", \"MISC\", \"instance of\", \"Slip law\", \"MISC\"],\n    [\"Private law\", \"MISC\", \"instance of\", \"Slip law\", \"MISC\"],\n    [\"United States Code\", \"MISC\", \"follows\", \"United States Statutes at Large\", \"MISC\"],\n    [\"Congressional session\", \"MISC\", \"location of formation\", \"United States Congress\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 15,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 15,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"United States Congress\", \"ORG\", \"publisher\", \"United States Statutes at Large\", \"MISC\"],\n    [\"United States Statutes at Large\", \"MISC\", \"contains administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Slip law\", \"MISC\", \"part of\", \"United States Statutes at Large\", \"MISC\"],\n    [\"Public law\", \"MISC\", \"instance of\", \"Slip law\", \"MISC\"],\n    [\"Private law\", \"MISC\", \"instance of\", \"Slip law\", \"MISC\"],\n    [\"United States Code\", \"MISC\", \"follows\", \"United States Statutes at Large\", \"MISC\"],\n    [\"Congressional session\", \"MISC\", \"location of formation\", \"United States Congress\", \"ORG\"]\n]"
+}

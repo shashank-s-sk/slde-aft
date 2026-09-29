@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_342",
+ "base_raw": "[\n    [\"Fort Mississauga National Historic Site\", \"LOC\", \"located in\", \"Niagara-on-the-Lake\", \"LOC\"],\n    [\"Fort Mississauga National Historic Site\", \"LOC\", \"located on\", \"Lake Ontario\", \"LOC\"],\n    [\"Fort Mississauga National Historic Site\", \"LOC\", \"part of\", \"Upper Canada\", \"LOC\"],\n    [\"Fort George\", \"LOC\", \"located in\", \"Niagara-on-the-Lake\", \"LOC\"],\n    [\"United States\", \"LOC\", \"conflict\", \"War of 1812\", \"MISC\"],\n    [\"Niagara-on-the-Lake\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"War of 1812\", \"MISC\", \"location\", \"Niagara River\", \"LOC\"],\n    [\"Fort Mississauga National Historic Site\", \"LOC\", \"founded by\", \"Upper Canada\", \"LOC\"],\n    [\"Navy Hall\", \"LOC\", \"located in\", \"Niagara-on-the-Lake\", \"LOC\"],\n    [\"Butler's Barracks\", \"LOC\", \"located in\", \"Niagara-on-the-Lake\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Military Conflicts",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Fort Mississauga National Historic Site\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"],\n    [\"Fort Mississauga National Historic Site\", \"LOC\", \"located on\", \"Lake Ontario\", \"LOC\"],\n    [\"Fort Mississauga National Historic Site\", \"LOC\", \"located at\", \"Niagara River\", \"LOC\"],\n    [\"War of 1812\", \"MISC\", \"location\", \"Upper Canada\", \"LOC\"],\n    [\"Fort George\", \"LOC\", \"replaced by\", \"Fort Mississauga National Historic Site\", \"LOC\"],\n    [\"United States\", \"LOC\", \"conflict\", \"War of 1812\", \"MISC\"],\n    [\"Niagara-on-the-Lake\", \"LOC\", \"part of\", \"Upper Canada\", \"LOC\"],\n    [\"Butler's Barracks\", \"LOC\", \"part of\", \"Upper Canada\", \"LOC\"],\n    [\"Navy Hall\", \"LOC\", \"part of\", \"Upper Canada\", \"LOC\"],\n    [\"Fort Mississauga National Historic Site\", \"LOC\", \"founded by\", \"Canada\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Fort Mississauga\", \"LOC\", \"located in\", \"Niagara-on-the-Lake\", \"LOC\"],\n    [\"Fort Mississauga\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"],\n    [\"Fort Mississauga\", \"LOC\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Fort Mississauga\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Lake Ontario\", \"LOC\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Niagara River\", \"LOC\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Fort George\", \"LOC\", \"located in\", \"Niagara-on-the-Lake\", \"LOC\"],\n    [\"Fort George\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"],\n    [\"Fort George\", \"LOC\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Navy Hall\", \"LOC\", \"located in\", \"Niagara-on-the-Lake\", \"LOC\"],\n    [\"Navy Hall\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"],\n    [\"Navy Hall\", \"LOC\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Butler's Barracks\", \"LOC\", \"located in\", \"Niagara-on-the-Lake\", \"LOC\"],\n    [\"Butler's Barracks\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"],\n    [\"Butler's Barracks\", \"LOC\", \"located in\", \"Canada\", \"LOC\"],\n    [\"United States\", \"LOC\", \"relation\", \"burned\", \"Niagara-on-the-Lake\", \"LOC\"],\n    [\"War of 1812\", \"MISC\", \"relation\", \"involved\", \"Fort Mississauga\", \"LOC\"],\n    [\"War of 1812\", \"MISC\", \"relation\", \"involved\", \"Fort George\", \"LOC\"],\n    [\"Upper Canada\", \"LOC\", \"relation\", \"defended by\", \"Fort Mississauga\", \"LOC\"],\n    [\"Upper Canada\", \"LOC\", \"relation\", \"defended by\", \"Fort George\", \"LOC\"],\n    [\"1814\", \"TIME\", \"relation\", \"start time\", \"construction of Fort Mississauga\", \"MISC\"],\n    [\"1816\", \"TIME\", \"relation\", \"end time\", \"construction of Fort Mississauga\", \"MISC\"],\n    [\"December 1813\", \"TIME\", \"relation\", \"time of burning\", \"Niagara-on-the-Lake\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 20,
+  "FN": 11,
+  "recall": 0.3888888888888889,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

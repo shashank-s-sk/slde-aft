@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_445",
+ "base_raw": "[\n    [\"Zenk\u014d-ji\", \"LOC\", \"located in\", \"Japan\", \"LOC\"],\n    [\"Uesugi Kenshin\", \"PER\", \"conflict\", \"Takeda Shingen\", \"PER\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"founded by\", \"Honda Yoshimitsu\", \"PER\"],\n    [\"Honda Yoshimitsu\", \"PER\", \"rescued\", \"image of the Amida Buddha\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"belongs to\", \"Tendai\", \"ORG\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"belongs to\", \"J\u014ddosh\u016b\", \"ORG\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"managed by\", \"twenty-five priests from Tendai\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"managed by\", \"fourteen priests from J\u014ddosh\u016b\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"contains\", \"image of the Amida Buddha\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"contains\", \"hibutsu\", \"MISC\"],\n    [\"hibutsu\", \"MISC\", \"rumored to be\", \"first Buddha statue to ever be brought to Japan\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"cooperated with\", \"Motozenk\u014d-ji\", \"ORG\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"cooperated with\", \"Zenk\u014d-ji of Kofu, Yamanashi Prefecture\", \"ORG\"],\n    [\"Maedachi Honzon\", \"MISC\", \"displayed\", \"2003\", \"TIME\"],\n    [\"Maedachi Honzon\", \"MISC\", \"displayed\", \"2015\", \"TIME\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"contains\", \"statue of Binzuru\", \"MISC\"],\n    [\"Binzuru\", \"PER\", \"said to be\", \"Buddha's follower\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"contains\", \"inner prayer chamber\", \"MISC\"],\n    [\"inner prayer chamber\", \"MISC\", \"accessible to\", \"visitors\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"holds\", \"daily morning ritual\", \"MISC\"],\n    [\"metal key\", \"MISC\", \"represents\", \"Key to the Western Paradise of the Amida Buddha\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 18,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Zenk\u014d-ji\", \"LOC\", \"located in\", \"Japan\", \"LOC\"],\n    [\"Uesugi Kenshin\", \"PER\", \"conflict\", \"Takeda Shingen\", \"PER\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"founded by\", \"Honda Yoshimitsu\", \"PER\"],\n    [\"Amida Buddha\", \"MISC\", \"instance of\", \"Buddha\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"part of\", \"Tendai\", \"ORG\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"part of\", \"J\u014ddosh\u016b\", \"ORG\"],\n    [\"Honda Yoshimitsu\", \"PER\", \"country of citizenship\", \"Japan\", \"LOC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"contains administrative territorial entity\", \"Nagano Prefecture\", \"LOC\"],\n    [\"Binzuru\", \"PER\", \"occupation\", \"physician\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"genre\", \"Buddhist temple\", \"MISC\"],\n    [\"Maedachi Honzon\", \"MISC\", \"instance of\", \"Buddha statue\", \"MISC\"],\n    [\"Gokaich\u014d\", \"MISC\", \"location\", \"Zenk\u014d-ji\", \"LOC\"],\n    [\"Motozenk\u014d-ji\", \"LOC\", \"sister city\", \"Zenk\u014d-ji\", \"LOC\"],\n    [\"Yamanashi Prefecture\", \"LOC\", \"located in\", \"Japan\", \"LOC\"],\n    [\"Zenk\u014d-ji of Kofu\", \"LOC\", \"located in\", \"Yamanashi Prefecture\", \"LOC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"inception\", \"before 16th century\", \"TIME\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"headquarters location\", \"Nagano Prefecture\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 31,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 35,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Zenk\u014d-ji\", \"LOC\", \"located in\", \"Japan\", \"LOC\"],\n    [\"Uesugi Kenshin\", \"PER\", \"conflict\", \"Takeda Shingen\", \"PER\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"founded by\", \"Honda Yoshimitsu\", \"PER\"],\n    [\"Amida Buddha\", \"MISC\", \"instance of\", \"Buddha\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"part of\", \"Tendai\", \"ORG\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"part of\", \"J\u014ddosh\u016b\", \"ORG\"],\n    [\"Honda Yoshimitsu\", \"PER\", \"rescued\", \"Amida Buddha image\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"contains\", \"Binzuru statue\", \"MISC\"],\n    [\"Binzuru\", \"MISC\", \"follower of\", \"Buddha\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"cooperated with\", \"Motozenk\u014d-ji\", \"ORG\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"cooperated with\", \"Zenk\u014d-ji of Kofu, Yamanashi Prefecture\", \"ORG\"],\n    [\"Maedachi Honzon\", \"MISC\", \"displayed in\", \"2003\", \"TIME\"],\n    [\"Maedachi Honzon\", \"MISC\", \"displayed in\", \"2015\", \"TIME\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"has part\", \"inner prayer chamber\", \"MISC\"],\n    [\"Zenk\u014d-ji\", \"LOC\", \"has part\", \"dark corridor\", \"MISC\"],\n    [\"Amida Buddha\", \"MISC\", \"associated with\", \"Western Paradise\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 31,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_297",
+ "base_raw": "[\n    [\"Nesquehoning Mountain\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Nesquehoning Mountain\", \"LOC\", \"part of\", \"Ridge-and-valley Appalachians\", \"LOC\"],\n    [\"Lehigh River\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Schuylkill River\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Pisgah Ridge\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Mount Pisgah\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Southern Poconos\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Southern Anthracite Region\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Blue Mountain Ridge\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Nesquehoning Creek\", \"LOC\", \"tributary of\", \"Lehigh River\", \"LOC\"],\n    [\"United States\", \"LOC\", \"contains\", \"Pennsylvania\", \"LOC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 5,
+  "FN": 15,
+  "recall": 0.2857142857142857,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Nesquehoning Mountain\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Nesquehoning Creek\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Pisgah Ridge\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Mount Pisgah\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Lehigh River\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Schuylkill River\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Broad Mountain\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Blue Mountain Ridge\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Southern Poconos\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Southern Anthracite Region\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Nesquehoning Creek\", \"LOC\", \"tributary of\", \"Lehigh River\", \"LOC\"],\n    [\"Lehigh River\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Nesquehoning Mountain\", \"LOC\", \"part of\", \"Ridge-and-valley Appalachians\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 6,
+  "FN": 17,
+  "recall": 0.32,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Nesquehoning Mountain\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Nesquehoning Creek\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Pisgah Ridge\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Mount Pisgah\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Lehigh River\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Schuylkill River\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Broad Mountain\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Blue Mountain Ridge\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Southern Poconos\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Southern Anthracite Region\", \"LOC\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Nesquehoning Creek\", \"LOC\", \"tributary of\", \"Lehigh River\", \"LOC\"],\n    [\"Lehigh River\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Nesquehoning Mountain\", \"LOC\", \"part of\", \"Ridge-and-valley Appalachians\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 7,
+  "FN": 17,
+  "recall": 0.2916666666666667,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

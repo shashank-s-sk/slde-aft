@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_486",
+ "base_raw": "[\n    [\"Moneytalks\", \"MISC\", \"written by\", \"Malcolm Young\", \"PER\"],\n    [\"Moneytalks\", \"MISC\", \"written by\", \"Angus Young\", \"PER\"],\n    [\"Moneytalks\", \"MISC\", \"produced by\", \"Bruce Fairbairn\", \"PER\"],\n    [\"The Razors Edge\", \"MISC\", \"release date\", \"21 September 1990\", \"TIME\"],\n    [\"Moneytalks\", \"MISC\", \"release date\", \"December 1990\", \"TIME\"],\n    [\"AC/DC\", \"ORG\", \"genre\", \"hard rock\", \"MISC\"],\n    [\"Moneytalks\", \"MISC\", \"chart position\", \"23\", \"NUM\"],\n    [\"Moneytalks\", \"MISC\", \"appear in\", \"Moneyball\", \"MISC\"],\n    [\"David Mallet\", \"PER\", \"director of\", \"Moneytalks\", \"MISC\"],\n    [\"AC/DC\", \"ORG\", \"performer of\", \"Moneytalks\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Genre: Rock",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Moneytalks\", \"MISC\", \"written by\", \"Malcolm Young\", \"PER\"],\n    [\"Moneytalks\", \"MISC\", \"written by\", \"Angus Young\", \"PER\"],\n    [\"Moneytalks\", \"MISC\", \"produced by\", \"Bruce Fairbairn\", \"PER\"],\n    [\"The Razors Edge\", \"MISC\", \"release date\", \"21 September 1990\", \"TIME\"],\n    [\"Moneytalks\", \"MISC\", \"release date\", \"December 1990\", \"TIME\"],\n    [\"AC/DC\", \"ORG\", \"genre\", \"hard rock\", \"MISC\"],\n    [\"Moneytalks\", \"MISC\", \"chart position\", \"23\", \"NUM\"],\n    [\"Moneytalks\", \"MISC\", \"part of\", \"The Razors Edge\", \"MISC\"],\n    [\"AC/DC\", \"ORG\", \"member\", \"Angus Young\", \"PER\"],\n    [\"AC/DC\", \"ORG\", \"member\", \"Malcolm Young\", \"PER\"],\n    [\"Moneytalks\", \"MISC\", \"featured in\", \"Moneyball\", \"MISC\"],\n    [\"Moneytalks\", \"MISC\", \"director\", \"David Mallet\", \"PER\"],\n    [\"AC/DC\", \"ORG\", \"tour\", \"Razors Edge World Tour\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Music Genre: Rock"
+ ],
+ "kb_dedup_raw": "[\n    [\"Moneytalks\", \"MISC\", \"written by\", \"Malcolm Young\", \"PER\"],\n    [\"Moneytalks\", \"MISC\", \"written by\", \"Angus Young\", \"PER\"],\n    [\"Moneytalks\", \"MISC\", \"produced by\", \"Bruce Fairbairn\", \"PER\"],\n    [\"Moneytalks\", \"MISC\", \"released on\", \"The Razors Edge\", \"MISC\"],\n    [\"The Razors Edge\", \"MISC\", \"released\", \"Moneytalks\", \"MISC\"],\n    [\"AC/DC\", \"ORG\", \"performed\", \"Moneytalks\", \"MISC\"],\n    [\"Moneytalks\", \"MISC\", \"part of\", \"The Razors Edge\", \"MISC\"],\n    [\"AC/DC\", \"ORG\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Moneytalks\", \"MISC\", \"released as single in\", \"December 1990\", \"TIME\"],\n    [\"AC/DC\", \"ORG\", \"released album\", \"Live\", \"MISC\"],\n    [\"Live\", \"MISC\", \"features song\", \"Moneytalks\", \"MISC\"],\n    [\"Moneytalks\", \"MISC\", \"peaked at\", \"#23\", \"NUM\"],\n    [\"Moneytalks\", \"MISC\", \"appeared in\", \"Moneyball\", \"MISC\"],\n    [\"David Mallet\", \"PER\", \"directed\", \"Moneytalks\", \"MISC\"],\n    [\"Moneytalks\", \"MISC\", \"directed by\", \"David Mallet\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 20,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

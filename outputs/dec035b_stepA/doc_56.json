@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_56",
+ "base_raw": "[\n    [\"Raiphi Vincent Gomez\", \"PER\", \"date of birth\", \"16 October 1985\", \"TIME\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Kerala\", \"LOC\"],\n    [\"Rajasthan Royals\", \"ORG\", \"league\", \"Indian Premier League\", \"MISC\"],\n    [\"Sreesanth\", \"PER\", \"member of sports team\", \"Kings XI Punjab\", \"ORG\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Kochi Tuskers Kerala\", \"ORG\"],\n    [\"Kochi Tuskers Kerala\", \"ORG\", \"league\", \"IPL\", \"MISC\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Pune Warriors India\", \"ORG\"],\n    [\"Pune Warriors India\", \"ORG\", \"league\", \"IPL\", \"MISC\"],\n    [\"Sachin Baby\", \"PER\", \"member of sports team\", \"Kerala\", \"LOC\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"country\", \"India\", \"LOC\"],\n    [\"Kerala\", \"LOC\", \"part of\", \"India\", \"LOC\"],\n    [\"Jacques Kallis\", \"PER\", \"member of sports team\", \"Kolkata Knight Riders\", \"ORG\"],\n    [\"Gautam Gambhir\", \"PER\", \"member of sports team\", \"Kolkata Knight Riders\", \"ORG\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"employer\", \"Rajasthan Royals\", \"ORG\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"employer\", \"Kochi Tuskers Kerala\", \"ORG\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"employer\", \"Pune Warriors India\", \"ORG\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Raiphi Vincent Gomez\", \"PER\", \"date of birth\", \"16 October 1985\", \"TIME\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"country\", \"India\", \"LOC\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Kerala\", \"LOC\"],\n    [\"Rajasthan Royals\", \"ORG\", \"league\", \"Indian Premier League\", \"MISC\"],\n    [\"Sreesanth\", \"PER\", \"member of sports team\", \"Kings XI Punjab\", \"ORG\"],\n    [\"Kochi Tuskers Kerala\", \"ORG\", \"league\", \"Indian Premier League\", \"MISC\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Kochi Tuskers Kerala\", \"ORG\"],\n    [\"Jacques Kallis\", \"PER\", \"member of sports team\", \"Kolkata Knight Riders\", \"ORG\"],\n    [\"Gautam Gambhir\", \"PER\", \"member of sports team\", \"Kolkata Knight Riders\", \"ORG\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Pune Warriors India\", \"ORG\"],\n    [\"Sachin Baby\", \"PER\", \"member of sports team\", \"Kerala\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 13,
+  "FN": 2,
+  "recall": 0.75,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Raiphi Vincent Gomez\", \"PER\", \"date of birth\", \"16 October 1985\", \"TIME\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"country\", \"India\", \"LOC\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Kerala\", \"LOC\"],\n    [\"Rajasthan Royals\", \"ORG\", \"league\", \"Indian Premier League\", \"MISC\"],\n    [\"Sreesanth\", \"PER\", \"member of sports team\", \"Kings XI Punjab\", \"ORG\"],\n    [\"Kochi Tuskers Kerala\", \"ORG\", \"league\", \"Indian Premier League\", \"MISC\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Kochi Tuskers Kerala\", \"ORG\"],\n    [\"Jacques Kallis\", \"PER\", \"member of sports team\", \"Kolkata Knight Riders\", \"ORG\"],\n    [\"Gautam Gambhir\", \"PER\", \"member of sports team\", \"Kolkata Knight Riders\", \"ORG\"],\n    [\"Raiphi Vincent Gomez\", \"PER\", \"member of sports team\", \"Pune Warriors India\", \"ORG\"],\n    [\"Sachin Baby\", \"PER\", \"position held\", \"captain\", \"MISC\"],\n    [\"Kerala\", \"LOC\", \"country\", \"India\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"located in the administrative territorial entity\", \"India\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 15,
+  "FN": 5,
+  "recall": 0.6153846153846154,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

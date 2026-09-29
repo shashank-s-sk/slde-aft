@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_351",
+ "base_raw": "[\n    [\"Johann Matthias Gesner\", \"PER\", \"location of work\", \"G\u00f6ttingen\", \"LOC\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"collaborator\", \"Johann Joachim Winckelmann\", \"PER\"],\n    [\"Johann Joachim Winckelmann\", \"PER\", \"field of study\", \"Greek mythology\", \"MISC\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"contribution\", \"mythological research\", \"MISC\"],\n    [\"G\u00f6ttingen\", \"LOC\", \"country\", \"Germany\", \"LOC\"],\n    [\"Johann Matthias Gesner\", \"PER\", \"field of study\", \"Greek studies\", \"MISC\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"influence on\", \"intellectual life in Germany\", \"MISC\"],\n    [\"Homer\", \"PER\", \"area of influence\", \"Germany\", \"LOC\"],\n    [\"Greek mythology\", \"MISC\", \"study location\", \"Germany\", \"LOC\"],\n    [\"Johann Joachim Winckelmann\", \"PER\", \"location of work\", \"G\u00f6ttingen\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Johann Matthias Gesner\", \"PER\", \"country\", \"Germany\", \"LOC\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"country\", \"Germany\", \"LOC\"],\n    [\"Johann Joachim Winckelmann\", \"PER\", \"country\", \"Germany\", \"LOC\"],\n    [\"G\u00f6ttingen\", \"LOC\", \"country\", \"Germany\", \"LOC\"],\n    [\"Homer\", \"PER\", \"field of study\", \"Greek mythology\", \"MISC\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"field of study\", \"mythological research\", \"MISC\"],\n    [\"Johann Joachim Winckelmann\", \"PER\", \"field of study\", \"Greek mythology\", \"MISC\"],\n    [\"Greece\", \"LOC\", \"influence on\", \"intellectual life in Germany\", \"MISC\"],\n    [\"Johann Matthias Gesner\", \"PER\", \"position held\", \"reviver of Greek studies\", \"MISC\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"position held\", \"philologist\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 15,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Johann Matthias Gesner\", \"PER\", \"country\", \"Germany\", \"LOC\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"country\", \"Germany\", \"LOC\"],\n    [\"Johann Joachim Winckelmann\", \"PER\", \"country\", \"Germany\", \"LOC\"],\n    [\"G\u00f6ttingen\", \"LOC\", \"country\", \"Germany\", \"LOC\"],\n    [\"Homer\", \"PER\", \"field of study\", \"Greek mythology\", \"MISC\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"field of study\", \"Greek mythology\", \"MISC\"],\n    [\"Johann Joachim Winckelmann\", \"PER\", \"field of study\", \"Greek mythology\", \"MISC\"],\n    [\"Greece\", \"LOC\", \"influence on\", \"Germany\", \"LOC\"],\n    [\"Johann Matthias Gesner\", \"PER\", \"influence on\", \"Christian Gottlob Heyne\", \"PER\"],\n    [\"Christian Gottlob Heyne\", \"PER\", \"collaborator\", \"Johann Joachim Winckelmann\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

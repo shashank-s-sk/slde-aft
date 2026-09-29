@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_197",
+ "base_raw": "[\n    [\"Rosneft\", \"ORG\", \"headquartered in\", \"Moscow\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"founded by\", \"Russian government\", \"ORG\"],\n    [\"Rosneft\", \"ORG\", \"country of origin\", \"Russia\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"industry\", \"energy\", \"MISC\"],\n    [\"Rosneft\", \"ORG\", \"parent organization\", \"Russian government\", \"ORG\"],\n    [\"Rosneft\", \"ORG\", \"location\", \"Russia\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"revenue\", \"4,134 billion\", \"NUM\"],\n    [\"Gazprom\", \"ORG\", \"country\", \"Russia\", \"LOC\"],\n    [\"Yukos\", \"ORG\", \"country\", \"Russia\", \"LOC\"],\n    [\"TNK-BP\", \"ORG\", \"country\", \"Russia\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Rosneft\", \"ORG\", \"headquartered in\", \"Moscow\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"founded by\", \"Russian government\", \"ORG\"],\n    [\"Rosneft\", \"ORG\", \"country of origin\", \"Russia\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"industry\", \"energy\", \"MISC\"],\n    [\"Rosneft\", \"ORG\", \"parent organization\", \"Russian government\", \"ORG\"],\n    [\"Rosneft\", \"ORG\", \"location of formation\", \"Russia\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"sector\", \"oil and gas\", \"MISC\"],\n    [\"Rosneft\", \"ORG\", \"type\", \"publicly-traded\", \"MISC\"],\n    [\"Rosneft\", \"ORG\", \"revenue\", \"\u20bd 4,134 billion\", \"NUM\"],\n    [\"Rosneft\", \"ORG\", \"rank\", \"24\", \"NUM\"],\n    [\"Rosneft\", \"ORG\", \"operates in\", \"more than twenty countries\", \"MISC\"],\n    [\"Yukos\", \"ORG\", \"acquired by\", \"Rosneft\", \"ORG\"],\n    [\"TNK-BP\", \"ORG\", \"acquired by\", \"Rosneft\", \"ORG\"],\n    [\"Gazprom\", \"ORG\", \"related to\", \"Rosneft\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 18,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Rosneft\", \"ORG\", \"headquartered in\", \"Moscow\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"country\", \"Russia\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"founded by\", \"Russian government\", \"ORG\"],\n    [\"Rosneft\", \"ORG\", \"parent organization\", \"Russian government\", \"ORG\"],\n    [\"Rosneft\", \"ORG\", \"location of formation\", \"Russia\", \"LOC\"],\n    [\"Yukos\", \"ORG\", \"country\", \"Russia\", \"LOC\"],\n    [\"TNK-BP\", \"ORG\", \"country\", \"Russia\", \"LOC\"],\n    [\"Gazprom\", \"ORG\", \"country\", \"Russia\", \"LOC\"],\n    [\"Rosneft\", \"ORG\", \"revenue\", \"4,134 billion\", \"NUM\"],\n    [\"Rosneft\", \"ORG\", \"rank\", \"24\", \"NUM\"],\n    [\"Rosneft\", \"ORG\", \"operates in\", \"20\", \"NUM\"],\n    [\"Rosneft\", \"ORG\", \"industry\", \"energy\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

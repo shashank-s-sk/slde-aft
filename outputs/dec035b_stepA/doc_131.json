@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_131",
+ "base_raw": "[\n    [\"Cingulata\", \"MISC\", \"part of\", \"Xenarthra\", \"MISC\"],\n    [\"Dasypodids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Chlamyphorids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Pampatheriids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Glyptodonts\", \"MISC\", \"instance of\", \"Chlamyphorids\", \"MISC\"],\n    [\"Cingulata\", \"MISC\", \"originated in\", \"South America\", \"LOC\"],\n    [\"South America\", \"LOC\", \"continent\", \"Cenozoic\", \"TIME\"],\n    [\"Great American Interchange\", \"MISC\", \"location\", \"southern North America\", \"LOC\"],\n    [\"Pampatheriids\", \"MISC\", \"went extinct during\", \"Quaternary extinction event\", \"MISC\"],\n    [\"Glyptodonts\", \"MISC\", \"went extinct during\", \"Quaternary extinction event\", \"MISC\"],\n    [\"Quaternary extinction event\", \"MISC\", \"time\", \"Holocene\", \"TIME\"],\n    [\"Paleo-Indians\", \"MISC\", \"colonized\", \"Americas\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 11,
+  "FN": 10,
+  "recall": 0.09090909090909091,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Cingulata\", \"MISC\", \"part of\", \"Xenarthra\", \"MISC\"],\n    [\"Dasypodids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Chlamyphorids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Pampatheriids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Glyptodonts\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Cingulata\", \"MISC\", \"originated in\", \"South America\", \"LOC\"],\n    [\"South America\", \"LOC\", \"continent\", \"Americas\", \"LOC\"],\n    [\"Pliocene\", \"TIME\", \"part of\", \"Cenozoic\", \"TIME\"],\n    [\"Pleistocene\", \"TIME\", \"part of\", \"Cenozoic\", \"TIME\"],\n    [\"Quaternary extinction event\", \"MISC\", \"occurred in\", \"Holocene\", \"TIME\"],\n    [\"Paleo-Indians\", \"MISC\", \"colonized\", \"Americas\", \"LOC\"],\n    [\"Cingulata\", \"MISC\", \"contains administrative territorial entity\", \"South America\", \"LOC\"],\n    [\"Giant armadillo\", \"MISC\", \"maximum body mass\", \"45 kg\", \"NUM\"],\n    [\"Pampatheriids\", \"MISC\", \"maximum body mass\", \"200 kg\", \"NUM\"],\n    [\"Glyptodonts\", \"MISC\", \"maximum body mass\", \"2000 kg\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Cingulata\", \"MISC\", \"part of\", \"Xenarthra\", \"MISC\"],\n    [\"Dasypodids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Chlamyphorids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Pampatheriids\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Glyptodonts\", \"MISC\", \"instance of\", \"Cingulata\", \"MISC\"],\n    [\"Cingulata\", \"MISC\", \"originated in\", \"South America\", \"LOC\"],\n    [\"South America\", \"LOC\", \"continent\", \"Cingulata\", \"MISC\"],\n    [\"Cingulata\", \"MISC\", \"migrated to\", \"North America\", \"LOC\"],\n    [\"Pampatheriids\", \"MISC\", \"weight\", \"200 kg\", \"NUM\"],\n    [\"Glyptodonts\", \"MISC\", \"weight\", \"2000 kg\", \"NUM\"],\n    [\"Armadillos\", \"MISC\", \"weight\", \"45 kg\", \"NUM\"],\n    [\"Cingulata\", \"MISC\", \"extinction event\", \"Quaternary extinction event\", \"MISC\"],\n    [\"Quaternary extinction event\", \"MISC\", \"time\", \"Holocene\", \"TIME\"],\n    [\"Paleo-Indians\", \"MISC\", \"colonization of\", \"Americas\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 18,
+  "FN": 8,
+  "recall": 0.42857142857142855,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

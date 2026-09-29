@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_280",
+ "base_raw": "[\n    [\"Arturo Alessandri\", \"PER\", \"opponent of\", \"The Democratic Party of Chile\", \"ORG\"],\n    [\"Pedro Aguirre Cerda\", \"PER\", \"supported by\", \"The Democratic Party of Chile\", \"ORG\"],\n    [\"The Democratic Party of Chile\", \"ORG\", \"merged with\", \"The Democrat Party\", \"ORG\"],\n    [\"The Democratic Party of Chile\", \"ORG\", \"dissolved into\", \"National Democratic Party (PADENA)\", \"ORG\"],\n    [\"The Democratic Party of Chile\", \"ORG\", \"part of\", \"Popular Front\", \"ORG\"],\n    [\"The Democrat Party\", \"ORG\", \"split into\", \"The Democratic Party of Chile\", \"ORG\"],\n    [\"The Democratic Party of Chile\", \"ORG\", \"split into\", \"The Democratic Party of Chile\", \"ORG\"],\n    [\"The People's Democratic Party\", \"ORG\", \"merged with\", \"The Democratic Party of Chile\", \"ORG\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 8,
+  "FN": 10,
+  "recall": 0.0,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Democratic Party of Chile\", \"ORG\", \"founded by\", \"left-wing faction of the Democrat Party\", \"MISC\"],\n    [\"Arturo Alessandri\", \"PER\", \"opponent\", \"Democratic Party of Chile\", \"ORG\"],\n    [\"Pedro Aguirre Cerda\", \"PER\", \"supported by\", \"Democratic Party of Chile\", \"ORG\"],\n    [\"Democratic Party of Chile\", \"ORG\", \"merged with\", \"Democrat Party\", \"ORG\"],\n    [\"Democratic Party of Chile\", \"ORG\", \"dissolved, abolished or demolished\", \"1960\", \"TIME\"],\n    [\"National Democratic Party (PADENA)\", \"ORG\", \"founded by\", \"Democratic Party of Chile\", \"ORG\"],\n    [\"Democratic Party of Chile\", \"ORG\", \"member of\", \"Popular Front\", \"ORG\"],\n    [\"Democrat Party\", \"ORG\", \"split into\", \"Democratic Party of Chile\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 16,
+  "FN": 10,
+  "recall": 0.0,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 16,
+  "FN": 10,
+  "recall": 0.0,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Democratic Party of Chile\", \"ORG\", \"founded by\", \"left-wing faction of the Democrat Party\", \"MISC\"],\n    [\"Arturo Alessandri\", \"PER\", \"opponent\", \"Democratic Party of Chile\", \"ORG\"],\n    [\"Pedro Aguirre Cerda\", \"PER\", \"supported by\", \"Democratic Party of Chile\", \"ORG\"],\n    [\"Democratic Party of Chile\", \"ORG\", \"merged with\", \"Democrat Party\", \"ORG\"],\n    [\"Democratic Party of Chile\", \"ORG\", \"dissolved, abolished or demolished\", \"1960\", \"TIME\"],\n    [\"National Democratic Party (PADENA)\", \"ORG\", \"founded by\", \"Democratic Party of Chile\", \"ORG\"],\n    [\"Democratic Party of Chile\", \"ORG\", \"member of\", \"Popular Front\", \"ORG\"],\n    [\"Democrat Party\", \"ORG\", \"split into\", \"Democratic Party of Chile\", \"ORG\"]\n]"
+}

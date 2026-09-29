@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_423",
+ "base_raw": "[\n    [\"Sardinia\", \"LOC\", \"located in\", \"Mediterranean\", \"LOC\"],\n    [\"Crete\", \"LOC\", \"located in\", \"Mediterranean\", \"LOC\"],\n    [\"Peloponnese\", \"LOC\", \"located in\", \"Mediterranean\", \"LOC\"],\n    [\"Cyprus\", \"LOC\", \"located in\", \"Mediterranean\", \"LOC\"],\n    [\"Cannatello\", \"LOC\", \"located in\", \"Sicily\", \"LOC\"],\n    [\"Bo\u011fazk\u00f6y\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Qantir\", \"LOC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Sozopol\", \"LOC\", \"located in\", \"Bulgaria\", \"LOC\"],\n    [\"Uluburun\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Cape Gelidonya\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Hattusa\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Pi-Ramesses\", \"LOC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"oxhide ingots\", \"MISC\", \"producer\", \"Mediterranean LBA producers\", \"MISC\"],\n    [\"Mediterranean LBA\", \"TIME\", \"time period\", \"Late Bronze Age\", \"TIME\"],\n    [\"copper\", \"MISC\", \"material\", \"oxhide ingots\", \"MISC\"],\n    [\"tin\", \"MISC\", \"material\", \"oxhide ingots\", \"MISC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 8,
+  "FN": 9,
+  "recall": 0.5,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Italian Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Sardinia\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Crete\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Peloponnese\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Cyprus\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Cannatello\", \"LOC\", \"located in\", \"Sicily\", \"LOC\"],\n    [\"Sicily\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Bo\u011fazk\u00f6y\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Hattusa\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Qantir\", \"LOC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Pi-Ramesses\", \"LOC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Sozopol\", \"LOC\", \"located in\", \"Bulgaria\", \"LOC\"],\n    [\"Uluburun\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Cape Gelidonya\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Mediterranean Late Bronze Age\", \"TIME\", \"period of\", \"oxhide ingots\", \"MISC\"],\n    [\"oxhide ingots\", \"MISC\", \"made of\", \"copper\", \"MISC\"],\n    [\"oxhide ingots\", \"MISC\", \"made of\", \"tin\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 12,
+  "FN": 14,
+  "recall": 0.36363636363636365,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Italian Locations",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Sardinia\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Crete\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Peloponnese\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Cyprus\", \"LOC\", \"located in\", \"Mediterranean\", \"MISC\"],\n    [\"Cannatello\", \"LOC\", \"located in\", \"Sicily\", \"LOC\"],\n    [\"Bo\u011fazk\u00f6y\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Qantir\", \"LOC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Sozopol\", \"LOC\", \"located in\", \"Bulgaria\", \"LOC\"],\n    [\"Uluburun\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Cape Gelidonya\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Hattusa\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Pi-Ramesses\", \"LOC\", \"located in\", \"Egypt\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 7,
+  "FN": 13,
+  "recall": 0.4090909090909091,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

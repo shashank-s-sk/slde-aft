@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_488",
+ "base_raw": "[\n    [\"al-Mutawakkil\", \"PER\", \"place of death\", \"Samarra\", \"LOC\"],\n    [\"al-Muntasir\", \"PER\", \"cause of death\", \"poisoning\", \"MISC\"],\n    [\"al-Musta'in\", \"PER\", \"place of exile\", \"Baghdad\", \"LOC\"],\n    [\"al-Mu'tazz\", \"PER\", \"date of death\", \"July 869\", \"TIME\"],\n    [\"al-Muhtadi\", \"PER\", \"date of death\", \"June 870\", \"TIME\"],\n    [\"Musa ibn Bugha\", \"PER\", \"relation\", \"al-Mu'tamid\", \"PER\"],\n    [\"al-Muwaffaq\", \"PER\", \"relation\", \"al-Mu'tamid\", \"PER\"],\n    [\"Bugha the Younger\", \"PER\", \"relation\", \"al-Musta'in\", \"PER\"],\n    [\"Wasif\", \"PER\", \"relation\", \"al-Musta'in\", \"PER\"],\n    [\"Tahirids\", \"ORG\", \"relation\", \"al-Musta'in\", \"PER\"],\n    [\"Turkish military\", \"ORG\", \"relation\", \"al-Mu'tazz\", \"PER\"],\n    [\"Abbasid Caliphate\", \"ORG\", \"capital\", \"Samarra\", \"LOC\"],\n    [\"Abbasid Caliphate\", \"ORG\", \"capital\", \"Baghdad\", \"LOC\"],\n    [\"al-Mu'tamid\", \"PER\", \"brother\", \"al-Muwaffaq\", \"PER\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"al-Mutawakkil\", \"PER\", \"place of death\", \"Samarra\", \"LOC\"],\n    [\"al-Muntasir\", \"PER\", \"cause of death\", \"poisoning\", \"MISC\"],\n    [\"al-Musta'in\", \"PER\", \"place of exile\", \"Baghdad\", \"LOC\"],\n    [\"al-Mu'tazz\", \"PER\", \"date of death\", \"July 869\", \"TIME\"],\n    [\"al-Muhtadi\", \"PER\", \"date of death\", \"June 870\", \"TIME\"],\n    [\"Musa ibn Bugha\", \"PER\", \"relation to al-Mu'tamid\", \"brother's associate\", \"MISC\"],\n    [\"al-Muwaffaq\", \"PER\", \"relation to al-Mu'tamid\", \"brother and regent\", \"MISC\"],\n    [\"Bugha the Younger\", \"PER\", \"relation to al-Musta'in\", \"supporter\", \"MISC\"],\n    [\"Wasif\", \"PER\", \"relation to al-Musta'in\", \"supporter\", \"MISC\"],\n    [\"Tahirids\", \"ORG\", \"relation to al-Musta'in\", \"allies\", \"MISC\"],\n    [\"Turkish military\", \"ORG\", \"relation to al-Mu'tazz\", \"opponents\", \"MISC\"],\n    [\"Abbasid Caliphate\", \"ORG\", \"capital\", \"Samarra\", \"LOC\"],\n    [\"Abbasid Caliphate\", \"ORG\", \"event\", \"Anarchy at Samarra\", \"MISC\"],\n    [\"Anarchy at Samarra\", \"MISC\", \"location\", \"Samarra\", \"LOC\"],\n    [\"Anarchy at Samarra\", \"MISC\", \"time period\", \"861-870\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 22,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 22,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"al-Mutawakkil\", \"PER\", \"place of death\", \"Samarra\", \"LOC\"],\n    [\"al-Muntasir\", \"PER\", \"cause of death\", \"poisoning\", \"MISC\"],\n    [\"al-Musta'in\", \"PER\", \"place of exile\", \"Baghdad\", \"LOC\"],\n    [\"al-Mu'tazz\", \"PER\", \"date of death\", \"July 869\", \"TIME\"],\n    [\"al-Muhtadi\", \"PER\", \"date of death\", \"June 870\", \"TIME\"],\n    [\"Musa ibn Bugha\", \"PER\", \"relation to al-Mu'tamid\", \"brother's associate\", \"MISC\"],\n    [\"al-Muwaffaq\", \"PER\", \"relation to al-Mu'tamid\", \"brother and regent\", \"MISC\"],\n    [\"Bugha the Younger\", \"PER\", \"relation to al-Musta'in\", \"supporter\", \"MISC\"],\n    [\"Wasif\", \"PER\", \"relation to al-Musta'in\", \"supporter\", \"MISC\"],\n    [\"Tahirids\", \"ORG\", \"relation to al-Musta'in\", \"allies\", \"MISC\"],\n    [\"Turkish military\", \"ORG\", \"relation to al-Mu'tazz\", \"opponents\", \"MISC\"],\n    [\"Abbasid Caliphate\", \"ORG\", \"capital\", \"Samarra\", \"LOC\"],\n    [\"Abbasid Caliphate\", \"ORG\", \"event\", \"Anarchy at Samarra\", \"MISC\"],\n    [\"Anarchy at Samarra\", \"MISC\", \"location\", \"Samarra\", \"LOC\"],\n    [\"Anarchy at Samarra\", \"MISC\", \"time period\", \"861-870\", \"TIME\"]\n]"
+}

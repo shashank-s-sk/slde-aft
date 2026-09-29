@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_277",
+ "base_raw": "[\n    [\"No Doubt\", \"ORG\", \"genre\", \"ska punk\", \"MISC\"],\n    [\"Return of Saturn\", \"MISC\", \"release date\", \"April 11, 2000\", \"TIME\"],\n    [\"No Doubt\", \"ORG\", \"member\", \"Gwen Stefani\", \"PER\"],\n    [\"Return of Saturn\", \"MISC\", \"producer\", \"Glen Ballard\", \"PER\"],\n    [\"No Doubt\", \"ORG\", \"label\", \"Interscope Records\", \"ORG\"],\n    [\"Return of Saturn\", \"MISC\", \"award received\", \"Grammy Award for Best Rock Album\", \"MISC\"],\n    [\"No Doubt\", \"ORG\", \"previous album\", \"Tragic Kingdom\", \"MISC\"],\n    [\"Return of Saturn\", \"MISC\", \"record label\", \"Trauma Records\", \"ORG\"],\n    [\"Gwen Stefani\", \"PER\", \"spouse\", \"None\", \"MISC\"],\n    [\"No Doubt\", \"ORG\", \"founding member\", \"Eric Stefani\", \"PER\"],\n    [\"Return of Saturn\", \"MISC\", \"chart position\", \"2\", \"NUM\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Record Labels",
+  "Numbers",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"No Doubt\", \"ORG\", \"genre\", \"ska punk\", \"MISC\"],\n    [\"No Doubt\", \"ORG\", \"genre\", \"reggae\", \"MISC\"],\n    [\"Return of Saturn\", \"MISC\", \"release date\", \"April 11, 2000\", \"TIME\"],\n    [\"No Doubt\", \"ORG\", \"member\", \"Gwen Stefani\", \"PER\"],\n    [\"Glen Ballard\", \"PER\", \"position held\", \"producer\", \"MISC\"],\n    [\"Return of Saturn\", \"MISC\", \"record label\", \"Trauma Records\", \"ORG\"],\n    [\"Return of Saturn\", \"MISC\", \"record label\", \"Interscope Records\", \"ORG\"],\n    [\"No Doubt\", \"ORG\", \"album\", \"Tragic Kingdom\", \"MISC\"],\n    [\"Eric Stefani\", \"PER\", \"position held\", \"keyboardist\", \"MISC\"],\n    [\"No Doubt\", \"ORG\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"Gwen Stefani\", \"PER\", \"spouse\", \"None\", \"MISC\"],\n    [\"Return of Saturn\", \"MISC\", \"award received\", \"nominated for Best Rock Album\", \"MISC\"],\n    [\"No Doubt\", \"ORG\", \"number of singles\", \"4\", \"NUM\"],\n    [\"Return of Saturn\", \"MISC\", \"chart position\", \"number two on the Billboard 200\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 16,
+  "FN": 7,
+  "recall": 0.5333333333333333,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"No Doubt\", \"ORG\", \"genre\", \"ska punk\", \"MISC\"],\n    [\"No Doubt\", \"ORG\", \"genre\", \"reggae\", \"MISC\"],\n    [\"Glen Ballard\", \"PER\", \"position held\", \"producer\", \"MISC\"],\n    [\"Return of Saturn\", \"MISC\", \"release date\", \"April 11, 2000\", \"TIME\"],\n    [\"No Doubt\", \"ORG\", \"member\", \"Gwen Stefani\", \"PER\"],\n    [\"Eric Stefani\", \"PER\", \"position held\", \"keyboardist\", \"MISC\"],\n    [\"Trauma Records\", \"ORG\", \"parent organization\", \"Interscope Records\", \"ORG\"],\n    [\"Return of Saturn\", \"MISC\", \"record label\", \"Trauma Records\", \"ORG\"],\n    [\"Return of Saturn\", \"MISC\", \"record label\", \"Interscope Records\", \"ORG\"],\n    [\"No Doubt\", \"ORG\", \"location of formation\", \"U.S.\", \"LOC\"],\n    [\"Gwen Stefani\", \"PER\", \"employer\", \"No Doubt\", \"ORG\"],\n    [\"Return of Saturn\", \"MISC\", \"creator\", \"No Doubt\", \"ORG\"],\n    [\"No Doubt\", \"ORG\", \"founded by\", \"Eric Stefani\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 16,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

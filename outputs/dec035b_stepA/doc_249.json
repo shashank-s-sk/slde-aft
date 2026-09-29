@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_249",
+ "base_raw": "[\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"country of citizenship\", \"Senegal\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"director\", \"Ousmane Semb\u00e8ne\", \"PER\"],\n    [\"Djerrisso\", \"LOC\", \"located in the administrative territorial entity\", \"Burkina Faso\", \"LOC\"],\n    [\"Coll\u00e9\", \"PER\", \"location\", \"Djerrisso\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"location of formation\", \"Djerrisso\", \"LOC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"original language of work\", \"None\", \"MISC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"notable work\", \"Moolaad\u00e9\", \"MISC\"],\n    [\"Senegal\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Burkina Faso\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Nigeria\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Cameroon\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Morocco\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Tunisia\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"country\", \"Senegal\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"country\", \"France\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"country\", \"Burkina Faso\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"country\", \"Cameroon\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"country\", \"Morocco\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"country\", \"Tunisia\", \"LOC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"member of\", \"None\", \"MISC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"employer\", \"None\", \"MISC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"producer\", \"None\", \"MISC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"cast member\", \"Coll\u00e9\", \"PER\"],\n    [\"Coll\u00e9\", \"PER\", \"member of\", \"None\", \"MISC\"],\n    [\"Coll\u00e9\", \"PER\", \"employer\", \"None\", \"MISC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"author\", \"Moolaad\u00e9\", \"MISC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"screenwriter\", \"Moolaad\u00e9\", \"MISC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"director\", \"Moolaad\u00e9\", \"MISC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"genre\", \"None\", \"MISC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"release date\", \"2004\", \"TIME\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 25,
+  "FN": 3,
+  "recall": 0.7,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"country of citizenship\", \"Senegal\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"director\", \"Ousmane Semb\u00e8ne\", \"PER\"],\n    [\"Djerrisso\", \"LOC\", \"located in the administrative territorial entity\", \"Burkina Faso\", \"LOC\"],\n    [\"Coll\u00e9\", \"PER\", \"location\", \"Djerrisso\", \"LOC\"],\n    [\"Senegal\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Burkina Faso\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Nigeria\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Cameroon\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Morocco\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Tunisia\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"country\", \"Senegal\", \"LOC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"educated at\", \"MISC\", \"MISC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"original language of work\", \"MISC\", \"MISC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"notable work\", \"Moolaad\u00e9\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 28,
+  "FN": 2,
+  "recall": 0.8,
+  "n_extracted": 34,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"country of citizenship\", \"Senegal\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"director\", \"Ousmane Semb\u00e8ne\", \"PER\"],\n    [\"Djerrisso\", \"LOC\", \"located in the administrative territorial entity\", \"Burkina Faso\", \"LOC\"],\n    [\"Coll\u00e9\", \"PER\", \"location\", \"Djerrisso\", \"LOC\"],\n    [\"Senegal\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Burkina Faso\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Nigeria\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Cameroon\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Morocco\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Tunisia\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"country\", \"Senegal\", \"LOC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"educated at\", \"MISC\", \"MISC\"],\n    [\"Moolaad\u00e9\", \"MISC\", \"original language of work\", \"MISC\", \"MISC\"],\n    [\"Ousmane Semb\u00e8ne\", \"PER\", \"notable work\", \"Moolaad\u00e9\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 28,
+  "FN": 2,
+  "recall": 0.8,
+  "n_extracted": 34,
+  "judge_parse_ok": true
+ }
+}

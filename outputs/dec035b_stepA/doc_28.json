@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_28",
+ "base_raw": "[\n    [\"Buffalo Sabres\", \"ORG\", \"league\", \"National Hockey League (NHL)\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"division\", \"Atlantic Division\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"conference\", \"Eastern Conference\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"founded by\", \"Terry Pegula\", \"PER\"],\n    [\"Terry Pegula\", \"PER\", \"owned\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"location\", \"Buffalo, New York\", \"LOC\"],\n    [\"KeyBank Center\", \"LOC\", \"located in\", \"Buffalo, New York\", \"LOC\"],\n    [\"Buffalo Memorial Auditorium\", \"LOC\", \"located in\", \"Buffalo, New York\", \"LOC\"],\n    [\"Gilbert Perreault\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Rick Martin\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Rene Robert\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Gilbert Perreault\", \"PER\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Rick Martin\", \"PER\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Rene Robert\", \"PER\"],\n    [\"Buffalo Sabres\", \"ORG\", \"inception\", \"1970\", \"TIME\"],\n    [\"Vancouver Canucks\", \"ORG\", \"founded\", \"1970\", \"TIME\"],\n    [\"Philadelphia Flyers\", \"ORG\", \"conflict\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Dallas Stars\", \"ORG\", \"conflict\", \"Buffalo Sabres\", \"ORG\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 17,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Buffalo Sabres\", \"ORG\", \"league\", \"National Hockey League (NHL)\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"division\", \"Atlantic Division\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"conference\", \"Eastern Conference\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"location\", \"Buffalo, New York\", \"LOC\"],\n    [\"Buffalo Sabres\", \"ORG\", \"owner\", \"Terry Pegula\", \"PER\"],\n    [\"Terry Pegula\", \"PER\", \"year of purchase\", \"2011\", \"TIME\"],\n    [\"Buffalo Sabres\", \"ORG\", \"year established\", \"1970\", \"TIME\"],\n    [\"Vancouver Canucks\", \"ORG\", \"year established\", \"1970\", \"TIME\"],\n    [\"KeyBank Center\", \"LOC\", \"year opened\", \"1996\", \"TIME\"],\n    [\"Buffalo Memorial Auditorium\", \"LOC\", \"year closed\", \"1996\", \"TIME\"],\n    [\"Buffalo Sabres\", \"ORG\", \"home arena\", \"KeyBank Center\", \"LOC\"],\n    [\"Buffalo Sabres\", \"ORG\", \"former home arena\", \"Buffalo Memorial Auditorium\", \"LOC\"],\n    [\"Philadelphia Flyers\", \"ORG\", \"opponent in Stanley Cup Finals\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Dallas Stars\", \"ORG\", \"opponent in Stanley Cup Finals\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Gilbert Perreault\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Rick Martin\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Rene Robert\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Gilbert Perreault\", \"PER\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Rick Martin\", \"PER\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Rene Robert\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 24,
+  "FN": 1,
+  "recall": 0.8888888888888888,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Buffalo Sabres\", \"ORG\", \"league\", \"National Hockey League (NHL)\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"division\", \"Atlantic Division\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"conference\", \"Eastern Conference\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"founded by\", \"Terry Pegula\", \"PER\"],\n    [\"Terry Pegula\", \"PER\", \"owned\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Buffalo Sabres\", \"ORG\", \"location\", \"Buffalo, New York\", \"LOC\"],\n    [\"KeyBank Center\", \"LOC\", \"located in\", \"Buffalo, New York\", \"LOC\"],\n    [\"Buffalo Memorial Auditorium\", \"LOC\", \"located in\", \"Buffalo, New York\", \"LOC\"],\n    [\"Gilbert Perreault\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Rick Martin\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Rene Robert\", \"PER\", \"team\", \"Buffalo Sabres\", \"ORG\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Gilbert Perreault\", \"PER\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Rick Martin\", \"PER\"],\n    [\"The French Connection\", \"MISC\", \"member\", \"Rene Robert\", \"PER\"],\n    [\"Buffalo Sabres\", \"ORG\", \"inception\", \"1970\", \"TIME\"],\n    [\"Vancouver Canucks\", \"ORG\", \"founded\", \"1970\", \"TIME\"],\n    [\"Philadelphia Flyers\", \"ORG\", \"conflict\", \"Buffalo Sabres\", \"ORG\"],\n    [\"Dallas Stars\", \"ORG\", \"conflict\", \"Buffalo Sabres\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 4,
+  "recall": 0.5,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

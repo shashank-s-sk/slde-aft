@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_259",
+ "base_raw": "[\n    [\"Saviem\", \"ORG\", \"merged with\", \"Berliet\", \"ORG\"],\n    [\"Saviem\", \"ORG\", \"member of\", \"Club of Four\", \"ORG\"],\n    [\"Volvo\", \"ORG\", \"member of\", \"Club of Four\", \"ORG\"],\n    [\"DAF\", \"ORG\", \"member of\", \"Club of Four\", \"ORG\"],\n    [\"Magirus-Deutz\", \"ORG\", \"member of\", \"Club of Four\", \"ORG\"],\n    [\"Club of Four\", \"ORG\", \"based in\", \"Paris\", \"LOC\"],\n    [\"Soci\u00e9t\u00e9 Europ\u00e9enne de Travaux et de D\u00e9veloppement (ETD)\", \"ORG\", \"also known as\", \"Club of Four\", \"ORG\"],\n    [\"Renault V\u00e9hicules Industriels (RVI)\", \"ORG\", \"founded by\", \"Saviem\", \"ORG\"],\n    [\"Renault V\u00e9hicules Industriels (RVI)\", \"ORG\", \"founded by\", \"Berliet\", \"ORG\"],\n    [\"Magirus-Deutz\", \"ORG\", \"part of\", \"Iveco\", \"ORG\"],\n    [\"Mack trucks\", \"ORG\", \"used cab design from\", \"Club of Four\", \"ORG\"],\n    [\"Club of Four\", \"ORG\", \"developed\", \"shared cab design\", \"MISC\"],\n    [\"Magirus 90M6FK\", \"MISC\", \"used cab design from\", \"Club of Four\", \"ORG\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Saviem\", \"ORG\", \"merged with\", \"Berliet\", \"ORG\"],\n    [\"Saviem\", \"ORG\", \"member of\", \"Club of Four\", \"ORG\"],\n    [\"Volvo\", \"ORG\", \"member of\", \"Club of Four\", \"ORG\"],\n    [\"DAF\", \"ORG\", \"member of\", \"Club of Four\", \"ORG\"],\n    [\"Magirus-Deutz\", \"ORG\", \"member of\", \"Club of Four\", \"ORG\"],\n    [\"Magirus-Deutz\", \"ORG\", \"became part of\", \"Iveco\", \"ORG\"],\n    [\"Club of Four\", \"ORG\", \"based in\", \"Paris\", \"LOC\"],\n    [\"Saviem\", \"ORG\", \"founded\", \"Soci\u00e9t\u00e9 Europ\u00e9enne de Travaux et de D\u00e9veloppement (ETD)\", \"ORG\"],\n    [\"Renault V\u00e9hicules Industriels (RVI)\", \"ORG\", \"created by merger of\", \"Saviem\", \"ORG\"],\n    [\"Renault V\u00e9hicules Industriels (RVI)\", \"ORG\", \"created by merger of\", \"Berliet\", \"ORG\"],\n    [\"Mack trucks\", \"ORG\", \"used cab design from\", \"Club of Four\", \"ORG\"],\n    [\"Magirus 90M6FK\", \"MISC\", \"used cab design from\", \"Club of Four\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Saviem\", \"ORG\", \"founded\", \"Club of Four\", \"ORG\"],\n    [\"Volvo\", \"ORG\", \"founded\", \"Club of Four\", \"ORG\"],\n    [\"DAF\", \"ORG\", \"founded\", \"Club of Four\", \"ORG\"],\n    [\"Magirus-Deutz\", \"ORG\", \"founded\", \"Club of Four\", \"ORG\"],\n    [\"Club of Four\", \"ORG\", \"based in\", \"Paris\", \"LOC\"],\n    [\"Saviem\", \"ORG\", \"merged with\", \"Berliet\", \"ORG\"],\n    [\"Saviem\", \"ORG\", \"became part of\", \"Renault V\u00e9hicules Industriels\", \"ORG\"],\n    [\"Magirus-Deutz\", \"ORG\", \"became part of\", \"Iveco\", \"ORG\"],\n    [\"Club of Four\", \"ORG\", \"developed\", \"shared cab design\", \"MISC\"],\n    [\"shared cab design\", \"MISC\", \"used on\", \"Mack trucks\", \"ORG\"],\n    [\"shared cab design\", \"MISC\", \"used on\", \"Magirus 90M6FK\", \"MISC\"],\n    [\"Club of Four\", \"ORG\", \"founded in\", \"1978\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 20,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

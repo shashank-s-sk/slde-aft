@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_415",
+ "base_raw": "[\n    [\"Julio Rafael Pineda\", \"PER\", \"immigrated to\", \"United States\", \"LOC\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"began career at\", \"WXTV\", \"ORG\"],\n    [\"WXTV\", \"ORG\", \"affiliate of\", \"Univision\", \"ORG\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"host of\", \"Punto y Aparte\", \"MISC\"],\n    [\"Punto y Aparte\", \"MISC\", \"ended in\", \"1989\", \"TIME\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"interviewed\", \"Bill Clinton\", \"PER\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"interviewed\", \"Desi Arnaz\", \"PER\"],\n    [\"WXTV\", \"ORG\", \"located in\", \"New York City\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 8,
+  "FN": 11,
+  "recall": 0.0,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Persons",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Julio Rafael Pineda\", \"PER\", \"place of birth\", \"Baracoa\", \"LOC\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"country of origin\", \"Cuba\", \"LOC\"],\n    [\"WXTV\", \"ORG\", \"located in\", \"New York City\", \"LOC\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"employer\", \"WXTV\", \"ORG\"],\n    [\"Punto y Aparte\", \"MISC\", \"host\", \"Julio Rafael Pineda\", \"PER\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"interviewed\", \"Bill Clinton\", \"PER\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"interviewed\", \"Desi Arnaz\", \"PER\"],\n    [\"WXTV\", \"ORG\", \"language\", \"Spanish\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Julio Rafael Pineda\", \"PER\", \"date of birth\", \"December 20, 1937\", \"TIME\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"place of birth\", \"Baracoa\", \"LOC\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"country of origin\", \"Cuba\", \"LOC\"],\n    [\"WXTV\", \"ORG\", \"located in\", \"New York City\", \"LOC\"],\n    [\"WXTV\", \"ORG\", \"language\", \"Spanish\", \"MISC\"],\n    [\"Punto y Aparte\", \"MISC\", \"host\", \"Julio Rafael Pineda\", \"PER\"],\n    [\"Julio Rafael Pineda\", \"PER\", \"employer\", \"WXTV\", \"ORG\"],\n    [\"Bill Clinton\", \"PER\", \"interviewed by\", \"Julio Rafael Pineda\", \"PER\"],\n    [\"Desi Arnaz\", \"PER\", \"interviewed by\", \"Julio Rafael Pineda\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

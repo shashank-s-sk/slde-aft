@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_264",
+ "base_raw": "[\n    [\"Ormstown\", \"LOC\", \"located in\", \"Quebec\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Chateauguay River\", \"LOC\", \"located in\", \"Chateauguay Valley\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"distance from\", \"Montreal\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"distance from\", \"New York State\", \"LOC\"],\n    [\"Canada 2011 Census\", \"TIME\", \"population\", \"3595\", \"NUM\"],\n    [\"Francophones\", \"MISC\", \"percentage of population\", \"65%\", \"NUM\"],\n    [\"Chateauguay Valley Regional\", \"ORG\", \"type\", \"high school\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"elementary schools\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"adult education facilities\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"restaurants\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"churches\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"known for\", \"antique dealers\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"known for\", \"gift shops\", \"MISC\"],\n    [\"Ormstown Beach\", \"LOC\", \"located in\", \"park\", \"LOC\"],\n    [\"Chateauguay River\", \"LOC\", \"used for\", \"cycling\", \"MISC\"],\n    [\"old dam\", \"MISC\", \"source of power for\", \"mill\", \"MISC\"],\n    [\"World War II\", \"TIME\", \"event\", \"access to electricity\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 16,
+  "recall": 0.1111111111111111,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Military Conflicts",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Ormstown\", \"LOC\", \"located in the administrative territorial entity\", \"Quebec\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"located in or next to body of water\", \"Chateauguay River\", \"LOC\"],\n    [\"Chateauguay Valley Regional\", \"ORG\", \"located in\", \"Ormstown\", \"LOC\"],\n    [\"Chateauguay Valley\", \"LOC\", \"part of\", \"Quebec\", \"LOC\"],\n    [\"Montreal\", \"LOC\", \"located in\", \"Quebec\", \"LOC\"],\n    [\"New York State\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"contains administrative territorial entity\", \"Chateauguay Valley\", \"LOC\"],\n    [\"Chateauguay River\", \"LOC\", \"located in\", \"Chateauguay Valley\", \"LOC\"],\n    [\"Ormstown Beach\", \"LOC\", \"located in\", \"Ormstown\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"capital of\", \"Chateauguay Valley\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 24,
+  "FN": 10,
+  "recall": 0.3333333333333333,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Ormstown\", \"LOC\", \"located in\", \"Quebec\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"situated on\", \"Chateauguay River\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"approximately one hour southwest of\", \"Montreal\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"20 minutes north of\", \"New York State\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"population as of 2011\", \"3,595\", \"NUM\"],\n    [\"Francophones\", \"MISC\", \"comprise about\", \"65%\", \"NUM\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"two elementary schools\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"one high school\", \"MISC\"],\n    [\"Chateauguay Valley Regional\", \"ORG\", \"located in\", \"Ormstown\", \"LOC\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"two adult education facilities\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"several restaurants\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"has\", \"several churches\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"known for\", \"antique dealers\", \"MISC\"],\n    [\"Ormstown\", \"LOC\", \"known for\", \"unique gift shops\", \"MISC\"],\n    [\"Ormstown Beach\", \"LOC\", \"located in\", \"Ormstown\", \"LOC\"],\n    [\"Chateauguay River\", \"LOC\", \"source of power for\", \"mill\", \"MISC\"],\n    [\"World War II\", \"MISC\", \"time of access to electricity\", \"after\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 31,
+  "FN": 13,
+  "recall": 0.23529411764705882,
+  "n_extracted": 33,
+  "judge_parse_ok": true
+ }
+}

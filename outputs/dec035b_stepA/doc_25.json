@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_25",
+ "base_raw": "[\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"located in\", \"Wuxi\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"founded by\", \"unknown\", \"MISC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"location of formation\", \"Wuxi, Jiangsu Province, China\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"country\", \"China\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"inception\", \"1993\", \"TIME\"],\n    [\"Qinghua\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"Peking\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"Fudan\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"Nanjing\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"Harvard\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"MIT\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"Cambridge\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"Oxford\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"Amsterdam University College\", \"ORG\", \"instance of\", \"university\", \"MISC\"],\n    [\"Hwa Chong Institution\", \"ORG\", \"located in\", \"Singapore\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"partner\", \"Hwa Chong Institution\", \"ORG\"],\n    [\"Wuxi\", \"LOC\", \"part of\", \"Jiangsu Province\", \"LOC\"],\n    [\"Jiangsu Province\", \"LOC\", \"part of\", \"China\", \"LOC\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.4444444444444444,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in Asia",
+  "Countries",
+  "Countries in Locations",
+  "Higher Education Institutions",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"located in\", \"Wuxi\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"located in\", \"Jiangsu Province\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"country\", \"China\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"founded by\", \"unknown\", \"MISC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"date of birth\", \"1993\", \"TIME\"],\n    [\"Wuxi\", \"LOC\", \"part of\", \"Jiangsu Province\", \"LOC\"],\n    [\"Jiangsu Province\", \"LOC\", \"part of\", \"China\", \"LOC\"],\n    [\"Qinghua\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Peking\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Fudan\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Nanjing\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Harvard\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"MIT\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"Cambridge\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"Oxford\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"Amsterdam University College\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"Hwa Chong Institution\", \"ORG\", \"located in\", \"Singapore\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"partner\", \"Hwa Chong Institution\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 15,
+  "FP": 18,
+  "FN": 9,
+  "recall": 0.625,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"located in\", \"Wuxi\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"located in\", \"Jiangsu Province\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"country\", \"China\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"founded by\", \"unknown\", \"MISC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"date of birth\", \"1993\", \"TIME\"],\n    [\"Wuxi\", \"LOC\", \"part of\", \"Jiangsu Province\", \"LOC\"],\n    [\"Jiangsu Province\", \"LOC\", \"part of\", \"China\", \"LOC\"],\n    [\"Qinghua\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Peking\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Fudan\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Nanjing\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Harvard\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"MIT\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"Cambridge\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"Oxford\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"Amsterdam University College\", \"ORG\", \"located in\", \"unknown\", \"MISC\"],\n    [\"Hwa Chong Institution\", \"ORG\", \"located in\", \"Singapore\", \"LOC\"],\n    [\"Wuxi Big Bridge Experimental High School\", \"ORG\", \"partner\", \"Hwa Chong Institution\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 24,
+  "FN": 9,
+  "recall": 0.5263157894736842,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ }
+}

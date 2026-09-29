@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_320",
+ "base_raw": "[\n    [\"Qiu Xiaolong\", \"PER\", \"place of birth\", \"Shanghai\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"country of citizenship\", \"China\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"residence\", \"St. Louis\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"date of birth\", \"1953\", \"TIME\"],\n    [\"T. S. Eliot\", \"PER\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Qiu Xiaolong\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Communist Party of China\", \"ORG\", \"country\", \"China\", \"LOC\"],\n    [\"Death of a Red Heroine\", \"MISC\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"A Loyal Character Dancer\", \"MISC\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Chief Inspector Chen Cao\", \"PER\", \"creator\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Detective Yu\", \"PER\", \"creator\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Qiu Xiaolong\", \"PER\", \"employer\", \"unknown\", \"MISC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"member of political party\", \"unknown\", \"MISC\"],\n    [\"Tiananmen Square protests\", \"MISC\", \"location\", \"China\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"participant of\", \"Tiananmen Square protests\", \"MISC\"],\n    [\"Anthony Award\", \"MISC\", \"award received by\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Qiu Xiaolong\", \"PER\", \"country of origin\", \"China\", \"LOC\"],\n    [\"People's Republic of China\", \"ORG\", \"located in\", \"China\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 7,
+  "recall": 0.4166666666666667,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Qiu Xiaolong\", \"PER\", \"place of birth\", \"Shanghai\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"country of citizenship\", \"China\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"date of birth\", \"1953\", \"TIME\"],\n    [\"Qiu Xiaolong\", \"PER\", \"residence\", \"St. Louis\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"country\", \"United States\", \"LOC\"],\n    [\"T. S. Eliot\", \"PER\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Qiu Xiaolong\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Communist Party of China\", \"ORG\", \"country\", \"China\", \"LOC\"],\n    [\"Tiananmen Square\", \"LOC\", \"located in\", \"China\", \"LOC\"],\n    [\"Chief Inspector Chen Cao\", \"PER\", \"creator\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Detective Yu\", \"PER\", \"colleague\", \"Chief Inspector Chen Cao\", \"PER\"],\n    [\"Death of a Red Heroine\", \"MISC\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"A Loyal Character Dancer\", \"MISC\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Anthony Award\", \"MISC\", \"award received\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Qiu Xiaolong\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"position held\", \"academic\", \"MISC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"position held\", \"poet\", \"MISC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"position held\", \"critic\", \"MISC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"position held\", \"crime novelist\", \"MISC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"position held\", \"literary translator\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 23,
+  "FN": 7,
+  "recall": 0.4166666666666667,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries"
+ ],
+ "kb_dedup_raw": "[\n    [\"Qiu Xiaolong\", \"PER\", \"place of birth\", \"Shanghai\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"country of citizenship\", \"China\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"residence\", \"St. Louis\", \"LOC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"date of birth\", \"1953\", \"TIME\"],\n    [\"T. S. Eliot\", \"PER\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Qiu Xiaolong\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Communist Party of China\", \"ORG\", \"country\", \"China\", \"LOC\"],\n    [\"Death of a Red Heroine\", \"MISC\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"A Loyal Character Dancer\", \"MISC\", \"author\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Chief Inspector Chen Cao\", \"PER\", \"creator\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Detective Yu\", \"PER\", \"creator\", \"Qiu Xiaolong\", \"PER\"],\n    [\"Qiu Xiaolong\", \"PER\", \"award received\", \"Anthony Award\", \"MISC\"],\n    [\"Qiu Xiaolong\", \"PER\", \"country of origin\", \"China\", \"LOC\"],\n    [\"United States\", \"LOC\", \"located in the administrative territorial entity\", \"North America\", \"LOC\"],\n    [\"Shanghai\", \"LOC\", \"located in the administrative territorial entity\", \"China\", \"LOC\"],\n    [\"St. Louis\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"China\", \"LOC\", \"capital\", \"Beijing\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 17,
+  "FN": 5,
+  "recall": 0.5454545454545454,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

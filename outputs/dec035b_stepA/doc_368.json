@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_368",
+ "base_raw": "[\n    [\"Alfred M. Wood\", \"PER\", \"date of birth\", \"April 19, 1825\", \"TIME\"],\n    [\"Alfred M. Wood\", \"PER\", \"date of death\", \"July 28, 1895\", \"TIME\"],\n    [\"Alfred M. Wood\", \"PER\", \"place of birth\", \"Brooklyn, New York\", \"LOC\"],\n    [\"14th New York Militia\", \"ORG\", \"located in\", \"Brooklyn, New York\", \"LOC\"],\n    [\"Alfred M. Wood\", \"PER\", \"member of\", \"14th New York Militia\", \"ORG\"],\n    [\"Alfred M. Wood\", \"PER\", \"position held\", \"colonel\", \"MISC\"],\n    [\"Alfred M. Wood\", \"PER\", \"position held\", \"Mayor of the City of Brooklyn\", \"MISC\"],\n    [\"Brooklyn, New York\", \"LOC\", \"part of\", \"United States\", \"LOC\"],\n    [\"Alfred M. Wood\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"14th Brooklyn\", \"ORG\", \"part of\", \"Union Army\", \"ORG\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Alfred M. Wood\", \"PER\", \"date of birth\", \"April 19, 1825\", \"TIME\"],\n    [\"Alfred M. Wood\", \"PER\", \"date of death\", \"July 28, 1895\", \"TIME\"],\n    [\"Alfred M. Wood\", \"PER\", \"place of enlistment\", \"Brooklyn, New York\", \"LOC\"],\n    [\"Alfred M. Wood\", \"PER\", \"position held\", \"Mayor of the City of Brooklyn\", \"MISC\"],\n    [\"Alfred M. Wood\", \"PER\", \"member of\", \"14th New York Militia\", \"ORG\"],\n    [\"14th New York Militia\", \"ORG\", \"located in\", \"Brooklyn, New York\", \"LOC\"],\n    [\"Alfred M. Wood\", \"PER\", \"wounded at\", \"First Battle of Manassas\", \"MISC\"],\n    [\"Alfred M. Wood\", \"PER\", \"captured at\", \"First Battle of Manassas\", \"MISC\"],\n    [\"Alfred M. Wood\", \"PER\", \"exchanged for\", \"Confederate colonel\", \"MISC\"],\n    [\"Alfred M. Wood\", \"PER\", \"discharged from\", \"Union Army\", \"ORG\"],\n    [\"First Battle of Manassas\", \"MISC\", \"location\", \"Manassas\", \"LOC\"],\n    [\"14th Brooklyn\", \"ORG\", \"part of\", \"Union Army\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Alfred M. Wood\", \"PER\", \"date of birth\", \"April 19, 1825\", \"TIME\"],\n    [\"Alfred M. Wood\", \"PER\", \"date of death\", \"July 28, 1895\", \"TIME\"],\n    [\"Alfred M. Wood\", \"PER\", \"place of birth\", \"Brooklyn, New York\", \"LOC\"],\n    [\"14th New York Militia\", \"ORG\", \"located in\", \"Brooklyn, New York\", \"LOC\"],\n    [\"Alfred M. Wood\", \"PER\", \"member of\", \"14th New York Militia\", \"ORG\"],\n    [\"Alfred M. Wood\", \"PER\", \"position held\", \"colonel\", \"MISC\"],\n    [\"Alfred M. Wood\", \"PER\", \"position held\", \"Mayor of the City of Brooklyn\", \"MISC\"],\n    [\"City of Brooklyn\", \"LOC\", \"located in\", \"New York\", \"LOC\"],\n    [\"First Battle of Manassas\", \"MISC\", \"location\", \"Manassas\", \"LOC\"],\n    [\"Alfred M. Wood\", \"PER\", \"wounded at\", \"First Battle of Manassas\", \"MISC\"],\n    [\"Alfred M. Wood\", \"PER\", \"captured at\", \"First Battle of Manassas\", \"MISC\"],\n    [\"Alfred M. Wood\", \"PER\", \"exchanged for\", \"Confederate colonel\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

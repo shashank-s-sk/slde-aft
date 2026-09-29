@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_413",
+ "base_raw": "[\n    [\"Wulsb\u00fcttel\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Wulsb\u00fcttel\", \"LOC\", \"part of\", \"Hagen im Bremischen\", \"LOC\"],\n    [\"Prince-Archbishopric of Bremen\", \"ORG\", \"established\", \"1180\", \"TIME\"],\n    [\"Duchy of Bremen\", \"ORG\", \"established\", \"1648\", \"TIME\"],\n    [\"Swedish Crown\", \"ORG\", \"ruled\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Danish\", \"MISC\", \"occupied\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Hanoverian Crown\", \"ORG\", \"ruled\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Kingdom of Westphalia\", \"ORG\", \"annexed\", \"Duchy of Bremen\", \"ORG\"],\n    [\"France\", \"LOC\", \"annexed\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Electorate of Hanover\", \"ORG\", \"restored\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Kingdom of Hanover\", \"ORG\", \"incorporated\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Stade Region\", \"LOC\", \"established\", \"1823\", \"TIME\"],\n    [\"Wulsb\u00fcttel\", \"LOC\", \"part of\", \"Stade Region\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 17,
+  "recall": 0.15,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Wulsb\u00fcttel\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Wulsb\u00fcttel\", \"LOC\", \"part of\", \"Hagen im Bremischen\", \"LOC\"],\n    [\"Prince-Archbishopric of Bremen\", \"ORG\", \"established\", \"1180\", \"TIME\"],\n    [\"Duchy of Bremen\", \"ORG\", \"established\", \"1648\", \"TIME\"],\n    [\"Swedish Crown\", \"ORG\", \"ruled\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Danish\", \"MISC\", \"occupied\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Hanoverian Crown\", \"ORG\", \"ruled\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Kingdom of Westphalia\", \"ORG\", \"annexed\", \"Duchy of Bremen\", \"ORG\"],\n    [\"France\", \"LOC\", \"annexed\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Electorate of Hanover\", \"ORG\", \"restored\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Kingdom of Hanover\", \"ORG\", \"incorporated\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Stade Region\", \"LOC\", \"established\", \"1823\", \"TIME\"],\n    [\"Wulsb\u00fcttel\", \"LOC\", \"part of\", \"Stade Region\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 17,
+  "recall": 0.15,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Wulsb\u00fcttel\", \"LOC\", \"located in the administrative territorial entity\", \"Cuxhaven\", \"LOC\"],\n    [\"Wulsb\u00fcttel\", \"LOC\", \"part of\", \"Hagen im Bremischen\", \"LOC\"],\n    [\"Prince-Archbishopric of Bremen\", \"ORG\", \"established\", \"1180\", \"TIME\"],\n    [\"Duchy of Bremen\", \"ORG\", \"established\", \"1648\", \"TIME\"],\n    [\"Swedish Crown\", \"ORG\", \"relation\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Danish\", \"MISC\", \"relation\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Hanoverian Crown\", \"ORG\", \"relation\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Kingdom of Westphalia\", \"ORG\", \"relation\", \"Duchy of Bremen\", \"ORG\"],\n    [\"France\", \"LOC\", \"relation\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Electorate of Hanover\", \"ORG\", \"relation\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Kingdom of Hanover\", \"ORG\", \"relation\", \"Duchy of Bremen\", \"ORG\"],\n    [\"Stade Region\", \"LOC\", \"established\", \"1823\", \"TIME\"],\n    [\"Duchy of Bremen\", \"ORG\", \"part of\", \"Stade Region\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 16,
+  "recall": 0.23809523809523808,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

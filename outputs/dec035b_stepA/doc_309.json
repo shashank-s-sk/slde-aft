@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_309",
+ "base_raw": "[\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"date of birth\", \"1 October 1672\", \"TIME\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"date of death\", \"17 February 1744\", \"TIME\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"educated at\", \"Acad\u00e9mie royale de peinture et de sculpture\", \"ORG\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"pupil of\", \"Fran\u00e7ois Girardon\", \"PER\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"pupil of\", \"Antoine Coysevox\", \"PER\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"won award\", \"Prix de Rome\", \"MISC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"located in\", \"Rome\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked at\", \"Rambouillet\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked at\", \"Palace of Versailles\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked at\", \"La Samaritaine\", \"ORG\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked at\", \"Pont Neuf\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked in\", \"Madrid\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked for\", \"Philip V of Spain\", \"PER\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked on\", \"Royal Palace of La Granja de San Ildefonso\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Italian Locations",
+  "Locations",
+  "Locations in Italy and Spain"
+ ],
+ "kb_orig_raw": "[\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"date of birth\", \"1 October 1672\", \"TIME\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"date of death\", \"17 February 1744\", \"TIME\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"educated at\", \"Acad\u00e9mie royale de peinture et de sculpture\", \"ORG\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"influenced by\", \"Fran\u00e7ois Girardon\", \"PER\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"influenced by\", \"Antoine Coysevox\", \"PER\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"located in\", \"Rome\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"located in\", \"Madrid\", \"LOC\"],\n    [\"Acad\u00e9mie royale de peinture et de sculpture\", \"ORG\", \"located in\", \"France\", \"LOC\"],\n    [\"Rambouillet\", \"LOC\", \"located in\", \"France\", \"LOC\"],\n    [\"Palace of Versailles\", \"LOC\", \"located in\", \"France\", \"LOC\"],\n    [\"La Samaritaine\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Pont Neuf\", \"LOC\", \"located in\", \"Paris\", \"LOC\"],\n    [\"King Philip V of Spain\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Royal Palace of La Granja de San Ildefonso\", \"LOC\", \"located in\", \"Spain\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 23,
+  "FN": 6,
+  "recall": 0.5384615384615384,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"educated at\", \"Acad\u00e9mie royale de peinture et de sculpture\", \"ORG\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"pupil of\", \"Fran\u00e7ois Girardon\", \"PER\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"pupil of\", \"Antoine Coysevox\", \"PER\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"award received\", \"Prix de Rome\", \"MISC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"located in\", \"Rome\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked at\", \"Palace of Versailles\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked at\", \"Rambouillet\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"worked at\", \"La Granja de San Ildefonso\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"King Philip V of Spain\", \"PER\", \"commissioned\", \"Ren\u00e9 Fr\u00e9min\", \"PER\"],\n    [\"La Samaritaine\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Royal Palace of La Granja de San Ildefonso\", \"LOC\", \"located in\", \"Madrid\", \"LOC\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"date of birth\", \"1 October 1672\", \"TIME\"],\n    [\"Ren\u00e9 Fr\u00e9min\", \"PER\", \"date of death\", \"17 February 1744\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 10,
+  "recall": 0.23076923076923078,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

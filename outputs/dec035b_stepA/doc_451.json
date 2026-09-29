@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_451",
+ "base_raw": "[\n    [\"Curt Smith\", \"PER\", \"date of birth\", \"24 June 1961\", \"TIME\"],\n    [\"Curt Smith\", \"PER\", \"member of\", \"Tears for Fears\", \"ORG\"],\n    [\"Curt Smith\", \"PER\", \"instrument\", \"bass guitar\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"instrument\", \"keyboards\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"sang on\", \"Mad World\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"sang on\", \"Pale Shelter\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"sang on\", \"Change\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"sang on\", \"The Way You Are\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"sang on\", \"Everybody Wants to Rule the World\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"released\", \"Soul on Board\", \"MISC\"],\n    [\"Tears for Fears\", \"ORG\", \"released\", \"Mad World\", \"MISC\"],\n    [\"Tears for Fears\", \"ORG\", \"released\", \"Pale Shelter\", \"MISC\"],\n    [\"Tears for Fears\", \"ORG\", \"released\", \"Change\", \"MISC\"],\n    [\"Tears for Fears\", \"ORG\", \"released\", \"The Way You Are\", \"MISC\"],\n    [\"Tears for Fears\", \"ORG\", \"released\", \"Everybody Wants to Rule the World\", \"MISC\"],\n    [\"Roland Orzabal\", \"PER\", \"member of\", \"Tears for Fears\", \"ORG\"],\n    [\"Roland Orzabal\", \"PER\", \"instrument\", \"bass guitar\", \"MISC\"],\n    [\"Roland Orzabal\", \"PER\", \"instrument\", \"keyboards\", \"MISC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 14,
+  "FN": 3,
+  "recall": 0.75,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Curt Smith\", \"PER\", \"date of birth\", \"24 June 1961\", \"TIME\"],\n    [\"Curt Smith\", \"PER\", \"member of\", \"Tears for Fears\", \"ORG\"],\n    [\"Curt Smith\", \"PER\", \"instrument\", \"bass guitar\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"instrument\", \"keyboards\", \"MISC\"],\n    [\"Tears for Fears\", \"ORG\", \"genre\", \"pop rock\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"childhood friend\", \"Roland Orzabal\", \"PER\"],\n    [\"Curt Smith\", \"PER\", \"role\", \"lead singer\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"role\", \"frontman\", \"MISC\"],\n    [\"Soul on Board\", \"MISC\", \"release year\", \"1993\", \"TIME\"],\n    [\"Curt Smith\", \"PER\", \"employer\", \"Tears for Fears\", \"ORG\"],\n    [\"Tears for Fears\", \"ORG\", \"founding member\", \"Curt Smith\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 23,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 23,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 25,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Curt Smith\", \"PER\", \"date of birth\", \"24 June 1961\", \"TIME\"],\n    [\"Curt Smith\", \"PER\", \"member of\", \"Tears for Fears\", \"ORG\"],\n    [\"Curt Smith\", \"PER\", \"instrument\", \"bass guitar\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"instrument\", \"keyboards\", \"MISC\"],\n    [\"Tears for Fears\", \"ORG\", \"genre\", \"pop rock\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"childhood friend\", \"Roland Orzabal\", \"PER\"],\n    [\"Curt Smith\", \"PER\", \"role\", \"lead singer\", \"MISC\"],\n    [\"Curt Smith\", \"PER\", \"role\", \"frontman\", \"MISC\"],\n    [\"Soul on Board\", \"MISC\", \"release year\", \"1993\", \"TIME\"],\n    [\"Curt Smith\", \"PER\", \"employer\", \"Tears for Fears\", \"ORG\"],\n    [\"Tears for Fears\", \"ORG\", \"founding member\", \"Curt Smith\", \"PER\"]\n]"
+}

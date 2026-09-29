@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_155",
+ "base_raw": "[\n    [\"Primer amor, a mil por hora\", \"MISC\", \"producer\", \"Pedro Dami\u00e1n\", \"PER\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"production company\", \"Televisa\", \"ORG\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"remake of\", \"Quincea\u00f1era\", \"MISC\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"broadcast by\", \"Canal de las Estrellas\", \"ORG\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"replaced\", \"Locura de amor\", \"MISC\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"replaced by\", \"Amigas y rivales\", \"MISC\"],\n    [\"Anah\u00ed\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Kuno Becker\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Ana Layevska\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Valentino Lan\u00fas\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Mauricio Islas\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Arleth Ter\u00e1n\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Fabi\u00e1n Robles\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Leticia Perdig\u00f3n\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"start time\", \"October 9, 2000\", \"TIME\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"end time\", \"February 23, 2001\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Primer amor, a mil por hora\", \"MISC\", \"producer\", \"Pedro Dami\u00e1n\", \"PER\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"production company\", \"Televisa\", \"ORG\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"remake of\", \"Quincea\u00f1era\", \"MISC\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"broadcast by\", \"Canal de las Estrellas\", \"ORG\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"start time\", \"October 9, 2000\", \"TIME\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"end time\", \"February 23, 2001\", \"TIME\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"replaced\", \"Locura de amor\", \"MISC\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"replaced by\", \"Amigas y rivales\", \"MISC\"],\n    [\"Anah\u00ed\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Kuno Becker\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Ana Layevska\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Valentino Lan\u00fas\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Mauricio Islas\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Arleth Ter\u00e1n\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Fabi\u00e1n Robles\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Leticia Perdig\u00f3n\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Primer amor, a mil por hora\", \"MISC\", \"producer\", \"Pedro Dami\u00e1n\", \"PER\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"production company\", \"Televisa\", \"ORG\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"remake of\", \"Quincea\u00f1era\", \"MISC\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"broadcast by\", \"Canal de las Estrellas\", \"ORG\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"start time\", \"October 9, 2000\", \"TIME\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"end time\", \"February 23, 2001\", \"TIME\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"replaced\", \"Locura de amor\", \"MISC\"],\n    [\"Primer amor, a mil por hora\", \"MISC\", \"replaced by\", \"Amigas y rivales\", \"MISC\"],\n    [\"Anah\u00ed\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Kuno Becker\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Ana Layevska\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Valentino Lan\u00fas\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Mauricio Islas\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Arleth Ter\u00e1n\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Fabi\u00e1n Robles\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"],\n    [\"Leticia Perdig\u00f3n\", \"PER\", \"starred in\", \"Primer amor, a mil por hora\", \"MISC\"]\n]"
+}

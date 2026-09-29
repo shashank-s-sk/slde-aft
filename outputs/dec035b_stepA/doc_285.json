@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_285",
+ "base_raw": "[\n    [\"Raymond Clinton Cole\", \"PER\", \"place of birth\", \"Biglick Township\", \"LOC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"educated at\", \"Findlay College\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"educated at\", \"Ohio Northern University\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"member of\", \"Ohio National Guard\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"position held\", \"city solicitor\", \"MISC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"member of political party\", \"Republican\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"brother\", \"Ralph Dayton Cole\", \"PER\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"date of death\", \"February 8, 1957\", \"TIME\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"place of death\", \"Findlay\", \"LOC\"],\n    [\"Biglick Township\", \"LOC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Findlay College\", \"ORG\", \"located in\", \"Findlay\", \"LOC\"],\n    [\"Ohio Northern University\", \"ORG\", \"located in\", \"Ada\", \"LOC\"],\n    [\"Ohio National Guard\", \"ORG\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Findlay\", \"LOC\", \"located in\", \"Ohio\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 15,
+  "recall": 0.25,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Raymond Clinton Cole\", \"PER\", \"place of birth\", \"Biglick Township\", \"LOC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"brother\", \"Ralph Dayton Cole\", \"PER\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"educated at\", \"Findlay College\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"educated at\", \"Ohio Northern University\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"member of\", \"Ohio National Guard\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"position held\", \"city solicitor\", \"MISC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"member of political party\", \"Republican\", \"MISC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"date of birth\", \"August 21, 1870\", \"TIME\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"date of death\", \"February 8, 1957\", \"TIME\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"place of death\", \"Findlay, Ohio\", \"LOC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"located in or next to body of water\", \"Ohio\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 9,
+  "FN": 14,
+  "recall": 0.36363636363636365,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Raymond Clinton Cole\", \"PER\", \"date of birth\", \"August 21, 1870\", \"TIME\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"date of death\", \"February 8, 1957\", \"TIME\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"place of birth\", \"Biglick Township\", \"LOC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"brother\", \"Ralph Dayton Cole\", \"PER\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"educated at\", \"Findlay College\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"educated at\", \"Ohio Northern University\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"member of\", \"Ohio National Guard\", \"ORG\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"position held\", \"city solicitor\", \"MISC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Findlay\", \"LOC\", \"located in the administrative territorial entity\", \"Ohio\", \"LOC\"],\n    [\"Ohio Northern University\", \"ORG\", \"located in\", \"Ada\", \"LOC\"],\n    [\"Biglick Township\", \"LOC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Raymond Clinton Cole\", \"PER\", \"residence\", \"Findlay\", \"LOC\"],\n    [\"Bright Cemetery\", \"LOC\", \"located in\", \"Findlay\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 11,
+  "FN": 13,
+  "recall": 0.38095238095238093,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

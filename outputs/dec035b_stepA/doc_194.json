@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_194",
+ "base_raw": "[\n    [\"Hiram\", \"LOC\", \"located in\", \"Wayne County\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"located on\", \"Missouri Route C\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"near\", \"Marble Hill\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"on\", \"McCabe Creek\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"near\", \"Bear Creek\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"founded by\", \"Hiram Holliday\", \"PER\"],\n    [\"Hiram Holliday\", \"PER\", \"industry\", \"lumber industry\", \"MISC\"],\n    [\"Hiram Holliday\", \"PER\", \"location\", \"Greenville\", \"LOC\"],\n    [\"Greenville\", \"LOC\", \"county seat of\", \"Wayne County\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"on\", \"Holiday\u2019s railroad spur\", \"MISC\"],\n    [\"Holiday\u2019s railroad spur\", \"MISC\", \"connects\", \"Greenville\", \"LOC\"],\n    [\"Holiday\u2019s railroad spur\", \"MISC\", \"connects\", \"Cascade\", \"LOC\"],\n    [\"Cascade\", \"LOC\", \"located in\", \"Wayne County\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 11,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "County Organizations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Hiram\", \"LOC\", \"located in\", \"Wayne County\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"near\", \"Marble Hill\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"on\", \"Missouri Route C\", \"MISC\"],\n    [\"Hiram\", \"LOC\", \"between\", \"Clubb\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"between\", \"Lowndes\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"on\", \"McCabe Creek\", \"MISC\"],\n    [\"Hiram\", \"LOC\", \"near\", \"Bear Creek\", \"MISC\"],\n    [\"Hiram\", \"LOC\", \"founded by\", \"Hiram Holliday\", \"PER\"],\n    [\"Hiram Holliday\", \"PER\", \"industry\", \"lumber industry\", \"MISC\"],\n    [\"Hiram Holliday\", \"PER\", \"location\", \"Greenville\", \"LOC\"],\n    [\"Greenville\", \"LOC\", \"county seat of\", \"Wayne County\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"on\", \"17 mile railroad spur\", \"MISC\"],\n    [\"17 mile railroad spur\", \"MISC\", \"connects\", \"Greenville\", \"LOC\"],\n    [\"17 mile railroad spur\", \"MISC\", \"connects\", \"Cascade\", \"LOC\"],\n    [\"Wayne County\", \"LOC\", \"contains\", \"Cascade\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"part of\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 21,
+  "FN": 11,
+  "recall": 0.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "County Organizations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Hiram\", \"LOC\", \"located in\", \"Wayne County\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"near\", \"Marble Hill\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"on\", \"Missouri Route C\", \"MISC\"],\n    [\"Hiram\", \"LOC\", \"between\", \"Clubb\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"between\", \"Lowndes\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"on\", \"McCabe Creek\", \"MISC\"],\n    [\"Hiram\", \"LOC\", \"near\", \"Bear Creek\", \"MISC\"],\n    [\"Hiram\", \"LOC\", \"founded by\", \"Hiram Holliday\", \"PER\"],\n    [\"Hiram Holliday\", \"PER\", \"industry\", \"lumber\", \"MISC\"],\n    [\"Hiram Holliday\", \"PER\", \"place of business\", \"Greenville\", \"LOC\"],\n    [\"Greenville\", \"LOC\", \"county seat of\", \"Wayne County\", \"LOC\"],\n    [\"Wayne County\", \"LOC\", \"has part\", \"Cascade\", \"LOC\"],\n    [\"Hiram\", \"LOC\", \"on railroad spur of\", \"Hiram Holliday\", \"PER\"],\n    [\"Hiram\", \"LOC\", \"transported resources from\", \"northeast portion of Wayne County\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

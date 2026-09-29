@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_95",
+ "base_raw": "[\n    [\"Verbena\", \"LOC\", \"located in\", \"Chilton County\", \"LOC\"],\n    [\"Verbena\", \"LOC\", \"state\", \"Alabama\", \"LOC\"],\n    [\"Verbena\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Montgomery\", \"LOC\", \"state\", \"Alabama\", \"LOC\"],\n    [\"Montgomery\", \"LOC\", \"capital of\", \"Alabama\", \"LOC\"],\n    [\"CSX Transportation\", \"ORG\", \"owner of\", \"railroad\", \"MISC\"],\n    [\"Verbena United Methodist Church\", \"ORG\", \"located in\", \"Verbena\", \"LOC\"],\n    [\"Verbena United Methodist Church\", \"ORG\", \"located on\", \"County Road 59\", \"LOC\"],\n    [\"Chilton County\", \"LOC\", \"part of\", \"Alabama\", \"LOC\"],\n    [\"Alabama\", \"LOC\", \"country\", \"United States\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 5,
+  "FN": 12,
+  "recall": 0.29411764705882354,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Verbena\", \"LOC\", \"located in\", \"Chilton County\", \"LOC\"],\n    [\"Verbena\", \"LOC\", \"state\", \"Alabama\", \"LOC\"],\n    [\"Montgomery\", \"LOC\", \"capital of\", \"Alabama\", \"LOC\"],\n    [\"CSX Transportation\", \"ORG\", \"owner of\", \"railroad\", \"MISC\"],\n    [\"Verbena United Methodist Church\", \"ORG\", \"located in\", \"Verbena\", \"LOC\"],\n    [\"Verbena\", \"LOC\", \"population\", \"756\", \"NUM\"],\n    [\"U.S. Census\", \"ORG\", \"recorded population of\", \"Verbena\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 8,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Verbena\", \"LOC\", \"located in the administrative territorial entity\", \"Chilton County\", \"LOC\"],\n    [\"Verbena\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Montgomery\", \"LOC\", \"capital of\", \"Alabama\", \"LOC\"],\n    [\"Verbena United Methodist Church\", \"MISC\", \"located in\", \"Verbena\", \"LOC\"],\n    [\"CSX Transportation\", \"ORG\", \"owner of\", \"railroad\", \"MISC\"],\n    [\"Verbena\", \"LOC\", \"part of\", \"Alabama\", \"LOC\"],\n    [\"Chilton County\", \"LOC\", \"part of\", \"Alabama\", \"LOC\"],\n    [\"Verbena\", \"LOC\", \"instance of\", \"unincorporated community\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 10,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

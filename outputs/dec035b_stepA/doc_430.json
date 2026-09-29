@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_430",
+ "base_raw": "[\n    [\"Maha Yazawin\", \"MISC\", \"author\", \"U Kala\", \"PER\"],\n    [\"Maha Yazawin\", \"MISC\", \"completion year\", \"1724\", \"TIME\"],\n    [\"U Kala\", \"PER\", \"position held\", \"historian\", \"MISC\"],\n    [\"Toungoo court\", \"ORG\", \"location\", \"Burma / Myanmar\", \"LOC\"],\n    [\"Maha Yazawin\", \"MISC\", \"influence on\", \"Yazawin Thit\", \"MISC\"],\n    [\"Maha Yazawin\", \"MISC\", \"influence on\", \"Maha Yazawin Kyaw\", \"MISC\"],\n    [\"Maha Yazawin\", \"MISC\", \"influence on\", \"Hmannan Yazawin\", \"MISC\"],\n    [\"U Kala\", \"PER\", \"time period\", \"late Toungoo period\", \"TIME\"],\n    [\"Toungoo kings\", \"PER\", \"part of\", \"Toungoo period\", \"TIME\"],\n    [\"Irrawaddy basin\", \"LOC\", \"part of\", \"Burma / Myanmar\", \"LOC\"],\n    [\"Buddhist tradition\", \"MISC\", \"influence on\", \"Maha Yazawin\", \"MISC\"],\n    [\"Maha Yazawin\", \"MISC\", \"language\", \"Burmese\", \"MISC\"],\n    [\"Maha Yazawin\", \"MISC\", \"basis for\", \"English language histories of Burma\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Asian Languages"
+ ],
+ "kb_orig_raw": "[\n    [\"Maha Yazawin\", \"MISC\", \"author\", \"U Kala\", \"PER\"],\n    [\"Maha Yazawin\", \"MISC\", \"completion date\", \"1724\", \"TIME\"],\n    [\"U Kala\", \"PER\", \"position held\", \"historian\", \"MISC\"],\n    [\"Toungoo court\", \"ORG\", \"location\", \"Burma/Myanmar\", \"LOC\"],\n    [\"Maha Yazawin\", \"MISC\", \"language\", \"Burmese\", \"MISC\"],\n    [\"Burmese history\", \"MISC\", \"part of\", \"Asian Languages\", \"MISC\"],\n    [\"Irrawaddy basin\", \"LOC\", \"located in\", \"Burma/Myanmar\", \"LOC\"],\n    [\"Toungoo period\", \"TIME\", \"part of\", \"Burmese history\", \"MISC\"],\n    [\"Toungoo kings\", \"PER\", \"member of\", \"Toungoo court\", \"ORG\"],\n    [\"Yazawin Thit\", \"MISC\", \"based on\", \"Maha Yazawin\", \"MISC\"],\n    [\"Maha Yazawin Kyaw\", \"MISC\", \"based on\", \"Maha Yazawin\", \"MISC\"],\n    [\"Hmannan Yazawin\", \"MISC\", \"based on\", \"Maha Yazawin\", \"MISC\"],\n    [\"Maha Yazawin\", \"MISC\", \"influence on\", \"English language histories of Burma\", \"MISC\"],\n    [\"Buddhist tradition\", \"MISC\", \"influence on\", \"Maha Yazawin\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 22,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Maha Yazawin\", \"MISC\", \"author\", \"U Kala\", \"PER\"],\n    [\"Maha Yazawin\", \"MISC\", \"completion year\", \"1724\", \"TIME\"],\n    [\"U Kala\", \"PER\", \"position held\", \"historian\", \"MISC\"],\n    [\"Toungoo court\", \"ORG\", \"location\", \"Burma/Myanmar\", \"LOC\"],\n    [\"Maha Yazawin\", \"MISC\", \"language\", \"Burmese\", \"MISC\"],\n    [\"Burmese history\", \"MISC\", \"part of\", \"Southeast Asian history\", \"MISC\"],\n    [\"Irrawaddy basin\", \"LOC\", \"located in\", \"Burma/Myanmar\", \"LOC\"],\n    [\"Toungoo period\", \"TIME\", \"part of\", \"Burmese history\", \"MISC\"],\n    [\"Yazawin Thit\", \"MISC\", \"based on\", \"Maha Yazawin\", \"MISC\"],\n    [\"Maha Yazawin Kyaw\", \"MISC\", \"based on\", \"Maha Yazawin\", \"MISC\"],\n    [\"Hmannan Yazawin\", \"MISC\", \"based on\", \"Maha Yazawin\", \"MISC\"],\n    [\"Maha Yazawin\", \"MISC\", \"influence on\", \"Burmese historiography\", \"MISC\"],\n    [\"Burmese historiography\", \"MISC\", \"field of study\", \"history\", \"MISC\"],\n    [\"U Kala\", \"PER\", \"contributed to\", \"Burmese historiography\", \"MISC\"],\n    [\"Maha Yazawin\", \"MISC\", \"genre\", \"historical chronicle\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 23,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ }
+}

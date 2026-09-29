@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_175",
+ "base_raw": "[\n    [\"Einst\u00fcrzende Neubauten\", \"ORG\", \"genre\", \"Industrial\", \"MISC\"],\n    [\"Stahlmusik\", \"MISC\", \"release date\", \"October 1980\", \"TIME\"],\n    [\"Stadtautobahn Bridge\", \"LOC\", \"located in\", \"West Berlin\", \"LOC\"],\n    [\"Blixa Bargeld\", \"PER\", \"founder of\", \"Eisengrau\", \"ORG\"],\n    [\"N.U. Unruh\", \"PER\", \"member of\", \"Einst\u00fcrzende Neubauten\", \"ORG\"],\n    [\"Einst\u00fcrzende Neubauten\", \"ORG\", \"released\", \"Stahlmusik\", \"MISC\"],\n    [\"Stahlmusik\", \"MISC\", \"recorded at\", \"Stadtautobahn Bridge\", \"LOC\"],\n    [\"Eisengrau\", \"ORG\", \"location\", \"West Berlin\", \"LOC\"],\n    [\"Kollaps\", \"MISC\", \"follows\", \"Stahlmusik\", \"MISC\"],\n    [\"Schwarz\", \"MISC\", \"released after\", \"Stahlmusik\", \"MISC\"],\n    [\"F\u00fcr den Untergang\", \"MISC\", \"part of\", \"Strategies Against Architecture 80-83\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Einst\u00fcrzende Neubauten\", \"ORG\", \"genre\", \"Industrial\", \"MISC\"],\n    [\"Stahlmusik\", \"MISC\", \"release date\", \"October 1980\", \"TIME\"],\n    [\"Stadtautobahn Bridge\", \"LOC\", \"located in\", \"West Berlin\", \"LOC\"],\n    [\"Blixa Bargeld\", \"PER\", \"founder of\", \"Eisengrau\", \"ORG\"],\n    [\"N.U. Unruh\", \"PER\", \"member of\", \"Einst\u00fcrzende Neubauten\", \"ORG\"],\n    [\"Einst\u00fcrzende Neubauten\", \"ORG\", \"released\", \"Stahlmusik\", \"MISC\"],\n    [\"Stahlmusik\", \"MISC\", \"recorded at\", \"Stadtautobahn Bridge\", \"LOC\"],\n    [\"Eisengrau\", \"ORG\", \"location\", \"West Berlin\", \"LOC\"],\n    [\"Einst\u00fcrzende Neubauten\", \"ORG\", \"release\", \"Kollaps\", \"MISC\"],\n    [\"Schwarz\", \"MISC\", \"release date\", \"nearly a year after Stahlmusik\", \"TIME\"],\n    [\"F\u00fcr den Untergang\", \"MISC\", \"released on\", \"Strategies Against Architecture 80-83\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 14,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Einst\u00fcrzende Neubauten\", \"ORG\", \"genre\", \"Industrial\", \"MISC\"],\n    [\"Stahlmusik\", \"MISC\", \"release date\", \"October 1980\", \"TIME\"],\n    [\"Stadtautobahn Bridge\", \"LOC\", \"located in\", \"West Berlin\", \"LOC\"],\n    [\"Blixa Bargeld\", \"PER\", \"founder of\", \"Eisengrau\", \"ORG\"],\n    [\"N.U. Unruh\", \"PER\", \"member of\", \"Einst\u00fcrzende Neubauten\", \"ORG\"],\n    [\"Einst\u00fcrzende Neubauten\", \"ORG\", \"released\", \"Stahlmusik\", \"MISC\"],\n    [\"Stahlmusik\", \"MISC\", \"recorded at\", \"Stadtautobahn Bridge\", \"LOC\"],\n    [\"Eisengrau\", \"ORG\", \"location\", \"West Berlin\", \"LOC\"],\n    [\"Einst\u00fcrzende Neubauten\", \"ORG\", \"release\", \"Kollaps\", \"MISC\"],\n    [\"Schwarz\", \"MISC\", \"release date\", \"nearly a year after Stahlmusik\", \"TIME\"],\n    [\"F\u00fcr den Untergang\", \"MISC\", \"released on\", \"Strategies Against Architecture 80-83\", \"MISC\"]\n]"
+}

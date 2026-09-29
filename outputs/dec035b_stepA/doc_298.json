@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_298",
+ "base_raw": "[\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kunar Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Parwan Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kapisa Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kabul Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Laghman Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Nuristan Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Khyber Pakhtunkhwa\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Peshawar\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Charsadda\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Mardan\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Nowshehra\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Swabi\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Rawalpindi\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Tarnol\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Lahore\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Multan\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Mohmand\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Bajaur Agency\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Federally Administered Tribal Areas\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Zhob District\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Balochistan\", \"LOC\"],\n    [\"Ghurghakhti Pashtun\", \"MISC\", \"located in\", \"Pech Valley\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"part of\", \"Ghurghakhti Pashtun\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kunar Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Parwan Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kapisa Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kabul Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Laghman Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Nuristan Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Peshawar\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Charsadda\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Mardan\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Nowshehra\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Swabi\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Rawalpindi\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Tarnol\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Lahore\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Multan\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Mohmand\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Bajaur Agency\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Federally Administered Tribal Areas\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Zhob District\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Balochistan\", \"LOC\"],\n    [\"Ghurghakhti Pashtun\", \"MISC\", \"instance of\", \"S\u0101f\u012b\", \"MISC\"],\n    [\"Pech Valley\", \"LOC\", \"located in\", \"Kunar\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 19,
+  "FN": 11,
+  "recall": 0.35294117647058826,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 19,
+  "FN": 11,
+  "recall": 0.35294117647058826,
+  "n_extracted": 25,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kunar Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Parwan Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kapisa Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Kabul Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Laghman Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Nuristan Province\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Peshawar\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Charsadda\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Mardan\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Nowshehra\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Swabi\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Rawalpindi\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Tarnol\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Lahore\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Multan\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Mohmand\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Bajaur Agency\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Federally Administered Tribal Areas\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Zhob District\", \"LOC\"],\n    [\"S\u0101f\u012b\", \"MISC\", \"located in\", \"Balochistan\", \"LOC\"],\n    [\"Ghurghakhti Pashtun\", \"MISC\", \"instance of\", \"S\u0101f\u012b\", \"MISC\"],\n    [\"Pech Valley\", \"LOC\", \"located in\", \"Kunar\", \"LOC\"]\n]"
+}

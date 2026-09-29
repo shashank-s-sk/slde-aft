@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_191",
+ "base_raw": "[\n    [\"Kamerik\", \"LOC\", \"located in the administrative territorial entity\", \"Utrecht\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"part of\", \"Woerden\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"location\", \"Woerden\", \"LOC\"],\n    [\"Kamerik and Kanis\", \"MISC\", \"population\", \"3050\", \"NUM\"],\n    [\"Kamerik\", \"LOC\", \"contains administrative territorial entity\", \"Kanis\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"contains administrative territorial entity\", \"Kamerik-Mijzijde\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"contains administrative territorial entity\", \"Oud-Kamerik\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"merged with\", \"Woerden\", \"LOC\"],\n    [\"Kamerik-Mijzijde\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"],\n    [\"Oud-Kamerik\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"],\n    [\"Kanis\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"founded by\", \"None\", \"MISC\"],\n    [\"Kamerik\", \"LOC\", \"inception\", \"None\", \"TIME\"],\n    [\"Kamerik\", \"LOC\", \"dissolved, abolished or demolished\", \"1989\", \"TIME\"],\n    [\"Kamerik\", \"LOC\", \"has part\", \"Kamerik-Houtdijken\", \"LOC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Kamerik\", \"LOC\", \"located in the administrative territorial entity\", \"Utrecht\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"part of\", \"Woerden\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"location\", \"Woerden\", \"LOC\"],\n    [\"Kamerik and Kanis\", \"MISC\", \"population\", \"3050\", \"NUM\"],\n    [\"Kamerik\", \"LOC\", \"contains administrative territorial entity\", \"Kanis\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"contains administrative territorial entity\", \"Kamerik-Mijzijde\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"contains administrative territorial entity\", \"Oud-Kamerik\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"merged with\", \"Woerden\", \"LOC\"],\n    [\"Kamerik-Mijzijde\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"],\n    [\"Oud-Kamerik\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"],\n    [\"Kanis\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"founded by\", \"None\", \"MISC\"],\n    [\"Kamerik\", \"LOC\", \"inception\", \"None\", \"TIME\"],\n    [\"Kamerik\", \"LOC\", \"dissolved, abolished or demolished\", \"1989\", \"TIME\"],\n    [\"Kamerik\", \"LOC\", \"has part\", \"Kamerik-Houtdijken\", \"LOC\"],\n    [\"Kamerik-Houtdijken\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Kamerik\", \"LOC\", \"located in the administrative territorial entity\", \"Utrecht\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"part of\", \"Woerden\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"location\", \"north of Woerden\", \"MISC\"],\n    [\"Kamerik\", \"LOC\", \"population\", \"3808\", \"NUM\"],\n    [\"Kamerik\", \"LOC\", \"area\", \"0.43\", \"NUM\"],\n    [\"Kamerik\", \"LOC\", \"number of residences\", \"877\", \"NUM\"],\n    [\"Kamerik and Kanis\", \"MISC\", \"population\", \"3050\", \"NUM\"],\n    [\"Kamerik-Mijzijde\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"],\n    [\"Oud-Kamerik\", \"LOC\", \"part of\", \"Kamerik\", \"LOC\"],\n    [\"Kamerik\", \"LOC\", \"merged with\", \"Woerden\", \"LOC\"],\n    [\"Kamerik-Mijzijde\", \"LOC\", \"located on\", \"west side\", \"MISC\"],\n    [\"Kamerik-Houtdijken\", \"LOC\", \"located on\", \"east side\", \"MISC\"],\n    [\"Kamerik\", \"LOC\", \"date of merger\", \"1989\", \"TIME\"],\n    [\"Kamerik\", \"LOC\", \"start time\", \"1818\", \"TIME\"],\n    [\"Kamerik\", \"LOC\", \"end time\", \"1857\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 17,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ }
+}

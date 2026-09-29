@@ -1,0 +1,45 @@
+{
+ "doc_id": "doc_190",
+ "base_raw": "[\n    [\"Princessa\", \"PER\", \"place of birth\", \"Madrid\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"date of birth\", \"18 May 1975\", \"TIME\"],\n    [\"Princessa\", \"PER\", \"genre\", \"pop\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"genre\", \"dance\", \"MISC\"],\n    [\"Frank Peterson\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"producer\", \"Frank Peterson\", \"PER\"],\n    [\"Princessa\", \"PER\", \"country of production\", \"Europe\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"country of production\", \"Japan\", \"LOC\"],\n    [\"Valerie Dore\", \"PER\", \"occupation\", \"singer\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"tour location\", \"Finland\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"year of tour\", \"2014\", \"TIME\"],\n    [\"Princessa\", \"PER\", \"year of tour\", \"2015\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Locations in Italy and Spain",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Princessa\", \"PER\", \"place of birth\", \"Spain\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"date of birth\", \"18 May 1975\", \"TIME\"],\n    [\"Princessa\", \"PER\", \"genre\", \"pop\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"genre\", \"dance\", \"MISC\"],\n    [\"Frank Peterson\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"producer\", \"Frank Peterson\", \"PER\"],\n    [\"Princessa\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"member of\", \"None\", \"MISC\"],\n    [\"Valerie Dore\", \"PER\", \"nationality\", \"None\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"author\", \"None\", \"MISC\"],\n    [\"The Night\", \"MISC\", \"author\", \"Valerie Dore\", \"PER\"],\n    [\"Princessa\", \"PER\", \"country\", \"Japan\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"country\", \"Europe\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"location\", \"Finland\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"location\", \"Madrid\", \"LOC\"],\n    [\"Gran Circo Mundial\", \"ORG\", \"location\", \"Spain\", \"LOC\"],\n    [\"World On Ice\", \"MISC\", \"location\", \"Madrid\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 23,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries",
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Princessa\", \"PER\", \"place of birth\", \"Spain\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"date of birth\", \"18 May 1975\", \"TIME\"],\n    [\"Princessa\", \"PER\", \"genre\", \"pop\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"genre\", \"dance\", \"MISC\"],\n    [\"Frank Peterson\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"producer\", \"Frank Peterson\", \"PER\"],\n    [\"Princessa\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"member of\", \"None\", \"MISC\"],\n    [\"Valerie Dore\", \"PER\", \"nationality\", \"None\", \"MISC\"],\n    [\"Princessa\", \"PER\", \"author\", \"None\", \"MISC\"],\n    [\"The Night\", \"MISC\", \"author\", \"Valerie Dore\", \"PER\"],\n    [\"Princessa\", \"PER\", \"country\", \"Spain\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"location\", \"Europe\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"location\", \"Japan\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"location\", \"Finland\", \"LOC\"],\n    [\"Princessa\", \"PER\", \"location\", \"Madrid\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 22,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ }
+}

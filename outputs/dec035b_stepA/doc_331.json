@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_331",
+ "base_raw": "[\n    [\"Kumi Koda\", \"PER\", \"genre\", \"J-pop\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"release date\", \"February 26, 2014\", \"TIME\"],\n    [\"Kumi Koda\", \"PER\", \"nationality\", \"Japanese\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"label\", \"Rhythm Zone\", \"ORG\"],\n    [\"Kumi Koda\", \"PER\", \"occupation\", \"recording artist\", \"MISC\"],\n    [\"Joseph Lawrence\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Toby Gad\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Sean Paul\", \"PER\", \"occupation\", \"guest artist\", \"MISC\"],\n    [\"OVDS\", \"PER\", \"occupation\", \"guest artist\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"CD\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"CD and DVD bundle\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"CD and Blu-ray bundle\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"fan package\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"digital release\", \"MISC\"],\n    [\"Kumi Koda\", \"PER\", \"album\", \"Japonesque\", \"MISC\"],\n    [\"Kumi Koda\", \"PER\", \"album\", \"Kingdom\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"chart performance\", \"Oricon Albums Chart\", \"MISC\"],\n    [\"Kumi Koda\", \"PER\", \"concert tour\", \"2014 Bon Voyage concert tour\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Asian Languages",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Kumi Koda\", \"PER\", \"nationality\", \"Japanese\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"release date\", \"February 26, 2014\", \"TIME\"],\n    [\"Bon Voyage\", \"MISC\", \"genre\", \"Asian Languages\", \"MISC\"],\n    [\"Kumi Koda\", \"PER\", \"employer\", \"Rhythm Zone\", \"ORG\"],\n    [\"Joseph Lawrence\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Toby Gad\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"T-Sk\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Mats Lie Skare\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Figge Bosstrom\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Tommy Henriksen\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Badur Haberg\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Clarabell\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Sean Paul\", \"PER\", \"collaborator\", \"Kumi Koda\", \"PER\"],\n    [\"OVDS\", \"PER\", \"collaborator\", \"Kumi Koda\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"CD\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"CD and DVD bundle\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"CD and Blu-ray bundle\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"fan package featuring a live DVD\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"format\", \"digital release in Japan\", \"MISC\"],\n    [\"Kumi Koda\", \"PER\", \"tour\", \"2014 Bon Voyage concert tour\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"chart performance\", \"Oricon Albums Chart\", \"MISC\"],\n    [\"Kumi Koda\", \"PER\", \"award\", \"RIAJ certification\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 28,
+  "FN": 6,
+  "recall": 0.45454545454545453,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Asian Languages"
+ ],
+ "kb_dedup_raw": "[\n    [\"Kumi Koda\", \"PER\", \"nationality\", \"Japanese\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"release date\", \"February 26, 2014\", \"TIME\"],\n    [\"Bon Voyage\", \"MISC\", \"label\", \"Rhythm Zone\", \"ORG\"],\n    [\"Kumi Koda\", \"PER\", \"album\", \"Japonesque\", \"MISC\"],\n    [\"Kumi Koda\", \"PER\", \"album\", \"Kingdom\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"producer\", \"Joseph Lawrence\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"producer\", \"Toby Gad\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"producer\", \"T-Sk\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"producer\", \"Mats Lie Skare\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"producer\", \"Figge Bosstrom\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"producer\", \"Tommy Henriksen\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"producer\", \"Badur Haberg\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"producer\", \"Clarabell\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"featured artist\", \"Sean Paul\", \"PER\"],\n    [\"Bon Voyage\", \"MISC\", \"featured artist\", \"OVDS\", \"PER\"],\n    [\"Kumi Koda\", \"PER\", \"tour\", \"2014 Bon Voyage concert tour\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"chart performance\", \"Oricon Albums Chart\", \"MISC\"],\n    [\"Bon Voyage\", \"MISC\", \"certification\", \"RIAJ\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 30,
+  "FN": 7,
+  "recall": 0.2222222222222222,
+  "n_extracted": 30,
+  "judge_parse_ok": true
+ }
+}

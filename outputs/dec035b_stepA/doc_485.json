@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_485",
+ "base_raw": "[\n    [\"Peter Hain\", \"PER\", \"position held\", \"Member of Parliament\", \"MISC\"],\n    [\"Michael Howard\", \"PER\", \"position held\", \"Conservative Party Leader\", \"MISC\"],\n    [\"Westminster\", \"LOC\", \"located in\", \"London\", \"LOC\"],\n    [\"Scottish Parliament\", \"ORG\", \"located in\", \"Holyrood district of Edinburgh\", \"LOC\"],\n    [\"United States\", \"LOC\", \"capital\", \"Washington DC\", \"LOC\"],\n    [\"Peter Hain\", \"PER\", \"member of\", \"Parliament of the United Kingdom\", \"ORG\"],\n    [\"Michael Howard\", \"PER\", \"member of\", \"Conservative Party\", \"ORG\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 5,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Peter Hain\", \"PER\", \"position held\", \"Member of Parliament\", \"MISC\"],\n    [\"Michael Howard\", \"PER\", \"position held\", \"Conservative Party Leader\", \"MISC\"],\n    [\"Westminster\", \"LOC\", \"located in\", \"London\", \"LOC\"],\n    [\"Scottish Parliament\", \"ORG\", \"located in\", \"Holyrood\", \"LOC\"],\n    [\"Holyrood\", \"LOC\", \"part of\", \"Edinburgh\", \"LOC\"],\n    [\"Parliament of the United Kingdom\", \"ORG\", \"located in\", \"Westminster\", \"LOC\"],\n    [\"Washington DC\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Peter Hain\", \"PER\", \"member of\", \"Government\", \"ORG\"],\n    [\"Michael Howard\", \"PER\", \"member of\", \"Conservative Party\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 18,
+  "recall": 0.18181818181818182,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Westminster\", \"LOC\", \"located in\", \"London\", \"LOC\"],\n    [\"Parliament of the United Kingdom\", \"ORG\", \"located in\", \"Westminster\", \"LOC\"],\n    [\"United States\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Washington DC\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Scottish Parliament\", \"ORG\", \"located in\", \"Holyrood\", \"LOC\"],\n    [\"Holyrood\", \"LOC\", \"located in\", \"Edinburgh\", \"LOC\"],\n    [\"Peter Hain\", \"PER\", \"member of\", \"Parliament of the United Kingdom\", \"ORG\"],\n    [\"Michael Howard\", \"PER\", \"leader of\", \"Conservative Party\", \"ORG\"],\n    [\"Conservative Party\", \"ORG\", \"located in\", \"United Kingdom\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 13,
+  "recall": 0.2777777777777778,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

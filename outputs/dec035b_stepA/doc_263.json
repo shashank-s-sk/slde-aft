@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_263",
+ "base_raw": "[\n    [\"James Morrison\", \"PER\", \"occupation\", \"textile wholesaler\", \"MISC\"],\n    [\"James Morrison\", \"PER\", \"occupation\", \"merchant banker\", \"MISC\"],\n    [\"Charles Morrison\", \"PER\", \"occupation\", \"textile wholesaler\", \"MISC\"],\n    [\"Charles Morrison\", \"PER\", \"occupation\", \"merchant banker\", \"MISC\"],\n    [\"Hugh Morrison\", \"PER\", \"relation\", \"James Morrison\", \"PER\"],\n    [\"Hugh Morrison\", \"PER\", \"relation\", \"Charles Morrison\", \"PER\"],\n    [\"The Honourable Sir Charles Morrison\", \"PER\", \"relation\", \"John Morrison\", \"PER\"],\n    [\"The Honourable Sir Peter Morrison\", \"PER\", \"relation\", \"John Morrison\", \"PER\"],\n    [\"Fonthill House\", \"LOC\", \"located in\", \"Wiltshire\", \"LOC\"],\n    [\"James Morrison\", \"PER\", \"residence\", \"Hampshire\", \"LOC\"],\n    [\"Nathan Mayer Rothschild\", \"PER\", \"relation\", \"James Morrison\", \"MISC\"],\n    [\"Duke of Westminster\", \"PER\", \"relation\", \"Charles Morrison\", \"MISC\"],\n    [\"John Morrison\", \"PER\", \"child\", \"The Honourable Sir Charles Morrison\", \"PER\"],\n    [\"John Morrison\", \"PER\", \"child\", \"The Honourable Sir Peter Morrison\", \"PER\"],\n    [\"Baron Margadale\", \"MISC\", \"held by\", \"John Morrison\", \"PER\"],\n    [\"Baron Margadale\", \"MISC\", \"located in\", \"Islay\", \"LOC\"],\n    [\"Barony of Margadale\", \"MISC\", \"named after\", \"Margadale\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 35,
+  "recall": 0.07894736842105263,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"James Morrison\", \"PER\", \"occupation\", \"textile wholesaler\", \"MISC\"],\n    [\"James Morrison\", \"PER\", \"occupation\", \"merchant banker\", \"MISC\"],\n    [\"Charles Morrison\", \"PER\", \"occupation\", \"textile wholesaler\", \"MISC\"],\n    [\"Charles Morrison\", \"PER\", \"occupation\", \"merchant banker\", \"MISC\"],\n    [\"Hugh Morrison\", \"PER\", \"relation\", \"James Morrison\", \"PER\"],\n    [\"The Honourable Sir Charles Morrison\", \"PER\", \"relation\", \"John Morrison\", \"PER\"],\n    [\"The Honourable Sir Peter Morrison\", \"PER\", \"relation\", \"John Morrison\", \"PER\"],\n    [\"Fonthill House\", \"LOC\", \"located in\", \"Wiltshire\", \"LOC\"],\n    [\"James Morrison\", \"PER\", \"residence\", \"Hampshire\", \"LOC\"],\n    [\"Baron Margadale\", \"MISC\", \"location\", \"Islay\", \"LOC\"],\n    [\"John Morrison\", \"PER\", \"title\", \"Baron Margadale\", \"MISC\"],\n    [\"James Morrison\", \"PER\", \"net worth\", \"\u00a34 million\", \"NUM\"],\n    [\"Charles Morrison\", \"PER\", \"net worth\", \"\u00a310.9 million\", \"NUM\"],\n    [\"Nathan Mayer Rothschild\", \"PER\", \"net worth\", \"\u00a35 million\", \"NUM\"],\n    [\"Duke of Westminster\", \"PER\", \"relation\", \"Charles Morrison\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 22,
+  "FN": 35,
+  "recall": 0.0,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 22,
+  "FN": 35,
+  "recall": 0.0,
+  "n_extracted": 22,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"James Morrison\", \"PER\", \"occupation\", \"textile wholesaler\", \"MISC\"],\n    [\"James Morrison\", \"PER\", \"occupation\", \"merchant banker\", \"MISC\"],\n    [\"Charles Morrison\", \"PER\", \"occupation\", \"textile wholesaler\", \"MISC\"],\n    [\"Charles Morrison\", \"PER\", \"occupation\", \"merchant banker\", \"MISC\"],\n    [\"Hugh Morrison\", \"PER\", \"relation\", \"James Morrison\", \"PER\"],\n    [\"The Honourable Sir Charles Morrison\", \"PER\", \"relation\", \"John Morrison\", \"PER\"],\n    [\"The Honourable Sir Peter Morrison\", \"PER\", \"relation\", \"John Morrison\", \"PER\"],\n    [\"Fonthill House\", \"LOC\", \"located in\", \"Wiltshire\", \"LOC\"],\n    [\"James Morrison\", \"PER\", \"residence\", \"Hampshire\", \"LOC\"],\n    [\"Baron Margadale\", \"MISC\", \"location\", \"Islay\", \"LOC\"],\n    [\"John Morrison\", \"PER\", \"title\", \"Baron Margadale\", \"MISC\"],\n    [\"James Morrison\", \"PER\", \"net worth\", \"\u00a34 million\", \"NUM\"],\n    [\"Charles Morrison\", \"PER\", \"net worth\", \"\u00a310.9 million\", \"NUM\"],\n    [\"Nathan Mayer Rothschild\", \"PER\", \"net worth\", \"\u00a35 million\", \"NUM\"],\n    [\"Duke of Westminster\", \"PER\", \"relation\", \"Charles Morrison\", \"PER\"]\n]"
+}

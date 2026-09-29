@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_224",
+ "base_raw": "[\n    [\"Stair Dismount\", \"MISC\", \"developer\", \"Jetro Lauha\", \"PER\"],\n    [\"Stair Dismount\", \"MISC\", \"genre\", \"puzzle game\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Mac OS X\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Linux\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"release date\", \"25 Nov, 2009\", \"TIME\"],\n    [\"Stair Dismount Touch\", \"MISC\", \"release date\", \"25 Nov, 2009\", \"TIME\"],\n    [\"Stair Dismount\", \"MISC\", \"publisher\", \"tAAt\", \"ORG\"],\n    [\"Jetro Lauha\", \"PER\", \"employer\", \"tAAt\", \"ORG\"],\n    [\"Stair Dismount\", \"MISC\", \"award received\", \"first prize\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"location of formation\", \"Assembly 2002\", \"MISC\"],\n    [\"Assembly 2002\", \"MISC\", \"location\", \"MISC\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 7,
+  "FN": 2,
+  "recall": 0.7142857142857143,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Stair Dismount\", \"MISC\", \"developer\", \"Jetro Lauha\", \"PER\"],\n    [\"Stair Dismount\", \"MISC\", \"genre\", \"puzzle game\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Mac OS X\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Linux\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"release date\", \"25 Nov, 2009\", \"TIME\"],\n    [\"Stair Dismount\", \"MISC\", \"publisher\", \"tAAt\", \"ORG\"],\n    [\"Jetro Lauha\", \"PER\", \"employer\", \"tAAt\", \"ORG\"],\n    [\"Stair Dismount\", \"MISC\", \"award received\", \"first prize\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"location of formation\", \"Assembly 2002\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 7,
+  "FN": 2,
+  "recall": 0.7142857142857143,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 7,
+  "FN": 2,
+  "recall": 0.7142857142857143,
+  "n_extracted": 12,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Stair Dismount\", \"MISC\", \"developer\", \"Jetro Lauha\", \"PER\"],\n    [\"Stair Dismount\", \"MISC\", \"genre\", \"puzzle game\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Mac OS X\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"platform\", \"Linux\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"release date\", \"25 Nov, 2009\", \"TIME\"],\n    [\"Stair Dismount\", \"MISC\", \"publisher\", \"tAAt\", \"ORG\"],\n    [\"Jetro Lauha\", \"PER\", \"employer\", \"tAAt\", \"ORG\"],\n    [\"Stair Dismount\", \"MISC\", \"award received\", \"first prize\", \"MISC\"],\n    [\"Stair Dismount\", \"MISC\", \"location of formation\", \"Assembly 2002\", \"MISC\"]\n]"
+}

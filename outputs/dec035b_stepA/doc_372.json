@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_372",
+ "base_raw": "[\n    [\"United States Navy\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Imperial Japanese Navy\", \"ORG\", \"country\", \"Japan\", \"LOC\"],\n    [\"Royal Navy\", \"ORG\", \"country\", \"United Kingdom\", \"LOC\"],\n    [\"Kriegsmarine\", \"ORG\", \"country\", \"Germany\", \"LOC\"],\n    [\"Romanian Navy\", \"ORG\", \"country\", \"Romania\", \"LOC\"],\n    [\"Destroyer escort\", \"MISC\", \"instance of\", \"warship\", \"MISC\"],\n    [\"Frigate\", \"MISC\", \"instance of\", \"warship\", \"MISC\"],\n    [\"Kaib\u014dkan\", \"MISC\", \"instance of\", \"warship\", \"MISC\"],\n    [\"Destroyer\", \"MISC\", \"instance of\", \"warship\", \"MISC\"],\n    [\"United States\", \"LOC\", \"located in the administrative territorial entity\", \"North America\", \"LOC\"],\n    [\"United Kingdom\", \"LOC\", \"located in the administrative territorial entity\", \"Europe\", \"LOC\"],\n    [\"Japan\", \"LOC\", \"located in the administrative territorial entity\", \"Asia\", \"LOC\"],\n    [\"Germany\", \"LOC\", \"located in the administrative territorial entity\", \"Europe\", \"LOC\"],\n    [\"Romania\", \"LOC\", \"located in the administrative territorial entity\", \"Europe\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"United States Navy\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Imperial Japanese Navy\", \"ORG\", \"country\", \"Japan\", \"LOC\"],\n    [\"Royal Navy\", \"ORG\", \"country\", \"United Kingdom\", \"LOC\"],\n    [\"Kriegsmarine\", \"ORG\", \"country\", \"Germany\", \"LOC\"],\n    [\"Romanian Navy\", \"ORG\", \"country\", \"Romania\", \"LOC\"],\n    [\"Destroyer escort\", \"MISC\", \"used by\", \"United States Navy\", \"ORG\"],\n    [\"Kaib\u014dkan\", \"MISC\", \"used by\", \"Imperial Japanese Navy\", \"ORG\"],\n    [\"Frigate\", \"MISC\", \"used by\", \"Royal Navy\", \"ORG\"],\n    [\"Amiral Murgescu-class\", \"MISC\", \"used by\", \"Romanian Navy\", \"ORG\"],\n    [\"Destroyer escort\", \"MISC\", \"reclassified as\", \"Frigate\", \"MISC\"],\n    [\"United States Navy\", \"ORG\", \"reclassified\", \"Destroyer escort\", \"MISC\"],\n    [\"F-class\", \"MISC\", \"used by\", \"Kriegsmarine\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 16,
+  "FN": 18,
+  "recall": 0.21739130434782608,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"United States Navy\", \"ORG\", \"classification\", \"Destroyer escort\", \"MISC\"],\n    [\"Imperial Japanese Navy\", \"ORG\", \"classification\", \"Kaib\u014dkan\", \"MISC\"],\n    [\"Royal Navy\", \"ORG\", \"classification\", \"frigates\", \"MISC\"],\n    [\"Commonwealth forces\", \"ORG\", \"classification\", \"frigates\", \"MISC\"],\n    [\"United States Navy\", \"ORG\", \"redesignated\", \"frigates (FF)\", \"MISC\"],\n    [\"Destroyer escorts\", \"MISC\", \"used for\", \"antisubmarine warfare\", \"MISC\"],\n    [\"Fleet destroyers\", \"MISC\", \"alternative to\", \"Destroyer escorts\", \"MISC\"],\n    [\"Kriegsmarine\", \"ORG\", \"operator of\", \"F-class escort ships\", \"MISC\"],\n    [\"Romanian Navy\", \"ORG\", \"operator of\", \"Amiral Murgescu-class vessels\", \"MISC\"],\n    [\"Postwar destroyer escorts\", \"MISC\", \"characteristic\", \"increased antiaircraft capability\", \"MISC\"],\n    [\"Postwar frigates\", \"MISC\", \"characteristic\", \"increased antiaircraft capability\", \"MISC\"],\n    [\"Cold War destroyer escorts\", \"MISC\", \"size comparison\", \"wartime destroyers\", \"MISC\"],\n    [\"United States Navy\", \"ORG\", \"converted\", \"World War II destroyers to escort destroyers (DDE)\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 23,
+  "FN": 17,
+  "recall": 0.19047619047619047,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ }
+}

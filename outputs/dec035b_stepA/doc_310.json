@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_310",
+ "base_raw": "[\n    [\"Jacques Prost\", \"PER\", \"educated at\", \"\u00c9cole normale sup\u00e9rieure de Saint-Cloud\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"founded\", \"Theoretical Physico-Chemistry Group\", \"ORG\"],\n    [\"Theoretical Physico-Chemistry Group\", \"ORG\", \"located in\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"advisor to\", \"Elf Aquitaine\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"founded\", \"Physical Chemistry Curie lab\", \"ORG\"],\n    [\"Physical Chemistry Curie lab\", \"ORG\", \"located in\", \"Curie Institute\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"member of\", \"French Academy of Sciences\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"General director of\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Pierre-Gilles de Gennes\", \"PER\", \"director of\", \"ESPCI ParisTech\", \"ORG\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Organizations",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Jacques Prost\", \"PER\", \"place of birth\", \"Bourg-en-Bresse\", \"LOC\"],\n    [\"Jacques Prost\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"member of\", \"French Academy of Sciences\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"employer\", \"Elf Aquitaine\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"position held\", \"General director\", \"MISC\"],\n    [\"Jacques Prost\", \"PER\", \"date of birth\", \"1946\", \"TIME\"],\n    [\"\u00c9cole sup\u00e9rieure de physique et de chimie industrielles de la ville de Paris\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"\u00c9cole normale sup\u00e9rieure de Saint-Cloud\", \"ORG\", \"located in\", \"Saint-Cloud\", \"LOC\"],\n    [\"ESPCI ParisTech\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Curie Institute\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Pierre-Gilles de Gennes\", \"PER\", \"employer\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"founded by\", \"Theoretical Physico-Chemistry Group\", \"MISC\"],\n    [\"Jacques Prost\", \"PER\", \"founded by\", \"Physical Chemistry Curie lab\", \"MISC\"],\n    [\"Theoretical Physico-Chemistry Group\", \"MISC\", \"part of\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Physical Chemistry Curie lab\", \"MISC\", \"part of\", \"Curie Institute\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 19,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions"
+ ],
+ "kb_dedup_raw": "[\n    [\"Jacques Prost\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"founded\", \"Theoretical Physico-Chemistry Group\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"member of\", \"French Academy of Sciences\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"scientific advisor to\", \"Elf Aquitaine\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"General director of\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Theoretical Physico-Chemistry Group\", \"ORG\", \"located in\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Physical Chemistry Curie lab\", \"ORG\", \"located in\", \"Curie Institute\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"founded\", \"Physical Chemistry Curie lab\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"head of\", \"Theoretical Physico-Chemistry Group\", \"ORG\"],\n    [\"Pierre-Gilles de Gennes\", \"PER\", \"director of\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Jacques Prost\", \"PER\", \"alumni of\", \"\u00c9cole normale sup\u00e9rieure de Saint-Cloud\", \"ORG\"],\n    [\"\u00c9cole sup\u00e9rieure de physique et de chimie industrielles de la ville de Paris\", \"ORG\", \"located in\", \"Paris\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

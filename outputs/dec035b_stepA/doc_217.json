@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_217",
+ "base_raw": "[\n    [\"A Shau Valley\", \"LOC\", \"located in\", \"Th\u1eeba Thi\u00ean - Hu\u1ebf Province\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"country\", \"Vietnam\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"located near\", \"Hu\u1ebf\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"part of\", \"Laos border\", \"LOC\"],\n    [\"Ho Chi Minh trail\", \"MISC\", \"used by\", \"North Vietnamese Army\", \"ORG\"],\n    [\"A Shau Valley\", \"LOC\", \"contains\", \"Route 548\", \"MISC\"],\n    [\"Ho Chi Minh Highway\", \"MISC\", \"located in\", \"A Shau Valley\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 6,
+  "FN": 10,
+  "recall": 0.09090909090909091,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"A Shau Valley\", \"LOC\", \"located in\", \"Th\u1eeba Thi\u00ean - Hu\u1ebf Province\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"country\", \"Vietnam\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"located near\", \"Hu\u1ebf\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"bordering\", \"Laos\", \"LOC\"],\n    [\"Ho Chi Minh trail\", \"MISC\", \"used by\", \"North Vietnamese Army\", \"ORG\"],\n    [\"A Shau Valley\", \"LOC\", \"part of\", \"South Vietnam\", \"LOC\"],\n    [\"Route 548\", \"MISC\", \"location\", \"A Shau Valley\", \"LOC\"],\n    [\"Ho Chi Minh Highway\", \"MISC\", \"location\", \"A Shau Valley\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"A Shau Valley\", \"LOC\", \"located in\", \"Th\u1eeba Thi\u00ean - Hu\u1ebf Province\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"country\", \"Vietnam\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"located near\", \"Hu\u1ebf\", \"LOC\"],\n    [\"A Shau Valley\", \"LOC\", \"part of\", \"Laos border\", \"LOC\"],\n    [\"Ho Chi Minh trail\", \"MISC\", \"used by\", \"North Vietnamese Army\", \"ORG\"],\n    [\"A Shau Valley\", \"LOC\", \"contains\", \"Route 548\", \"MISC\"],\n    [\"Ho Chi Minh Highway\", \"MISC\", \"located in\", \"A Shau Valley\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 6,
+  "FN": 9,
+  "recall": 0.1,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ }
+}

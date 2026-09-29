@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_94",
+ "base_raw": "[\n    [\"John Michael Montgomery\", \"PER\", \"genre\", \"country music\", \"MISC\"],\n    [\"Pictures\", \"MISC\", \"artist\", \"John Michael Montgomery\", \"PER\"],\n    [\"Warner Bros. Records\", \"ORG\", \"location of formation\", \"U.S.\", \"LOC\"],\n    [\"Atlantic Records\", \"ORG\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"John Michael Montgomery\", \"PER\", \"record label\", \"Warner Bros. Records\", \"ORG\"],\n    [\"Sixwire\", \"ORG\", \"genre\", \"country music\", \"MISC\"],\n    [\"Steve Mandile\", \"PER\", \"member of\", \"Sixwire\", \"ORG\"],\n    [\"John Michael Montgomery\", \"PER\", \"collaborator\", \"Sixwire\", \"ORG\"],\n    [\"'Til Nothing Comes Between Us\", \"MISC\", \"artist\", \"John Michael Montgomery\", \"PER\"],\n    [\"Four Wheel Drive\", \"MISC\", \"artist\", \"John Michael Montgomery\", \"PER\"],\n    [\"Country Thang\", \"MISC\", \"artist\", \"John Michael Montgomery\", \"PER\"],\n    [\"It Goes Like This\", \"MISC\", \"artist\", \"John Michael Montgomery\", \"PER\"],\n    [\"It Goes Like This\", \"MISC\", \"collaborator\", \"Sixwire\", \"ORG\"],\n    [\"Steve Mandile\", \"PER\", \"co-writer\", \"It Goes Like This\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 7,
+  "recall": 0.4166666666666667,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Music Record Labels",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"John Michael Montgomery\", \"PER\", \"genre\", \"country music\", \"MISC\"],\n    [\"Warner Bros. Records\", \"ORG\", \"location\", \"U.S.\", \"LOC\"],\n    [\"Atlantic Records\", \"ORG\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"John Michael Montgomery\", \"PER\", \"record label\", \"Warner Bros. Records\", \"ORG\"],\n    [\"Sixwire\", \"ORG\", \"record label\", \"Warner Bros. Records\", \"ORG\"],\n    [\"Steve Mandile\", \"PER\", \"member of\", \"Sixwire\", \"ORG\"],\n    [\"John Michael Montgomery\", \"PER\", \"collaborator\", \"Sixwire\", \"ORG\"],\n    [\"John Michael Montgomery\", \"PER\", \"collaborator\", \"Steve Mandile\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 11,
+  "FN": 5,
+  "recall": 0.5454545454545454,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Music Record Labels"
+ ],
+ "kb_dedup_raw": "[\n    [\"John Michael Montgomery\", \"PER\", \"genre\", \"country\", \"MISC\"],\n    [\"Pictures\", \"MISC\", \"artist\", \"John Michael Montgomery\", \"PER\"],\n    [\"John Michael Montgomery\", \"PER\", \"record label\", \"Warner Bros. Records\", \"ORG\"],\n    [\"John Michael Montgomery\", \"PER\", \"former record label\", \"Atlantic Records\", \"ORG\"],\n    [\"Warner Bros. Records\", \"ORG\", \"artist\", \"Sixwire\", \"PER\"],\n    [\"Sixwire\", \"PER\", \"lead singer\", \"Steve Mandile\", \"PER\"],\n    [\"Steve Mandile\", \"PER\", \"collaborator\", \"John Michael Montgomery\", \"PER\"],\n    [\"It Goes Like This\", \"MISC\", \"artist\", \"John Michael Montgomery\", \"PER\"],\n    [\"It Goes Like This\", \"MISC\", \"collaborator\", \"Sixwire\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 13,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

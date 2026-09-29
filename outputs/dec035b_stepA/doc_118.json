@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_118",
+ "base_raw": "[\n    [\"Archie Comic Publications, Inc.\", \"ORG\", \"headquartered in\", \"Pelham, New York\", \"LOC\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"John L. Goldwater\", \"PER\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"Bob Montana\", \"PER\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"Vic Bloom\", \"PER\"],\n    [\"MLJ Comics\", \"ORG\", \"founded by\", \"John L. Goldwater\", \"PER\"],\n    [\"Pep Comics\", \"MISC\", \"published by\", \"MLJ Comics\", \"ORG\"],\n    [\"John L. Goldwater\", \"PER\", \"inspired by\", \"Andy Hardy movies\", \"MISC\"],\n    [\"Archie Comics\", \"MISC\", \"relaunched in\", \"July 2015\", \"TIME\"],\n    [\"Archie Comic Publications, Inc.\", \"ORG\", \"publisher of\", \"Archie Comics\", \"MISC\"],\n    [\"Josie and the Pussycats\", \"MISC\", \"created by\", \"Archie Comic Publications, Inc.\", \"ORG\"],\n    [\"Sabrina Spellman\", \"PER\", \"created by\", \"Archie Comic Publications, Inc.\", \"ORG\"],\n    [\"Reggie Mantle\", \"PER\", \"created by\", \"Archie Comic Publications, Inc.\", \"ORG\"],\n    [\"Veronica Lodge\", \"PER\", \"created by\", \"Archie Comic Publications, Inc.\", \"ORG\"],\n    [\"Betty Cooper\", \"PER\", \"created by\", \"Archie Comic Publications, Inc.\", \"ORG\"],\n    [\"Jughead Jones\", \"PER\", \"created by\", \"Archie Comic Publications, Inc.\", \"ORG\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 11,
+  "recall": 0.26666666666666666,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Archie Comic Publications, Inc.\", \"ORG\", \"headquartered in\", \"Pelham, New York\", \"LOC\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"John L. Goldwater\", \"PER\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"Bob Montana\", \"PER\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"Vic Bloom\", \"PER\"],\n    [\"MLJ Comics\", \"ORG\", \"founded by\", \"John L. Goldwater\", \"PER\"],\n    [\"Pep Comics\", \"MISC\", \"published by\", \"Archie Comic Publications, Inc.\", \"ORG\"],\n    [\"John L. Goldwater\", \"PER\", \"inspired by\", \"Andy Hardy movies\", \"MISC\"],\n    [\"Archie Comics\", \"MISC\", \"relaunched in\", \"July 2015\", \"TIME\"],\n    [\"Archie Comic Publications, Inc.\", \"ORG\", \"publisher of\", \"Archie Comics\", \"MISC\"],\n    [\"Josie and the Pussycats\", \"MISC\", \"created by\", \"Archie Comic Publications, Inc.\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 14,
+  "recall": 0.2222222222222222,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 14,
+  "recall": 0.2222222222222222,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Archie Comic Publications, Inc.\", \"ORG\", \"headquartered in\", \"Pelham, New York\", \"LOC\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"John L. Goldwater\", \"PER\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"Bob Montana\", \"PER\"],\n    [\"Archie Andrews\", \"PER\", \"created by\", \"Vic Bloom\", \"PER\"],\n    [\"MLJ Comics\", \"ORG\", \"founded by\", \"John L. Goldwater\", \"PER\"],\n    [\"Pep Comics\", \"MISC\", \"published by\", \"Archie Comic Publications, Inc.\", \"ORG\"],\n    [\"John L. Goldwater\", \"PER\", \"inspired by\", \"Andy Hardy movies\", \"MISC\"],\n    [\"Archie Comics\", \"MISC\", \"relaunched in\", \"July 2015\", \"TIME\"],\n    [\"Archie Comic Publications, Inc.\", \"ORG\", \"publisher of\", \"Archie Comics\", \"MISC\"],\n    [\"Josie and the Pussycats\", \"MISC\", \"created by\", \"Archie Comic Publications, Inc.\", \"ORG\"]\n]"
+}

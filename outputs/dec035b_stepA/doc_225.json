@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_225",
+ "base_raw": "[\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"place of birth\", \"Seaham, County Durham, England\", \"LOC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"country of citizenship\", \"Canada\", \"LOC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"educated at\", \"University of Toronto\", \"ORG\"],\n    [\"Nelson Willard Haynes\", \"PER\", \"spouse\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"employer\", \"University of Alberta\", \"ORG\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"position held\", \"provincial drama specialist\", \"MISC\"],\n    [\"Alberta Drama League\", \"ORG\", \"founded by\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Banff Centre for the Arts\", \"ORG\", \"co-founded by\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Gwen Pharis Ringwood\", \"PER\", \"author\", \"statement about Elizabeth Sterling Haynes\", \"MISC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"award\", \"Sterling Awards\", \"MISC\"],\n    [\"Sterling Awards\", \"MISC\", \"named after\", \"Elizabeth Sterling Haynes\", \"PER\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Locations",
+  "Organizations",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"date of birth\", \"December 7, 1897\", \"TIME\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"place of birth\", \"Seaham, County Durham, England\", \"LOC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"country of birth\", \"England\", \"LOC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"date of death\", \"April 26, 1957\", \"TIME\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"place of death\", \"Alberta, Canada\", \"LOC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"country of death\", \"Canada\", \"LOC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"educated at\", \"University of Toronto\", \"ORG\"],\n    [\"Nelson Willard Haynes\", \"PER\", \"spouse\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"position held\", \"provincial drama specialist\", \"MISC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"employer\", \"Department of Extension of the University of Alberta\", \"ORG\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"founded\", \"Banff Centre for the Arts\", \"ORG\"],\n    [\"Banff Centre for the Arts\", \"ORG\", \"co-founder\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Gwen Pharis Ringwood\", \"PER\", \"quote about\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Sterling Awards\", \"MISC\", \"named after\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"member of\", \"Alberta Drama League\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 15,
+  "FN": 8,
+  "recall": 0.42857142857142855,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Higher Education Institutions",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"place of birth\", \"Seaham, County Durham, England\", \"LOC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"country of citizenship\", \"Canada\", \"LOC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"educated at\", \"University of Toronto\", \"ORG\"],\n    [\"Nelson Willard Haynes\", \"PER\", \"spouse\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"employer\", \"University of Alberta\", \"ORG\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"position held\", \"provincial drama specialist\", \"MISC\"],\n    [\"Alberta Drama League\", \"ORG\", \"founded by\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Banff Centre for the Arts\", \"ORG\", \"co-founded by\", \"Elizabeth Sterling Haynes\", \"PER\"],\n    [\"Gwen Pharis Ringwood\", \"PER\", \"author\", \"statement about Elizabeth Sterling Haynes\", \"MISC\"],\n    [\"Elizabeth Sterling Haynes\", \"PER\", \"award\", \"Sterling Awards\", \"MISC\"],\n    [\"Sterling Awards\", \"MISC\", \"named after\", \"Elizabeth Sterling Haynes\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

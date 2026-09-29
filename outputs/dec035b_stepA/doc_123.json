@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_123",
+ "base_raw": "[\n    [\"Karelia\", \"LOC\", \"part of\", \"Russia\", \"LOC\"],\n    [\"Petrozavodsk\", \"LOC\", \"capital of\", \"Karelia\", \"LOC\"],\n    [\"Karelia\", \"LOC\", \"located in\", \"Russia\", \"LOC\"],\n    [\"Karelian Labor Commune\", \"ORG\", \"replaced by\", \"Karelian Republic\", \"ORG\"],\n    [\"Russian SFSR\", \"ORG\", \"contains administrative territorial entity\", \"Karelia\", \"LOC\"],\n    [\"All-Russian Central Executive Committee\", \"ORG\", \"issued\", \"Resolution of the Presidium\", \"MISC\"],\n    [\"VTsIK\", \"ORG\", \"issued\", \"Decree\", \"MISC\"],\n    [\"Council of People's Commissars\", \"ORG\", \"issued\", \"Decree\", \"MISC\"],\n    [\"Karelo-Finnish Soviet Socialist Republic\", \"ORG\", \"replaced by\", \"Karelian Republic\", \"ORG\"],\n    [\"Soviet Union\", \"ORG\", \"dissolved, abolished or demolished\", \"1991\", \"TIME\"],\n    [\"Karelia\", \"LOC\", \"founded by\", \"Resolution of the Presidium of the All-Russian Central Executive Committee\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Karelia\", \"LOC\", \"part of\", \"Russia\", \"LOC\"],\n    [\"Petrozavodsk\", \"LOC\", \"capital of\", \"Karelia\", \"LOC\"],\n    [\"Karelia\", \"LOC\", \"located in\", \"Russia\", \"LOC\"],\n    [\"Karelian Labor Commune\", \"ORG\", \"replaced by\", \"Karelian Republic\", \"ORG\"],\n    [\"Karelo-Finnish Soviet Socialist Republic\", \"ORG\", \"replaced by\", \"Karelian Republic\", \"ORG\"],\n    [\"Russian SFSR\", \"ORG\", \"contains administrative territorial entity\", \"Karelia\", \"LOC\"],\n    [\"Soviet Union\", \"ORG\", \"contains administrative territorial entity\", \"Karelo-Finnish Soviet Socialist Republic\", \"ORG\"],\n    [\"Karelia\", \"LOC\", \"founded by\", \"Resolution of the Presidium of the All-Russian Central Executive Committee\", \"MISC\"],\n    [\"Karelia\", \"LOC\", \"inception\", \"June 27, 1923\", \"TIME\"],\n    [\"Karelo-Finnish Soviet Socialist Republic\", \"ORG\", \"dissolved, abolished or demolished\", \"1956\", \"TIME\"],\n    [\"Soviet Union\", \"ORG\", \"dissolved, abolished or demolished\", \"1991\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Karelia\", \"LOC\", \"located in\", \"Russia\", \"LOC\"],\n    [\"Petrozavodsk\", \"LOC\", \"capital of\", \"Karelia\", \"LOC\"],\n    [\"Karelia\", \"LOC\", \"founded by\", \"Resolution of the Presidium of the All-Russian Central Executive Committee\", \"MISC\"],\n    [\"Karelia\", \"LOC\", \"population\", \"643,548\", \"NUM\"],\n    [\"Karelian Labor Commune\", \"ORG\", \"transformed into\", \"Karelia\", \"LOC\"],\n    [\"Karelo-Finnish Soviet Socialist Republic\", \"LOC\", \"part of\", \"Soviet Union\", \"LOC\"],\n    [\"Karelia\", \"LOC\", \"dissolved, abolished or demolished\", \"1991\", \"TIME\"],\n    [\"Russian SFSR\", \"LOC\", \"contains administrative territorial entity\", \"Karelia\", \"LOC\"],\n    [\"All-Russian Central Executive Committee\", \"ORG\", \"issued\", \"Resolution of the Presidium\", \"MISC\"],\n    [\"Council of People's Commissars\", \"ORG\", \"issued\", \"Decree\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

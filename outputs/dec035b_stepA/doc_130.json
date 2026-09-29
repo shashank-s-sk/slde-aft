@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_130",
+ "base_raw": "[\n    [\"Ulver\", \"ORG\", \"founded by\", \"Kristoffer Rygg\", \"PER\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"black metal\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"electronica\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"symphonic\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"chamber traditions\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"noise\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"progressive\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"experimental music\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"member of\", \"Daniel O'Sullivan\", \"PER\"],\n    [\"Daniel O'Sullivan\", \"PER\", \"nationality\", \"British\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"record label\", \"Century Media\", \"ORG\"],\n    [\"Kristoffer Rygg\", \"PER\", \"founded\", \"Jester Records\", \"ORG\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"Spellemannsprisen\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"NATT&DAG\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"Oslo Awards\", \"MISC\"],\n    [\"Harmony Korine\", \"PER\", \"occupation\", \"director\", \"MISC\"],\n    [\"Julian Cope\", \"PER\", \"occupation\", \"author\", \"MISC\"],\n    [\"Julian Cope\", \"PER\", \"occupation\", \"musician\", \"MISC\"],\n    [\"Wagner\", \"PER\", \"influenced\", \"Ulver\", \"ORG\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 16,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Genre: Rock"
+ ],
+ "kb_orig_raw": "[\n    [\"Ulver\", \"ORG\", \"founded by\", \"Kristoffer Rygg\", \"PER\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"electronica\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"symphonic\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"chamber traditions\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"noise\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"progressive\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"experimental music\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"member of\", \"Daniel O'Sullivan\", \"PER\"],\n    [\"Daniel O'Sullivan\", \"PER\", \"nationality\", \"British\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"record label\", \"Century Media\", \"ORG\"],\n    [\"Kristoffer Rygg\", \"PER\", \"founded\", \"Jester Records\", \"ORG\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"Spellemannsprisen\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"Oslo Awards\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"NATT&DAG\", \"MISC\"],\n    [\"Harmony Korine\", \"PER\", \"occupation\", \"director\", \"MISC\"],\n    [\"Julian Cope\", \"PER\", \"occupation\", \"author\", \"MISC\"],\n    [\"Julian Cope\", \"PER\", \"occupation\", \"musician\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"location of formation\", \"Norway\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 19,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Ulver\", \"ORG\", \"founded by\", \"Kristoffer Rygg\", \"PER\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"black metal\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"electronica\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"symphonic\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"chamber traditions\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"noise\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"progressive\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"genre\", \"experimental music\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"member of\", \"Daniel O'Sullivan\", \"PER\"],\n    [\"Daniel O'Sullivan\", \"PER\", \"member of\", \"Ulver\", \"ORG\"],\n    [\"Ulver\", \"ORG\", \"record label\", \"Century Media\", \"ORG\"],\n    [\"Kristoffer Rygg\", \"PER\", \"founded\", \"Jester Records\", \"ORG\"],\n    [\"Jester Records\", \"ORG\", \"founded by\", \"Kristoffer Rygg\", \"PER\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"NATT&DAG\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"Oslo Awards\", \"MISC\"],\n    [\"Ulver\", \"ORG\", \"award received\", \"Spellemannsprisen\", \"MISC\"],\n    [\"Harmony Korine\", \"PER\", \"commented on\", \"Ulver\", \"ORG\"],\n    [\"Julian Cope\", \"PER\", \"commented on\", \"Ulver\", \"ORG\"],\n    [\"Ulver\", \"ORG\", \"influenced by\", \"Wagner\", \"PER\"],\n    [\"Wagner\", \"PER\", \"influenced\", \"Ulver\", \"ORG\"],\n    [\"Ulver\", \"ORG\", \"performer at\", \"Norwegian National Opera\", \"LOC\"],\n    [\"Norwegian National Opera\", \"LOC\", \"performer\", \"Ulver\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 22,
+  "FN": 9,
+  "recall": 0.35714285714285715,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_105",
+ "base_raw": "[\n    [\"Pasi Juhani Rutanen\", \"PER\", \"place of birth\", \"Jyv\u00e4skyl\u00e4\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"educated at\", \"University of Helsinki\", \"ORG\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"employer\", \"Finnish Broadcasting Company\", \"ORG\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"position held\", \"Ambassador\", \"MISC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"location\", \"Paris\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"spouse\", \"American wife\", \"PER\"],\n    [\"Finnish Broadcasting Company\", \"ORG\", \"located in the administrative territorial entity\", \"Finland\", \"LOC\"],\n    [\"University of Helsinki\", \"ORG\", \"located in the administrative territorial entity\", \"Finland\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"date of birth\", \"23 October 1936\", \"TIME\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 6,
+  "FN": 2,
+  "recall": 0.7142857142857143,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Pasi Juhani Rutanen\", \"PER\", \"place of birth\", \"Jyv\u00e4skyl\u00e4\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"educated at\", \"University of Helsinki\", \"ORG\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"employer\", \"Finnish Broadcasting Company\", \"ORG\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"spouse\", \"American wife\", \"PER\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"residence\", \"Paris\", \"LOC\"],\n    [\"Finnish Broadcasting Company\", \"ORG\", \"located in\", \"Finland\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"position held\", \"Ambassador\", \"MISC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"member of\", \"Ministry of Foreign Affairs\", \"ORG\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"date of birth\", \"23 October 1936\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 8,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Pasi Juhani Rutanen\", \"PER\", \"place of birth\", \"Jyv\u00e4skyl\u00e4\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"educated at\", \"University of Helsinki\", \"ORG\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"employer\", \"Finnish Broadcasting Company\", \"ORG\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"residence\", \"Paris\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"spouse\", \"American wife\", \"PER\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"position held\", \"Ambassador\", \"MISC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"member of\", \"Ministry of Foreign Affairs\", \"ORG\"],\n    [\"Finnish Broadcasting Company\", \"ORG\", \"located in\", \"Finland\", \"LOC\"],\n    [\"University of Helsinki\", \"ORG\", \"located in\", \"Finland\", \"LOC\"],\n    [\"Ministry of Foreign Affairs\", \"ORG\", \"located in\", \"Finland\", \"LOC\"],\n    [\"Pasi Juhani Rutanen\", \"PER\", \"date of birth\", \"23 October 1936\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 7,
+  "FN": 3,
+  "recall": 0.7272727272727273,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

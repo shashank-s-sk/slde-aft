@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_109",
+ "base_raw": "[\n    [\"Oslo Airport Station\", \"LOC\", \"located in\", \"Oslo Airport, Gardermoen\", \"LOC\"],\n    [\"Gardermoen Station\", \"LOC\", \"also known as\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Oslo Airport Station\", \"LOC\", \"served by\", \"Airport Express Trains\", \"ORG\"],\n    [\"Oslo Airport Station\", \"LOC\", \"located on\", \"Gardermoen Line\", \"LOC\"],\n    [\"Oslo Airport Station\", \"LOC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Oslo Central Station\", \"LOC\", \"location of\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Oslo Airport Station\", \"LOC\", \"opened\", \"1998\", \"TIME\"],\n    [\"Oslo Airport Station\", \"LOC\", \"incident\", \"derailments\", \"MISC\"],\n    [\"Oslo Airport Station\", \"LOC\", \"near\", \"terminal for unloading freight trains\", \"LOC\"],\n    [\"Gardermoen Line\", \"LOC\", \"part of\", \"Oslo Airport Station\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 15,
+  "recall": 0.11764705882352941,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Oslo Airport Station\", \"LOC\", \"located in\", \"Oslo Airport, Gardermoen\", \"LOC\"],\n    [\"Oslo Airport Station\", \"LOC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Gardermoen Line\", \"LOC\", \"located in\", \"Norway\", \"LOC\"],\n    [\"Airport Express Trains\", \"ORG\", \"serves\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Oslo Central Station\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Eidsvoll\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Kongsberg\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Lillehammer\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Skien\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Trondheim\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Oslo Airport Station\", \"LOC\", \"opened\", \"1998\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 14,
+  "FN": 14,
+  "recall": 0.2631578947368421,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Oslo Airport Station\", \"LOC\", \"located in\", \"Oslo Airport\", \"LOC\"],\n    [\"Oslo Airport Station\", \"LOC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Gardermoen Station\", \"LOC\", \"located in\", \"Oslo Airport\", \"LOC\"],\n    [\"Gardermoen Line\", \"LOC\", \"located in\", \"Norway\", \"LOC\"],\n    [\"Oslo Airport\", \"LOC\", \"located in\", \"Norway\", \"LOC\"],\n    [\"Oslo Central Station\", \"LOC\", \"located in\", \"Oslo\", \"LOC\"],\n    [\"Eidsvoll\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Kongsberg\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Lillehammer\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Skien\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Trondheim\", \"LOC\", \"connected to\", \"Oslo Airport Station\", \"LOC\"],\n    [\"Oslo Airport Station\", \"LOC\", \"opened\", \"1998\", \"TIME\"],\n    [\"Oslo Airport\", \"LOC\", \"opened\", \"1998\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 17,
+  "FN": 13,
+  "recall": 0.23529411764705882,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

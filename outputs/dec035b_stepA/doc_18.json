@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_18",
+ "base_raw": "[\n    [\"Ernest Edward Wood\", \"PER\", \"date of birth\", \"August 24, 1875\", \"TIME\"],\n    [\"Ernest Edward Wood\", \"PER\", \"place of birth\", \"Chico, California\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"educated at\", \"Stockton High School\", \"ORG\"],\n    [\"Ernest Edward Wood\", \"PER\", \"educated at\", \"United States Military Academy\", \"ORG\"],\n    [\"Ernest Edward Wood\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"position held\", \"U.S. Representative\", \"MISC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"member of political party\", \"Democratic\", \"ORG\"],\n    [\"Ernest Edward Wood\", \"PER\", \"location of death\", \"Los Angeles, California\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"date of death\", \"January 10, 1952\", \"TIME\"],\n    [\"Ernest Edward Wood\", \"PER\", \"place of burial\", \"Hollywood Cemetery\", \"LOC\"],\n    [\"United States Military Academy\", \"ORG\", \"located in\", \"West Point\", \"LOC\"],\n    [\"Harry M. Coudrey\", \"PER\", \"position held\", \"U.S. Representative\", \"MISC\"],\n    [\"Stockton High School\", \"ORG\", \"located in\", \"Stockton, California\", \"LOC\"],\n    [\"Hollywood Cemetery\", \"LOC\", \"located in\", \"Hollywood, California\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 10,
+  "FN": 17,
+  "recall": 0.19047619047619047,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Ernest Edward Wood\", \"PER\", \"date of birth\", \"August 24, 1875\", \"TIME\"],\n    [\"Ernest Edward Wood\", \"PER\", \"place of birth\", \"Chico, California\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"educated at\", \"Stockton High School\", \"ORG\"],\n    [\"Ernest Edward Wood\", \"PER\", \"educated at\", \"United States Military Academy\", \"ORG\"],\n    [\"Ernest Edward Wood\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"date of death\", \"January 10, 1952\", \"TIME\"],\n    [\"Ernest Edward Wood\", \"PER\", \"place of death\", \"Los Angeles, California\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"location of burial\", \"Hollywood Cemetery\", \"LOC\"],\n    [\"Harry M. Coudrey\", \"PER\", \"position held\", \"U.S. Representative\", \"MISC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"position held\", \"U.S. Representative\", \"MISC\"],\n    [\"United States Military Academy\", \"ORG\", \"located in\", \"West Point\", \"LOC\"],\n    [\"Stockton High School\", \"ORG\", \"located in\", \"Stockton, California\", \"LOC\"],\n    [\"Hollywood Cemetery\", \"LOC\", \"located in\", \"Hollywood, California\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 9,
+  "FN": 15,
+  "recall": 0.3181818181818182,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 9,
+  "FN": 15,
+  "recall": 0.3181818181818182,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Ernest Edward Wood\", \"PER\", \"date of birth\", \"August 24, 1875\", \"TIME\"],\n    [\"Ernest Edward Wood\", \"PER\", \"place of birth\", \"Chico, California\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"educated at\", \"Stockton High School\", \"ORG\"],\n    [\"Ernest Edward Wood\", \"PER\", \"educated at\", \"United States Military Academy\", \"ORG\"],\n    [\"Ernest Edward Wood\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"date of death\", \"January 10, 1952\", \"TIME\"],\n    [\"Ernest Edward Wood\", \"PER\", \"place of death\", \"Los Angeles, California\", \"LOC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"location of burial\", \"Hollywood Cemetery\", \"LOC\"],\n    [\"Harry M. Coudrey\", \"PER\", \"position held\", \"U.S. Representative\", \"MISC\"],\n    [\"Ernest Edward Wood\", \"PER\", \"position held\", \"U.S. Representative\", \"MISC\"],\n    [\"United States Military Academy\", \"ORG\", \"located in\", \"West Point\", \"LOC\"],\n    [\"Stockton High School\", \"ORG\", \"located in\", \"Stockton, California\", \"LOC\"],\n    [\"Hollywood Cemetery\", \"LOC\", \"located in\", \"Hollywood, California\", \"LOC\"]\n]"
+}

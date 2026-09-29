@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_344",
+ "base_raw": "[\n    [\"William Farrar Smith\", \"PER\", \"date of birth\", \"February 17, 1824\", \"TIME\"],\n    [\"William Farrar Smith\", \"PER\", \"date of death\", \"February 28, 1903\", \"TIME\"],\n    [\"William Farrar Smith\", \"PER\", \"nickname\", \"Baldy Smith\", \"MISC\"],\n    [\"Seven Days Battles\", \"MISC\", \"participant\", \"William Farrar Smith\", \"PER\"],\n    [\"Battle of Antietam\", \"MISC\", \"participant\", \"William Farrar Smith\", \"PER\"],\n    [\"Battle of Fredericksburg\", \"MISC\", \"participant\", \"William Farrar Smith\", \"PER\"],\n    [\"Army of the Cumberland\", \"ORG\", \"chief engineer\", \"William Farrar Smith\", \"PER\"],\n    [\"Chattanooga Campaign\", \"MISC\", \"participant\", \"William Farrar Smith\", \"PER\"],\n    [\"Petersburg\", \"LOC\", \"battle location\", \"William Farrar Smith\", \"PER\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 4,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"William Farrar Smith\", \"PER\", \"date of birth\", \"February 17, 1824\", \"TIME\"],\n    [\"William Farrar Smith\", \"PER\", \"date of death\", \"February 28, 1903\", \"TIME\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"American Civil War\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Seven Days Battles\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Battle of Antietam\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Battle of Fredericksburg\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"position held\", \"chief engineer of the Army of the Cumberland\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"notable work\", \"Cracker Line\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Chattanooga Campaign\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Battle of Petersburg\", \"MISC\"],\n    [\"Army of the Cumberland\", \"ORG\", \"location of formation\", \"MISC\", \"MISC\"],\n    [\"Chattanooga Campaign\", \"MISC\", \"location\", \"MISC\", \"MISC\"],\n    [\"Cracker Line\", \"MISC\", \"location\", \"MISC\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 13,
+  "FN": 6,
+  "recall": 0.6,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 13,
+  "FN": 6,
+  "recall": 0.6,
+  "n_extracted": 20,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"William Farrar Smith\", \"PER\", \"date of birth\", \"February 17, 1824\", \"TIME\"],\n    [\"William Farrar Smith\", \"PER\", \"date of death\", \"February 28, 1903\", \"TIME\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"American Civil War\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Seven Days Battles\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Battle of Antietam\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Battle of Fredericksburg\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"position held\", \"chief engineer of the Army of the Cumberland\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"notable work\", \"Cracker Line\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Chattanooga Campaign\", \"MISC\"],\n    [\"William Farrar Smith\", \"PER\", \"participant of\", \"Battle of Petersburg\", \"MISC\"],\n    [\"Army of the Cumberland\", \"ORG\", \"location of formation\", \"MISC\", \"MISC\"],\n    [\"Chattanooga Campaign\", \"MISC\", \"location\", \"MISC\", \"MISC\"],\n    [\"Cracker Line\", \"MISC\", \"location\", \"MISC\", \"MISC\"]\n]"
+}

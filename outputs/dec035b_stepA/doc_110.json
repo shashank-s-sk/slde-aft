@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_110",
+ "base_raw": "[\n    [\"Cher Lloyd\", \"PER\", \"genre\", \"pop\", \"MISC\"],\n    [\"Sorry I'm Late\", \"MISC\", \"release date\", \"27 May 2014\", \"TIME\"],\n    [\"Cher Lloyd\", \"PER\", \"label\", \"Epic Records\", \"ORG\"],\n    [\"Cher Lloyd\", \"PER\", \"label\", \"Syco Music\", \"ORG\"],\n    [\"Cher Lloyd\", \"PER\", \"collaborator\", \"Beth Ditto\", \"PER\"],\n    [\"Cher Lloyd\", \"PER\", \"collaborator\", \"Tove Lo\", \"PER\"],\n    [\"Sorry I'm Late\", \"MISC\", \"producer\", \"Mr. Kanani\", \"PER\"],\n    [\"I Wish Tour\", \"MISC\", \"performer\", \"Cher Lloyd\", \"PER\"],\n    [\"I Wish Tour\", \"MISC\", \"location\", \"North America\", \"LOC\"],\n    [\"Sticks and Stones\", \"MISC\", \"release year\", \"2011\", \"TIME\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 11,
+  "recall": 0.08333333333333333,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Music Record Labels",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Cher Lloyd\", \"PER\", \"genre\", \"pop\", \"MISC\"],\n    [\"Sorry I'm Late\", \"MISC\", \"release date\", \"27 May 2014\", \"TIME\"],\n    [\"Cher Lloyd\", \"PER\", \"employer\", \"Epic Records\", \"ORG\"],\n    [\"Cher Lloyd\", \"PER\", \"collaborator\", \"Beth Ditto\", \"PER\"],\n    [\"Cher Lloyd\", \"PER\", \"collaborator\", \"Tove Lo\", \"PER\"],\n    [\"Sorry I'm Late\", \"MISC\", \"label\", \"Syco Music\", \"ORG\"],\n    [\"I Wish Tour\", \"MISC\", \"performer\", \"Cher Lloyd\", \"PER\"],\n    [\"Cher Lloyd\", \"PER\", \"member of\", \"Epic Records\", \"ORG\"],\n    [\"Sticks and Stones\", \"MISC\", \"release date\", \"2011\", \"TIME\"],\n    [\"Cher Lloyd\", \"PER\", \"notable work\", \"Sorry I'm Late\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 10,
+  "recall": 0.3333333333333333,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Cher Lloyd\", \"PER\", \"genre\", \"pop\", \"MISC\"],\n    [\"Sorry I'm Late\", \"MISC\", \"release date\", \"27 May 2014\", \"TIME\"],\n    [\"Cher Lloyd\", \"PER\", \"employer\", \"Epic Records\", \"ORG\"],\n    [\"Cher Lloyd\", \"PER\", \"collaborator\", \"Beth Ditto\", \"PER\"],\n    [\"Cher Lloyd\", \"PER\", \"collaborator\", \"Tove Lo\", \"PER\"],\n    [\"Sorry I'm Late\", \"MISC\", \"label\", \"Syco Music\", \"ORG\"],\n    [\"I Wish Tour\", \"MISC\", \"performer\", \"Cher Lloyd\", \"PER\"],\n    [\"Cher Lloyd\", \"PER\", \"notable work\", \"Sticks and Stones\", \"MISC\"],\n    [\"Sorry I'm Late\", \"MISC\", \"producer\", \"Mr. Kanani\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

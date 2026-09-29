@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_14",
+ "base_raw": "[\n    [\"Unearthed\", \"MISC\", \"producer\", \"Rick Rubin\", \"PER\"],\n    [\"Unearthed\", \"MISC\", \"released by\", \"American Recordings\", \"ORG\"],\n    [\"Johnny Cash\", \"PER\", \"mother\", \"unknown\", \"PER\"],\n    [\"My Mother's Hymn Book\", \"MISC\", \"features\", \"gospel songs\", \"MISC\"],\n    [\"Graeme Thomson\", \"PER\", \"author\", \"The Resurrection of Johnny Cash: Hurt, Redemption, and American Recordings\", \"MISC\"],\n    [\"Unearthed\", \"MISC\", \"certified\", \"Gold\", \"MISC\"],\n    [\"Unearthed\", \"MISC\", \"certification date\", \"12/2/2004\", \"TIME\"],\n    [\"Johnny Cash\", \"PER\", \"date of death\", \"2003\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 6,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Johnny Cash\", \"PER\", \"date of death\", \"2003\", \"TIME\"],\n    [\"Unearthed\", \"MISC\", \"producer\", \"Rick Rubin\", \"PER\"],\n    [\"Unearthed\", \"MISC\", \"released by\", \"American Recordings\", \"ORG\"],\n    [\"My Mother's Hymn Book\", \"MISC\", \"features\", \"gospel songs\", \"MISC\"],\n    [\"Graeme Thomson\", \"PER\", \"author\", \"The Resurrection of Johnny Cash: Hurt, Redemption, and American Recordings\", \"MISC\"],\n    [\"Unearthed\", \"MISC\", \"certified Gold by\", \"RIAA\", \"ORG\"],\n    [\"Unearthed\", \"MISC\", \"certification date\", \"12/2/2004\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 7,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Johnny Cash\", \"PER\", \"date of death\", \"2003\", \"TIME\"],\n    [\"Unearthed\", \"MISC\", \"producer\", \"Rick Rubin\", \"PER\"],\n    [\"Unearthed\", \"MISC\", \"released by\", \"American Recordings\", \"ORG\"],\n    [\"My Mother's Hymn Book\", \"MISC\", \"features\", \"gospel songs\", \"MISC\"],\n    [\"Graeme Thomson\", \"PER\", \"author\", \"The Resurrection of Johnny Cash: Hurt, Redemption, and American Recordings\", \"MISC\"],\n    [\"Unearthed\", \"MISC\", \"certified Gold by\", \"RIAA\", \"ORG\"],\n    [\"Unearthed\", \"MISC\", \"certification date\", \"12/2/2004\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 7,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ }
+}

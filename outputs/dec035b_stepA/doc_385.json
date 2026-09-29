@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_385",
+ "base_raw": "[\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"date of birth\", \"15 June 1923\", \"TIME\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"date of death\", \"29 October 2017\", \"TIME\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"country of birth\", \"England\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"position held\", \"Governor-General of Australia\", \"MISC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"member of\", \"Supreme Court of Victoria\", \"ORG\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"member of\", \"High Court of Australia\", \"ORG\"],\n    [\"Malcolm Fraser\", \"PER\", \"position held\", \"Prime Minister of Australia\", \"MISC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Australia\", \"LOC\", \"head of state\", \"Governor-General\", \"MISC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"child\", \"unknown\", \"PER\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"parent\", \"unknown\", \"PER\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"spouse\", \"unknown\", \"PER\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"place of death\", \"unknown\", \"LOC\"],\n    [\"High Court of Australia\", \"ORG\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Supreme Court of Victoria\", \"ORG\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"Australian Army\", \"ORG\", \"country\", \"Australia\", \"LOC\"],\n    [\"World War II\", \"MISC\", \"participant\", \"Australia\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"employer\", \"Australian Army\", \"ORG\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"member of political party\", \"unknown\", \"ORG\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.3333333333333333,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Military Conflicts",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"date of birth\", \"15 June 1923\", \"TIME\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"date of death\", \"29 October 2017\", \"TIME\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"place of birth\", \"England\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Malcolm Fraser\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"member of\", \"Australian Army\", \"ORG\"],\n    [\"Australian Army\", \"ORG\", \"country\", \"Australia\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"location of formation\", \"Australia\", \"LOC\"],\n    [\"Supreme Court of Victoria\", \"ORG\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"High Court of Australia\", \"ORG\", \"located in\", \"Australia\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 19,
+  "FN": 10,
+  "recall": 0.3333333333333333,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"date of birth\", \"15 June 1923\", \"TIME\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"date of death\", \"29 October 2017\", \"TIME\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"place of birth\", \"England\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"father\", \"unknown\", \"PER\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"mother\", \"unknown\", \"PER\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"child\", \"unknown\", \"PER\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"spouse\", \"unknown\", \"PER\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"educated at\", \"unknown\", \"ORG\"],\n    [\"Malcolm Fraser\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"position held\", \"Governor-General\", \"MISC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"member of\", \"Australian Army\", \"ORG\"],\n    [\"Australia\", \"LOC\", \"head of state\", \"Governor-General\", \"MISC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"located in or next to body of water\", \"unknown\", \"LOC\"],\n    [\"High Court of Australia\", \"ORG\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Supreme Court of Victoria\", \"ORG\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"inception\", \"15 June 1923\", \"TIME\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"dissolved, abolished or demolished\", \"29 October 2017\", \"TIME\"],\n    [\"Australian Army\", \"ORG\", \"country\", \"Australia\", \"LOC\"],\n    [\"World War II\", \"MISC\", \"participant\", \"Australia\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"participant of\", \"World War II\", \"MISC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"work location\", \"Australia\", \"LOC\"],\n    [\"Sir Ninian Martin Stephen\", \"PER\", \"residence\", \"Australia\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 25,
+  "FN": 11,
+  "recall": 0.3888888888888889,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ }
+}

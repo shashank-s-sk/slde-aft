@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_165",
+ "base_raw": "[\n    [\"Susannah Maria Cibber\", \"PER\", \"sister of\", \"Thomas Arne\", \"PER\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"genre\", \"opera\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"genre\", \"oratorio\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"position held\", \"actress\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"position held\", \"singer\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Charles Burney\", \"PER\", \"author\", \"unknown\", \"MISC\"],\n    [\"Handel\", \"PER\", \"composer\", \"Messiah\", \"MISC\"],\n    [\"Handel\", \"PER\", \"composer\", \"Samson\", \"MISC\"],\n    [\"Handel\", \"PER\", \"composer\", \"Hercules\", \"MISC\"],\n    [\"Handel\", \"PER\", \"composer\", \"Saul\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer\", \"Messiah\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer\", \"Samson\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer\", \"Hercules\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer\", \"Saul\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"member of\", \"London stage\", \"ORG\"],\n    [\"Thomas Arne\", \"PER\", \"composer\", \"unknown\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"date of death\", \"30 January 1766\", \"TIME\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Susannah Maria Cibber\", \"PER\", \"sister of\", \"Thomas Arne\", \"PER\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"born\", \"February 1714\", \"TIME\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"died\", \"30 January 1766\", \"TIME\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"nationality\", \"English\", \"MISC\"],\n    [\"Thomas Arne\", \"PER\", \"occupation\", \"composer\", \"MISC\"],\n    [\"Charles Burney\", \"PER\", \"occupation\", \"critic\", \"MISC\"],\n    [\"Handel\", \"PER\", \"occupation\", \"composer\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"collaborator\", \"Handel\", \"PER\"],\n    [\"Messiah\", \"MISC\", \"composer\", \"Handel\", \"PER\"],\n    [\"Samson\", \"MISC\", \"composer\", \"Handel\", \"PER\"],\n    [\"Hercules\", \"MISC\", \"composer\", \"Handel\", \"PER\"],\n    [\"Saul\", \"MISC\", \"composer\", \"Handel\", \"PER\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer in\", \"Messiah\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer in\", \"Samson\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer in\", \"Hercules\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer in\", \"Saul\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 29,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 34,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Susannah Maria Cibber\", \"PER\", \"sister of\", \"Thomas Arne\", \"PER\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"born\", \"February 1714\", \"TIME\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"died\", \"30 January 1766\", \"TIME\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"nationality\", \"English\", \"MISC\"],\n    [\"Thomas Arne\", \"PER\", \"occupation\", \"composer\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"occupation\", \"singer\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"occupation\", \"actress\", \"MISC\"],\n    [\"Handel\", \"PER\", \"relation to\", \"Susannah Maria Cibber\", \"PER\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer in\", \"Messiah\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer in\", \"Samson\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer in\", \"Hercules\", \"MISC\"],\n    [\"Susannah Maria Cibber\", \"PER\", \"performer in\", \"Saul\", \"MISC\"],\n    [\"Charles Burney\", \"PER\", \"author\", \"commentary on Susannah Maria Cibber\", \"MISC\"],\n    [\"London\", \"LOC\", \"location of\", \"eighteenth-century London stage\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 28,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ }
+}

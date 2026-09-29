@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_29",
+ "base_raw": "[\n    [\"Middle Fork John Day River\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"part of\", \"Malheur National Forest\", \"LOC\"],\n    [\"Oregon Scenic Waterways Program\", \"ORG\", \"administered by\", \"Oregon Parks and Recreation Department\", \"ORG\"],\n    [\"Oregon Parks and Recreation Department\", \"ORG\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"protected by\", \"Oregon Scenic Waterways Program\", \"ORG\"],\n    [\"Blue Mountains\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Malheur National Forest\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"North Fork John Day River\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Monument\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"flows into\", \"North Fork John Day River\", \"LOC\"],\n    [\"Austin\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 13,
+  "recall": 0.23529411764705882,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Middle Fork John Day River\", \"LOC\", \"located in the administrative territorial entity\", \"Oregon\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"contains administrative territorial entity\", \"Malheur National Forest\", \"LOC\"],\n    [\"Oregon Scenic Waterways Program\", \"ORG\", \"administered by\", \"Oregon Parks and Recreation Department\", \"ORG\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"protected by\", \"Oregon Scenic Waterways Program\", \"ORG\"],\n    [\"Oregon Parks and Recreation Department\", \"ORG\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"part of\", \"North Fork John Day River\", \"LOC\"],\n    [\"Blue Mountains\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"originates in\", \"Blue Mountains\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 13,
+  "recall": 0.2777777777777778,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "U.S. States and Cities"
+ ],
+ "kb_dedup_raw": "[\n    [\"Middle Fork John Day River\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"part of\", \"Malheur National Forest\", \"LOC\"],\n    [\"Oregon Parks and Recreation Department\", \"ORG\", \"administers\", \"Oregon Scenic Waterways Program\", \"MISC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"protected by\", \"Oregon Scenic Waterways Program\", \"MISC\"],\n    [\"Oregon\", \"LOC\", \"has\", \"Scenic River Area\", \"MISC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"has\", \"Natural River Area\", \"MISC\"],\n    [\"Oregon Parks and Recreation Department\", \"ORG\", \"approves\", \"development projects\", \"MISC\"],\n    [\"Blue Mountains\", \"LOC\", \"located in\", \"northeast Oregon\", \"LOC\"],\n    [\"Malheur National Forest\", \"LOC\", \"located in\", \"northeast Oregon\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"originates in\", \"Blue Mountains\", \"LOC\"],\n    [\"Middle Fork John Day River\", \"LOC\", \"flows into\", \"North Fork John Day River\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 14,
+  "recall": 0.2222222222222222,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

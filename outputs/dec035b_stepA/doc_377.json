@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_377",
+ "base_raw": "[\n    [\"black drongo\", \"MISC\", \"located in\", \"southern Asia\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"found in\", \"India\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"found in\", \"Sri Lanka\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"found in\", \"southern China\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"found in\", \"Indonesia\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"introduced to\", \"Pacific islands\", \"LOC\"],\n    [\"African fork-tailed drongo\", \"MISC\", \"related to\", \"black drongo\", \"MISC\"],\n    [\"Dicruridae\", \"MISC\", \"family of\", \"black drongo\", \"MISC\"],\n    [\"black drongo\", \"MISC\", \"prey of\", \"birds of prey\", \"MISC\"],\n    [\"black drongo\", \"MISC\", \"threat to\", \"native bird species\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"black drongo\", \"MISC\", \"located in\", \"southern Asia\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"found in\", \"India\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"found in\", \"Sri Lanka\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"found in\", \"southern China\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"found in\", \"Indonesia\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"introduced to\", \"Pacific islands\", \"LOC\"],\n    [\"Dicruridae\", \"MISC\", \"family of\", \"black drongo\", \"MISC\"],\n    [\"Dicrurus adsimilis\", \"MISC\", \"related to\", \"black drongo\", \"MISC\"],\n    [\"black drongo\", \"MISC\", \"prey of\", \"birds of prey\", \"MISC\"],\n    [\"crows\", \"MISC\", \"interact with\", \"black drongo\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 12,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"black drongo\", \"MISC\", \"found in\", \"southern Asia\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"native to\", \"Iran\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"native to\", \"India\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"native to\", \"Sri Lanka\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"native to\", \"southern China\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"native to\", \"Indonesia\", \"LOC\"],\n    [\"black drongo\", \"MISC\", \"introduced to\", \"Pacific islands\", \"LOC\"],\n    [\"Dicruridae\", \"MISC\", \"family of\", \"black drongo\", \"MISC\"],\n    [\"Dicrurus adsimilis\", \"MISC\", \"related to\", \"black drongo\", \"MISC\"],\n    [\"crows\", \"MISC\", \"prey of\", \"black drongo\", \"MISC\"],\n    [\"black drongo\", \"MISC\", \"behaviour\", \"aggressive\", \"MISC\"],\n    [\"black drongo\", \"MISC\", \"habitat\", \"open agricultural areas\", \"MISC\"],\n    [\"black drongo\", \"MISC\", \"habitat\", \"light forest\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 21,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

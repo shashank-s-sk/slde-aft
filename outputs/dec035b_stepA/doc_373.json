@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_373",
+ "base_raw": "[\n    [\"Godsmack\", \"ORG\", \"genre\", \"heavy metal\", \"MISC\"],\n    [\"Live & Inspired\", \"MISC\", \"release date\", \"May 15, 2012\", \"TIME\"],\n    [\"Godsmack\", \"ORG\", \"location of formation\", \"Massachusetts\", \"LOC\"],\n    [\"Sully Erna\", \"PER\", \"position held\", \"leader\", \"MISC\"],\n    [\"Detroit Fox Theatre\", \"LOC\", \"located in the administrative territorial entity\", \"U.S.\", \"LOC\"],\n    [\"The Oracle\", \"MISC\", \"release date\", \"2010\", \"TIME\"],\n    [\"Godsmack\", \"ORG\", \"album\", \"The Oracle\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Music Genre: Rock",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Godsmack\", \"ORG\", \"genre\", \"heavy metal\", \"MISC\"],\n    [\"Live & Inspired\", \"MISC\", \"release date\", \"May 15, 2012\", \"TIME\"],\n    [\"Godsmack\", \"ORG\", \"location of formation\", \"Massachusetts\", \"LOC\"],\n    [\"Sully Erna\", \"PER\", \"position held\", \"leader\", \"MISC\"],\n    [\"The Oracle\", \"MISC\", \"release date\", \"2010\", \"TIME\"],\n    [\"Detroit Fox Theatre\", \"LOC\", \"located in the administrative territorial entity\", \"Michigan\", \"LOC\"],\n    [\"Godsmack\", \"ORG\", \"location of performance\", \"Detroit Fox Theatre\", \"LOC\"],\n    [\"Live & Inspired\", \"MISC\", \"number of tracks\", \"13\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Godsmack\", \"ORG\", \"genre\", \"heavy metal\", \"MISC\"],\n    [\"Live & Inspired\", \"MISC\", \"release date\", \"May 15, 2012\", \"TIME\"],\n    [\"Godsmack\", \"ORG\", \"location of formation\", \"Massachusetts\", \"LOC\"],\n    [\"Sully Erna\", \"PER\", \"position held\", \"leader\", \"MISC\"],\n    [\"Detroit Fox Theatre\", \"LOC\", \"located in the administrative territorial entity\", \"U.S.\", \"LOC\"],\n    [\"The Oracle\", \"MISC\", \"release date\", \"2010\", \"TIME\"],\n    [\"Godsmack\", \"ORG\", \"album\", \"The Oracle\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ }
+}

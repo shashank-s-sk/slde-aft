@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_363",
+ "base_raw": "[\n    [\"Maurizio Boccacci\", \"PER\", \"founded\", \"Militia\", \"ORG\"],\n    [\"Militia\", \"ORG\", \"country\", \"Italy\", \"LOC\"],\n    [\"Maurizio Boccacci\", \"PER\", \"leader of\", \"Militia\", \"ORG\"],\n    [\"Militia\", \"ORG\", \"ideology\", \"neo-Nazism\", \"MISC\"],\n    [\"Maurizio Boccacci\", \"PER\", \"member of\", \"banned group\", \"ORG\"],\n    [\"Militia\", \"ORG\", \"founded by\", \"Maurizio Boccacci\", \"PER\"],\n    [\"Riccardo Pacifici\", \"PER\", \"position held\", \"President of Rome's Jewish community\", \"MISC\"],\n    [\"Gianni Alemanno\", \"PER\", \"position held\", \"Mayor of Rome\", \"MISC\"],\n    [\"Gianfranco Fini\", \"PER\", \"position held\", \"President of the Chamber of Deputies\", \"MISC\"],\n    [\"Renato Schifani\", \"PER\", \"position held\", \"President of the Italian Senate\", \"MISC\"],\n    [\"Militia\", \"ORG\", \"targeted\", \"Riccardo Pacifici\", \"PER\"],\n    [\"Militia\", \"ORG\", \"plotted against\", \"Riccardo Pacifici\", \"PER\"],\n    [\"Italian Carabinieri\", \"ORG\", \"arrested\", \"Maurizio Boccacci\", \"PER\"],\n    [\"Special Operations Group\", \"ORG\", \"part of\", \"Italian Carabinieri\", \"ORG\"],\n    [\"Maurizio Boccacci\", \"PER\", \"arrested by\", \"Special Operations Group\", \"ORG\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 14,
+  "FN": 12,
+  "recall": 0.07692307692307693,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Maurizio Boccacci\", \"PER\", \"founded\", \"Militia\", \"ORG\"],\n    [\"Militia\", \"ORG\", \"country\", \"Italy\", \"LOC\"],\n    [\"Maurizio Boccacci\", \"PER\", \"leader of\", \"Militia\", \"ORG\"],\n    [\"Militia\", \"ORG\", \"ideology\", \"neo-Nazism\", \"MISC\"],\n    [\"Maurizio Boccacci\", \"PER\", \"prosecuted for\", \"anti-semitic graffiti\", \"MISC\"],\n    [\"Militia\", \"ORG\", \"involved in\", \"Holocaust denial\", \"MISC\"],\n    [\"Riccardo Pacifici\", \"PER\", \"position held\", \"President of Rome's Jewish community\", \"MISC\"],\n    [\"Gianni Alemanno\", \"PER\", \"position held\", \"Mayor of Rome\", \"MISC\"],\n    [\"Gianfranco Fini\", \"PER\", \"position held\", \"President of the Chamber of Deputies\", \"MISC\"],\n    [\"Renato Schifani\", \"PER\", \"position held\", \"President of the Italian Senate\", \"MISC\"],\n    [\"Militia\", \"ORG\", \"plotted against\", \"Riccardo Pacifici\", \"PER\"],\n    [\"Militia\", \"ORG\", \"targeted\", \"Rome's Jewish community\", \"ORG\"],\n    [\"Italian Carabinieri\", \"ORG\", \"arrested\", \"Maurizio Boccacci\", \"PER\"],\n    [\"Militia\", \"ORG\", \"member of\", \"Maurizio Boccacci\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 15,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Maurizio Boccacci\", \"PER\", \"founded\", \"Militia\", \"ORG\"],\n    [\"Militia\", \"ORG\", \"country\", \"Italy\", \"LOC\"],\n    [\"Maurizio Boccacci\", \"PER\", \"leader of\", \"Militia\", \"ORG\"],\n    [\"Militia\", \"ORG\", \"ideology\", \"neo-Nazism\", \"MISC\"],\n    [\"Riccardo Pacifici\", \"PER\", \"position held\", \"President of Rome's Jewish community\", \"MISC\"],\n    [\"Gianni Alemanno\", \"PER\", \"position held\", \"Mayor of Rome\", \"MISC\"],\n    [\"Gianfranco Fini\", \"PER\", \"position held\", \"President of the Chamber of Deputies\", \"MISC\"],\n    [\"Renato Schifani\", \"PER\", \"position held\", \"President of the Italian Senate\", \"MISC\"],\n    [\"Militia\", \"ORG\", \"targeted\", \"Riccardo Pacifici\", \"PER\"],\n    [\"Italian Carabinieri\", \"ORG\", \"arrested\", \"Maurizio Boccacci\", \"PER\"],\n    [\"Maurizio Boccacci\", \"PER\", \"arrested by\", \"Italian Carabinieri\", \"ORG\"],\n    [\"Militia\", \"ORG\", \"plotted against\", \"Riccardo Pacifici\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 12,
+  "recall": 0.2,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

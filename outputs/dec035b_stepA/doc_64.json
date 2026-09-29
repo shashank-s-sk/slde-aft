@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_64",
+ "base_raw": "[\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"date of birth\", \"17 September 1881\", \"TIME\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"date of death\", \"5 May 1964\", \"TIME\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"place of birth\", \"Paris\", \"LOC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"member of\", \"French Olympic team\", \"ORG\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"position held\", \"Olympic \u00e9p\u00e9e champion\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"educated at\", \"Paris Universite\", \"ORG\"],\n    [\"Paris Universite Club\", \"ORG\", \"founded by\", \"Eug\u00e8ne Olivier\", \"PER\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"member of\", \"Academie de Chirurgie\", \"ORG\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"president of\", \"Academie de philatelie\", \"ORG\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"author\", \"Manuel de l'Amateur des Relieures Armoriees francaises\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"ancient books\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"stamps\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"ex libris\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"armorial bindings\", \"MISC\"],\n    [\"Academie de philatelie\", \"ORG\", \"president\", \"Eug\u00e8ne Olivier\", \"PER\"],\n    [\"Academie de Chirurgie\", \"ORG\", \"member\", \"Eug\u00e8ne Olivier\", \"PER\"],\n    [\"Paris Universite Club\", \"ORG\", \"president\", \"Eug\u00e8ne Olivier\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"date of birth\", \"17 September 1881\", \"TIME\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"date of death\", \"5 May 1964\", \"TIME\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"place of birth\", \"Paris\", \"LOC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"member of\", \"French Olympic team\", \"ORG\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"position held\", \"Olympic \u00e9p\u00e9e champion\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"educated at\", \"Paris Universite\", \"ORG\"],\n    [\"Paris Universite Club\", \"ORG\", \"founded by\", \"Eug\u00e8ne Olivier\", \"PER\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"member of\", \"Academie de Chirurgie\", \"ORG\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"president of\", \"Academie de philatelie\", \"ORG\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"author\", \"Manuel de l'Amateur des Relieures Armoriees francaises\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"ancient books\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"stamps\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"ex libris\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"armorial bindings\", \"MISC\"],\n    [\"Academie de philatelie\", \"ORG\", \"president\", \"Eug\u00e8ne Olivier\", \"PER\"],\n    [\"Academie de Chirurgie\", \"ORG\", \"member\", \"Eug\u00e8ne Olivier\", \"PER\"],\n    [\"Paris Universite Club\", \"ORG\", \"president\", \"Eug\u00e8ne Olivier\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"date of birth\", \"17 September 1881\", \"TIME\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"date of death\", \"5 May 1964\", \"TIME\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"place of birth\", \"Paris\", \"LOC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"member of\", \"French Olympic team\", \"ORG\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"position held\", \"Olympic \u00e9p\u00e9e champion\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"educated at\", \"Paris Universite\", \"ORG\"],\n    [\"Paris Universite Club\", \"ORG\", \"founded by\", \"Eug\u00e8ne Olivier\", \"PER\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"member of\", \"Academie de Chirurgie\", \"ORG\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"author\", \"Manuel de l'Amateur des Relieures Armoriees francaises\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"collector of\", \"ancient books\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"president of\", \"Academie de philatelie\", \"ORG\"],\n    [\"Academie de philatelie\", \"ORG\", \"president\", \"Eug\u00e8ne Olivier\", \"PER\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"professor of\", \"Anatomy\", \"MISC\"],\n    [\"Eug\u00e8ne Olivier\", \"PER\", \"employer\", \"Paris Universite\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 16,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

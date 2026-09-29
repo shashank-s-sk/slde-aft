@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_379",
+ "base_raw": "[\n    [\"Futureworld\", \"MISC\", \"director\", \"Richard T. Heffron\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"writer\", \"Mayo Simon\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"writer\", \"George Schenck\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"star\", \"Peter Fonda\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"star\", \"Blythe Danner\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"star\", \"Arthur Hill\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"star\", \"Stuart Margolin\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"star\", \"John Ryan\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"star\", \"Yul Brynner\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Futureworld\", \"MISC\", \"genre\", \"science fiction\", \"MISC\"],\n    [\"Futureworld\", \"MISC\", \"genre\", \"thriller\", \"MISC\"],\n    [\"Westworld\", \"MISC\", \"writer-director\", \"Michael Crichton\", \"PER\"],\n    [\"American International Pictures\", \"ORG\", \"predecessor\", \"Metro-Goldwyn-Mayer\", \"ORG\"],\n    [\"Orion Pictures\", \"ORG\", \"parent organization\", \"Metro-Goldwyn-Mayer\", \"ORG\"],\n    [\"Beyond Westworld\", \"MISC\", \"part of\", \"Westworld franchise\", \"MISC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 7,
+  "FN": 12,
+  "recall": 0.42857142857142855,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Futureworld\", \"MISC\", \"director\", \"Richard T. Heffron\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"writer\", \"Mayo Simon\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"writer\", \"George Schenck\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Futureworld\", \"MISC\", \"genre\", \"science fiction\", \"MISC\"],\n    [\"Westworld\", \"MISC\", \"director\", \"Michael Crichton\", \"PER\"],\n    [\"Westworld\", \"MISC\", \"writer\", \"Michael Crichton\", \"PER\"],\n    [\"Peter Fonda\", \"PER\", \"employer\", \"American International Pictures\", \"ORG\"],\n    [\"Blythe Danner\", \"PER\", \"employer\", \"American International Pictures\", \"ORG\"],\n    [\"Arthur Hill\", \"PER\", \"employer\", \"American International Pictures\", \"ORG\"],\n    [\"Stuart Margolin\", \"PER\", \"employer\", \"American International Pictures\", \"ORG\"],\n    [\"John Ryan\", \"PER\", \"employer\", \"American International Pictures\", \"ORG\"],\n    [\"Yul Brynner\", \"PER\", \"employer\", \"American International Pictures\", \"ORG\"],\n    [\"American International Pictures\", \"ORG\", \"predecessor\", \"Metro-Goldwyn-Mayer\", \"ORG\"],\n    [\"Orion Pictures\", \"ORG\", \"parent organization\", \"Metro-Goldwyn-Mayer\", \"ORG\"],\n    [\"Beyond Westworld\", \"MISC\", \"part of\", \"Westworld franchise\", \"MISC\"],\n    [\"Futureworld\", \"MISC\", \"part of\", \"Westworld franchise\", \"MISC\"],\n    [\"Westworld\", \"MISC\", \"part of\", \"Westworld franchise\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 17,
+  "FN": 12,
+  "recall": 0.45454545454545453,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Futureworld\", \"MISC\", \"director\", \"Richard T. Heffron\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"writer\", \"Mayo Simon\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"writer\", \"George Schenck\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Futureworld\", \"MISC\", \"genre\", \"science fiction thriller\", \"MISC\"],\n    [\"Westworld\", \"MISC\", \"director\", \"Michael Crichton\", \"PER\"],\n    [\"Westworld\", \"MISC\", \"writer\", \"Michael Crichton\", \"PER\"],\n    [\"Futureworld\", \"MISC\", \"part of\", \"Westworld franchise\", \"MISC\"],\n    [\"Peter Fonda\", \"PER\", \"cast member\", \"Futureworld\", \"MISC\"],\n    [\"Blythe Danner\", \"PER\", \"cast member\", \"Futureworld\", \"MISC\"],\n    [\"Arthur Hill\", \"PER\", \"cast member\", \"Futureworld\", \"MISC\"],\n    [\"Stuart Margolin\", \"PER\", \"cast member\", \"Futureworld\", \"MISC\"],\n    [\"John Ryan\", \"PER\", \"cast member\", \"Futureworld\", \"MISC\"],\n    [\"Yul Brynner\", \"PER\", \"cast member\", \"Futureworld\", \"MISC\"],\n    [\"Michael Crichton\", \"PER\", \"author\", \"Westworld\", \"MISC\"],\n    [\"American International Pictures\", \"ORG\", \"producer\", \"Futureworld\", \"MISC\"],\n    [\"Metro-Goldwyn-Mayer\", \"ORG\", \"producer\", \"Westworld\", \"MISC\"],\n    [\"Orion Pictures\", \"ORG\", \"owned by\", \"Metro-Goldwyn-Mayer\", \"ORG\"],\n    [\"Beyond Westworld\", \"MISC\", \"part of\", \"Westworld franchise\", \"MISC\"],\n    [\"Richard T. Heffron\", \"PER\", \"director\", \"Futureworld\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 16,
+  "FP": 16,
+  "FN": 10,
+  "recall": 0.6153846153846154,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ }
+}

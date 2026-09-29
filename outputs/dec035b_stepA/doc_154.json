@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_154",
+ "base_raw": "[\n    [\"Definitely Maybe\", \"MISC\", \"release date\", \"29 August 1994\", \"TIME\"],\n    [\"Definitely Maybe\", \"MISC\", \"record label\", \"Creation Records\", \"ORG\"],\n    [\"Oasis\", \"MISC\", \"original drummer\", \"Tony McCarroll\", \"PER\"],\n    [\"Definitely Maybe\", \"MISC\", \"certification\", \"7\u00d7 Platinum\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"sales\", \"2.1 million+\", \"NUM\"],\n    [\"Definitely Maybe\", \"MISC\", \"chart position\", \"58\", \"NUM\"],\n    [\"Definitely Maybe\", \"MISC\", \"sales in the United States\", \"over one million copies\", \"NUM\"],\n    [\"Definitely Maybe\", \"MISC\", \"worldwide sales\", \"over 8 million copies\", \"NUM\"],\n    [\"Oasis\", \"MISC\", \"genre\", \"Britpop\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"rank in NME poll\", \"greatest album of all time\", \"MISC\"],\n    [\"NME\", \"ORG\", \"conducted poll\", \"readers' poll\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"impact\", \"revitalisation of British pop music\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Numbers",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Definitely Maybe\", \"MISC\", \"release date\", \"29 August 1994\", \"TIME\"],\n    [\"Definitely Maybe\", \"MISC\", \"record label\", \"Creation Records\", \"ORG\"],\n    [\"Oasis\", \"ORG\", \"original drummer\", \"Tony McCarroll\", \"PER\"],\n    [\"Definitely Maybe\", \"MISC\", \"certification\", \"7\u00d7 Platinum\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"sales\", \"2.1 million+\", \"NUM\"],\n    [\"Definitely Maybe\", \"MISC\", \"chart position\", \"58\", \"NUM\"],\n    [\"Definitely Maybe\", \"MISC\", \"sales\", \"over one million\", \"NUM\"],\n    [\"Definitely Maybe\", \"MISC\", \"sales\", \"over 8 million\", \"NUM\"],\n    [\"Oasis\", \"ORG\", \"genre\", \"Britpop\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"rank\", \"greatest album of all time\", \"MISC\"],\n    [\"NME\", \"ORG\", \"poll\", \"readers' poll\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"year of poll\", \"2006\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Definitely Maybe\", \"MISC\", \"release date\", \"29 August 1994\", \"TIME\"],\n    [\"Definitely Maybe\", \"MISC\", \"record label\", \"Creation Records\", \"ORG\"],\n    [\"Oasis\", \"ORG\", \"original drummer\", \"Tony McCarroll\", \"PER\"],\n    [\"Definitely Maybe\", \"MISC\", \"certification\", \"7\u00d7 Platinum\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"sales\", \"2.1 million+\", \"NUM\"],\n    [\"Definitely Maybe\", \"MISC\", \"chart position\", \"58\", \"NUM\"],\n    [\"Oasis\", \"ORG\", \"country of origin\", \"United Kingdom\", \"LOC\"],\n    [\"Definitely Maybe\", \"MISC\", \"genre\", \"Britpop\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"producer\", \"None\", \"MISC\"],\n    [\"Oasis\", \"ORG\", \"notable work\", \"Definitely Maybe\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"award\", \"greatest album of all time\", \"MISC\"],\n    [\"NME\", \"ORG\", \"publisher\", \"None\", \"MISC\"],\n    [\"Definitely Maybe\", \"MISC\", \"publication\", \"NME\", \"ORG\"],\n    [\"Oasis\", \"ORG\", \"member of\", \"Britpop scene\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 17,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

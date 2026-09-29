@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_410",
+ "base_raw": "[\n    [\"The Netherland - America Foundation\", \"ORG\", \"founded by\", \"Franklin D. Roosevelt\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"founded by\", \"Thomas Watson\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"acquired\", \"The Netherlands - American Amity Trust\", \"ORG\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"patronage of\", \"Princess Margriet of the Netherlands\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"patronage of\", \"Pieter van Vollenhoven\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"country of origin\", \"Netherlands\", \"LOC\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"country\", \"United States of America\", \"LOC\"],\n    [\"NAF / Fulbright Fellowships\", \"MISC\", \"award received\", \"The Netherland - America Foundation\", \"ORG\"],\n    [\"Princess Margriet of the Netherlands\", \"PER\", \"spouse\", \"Pieter van Vollenhoven\", \"PER\"],\n    [\"Thomas Watson\", \"PER\", \"founded\", \"IBM\", \"ORG\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Persons",
+  "Persons in Politics"
+ ],
+ "kb_orig_raw": "[\n    [\"Franklin D. Roosevelt\", \"PER\", \"founded\", \"The Netherland - America Foundation\", \"ORG\"],\n    [\"Thomas Watson\", \"PER\", \"founded\", \"The Netherland - America Foundation\", \"ORG\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"acquired\", \"The Netherlands - American Amity Trust\", \"ORG\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"patronage of\", \"Princess Margriet of the Netherlands\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"patronage of\", \"Pieter van Vollenhoven\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"supports\", \"exchange between the United States of America and the Netherlands\", \"MISC\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"founded by\", \"Franklin D. Roosevelt\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"founded by\", \"Thomas Watson\", \"PER\"],\n    [\"The Netherlands - American Amity Trust\", \"ORG\", \"acquired by\", \"The Netherland - America Foundation\", \"ORG\"],\n    [\"Princess Margriet of the Netherlands\", \"PER\", \"member of\", \"Royal Family of the Netherlands\", \"MISC\"],\n    [\"Pieter van Vollenhoven\", \"PER\", \"husband of\", \"Princess Margriet of the Netherlands\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"country of operation\", \"United States of America\", \"LOC\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"country of operation\", \"Netherlands\", \"LOC\"],\n    [\"NAF / Fulbright Fellowships\", \"MISC\", \"awarded by\", \"The Netherland - America Foundation\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 17,
+  "FN": 4,
+  "recall": 0.5,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries"
+ ],
+ "kb_dedup_raw": "[\n    [\"The Netherland - America Foundation\", \"ORG\", \"founded by\", \"Franklin D. Roosevelt\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"founded by\", \"Thomas Watson\", \"PER\"],\n    [\"The Netherlands - American Amity Trust\", \"ORG\", \"acquired by\", \"The Netherland - America Foundation\", \"ORG\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"under the patronage of\", \"Princess Margriet of the Netherlands\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"under the patronage of\", \"Pieter van Vollenhoven\", \"PER\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"country\", \"United States of America\", \"LOC\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"country\", \"Netherlands\", \"LOC\"],\n    [\"Franklin D. Roosevelt\", \"PER\", \"position held\", \"U.S. president\", \"MISC\"],\n    [\"Thomas Watson\", \"PER\", \"founded\", \"IBM\", \"ORG\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"inception\", \"1921\", \"TIME\"],\n    [\"The Netherlands - American Amity Trust\", \"ORG\", \"acquired\", \"2004\", \"TIME\"],\n    [\"The Netherland - America Foundation\", \"ORG\", \"location\", \"Netherlands\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 2,
+  "recall": 0.7142857142857143,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

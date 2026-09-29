@@ -1,0 +1,45 @@
+{
+ "doc_id": "doc_222",
+ "base_raw": "[\n    [\"Arnold C. Klebs\", \"PER\", \"date of birth\", \"March 17, 1870\", \"TIME\"],\n    [\"Arnold C. Klebs\", \"PER\", \"date of death\", \"March 6, 1943\", \"TIME\"],\n    [\"Arnold C. Klebs\", \"PER\", \"place of birth\", \"Berne, Switzerland\", \"LOC\"],\n    [\"Arnold C. Klebs\", \"PER\", \"father\", \"Edwin Klebs\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"educated at\", \"University of Basel\", \"ORG\"],\n    [\"Arnold C. Klebs\", \"PER\", \"employer\", \"Johns Hopkins University\", \"ORG\"],\n    [\"Arnold C. Klebs\", \"PER\", \"colleague\", \"William Osler\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"colleague\", \"William H. Welch\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"country of citizenship\", \"Switzerland\", \"LOC\"],\n    [\"Arnold C. Klebs\", \"PER\", \"residence\", \"Citronelle, Alabama\", \"LOC\"],\n    [\"Arnold C. Klebs\", \"PER\", \"residence\", \"Chicago\", \"LOC\"],\n    [\"Arnold C. Klebs\", \"PER\", \"residence\", \"Lake Geneva\", \"LOC\"],\n    [\"Edwin Klebs\", \"PER\", \"field of work\", \"bacteriology\", \"MISC\"],\n    [\"William Osler\", \"PER\", \"employer\", \"Johns Hopkins University\", \"ORG\"],\n    [\"William H. Welch\", \"PER\", \"employer\", \"Johns Hopkins University\", \"ORG\"],\n    [\"Harvey Cushing\", \"PER\", \"recipient of donation\", \"Arnold C. Klebs\", \"PER\"],\n    [\"Yale University\", \"ORG\", \"owner of\", \"Harvey Cushing / John Hay Whitney Medical Library\", \"ORG\"],\n    [\"National Tuberculosis Institute\", \"ORG\", \"director\", \"Arnold C. Klebs\", \"PER\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 11,
+  "FN": 14,
+  "recall": 0.3333333333333333,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Educational Institutions",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "U.S. States and Cities",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Arnold C. Klebs\", \"PER\", \"date of birth\", \"March 17, 1870\", \"TIME\"],\n    [\"Arnold C. Klebs\", \"PER\", \"date of death\", \"March 6, 1943\", \"TIME\"],\n    [\"Arnold C. Klebs\", \"PER\", \"place of birth\", \"Berne, Switzerland\", \"LOC\"],\n    [\"Arnold C. Klebs\", \"PER\", \"father\", \"Edwin Klebs\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"educated at\", \"University of Basel\", \"ORG\"],\n    [\"Arnold C. Klebs\", \"PER\", \"worked with\", \"William Osler\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"contemporary of\", \"William H. Welch\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"country of citizenship\", \"Switzerland\", \"LOC\"],\n    [\"Arnold C. Klebs\", \"PER\", \"residence\", \"Lake Geneva\", \"LOC\"],\n    [\"University of Basel\", \"ORG\", \"located in\", \"Switzerland\", \"LOC\"],\n    [\"Johns Hopkins University\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"National Tuberculosis Institute\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"Yale University\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"Harvey Cushing\", \"PER\", \"recipient of book collection\", \"Arnold C. Klebs\", \"PER\"],\n    [\"Harvey Cushing / John Hay Whitney Medical Library\", \"ORG\", \"part of\", \"Yale University\", \"ORG\"],\n    [\"Arnold C. Klebs\", \"PER\", \"donated to\", \"Harvey Cushing / John Hay Whitney Medical Library\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 11,
+  "FP": 16,
+  "FN": 13,
+  "recall": 0.4583333333333333,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Educational Institutions"
+ ],
+ "kb_dedup_raw": "[\n    [\"Arnold C. Klebs\", \"PER\", \"date of birth\", \"March 17, 1870\", \"TIME\"],\n    [\"Arnold C. Klebs\", \"PER\", \"date of death\", \"March 6, 1943\", \"TIME\"],\n    [\"Arnold C. Klebs\", \"PER\", \"place of birth\", \"Berne, Switzerland\", \"LOC\"],\n    [\"Arnold C. Klebs\", \"PER\", \"father\", \"Edwin Klebs\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"educated at\", \"University of Basel\", \"ORG\"],\n    [\"Arnold C. Klebs\", \"PER\", \"worked with\", \"William Osler\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"contemporary of\", \"William H. Welch\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"worked at\", \"Johns Hopkins University\", \"ORG\"],\n    [\"Arnold C. Klebs\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Arnold C. Klebs\", \"PER\", \"donated to\", \"Harvey Cushing\", \"PER\"],\n    [\"Arnold C. Klebs\", \"PER\", \"location of residence\", \"Lake Geneva\", \"LOC\"],\n    [\"University of Basel\", \"ORG\", \"located in\", \"Switzerland\", \"LOC\"],\n    [\"Johns Hopkins University\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"National Tuberculosis Institute\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Yale University\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Harvey Cushing / John Hay Whitney Medical Library\", \"ORG\", \"part of\", \"Yale University\", \"ORG\"],\n    [\"Harvey Cushing\", \"PER\", \"recipient of donation\", \"Arnold C. Klebs\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 20,
+  "FN": 13,
+  "recall": 0.43478260869565216,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ }
+}

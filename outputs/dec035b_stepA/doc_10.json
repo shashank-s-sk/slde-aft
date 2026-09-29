@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_10",
+ "base_raw": "[\n    [\"Gorz\u00f3w County\", \"LOC\", \"located in\", \"Lubusz Voivodeship\", \"LOC\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"instance of\", \"powiat\", \"MISC\"],\n    [\"Gorz\u00f3w Wielkopolski\", \"LOC\", \"administrative seat of\", \"Gorz\u00f3w County\", \"LOC\"],\n    [\"Kostrzyn nad Odr\u0105\", \"LOC\", \"part of\", \"Gorz\u00f3w County\", \"LOC\"],\n    [\"Witnica\", \"LOC\", \"part of\", \"Gorz\u00f3w County\", \"LOC\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"population\", \"65,546\", \"NUM\"],\n    [\"Kostrzyn nad Odr\u0105\", \"LOC\", \"population\", \"17,725\", \"NUM\"],\n    [\"Witnica\", \"LOC\", \"population\", \"6,849\", \"NUM\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"rural population\", \"40,972\", \"NUM\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"inception\", \"January 1, 1999\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 14,
+  "recall": 0.125,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Locations in Poland",
+  "Organizations",
+  "Voivodeships of Poland"
+ ],
+ "kb_orig_raw": "[\n    [\"Gorz\u00f3w County\", \"LOC\", \"located in\", \"Lubusz Voivodeship\", \"LOC\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"country\", \"Poland\", \"LOC\"],\n    [\"Gorz\u00f3w Wielkopolski\", \"LOC\", \"located in\", \"Lubusz Voivodeship\", \"LOC\"],\n    [\"Kostrzyn nad Odr\u0105\", \"LOC\", \"located in\", \"Gorz\u00f3w County\", \"LOC\"],\n    [\"Witnica\", \"LOC\", \"located in\", \"Gorz\u00f3w County\", \"LOC\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"population\", \"65,546\", \"NUM\"],\n    [\"Kostrzyn nad Odr\u0105\", \"LOC\", \"population\", \"17,725\", \"NUM\"],\n    [\"Witnica\", \"LOC\", \"population\", \"6,849\", \"NUM\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"date of establishment\", \"January 1, 1999\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 13,
+  "recall": 0.2777777777777778,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Voivodeships of Poland"
+ ],
+ "kb_dedup_raw": "[\n    [\"Gorz\u00f3w County\", \"LOC\", \"located in\", \"Lubusz Voivodeship\", \"LOC\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"administrative seat\", \"Gorz\u00f3w Wielkopolski\", \"LOC\"],\n    [\"Gorz\u00f3w Wielkopolski\", \"LOC\", \"part of\", \"Lubusz Voivodeship\", \"LOC\"],\n    [\"Kostrzyn nad Odr\u0105\", \"LOC\", \"located in\", \"Gorz\u00f3w County\", \"LOC\"],\n    [\"Witnica\", \"LOC\", \"located in\", \"Gorz\u00f3w County\", \"LOC\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"population\", \"65,546\", \"NUM\"],\n    [\"Kostrzyn nad Odr\u0105\", \"LOC\", \"population\", \"17,725\", \"NUM\"],\n    [\"Witnica\", \"LOC\", \"population\", \"6,849\", \"NUM\"],\n    [\"Gorz\u00f3w County\", \"LOC\", \"rural population\", \"40,972\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

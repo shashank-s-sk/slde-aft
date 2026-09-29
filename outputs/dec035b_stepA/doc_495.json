@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_495",
+ "base_raw": "[\n    [\"Felix Gilbert\", \"PER\", \"date of birth\", \"May 21, 1905\", \"TIME\"],\n    [\"Felix Gilbert\", \"PER\", \"date of death\", \"February 14, 1991\", \"TIME\"],\n    [\"Felix Gilbert\", \"PER\", \"place of birth\", \"Baden-Baden\", \"LOC\"],\n    [\"Felix Gilbert\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Felix Gilbert\", \"PER\", \"educated at\", \"University of Berlin\", \"ORG\"],\n    [\"Felix Gilbert\", \"PER\", \"member of\", \"Institute for Advanced Study\", \"ORG\"],\n    [\"Felix Gilbert\", \"PER\", \"position held\", \"fellow\", \"MISC\"],\n    [\"Felix Gilbert\", \"PER\", \"field of work\", \"Renaissance\", \"MISC\"],\n    [\"Felix Gilbert\", \"PER\", \"ethnic group\", \"Jewish\", \"MISC\"],\n    [\"University of Berlin\", \"ORG\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Institute for Advanced Study\", \"ORG\", \"located in\", \"Princeton\", \"LOC\"],\n    [\"German Historical Institute\", \"ORG\", \"located in\", \"Washington, D.C.\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Felix Gilbert\", \"PER\", \"date of birth\", \"May 21, 1905\", \"TIME\"],\n    [\"Felix Gilbert\", \"PER\", \"date of death\", \"February 14, 1991\", \"TIME\"],\n    [\"Felix Gilbert\", \"PER\", \"place of birth\", \"Baden-Baden\", \"LOC\"],\n    [\"Felix Gilbert\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Felix Gilbert\", \"PER\", \"educated at\", \"University of Berlin\", \"ORG\"],\n    [\"Felix Gilbert\", \"PER\", \"member of\", \"Institute for Advanced Study\", \"ORG\"],\n    [\"Felix Gilbert\", \"PER\", \"position held\", \"fellow\", \"MISC\"],\n    [\"Felix Gilbert\", \"PER\", \"field of work\", \"Renaissance\", \"MISC\"],\n    [\"University of Berlin\", \"ORG\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Institute for Advanced Study\", \"ORG\", \"located in\", \"Princeton\", \"LOC\"],\n    [\"German Historical Institute\", \"ORG\", \"located in\", \"Washington, D.C.\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Felix Gilbert\", \"PER\", \"date of birth\", \"May 21, 1905\", \"TIME\"],\n    [\"Felix Gilbert\", \"PER\", \"date of death\", \"February 14, 1991\", \"TIME\"],\n    [\"Felix Gilbert\", \"PER\", \"place of birth\", \"Baden-Baden\", \"LOC\"],\n    [\"Felix Gilbert\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Felix Gilbert\", \"PER\", \"educated at\", \"University of Berlin\", \"ORG\"],\n    [\"Felix Gilbert\", \"PER\", \"employer\", \"Institute for Advanced Study\", \"ORG\"],\n    [\"Felix Gilbert\", \"PER\", \"field of work\", \"Renaissance\", \"MISC\"],\n    [\"University of Berlin\", \"ORG\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Institute for Advanced Study\", \"ORG\", \"located in\", \"Princeton\", \"LOC\"],\n    [\"German Historical Institute\", \"ORG\", \"located in\", \"Washington, D.C.\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

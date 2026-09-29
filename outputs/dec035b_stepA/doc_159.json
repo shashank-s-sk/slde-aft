@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_159",
+ "base_raw": "[\n    [\"Donald Trump\", \"PER\", \"position held\", \"President of the United States\", \"ORG\"],\n    [\"Executive Order 13769\", \"MISC\", \"date of birth\", \"January 27, 2017\", \"TIME\"],\n    [\"Executive Order 13780\", \"MISC\", \"date of birth\", \"March 6, 2017\", \"TIME\"],\n    [\"Presidential Proclamation 9645\", \"MISC\", \"date of birth\", \"September 24, 2017\", \"TIME\"],\n    [\"Sean Spicer\", \"PER\", \"position held\", \"White House Press Secretary\", \"ORG\"],\n    [\"United States\", \"LOC\", \"continent\", \"North America\", \"LOC\"],\n    [\"Donald Trump\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 6,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Donald Trump\", \"PER\", \"position held\", \"President of the United States\", \"ORG\"],\n    [\"Executive Order 13769\", \"MISC\", \"date of birth\", \"January 27, 2017\", \"TIME\"],\n    [\"Executive Order 13780\", \"MISC\", \"date of birth\", \"March 6, 2017\", \"TIME\"],\n    [\"Presidential Proclamation 9645\", \"MISC\", \"date of birth\", \"September 24, 2017\", \"TIME\"],\n    [\"Sean Spicer\", \"PER\", \"position held\", \"White House Press Secretary\", \"ORG\"],\n    [\"United States\", \"LOC\", \"country of citizenship\", \"Donald Trump\", \"PER\"],\n    [\"Donald Trump\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 7,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Donald Trump\", \"PER\", \"position held\", \"President of the United States\", \"ORG\"],\n    [\"Executive Order 13769\", \"MISC\", \"date of birth\", \"January 27, 2017\", \"TIME\"],\n    [\"Executive Order 13780\", \"MISC\", \"date of birth\", \"March 6, 2017\", \"TIME\"],\n    [\"Presidential Proclamation 9645\", \"MISC\", \"date of birth\", \"September 24, 2017\", \"TIME\"],\n    [\"Sean Spicer\", \"PER\", \"position held\", \"White House Press Secretary\", \"ORG\"],\n    [\"United States\", \"LOC\", \"country of citizenship\", \"Donald Trump\", \"PER\"],\n    [\"Donald Trump\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 7,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_189",
+ "base_raw": "[\n    [\"Brenner Base Tunnel\", \"MISC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Brenner Pass\", \"LOC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Brenner Pass\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Trans-European Transport Networks\", \"ORG\", \"founded by\", \"European Union\", \"ORG\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"part of\", \"Trans-European Transport Networks\", \"ORG\"],\n    [\"Innsbruck\", \"LOC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Fortezza\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"replaces\", \"Brenner railway\", \"MISC\"],\n    [\"Brenner railway\", \"MISC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Brenner railway\", \"MISC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"North Tyrol\", \"LOC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"South Tyrol\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"operator\", \"Austria\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"operator\", \"Italy\", \"LOC\"],\n    [\"European Union\", \"ORG\", \"contributor\", \"Brenner Base Tunnel\", \"MISC\"],\n    [\"Austria\", \"LOC\", \"contributor\", \"Brenner Base Tunnel\", \"MISC\"],\n    [\"Italy\", \"LOC\", \"contributor\", \"Brenner Base Tunnel\", \"MISC\"],\n    [\"Gotthard Base Tunnel\", \"MISC\", \"located in the administrative territorial entity\", \"Europe\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"follows\", \"Gotthard Base Tunnel\", \"MISC\"],\n    [\"Bolzano\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Innsbruck\", \"LOC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"start time\", \"2025\", \"TIME\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 16,
+  "FN": 9,
+  "recall": 0.4,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Brenner Base Tunnel\", \"MISC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Brenner Pass\", \"LOC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Brenner Pass\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Innsbruck\", \"LOC\", \"country\", \"Austria\", \"LOC\"],\n    [\"Fortezza\", \"LOC\", \"country\", \"Italy\", \"LOC\"],\n    [\"Trans-European Transport Networks\", \"ORG\", \"country\", \"Europe\", \"MISC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"part of\", \"Trans-European Transport Networks\", \"ORG\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"funded by\", \"Austria\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"funded by\", \"Italy\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"funded by\", \"European Union\", \"ORG\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"location\", \"Eastern Alps\", \"LOC\"],\n    [\"Eastern Alps\", \"LOC\", \"part of\", \"Alps\", \"LOC\"],\n    [\"Brenner Pass\", \"LOC\", \"part of\", \"Alps\", \"LOC\"],\n    [\"Innsbruck\", \"LOC\", \"located in the administrative territorial entity\", \"North Tyrol\", \"LOC\"],\n    [\"Bolzano\", \"LOC\", \"located in the administrative territorial entity\", \"South Tyrol\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"replaces\", \"Brenner railway\", \"MISC\"],\n    [\"Brenner railway\", \"MISC\", \"part of\", \"Line 1\", \"MISC\"],\n    [\"Line 1\", \"MISC\", \"route\", \"Berlin to Palermo\", \"MISC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"scheduled to be completed in\", \"2025\", \"TIME\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"instance of\", \"tunnel\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 33,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 37,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Brenner Base Tunnel\", \"MISC\", \"location\", \"Eastern Alps\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"connects\", \"Innsbruck\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"connects\", \"Fortezza\", \"LOC\"],\n    [\"Brenner Pass\", \"LOC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Brenner Pass\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Trans-European Transport Networks\", \"ORG\", \"founded by\", \"European Union\", \"ORG\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"part of\", \"Trans-European Transport Networks\", \"ORG\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"operator\", \"Austria\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"operator\", \"Italy\", \"LOC\"],\n    [\"Innsbruck\", \"LOC\", \"located in the administrative territorial entity\", \"Austria\", \"LOC\"],\n    [\"Fortezza\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"replaces\", \"Brenner railway\", \"MISC\"],\n    [\"Brenner railway\", \"MISC\", \"location\", \"Brenner Pass\", \"LOC\"],\n    [\"European Union\", \"ORG\", \"contribution to\", \"Brenner Base Tunnel\", \"MISC\"],\n    [\"Austria\", \"LOC\", \"funds\", \"Brenner Base Tunnel\", \"MISC\"],\n    [\"Italy\", \"LOC\", \"funds\", \"Brenner Base Tunnel\", \"MISC\"],\n    [\"Brenner Base Tunnel\", \"MISC\", \"start time\", \"2025\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 29,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ }
+}

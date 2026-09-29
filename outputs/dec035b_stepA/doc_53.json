@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_53",
+ "base_raw": "[\n    [\"Julius Strasburger\", \"PER\", \"place of birth\", \"Jena\", \"LOC\"],\n    [\"Julius Strasburger\", \"PER\", \"date of death\", \"28 October 1934\", \"TIME\"],\n    [\"Eduard Strasburger\", \"PER\", \"date of birth\", \"1844\", \"TIME\"],\n    [\"Eduard Strasburger\", \"PER\", \"date of death\", \"1912\", \"TIME\"],\n    [\"Julius Strasburger\", \"PER\", \"educated at\", \"University of Bonn\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"educated at\", \"University of Freiburg\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"employer\", \"University of Breslau\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"position held\", \"associate professor\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"employer\", \"University of Frankfurt am Main\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"position held\", \"full professor of internal medicine\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"author\", \"Die Faeces des Menschen\", \"MISC\"],\n    [\"Adolf Schmidt\", \"PER\", \"date of birth\", \"1865\", \"TIME\"],\n    [\"Adolf Schmidt\", \"PER\", \"date of death\", \"1918\", \"TIME\"],\n    [\"Adolf Schmidt\", \"PER\", \"author\", \"Die Faeces des Menschen\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"author\", \"Einf\u00fchrung in die Hydrotherapie und Thermotherapie\", \"MISC\"],\n    [\"University of Frankfurt am Main\", \"ORG\", \"located in\", \"Frankfurt am Main\", \"LOC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 9,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Julius Strasburger\", \"PER\", \"date of birth\", \"26 December 1871\", \"TIME\"],\n    [\"Julius Strasburger\", \"PER\", \"date of death\", \"28 October 1934\", \"TIME\"],\n    [\"Julius Strasburger\", \"PER\", \"place of birth\", \"Jena\", \"LOC\"],\n    [\"Julius Strasburger\", \"PER\", \"place of death\", \"Frankfurt am Main\", \"LOC\"],\n    [\"Eduard Strasburger\", \"PER\", \"date of birth\", \"1844\", \"TIME\"],\n    [\"Eduard Strasburger\", \"PER\", \"date of death\", \"1912\", \"TIME\"],\n    [\"Julius Strasburger\", \"PER\", \"father\", \"Eduard Strasburger\", \"PER\"],\n    [\"Julius Strasburger\", \"PER\", \"educated at\", \"University of Bonn\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"educated at\", \"University of Freiburg\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"employer\", \"University of Breslau\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"employer\", \"University of Frankfurt am Main\", \"ORG\"],\n    [\"Adolf Schmidt\", \"PER\", \"date of birth\", \"1865\", \"TIME\"],\n    [\"Adolf Schmidt\", \"PER\", \"date of death\", \"1918\", \"TIME\"],\n    [\"Julius Strasburger\", \"PER\", \"author\", \"Die Faeces des Menschen\", \"MISC\"],\n    [\"Adolf Schmidt\", \"PER\", \"author\", \"Die Faeces des Menschen\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"author\", \"Einf\u00fchrung in die Hydrotherapie und Thermotherapie\", \"MISC\"],\n    [\"Carl Gerhardt\", \"PER\", \"employer\", \"second medical clinic in Berlin\", \"ORG\"],\n    [\"Friedrich Schultze\", \"PER\", \"employer\", \"internal clinic in Bonn\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"position held\", \"head of the institute for physical therapy\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"position held\", \"associate professor\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"position held\", \"full professor of internal medicine\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 12,
+  "FN": 7,
+  "recall": 0.5625,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Julius Strasburger\", \"PER\", \"date of birth\", \"26 December 1871\", \"TIME\"],\n    [\"Julius Strasburger\", \"PER\", \"place of death\", \"Frankfurt am Main\", \"LOC\"],\n    [\"Julius Strasburger\", \"PER\", \"father\", \"Eduard Strasburger\", \"PER\"],\n    [\"Eduard Strasburger\", \"PER\", \"date of birth\", \"1844\", \"TIME\"],\n    [\"Eduard Strasburger\", \"PER\", \"date of death\", \"1912\", \"TIME\"],\n    [\"Julius Strasburger\", \"PER\", \"educated at\", \"University of Bonn\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"educated at\", \"University of Freiburg\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"employer\", \"University of Breslau\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"position held\", \"associate professor\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"employer\", \"University of Frankfurt am Main\", \"ORG\"],\n    [\"Julius Strasburger\", \"PER\", \"position held\", \"full professor of internal medicine\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"head of government\", \"institute for physical therapy\", \"ORG\"],\n    [\"Adolf Schmidt\", \"PER\", \"date of birth\", \"1865\", \"TIME\"],\n    [\"Adolf Schmidt\", \"PER\", \"date of death\", \"1918\", \"TIME\"],\n    [\"Julius Strasburger\", \"PER\", \"author\", \"Die Faeces des Menschen\", \"MISC\"],\n    [\"Adolf Schmidt\", \"PER\", \"author\", \"Die Faeces des Menschen\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"author\", \"Einf\u00fchrung in die Hydrotherapie und Thermotherapie\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"specialized areas of study\", \"blood circulation\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"specialized areas of study\", \"physical therapy\", \"MISC\"],\n    [\"Julius Strasburger\", \"PER\", \"specialized areas of study\", \"pathology of digestion\", \"MISC\"],\n    [\"Schmidt-Strasburger diet\", \"MISC\", \"defined as\", \"a diet used to facilitate the testing of feces in various types of diarrhea\", \"MISC\"],\n    [\"Schmidt-Strasburger diet\", \"MISC\", \"contains\", \"milk\", \"MISC\"],\n    [\"Schmidt-Strasburger diet\", \"MISC\", \"contains\", \"zwieback\", \"MISC\"],\n    [\"Schmidt-Strasburger diet\", \"MISC\", \"contains\", \"eggs\", \"MISC\"],\n    [\"Schmidt-Strasburger diet\", \"MISC\", \"contains\", \"butter\", \"MISC\"],\n    [\"Schmidt-Strasburger diet\", \"MISC\", \"contains\", \"beef\", \"MISC\"],\n    [\"Schmidt-Strasburger diet\", \"MISC\", \"contains\", \"boiled potato\", \"MISC\"],\n    [\"Schmidt-Strasburger diet\", \"MISC\", \"contains\", \"gruel\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 21,
+  "FN": 8,
+  "recall": 0.5294117647058824,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ }
+}

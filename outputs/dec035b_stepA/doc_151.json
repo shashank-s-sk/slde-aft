@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_151",
+ "base_raw": "[\n    [\"Mats R\u00e5dberg\", \"PER\", \"place of birth\", \"Br\u00e4nnkyrka Parish\", \"LOC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"genre\", \"country\", \"MISC\"],\n    [\"Mats R\u00e5dberg & Rankarna\", \"MISC\", \"member of\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"Rankarna\", \"MISC\", \"member\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"participant of\", \"Melodifestivalen 1977\", \"MISC\"],\n    [\"Du och jag och sommaren\", \"MISC\", \"author\", \"Tomas Ledin\", \"PER\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"collaborator\", \"Elisabeth Andreasson\", \"PER\"],\n    [\"I'm the Singer, You're the Song\", \"MISC\", \"performer\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"Peta in en pinne i brasan\", \"MISC\", \"performer\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"Put Another Log on the Fire\", \"MISC\", \"original song of\", \"Peta in en pinne i brasan\", \"MISC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"position held\", \"background singer\", \"MISC\"],\n    [\"Chips\", \"MISC\", \"collaborator\", \"Mats R\u00e5dberg\", \"PER\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Mats R\u00e5dberg\", \"PER\", \"date of birth\", \"8 June 1948\", \"TIME\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"place of birth\", \"Br\u00e4nnkyrka Parish\", \"LOC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"position held\", \"singer\", \"MISC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"position held\", \"guitarist\", \"MISC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"position held\", \"composer\", \"MISC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"position held\", \"architect\", \"MISC\"],\n    [\"Mats R\u00e5dberg & Rankarna\", \"MISC\", \"member\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"Rankarna\", \"MISC\", \"member\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"participant\", \"Melodifestivalen 1977\", \"MISC\"],\n    [\"Du och jag och sommaren\", \"MISC\", \"author\", \"Tomas Ledin\", \"PER\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"participant\", \"Melodifestivalen 1980\", \"MISC\"],\n    [\"Chips\", \"MISC\", \"member\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"I'm the Singer, You're the Song\", \"MISC\", \"author\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"I'm the Singer, You're the Song\", \"MISC\", \"author\", \"Elisabeth Andreasson\", \"PER\"],\n    [\"Peta in en pinne i brasan\", \"MISC\", \"author\", \"Mats R\u00e5dberg\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 21,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Mats R\u00e5dberg\", \"PER\", \"date of birth\", \"8 June 1948\", \"TIME\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"place of birth\", \"Br\u00e4nnkyrka Parish\", \"LOC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"member of\", \"Rankarna\", \"ORG\"],\n    [\"Mats R\u00e5dberg & Rankarna\", \"ORG\", \"genre\", \"country\", \"MISC\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"participant of\", \"Melodifestivalen 1977\", \"MISC\"],\n    [\"Du och jag och sommaren\", \"MISC\", \"author\", \"Tomas Ledin\", \"PER\"],\n    [\"Mats R\u00e5dberg\", \"PER\", \"participant of\", \"Melodifestivalen 1980\", \"MISC\"],\n    [\"Chips\", \"ORG\", \"member of\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"I'm the Singer, You're the Song\", \"MISC\", \"author\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"I'm the Singer, You're the Song\", \"MISC\", \"author\", \"Elisabeth Andreasson\", \"PER\"],\n    [\"Peta in en pinne i brasan\", \"MISC\", \"author\", \"Mats R\u00e5dberg\", \"PER\"],\n    [\"Put Another Log on the Fire\", \"MISC\", \"original language of work\", \"English\", \"MISC\"],\n    [\"Peta in en pinne i brasan\", \"MISC\", \"original language of work\", \"Swedish\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 19,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

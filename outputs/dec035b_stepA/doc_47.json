@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_47",
+ "base_raw": "[\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"place of birth\", \"Havana\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"country of birth\", \"Cuba\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"date of birth\", \"1921\", \"TIME\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"educated at\", \"San Alejandro Academy of Fine Arts\", \"ORG\"],\n    [\"Carlos Enr\u00edquez\", \"PER\", \"influenced\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Ren\u00e9 Portocarrero\", \"PER\", \"influenced\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Cundo Berm\u00fadez\", \"PER\", \"influenced\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Fidelio Ponce\", \"PER\", \"influenced\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Los Diez Pintores Concretos\", \"ORG\", \"member\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"country of citizenship\", \"Cuba\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"residence\", \"Miami\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"date of death\", \"2004\", \"TIME\"],\n    [\"San Alejandro Academy of Fine Arts\", \"ORG\", \"located in\", \"Havana\", \"LOC\"],\n    [\"Fidel Castro\", \"PER\", \"country of citizenship\", \"Cuba\", \"LOC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 8,
+  "FN": 6,
+  "recall": 0.5,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Time",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"place of birth\", \"Havana\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"country of citizenship\", \"Cuba\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"date of birth\", \"1921\", \"TIME\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"educated at\", \"San Alejandro Academy of Fine Arts\", \"ORG\"],\n    [\"San Alejandro Academy of Fine Arts\", \"ORG\", \"located in\", \"Havana\", \"LOC\"],\n    [\"Los Diez Pintores Concretos\", \"ORG\", \"member\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Fidelio Ponce\", \"PER\", \"student\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Carlos Enr\u00edquez\", \"PER\", \"influenced\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Ren\u00e9 Portocarrero\", \"PER\", \"influenced\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Cundo Berm\u00fadez\", \"PER\", \"influenced\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"residence\", \"Miami\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"date of death\", \"2004\", \"TIME\"],\n    [\"Fidel Castro\", \"PER\", \"country of citizenship\", \"Cuba\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 9,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"place of birth\", \"Havana\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"country of citizenship\", \"Cuba\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"date of birth\", \"1921\", \"TIME\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"educated at\", \"San Alejandro Academy of Fine Arts\", \"ORG\"],\n    [\"Carlos Enr\u00edquez\", \"PER\", \"member of\", \"Havana School\", \"MISC\"],\n    [\"Ren\u00e9 Portocarrero\", \"PER\", \"member of\", \"Havana School\", \"MISC\"],\n    [\"Cundo Berm\u00fadez\", \"PER\", \"member of\", \"Havana School\", \"MISC\"],\n    [\"Fidelio Ponce\", \"PER\", \"employer\", \"San Alejandro Academy of Fine Arts\", \"ORG\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"member of\", \"Los Diez Pintores Concretos\", \"ORG\"],\n    [\"Los Diez Pintores Concretos\", \"ORG\", \"founded by\", \"Jos\u00e9 Mar\u00eda Mijares\", \"PER\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"location\", \"Miami\", \"LOC\"],\n    [\"Jos\u00e9 Mar\u00eda Mijares\", \"PER\", \"date of death\", \"2004\", \"TIME\"],\n    [\"San Alejandro Academy of Fine Arts\", \"ORG\", \"located in\", \"Havana\", \"LOC\"],\n    [\"Fidel Castro\", \"PER\", \"head of government\", \"Cuba\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 6,
+  "recall": 0.5384615384615384,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

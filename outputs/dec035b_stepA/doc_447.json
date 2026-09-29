@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_447",
+ "base_raw": "[\n    [\"Ward\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Ward\", \"PER\", \"educated at\", \"Germany\", \"LOC\"],\n    [\"Frans Masereel\", \"PER\", \"author\", \"The Sun\", \"MISC\"],\n    [\"Otto N\u00fcckel\", \"PER\", \"author\", \"Destiny\", \"MISC\"],\n    [\"Milt Gross\", \"PER\", \"author\", \"He Done Her Wrong\", \"MISC\"],\n    [\"Art Spiegelman\", \"PER\", \"influenced by\", \"Ward\", \"PER\"],\n    [\"Will Eisner\", \"PER\", \"influenced by\", \"Ward\", \"PER\"],\n    [\"Ward\", \"PER\", \"location of formation\", \"United States\", \"LOC\"],\n    [\"The Sun\", \"MISC\", \"publication date\", \"1919\", \"TIME\"],\n    [\"Destiny\", \"MISC\", \"publication date\", \"1926\", \"TIME\"],\n    [\"He Done Her Wrong\", \"MISC\", \"publication date\", \"1930\", \"TIME\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 8,
+  "recall": 0.3333333333333333,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Ward\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Ward\", \"PER\", \"place of study\", \"Germany\", \"LOC\"],\n    [\"Frans Masereel\", \"PER\", \"author\", \"The Sun\", \"MISC\"],\n    [\"Ward\", \"PER\", \"inspired by\", \"Otto N\u00fcckel\", \"PER\"],\n    [\"Otto N\u00fcckel\", \"PER\", \"author\", \"Destiny\", \"MISC\"],\n    [\"Milt Gross\", \"PER\", \"author\", \"He Done Her Wrong\", \"MISC\"],\n    [\"Art Spiegelman\", \"PER\", \"inspired by\", \"Ward\", \"PER\"],\n    [\"Will Eisner\", \"PER\", \"inspired by\", \"Ward\", \"PER\"],\n    [\"Ward\", \"PER\", \"educated at\", \"Germany\", \"LOC\"],\n    [\"The Sun\", \"MISC\", \"publication date\", \"1919\", \"TIME\"],\n    [\"Destiny\", \"MISC\", \"publication date\", \"1926\", \"TIME\"],\n    [\"He Done Her Wrong\", \"MISC\", \"publication date\", \"1930\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Ward\", \"PER\", \"place of study\", \"Germany\", \"LOC\"],\n    [\"Ward\", \"PER\", \"country of residence\", \"United States\", \"LOC\"],\n    [\"Frans Masereel\", \"PER\", \"author\", \"The Sun\", \"MISC\"],\n    [\"Otto N\u00fcckel\", \"PER\", \"author\", \"Destiny\", \"MISC\"],\n    [\"Milt Gross\", \"PER\", \"author\", \"He Done Her Wrong\", \"MISC\"],\n    [\"Art Spiegelman\", \"PER\", \"influenced by\", \"Ward\", \"PER\"],\n    [\"Will Eisner\", \"PER\", \"influenced by\", \"Ward\", \"PER\"],\n    [\"Ward\", \"PER\", \"date of encounter with wordless novel\", \"1926\", \"TIME\"],\n    [\"Ward\", \"PER\", \"year of return to United States\", \"1927\", \"TIME\"],\n    [\"Ward\", \"PER\", \"year of finding Destiny\", \"1929\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

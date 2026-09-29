@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_288",
+ "base_raw": "[\n    [\"Carlstadt Public Schools\", \"ORG\", \"located in\", \"Borough of Carlstadt\", \"LOC\"],\n    [\"Carlstadt Public Schools\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Borough of Carlstadt\", \"LOC\", \"located in\", \"Bergen County\", \"LOC\"],\n    [\"Bergen County\", \"LOC\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"Carlstadt Public Schools\", \"ORG\", \"state\", \"New Jersey\", \"LOC\"],\n    [\"Henry P. Becton Regional High School\", \"ORG\", \"located in\", \"East Rutherford\", \"LOC\"],\n    [\"Carlstadt - East Rutherford Regional School District\", \"ORG\", \"serves\", \"Carlstadt\", \"LOC\"],\n    [\"Carlstadt - East Rutherford Regional School District\", \"ORG\", \"serves\", \"East Rutherford\", \"LOC\"],\n    [\"Lindbergh School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Lincoln School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Washington School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"New Jersey Department of Education\", \"ORG\", \"classifies\", \"Carlstadt Public Schools\", \"ORG\"],\n    [\"Carlstadt Public Schools\", \"ORG\", \"enrollment\", \"575\", \"NUM\"],\n    [\"Henry P. Becton Regional High School\", \"ORG\", \"enrollment\", \"468\", \"NUM\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 16,
+  "recall": 0.1111111111111111,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Carlstadt Public Schools\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Carlstadt Public Schools\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Carlstadt Public Schools\", \"ORG\", \"location\", \"Bergen County\", \"LOC\"],\n    [\"Henry P. Becton Regional High School\", \"ORG\", \"located in\", \"East Rutherford\", \"LOC\"],\n    [\"Carlstadt - East Rutherford Regional School District\", \"ORG\", \"serves\", \"Carlstadt\", \"LOC\"],\n    [\"Carlstadt - East Rutherford Regional School District\", \"ORG\", \"serves\", \"East Rutherford\", \"LOC\"],\n    [\"Lindbergh School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Lincoln School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Washington School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"New Jersey Department of Education\", \"ORG\", \"location\", \"New Jersey\", \"LOC\"],\n    [\"Borough of Carlstadt\", \"ORG\", \"located in\", \"Bergen County\", \"LOC\"],\n    [\"Borough of Carlstadt\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Carlstadt\", \"LOC\", \"located in\", \"Bergen County\", \"LOC\"],\n    [\"East Rutherford\", \"LOC\", \"located in\", \"Bergen County\", \"LOC\"],\n    [\"Carlstadt Public School\", \"ORG\", \"location\", \"Carlstadt\", \"LOC\"],\n    [\"Carlstadt Public Schools\", \"ORG\", \"part of\", \"Carlstadt - East Rutherford Regional School District\", \"ORG\"],\n    [\"Henry P. Becton Regional High School\", \"ORG\", \"part of\", \"Carlstadt - East Rutherford Regional School District\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 19,
+  "FN": 16,
+  "recall": 0.2,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Carlstadt Public Schools\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Carlstadt Public Schools\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Carlstadt Public Schools\", \"ORG\", \"state\", \"New Jersey\", \"LOC\"],\n    [\"Carlstadt\", \"LOC\", \"located in\", \"Bergen County\", \"LOC\"],\n    [\"Carlstadt\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Bergen County\", \"LOC\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"Bergen County\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"New Jersey\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"New Jersey Department of Education\", \"ORG\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"New Jersey Department of Education\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Carlstadt Public School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Carlstadt Public School\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Lindbergh School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Lindbergh School\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Lincoln School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Lincoln School\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Washington School\", \"ORG\", \"located in\", \"Carlstadt\", \"LOC\"],\n    [\"Washington School\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Henry P. Becton Regional High School\", \"ORG\", \"located in\", \"East Rutherford\", \"LOC\"],\n    [\"Henry P. Becton Regional High School\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"East Rutherford\", \"LOC\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"East Rutherford\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Carlstadt - East Rutherford Regional School District\", \"ORG\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"Carlstadt - East Rutherford Regional School District\", \"ORG\", \"country\", \"United States\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 12,
+  "FP": 19,
+  "FN": 12,
+  "recall": 0.5,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ }
+}

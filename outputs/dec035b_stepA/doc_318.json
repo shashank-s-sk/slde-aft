@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_318",
+ "base_raw": "[\n    [\"Snowy Mountains scheme\", \"MISC\", \"location\", \"south-east Australia\", \"LOC\"],\n    [\"Snowy River\", \"MISC\", \"located in or next to body of water\", \"Bass Strait\", \"LOC\"],\n    [\"Snowy Mountains\", \"MISC\", \"part of\", \"Great Dividing Range\", \"MISC\"],\n    [\"Australian Capital Territory\", \"LOC\", \"recipient of\", \"peak-load power\", \"MISC\"],\n    [\"New South Wales\", \"LOC\", \"recipient of\", \"peak-load power\", \"MISC\"],\n    [\"Victoria\", \"LOC\", \"recipient of\", \"peak-load power\", \"MISC\"],\n    [\"Snowy Mountains Scheme\", \"MISC\", \"added to\", \"Australian National Heritage List\", \"MISC\"],\n    [\"Sir William Hudson\", \"PER\", \"position held\", \"Chief Engineer\", \"MISC\"],\n    [\"Snowy Mountains scheme\", \"MISC\", \"inception\", \"1949\", \"TIME\"],\n    [\"Snowy Mountains scheme\", \"MISC\", \"dissolved, abolished or demolished\", \"1974\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 26,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Snowy Mountains scheme\", \"MISC\", \"location\", \"south-east Australia\", \"LOC\"],\n    [\"Snowy Mountains scheme\", \"MISC\", \"country\", \"Australia\", \"LOC\"],\n    [\"Sir William Hudson\", \"PER\", \"position held\", \"Chief Engineer\", \"MISC\"],\n    [\"Snowy River\", \"MISC\", \"located in or next to body of water\", \"Bass Strait\", \"LOC\"],\n    [\"Bass Strait\", \"LOC\", \"part of\", \"Tasman sea\", \"LOC\"],\n    [\"Murray River\", \"MISC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Murrumbidgee River\", \"MISC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Great Dividing Range\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Australian Capital Territory\", \"LOC\", \"country\", \"Australia\", \"LOC\"],\n    [\"New South Wales\", \"LOC\", \"country\", \"Australia\", \"LOC\"],\n    [\"Victoria\", \"LOC\", \"country\", \"Australia\", \"LOC\"],\n    [\"Snowy Mountains Scheme\", \"MISC\", \"added to\", \"Australian National Heritage List\", \"MISC\"],\n    [\"Snowy Mountains scheme\", \"MISC\", \"inception\", \"1949\", \"TIME\"],\n    [\"Snowy Mountains scheme\", \"MISC\", \"dissolved, abolished or demolished\", \"1974\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 23,
+  "recall": 0.20689655172413793,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Snowy Mountains scheme\", \"MISC\", \"location\", \"south-east Australia\", \"LOC\"],\n    [\"Snowy River\", \"MISC\", \"located in or next to body of water\", \"Bass Strait\", \"LOC\"],\n    [\"Snowy Mountains\", \"MISC\", \"part of\", \"Great Dividing Range\", \"MISC\"],\n    [\"Australian Capital Territory\", \"LOC\", \"recipient of\", \"peak-load power\", \"MISC\"],\n    [\"New South Wales\", \"LOC\", \"recipient of\", \"peak-load power\", \"MISC\"],\n    [\"Victoria\", \"LOC\", \"recipient of\", \"peak-load power\", \"MISC\"],\n    [\"Snowy Mountains Scheme\", \"MISC\", \"added to\", \"Australian National Heritage List\", \"MISC\"],\n    [\"Sir William Hudson\", \"PER\", \"position held\", \"Chief Engineer\", \"MISC\"],\n    [\"Snowy Mountains scheme\", \"MISC\", \"inception\", \"1949\", \"TIME\"],\n    [\"Snowy Mountains scheme\", \"MISC\", \"dissolved, abolished or demolished\", \"1974\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 26,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ }
+}

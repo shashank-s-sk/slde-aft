@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_69",
+ "base_raw": "[\n    [\"BCCI\", \"ORG\", \"founded by\", \"Agha Hasan Abedi\", \"PER\"],\n    [\"BCCI\", \"ORG\", \"head offices\", \"Karachi\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"head offices\", \"London\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"registered in\", \"Luxembourg\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"country of operation\", \"United States\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"country of operation\", \"United Kingdom\", \"LOC\"],\n    [\"Agha Hasan Abedi\", \"PER\", \"nationality\", \"Pakistani\", \"MISC\"],\n    [\"BCCI\", \"ORG\", \"assets\", \"US$ 20 billion\", \"NUM\"],\n    [\"BCCI\", \"ORG\", \"number of branches\", \"400\", \"NUM\"],\n    [\"BCCI\", \"ORG\", \"number of countries\", \"78\", \"NUM\"],\n    [\"BCCI\", \"ORG\", \"rank\", \"7th largest private bank\", \"MISC\"],\n    [\"Deloitte & Touche\", \"ORG\", \"liquidator of\", \"BCCI\", \"ORG\"],\n    [\"Price Waterhouse\", \"ORG\", \"auditor of\", \"BCCI\", \"ORG\"],\n    [\"Ernst & Young\", \"ORG\", \"auditor of\", \"BCCI\", \"ORG\"],\n    [\"Deloitte & Touche\", \"ORG\", \"settled lawsuit with\", \"Price Waterhouse and Ernst & Young\", \"ORG\"],\n    [\"Deloitte & Touche\", \"ORG\", \"recovered percentage of creditors' lost money\", \"75%\", \"NUM\"],\n    [\"BCCI\", \"ORG\", \"year of founding\", \"1972\", \"TIME\"],\n    [\"BCCI\", \"ORG\", \"year of regulatory battle\", \"1991\", \"TIME\"],\n    [\"BCCI\", \"ORG\", \"date of raid\", \"5 July 1991\", \"TIME\"],\n    [\"Deloitte & Touche\", \"ORG\", \"year of lawsuit settlement\", \"1998\", \"TIME\"],\n    [\"Deloitte & Touche\", \"ORG\", \"year of recovery claim\", \"2013\", \"TIME\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in Asia",
+  "Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Agha Hasan Abedi\", \"PER\", \"country of origin\", \"Pakistan\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"located in\", \"Luxembourg\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"headquarters location\", \"Karachi\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"headquarters location\", \"London\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"founded by\", \"Agha Hasan Abedi\", \"PER\"],\n    [\"BCCI\", \"ORG\", \"inception\", \"1972\", \"TIME\"],\n    [\"BCCI\", \"ORG\", \"assets\", \"US$ 20 billion\", \"NUM\"],\n    [\"BCCI\", \"ORG\", \"number of branches\", \"400\", \"NUM\"],\n    [\"BCCI\", \"ORG\", \"number of countries\", \"78\", \"NUM\"],\n    [\"Deloitte & Touche\", \"ORG\", \"liquidator of\", \"BCCI\", \"ORG\"],\n    [\"Price Waterhouse\", \"ORG\", \"auditor of\", \"BCCI\", \"ORG\"],\n    [\"Ernst & Young\", \"ORG\", \"auditor of\", \"BCCI\", \"ORG\"],\n    [\"Deloitte & Touche\", \"ORG\", \"settled lawsuit against\", \"Price Waterhouse\", \"ORG\"],\n    [\"Deloitte & Touche\", \"ORG\", \"settled lawsuit against\", \"Ernst & Young\", \"ORG\"],\n    [\"BCCI\", \"ORG\", \"involved in\", \"money laundering\", \"MISC\"],\n    [\"BCCI\", \"ORG\", \"operated in\", \"bank secrecy jurisdictions\", \"MISC\"],\n    [\"Deloitte & Touche\", \"ORG\", \"recovered percentage of creditors' lost money\", \"75%\", \"NUM\"],\n    [\"Deloitte & Touche\", \"ORG\", \"recovery year\", \"2013\", \"TIME\"],\n    [\"BCCI\", \"ORG\", \"dissolved, abolished or demolished\", \"1991\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 28,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Agha Hasan Abedi\", \"PER\", \"country of origin\", \"Pakistan\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"headquarters location\", \"Luxembourg\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"located in the administrative territorial entity\", \"Karachi\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"located in the administrative territorial entity\", \"London\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"founded by\", \"Agha Hasan Abedi\", \"PER\"],\n    [\"BCCI\", \"ORG\", \"inception\", \"1972\", \"TIME\"],\n    [\"BCCI\", \"ORG\", \"country\", \"Luxembourg\", \"LOC\"],\n    [\"Deloitte & Touche\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Deloitte & Touche\", \"ORG\", \"located in the administrative territorial entity\", \"UK\", \"LOC\"],\n    [\"Price Waterhouse\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Ernst & Young\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"BCCI\", \"ORG\", \"dissolved, abolished or demolished\", \"1991\", \"TIME\"],\n    [\"BCCI\", \"ORG\", \"operator\", \"Agha Hasan Abedi\", \"PER\"],\n    [\"Agha Hasan Abedi\", \"PER\", \"position held\", \"financier\", \"MISC\"],\n    [\"BCCI\", \"ORG\", \"assets\", \"US$ 20 billion\", \"NUM\"],\n    [\"BCCI\", \"ORG\", \"league\", \"private bank\", \"MISC\"],\n    [\"BCCI\", \"ORG\", \"rank\", \"7th\", \"NUM\"],\n    [\"Deloitte & Touche\", \"ORG\", \"recovered\", \"75%\", \"NUM\"],\n    [\"Deloitte & Touche\", \"ORG\", \"point in time\", \"2013\", \"TIME\"],\n    [\"Price Waterhouse\", \"ORG\", \"settled for\", \"$ 175 million\", \"NUM\"],\n    [\"Ernst & Young\", \"ORG\", \"settled for\", \"$ 175 million\", \"NUM\"],\n    [\"BCCI\", \"ORG\", \"award received\", \"massive regulatory battle\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 39,
+  "FN": 4,
+  "recall": 0.5,
+  "n_extracted": 41,
+  "judge_parse_ok": true
+ }
+}

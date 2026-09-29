@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_356",
+ "base_raw": "[\n    [\"Mill Creek Mountain\", \"LOC\", \"located in the administrative territorial entity\", \"Hampshire\", \"LOC\"],\n    [\"Mill Creek Mountain\", \"LOC\", \"located in the administrative territorial entity\", \"Hardy\", \"LOC\"],\n    [\"Mill Creek Mountain\", \"LOC\", \"part of\", \"Ridge-and-Valley Appalachians\", \"LOC\"],\n    [\"Mill Creek\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Northwestern Turnpike\", \"MISC\", \"location\", \"Mechanicsburg Gap\", \"LOC\"],\n    [\"U.S. Route 50\", \"MISC\", \"location\", \"Mechanicsburg Gap\", \"LOC\"],\n    [\"Sawmill Ridge\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"South Branch Potomac River Valley\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Hanging Rocks\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Wappocomo\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Springfield\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 32,
+  "recall": 0.030303030303030304,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Mill Creek Mountain\", \"LOC\", \"located in\", \"West Virginia\", \"LOC\"],\n    [\"Mill Creek Mountain\", \"LOC\", \"part of\", \"Ridge-and-Valley Appalachians\", \"LOC\"],\n    [\"Mill Creek Mountain\", \"LOC\", \"contains administrative territorial entity\", \"Hampshire\", \"LOC\"],\n    [\"Mill Creek Mountain\", \"LOC\", \"contains administrative territorial entity\", \"Hardy\", \"LOC\"],\n    [\"High Knob\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"South Branch Potomac River Valley\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Mill Creek\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Mechanicsburg Gap\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Northwestern Turnpike\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Sawmill Ridge\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Trough\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Hanging Rocks\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Wappocomo\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Springfield\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 31,
+  "recall": 0.06060606060606061,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 31,
+  "recall": 0.06060606060606061,
+  "n_extracted": 19,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Mill Creek Mountain\", \"LOC\", \"located in\", \"West Virginia\", \"LOC\"],\n    [\"Mill Creek Mountain\", \"LOC\", \"part of\", \"Ridge-and-Valley Appalachians\", \"LOC\"],\n    [\"Mill Creek Mountain\", \"LOC\", \"contains administrative territorial entity\", \"Hampshire\", \"LOC\"],\n    [\"Mill Creek Mountain\", \"LOC\", \"contains administrative territorial entity\", \"Hardy\", \"LOC\"],\n    [\"High Knob\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"South Branch Potomac River Valley\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Mill Creek\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Mechanicsburg Gap\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Northwestern Turnpike\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Sawmill Ridge\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Trough\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Hanging Rocks\", \"LOC\", \"located in\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Wappocomo\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"],\n    [\"Springfield\", \"LOC\", \"located near\", \"Mill Creek Mountain\", \"LOC\"]\n]"
+}

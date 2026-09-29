@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_162",
+ "base_raw": "[\n    [\"Paul Ardenne\", \"PER\", \"date of birth\", \"4 October 1956\", \"TIME\"],\n    [\"Paul Ardenne\", \"PER\", \"place of work\", \"University of Amiens\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"field of work\", \"contemporary art\", \"MISC\"],\n    [\"Paul Ardenne\", \"PER\", \"educated at\", \"University of Poitiers\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"educated at\", \"University of Toulouse\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"doctorate from\", \"University of Paris I\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Ami Barak\", \"PER\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Catherine Millet\", \"PER\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Jos\u00e9 Alvarez\", \"PER\"],\n    [\"Ami Barak\", \"PER\", \"field of work\", \"contemporary art\", \"MISC\"],\n    [\"Catherine Millet\", \"PER\", \"position held\", \"founder/director of Art Press\", \"MISC\"],\n    [\"Jos\u00e9 Alvarez\", \"PER\", \"position held\", \"director of Regard\", \"MISC\"],\n    [\"University of Paris I\", \"ORG\", \"location\", \"Paris\", \"LOC\"],\n    [\"University of Amiens\", \"ORG\", \"located in\", \"Amiens\", \"LOC\"],\n    [\"University of Poitiers\", \"ORG\", \"location\", \"Poitiers\", \"LOC\"],\n    [\"University of Toulouse\", \"ORG\", \"location\", \"Toulouse\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 5,
+  "recall": 0.5,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Paul Ardenne\", \"PER\", \"date of birth\", \"4 October 1956\", \"TIME\"],\n    [\"Paul Ardenne\", \"PER\", \"educated at\", \"University of Poitiers\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"educated at\", \"University of Toulouse\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"educated at\", \"University of Paris I\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"field of work\", \"contemporary art\", \"MISC\"],\n    [\"University of Amiens\", \"ORG\", \"employer\", \"Paul Ardenne\", \"PER\"],\n    [\"Paul Ardenne\", \"PER\", \"position held\", \"Professor of history\", \"MISC\"],\n    [\"Ami Barak\", \"PER\", \"field of work\", \"contemporary art\", \"MISC\"],\n    [\"Catherine Millet\", \"PER\", \"position held\", \"founder/director of Art Press\", \"MISC\"],\n    [\"Jos\u00e9 Alvarez\", \"PER\", \"position held\", \"director of the publishing label Regard\", \"MISC\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Ami Barak\", \"PER\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Catherine Millet\", \"PER\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Jos\u00e9 Alvarez\", \"PER\"],\n    [\"Charente\", \"LOC\", \"located in the administrative territorial entity\", \"France\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 20,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Paul Ardenne\", \"PER\", \"place of birth\", \"Charente\", \"LOC\"],\n    [\"Paul Ardenne\", \"PER\", \"educated at\", \"University of Poitiers\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"educated at\", \"University of Toulouse\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"educated at\", \"University of Paris I\", \"ORG\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Ami Barak\", \"PER\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Catherine Millet\", \"PER\"],\n    [\"Paul Ardenne\", \"PER\", \"influenced by\", \"Jos\u00e9 Alvarez\", \"PER\"],\n    [\"Ami Barak\", \"PER\", \"occupation\", \"curator\", \"MISC\"],\n    [\"Catherine Millet\", \"PER\", \"occupation\", \"founder/director\", \"MISC\"],\n    [\"Jos\u00e9 Alvarez\", \"PER\", \"occupation\", \"director\", \"MISC\"],\n    [\"University of Amiens\", \"ORG\", \"employer\", \"Paul Ardenne\", \"PER\"],\n    [\"Art Press\", \"ORG\", \"founded by\", \"Catherine Millet\", \"PER\"],\n    [\"Regard\", \"ORG\", \"director\", \"Jos\u00e9 Alvarez\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 17,
+  "FN": 5,
+  "recall": 0.5833333333333334,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_437",
+ "base_raw": "[\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"native to\", \"eastern United States\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"contains\", \"berberine\", \"MISC\"],\n    [\"berberine\", \"MISC\", \"used for\", \"dyeing\", \"MISC\"],\n    [\"berberine\", \"MISC\", \"used for\", \"medicine\", \"MISC\"],\n    [\"Xanthorhiza\", \"MISC\", \"genus name\", \"yellow roots\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"grows in\", \"sandy soil\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"found in\", \"edges of streams\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"propagates\", \"underground runners\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"reproduces\", \"seeds\", \"MISC\"],\n    [\"E.H. Wilson\", \"PER\", \"regarded\", \"Xanthorhiza simplicissima\", \"MISC\"],\n    [\"E.H. Wilson\", \"PER\", \"described\", \"use in Arnold Arboretum\", \"MISC\"],\n    [\"E.A. Bowles\", \"PER\", \"championed\", \"Xanthorhiza simplicissima\", \"MISC\"],\n    [\"Myddelton House\", \"LOC\", \"location of\", \"E.A. Bowles' garden\", \"MISC\"],\n    [\"Savill Garden\", \"LOC\", \"cultivates\", \"Xanthorhiza simplicissima\", \"MISC\"],\n    [\"Westonbirt Arboretum\", \"LOC\", \"cultivates\", \"Xanthorhiza simplicissima\", \"MISC\"],\n    [\"Arnold Arboretum\", \"LOC\", \"location of\", \"Xanthorhiza simplicissima cultivation\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"considered endangered\", \"Florida\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"used by\", \"Native Americans\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"has part\", \"yellow roots\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 19,
+  "FN": 15,
+  "recall": 0.0,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"native to\", \"eastern United States\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"contains\", \"berberine\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"location of formation\", \"edges of streams\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"located in or next to body of water\", \"streams\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"part of\", \"Ranunculaceae\", \"MISC\"],\n    [\"Clematis\", \"MISC\", \"part of\", \"Ranunculaceae\", \"MISC\"],\n    [\"E.H. Wilson\", \"PER\", \"member of\", \"distinguished plantsmen\", \"MISC\"],\n    [\"E.A. Bowles\", \"PER\", \"member of\", \"distinguished plantsmen\", \"MISC\"],\n    [\"Myddelton House\", \"LOC\", \"located in\", \"Enfield, Middlesex\", \"LOC\"],\n    [\"Savill Garden\", \"LOC\", \"located in\", \"Windsor, Berkshire\", \"LOC\"],\n    [\"Westonbirt Arboretum\", \"LOC\", \"located in\", \"Tetbury, Gloucestershire\", \"LOC\"],\n    [\"Arnold Arboretum\", \"LOC\", \"located in\", \"Harvard University, Massachusetts\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"country of origin\", \"United States\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"located in\", \"Maine\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"located in\", \"Florida\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"status\", \"endangered species\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 30,
+  "FN": 14,
+  "recall": 0.2631578947368421,
+  "n_extracted": 35,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"native to\", \"eastern United States\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"contains\", \"berberine\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"genus name\", \"Xanthorhiza\", \"MISC\"],\n    [\"Xanthorhiza\", \"MISC\", \"family\", \"Ranunculaceae\", \"MISC\"],\n    [\"Clematis\", \"MISC\", \"family\", \"Ranunculaceae\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"location of formation\", \"edges of streams\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"soil\", \"sandy soil\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"sunlight\", \"dappled sunlight\", \"MISC\"],\n    [\"E.H. Wilson\", \"PER\", \"employer\", \"Harvard University\", \"ORG\"],\n    [\"E.H. Wilson\", \"PER\", \"location\", \"Massachusetts\", \"LOC\"],\n    [\"E.A. Bowles\", \"PER\", \"location\", \"Myddelton House\", \"LOC\"],\n    [\"E.A. Bowles\", \"PER\", \"location\", \"Enfield\", \"LOC\"],\n    [\"Savill Garden\", \"ORG\", \"location\", \"Windsor\", \"LOC\"],\n    [\"Savill Garden\", \"ORG\", \"location\", \"Berkshire\", \"LOC\"],\n    [\"Westonbirt Arboretum\", \"ORG\", \"location\", \"Tetbury\", \"LOC\"],\n    [\"Westonbirt Arboretum\", \"ORG\", \"location\", \"Gloucestershire\", \"LOC\"],\n    [\"Arnold Arboretum\", \"ORG\", \"location\", \"Harvard University\", \"ORG\"],\n    [\"Arnold Arboretum\", \"ORG\", \"location\", \"Massachusetts\", \"LOC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"status\", \"endangered species\", \"MISC\"],\n    [\"Xanthorhiza simplicissima\", \"MISC\", \"location\", \"Florida\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 36,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 37,
+  "judge_parse_ok": true
+ }
+}

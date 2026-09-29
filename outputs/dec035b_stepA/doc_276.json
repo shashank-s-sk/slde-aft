@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_276",
+ "base_raw": "[\n    [\"Jak II\", \"MISC\", \"developer\", \"Naughty Dog\", \"ORG\"],\n    [\"Jak II\", \"MISC\", \"publisher\", \"Sony Computer Entertainment\", \"ORG\"],\n    [\"Jak II\", \"MISC\", \"platform\", \"PlayStation 2\", \"MISC\"],\n    [\"Jak and Daxter series\", \"MISC\", \"instance of\", \"video game series\", \"MISC\"],\n    [\"Jak II\", \"MISC\", \"part of\", \"Jak and Daxter series\", \"MISC\"],\n    [\"Jak 3\", \"MISC\", \"follows\", \"Jak II\", \"MISC\"],\n    [\"The Precursor Legacy\", \"MISC\", \"preceded by\", \"Jak II\", \"MISC\"],\n    [\"Jak\", \"PER\", \"player character\", \"Jak II\", \"MISC\"],\n    [\"Daxter\", \"PER\", \"player character\", \"Jak II\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 5,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Jak II\", \"MISC\", \"developer\", \"Naughty Dog\", \"ORG\"],\n    [\"Jak II\", \"MISC\", \"publisher\", \"Sony Computer Entertainment\", \"ORG\"],\n    [\"Jak II\", \"MISC\", \"platform\", \"PlayStation 2\", \"MISC\"],\n    [\"Jak and Daxter series\", \"MISC\", \"part of\", \"Jak II\", \"MISC\"],\n    [\"Jak 3\", \"MISC\", \"follows\", \"Jak II\", \"MISC\"],\n    [\"The Precursor Legacy\", \"MISC\", \"preceded by\", \"Jak II\", \"MISC\"],\n    [\"Jak\", \"PER\", \"player character\", \"Jak II\", \"MISC\"],\n    [\"Daxter\", \"PER\", \"player character\", \"Jak II\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 10,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Jak II\", \"MISC\", \"developer\", \"Naughty Dog\", \"ORG\"],\n    [\"Jak II\", \"MISC\", \"publisher\", \"Sony Computer Entertainment\", \"ORG\"],\n    [\"Jak II\", \"MISC\", \"platform\", \"PlayStation 2\", \"MISC\"],\n    [\"Jak and Daxter series\", \"MISC\", \"part of\", \"Jak II\", \"MISC\"],\n    [\"Jak 3\", \"MISC\", \"follows\", \"Jak II\", \"MISC\"],\n    [\"The Precursor Legacy\", \"MISC\", \"preceded by\", \"Jak II\", \"MISC\"],\n    [\"Jak\", \"PER\", \"player character\", \"Jak II\", \"MISC\"],\n    [\"Daxter\", \"PER\", \"player character\", \"Jak II\", \"MISC\"]\n]"
+}

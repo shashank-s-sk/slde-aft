@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_327",
+ "base_raw": "[\n    [\"Stilleite\", \"MISC\", \"located in or next to body of water\", \"None\", \"MISC\"],\n    [\"Hans Stille\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Hans Stille\", \"PER\", \"date of birth\", \"1876\", \"TIME\"],\n    [\"Hans Stille\", \"PER\", \"date of death\", \"1966\", \"TIME\"],\n    [\"Stilleite\", \"MISC\", \"discoverer\", \"Hans Stille\", \"PER\"],\n    [\"Stilleite\", \"MISC\", \"location of formation\", \"Katanga Province\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"location of formation\", \"Zaire\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"location of formation\", \"Santa Brigida mine\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"location of formation\", \"La Rioja Province\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"location of formation\", \"Argentina\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"location of formation\", \"Tilkerode\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"location of formation\", \"Harz Mountains\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"location of formation\", \"Germany\", \"LOC\"],\n    [\"Pyrite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Linnaeite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Clausthalite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Selenian vaesite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Molybdenite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Dolomite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Tiemannite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Eucairite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Umangite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Klockmannite\", \"MISC\", \"located with\", \"Stilleite\", \"MISC\"],\n    [\"Shinkolobwe\", \"LOC\", \"contains administrative territorial entity\", \"Congo\", \"LOC\"],\n    [\"Santa Brigida mine\", \"LOC\", \"located in the administrative territorial entity\", \"La Rioja Province\", \"LOC\"],\n    [\"Tilkerode\", \"LOC\", \"located in the administrative territorial entity\", \"Harz Mountains\", \"LOC\"],\n    [\"Harz Mountains\", \"LOC\", \"located in the administrative territorial entity\", \"Germany\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 22,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Stilleite\", \"MISC\", \"located in\", \"Katanga Province\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"located in\", \"La Rioja Province\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"located in\", \"Harz Mountains\", \"LOC\"],\n    [\"Hans Stille\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Hans Stille\", \"PER\", \"date of birth\", \"1876\", \"TIME\"],\n    [\"Hans Stille\", \"PER\", \"date of death\", \"1966\", \"TIME\"],\n    [\"Santa Brigida mine\", \"LOC\", \"located in\", \"La Rioja Province\", \"LOC\"],\n    [\"Tilkerode\", \"LOC\", \"located in\", \"Harz Mountains\", \"LOC\"],\n    [\"Shinkolobwe\", \"LOC\", \"located in\", \"Congo\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"discovered in\", \"1956\", \"TIME\"],\n    [\"Pyrite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Linnaeite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Clausthalite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Selenian vaesite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Molybdenite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Dolomite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Tiemannite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Eucairite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Umangite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"],\n    [\"Klockmannite\", \"MISC\", \"associated with\", \"Stilleite\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 12,
+  "FP": 38,
+  "FN": 5,
+  "recall": 0.7058823529411765,
+  "n_extracted": 44,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Hans Stille\", \"PER\", \"date of birth\", \"1876\", \"TIME\"],\n    [\"Hans Stille\", \"PER\", \"date of death\", \"1966\", \"TIME\"],\n    [\"Stilleite\", \"MISC\", \"located in or next to body of water\", \"None\", \"MISC\"],\n    [\"Shinkolobwe\", \"LOC\", \"located in the administrative territorial entity\", \"Congo\", \"LOC\"],\n    [\"Tilkerode\", \"LOC\", \"located in the administrative territorial entity\", \"Harz Mountains\", \"LOC\"],\n    [\"Harz Mountains\", \"LOC\", \"located in the administrative territorial entity\", \"Germany\", \"LOC\"],\n    [\"Santa Brigida mine\", \"LOC\", \"located in the administrative territorial entity\", \"La Rioja Province\", \"LOC\"],\n    [\"La Rioja Province\", \"LOC\", \"located in the administrative territorial entity\", \"Argentina\", \"LOC\"],\n    [\"Stilleite\", \"MISC\", \"discoverer\", \"Hans Stille\", \"PER\"],\n    [\"Stilleite\", \"MISC\", \"year of discovery\", \"1956\", \"TIME\"],\n    [\"Katanga Province\", \"LOC\", \"country\", \"Zaire\", \"LOC\"],\n    [\"Zaire\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Argentina\", \"LOC\", \"continent\", \"South America\", \"LOC\"],\n    [\"Germany\", \"LOC\", \"continent\", \"Europe\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 29,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 34,
+  "judge_parse_ok": true
+ }
+}

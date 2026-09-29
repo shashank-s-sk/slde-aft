@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_418",
+ "base_raw": "[\n    [\"Tokugawa Yoshinobu\", \"PER\", \"position held\", \"sh\u014dgun\", \"MISC\"],\n    [\"Emperor Meiji\", \"PER\", \"location of formation\", \"Imperial Court\", \"ORG\"],\n    [\"Ch\u014dsh\u016b\", \"LOC\", \"member of\", \"alliance of western samurai\", \"MISC\"],\n    [\"Satsuma\", \"LOC\", \"member of\", \"alliance of western samurai\", \"MISC\"],\n    [\"Tosa\", \"LOC\", \"member of\", \"alliance of western samurai\", \"MISC\"],\n    [\"Tokugawa house\", \"ORG\", \"founded by\", \"Tokugawa Yoshinobu\", \"PER\"],\n    [\"Ezo republic\", \"ORG\", \"founded by\", \"Tokugawa loyalists\", \"MISC\"],\n    [\"Saig\u014d Takamori\", \"PER\", \"position held\", \"leader of the imperial faction\", \"MISC\"],\n    [\"United Kingdom\", \"LOC\", \"country of origin\", \"Western influence\", \"MISC\"],\n    [\"France\", \"LOC\", \"country of origin\", \"Western influence\", \"MISC\"],\n    [\"Imperial Court\", \"ORG\", \"located in\", \"Kyoto\", \"LOC\"],\n    [\"Edo\", \"LOC\", \"location of\", \"surrender\", \"MISC\"],\n    [\"Hokkaid\u014d\", \"LOC\", \"location of\", \"Ezo republic\", \"ORG\"],\n    [\"Honsh\u016b\", \"LOC\", \"location of\", \"Tokugawa loyalists\", \"MISC\"],\n    [\"Battle of Hakodate\", \"MISC\", \"part of\", \"Boshin War\", \"MISC\"],\n    [\"Boshin War\", \"MISC\", \"location of\", \"Japan\", \"LOC\"],\n    [\"Japan\", \"LOC\", \"country of\", \"Meiji Restoration\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 17,
+  "FN": 20,
+  "recall": 0.0,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Tokugawa Yoshinobu\", \"PER\", \"position held\", \"sh\u014dgun\", \"MISC\"],\n    [\"Meiji\", \"PER\", \"title\", \"Emperor\", \"MISC\"],\n    [\"Ch\u014dsh\u016b\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Satsuma\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Tosa\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Edo\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Kyoto\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Honsh\u016b\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Hokkaid\u014d\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Ezo republic\", \"ORG\", \"located in\", \"Hokkaid\u014d\", \"LOC\"],\n    [\"Saig\u014d Takamori\", \"PER\", \"member of\", \"imperial faction\", \"ORG\"],\n    [\"United Kingdom\", \"LOC\", \"country of origin\", \"Western influence\", \"MISC\"],\n    [\"France\", \"LOC\", \"country of origin\", \"Western influence\", \"MISC\"],\n    [\"Japan\", \"LOC\", \"continent\", \"Asia\", \"LOC\"],\n    [\"Imperial Court\", \"ORG\", \"head of state\", \"Emperor Meiji\", \"PER\"],\n    [\"Tokugawa shogunate\", \"ORG\", \"head of government\", \"Tokugawa Yoshinobu\", \"PER\"],\n    [\"Boshin War\", \"MISC\", \"location\", \"Japan\", \"LOC\"],\n    [\"Boshin War\", \"MISC\", \"start time\", \"1868\", \"TIME\"],\n    [\"Boshin War\", \"MISC\", \"end time\", \"1869\", \"TIME\"],\n    [\"Meiji Restoration\", \"MISC\", \"date of birth\", \"1868\", \"TIME\"],\n    [\"Meiji Restoration\", \"MISC\", \"location\", \"Japan\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 27,
+  "FN": 18,
+  "recall": 0.3076923076923077,
+  "n_extracted": 35,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Tokugawa Yoshinobu\", \"PER\", \"position held\", \"sh\u014dgun\", \"MISC\"],\n    [\"Emperor Meiji\", \"PER\", \"location\", \"Kyoto\", \"LOC\"],\n    [\"Satsuma\", \"MISC\", \"location\", \"Japan\", \"LOC\"],\n    [\"Ch\u014dsh\u016b\", \"MISC\", \"location\", \"Japan\", \"LOC\"],\n    [\"Tosa\", \"MISC\", \"location\", \"Japan\", \"LOC\"],\n    [\"Edo\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Hokkaid\u014d\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Honsh\u016b\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"],\n    [\"Ezo republic\", \"MISC\", \"location\", \"Hokkaid\u014d\", \"LOC\"],\n    [\"Saig\u014d Takamori\", \"PER\", \"member of\", \"imperial faction\", \"MISC\"],\n    [\"United Kingdom\", \"LOC\", \"country\", \"Europe\", \"LOC\"],\n    [\"France\", \"LOC\", \"country\", \"Europe\", \"LOC\"],\n    [\"Japan\", \"LOC\", \"continent\", \"Asia\", \"LOC\"],\n    [\"Boshin War\", \"MISC\", \"location\", \"Japan\", \"LOC\"],\n    [\"Meiji Restoration\", \"MISC\", \"location\", \"Japan\", \"LOC\"],\n    [\"Imperial Court\", \"MISC\", \"location\", \"Kyoto\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 24,
+  "FN": 18,
+  "recall": 0.28,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ }
+}

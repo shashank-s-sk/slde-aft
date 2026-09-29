@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_461",
+ "base_raw": "[\n    [\"William III\", \"PER\", \"place of coronation\", \"England\", \"LOC\"],\n    [\"Mary II\", \"PER\", \"place of coronation\", \"England\", \"LOC\"],\n    [\"William III\", \"PER\", \"religion\", \"Protestant\", \"MISC\"],\n    [\"Mary II\", \"PER\", \"religion\", \"Protestant\", \"MISC\"],\n    [\"William III\", \"PER\", \"co-monarch\", \"Mary II\", \"PER\"],\n    [\"Mary II\", \"PER\", \"co-monarch\", \"William III\", \"PER\"],\n    [\"English Bill of Rights\", \"MISC\", \"year of penning\", \"1689\", \"TIME\"],\n    [\"Convention Parliament\", \"ORG\", \"summoned by\", \"William III\", \"PER\"],\n    [\"William III\", \"PER\", \"invaded\", \"England\", \"LOC\"],\n    [\"Protestant liberty\", \"MISC\", \"reestablished by\", \"William III and Mary II\", \"PER\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 11,
+  "recall": 0.15384615384615385,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"William III\", \"PER\", \"place of birth\", \"England\", \"LOC\"],\n    [\"Mary II\", \"PER\", \"place of birth\", \"England\", \"LOC\"],\n    [\"William III\", \"PER\", \"spouse\", \"Mary II\", \"PER\"],\n    [\"Mary II\", \"PER\", \"spouse\", \"William III\", \"PER\"],\n    [\"William III\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"Mary II\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"England\", \"LOC\", \"monarch\", \"William III\", \"PER\"],\n    [\"England\", \"LOC\", \"monarch\", \"Mary II\", \"PER\"],\n    [\"William III\", \"PER\", \"religion\", \"Protestant\", \"MISC\"],\n    [\"Mary II\", \"PER\", \"religion\", \"Protestant\", \"MISC\"],\n    [\"English Bill of Rights\", \"MISC\", \"author\", \"William III\", \"PER\"],\n    [\"English Bill of Rights\", \"MISC\", \"author\", \"Mary II\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.4,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.4,
+  "n_extracted": 20,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"William III\", \"PER\", \"place of birth\", \"England\", \"LOC\"],\n    [\"Mary II\", \"PER\", \"place of birth\", \"England\", \"LOC\"],\n    [\"William III\", \"PER\", \"spouse\", \"Mary II\", \"PER\"],\n    [\"Mary II\", \"PER\", \"spouse\", \"William III\", \"PER\"],\n    [\"William III\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"Mary II\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"England\", \"LOC\", \"monarch\", \"William III\", \"PER\"],\n    [\"England\", \"LOC\", \"monarch\", \"Mary II\", \"PER\"],\n    [\"William III\", \"PER\", \"religion\", \"Protestant\", \"MISC\"],\n    [\"Mary II\", \"PER\", \"religion\", \"Protestant\", \"MISC\"],\n    [\"English Bill of Rights\", \"MISC\", \"author\", \"William III\", \"PER\"],\n    [\"English Bill of Rights\", \"MISC\", \"author\", \"Mary II\", \"PER\"]\n]"
+}

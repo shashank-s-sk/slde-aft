@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_290",
+ "base_raw": "[\n    [\"David J. Zuckerman\", \"PER\", \"place of birth\", \"Danville, California\", \"LOC\"],\n    [\"David J. Zuckerman\", \"PER\", \"educated at\", \"University of California, Los Angeles\", \"ORG\"],\n    [\"David J. Zuckerman\", \"PER\", \"employer\", \"Fox\", \"ORG\"],\n    [\"David J. Zuckerman\", \"PER\", \"collaborator\", \"Seth MacFarlane\", \"PER\"],\n    [\"Family Guy\", \"MISC\", \"creator\", \"David J. Zuckerman\", \"PER\"],\n    [\"American Dad!\", \"MISC\", \"developer\", \"Seth MacFarlane\", \"PER\"],\n    [\"Wilfred\", \"MISC\", \"adapted by\", \"David J. Zuckerman\", \"PER\"],\n    [\"The Fresh Prince of Bel-Air\", \"MISC\", \"writer\", \"David J. Zuckerman\", \"PER\"],\n    [\"King of the Hill\", \"MISC\", \"producer\", \"David J. Zuckerman\", \"PER\"],\n    [\"David J. Zuckerman\", \"PER\", \"date of birth\", \"August 28, 1962\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 14,
+  "recall": 0.125,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Organizations",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"David J. Zuckerman\", \"PER\", \"date of birth\", \"August 28, 1962\", \"TIME\"],\n    [\"David J. Zuckerman\", \"PER\", \"place of birth\", \"Danville, California\", \"LOC\"],\n    [\"David J. Zuckerman\", \"PER\", \"educated at\", \"University of California, Los Angeles\", \"ORG\"],\n    [\"Family Guy\", \"MISC\", \"creator\", \"David J. Zuckerman\", \"PER\"],\n    [\"Wilfred\", \"MISC\", \"creator\", \"David J. Zuckerman\", \"PER\"],\n    [\"The Fresh Prince of Bel-Air\", \"MISC\", \"writer\", \"David J. Zuckerman\", \"PER\"],\n    [\"King of the Hill\", \"MISC\", \"writer and producer\", \"David J. Zuckerman\", \"PER\"],\n    [\"American Dad!\", \"MISC\", \"worker\", \"David J. Zuckerman\", \"PER\"],\n    [\"Seth MacFarlane\", \"PER\", \"collaborator\", \"David J. Zuckerman\", \"PER\"],\n    [\"David J. Zuckerman\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 14,
+  "recall": 0.2222222222222222,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Higher Education Institutions within Organizations"
+ ],
+ "kb_dedup_raw": "[\n    [\"David J. Zuckerman\", \"PER\", \"date of birth\", \"August 28, 1962\", \"TIME\"],\n    [\"David J. Zuckerman\", \"PER\", \"place of birth\", \"Danville, California\", \"LOC\"],\n    [\"David J. Zuckerman\", \"PER\", \"educated at\", \"University of California, Los Angeles\", \"ORG\"],\n    [\"The Fresh Prince of Bel-Air\", \"MISC\", \"writer\", \"David J. Zuckerman\", \"PER\"],\n    [\"King of the Hill\", \"MISC\", \"writer and producer\", \"David J. Zuckerman\", \"PER\"],\n    [\"Family Guy\", \"MISC\", \"showrunner and executive producer\", \"David J. Zuckerman\", \"PER\"],\n    [\"Wilfred\", \"MISC\", \"creator\", \"David J. Zuckerman\", \"PER\"],\n    [\"American Dad!\", \"MISC\", \"worker\", \"David J. Zuckerman\", \"PER\"],\n    [\"Seth MacFarlane\", \"PER\", \"collaborator\", \"David J. Zuckerman\", \"PER\"],\n    [\"David J. Zuckerman\", \"PER\", \"employer\", \"Fox\", \"ORG\"],\n    [\"David J. Zuckerman\", \"PER\", \"employer\", \"FX\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 14,
+  "recall": 0.17647058823529413,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

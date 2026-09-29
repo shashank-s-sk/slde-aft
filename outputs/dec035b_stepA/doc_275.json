@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_275",
+ "base_raw": "[\n    [\"Swami Vivekananda\", \"PER\", \"disciple of\", \"Ramakrishna Paramahamsa\", \"PER\"],\n    [\"Swami Paramananda\", \"PER\", \"disciple of\", \"Swami Vivekananda\", \"PER\"],\n    [\"Swami Paramananda\", \"PER\", \"founded\", \"Vedanta centres\", \"ORG\"],\n    [\"Vedanta centres\", \"ORG\", \"located in\", \"Los Angeles\", \"LOC\"],\n    [\"Vedanta centres\", \"ORG\", \"located in\", \"Boston\", \"LOC\"],\n    [\"Los Angeles Hindu Society\", \"ORG\", \"based at\", \"Pasadena Hindu Temple\", \"LOC\"],\n    [\"Pasadena Hindu Temple\", \"LOC\", \"located in\", \"California\", \"LOC\"],\n    [\"Hindu community\", \"MISC\", \"located in\", \"California\", \"LOC\"],\n    [\"Swami Vivekananda\", \"PER\", \"date of birth\", \"1863\", \"TIME\"],\n    [\"Swami Vivekananda\", \"PER\", \"date of death\", \"1902\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 15,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Locations in California",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Swami Vivekananda\", \"PER\", \"date of birth\", \"1863\", \"TIME\"],\n    [\"Swami Vivekananda\", \"PER\", \"date of death\", \"1902\", \"TIME\"],\n    [\"Swami Paramananda\", \"PER\", \"disciple of\", \"Swami Vivekananda\", \"PER\"],\n    [\"Vedanta centres\", \"ORG\", \"founded by\", \"Swami Paramananda\", \"PER\"],\n    [\"Los Angeles Hindu Society\", \"ORG\", \"located in\", \"Pasadena Hindu Temple\", \"LOC\"],\n    [\"Pasadena Hindu Temple\", \"LOC\", \"location\", \"California\", \"LOC\"],\n    [\"Hindu community\", \"MISC\", \"located in\", \"California\", \"LOC\"],\n    [\"Swami Vivekananda\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"Ramakrishna Paramahamsa\", \"PER\", \"disciple\", \"Swami Vivekananda\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 15,
+  "FN": 15,
+  "recall": 0.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Swami Vivekananda\", \"PER\", \"date of birth\", \"1863\", \"TIME\"],\n    [\"Swami Vivekananda\", \"PER\", \"date of death\", \"1902\", \"TIME\"],\n    [\"Swami Paramananda\", \"PER\", \"disciple of\", \"Swami Vivekananda\", \"PER\"],\n    [\"Vedanta centres\", \"ORG\", \"founded by\", \"Swami Paramananda\", \"PER\"],\n    [\"Los Angeles Hindu Society\", \"ORG\", \"located in\", \"Pasadena Hindu Temple\", \"LOC\"],\n    [\"Pasadena Hindu Temple\", \"LOC\", \"located in\", \"California\", \"LOC\"],\n    [\"Hindu community\", \"MISC\", \"located in\", \"California\", \"LOC\"],\n    [\"Swami Vivekananda\", \"PER\", \"disciple of\", \"Ramakrishna Paramahamsa\", \"PER\"],\n    [\"Ramakrishna Paramahamsa\", \"PER\", \"has disciple\", \"Swami Vivekananda\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 15,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_108",
+ "base_raw": "[\n    [\"Volksmarinedivision\", \"ORG\", \"involved in\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"German army\", \"ORG\", \"involved in\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Berlin Schloss\", \"LOC\", \"location of\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Friedrich Ebert\", \"PER\", \"head of government\", \"Germany\", \"LOC\"],\n    [\"Spartacist Uprising\", \"MISC\", \"followed by\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Freikorps\", \"ORG\", \"supported by\", \"German government\", \"ORG\"],\n    [\"German Revolution of 1918-19\", \"MISC\", \"part of\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Social Democratic government\", \"ORG\", \"led by\", \"Friedrich Ebert\", \"PER\"],\n    [\"Berlin\", \"LOC\", \"location of\", \"Berlin Schloss\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 22,
+  "recall": 0.043478260869565216,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Volksmarinedivision\", \"ORG\", \"involved in\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"German army\", \"ORG\", \"involved in\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Berlin Schloss\", \"LOC\", \"location of\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Friedrich Ebert\", \"PER\", \"head of government\", \"Germany\", \"LOC\"],\n    [\"Spartacist Uprising\", \"MISC\", \"followed by\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Freikorps\", \"ORG\", \"supported by\", \"German government\", \"ORG\"],\n    [\"German Revolution of 1918-19\", \"MISC\", \"part of\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Social Democratic government\", \"ORG\", \"led by\", \"Friedrich Ebert\", \"PER\"],\n    [\"Berlin\", \"LOC\", \"location of\", \"Berlin Schloss\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 23,
+  "recall": 0.041666666666666664,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Volksmarinedivision\", \"ORG\", \"involved in\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"German army\", \"ORG\", \"involved in\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Berlin Schloss\", \"LOC\", \"location of\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Friedrich Ebert\", \"PER\", \"head of government\", \"Germany\", \"LOC\"],\n    [\"Spartacist Uprising\", \"MISC\", \"followed by\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Freikorps\", \"ORG\", \"supported by\", \"German government\", \"ORG\"],\n    [\"German Revolution of 1918-19\", \"MISC\", \"part of\", \"Skirmish of the Berlin Schloss\", \"MISC\"],\n    [\"Social Democratic government\", \"ORG\", \"led by\", \"Friedrich Ebert\", \"PER\"],\n    [\"Berlin\", \"LOC\", \"location of\", \"Berlin Schloss\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 21,
+  "recall": 0.045454545454545456,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ }
+}

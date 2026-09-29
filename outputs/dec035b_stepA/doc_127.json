@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_127",
+ "base_raw": "[\n    [\"Bare Island\", \"LOC\", \"located in\", \"City of Randwick\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"part of\", \"New South Wales\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"near\", \"Sydney central business district\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"within\", \"Botany Bay\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"connected to\", \"La Perouse\", \"LOC\"],\n    [\"Sir Peter Scratchley\", \"PER\", \"designed\", \"Bare Island\", \"LOC\"],\n    [\"Gustave Morell\", \"PER\", \"designed\", \"Bare Island\", \"LOC\"],\n    [\"James Barnet\", \"PER\", \"designed\", \"Bare Island\", \"LOC\"],\n    [\"John McLeod\", \"PER\", \"built\", \"Bare Island\", \"LOC\"],\n    [\"NSW Department of Public Works\", \"ORG\", \"commissioned\", \"Bare Island\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"added to\", \"New South Wales State Heritage Register\", \"MISC\"],\n    [\"Bare Island\", \"LOC\", \"significant as\", \"example of late nineteenth century coastal defence technology\", \"MISC\"],\n    [\"Bare Island\", \"LOC\", \"visited by\", \"guided tour\", \"MISC\"],\n    [\"waters around Bare Island\", \"LOC\", \"popular with\", \"scuba divers\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 19,
+  "recall": 0.20833333333333334,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Bare Island\", \"LOC\", \"located in\", \"City of Randwick\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"located in\", \"New South Wales\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"part of\", \"Botany Bay\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"connected to\", \"La Perouse\", \"LOC\"],\n    [\"Sir Peter Scratchley\", \"PER\", \"designer of\", \"Bare Island\", \"LOC\"],\n    [\"Gustave Morell\", \"PER\", \"designer of\", \"Bare Island\", \"LOC\"],\n    [\"James Barnet\", \"PER\", \"designer of\", \"Bare Island\", \"LOC\"],\n    [\"John McLeod\", \"PER\", \"builder of\", \"Bare Island\", \"LOC\"],\n    [\"NSW Department of Public Works\", \"ORG\", \"client of\", \"John McLeod\", \"PER\"],\n    [\"Bare Island\", \"LOC\", \"added to\", \"New South Wales State Heritage Register\", \"MISC\"],\n    [\"Bare Island\", \"LOC\", \"date of addition\", \"2 April 1999\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 19,
+  "recall": 0.20833333333333334,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Bare Island\", \"LOC\", \"located in\", \"City of Randwick\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"located in\", \"New South Wales\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"part of\", \"Australia\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"located in\", \"Botany Bay\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"near\", \"Sydney central business district\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"connected to\", \"La Perouse\", \"LOC\"],\n    [\"Sir Peter Scratchley\", \"PER\", \"designed\", \"Bare Island\", \"LOC\"],\n    [\"Gustave Morell\", \"PER\", \"designed\", \"Bare Island\", \"LOC\"],\n    [\"James Barnet\", \"PER\", \"designed\", \"Bare Island\", \"LOC\"],\n    [\"John McLeod\", \"PER\", \"built\", \"Bare Island\", \"LOC\"],\n    [\"NSW Department of Public Works\", \"ORG\", \"commissioned\", \"Bare Island\", \"LOC\"],\n    [\"Bare Island\", \"LOC\", \"added to\", \"New South Wales State Heritage Register\", \"MISC\"],\n    [\"Bare Island\", \"LOC\", \"date of addition\", \"2 April 1999\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 16,
+  "recall": 0.15789473684210525,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

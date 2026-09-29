@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_221",
+ "base_raw": "[\n    [\"Matt Birkbeck\", \"PER\", \"employer\", \"Harrison Scott Publications\", \"ORG\"],\n    [\"Matt Birkbeck\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"author\", \"The Lost Wife of Robert Durst\", \"MISC\"],\n    [\"The Lost Wife of Robert Durst\", \"MISC\", \"based on\", \"Matt Birkbeck's book\", \"MISC\"],\n    [\"Robert Durst\", \"PER\", \"subject of book\", \"The Lost Wife of Robert Durst\", \"MISC\"],\n    [\"Byron Allen\", \"PER\", \"producer\", \"Sammy Davis, Jr. biography\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"author\", \"Sammy Davis, Jr. biography\", \"MISC\"],\n    [\"The Morning Call\", \"ORG\", \"employer\", \"Matt Birkbeck\", \"PER\"],\n    [\"Matt Birkbeck\", \"PER\", \"location of work\", \"Washington, D.C.\", \"LOC\"],\n    [\"Harrison Scott Publications\", \"ORG\", \"location of headquarters\", \"None\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"member of\", \"None\", \"MISC\"],\n    [\"The Lifetime Network\", \"ORG\", \"producer\", \"The Lost Wife of Robert Durst\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"work location\", \"Wall Street\", \"LOC\"],\n    [\"Robert Durst\", \"PER\", \"accused of\", \"several murders\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 2,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Matt Birkbeck\", \"PER\", \"employer\", \"Harrison Scott Publications\", \"ORG\"],\n    [\"Matt Birkbeck\", \"PER\", \"author\", \"five books\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Robert Durst\", \"PER\", \"place of residence\", \"New York\", \"LOC\"],\n    [\"The Lost Wife of Robert Durst\", \"MISC\", \"producer\", \"Lifetime Network\", \"ORG\"],\n    [\"Sammy Davis, Jr.\", \"PER\", \"biographer\", \"Matt Birkbeck\", \"PER\"],\n    [\"Byron Allen\", \"PER\", \"producer\", \"Matt Birkbeck's biography on Sammy Davis, Jr.\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"The Morning Call\", \"ORG\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Harrison Scott Publications\", \"ORG\", \"location\", \"Washington, D.C.\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 21,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Matt Birkbeck\", \"PER\", \"employer\", \"Harrison Scott Publications\", \"ORG\"],\n    [\"Matt Birkbeck\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"author\", \"None\", \"MISC\"],\n    [\"The Morning Call\", \"ORG\", \"employer\", \"Matt Birkbeck\", \"PER\"],\n    [\"Harrison Scott Publications\", \"ORG\", \"located in\", \"None\", \"MISC\"],\n    [\"Robert Durst\", \"PER\", \"subject of book\", \"Matt Birkbeck\", \"PER\"],\n    [\"Matt Birkbeck\", \"PER\", \"author of book on\", \"Robert Durst\", \"PER\"],\n    [\"The Lost Wife of Robert Durst\", \"MISC\", \"based on book by\", \"Matt Birkbeck\", \"PER\"],\n    [\"Byron Allen\", \"PER\", \"producer of film on\", \"Sammy Davis, Jr.\", \"PER\"],\n    [\"Sammy Davis, Jr.\", \"PER\", \"subject of biography\", \"Matt Birkbeck\", \"PER\"],\n    [\"Matt Birkbeck\", \"PER\", \"author of biography on\", \"Sammy Davis, Jr.\", \"PER\"],\n    [\"The Lifetime Network\", \"ORG\", \"producer of TV movie\", \"The Lost Wife of Robert Durst\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"worked at\", \"The Morning Call\", \"ORG\"],\n    [\"Matt Birkbeck\", \"PER\", \"covers\", \"Wall Street\", \"MISC\"],\n    [\"Matt Birkbeck\", \"PER\", \"covers\", \"regulatory issues in Washington, D.C.\", \"MISC\"],\n    [\"Robert Durst\", \"PER\", \"accused of\", \"murders\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 27,
+  "FN": 2,
+  "recall": 0.0,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ }
+}

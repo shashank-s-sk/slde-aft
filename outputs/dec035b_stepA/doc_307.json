@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_307",
+ "base_raw": "[\n    [\"ToothPick.com\", \"ORG\", \"founded by\", \"Sandeep Senghera\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"founded by\", \"Jozef Wallis\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"partner\", \"Henry Schein\", \"ORG\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Passion Capital\", \"ORG\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Pradeep Menon\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Paul Edwards\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Satish Jayakumar\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Michael Stephanblome\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"acquired by\", \"WhatClinic\", \"ORG\"],\n    [\"Sandeep Senghera\", \"PER\", \"co-founded\", \"ToothPick.com\", \"ORG\"],\n    [\"Jozef Wallis\", \"PER\", \"co-founded\", \"ToothPick.com\", \"ORG\"],\n    [\"Henry Schein\", \"ORG\", \"partner of\", \"ToothPick.com\", \"ORG\"],\n    [\"Passion Capital\", \"ORG\", \"investor in\", \"ToothPick.com\", \"ORG\"],\n    [\"Pradeep Menon\", \"PER\", \"investor in\", \"ToothPick.com\", \"ORG\"],\n    [\"Paul Edwards\", \"PER\", \"investor in\", \"ToothPick.com\", \"ORG\"],\n    [\"Satish Jayakumar\", \"PER\", \"investor in\", \"ToothPick.com\", \"ORG\"],\n    [\"Michael Stephanblome\", \"PER\", \"investor in\", \"ToothPick.com\", \"ORG\"],\n    [\"WhatClinic\", \"ORG\", \"acquired\", \"ToothPick.com\", \"ORG\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 18,
+  "FN": 6,
+  "recall": 0.0,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"ToothPick.com\", \"ORG\", \"founded by\", \"Sandeep Senghera\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"founded by\", \"Jozef Wallis\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"partner\", \"Henry Schein\", \"ORG\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Passion Capital\", \"ORG\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Pradeep Menon\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Paul Edwards\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Satish Jayakumar\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Michael Stephanblome\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"acquired by\", \"WhatClinic\", \"ORG\"],\n    [\"ToothPick.com\", \"ORG\", \"launch date\", \"November 2012\", \"TIME\"],\n    [\"ToothPick.com\", \"ORG\", \"launch location\", \"London\", \"LOC\"],\n    [\"ToothPick.com\", \"ORG\", \"country of operation\", \"UK\", \"LOC\"],\n    [\"Sandeep Senghera\", \"PER\", \"occupation\", \"dentist\", \"MISC\"],\n    [\"Jozef Wallis\", \"PER\", \"occupation\", \"technology entrepreneur\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 23,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 23,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 23,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"ToothPick.com\", \"ORG\", \"founded by\", \"Sandeep Senghera\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"founded by\", \"Jozef Wallis\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"partner\", \"Henry Schein\", \"ORG\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Passion Capital\", \"ORG\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Pradeep Menon\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Paul Edwards\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Satish Jayakumar\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"backed by\", \"Michael Stephanblome\", \"PER\"],\n    [\"ToothPick.com\", \"ORG\", \"acquired by\", \"WhatClinic\", \"ORG\"],\n    [\"ToothPick.com\", \"ORG\", \"launch date\", \"November 2012\", \"TIME\"],\n    [\"ToothPick.com\", \"ORG\", \"launch location\", \"London\", \"LOC\"],\n    [\"ToothPick.com\", \"ORG\", \"country of operation\", \"UK\", \"LOC\"],\n    [\"Sandeep Senghera\", \"PER\", \"occupation\", \"dentist\", \"MISC\"],\n    [\"Jozef Wallis\", \"PER\", \"occupation\", \"technology entrepreneur\", \"MISC\"]\n]"
+}

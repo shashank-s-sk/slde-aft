@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_292",
+ "base_raw": "[\n    [\"Christian Kramer\", \"PER\", \"place of birth\", \"Hannover\", \"LOC\"],\n    [\"Christian Kramer\", \"PER\", \"pupil of\", \"Peter Winter\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"employer\", \"George IV\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"employer\", \"William IV\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"date of death\", \"1834\", \"TIME\"],\n    [\"Christian Kramer\", \"PER\", \"position held\", \"Master of the King's Musick\", \"MISC\"],\n    [\"George IV\", \"PER\", \"personal orchestra leader\", \"Christian Kramer\", \"PER\"],\n    [\"Peter Winter\", \"PER\", \"student\", \"Christian Kramer\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"educated by\", \"Peter Winter\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"country of citizenship\", \"Britain\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Christian Kramer\", \"PER\", \"place of birth\", \"Hannover\", \"LOC\"],\n    [\"Christian Kramer\", \"PER\", \"died\", \"1834\", \"TIME\"],\n    [\"Christian Kramer\", \"PER\", \"pupil of\", \"Peter Winter\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"served under\", \"George IV\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"served under\", \"William IV\", \"PER\"],\n    [\"George IV\", \"PER\", \"had court musician\", \"Christian Kramer\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"led orchestra of\", \"George IV\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"composer of\", \"great ability\", \"MISC\"],\n    [\"Peter Winter\", \"PER\", \"taught\", \"Christian Kramer\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 15,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 15,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 17,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Christian Kramer\", \"PER\", \"place of birth\", \"Hannover\", \"LOC\"],\n    [\"Christian Kramer\", \"PER\", \"died\", \"1834\", \"TIME\"],\n    [\"Christian Kramer\", \"PER\", \"pupil of\", \"Peter Winter\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"served under\", \"George IV\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"served under\", \"William IV\", \"PER\"],\n    [\"George IV\", \"PER\", \"had court musician\", \"Christian Kramer\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"led orchestra of\", \"George IV\", \"PER\"],\n    [\"Christian Kramer\", \"PER\", \"composer of\", \"great ability\", \"MISC\"],\n    [\"Peter Winter\", \"PER\", \"taught\", \"Christian Kramer\", \"PER\"]\n]"
+}

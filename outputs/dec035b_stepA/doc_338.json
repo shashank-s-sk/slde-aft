@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_338",
+ "base_raw": "[\n    [\"IUPUI Jaguars\", \"ORG\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"The Jungle\", \"LOC\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"Indiana Farmers Coliseum\", \"LOC\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"Jason Gardner\", \"PER\", \"position held\", \"head coach\", \"MISC\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"league\", \"Horizon League\", \"ORG\"],\n    [\"Valparaiso\", \"ORG\", \"league\", \"Horizon League\", \"ORG\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"replaces\", \"Valparaiso\", \"ORG\"],\n    [\"Indiana Farmers Coliseum\", \"LOC\", \"capacity\", \"6,800\", \"NUM\"],\n    [\"The Jungle\", \"LOC\", \"capacity\", \"1,215\", \"NUM\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 17,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"IUPUI Jaguars\", \"ORG\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"The Jungle\", \"LOC\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"Indiana Farmers Coliseum\", \"LOC\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"Indiana Farmers Coliseum\", \"LOC\", \"part of\", \"State Fairgrounds\", \"LOC\"],\n    [\"Jason Gardner\", \"PER\", \"position held\", \"head coach\", \"MISC\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"league\", \"Horizon League\", \"ORG\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"replaced\", \"Valparaiso\", \"ORG\"],\n    [\"Valparaiso\", \"ORG\", \"replaced by\", \"IUPUI Jaguars\", \"ORG\"],\n    [\"Indiana University \u2013 Purdue University Indianapolis\", \"ORG\", \"located in\", \"Indianapolis\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 10,
+  "FN": 17,
+  "recall": 0.19047619047619047,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"IUPUI Jaguars\", \"ORG\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"The Jungle\", \"LOC\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"Indiana Farmers Coliseum\", \"LOC\", \"located in\", \"Indianapolis\", \"LOC\"],\n    [\"Jason Gardner\", \"PER\", \"position held\", \"head coach\", \"MISC\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"league\", \"Horizon League\", \"ORG\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"home arena\", \"Indiana Farmers Coliseum\", \"LOC\"],\n    [\"Valparaiso\", \"ORG\", \"replaced by\", \"IUPUI Jaguars\", \"ORG\"],\n    [\"IUPUI Jaguars\", \"ORG\", \"joined\", \"Horizon League\", \"ORG\"],\n    [\"Indiana Farmers Coliseum\", \"LOC\", \"capacity\", \"6,800\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 17,
+  "recall": 0.15,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_251",
+ "base_raw": "[\n    [\"Noordeloos\", \"LOC\", \"located in\", \"South Holland\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"part of\", \"Giessenlanden\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"near\", \"Gorinchem\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"population\", \"1816\", \"NUM\"],\n    [\"Noordeloos\", \"LOC\", \"area\", \"0.14 km\u00b2\", \"NUM\"],\n    [\"Noordeloos\", \"LOC\", \"number of residences\", \"300\", \"NUM\"],\n    [\"Noordeloos\", \"LOC\", \"population (statistical area)\", \"370\", \"NUM\"],\n    [\"Nordeloos\", \"LOC\", \"located in\", \"Ottawa County\", \"LOC\"],\n    [\"Nordeloos\", \"LOC\", \"located in\", \"Michigan\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"founded by\", \"Dutch settlers\", \"MISC\"],\n    [\"Nordeloos\", \"LOC\", \"named after\", \"Noordeloos\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 4,
+  "recall": 0.3333333333333333,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Noordeloos\", \"LOC\", \"located in the administrative territorial entity\", \"South Holland\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"part of\", \"Giessenlanden\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"located in or next to body of water\", \"None\", \"MISC\"],\n    [\"Noordeloos\", \"LOC\", \"population\", \"1816\", \"NUM\"],\n    [\"Noordeloos\", \"LOC\", \"contains administrative territorial entity\", \"None\", \"MISC\"],\n    [\"Nordeloos\", \"LOC\", \"located in\", \"Ottawa County\", \"LOC\"],\n    [\"Nordeloos\", \"LOC\", \"located in\", \"Michigan\", \"LOC\"],\n    [\"Dutch settlers\", \"MISC\", \"founded\", \"Nordeloos\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"country\", \"Netherlands\", \"LOC\"],\n    [\"Nordeloos\", \"LOC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"instance of\", \"town\", \"MISC\"],\n    [\"Giessenlanden\", \"LOC\", \"instance of\", \"municipality\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "U.S. States and Cities"
+ ],
+ "kb_dedup_raw": "[\n    [\"Noordeloos\", \"LOC\", \"located in the administrative territorial entity\", \"South Holland\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"part of\", \"Giessenlanden\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"located in or next to body of water\", \"none\", \"MISC\"],\n    [\"Noordeloos\", \"LOC\", \"population\", \"1816\", \"NUM\"],\n    [\"Noordeloos\", \"LOC\", \"contains administrative territorial entity\", \"none\", \"MISC\"],\n    [\"Nordeloos\", \"LOC\", \"located in\", \"Ottawa County\", \"LOC\"],\n    [\"Nordeloos\", \"LOC\", \"located in\", \"Michigan\", \"LOC\"],\n    [\"Dutch settlers\", \"MISC\", \"founded\", \"Nordeloos\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"founded by\", \"Dutch settlers\", \"MISC\"],\n    [\"Giessenlanden\", \"LOC\", \"has part\", \"Noordeloos\", \"LOC\"],\n    [\"South Holland\", \"LOC\", \"has part\", \"Noordeloos\", \"LOC\"],\n    [\"Ottawa County\", \"LOC\", \"has part\", \"Nordeloos\", \"LOC\"],\n    [\"Michigan\", \"LOC\", \"has part\", \"Nordeloos\", \"LOC\"],\n    [\"Noordeloos\", \"LOC\", \"instance of\", \"town\", \"MISC\"],\n    [\"Nordeloos\", \"LOC\", \"instance of\", \"village\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 19,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

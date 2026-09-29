@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_65",
+ "base_raw": "[\n    [\"Hadsund Municipality\", \"LOC\", \"located in\", \"North Jutland County\", \"LOC\"],\n    [\"Hadsund Municipality\", \"LOC\", \"part of\", \"Jutland peninsula\", \"LOC\"],\n    [\"Karl Christensen\", \"PER\", \"member of\", \"Social Democrats\", \"ORG\"],\n    [\"Hadsund\", \"LOC\", \"capital of\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"created by\", \"Kommunalreformen\", \"MISC\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"part of\", \"Region Nordjylland\", \"LOC\"],\n    [\"Arden\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Hobro\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Mariager\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Aalestrup\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"N\u00f8rager\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Hadsund Municipality\", \"LOC\", \"dissolved, abolished or demolished\", \"January 1, 2007\", \"TIME\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"inception\", \"January 1, 2007\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 15,
+  "recall": 0.16666666666666666,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Hadsund Municipality\", \"LOC\", \"located in\", \"North Jutland County\", \"LOC\"],\n    [\"Hadsund Municipality\", \"LOC\", \"part of\", \"Jutland peninsula\", \"LOC\"],\n    [\"Karl Christensen\", \"PER\", \"member of\", \"Social Democrats\", \"ORG\"],\n    [\"Hadsund\", \"LOC\", \"capital of\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"created by\", \"Kommunalreformen\", \"MISC\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"part of\", \"Region Nordjylland\", \"LOC\"],\n    [\"Arden\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Hobro\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Mariager\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Aalestrup\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"N\u00f8rager\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"has part\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Region Nordjylland\", \"LOC\", \"contains administrative territorial entity\", \"Mariagerfjord Municipality\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 16,
+  "recall": 0.2,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 16,
+  "recall": 0.2,
+  "n_extracted": 15,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Hadsund Municipality\", \"LOC\", \"located in\", \"North Jutland County\", \"LOC\"],\n    [\"Hadsund Municipality\", \"LOC\", \"part of\", \"Jutland peninsula\", \"LOC\"],\n    [\"Karl Christensen\", \"PER\", \"member of\", \"Social Democrats\", \"ORG\"],\n    [\"Hadsund\", \"LOC\", \"capital of\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"created by\", \"Kommunalreformen\", \"MISC\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"part of\", \"Region Nordjylland\", \"LOC\"],\n    [\"Arden\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Hobro\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Mariager\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Aalestrup\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"N\u00f8rager\", \"LOC\", \"merged with\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Mariagerfjord Municipality\", \"LOC\", \"has part\", \"Hadsund Municipality\", \"LOC\"],\n    [\"Region Nordjylland\", \"LOC\", \"contains administrative territorial entity\", \"Mariagerfjord Municipality\", \"LOC\"]\n]"
+}

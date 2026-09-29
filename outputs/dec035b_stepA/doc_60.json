@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_60",
+ "base_raw": "[\n    [\"Google Assistant\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Google Assistant\", \"MISC\", \"release year\", \"2016\", \"TIME\"],\n    [\"Allo\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Google Home\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Pixel\", \"MISC\", \"manufacturer\", \"Google\", \"ORG\"],\n    [\"Pixel XL\", \"MISC\", \"manufacturer\", \"Google\", \"ORG\"],\n    [\"Android Wear\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Wear OS\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Google Assistant\", \"MISC\", \"operating system\", \"iOS\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"release month\", \"May\", \"TIME\"],\n    [\"Google Assistant\", \"MISC\", \"announcement month\", \"April\", \"TIME\"],\n    [\"Google Assistant\", \"MISC\", \"extension\", \"software development kit\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"supported device\", \"cars\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"supported device\", \"smart home appliances\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"interaction method\", \"natural voice\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"interaction method\", \"keyboard input\", \"MISC\"],\n    [\"Google Now\", \"MISC\", \"functionality\", \"search the Internet\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"functionality\", \"schedule events\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"functionality\", \"adjust hardware settings\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"functionality\", \"show information\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"feature\", \"identify objects\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"feature\", \"gather visual information\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"feature\", \"support purchasing products\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"feature\", \"send money\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"feature\", \"identify songs\", \"MISC\"],\n    [\"CES 2018\", \"MISC\", \"location\", \"Las Vegas\", \"LOC\"],\n    [\"Google Assistant\", \"MISC\", \"device type\", \"smart displays\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"release month\", \"July\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 26,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Google Assistant\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Google Assistant\", \"MISC\", \"announced in\", \"May 2016\", \"TIME\"],\n    [\"Allo\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Google Home\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Pixel\", \"MISC\", \"manufacturer\", \"Google\", \"ORG\"],\n    [\"Pixel XL\", \"MISC\", \"manufacturer\", \"Google\", \"ORG\"],\n    [\"Android\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Wear OS\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"iOS\", \"MISC\", \"developer\", \"Apple\", \"ORG\"],\n    [\"Google Assistant\", \"MISC\", \"available on\", \"iOS\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"released on\", \"February 2017\", \"TIME\"],\n    [\"Google Assistant\", \"MISC\", \"extended to\", \"cars\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"extended to\", \"smart home appliances\", \"MISC\"],\n    [\"Google\", \"ORG\", \"announced\", \"software development kit\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"enhanced by\", \"third-party developers\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"interact through\", \"natural voice\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"interact through\", \"keyboard input\", \"MISC\"],\n    [\"Google Now\", \"MISC\", \"functionality\", \"search the Internet\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"functionality\", \"schedule events\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"functionality\", \"adjust hardware settings\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"functionality\", \"show information\", \"MISC\"],\n    [\"Google\", \"ORG\", \"announced\", \"visual information\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"identify objects\", \"objects\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"support purchasing\", \"products\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"support sending\", \"money\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"identify songs\", \"songs\", \"MISC\"],\n    [\"CES 2018\", \"MISC\", \"location\", \"Las Vegas\", \"LOC\"],\n    [\"Google Assistant\", \"MISC\", \"powered\", \"smart displays\", \"MISC\"],\n    [\"smart displays\", \"MISC\", \"released in\", \"July 2018\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 44,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 46,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Cities in the United States",
+  "Organizations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Google Assistant\", \"MISC\", \"developer\", \"Google\", \"ORG\"],\n    [\"Google Assistant\", \"MISC\", \"announced in\", \"May 2016\", \"TIME\"],\n    [\"Google Home\", \"MISC\", \"released in\", \"May\", \"TIME\"],\n    [\"Google Assistant\", \"MISC\", \"released on\", \"iOS\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"extended to\", \"cars\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"extended to\", \"smart home appliances\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"interacted through\", \"natural voice\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"interacted through\", \"keyboard input\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"functionality enhanced by\", \"third-party developers\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"identify objects through\", \"device's camera\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"support purchasing products\", \"products\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"support sending money\", \"money\", \"MISC\"],\n    [\"Google Assistant\", \"MISC\", \"identify songs\", \"songs\", \"MISC\"],\n    [\"CES 2018\", \"MISC\", \"announced\", \"Assistant-powered smart displays\", \"MISC\"],\n    [\"Assistant-powered smart displays\", \"MISC\", \"released in\", \"July 2018\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 40,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 42,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_374",
+ "base_raw": "[\n    [\"Jubilee Palace\", \"LOC\", \"located in\", \"Addis Ababa\", \"LOC\"],\n    [\"Emperor Haile Selassie\", \"PER\", \"place of residence\", \"Jubilee Palace\", \"LOC\"],\n    [\"Guenete Leul Palace\", \"LOC\", \"location of event\", \"coup attempt\", \"MISC\"],\n    [\"Imperial Palace\", \"LOC\", \"seat of government\", \"Ethiopia\", \"LOC\"],\n    [\"Jubilee Palace\", \"LOC\", \"expanded by\", \"Emperor Haile Selassie\", \"PER\"],\n    [\"Derg\", \"ORG\", \"renamed\", \"Jubilee Palace\", \"LOC\"],\n    [\"National Palace\", \"LOC\", \"used for\", \"state ceremonies\", \"MISC\"],\n    [\"Derg\", \"ORG\", \"added\", \"swimming pool\", \"MISC\"],\n    [\"Federal Democratic Republic of Ethiopia\", \"ORG\", \"established\", \"Federal Republic\", \"MISC\"],\n    [\"President of the Federal Democratic Republic of Ethiopia\", \"PER\", \"residence\", \"Jubilee Palace\", \"LOC\"],\n    [\"Ethiopian Government\", \"ORG\", \"announced\", \"new official presidential residence\", \"MISC\"],\n    [\"National Palace\", \"LOC\", \"to be opened as\", \"museum\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 12,
+  "FN": 11,
+  "recall": 0.0,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Jubilee Palace\", \"LOC\", \"located in\", \"Addis Ababa\", \"LOC\"],\n    [\"Emperor Haile Selassie\", \"PER\", \"place of residence\", \"Jubilee Palace\", \"LOC\"],\n    [\"Guenete Leul Palace\", \"LOC\", \"located in\", \"Addis Ababa\", \"LOC\"],\n    [\"Imperial Palace\", \"LOC\", \"located in\", \"Addis Ababa\", \"LOC\"],\n    [\"Derg\", \"ORG\", \"country of origin\", \"Ethiopia\", \"LOC\"],\n    [\"National Palace\", \"LOC\", \"country\", \"Ethiopia\", \"LOC\"],\n    [\"President of the Federal Democratic Republic of Ethiopia\", \"PER\", \"residence\", \"National Palace\", \"LOC\"],\n    [\"Federal Democratic Republic of Ethiopia\", \"ORG\", \"headquarters location\", \"National Palace\", \"LOC\"],\n    [\"Ethiopian Government\", \"ORG\", \"located in\", \"Addis Ababa\", \"LOC\"],\n    [\"Emperor Haile Selassie\", \"PER\", \"date of removal from throne\", \"September 1974\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 18,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Jubilee Palace\", \"LOC\", \"located in\", \"Addis Ababa\", \"LOC\"],\n    [\"Emperor Haile Selassie\", \"PER\", \"place of residence\", \"Jubilee Palace\", \"LOC\"],\n    [\"Guenete Leul Palace\", \"LOC\", \"location of event\", \"coup attempt\", \"MISC\"],\n    [\"Imperial Palace\", \"LOC\", \"seat of government\", \"Ethiopia\", \"LOC\"],\n    [\"Jubilee Palace\", \"LOC\", \"site of event\", \"dethronement of Emperor Haile Selassie\", \"MISC\"],\n    [\"Derg\", \"ORG\", \"perpetrator of event\", \"dethronement of Emperor Haile Selassie\", \"MISC\"],\n    [\"National Palace\", \"LOC\", \"used for event\", \"state ceremonies\", \"MISC\"],\n    [\"Derg\", \"ORG\", \"added feature to\", \"swimming pool\", \"MISC\"],\n    [\"Federal Democratic Republic of Ethiopia\", \"ORG\", \"has official residence\", \"Jubilee Palace\", \"LOC\"],\n    [\"President of the Federal Democratic Republic of Ethiopia\", \"PER\", \"has ceremonial role\", \"President\", \"MISC\"],\n    [\"Ethiopian Government\", \"ORG\", \"announced intention to build\", \"new official presidential residence\", \"MISC\"],\n    [\"National Palace\", \"LOC\", \"will be used as\", \"museum\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 20,
+  "FN": 11,
+  "recall": 0.0,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

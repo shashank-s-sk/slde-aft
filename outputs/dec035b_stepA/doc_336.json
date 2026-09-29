@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_336",
+ "base_raw": "[\n    [\"The Forbidden Fruit\", \"MISC\", \"creator\", \"Hassan Fathi\", \"PER\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"writer\", \"Alireza Kazemipour\", \"PER\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"composer\", \"Ehsan Khajeh Amiri\", \"PER\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"channel\", \"IRIB TV2\", \"ORG\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"location of filming\", \"Tehran\", \"LOC\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"number of episodes\", \"30\", \"NUM\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"premiere date\", \"3 December 2007\", \"TIME\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"airtime\", \"6:00 PM\", \"TIME\"],\n    [\"Shayegan\", \"PER\", \"occupation\", \"company owner\", \"MISC\"],\n    [\"Hasti\", \"PER\", \"relation to Shayegan\", \"daughter\", \"MISC\"],\n    [\"Jalal\", \"PER\", \"relation to Shayegan\", \"creditor\", \"MISC\"],\n    [\"Ehsan Khajeh Amiri\", \"PER\", \"relation to The Forbidden Fruit\", \"soundtrack composer and performer\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 5,
+  "recall": 0.2857142857142857,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Numbers"
+ ],
+ "kb_orig_raw": "[\n    [\"The Forbidden Fruit\", \"MISC\", \"creator\", \"Hassan Fathi\", \"PER\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"writer\", \"Alireza Kazemipour\", \"PER\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"composer\", \"Ehsan Khajeh Amiri\", \"PER\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"channel\", \"IRIB TV2\", \"ORG\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"location of filming\", \"Tehran\", \"LOC\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"country of origin\", \"Iran\", \"LOC\"],\n    [\"Shayegan\", \"PER\", \"country of citizenship\", \"Iran\", \"LOC\"],\n    [\"Hasti\", \"PER\", \"father\", \"Shayegan\", \"PER\"],\n    [\"Jalal\", \"PER\", \"creditor of\", \"Shayegan\", \"PER\"],\n    [\"Ehsan Khajeh Amiri\", \"PER\", \"performer\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"start time\", \"6:00 PM\", \"TIME\"],\n    [\"The Forbidden Fruit\", \"MISC\", \"premiere date\", \"3 December 2007\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 5,
+  "recall": 0.5454545454545454,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Hassan Fathi\", \"PER\", \"director\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"Alireza Kazemipour\", \"PER\", \"writer\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"Ehsan Khajeh Amiri\", \"PER\", \"composer\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"Ehsan Khajeh Amiri\", \"PER\", \"performer\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"IRIB TV2\", \"ORG\", \"broadcaster\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"Tehran\", \"LOC\", \"location of filming\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"Iran\", \"LOC\", \"country of origin\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"Shayegan\", \"PER\", \"occupation\", \"company owner\", \"MISC\"],\n    [\"Hasti\", \"PER\", \"relation\", \"Shayegan\", \"PER\"],\n    [\"Jalal\", \"PER\", \"relation\", \"Shayegan\", \"PER\"],\n    [\"3 December 2007\", \"TIME\", \"premiere date\", \"The Forbidden Fruit\", \"MISC\"],\n    [\"Ramadan\", \"TIME\", \"premiere time\", \"The Forbidden Fruit\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 13,
+  "FP": 15,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

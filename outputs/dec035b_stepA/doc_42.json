@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_42",
+ "base_raw": "[\n    [\"DARPA\", \"ORG\", \"founded by\", \"US Defense Advanced Research Projects Agency\", \"ORG\"],\n    [\"James Hendler\", \"PER\", \"position held\", \"Program Manager\", \"MISC\"],\n    [\"Murray Burke\", \"PER\", \"position held\", \"Program Manager\", \"MISC\"],\n    [\"Mark Greaves\", \"PER\", \"position held\", \"Program Manager\", \"MISC\"],\n    [\"Michael Pagels\", \"PER\", \"position held\", \"Program Manager\", \"MISC\"],\n    [\"Tim Berners-Lee\", \"PER\", \"member of\", \"DARPA Agent Markup Language program\", \"MISC\"],\n    [\"DAML program\", \"MISC\", \"funded by\", \"US Defense Advanced Research Projects Agency\", \"ORG\"],\n    [\"DAML language\", \"MISC\", \"based on\", \"RDF\", \"MISC\"],\n    [\"DAML+OIL\", \"MISC\", \"extension of\", \"DAML language\", \"MISC\"],\n    [\"World Wide Web Consortium\", \"ORG\", \"received submission\", \"DAML+OIL language\", \"MISC\"],\n    [\"WebOnt\", \"MISC\", \"developed\", \"OWL language\", \"MISC\"],\n    [\"DAML+OIL\", \"MISC\", \"syntax based on\", \"RDF and XML\", \"MISC\"],\n    [\"OIL\", \"MISC\", \"part of\", \"DAML+OIL\", \"MISC\"],\n    [\"SHOE\", \"MISC\", \"part of\", \"DAML+OIL\", \"MISC\"],\n    [\"RDF Schema\", \"MISC\", \"incorporated work from\", \"DAML\", \"MISC\"],\n    [\"OWL\", \"MISC\", \"incorporated work from\", \"DAML\", \"MISC\"],\n    [\"schema.org\", \"MISC\", \"successor of\", \"RDF Schema and OWL\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 17,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"James Hendler\", \"PER\", \"employer\", \"DARPA\", \"ORG\"],\n    [\"Murray Burke\", \"PER\", \"employer\", \"DARPA\", \"ORG\"],\n    [\"Mark Greaves\", \"PER\", \"employer\", \"DARPA\", \"ORG\"],\n    [\"Michael Pagels\", \"PER\", \"employer\", \"DARPA\", \"ORG\"],\n    [\"Tim Berners-Lee\", \"PER\", \"employer\", \"DARPA\", \"ORG\"],\n    [\"DARPA\", \"ORG\", \"location\", \"U.S.\", \"LOC\"],\n    [\"DAML\", \"MISC\", \"founded by\", \"DARPA\", \"ORG\"],\n    [\"DAML+OIL\", \"MISC\", \"developed by\", \"DARPA\", \"ORG\"],\n    [\"W3C\", \"ORG\", \"location\", \"U.S.\", \"LOC\"],\n    [\"WebOnt\", \"ORG\", \"part of\", \"W3C\", \"ORG\"],\n    [\"OWL\", \"MISC\", \"developed by\", \"W3C\", \"ORG\"],\n    [\"RDF\", \"MISC\", \"developed by\", \"W3C\", \"ORG\"],\n    [\"XML\", \"MISC\", \"developed by\", \"W3C\", \"ORG\"],\n    [\"OIL\", \"MISC\", \"developed by\", \"EU\", \"ORG\"],\n    [\"SHOE\", \"MISC\", \"developed by\", \"U.S.\", \"LOC\"],\n    [\"DAML+OIL\", \"MISC\", \"based on\", \"RDF\", \"MISC\"],\n    [\"DAML+OIL\", \"MISC\", \"based on\", \"XML\", \"MISC\"],\n    [\"DAML\", \"MISC\", \"inception\", \"1999\", \"TIME\"],\n    [\"DAML+OIL\", \"MISC\", \"submission to\", \"W3C\", \"ORG\"],\n    [\"DAML+OIL\", \"MISC\", \"submission date\", \"2002\", \"TIME\"],\n    [\"Tim Berners-Lee\", \"PER\", \"influenced by\", \"DAML\", \"MISC\"],\n    [\"DAML\", \"MISC\", \"influenced\", \"Semantic Web\", \"MISC\"],\n    [\"Semantic Web\", \"MISC\", \"led to\", \"Knowledge Graph technology\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 32,
+  "FN": 8,
+  "recall": 0.5,
+  "n_extracted": 40,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"DARPA\", \"ORG\", \"founded by\", \"US Defense Advanced Research Projects Agency\", \"ORG\"],\n    [\"James Hendler\", \"PER\", \"position held\", \"Program Manager\", \"MISC\"],\n    [\"Murray Burke\", \"PER\", \"position held\", \"Program Manager\", \"MISC\"],\n    [\"Mark Greaves\", \"PER\", \"position held\", \"Program Manager\", \"MISC\"],\n    [\"Michael Pagels\", \"PER\", \"position held\", \"Program Manager\", \"MISC\"],\n    [\"Tim Berners-Lee\", \"PER\", \"member of\", \"DARPA Agent Markup Language program\", \"MISC\"],\n    [\"DAML program\", \"MISC\", \"focused on\", \"creation of machine-readable representations for the Web\", \"MISC\"],\n    [\"DAML language\", \"MISC\", \"based on\", \"RDF\", \"MISC\"],\n    [\"DAML+OIL\", \"MISC\", \"extension of\", \"DAML language\", \"MISC\"],\n    [\"World Wide Web Consortium\", \"ORG\", \"received submission\", \"DAML+OIL language\", \"MISC\"],\n    [\"WebOnt\", \"MISC\", \"developed\", \"OWL language\", \"MISC\"],\n    [\"DAML+OIL\", \"MISC\", \"syntax layered on\", \"RDF and XML\", \"MISC\"],\n    [\"OIL\", \"MISC\", \"part of\", \"DAML+OIL\", \"MISC\"],\n    [\"SHOE\", \"MISC\", \"part of\", \"DAML+OIL\", \"MISC\"],\n    [\"RDF Schema\", \"MISC\", \"incorporated\", \"DAML work\", \"MISC\"],\n    [\"OWL\", \"MISC\", \"incorporated\", \"DAML work\", \"MISC\"],\n    [\"schema.org\", \"MISC\", \"incorporated\", \"DAML work\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 22,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

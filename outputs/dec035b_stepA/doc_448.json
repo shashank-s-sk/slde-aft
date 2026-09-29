@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_448",
+ "base_raw": "[\n    [\"Northwestern Lehigh School District\", \"ORG\", \"located in\", \"Lehigh County\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"Heidelberg Township\", \"LOC\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Lowhill Township\", \"LOC\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Lynn Township\", \"LOC\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Weisenberg Township\", \"LOC\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Weisenberg Elementary\", \"ORG\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Northwestern Lehigh Elementary\", \"ORG\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"has part\", \"elementary schools\", \"MISC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"has part\", \"middle school\", \"MISC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"has part\", \"high school\", \"MISC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"instance of\", \"public school district\", \"MISC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"number of students\", \"2250\", \"NUM\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"completion of Facility Master Plan\", \"2004-2005\", \"TIME\"],\n    [\"Facility Master Plan\", \"MISC\", \"purpose\", \"analyze and document facility status\", \"MISC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"mascot\", \"Tiger\", \"MISC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"school colors\", \"black and gold\", \"MISC\"],\n    [\"Northwestern Lehigh High School\", \"ORG\", \"nickname\", \"Corncob High\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 22,
+  "recall": 0.12,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Northwestern Lehigh School District\", \"ORG\", \"located in\", \"Lehigh County\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Heidelberg Township\", \"LOC\", \"part of\", \"Lehigh County\", \"LOC\"],\n    [\"Lowhill Township\", \"LOC\", \"part of\", \"Lehigh County\", \"LOC\"],\n    [\"Lynn Township\", \"LOC\", \"part of\", \"Lehigh County\", \"LOC\"],\n    [\"Weisenberg Township\", \"LOC\", \"part of\", \"Lehigh County\", \"LOC\"],\n    [\"Weisenberg Elementary\", \"ORG\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Northwestern Lehigh Elementary\", \"ORG\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"has part\", \"middle school\", \"ORG\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"has part\", \"high school\", \"ORG\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"instance of\", \"public school district\", \"MISC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"location\", \"northwestern corner of Lehigh County\", \"LOC\"],\n    [\"Facility Master Plan\", \"MISC\", \"created by\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Facility Master Plan\", \"MISC\", \"completed in\", \"2004-2005\", \"TIME\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"serves\", \"approximately 2,250 students\", \"NUM\"],\n    [\"Tiger\", \"MISC\", \"mascot of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"black and gold\", \"MISC\", \"school colors of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Corncob High\", \"MISC\", \"nickname of\", \"Northwestern Lehigh School District high school\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 22,
+  "FN": 22,
+  "recall": 0.2903225806451613,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Northwestern Lehigh School District\", \"ORG\", \"located in\", \"Lehigh County\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"located in\", \"Pennsylvania\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"serves\", \"Heidelberg Township\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"serves\", \"Lowhill Township\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"serves\", \"Lynn Township\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"serves\", \"Weisenberg Township\", \"LOC\"],\n    [\"Weisenberg Elementary\", \"ORG\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Northwestern Lehigh Elementary\", \"ORG\", \"part of\", \"Northwestern Lehigh School District\", \"ORG\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"has\", \"2,250\", \"NUM\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"mascot\", \"Tiger\", \"MISC\"],\n    [\"Northwestern Lehigh School District\", \"ORG\", \"school colors\", \"black and gold\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 23,
+  "FN": 23,
+  "recall": 0.08,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

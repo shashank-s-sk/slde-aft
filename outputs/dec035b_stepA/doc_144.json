@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_144",
+ "base_raw": "[\n    [\"Les Belles de Tunis\", \"MISC\", \"author\", \"Nine Moati\", \"PER\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"publisher\", \"\u00c9ditions du Seuil\", \"ORG\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"published\", \"1983\", \"TIME\"],\n    [\"Nine Moati\", \"PER\", \"sister of\", \"Serge Moati fils\", \"PER\"],\n    [\"Serge Moati fils\", \"PER\", \"brother of\", \"Nine Moati\", \"PER\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"edition\", \"2004\", \"TIME\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"publisher\", \"Editions C\u00e9r\u00e8s\", \"ORG\"],\n    [\"Nine Moati\", \"PER\", \"wrote preface for\", \"Tunisian public\", \"MISC\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"translated into\", \"Arabic\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 7,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Nine Moati\", \"PER\", \"author\", \"Les Belles de Tunis\", \"MISC\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"published by\", \"\u00c9ditions du Seuil\", \"ORG\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"publication date\", \"1983\", \"TIME\"],\n    [\"Nine Moati\", \"PER\", \"sister of\", \"Serge Moati fils\", \"PER\"],\n    [\"Serge Moati fils\", \"PER\", \"brother of\", \"Nine Moati\", \"PER\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"edited by\", \"Editions C\u00e9r\u00e8s\", \"ORG\"],\n    [\"Editions C\u00e9r\u00e8s\", \"ORG\", \"published\", \"Les Belles de Tunis\", \"MISC\"],\n    [\"Nine Moati\", \"PER\", \"wrote preface for\", \"Tunisian public\", \"MISC\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"translated into\", \"Arabic\", \"MISC\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"has translation in preparation\", \"Arabic\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Nine Moati\", \"PER\", \"author\", \"Les Belles de Tunis\", \"MISC\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"published by\", \"\u00c9ditions du Seuil\", \"ORG\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"publication date\", \"1983\", \"TIME\"],\n    [\"Nine Moati\", \"PER\", \"sister of\", \"Serge Moati fils\", \"PER\"],\n    [\"Serge Moati fils\", \"PER\", \"brother of\", \"Nine Moati\", \"PER\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"edited by\", \"Editions C\u00e9r\u00e8s\", \"ORG\"],\n    [\"Editions C\u00e9r\u00e8s\", \"ORG\", \"publisher\", \"Les Belles de Tunis\", \"MISC\"],\n    [\"Nine Moati\", \"PER\", \"writer of preface\", \"Les Belles de Tunis\", \"MISC\"],\n    [\"Les Belles de Tunis\", \"MISC\", \"translated into\", \"Arabic\", \"MISC\"],\n    [\"Serge Moati p\u00e9re\", \"PER\", \"father of\", \"Serge Moati fils\", \"PER\"],\n    [\"Serge Moati p\u00e9re\", \"PER\", \"father of\", \"Nine Moati\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "doc_id": "doc_302",
+ "base_raw": "[\n    [\"Unilever\", \"ORG\", \"owned by\", \"Premier Foods\", \"ORG\"],\n    [\"Lipton\", \"ORG\", \"manufacturer of\", \"Cup-a-Soup\", \"MISC\"],\n    [\"Continental\", \"ORG\", \"brand of\", \"Cup-a-Soup\", \"MISC\"],\n    [\"Premier Foods\", \"ORG\", \"owner of\", \"Batchelors Cup-a-Soup\", \"MISC\"],\n    [\"Unox\", \"ORG\", \"brand of\", \"Cup-a-Soup\", \"MISC\"],\n    [\"Knorr\", \"ORG\", \"brand of\", \"Cup-a-Soup\", \"MISC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"United States\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Canada\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Australia\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"United Kingdom\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Netherlands\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"South Africa\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Sweden\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Belgium\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Denmark\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Germany\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Argentina\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Poland\", \"LOC\"],\n    [\"Cup-a-Soup Extra\", \"MISC\", \"introduced in\", \"2007\", \"TIME\"],\n    [\"Slim-a-Soup\", \"MISC\", \"available in\", \"United Kingdom\", \"LOC\"],\n    [\"Mediterranean tomato\", \"MISC\", \"flavor of\", \"Slim-a-Soup\", \"MISC\"],\n    [\"Cheese and broccoli\", \"MISC\", \"flavor of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Chicken and mushroom\", \"MISC\", \"flavor of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Minestrone\", \"MISC\", \"flavor of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Tangy Salsa Tomato\", \"MISC\", \"flavor of\", \"Cup-a-Soup Extra\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 25,
+  "FN": 6,
+  "recall": 0.0,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Unilever\", \"ORG\", \"owned by\", \"Lipton\", \"ORG\"],\n    [\"Lipton\", \"ORG\", \"manufacturer of\", \"Cup-a-Soup\", \"MISC\"],\n    [\"Premier Foods\", \"ORG\", \"owner of\", \"Batchelors Cup-a-Soup\", \"MISC\"],\n    [\"Unox\", \"ORG\", \"brand of\", \"Cup-a-Soup\", \"MISC\"],\n    [\"Knorr\", \"ORG\", \"brand of\", \"Cup-a-Soup\", \"MISC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"United States\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Canada\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Australia\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"United Kingdom\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Netherlands\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"South Africa\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Sweden\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Belgium\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Denmark\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Germany\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Argentina\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"available in\", \"Poland\", \"LOC\"],\n    [\"Cup-a-Soup Extra\", \"MISC\", \"introduced in\", \"2007\", \"TIME\"],\n    [\"Slim-a-Soup\", \"MISC\", \"available in\", \"United Kingdom\", \"LOC\"],\n    [\"Mediterranean tomato\", \"MISC\", \"flavor of\", \"Slim-a-Soup\", \"MISC\"],\n    [\"Cheese and broccoli\", \"MISC\", \"flavor of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Chicken and mushroom\", \"MISC\", \"flavor of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Minestrone\", \"MISC\", \"flavor of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Tangy Salsa Tomato\", \"MISC\", \"flavor of\", \"Cup-a-Soup Extra\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 26,
+  "FN": 6,
+  "recall": 0.0,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Unilever\", \"ORG\", \"country of origin\", \"United Kingdom\", \"LOC\"],\n    [\"Lipton\", \"ORG\", \"owned by\", \"Unilever\", \"ORG\"],\n    [\"Premier Foods\", \"ORG\", \"country of origin\", \"United Kingdom\", \"LOC\"],\n    [\"Batchelors\", \"ORG\", \"owned by\", \"Premier Foods\", \"ORG\"],\n    [\"Unox\", \"ORG\", \"country of origin\", \"Netherlands\", \"LOC\"],\n    [\"Knorr\", \"ORG\", \"country of origin\", \"Germany\", \"LOC\"],\n    [\"Cup-a-Soup\", \"MISC\", \"manufacturer\", \"Unilever\", \"ORG\"],\n    [\"Cup-a-Soup\", \"MISC\", \"manufacturer\", \"Premier Foods\", \"ORG\"],\n    [\"Cup-a-Soup Extra\", \"MISC\", \"introduced in\", \"2007\", \"TIME\"],\n    [\"Slim-a-Soup\", \"MISC\", \"introduced in\", \"United Kingdom\", \"LOC\"],\n    [\"Mediterranean tomato\", \"MISC\", \"part of\", \"Slim-a-Soup\", \"MISC\"],\n    [\"Cheese and broccoli\", \"MISC\", \"part of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Chicken and mushroom\", \"MISC\", \"part of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Minestrone\", \"MISC\", \"part of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Tangy Salsa Tomato\", \"MISC\", \"part of\", \"Cup-a-Soup Extra\", \"MISC\"],\n    [\"Tagliatelle\", \"MISC\", \"part of\", \"Cheese and broccoli\", \"MISC\"],\n    [\"Pasta\", \"MISC\", \"part of\", \"Chicken and mushroom\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 37,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 41,
+  "judge_parse_ok": true
+ }
+}

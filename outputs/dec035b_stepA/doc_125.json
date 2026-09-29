@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_125",
+ "base_raw": "[\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Toni Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Towanda Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Trina Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Traci Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Tamar Braxton\", \"PER\"],\n    [\"Klarmann/Weber\", \"ORG\", \"author\", \"Good Life\", \"MISC\"],\n    [\"Arista Records\", \"ORG\", \"employer\", \"The Braxtons\", \"ORG\"],\n    [\"L.A. Reid\", \"PER\", \"member of\", \"LaFace Records\", \"ORG\"],\n    [\"Babyface\", \"PER\", \"member of\", \"LaFace Records\", \"ORG\"],\n    [\"LaFace Records\", \"ORG\", \"associated with\", \"Arista Records\", \"ORG\"],\n    [\"Toni Braxton\", \"PER\", \"signed with\", \"LaFace Records\", \"ORG\"],\n    [\"The Braxtons\", \"ORG\", \"released on\", \"Atlantic Records\", \"ORG\"],\n    [\"Trina Braxton\", \"PER\", \"member of\", \"The Braxtons\", \"ORG\"],\n    [\"Tamar Braxton\", \"PER\", \"member of\", \"The Braxtons\", \"ORG\"],\n    [\"Towanda Braxton\", \"PER\", \"member of\", \"The Braxtons\", \"ORG\"],\n    [\"Traci Braxton\", \"PER\", \"not signed with\", \"Atlantic Records\", \"ORG\"],\n    [\"Tamar Braxton\", \"PER\", \"left\", \"The Braxtons\", \"ORG\"],\n    [\"The Essential Toni Braxton\", \"MISC\", \"contains\", \"Good Life\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 28,
+  "recall": 0.15151515151515152,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Record Labels",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Toni Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Towanda Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Trina Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Traci Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Tamar Braxton\", \"PER\"],\n    [\"Klarmann/Weber\", \"ORG\", \"author\", \"Good Life\", \"MISC\"],\n    [\"Arista Records\", \"ORG\", \"owned by\", \"LaFace Records\", \"ORG\"],\n    [\"L.A. Reid\", \"PER\", \"founded by\", \"LaFace Records\", \"ORG\"],\n    [\"Babyface\", \"PER\", \"founded by\", \"LaFace Records\", \"ORG\"],\n    [\"Toni Braxton\", \"PER\", \"signed with\", \"LaFace Records\", \"ORG\"],\n    [\"The Braxtons\", \"ORG\", \"signed with\", \"Arista Records\", \"ORG\"],\n    [\"Trina Braxton\", \"PER\", \"member of\", \"The Braxtons\", \"ORG\"],\n    [\"Tamar Braxton\", \"PER\", \"member of\", \"The Braxtons\", \"ORG\"],\n    [\"Towanda Braxton\", \"PER\", \"member of\", \"The Braxtons\", \"ORG\"],\n    [\"Traci Braxton\", \"PER\", \"member of\", \"The Braxtons\", \"ORG\"],\n    [\"The Braxtons\", \"ORG\", \"genre\", \"Music\", \"MISC\"],\n    [\"LaFace Records\", \"ORG\", \"associated with\", \"Arista Records\", \"ORG\"],\n    [\"Toni Braxton\", \"PER\", \"release\", \"The Essential Toni Braxton\", \"MISC\"],\n    [\"The Braxtons\", \"ORG\", \"release\", \"So Many Ways\", \"MISC\"],\n    [\"Atlantic Records\", \"ORG\", \"release\", \"So Many Ways\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 18,
+  "FN": 27,
+  "recall": 0.25,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Music Record Labels"
+ ],
+ "kb_dedup_raw": "[\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Toni Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Towanda Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Trina Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Traci Braxton\", \"PER\"],\n    [\"The Braxtons\", \"ORG\", \"member of\", \"Tamar Braxton\", \"PER\"],\n    [\"Klarmann/Weber\", \"ORG\", \"author\", \"Good Life\", \"MISC\"],\n    [\"Arista Records\", \"ORG\", \"owned by\", \"LaFace Records\", \"ORG\"],\n    [\"L.A. Reid\", \"PER\", \"founded by\", \"LaFace Records\", \"ORG\"],\n    [\"Babyface\", \"PER\", \"founded by\", \"LaFace Records\", \"ORG\"],\n    [\"Toni Braxton\", \"PER\", \"signed with\", \"LaFace Records\", \"ORG\"],\n    [\"The Braxtons\", \"ORG\", \"signed with\", \"Arista Records\", \"ORG\"],\n    [\"Good Life\", \"MISC\", \"genre\", \"R&B\", \"MISC\"],\n    [\"The Braxtons\", \"ORG\", \"released on\", \"Atlantic Records\", \"ORG\"],\n    [\"So Many Ways\", \"MISC\", \"released by\", \"The Braxtons\", \"ORG\"],\n    [\"Tamar Braxton\", \"PER\", \"left\", \"The Braxtons\", \"ORG\"],\n    [\"Traci Braxton\", \"PER\", \"reason for not signing\", \"pregnancy\", \"MISC\"],\n    [\"Good Life\", \"MISC\", \"featured on\", \"The Essential Toni Braxton\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 22,
+  "FN": 26,
+  "recall": 0.16129032258064516,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

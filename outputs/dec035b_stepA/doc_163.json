@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_163",
+ "base_raw": "[\n    [\"Emily Murphy\", \"PER\", \"place of birth\", \"Canada\", \"LOC\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Henrietta Muir Edwards\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Nellie McClung\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Louise McKinney\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Irene Parlby\", \"PER\"],\n    [\"Emily Murphy\", \"PER\", \"author\", \"The Black Candle\", \"MISC\"],\n    [\"Emily Murphy\", \"PER\", \"country of citizenship\", \"Canada\", \"LOC\"],\n    [\"The Supreme Court of Canada\", \"ORG\", \"location\", \"Canada\", \"LOC\"],\n    [\"The Judicial Committee of the British Privy Council\", \"ORG\", \"location\", \"British Empire\", \"LOC\"],\n    [\"Emily Murphy\", \"PER\", \"position held\", \"magistrate\", \"MISC\"],\n    [\"Emily Murphy\", \"PER\", \"date of death\", \"27 October 1933\", \"TIME\"],\n    [\"The Famous Five\", \"MISC\", \"instance of\", \"Canadian women's rights activists\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 9,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Emily Murphy\", \"PER\", \"date of birth\", \"14 March 1868\", \"TIME\"],\n    [\"Emily Murphy\", \"PER\", \"date of death\", \"27 October 1933\", \"TIME\"],\n    [\"Emily Murphy\", \"PER\", \"country of citizenship\", \"Canada\", \"LOC\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Emily Murphy\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Henrietta Muir Edwards\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Nellie McClung\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Louise McKinney\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member\", \"Irene Parlby\", \"PER\"],\n    [\"Emily Murphy\", \"PER\", \"author\", \"The Black Candle\", \"MISC\"],\n    [\"The Black Candle\", \"MISC\", \"author\", \"Emily Murphy\", \"PER\"],\n    [\"Emily Murphy\", \"PER\", \"position held\", \"magistrate\", \"MISC\"],\n    [\"Canada\", \"LOC\", \"country\", \"British Empire\", \"LOC\"],\n    [\"Emily Murphy\", \"PER\", \"part of\", \"The Valiant Five\", \"MISC\"],\n    [\"The Valiant Five\", \"MISC\", \"member\", \"Emily Murphy\", \"PER\"],\n    [\"Supreme Court of Canada\", \"ORG\", \"location\", \"Canada\", \"LOC\"],\n    [\"Judicial Committee of the British Privy Council\", \"ORG\", \"location\", \"British Empire\", \"LOC\"],\n    [\"Emily Murphy\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Sexual Sterilization Act of Alberta\", \"MISC\", \"author\", \"Emily Murphy\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 9,
+  "recall": 0.35714285714285715,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Emily Murphy\", \"PER\", \"date of birth\", \"14 March 1868\", \"TIME\"],\n    [\"Emily Murphy\", \"PER\", \"date of death\", \"27 October 1933\", \"TIME\"],\n    [\"Emily Murphy\", \"PER\", \"country of citizenship\", \"Canada\", \"LOC\"],\n    [\"The Famous Five\", \"MISC\", \"member of\", \"Emily Murphy\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member of\", \"Henrietta Muir Edwards\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member of\", \"Nellie McClung\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member of\", \"Louise McKinney\", \"PER\"],\n    [\"The Famous Five\", \"MISC\", \"member of\", \"Irene Parlby\", \"PER\"],\n    [\"Emily Murphy\", \"PER\", \"author\", \"The Black Candle\", \"MISC\"],\n    [\"The Black Candle\", \"MISC\", \"author\", \"Emily Murphy\", \"PER\"],\n    [\"Emily Murphy\", \"PER\", \"position held\", \"magistrate\", \"MISC\"],\n    [\"Canada\", \"LOC\", \"located in the administrative territorial entity\", \"British Empire\", \"MISC\"],\n    [\"Emily Murphy\", \"PER\", \"contributed to\", \"Canadian feminism\", \"MISC\"],\n    [\"The Persons Case\", \"MISC\", \"launched by\", \"The Famous Five\", \"MISC\"],\n    [\"The Supreme Court of Canada\", \"ORG\", \"ruled on\", \"The Persons Case\", \"MISC\"],\n    [\"The Judicial Committee of the British Privy Council\", \"ORG\", \"ruled on\", \"The Persons Case\", \"MISC\"],\n    [\"Emily Murphy\", \"PER\", \"involved in\", \"Sexual Sterilization Act of Alberta\", \"MISC\"],\n    [\"Alberta\", \"LOC\", \"location of\", \"Sexual Sterilization Act\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 22,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_204",
+ "base_raw": "[\n    [\"Kali River\", \"LOC\", \"located in\", \"Uttara Kannada district\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"flows through\", \"Karnataka\", \"LOC\"],\n    [\"Diggi\", \"LOC\", \"located in\", \"Uttara Kannada district\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"supports\", \"fishermen\", \"MISC\"],\n    [\"Supa Dam\", \"LOC\", \"located at\", \"Ganeshgudi\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"joins\", \"Arabian Sea\", \"LOC\"],\n    [\"Sadashivgad fort\", \"LOC\", \"located near\", \"Kali River\", \"LOC\"],\n    [\"Kali Bridge\", \"LOC\", \"built over\", \"Kali River\", \"LOC\"],\n    [\"Kali Bridge\", \"LOC\", \"part of\", \"National Highway NH-17\", \"MISC\"],\n    [\"National Highway NH-17\", \"MISC\", \"connects\", \"Karnataka\", \"LOC\"],\n    [\"National Highway NH-17\", \"MISC\", \"connects\", \"Goa\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 24,
+  "recall": 0.04,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Oceans"
+ ],
+ "kb_orig_raw": "[\n    [\"Kali River\", \"LOC\", \"located in\", \"Uttara Kannada district\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"flows through\", \"Karnataka\", \"LOC\"],\n    [\"Diggi\", \"LOC\", \"located in\", \"Uttara Kannada district\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"supports\", \"fishermen\", \"MISC\"],\n    [\"Supa Dam\", \"LOC\", \"located at\", \"Ganeshgudi\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"joins\", \"Arabian Sea\", \"LOC\"],\n    [\"Sadashivgad fort\", \"LOC\", \"located near\", \"Kali River\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"crossed by\", \"National Highway NH-17\", \"MISC\"],\n    [\"Kali Bridge\", \"LOC\", \"spans\", \"Kali River\", \"LOC\"],\n    [\"Sadashivgad granite rock hill\", \"LOC\", \"located in\", \"Karnataka\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"length\", \"184 kilometers\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 24,
+  "recall": 0.07692307692307693,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Kali River\", \"LOC\", \"located in\", \"Uttara Kannada district\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"flows through\", \"Karnataka\", \"LOC\"],\n    [\"Diggi\", \"LOC\", \"located in\", \"Uttara Kannada district\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"supports\", \"fishermen\", \"MISC\"],\n    [\"Supa Dam\", \"LOC\", \"located at\", \"Ganeshgudi\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"joins\", \"Arabian Sea\", \"LOC\"],\n    [\"Sadashivgad fort\", \"LOC\", \"located near\", \"Kali river bridge\", \"LOC\"],\n    [\"Kali Bridge\", \"LOC\", \"built over\", \"Kali River\", \"LOC\"],\n    [\"National Highway NH-17\", \"MISC\", \"continues on\", \"Kali Bridge\", \"LOC\"],\n    [\"Sadashivgad granite rock hill\", \"LOC\", \"located in\", \"Karnataka\", \"LOC\"],\n    [\"Kali River\", \"LOC\", \"length\", \"184 kilometers\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 24,
+  "recall": 0.07692307692307693,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

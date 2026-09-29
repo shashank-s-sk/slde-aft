@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_126",
+ "base_raw": "[\n    [\"Spring Gulch\", \"LOC\", \"located in\", \"Pitkin County\", \"LOC\"],\n    [\"Spring Gulch\", \"LOC\", \"country\", \"USA\", \"LOC\"],\n    [\"Mount Sopris Nordic Council\", \"ORG\", \"location\", \"Pitkin County\", \"LOC\"],\n    [\"Spring Gulch\", \"LOC\", \"operator\", \"Mount Sopris Nordic Council\", \"ORG\"],\n    [\"local cattlemen's association\", \"ORG\", \"owner of\", \"Spring Gulch\", \"LOC\"],\n    [\"Spring Gulch\", \"LOC\", \"part of\", \"Colorado\", \"LOC\"],\n    [\"Colorado Rocky Mountain School\", \"ORG\", \"location\", \"Spring Gulch\", \"LOC\"],\n    [\"Nordic team at CRMS\", \"ORG\", \"trained at\", \"Spring Gulch\", \"LOC\"],\n    [\"Ski for Sisu\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"],\n    [\"Alpine Bank Classic\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"],\n    [\"Colorado Rocky Mountain School Rat Race\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Spring Gulch\", \"LOC\", \"located in\", \"Pitkin County\", \"LOC\"],\n    [\"Spring Gulch\", \"LOC\", \"located in\", \"Colorado\", \"LOC\"],\n    [\"Mount Sopris Nordic Council\", \"ORG\", \"operator\", \"Spring Gulch\", \"LOC\"],\n    [\"Spring Gulch\", \"LOC\", \"owned by\", \"local cattlemen's association\", \"ORG\"],\n    [\"Ski for Sisu\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"],\n    [\"Alpine Bank Classic\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"],\n    [\"Colorado Rocky Mountain School Rat Race\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"],\n    [\"Nordic team at CRMS\", \"MISC\", \"trained at\", \"Spring Gulch\", \"LOC\"],\n    [\"local cattlemen's association\", \"ORG\", \"uses\", \"Spring Gulch\", \"LOC\"],\n    [\"Carbondale\", \"LOC\", \"located in\", \"Colorado\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Spring Gulch\", \"LOC\", \"located in\", \"Pitkin County\", \"LOC\"],\n    [\"Spring Gulch\", \"LOC\", \"country\", \"USA\", \"LOC\"],\n    [\"Mount Sopris Nordic Council\", \"ORG\", \"location\", \"Pitkin County\", \"LOC\"],\n    [\"Spring Gulch\", \"LOC\", \"operator\", \"Mount Sopris Nordic Council\", \"ORG\"],\n    [\"local cattlemen's association\", \"ORG\", \"owner of\", \"Spring Gulch\", \"LOC\"],\n    [\"Spring Gulch\", \"LOC\", \"contains administrative territorial entity\", \"Thompson Creek Road\", \"LOC\"],\n    [\"Colorado Rocky Mountain School\", \"ORG\", \"location\", \"Pitkin County\", \"LOC\"],\n    [\"Nordic team at CRMS\", \"ORG\", \"trained at\", \"Spring Gulch\", \"LOC\"],\n    [\"Ski for Sisu\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"],\n    [\"Alpine Bank Classic\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"],\n    [\"Colorado Rocky Mountain School Rat Race\", \"MISC\", \"location\", \"Spring Gulch\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

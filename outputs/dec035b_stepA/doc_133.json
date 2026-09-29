@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_133",
+ "base_raw": "[\n    [\"Freaky Styley\", \"MISC\", \"release year\", \"1985\", \"TIME\"],\n    [\"Freaky Styley\", \"MISC\", \"released on\", \"August 16\", \"TIME\"],\n    [\"Red Hot Chili Peppers\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Hillel Slovak\", \"PER\", \"position held\", \"guitarist\", \"MISC\"],\n    [\"Cliff Martinez\", \"PER\", \"position held\", \"drummer\", \"MISC\"],\n    [\"George Clinton\", \"PER\", \"member of\", \"Parliament-Funkadelic\", \"ORG\"],\n    [\"Jungle Man\", \"MISC\", \"genre\", \"rock\", \"MISC\"],\n    [\"Hollywood (Africa)\", \"MISC\", \"genre\", \"rock\", \"MISC\"],\n    [\"Catholic School Girls Rule\", \"MISC\", \"genre\", \"rock\", \"MISC\"],\n    [\"Red Hot Chili Peppers\", \"ORG\", \"record label\", \"EMI Records\", \"ORG\"],\n    [\"Freaky Styley\", \"MISC\", \"producer\", \"George Clinton\", \"PER\"],\n    [\"Red Hot Chili Peppers\", \"ORG\", \"founded by\", \"Hillel Slovak\", \"PER\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 11,
+  "FN": 24,
+  "recall": 0.04,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Genre: Rock",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Red Hot Chili Peppers\", \"ORG\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Freaky Styley\", \"MISC\", \"release date\", \"August 16, 1985\", \"TIME\"],\n    [\"Hillel Slovak\", \"PER\", \"member of\", \"Red Hot Chili Peppers\", \"ORG\"],\n    [\"Cliff Martinez\", \"PER\", \"member of\", \"Red Hot Chili Peppers\", \"ORG\"],\n    [\"George Clinton\", \"PER\", \"producer of\", \"Freaky Styley\", \"MISC\"],\n    [\"Parliament-Funkadelic\", \"ORG\", \"member of\", \"George Clinton\", \"PER\"],\n    [\"Jungle Man\", \"MISC\", \"artist\", \"Red Hot Chili Peppers\", \"ORG\"],\n    [\"Hollywood (Africa)\", \"MISC\", \"artist\", \"Red Hot Chili Peppers\", \"ORG\"],\n    [\"Catholic School Girls Rule\", \"MISC\", \"artist\", \"Red Hot Chili Peppers\", \"ORG\"],\n    [\"Red Hot Chili Peppers\", \"ORG\", \"record label\", \"EMI Records\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 18,
+  "FN": 22,
+  "recall": 0.12,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Red Hot Chili Peppers\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Freaky Styley\", \"MISC\", \"release date\", \"August 16, 1985\", \"TIME\"],\n    [\"Hillel Slovak\", \"PER\", \"position held\", \"guitarist\", \"MISC\"],\n    [\"Cliff Martinez\", \"PER\", \"position held\", \"drummer\", \"MISC\"],\n    [\"George Clinton\", \"PER\", \"member of\", \"Parliament-Funkadelic\", \"ORG\"],\n    [\"Jungle Man\", \"MISC\", \"album\", \"Freaky Styley\", \"MISC\"],\n    [\"Hollywood (Africa)\", \"MISC\", \"album\", \"Freaky Styley\", \"MISC\"],\n    [\"Catholic School Girls Rule\", \"MISC\", \"album\", \"Freaky Styley\", \"MISC\"],\n    [\"Red Hot Chili Peppers\", \"ORG\", \"record label\", \"EMI Records\", \"ORG\"],\n    [\"Freaky Styley\", \"MISC\", \"producer\", \"George Clinton\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 15,
+  "FN": 21,
+  "recall": 0.125,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

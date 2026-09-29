@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_439",
+ "base_raw": "[\n    [\"Carl Anderson (American musician)\", \"PER\", \"date of birth\", \"2005\", \"TIME\"],\n    [\"Carl Anderson (American football)\", \"PER\", \"date of birth\", \"1898\", \"TIME\"],\n    [\"Carl Anderson (American football)\", \"PER\", \"date of death\", \"1978\", \"TIME\"],\n    [\"Carl Anderson (art director)\", \"PER\", \"date of birth\", \"1903\", \"TIME\"],\n    [\"Carl Anderson (art director)\", \"PER\", \"date of death\", \"1989\", \"TIME\"],\n    [\"Carl Anderson (basketball)\", \"PER\", \"date of birth\", \"1913\", \"TIME\"],\n    [\"Carl Anderson (basketball)\", \"PER\", \"date of death\", \"2001\", \"TIME\"],\n    [\"Carl Anderson (North Dakota politician)\", \"PER\", \"date of birth\", \"1897\", \"TIME\"],\n    [\"Carl Anderson (North Dakota politician)\", \"PER\", \"date of death\", \"1945\", \"TIME\"],\n    [\"Carl Anderson (singer)\", \"PER\", \"date of birth\", \"1945\", \"TIME\"],\n    [\"Carl Anderson (singer)\", \"PER\", \"date of death\", \"2004\", \"TIME\"],\n    [\"Carl A. Anderson\", \"PER\", \"date of birth\", \"1951\", \"TIME\"],\n    [\"Carl C. Anderson\", \"PER\", \"date of birth\", \"1877\", \"TIME\"],\n    [\"Carl C. Anderson\", \"PER\", \"date of death\", \"1912\", \"TIME\"],\n    [\"Carl David Anderson\", \"PER\", \"date of birth\", \"1905\", \"TIME\"],\n    [\"Carl David Anderson\", \"PER\", \"date of death\", \"1991\", \"TIME\"],\n    [\"Carl Thomas Anderson\", \"PER\", \"date of birth\", \"1865\", \"TIME\"],\n    [\"Carl Thomas Anderson\", \"PER\", \"date of death\", \"1948\", \"TIME\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 11,
+  "FN": 8,
+  "recall": 0.4666666666666667,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Carl Anderson (American musician)\", \"PER\", \"date of birth\", \"2005\", \"TIME\"],\n    [\"Carl Anderson (American football)\", \"PER\", \"date of birth\", \"1898\", \"TIME\"],\n    [\"Carl Anderson (American football)\", \"PER\", \"date of death\", \"1978\", \"TIME\"],\n    [\"Carl Anderson (art director)\", \"PER\", \"date of birth\", \"1903\", \"TIME\"],\n    [\"Carl Anderson (art director)\", \"PER\", \"date of death\", \"1989\", \"TIME\"],\n    [\"Carl Anderson (basketball)\", \"PER\", \"date of birth\", \"1913\", \"TIME\"],\n    [\"Carl Anderson (basketball)\", \"PER\", \"date of death\", \"2001\", \"TIME\"],\n    [\"Carl Anderson (North Dakota politician)\", \"PER\", \"date of birth\", \"1897\", \"TIME\"],\n    [\"Carl Anderson (North Dakota politician)\", \"PER\", \"date of death\", \"1945\", \"TIME\"],\n    [\"Carl Anderson (singer)\", \"PER\", \"date of birth\", \"1945\", \"TIME\"],\n    [\"Carl Anderson (singer)\", \"PER\", \"date of death\", \"2004\", \"TIME\"],\n    [\"Carl A. Anderson\", \"PER\", \"date of birth\", \"1951\", \"TIME\"],\n    [\"Carl C. Anderson\", \"PER\", \"date of birth\", \"1877\", \"TIME\"],\n    [\"Carl C. Anderson\", \"PER\", \"date of death\", \"1912\", \"TIME\"],\n    [\"Carl David Anderson\", \"PER\", \"date of birth\", \"1905\", \"TIME\"],\n    [\"Carl David Anderson\", \"PER\", \"date of death\", \"1991\", \"TIME\"],\n    [\"Carl Thomas Anderson\", \"PER\", \"date of birth\", \"1865\", \"TIME\"],\n    [\"Carl Thomas Anderson\", \"PER\", \"date of death\", \"1948\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 11,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 11,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 18,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Carl Anderson (American musician)\", \"PER\", \"date of birth\", \"2005\", \"TIME\"],\n    [\"Carl Anderson (American football)\", \"PER\", \"date of birth\", \"1898\", \"TIME\"],\n    [\"Carl Anderson (American football)\", \"PER\", \"date of death\", \"1978\", \"TIME\"],\n    [\"Carl Anderson (art director)\", \"PER\", \"date of birth\", \"1903\", \"TIME\"],\n    [\"Carl Anderson (art director)\", \"PER\", \"date of death\", \"1989\", \"TIME\"],\n    [\"Carl Anderson (basketball)\", \"PER\", \"date of birth\", \"1913\", \"TIME\"],\n    [\"Carl Anderson (basketball)\", \"PER\", \"date of death\", \"2001\", \"TIME\"],\n    [\"Carl Anderson (North Dakota politician)\", \"PER\", \"date of birth\", \"1897\", \"TIME\"],\n    [\"Carl Anderson (North Dakota politician)\", \"PER\", \"date of death\", \"1945\", \"TIME\"],\n    [\"Carl Anderson (singer)\", \"PER\", \"date of birth\", \"1945\", \"TIME\"],\n    [\"Carl Anderson (singer)\", \"PER\", \"date of death\", \"2004\", \"TIME\"],\n    [\"Carl A. Anderson\", \"PER\", \"date of birth\", \"1951\", \"TIME\"],\n    [\"Carl C. Anderson\", \"PER\", \"date of birth\", \"1877\", \"TIME\"],\n    [\"Carl C. Anderson\", \"PER\", \"date of death\", \"1912\", \"TIME\"],\n    [\"Carl David Anderson\", \"PER\", \"date of birth\", \"1905\", \"TIME\"],\n    [\"Carl David Anderson\", \"PER\", \"date of death\", \"1991\", \"TIME\"],\n    [\"Carl Thomas Anderson\", \"PER\", \"date of birth\", \"1865\", \"TIME\"],\n    [\"Carl Thomas Anderson\", \"PER\", \"date of death\", \"1948\", \"TIME\"]\n]"
+}

@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_101",
+ "base_raw": "[\n    [\"al-Burj\", \"LOC\", \"located in\", \"Aleppo Governorate\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"located in\", \"Aqil mountains\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"al-Rai\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"al-Bab\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Aleppo\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Kilis\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"captured by\", \"Free Syrian Army\", \"ORG\"],\n    [\"al-Burj\", \"LOC\", \"part of\", \"Nahiya al-Bab\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"part of\", \"al-Bab District\", \"LOC\"],\n    [\"Tall Battal\", \"LOC\", \"located near\", \"al-Burj\", \"LOC\"],\n    [\"Ka'ibah\", \"LOC\", \"located near\", \"al-Burj\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"population\", \"236\", \"NUM\"],\n    [\"al-Burj\", \"LOC\", \"country\", \"Syria\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 18,
+  "recall": 0.14285714285714285,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"al-Burj\", \"LOC\", \"located in\", \"Aleppo Governorate\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"located in\", \"Aqil mountains\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"bordering\", \"Queiq Plain\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"al-Rai\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"al-Bab\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Aleppo\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Kilis\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"captured by\", \"Free Syrian Army\", \"ORG\"],\n    [\"al-Burj\", \"LOC\", \"part of\", \"Nahiya al-Bab\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"part of\", \"al-Bab District\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Tall Battal\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Ka'ibah\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"population\", \"236\", \"NUM\"],\n    [\"Free Syrian Army\", \"ORG\", \"captured\", \"al-Burj\", \"LOC\"],\n    [\"Free Syrian Army\", \"ORG\", \"backed by\", \"Turkey\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 18,
+  "recall": 0.25,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"al-Burj\", \"LOC\", \"located in\", \"Aleppo Governorate\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"located in\", \"Aqil mountains\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"bordering\", \"Queiq Plain\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"al-Rai\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"al-Bab\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Aleppo\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Kilis\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"captured by\", \"Free Syrian Army\", \"ORG\"],\n    [\"al-Burj\", \"LOC\", \"part of\", \"Nahiya al-Bab\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"part of\", \"al-Bab District\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Tall Battal\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"near\", \"Ka'ibah\", \"LOC\"],\n    [\"al-Burj\", \"LOC\", \"population\", \"236\", \"NUM\"],\n    [\"Free Syrian Army\", \"ORG\", \"captured\", \"al-Burj\", \"LOC\"],\n    [\"Free Syrian Army\", \"ORG\", \"backed by\", \"Turkey\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 17,
+  "recall": 0.22727272727272727,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

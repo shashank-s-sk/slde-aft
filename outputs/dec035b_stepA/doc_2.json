@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_2",
+ "base_raw": "[\n    [\"Scotland\", \"LOC\", \"location of formation\", \"Bank of Scotland\", \"ORG\"],\n    [\"Scotland\", \"LOC\", \"location of formation\", \"Company of Scotland Trading to Africa and the Indies\", \"ORG\"],\n    [\"Aberdeenshire\", \"LOC\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"The Old Scottish Poor Law\", \"MISC\", \"applies to jurisdiction\", \"Scotland\", \"LOC\"],\n    [\"The burghs\", \"MISC\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"England\", \"LOC\", \"country of destination\", \"Scottish migrants\", \"MISC\"],\n    [\"Europe\", \"LOC\", \"country of destination\", \"Scottish migrants\", \"MISC\"],\n    [\"The Americas\", \"LOC\", \"country of destination\", \"Scottish migrants\", \"MISC\"],\n    [\"Ireland\", \"LOC\", \"country of destination\", \"Scottish migrants\", \"MISC\"],\n    [\"The Dari\u00e9n scheme\", \"MISC\", \"location\", \"Scotland\", \"LOC\"],\n    [\"The Company of Scotland Trading to Africa and the Indies\", \"ORG\", \"participant of\", \"The Dari\u00e9n scheme\", \"MISC\"],\n    [\"Scotland\", \"LOC\", \"country\", \"The Dari\u00e9n scheme\", \"MISC\"],\n    [\"England\", \"LOC\", \"country of union\", \"Scotland\", \"LOC\"],\n    [\"1707\", \"TIME\", \"date of event\", \"political union with England\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Scotland\", \"LOC\", \"located in\", \"Europe\", \"LOC\"],\n    [\"The seven ill years\", \"MISC\", \"location\", \"Scotland\", \"LOC\"],\n    [\"The seven ill years\", \"MISC\", \"time\", \"1690s\", \"TIME\"],\n    [\"The Scottish cattle trade\", \"MISC\", \"affected by\", \"French protectionism\", \"MISC\"],\n    [\"The famines of the 1690s\", \"MISC\", \"time\", \"1695\", \"TIME\"],\n    [\"The famines of the 1690s\", \"MISC\", \"time\", \"1696\", \"TIME\"],\n    [\"The famines of the 1690s\", \"MISC\", \"time\", \"1698-99\", \"TIME\"],\n    [\"Aberdeenshire\", \"LOC\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"The Old Scottish Poor Law\", \"MISC\", \"applies to jurisdiction\", \"Scotland\", \"LOC\"],\n    [\"The Bank of Scotland\", \"ORG\", \"founded by\", \"Scotland\", \"LOC\"],\n    [\"The Company of Scotland Trading to Africa and the Indies\", \"ORG\", \"founded by\", \"Scotland\", \"LOC\"],\n    [\"The Dari\u00e9n scheme\", \"MISC\", \"location\", \"Africa and the Indies\", \"MISC\"],\n    [\"The Dari\u00e9n scheme\", \"MISC\", \"resulted in\", \"failure\", \"MISC\"],\n    [\"The crisis\", \"MISC\", \"resulted in\", \"political union with England\", \"MISC\"],\n    [\"The crisis\", \"MISC\", \"time\", \"1707\", \"TIME\"],\n    [\"Ireland\", \"LOC\", \"country of emigration\", \"Scotland\", \"LOC\"],\n    [\"England\", \"LOC\", \"country of emigration\", \"Scotland\", \"LOC\"],\n    [\"Europe\", \"LOC\", \"country of emigration\", \"Scotland\", \"LOC\"],\n    [\"The Americas\", \"LOC\", \"country of emigration\", \"Scotland\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 29,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Scotland\", \"LOC\", \"location of formation\", \"Bank of Scotland\", \"ORG\"],\n    [\"Scotland\", \"LOC\", \"location of formation\", \"Company of Scotland Trading to Africa and the Indies\", \"ORG\"],\n    [\"Aberdeenshire\", \"LOC\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"The seven ill years\", \"MISC\", \"location\", \"Scotland\", \"LOC\"],\n    [\"The seven ill years\", \"MISC\", \"time\", \"1690s\", \"TIME\"],\n    [\"Scotland\", \"LOC\", \"country of origin\", \"Company of Scotland Trading to Africa and the Indies\", \"ORG\"],\n    [\"England\", \"LOC\", \"country\", \"Scotland\", \"LOC\"],\n    [\"Ireland\", \"LOC\", \"country\", \"Scotland\", \"LOC\"],\n    [\"Europe\", \"LOC\", \"continent\", \"Scotland\", \"LOC\"],\n    [\"The Americas\", \"LOC\", \"location\", \"Scotland\", \"LOC\"],\n    [\"Dari\u00e9n scheme\", \"MISC\", \"location\", \"Scotland\", \"LOC\"],\n    [\"Dari\u00e9n scheme\", \"MISC\", \"part of\", \"Company of Scotland Trading to Africa and the Indies\", \"ORG\"],\n    [\"Scotland\", \"LOC\", \"instance of\", \"famine\", \"MISC\"],\n    [\"1674\", \"TIME\", \"time\", \"famine\", \"MISC\"],\n    [\"1695\", \"TIME\", \"time\", \"famine\", \"MISC\"],\n    [\"1696\", \"TIME\", \"time\", \"famine\", \"MISC\"],\n    [\"1698\", \"TIME\", \"time\", \"famine\", \"MISC\"],\n    [\"1699\", \"TIME\", \"time\", \"famine\", \"MISC\"],\n    [\"French protectionism\", \"MISC\", \"cause of\", \"famine\", \"MISC\"],\n    [\"Scottish cattle trade\", \"MISC\", \"cause of\", \"famine\", \"MISC\"],\n    [\"Old Scottish Poor Law\", \"MISC\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Scotland\", \"LOC\", \"applies to jurisdiction\", \"Old Scottish Poor Law\", \"MISC\"],\n    [\"1707\", \"TIME\", \"time\", \"political union with England\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 32,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 34,
+  "judge_parse_ok": true
+ }
+}

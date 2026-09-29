@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_13",
+ "base_raw": "[\n    [\"Fursy Teyssier\", \"PER\", \"date of birth\", \"22 September 1985\", \"TIME\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"Les Discrets\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"Empyrium\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"The Vision Bleak\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"former member of\", \"Amesoeurs\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"former member of\", \"Alcest\", \"ORG\"],\n    [\"Les Discrets\", \"ORG\", \"genre\", \"shoegazing\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"position held\", \"guitarist\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"position held\", \"bass guitarist\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"position held\", \"lead vocalist\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"position held\", \"album cover artist\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"position held\", \"animated film director\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"creator of\", \"Les Discrets\", \"ORG\"],\n    [\"The Vision Bleak\", \"ORG\", \"genre\", \"gothic metal\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"director of\", \"The Wood Hag\", \"MISC\"],\n    [\"Alcest\", \"ORG\", \"album\", \"\u00c9cailles de Lune\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"composer of\", \"Abysses\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 15,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Fursy Teyssier\", \"PER\", \"date of birth\", \"22 September 1985\", \"TIME\"],\n    [\"Fursy Teyssier\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Les Discrets\", \"ORG\", \"genre\", \"shoegazing\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"Les Discrets\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"Empyrium\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"former member of\", \"Amesoeurs\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"former member of\", \"Alcest\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"The Vision Bleak\", \"ORG\"],\n    [\"The Vision Bleak\", \"ORG\", \"genre\", \"gothic metal\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"director\", \"The Wood Hag\", \"MISC\"],\n    [\"Alcest\", \"ORG\", \"genre\", \"MISC\", \"MISC\"],\n    [\"Les Discrets\", \"ORG\", \"creator\", \"Fursy Teyssier\", \"PER\"],\n    [\"Empyrium\", \"ORG\", \"member\", \"Fursy Teyssier\", \"PER\"],\n    [\"Amesoeurs\", \"ORG\", \"former member\", \"Fursy Teyssier\", \"PER\"],\n    [\"Alcest\", \"ORG\", \"former member\", \"Fursy Teyssier\", \"PER\"],\n    [\"The Vision Bleak\", \"ORG\", \"live member\", \"Fursy Teyssier\", \"PER\"],\n    [\"Agalloch\", \"ORG\", \"genre\", \"MISC\", \"MISC\"],\n    [\"Morbid Angel\", \"ORG\", \"genre\", \"MISC\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 19,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Fursy Teyssier\", \"PER\", \"date of birth\", \"22 September 1985\", \"TIME\"],\n    [\"Fursy Teyssier\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Les Discrets\", \"ORG\", \"genre\", \"shoegazing\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"Les Discrets\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"Empyrium\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"former member of\", \"Amesoeurs\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"former member of\", \"Alcest\", \"ORG\"],\n    [\"Fursy Teyssier\", \"PER\", \"member of\", \"The Vision Bleak\", \"ORG\"],\n    [\"The Vision Bleak\", \"ORG\", \"genre\", \"gothic metal\", \"MISC\"],\n    [\"Fursy Teyssier\", \"PER\", \"director of\", \"The Wood Hag\", \"MISC\"],\n    [\"Alcest\", \"ORG\", \"genre\", \"MISC\", \"MISC\"],\n    [\"Les Discrets\", \"ORG\", \"creator\", \"Fursy Teyssier\", \"PER\"],\n    [\"Empyrium\", \"ORG\", \"member\", \"Fursy Teyssier\", \"PER\"],\n    [\"Amesoeurs\", \"ORG\", \"former member\", \"Fursy Teyssier\", \"PER\"],\n    [\"Alcest\", \"ORG\", \"former member\", \"Fursy Teyssier\", \"PER\"],\n    [\"The Vision Bleak\", \"ORG\", \"live member\", \"Fursy Teyssier\", \"PER\"],\n    [\"Agalloch\", \"ORG\", \"genre\", \"MISC\", \"MISC\"],\n    [\"Morbid Angel\", \"ORG\", \"genre\", \"MISC\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 22,
+  "FN": 5,
+  "recall": 0.5,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

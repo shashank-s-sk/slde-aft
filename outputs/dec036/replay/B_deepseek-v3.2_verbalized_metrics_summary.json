@@ -1,0 +1,164 @@
+{
+  "R1_max_merge": {
+    "exploratory_posthoc": false,
+    "f1_selected": {
+      "selected_tau": 0.98,
+      "precision": 0.5384615384615384,
+      "recall": 1.0,
+      "f1": 0.7000000000000001,
+      "tp": 490,
+      "fp": 420,
+      "fn": 0,
+      "n_admitted_test": 910,
+      "n_contested_slots_with_admission_test": 18
+    },
+    "fixed_tau_0.88": {
+      "tau": 0.88,
+      "precision": 0.4627006610009443,
+      "recall": 1.0,
+      "f1": 0.6326662362814719,
+      "tp": 490,
+      "fp": 569,
+      "fn": 0,
+      "n_admitted_test": 1059,
+      "n_contested_slots_with_admission_test": 45
+    },
+    "ece": 0.5113100848256363,
+    "brier": 0.5039966069745522
+  },
+  "R2_published": {
+    "exploratory_posthoc": false,
+    "f1_selected": {
+      "selected_tau": 0.73,
+      "precision": 0.5232300884955752,
+      "recall": 0.9653061224489796,
+      "f1": 0.6786226685796269,
+      "tp": 473,
+      "fp": 431,
+      "fn": 17,
+      "n_admitted_test": 904,
+      "n_contested_slots_with_admission_test": 0
+    },
+    "fixed_tau_0.88": {
+      "tau": 0.88,
+      "precision": 0.95,
+      "recall": 0.46530612244897956,
+      "f1": 0.6246575342465753,
+      "tp": 228,
+      "fp": 12,
+      "fn": 262,
+      "n_admitted_test": 240,
+      "n_contested_slots_with_admission_test": 0
+    },
+    "ece": 0.27066219256853363,
+    "brier": 0.26190374727792315
+  },
+  "R3_source_count": {
+    "exploratory_posthoc": false,
+    "f1_selected": {
+      "selected_tau": 0.36,
+      "precision": 0.5168776371308017,
+      "recall": 1.0,
+      "f1": 0.6815020862308763,
+      "tp": 490,
+      "fp": 458,
+      "fn": 0,
+      "n_admitted_test": 948,
+      "n_contested_slots_with_admission_test": 23
+    },
+    "fixed_tau_0.88": {
+      "tau": 0.88,
+      "precision": 0.957983193277311,
+      "recall": 0.46530612244897956,
+      "f1": 0.6263736263736264,
+      "tp": 228,
+      "fp": 10,
+      "fn": 262,
+      "n_admitted_test": 238,
+      "n_contested_slots_with_admission_test": 0
+    },
+    "ece": 0.27697543444614836,
+    "brier": 0.2615934973068829
+  },
+  "R4_evidence_share": {
+    "exploratory_posthoc": false,
+    "f1_selected": {
+      "selected_tau": 0.73,
+      "precision": 0.5232300884955752,
+      "recall": 0.9653061224489796,
+      "f1": 0.6786226685796269,
+      "tp": 473,
+      "fp": 431,
+      "fn": 17,
+      "n_admitted_test": 904,
+      "n_contested_slots_with_admission_test": 0
+    },
+    "fixed_tau_0.88": {
+      "tau": 0.88,
+      "precision": 0.95,
+      "recall": 0.46530612244897956,
+      "f1": 0.6246575342465753,
+      "tp": 228,
+      "fp": 12,
+      "fn": 262,
+      "n_admitted_test": 240,
+      "n_contested_slots_with_admission_test": 0
+    },
+    "ece": 0.2710562839683612,
+    "brier": 0.2621487182330982
+  },
+  "R5_combined": {
+    "exploratory_posthoc": false,
+    "f1_selected": {
+      "selected_tau": 0.37,
+      "precision": 0.5174234424498416,
+      "recall": 1.0,
+      "f1": 0.6819763395963814,
+      "tp": 490,
+      "fp": 457,
+      "fn": 0,
+      "n_admitted_test": 947,
+      "n_contested_slots_with_admission_test": 23
+    },
+    "fixed_tau_0.88": {
+      "tau": 0.88,
+      "precision": 0.957983193277311,
+      "recall": 0.46530612244897956,
+      "f1": 0.6263736263736264,
+      "tp": 228,
+      "fp": 10,
+      "fn": 262,
+      "n_admitted_test": 238,
+      "n_contested_slots_with_admission_test": 0
+    },
+    "ece": 0.2793723566136171,
+    "brier": 0.26064535922988485
+  },
+  "R6_evidence_share_unsquared": {
+    "exploratory_posthoc": true,
+    "f1_selected": {
+      "selected_tau": 0.99,
+      "precision": 0.52989449003517,
+      "recall": 0.9224489795918367,
+      "f1": 0.673119880863738,
+      "tp": 452,
+      "fp": 401,
+      "fn": 38,
+      "n_admitted_test": 853,
+      "n_contested_slots_with_admission_test": 0
+    },
+    "fixed_tau_0.88": {
+      "tau": 0.88,
+      "precision": 0.5286549707602339,
+      "recall": 0.9224489795918367,
+      "f1": 0.6721189591078067,
+      "tp": 452,
+      "fp": 403,
+      "fn": 38,
+      "n_admitted_test": 855,
+      "n_contested_slots_with_admission_test": 0
+    },
+    "ece": 0.43167980429877917,
+    "brier": 0.42004085031003635
+  }
+}

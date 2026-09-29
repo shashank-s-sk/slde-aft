@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_88",
+ "base_raw": "[\n    [\"TET / PRAO\", \"MISC\", \"location\", \"Finland\", \"LOC\"],\n    [\"TET / PRAO\", \"MISC\", \"location\", \"Sweden\", \"LOC\"],\n    [\"TET / PRAO\", \"MISC\", \"target age group\", \"middle school students\", \"MISC\"],\n    [\"TET / PRAO\", \"MISC\", \"duration\", \"one to three weeks\", \"TIME\"],\n    [\"TET / PRAO\", \"MISC\", \"grade level\", \"7th, 8th or 9th grade\", \"MISC\"],\n    [\"students\", \"MISC\", \"benefit\", \"one free meal per day\", \"MISC\"],\n    [\"employers\", \"MISC\", \"cost coverage\", \"Finnish/Swedish state\", \"ORG\"],\n    [\"TET / PRAO\", \"MISC\", \"work hours\", \"six hours\", \"NUM\"],\n    [\"TET / PRAO\", \"MISC\", \"lunch break\", \"30 minutes\", \"TIME\"],\n    [\"TET / PRAO\", \"MISC\", \"weight limit\", \"15 kg\", \"NUM\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"TET / PRAO\", \"MISC\", \"location\", \"Finland\", \"LOC\"],\n    [\"TET / PRAO\", \"MISC\", \"location\", \"Sweden\", \"LOC\"],\n    [\"TET / PRAO\", \"MISC\", \"target age group\", \"middle school students\", \"MISC\"],\n    [\"Finland\", \"LOC\", \"funds\", \"TET / PRAO costs\", \"MISC\"],\n    [\"Sweden\", \"LOC\", \"funds\", \"TET / PRAO costs\", \"MISC\"],\n    [\"TET / PRAO students\", \"MISC\", \"entitled to\", \"one free meal per day\", \"MISC\"],\n    [\"TET / PRAO\", \"MISC\", \"duration\", \"one to three weeks\", \"TIME\"],\n    [\"TET / PRAO\", \"MISC\", \"grade level\", \"7th, 8th or 9th grade\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"TET\", \"MISC\", \"location\", \"Finland\", \"LOC\"],\n    [\"TET\", \"MISC\", \"location\", \"Sweden\", \"LOC\"],\n    [\"Finland\", \"LOC\", \"language\", \"Finnish\", \"MISC\"],\n    [\"Sweden\", \"LOC\", \"language\", \"Swedish\", \"MISC\"],\n    [\"TET\", \"MISC\", \"target age group\", \"middle school students\", \"MISC\"],\n    [\"TET\", \"MISC\", \"duration\", \"one to three weeks\", \"TIME\"],\n    [\"TET students\", \"MISC\", \"benefit\", \"one free meal per day\", \"MISC\"],\n    [\"Finnish/Swedish state\", \"ORG\", \"payer\", \"employer costs\", \"MISC\"],\n    [\"TET program\", \"MISC\", \"purpose\", \"introduce students to real-life working environments\", \"MISC\"],\n    [\"TET students\", \"MISC\", \"work schedule\", \"six-hour workday\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 19,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

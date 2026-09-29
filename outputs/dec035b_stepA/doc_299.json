@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_299",
+ "base_raw": "[\n    [\"Deng Xiaoping\", \"PER\", \"date of birth\", \"None\", \"TIME\"],\n    [\"Joshua Cooper Ramo\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Beijing Consensus\", \"MISC\", \"location of formation\", \"Beijing\", \"LOC\"],\n    [\"China\", \"LOC\", \"capital\", \"Beijing\", \"LOC\"],\n    [\"Deng Xiaoping\", \"PER\", \"country of citizenship\", \"China\", \"LOC\"],\n    [\"Joshua Cooper Ramo\", \"PER\", \"notable work\", \"Beijing Consensus\", \"MISC\"],\n    [\"Beijing Consensus\", \"MISC\", \"author\", \"Joshua Cooper Ramo\", \"PER\"],\n    [\"China\", \"LOC\", \"economic model\", \"Beijing Consensus\", \"MISC\"],\n    [\"Washington Consensus\", \"MISC\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"International Monetary Fund\", \"ORG\", \"location\", \"Washington\", \"LOC\"],\n    [\"World Bank\", \"ORG\", \"location\", \"Washington\", \"LOC\"],\n    [\"U.S. Treasury\", \"ORG\", \"location\", \"Washington\", \"LOC\"],\n    [\"Mao Zedong\", \"PER\", \"date of death\", \"1976\", \"TIME\"],\n    [\"Deng Xiaoping\", \"PER\", \"position held\", \"leader of China\", \"MISC\"],\n    [\"Joshua Cooper Ramo\", \"PER\", \"educated at\", \"None\", \"ORG\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in Asia",
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Deng Xiaoping\", \"PER\", \"date of death\", \"1976\", \"TIME\"],\n    [\"Joshua Cooper Ramo\", \"PER\", \"author\", \"Beijing Consensus\", \"MISC\"],\n    [\"Beijing Consensus\", \"MISC\", \"alternative to\", \"Washington Consensus\", \"MISC\"],\n    [\"China\", \"LOC\", \"economic development model\", \"Beijing Consensus\", \"MISC\"],\n    [\"IMF\", \"ORG\", \"promotes\", \"Washington Consensus\", \"MISC\"],\n    [\"World Bank\", \"ORG\", \"promotes\", \"Washington Consensus\", \"MISC\"],\n    [\"U.S. Treasury\", \"ORG\", \"promotes\", \"Washington Consensus\", \"MISC\"],\n    [\"Joshua Cooper Ramo\", \"PER\", \"explained\", \"Beijing Consensus\", \"MISC\"],\n    [\"Beijing Consensus\", \"MISC\", \"legitimizes\", \"particularity\", \"MISC\"],\n    [\"China\", \"LOC\", \"location of formation\", \"Beijing Consensus\", \"MISC\"],\n    [\"Deng Xiaoping\", \"PER\", \"instituted\", \"Beijing Consensus\", \"MISC\"],\n    [\"Mao Zedong\", \"PER\", \"date of death\", \"1976\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 22,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Cities in Asia",
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Deng Xiaoping\", \"PER\", \"date of death\", \"1976\", \"TIME\"],\n    [\"Joshua Cooper Ramo\", \"PER\", \"author\", \"Beijing Consensus\", \"MISC\"],\n    [\"Beijing Consensus\", \"MISC\", \"alternative to\", \"Washington Consensus\", \"MISC\"],\n    [\"China\", \"LOC\", \"economic model\", \"Beijing Consensus\", \"MISC\"],\n    [\"IMF\", \"ORG\", \"promotes\", \"Washington Consensus\", \"MISC\"],\n    [\"World Bank\", \"ORG\", \"promotes\", \"Washington Consensus\", \"MISC\"],\n    [\"U.S. Treasury\", \"ORG\", \"promotes\", \"Washington Consensus\", \"MISC\"],\n    [\"Beijing Consensus\", \"MISC\", \"location of formation\", \"China\", \"LOC\"],\n    [\"Deng Xiaoping\", \"PER\", \"country of citizenship\", \"China\", \"LOC\"],\n    [\"Joshua Cooper Ramo\", \"PER\", \"country of origin\", \"U.S.\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 20,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

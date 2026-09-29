@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_209",
+ "base_raw": "[\n    [\"John Moran Bailey\", \"PER\", \"date of birth\", \"November 23, 1904\", \"TIME\"],\n    [\"John Moran Bailey\", \"PER\", \"date of death\", \"April 10, 1975\", \"TIME\"],\n    [\"John Moran Bailey\", \"PER\", \"educated at\", \"The Catholic University of America\", \"ORG\"],\n    [\"John Moran Bailey\", \"PER\", \"educated at\", \"Harvard Law School\", \"ORG\"],\n    [\"John Moran Bailey\", \"PER\", \"ethnic group\", \"Irish\", \"MISC\"],\n    [\"John Moran Bailey\", \"PER\", \"religion\", \"Catholic\", \"MISC\"],\n    [\"Connecticut\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"John F. Kennedy\", \"PER\", \"supported by\", \"John Moran Bailey\", \"PER\"],\n    [\"Democratic National Committee\", \"ORG\", \"chairman\", \"John Moran Bailey\", \"PER\"],\n    [\"Democratic Party\", \"ORG\", \"chairman\", \"John Moran Bailey\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"John Moran Bailey\", \"PER\", \"date of birth\", \"November 23, 1904\", \"TIME\"],\n    [\"John Moran Bailey\", \"PER\", \"date of death\", \"April 10, 1975\", \"TIME\"],\n    [\"John Moran Bailey\", \"PER\", \"educated at\", \"The Catholic University of America\", \"ORG\"],\n    [\"John Moran Bailey\", \"PER\", \"educated at\", \"Harvard Law School\", \"ORG\"],\n    [\"John Moran Bailey\", \"PER\", \"ethnic group\", \"Irish\", \"MISC\"],\n    [\"John Moran Bailey\", \"PER\", \"religion\", \"Catholic\", \"MISC\"],\n    [\"John F. Kennedy\", \"PER\", \"supported by\", \"John Moran Bailey\", \"PER\"],\n    [\"Connecticut\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Democratic Party\", \"ORG\", \"member\", \"John Moran Bailey\", \"PER\"],\n    [\"Democratic National Committee\", \"ORG\", \"chairman\", \"John Moran Bailey\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 6,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"John Moran Bailey\", \"PER\", \"date of birth\", \"November 23, 1904\", \"TIME\"],\n    [\"John Moran Bailey\", \"PER\", \"date of death\", \"April 10, 1975\", \"TIME\"],\n    [\"John Moran Bailey\", \"PER\", \"educated at\", \"The Catholic University of America\", \"ORG\"],\n    [\"John Moran Bailey\", \"PER\", \"educated at\", \"Harvard Law School\", \"ORG\"],\n    [\"John Moran Bailey\", \"PER\", \"ethnic group\", \"Irish\", \"MISC\"],\n    [\"John Moran Bailey\", \"PER\", \"religion\", \"Catholic\", \"MISC\"],\n    [\"Connecticut\", \"LOC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"John F. Kennedy\", \"PER\", \"supported by\", \"John Moran Bailey\", \"PER\"],\n    [\"Democratic National Committee\", \"ORG\", \"chairman\", \"John Moran Bailey\", \"PER\"],\n    [\"Democratic Party\", \"ORG\", \"member\", \"John Moran Bailey\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 7,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ }
+}

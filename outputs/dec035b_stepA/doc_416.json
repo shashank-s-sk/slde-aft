@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_416",
+ "base_raw": "[\n    [\"KMFDM\", \"ORG\", \"genre\", \"industrial rock\", \"MISC\"],\n    [\"Nihil\", \"MISC\", \"release date\", \"April 4, 1995\", \"TIME\"],\n    [\"Nihil\", \"MISC\", \"recorded in\", \"Seattle, Washington\", \"LOC\"],\n    [\"Raymond Watts\", \"PER\", \"member of\", \"KMFDM\", \"ORG\"],\n    [\"Bill Rieflin\", \"PER\", \"member of\", \"KMFDM\", \"ORG\"],\n    [\"Sascha Konietzko\", \"PER\", \"leader of\", \"KMFDM\", \"ORG\"],\n    [\"Juke Joint Jezebel\", \"MISC\", \"release type\", \"single\", \"MISC\"],\n    [\"Nihil\", \"MISC\", \"published by\", \"Wax Trax!/TVT\", \"ORG\"],\n    [\"KMFDM\", \"ORG\", \"location of formation\", \"Seattle, Washington\", \"LOC\"],\n    [\"Nihil\", \"MISC\", \"remastered release date\", \"2007\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Genre: Rock",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"KMFDM\", \"ORG\", \"genre\", \"industrial rock\", \"MISC\"],\n    [\"Nihil\", \"MISC\", \"release date\", \"April 4, 1995\", \"TIME\"],\n    [\"Nihil\", \"MISC\", \"recorded in\", \"Seattle, Washington\", \"LOC\"],\n    [\"Raymond Watts\", \"PER\", \"member of\", \"KMFDM\", \"ORG\"],\n    [\"Bill Rieflin\", \"PER\", \"member of\", \"KMFDM\", \"ORG\"],\n    [\"Sascha Konietzko\", \"PER\", \"leader of\", \"KMFDM\", \"ORG\"],\n    [\"Juke Joint Jezebel\", \"MISC\", \"release by\", \"KMFDM\", \"ORG\"],\n    [\"Nihil\", \"MISC\", \"remastered by\", \"KMFDM\", \"ORG\"],\n    [\"Wax Trax!/TVT\", \"ORG\", \"released\", \"Nihil\", \"MISC\"],\n    [\"KMFDM\", \"ORG\", \"founded by\", \"Sascha Konietzko\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"KMFDM\", \"ORG\", \"genre\", \"industrial rock\", \"MISC\"],\n    [\"Nihil\", \"MISC\", \"release date\", \"April 4, 1995\", \"TIME\"],\n    [\"Nihil\", \"MISC\", \"recorded in\", \"Seattle, Washington\", \"LOC\"],\n    [\"Raymond Watts\", \"PER\", \"member of\", \"KMFDM\", \"ORG\"],\n    [\"Bill Rieflin\", \"PER\", \"member of\", \"KMFDM\", \"ORG\"],\n    [\"Sascha Konietzko\", \"PER\", \"leader of\", \"KMFDM\", \"ORG\"],\n    [\"Juke Joint Jezebel\", \"MISC\", \"artist\", \"KMFDM\", \"ORG\"],\n    [\"Nihil\", \"MISC\", \"publisher\", \"Wax Trax!/TVT\", \"ORG\"],\n    [\"KMFDM\", \"ORG\", \"founded by\", \"Sascha Konietzko\", \"PER\"],\n    [\"Nihil\", \"MISC\", \"remastered version release date\", \"2007\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 12,
+  "recall": 0.29411764705882354,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

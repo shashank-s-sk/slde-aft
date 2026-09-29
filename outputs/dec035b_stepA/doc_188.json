@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_188",
+ "base_raw": "[\n    [\"Elexis Sinclaire\", \"MISC\", \"instance of\", \"fictional character\", \"MISC\"],\n    [\"SiN\", \"MISC\", \"genre\", \"first-person shooter\", \"MISC\"],\n    [\"Ritual Entertainment\", \"ORG\", \"developer\", \"SiN\", \"MISC\"],\n    [\"Elexis Sinclaire\", \"MISC\", \"enemy of\", \"John R. Blade\", \"PER\"],\n    [\"John R. Blade\", \"PER\", \"occupation\", \"private security force commander\", \"MISC\"],\n    [\"SiN Episodes\", \"MISC\", \"release year\", \"2006\", \"TIME\"],\n    [\"Bianca Beauchamp\", \"PER\", \"occupation\", \"model\", \"MISC\"],\n    [\"Elexis Sinclaire\", \"MISC\", \"portrayed by\", \"Bianca Beauchamp\", \"PER\"],\n    [\"ADV Films\", \"ORG\", \"producer\", \"anime film\", \"MISC\"],\n    [\"Ritual Entertainment\", \"ORG\", \"collaborator\", \"ADV Films\", \"ORG\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Elexis Sinclaire\", \"MISC\", \"instance of\", \"fictional character\", \"MISC\"],\n    [\"Elexis Sinclaire\", \"MISC\", \"creator\", \"Ritual Entertainment\", \"ORG\"],\n    [\"SiN\", \"MISC\", \"genre\", \"first-person shooter\", \"MISC\"],\n    [\"SiN\", \"MISC\", \"developer\", \"Ritual Entertainment\", \"ORG\"],\n    [\"Elexis Sinclaire\", \"MISC\", \"enemy of\", \"John R. Blade\", \"MISC\"],\n    [\"John R. Blade\", \"MISC\", \"occupation\", \"private security force commander\", \"MISC\"],\n    [\"SiN Episodes\", \"MISC\", \"release year\", \"2006\", \"TIME\"],\n    [\"Bianca Beauchamp\", \"PER\", \"occupation\", \"model\", \"MISC\"],\n    [\"Elexis Sinclaire\", \"MISC\", \"portrayed by\", \"Bianca Beauchamp\", \"PER\"],\n    [\"ADV Films\", \"ORG\", \"partner\", \"Ritual Entertainment\", \"ORG\"],\n    [\"SiN\", \"MISC\", \"release year\", \"1998\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 10,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Elexis Sinclaire\", \"PER\", \"instance of\", \"fictional character\", \"MISC\"],\n    [\"SiN\", \"MISC\", \"genre\", \"first-person shooter\", \"MISC\"],\n    [\"Ritual Entertainment\", \"ORG\", \"developer\", \"SiN\", \"MISC\"],\n    [\"Elexis Sinclaire\", \"PER\", \"enemy of\", \"John R. Blade\", \"PER\"],\n    [\"SiN Episodes\", \"MISC\", \"release year\", \"2006\", \"TIME\"],\n    [\"Bianca Beauchamp\", \"PER\", \"occupation\", \"model\", \"MISC\"],\n    [\"ADV Films\", \"ORG\", \"producer\", \"anime film\", \"MISC\"],\n    [\"Elexis Sinclaire\", \"PER\", \"portrayed by\", \"Bianca Beauchamp\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ }
+}

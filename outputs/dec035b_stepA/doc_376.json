@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_376",
+ "base_raw": "[\n    [\"Cecilia & The Argonauts\", \"ORG\", \"founded by\", \"Cecilia Ferrer\", \"PER\"],\n    [\"Cecilia Ferrer\", \"PER\", \"born in\", \"Stockholm, Sweden\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"date of birth\", \"1982\", \"TIME\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Osiris\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Stop\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Macolla\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"awarded\", \"Z Musical Award for Best Nicaraguan Performer\", \"MISC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"educated at\", \"Royal Swedish Academy of Music\", \"ORG\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"genre\", \"Pop rock\", \"MISC\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"founded by\", \"Mattias Fjellstr\u00f6m\", \"PER\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"founded by\", \"Janne Maninnen\", \"PER\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"founded by\", \"Andreas Ekstedt\", \"PER\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"founded by\", \"Jonathan Fritz\u00e9n\", \"PER\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"tour\", \"Navegando Tour 2006\", \"MISC\"],\n    [\"Navegando Tour 2006\", \"MISC\", \"location\", \"Managua, Nicaragua\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"works as\", \"music teacher\", \"MISC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"located in\", \"Stockholm\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Music Genre: Rock"
+ ],
+ "kb_orig_raw": "[\n    [\"Cecilia Ferrer\", \"PER\", \"place of birth\", \"Stockholm\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"date of birth\", \"1982\", \"TIME\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"location of formation\", \"Sweden\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"educated at\", \"Royal Swedish Academy of Music\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Osiris\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Stop\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Macolla\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"award received\", \"Z Musical Award for Best Nicaraguan Performer\", \"MISC\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"country\", \"Nicaragua\", \"LOC\"],\n    [\"Navegando Tour 2006\", \"MISC\", \"location\", \"Managua\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"position held\", \"music teacher\", \"MISC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"employer\", \"Stockholm\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 24,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Music Genre: Rock"
+ ],
+ "kb_dedup_raw": "[\n    [\"Cecilia Ferrer\", \"PER\", \"place of birth\", \"Stockholm\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"date of birth\", \"1982\", \"TIME\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"location of formation\", \"Sweden\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"educated at\", \"Royal Swedish Academy of Music\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Osiris\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Stop\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"member of\", \"Macolla\", \"ORG\"],\n    [\"Cecilia Ferrer\", \"PER\", \"award received\", \"Z Musical Award for Best Nicaraguan Performer\", \"MISC\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"country\", \"Nicaragua\", \"LOC\"],\n    [\"Navegando Tour 2006\", \"MISC\", \"location\", \"Managua\", \"LOC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"position held\", \"music teacher\", \"MISC\"],\n    [\"Cecilia Ferrer\", \"PER\", \"employer\", \"Stockholm\", \"LOC\"],\n    [\"Cecilia & The Argonauts\", \"ORG\", \"founded by\", \"Cecilia Ferrer\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 24,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

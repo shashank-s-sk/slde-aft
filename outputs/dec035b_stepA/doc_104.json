@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_104",
+ "base_raw": "[\n    [\"David Zvi Hoffmann\", \"PER\", \"place of birth\", \"Verb\u00f3\", \"LOC\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"date of death\", \"November 20, 1921\", \"TIME\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"educated at\", \"University of T\u00fcbingen\", \"ORG\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"employer\", \"Rabbinical Seminary of Berlin\", \"ORG\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"position held\", \"rector\", \"MISC\"],\n    [\"Moshe Schick\", \"PER\", \"student\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"Azriel Hildesheimer\", \"PER\", \"student\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"Samson Raphael Hirsch\", \"PER\", \"employer\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"educated at\", \"College at Pressburg\", \"ORG\"],\n    [\"Rabbinical Seminary of Berlin\", \"ORG\", \"located in\", \"Berlin\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"David Zvi Hoffmann\", \"PER\", \"date of birth\", \"November 24, 1843\", \"TIME\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"place of birth\", \"Verb\u00f3\", \"LOC\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"country of birth\", \"Austrian Empire\", \"LOC\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"date of death\", \"November 20, 1921\", \"TIME\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"place of death\", \"Berlin\", \"LOC\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"educated at\", \"University of T\u00fcbingen\", \"ORG\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"employer\", \"Rabbinical Seminary of Berlin\", \"ORG\"],\n    [\"Moshe Schick\", \"PER\", \"student\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"Azriel Hildesheimer\", \"PER\", \"student\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"position held\", \"rector\", \"MISC\"],\n    [\"Samson Raphael Hirsch\", \"PER\", \"employer\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"educated at\", \"College at Pressburg\", \"ORG\"],\n    [\"Rabbinical Seminary of Berlin\", \"ORG\", \"located in\", \"Berlin\", \"LOC\"],\n    [\"University of T\u00fcbingen\", \"ORG\", \"located in\", \"T\u00fcbingen\", \"LOC\"],\n    [\"College at Pressburg\", \"ORG\", \"located in\", \"Pressburg\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 15,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"David Zvi Hoffmann\", \"PER\", \"date of birth\", \"November 24, 1843\", \"TIME\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"place of birth\", \"Verb\u00f3\", \"LOC\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"country of birth\", \"Austrian Empire\", \"LOC\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"date of death\", \"November 20, 1921\", \"TIME\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"place of death\", \"Berlin\", \"LOC\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"educated at\", \"University of T\u00fcbingen\", \"ORG\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"employer\", \"Rabbinical Seminary of Berlin\", \"ORG\"],\n    [\"Moshe Schick\", \"PER\", \"student\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"Azriel Hildesheimer\", \"PER\", \"student\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"position held\", \"rector\", \"MISC\"],\n    [\"Samson Raphael Hirsch\", \"PER\", \"employer\", \"David Zvi Hoffmann\", \"PER\"],\n    [\"David Zvi Hoffmann\", \"PER\", \"educated at\", \"College at Pressburg\", \"ORG\"],\n    [\"Rabbinical Seminary of Berlin\", \"ORG\", \"located in\", \"Berlin\", \"LOC\"],\n    [\"University of T\u00fcbingen\", \"ORG\", \"located in\", \"T\u00fcbingen\", \"LOC\"],\n    [\"College at Pressburg\", \"ORG\", \"located in\", \"Pressburg\", \"LOC\"]\n]"
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_456",
+ "base_raw": "[\n    [\"Alabama Motorsports Park\", \"LOC\", \"located in the administrative territorial entity\", \"Prichard\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"located in the administrative territorial entity\", \"Saraland\", \"LOC\"],\n    [\"Dale Earnhardt Jr.\", \"PER\", \"sibling\", \"Kelley Earnhardt Elledge\", \"PER\"],\n    [\"Dale Earnhardt Jr.\", \"PER\", \"sibling\", \"Kerry Earnhardt\", \"PER\"],\n    [\"Mike Dow\", \"PER\", \"position held\", \"mayor\", \"MISC\"],\n    [\"Mike Dow\", \"PER\", \"location\", \"Mobile\", \"LOC\"],\n    [\"Prichard\", \"LOC\", \"part of\", \"Alabama\", \"LOC\"],\n    [\"Saraland\", \"LOC\", \"part of\", \"Alabama\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"location\", \"Mobile\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"country\", \"U.S.\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Alabama Motorsports Park\", \"LOC\", \"located in the administrative territorial entity\", \"Prichard\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"located in the administrative territorial entity\", \"Saraland\", \"LOC\"],\n    [\"Dale Earnhardt Jr.\", \"PER\", \"sibling\", \"Kelley Earnhardt Elledge\", \"PER\"],\n    [\"Dale Earnhardt Jr.\", \"PER\", \"sibling\", \"Kerry Earnhardt\", \"PER\"],\n    [\"Mike Dow\", \"PER\", \"position held\", \"mayor\", \"MISC\"],\n    [\"Mike Dow\", \"PER\", \"location\", \"Mobile\", \"LOC\"],\n    [\"Prichard\", \"LOC\", \"located in the administrative territorial entity\", \"Alabama\", \"LOC\"],\n    [\"Saraland\", \"LOC\", \"located in the administrative territorial entity\", \"Alabama\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"location\", \"Mobile\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"country\", \"U.S.\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 12,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Alabama Motorsports Park\", \"LOC\", \"located in the administrative territorial entity\", \"Prichard\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"located in the administrative territorial entity\", \"Saraland\", \"LOC\"],\n    [\"Dale Earnhardt Jr.\", \"PER\", \"sibling\", \"Kelley Earnhardt Elledge\", \"PER\"],\n    [\"Dale Earnhardt Jr.\", \"PER\", \"sibling\", \"Kerry Earnhardt\", \"PER\"],\n    [\"Mike Dow\", \"PER\", \"position held\", \"mayor\", \"MISC\"],\n    [\"Mike Dow\", \"PER\", \"location\", \"Mobile\", \"LOC\"],\n    [\"Prichard\", \"LOC\", \"located in the administrative territorial entity\", \"Alabama\", \"LOC\"],\n    [\"Saraland\", \"LOC\", \"located in the administrative territorial entity\", \"Alabama\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"location\", \"Mobile\", \"LOC\"],\n    [\"Alabama Motorsports Park\", \"LOC\", \"country\", \"U.S.\", \"LOC\"]\n]"
+}

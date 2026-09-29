@@ -1,0 +1,34 @@
+{
+  "counts": {
+    "docred_extractor_>1_doc": 450,
+    "docred_extractor_repeat_within_one_doc": 1330,
+    "docred_extractor_triples": 7794,
+    "gen_admitted@0.5_dedup_source_doc": 574,
+    "gen_admitted@0.5_repeat_counting": 4604,
+    "gen_admitted_only_via_repeats": 4030,
+    "gen_edges": 8403,
+    "has_stored": 61676,
+    "stored_differs_nonintegral_k(stale)": 319,
+    "stored_eq_1_trusted_or_seed": 370,
+    "stored_eq_repeat_counted_cnor": 60987,
+    "triples": 61772,
+    "triples_n_obs>1": 26376,
+    "triples_n_obs>1_single_source": 24957
+  },
+  "confidence_values_obs_weighted": {
+    "0.6": 170617,
+    "0.1": 15013,
+    "0.4": 4774,
+    "1": 706
+  },
+  "sources_obs_weighted": {
+    "gpt-4o-mini": 174287,
+    "Extractor_gpt-4o": 15013,
+    "subconcept generator based on SentenceTransformer with all-MiniLM-L6-v2 embeddings and Kmeans cluster": 1104,
+    "seedInstances": 706
+  },
+  "distinct_concepts_admitted@0.5": {
+    "repeat_counting": 51,
+    "dedup_source_doc": 42
+  }
+}

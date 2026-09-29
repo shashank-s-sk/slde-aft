@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_85",
+ "base_raw": "[\n    [\"The Pool of the Black One\", \"MISC\", \"author\", \"Robert E. Howard\", \"PER\"],\n    [\"The Pool of the Black One\", \"MISC\", \"published in\", \"Weird Tales\", \"MISC\"],\n    [\"The Sword of Conan\", \"MISC\", \"publisher\", \"Gnome Press\", \"ORG\"],\n    [\"Conan the Adventurer\", \"MISC\", \"publisher\", \"Lancer Books\", \"ORG\"],\n    [\"The Conan Chronicles Volume 1 : The People of the Black Circle\", \"MISC\", \"publisher\", \"Del Rey\", \"ORG\"],\n    [\"Robert E. Howard\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Conan the Cimmerian\", \"PER\", \"creator\", \"Robert E. Howard\", \"PER\"],\n    [\"The Pool of the Black One\", \"MISC\", \"part of\", \"The Conan Chronicles Volume 1 : The People of the Black Circle\", \"MISC\"],\n    [\"The Pool of the Black One\", \"MISC\", \"publication date\", \"October 1933\", \"TIME\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 5,
+  "FN": 17,
+  "recall": 0.19047619047619047,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"The Pool of the Black One\", \"MISC\", \"author\", \"Robert E. Howard\", \"PER\"],\n    [\"The Pool of the Black One\", \"MISC\", \"published in\", \"Weird Tales\", \"MISC\"],\n    [\"The Sword of Conan\", \"MISC\", \"publisher\", \"Gnome Press\", \"ORG\"],\n    [\"Conan the Adventurer\", \"MISC\", \"publisher\", \"Lancer Books\", \"ORG\"],\n    [\"The Conan Chronicles Volume 1 : The People of the Black Circle\", \"MISC\", \"publisher\", \"Del Rey\", \"ORG\"],\n    [\"Robert E. Howard\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Conan the Cimmerian\", \"PER\", \"creator\", \"Robert E. Howard\", \"PER\"],\n    [\"The Pool of the Black One\", \"MISC\", \"part of\", \"The Conan Chronicles Volume 1 : The People of the Black Circle\", \"MISC\"],\n    [\"The Pool of the Black One\", \"MISC\", \"original language of work\", \"English\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 19,
+  "recall": 0.17391304347826086,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 19,
+  "recall": 0.17391304347826086,
+  "n_extracted": 10,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"The Pool of the Black One\", \"MISC\", \"author\", \"Robert E. Howard\", \"PER\"],\n    [\"The Pool of the Black One\", \"MISC\", \"published in\", \"Weird Tales\", \"MISC\"],\n    [\"The Sword of Conan\", \"MISC\", \"publisher\", \"Gnome Press\", \"ORG\"],\n    [\"Conan the Adventurer\", \"MISC\", \"publisher\", \"Lancer Books\", \"ORG\"],\n    [\"The Conan Chronicles Volume 1 : The People of the Black Circle\", \"MISC\", \"publisher\", \"Del Rey\", \"ORG\"],\n    [\"Robert E. Howard\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Conan the Cimmerian\", \"PER\", \"creator\", \"Robert E. Howard\", \"PER\"],\n    [\"The Pool of the Black One\", \"MISC\", \"part of\", \"The Conan Chronicles Volume 1 : The People of the Black Circle\", \"MISC\"],\n    [\"The Pool of the Black One\", \"MISC\", \"original language of work\", \"English\", \"MISC\"]\n]"
+}

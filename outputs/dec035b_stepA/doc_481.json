@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_481",
+ "base_raw": "[\n    [\"Bureau of Labor Statistics\", \"ORG\", \"part of\", \"United States Department of Labor\", \"ORG\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"United States Department of Labor\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"operator\", \"U.S. Federal Statistical System\", \"ORG\"],\n    [\"U.S. Federal Statistical System\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"producer\", \"statistical data\", \"MISC\"],\n    [\"United States Department of Labor\", \"ORG\", \"headquarters location\", \"United States\", \"LOC\"],\n    [\"Office of Management and Budget\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"member of\", \"U.S. Federal Statistical System\", \"ORG\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Bureau of Labor Statistics\", \"ORG\", \"part of\", \"United States Department of Labor\", \"ORG\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"United States Department of Labor\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"U.S. Federal Statistical System\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"instance of\", \"governmental statistical agency\", \"MISC\"],\n    [\"Office of Management and Budget\", \"ORG\", \"country\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Bureau of Labor Statistics\", \"ORG\", \"part of\", \"United States Department of Labor\", \"ORG\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"United States Department of Labor\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"headquarters location\", \"United States\", \"LOC\"],\n    [\"United States Department of Labor\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Office of Management and Budget\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Office of Management and Budget\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Bureau of Labor Statistics\", \"ORG\", \"parent organization\", \"United States Federal Statistical System\", \"ORG\"],\n    [\"United States Federal Statistical System\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"United States Federal Statistical System\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

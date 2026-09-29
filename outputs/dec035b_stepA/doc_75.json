@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_75",
+ "base_raw": "[\n    [\"George Washington\", \"PER\", \"place of death\", \"Mount Vernon\", \"LOC\"],\n    [\"James Anderson\", \"PER\", \"employer\", \"George Washington\", \"PER\"],\n    [\"Terry McAuliffe\", \"PER\", \"position held\", \"Governor\", \"MISC\"],\n    [\"Adam Ebbin\", \"PER\", \"member of political party\", \"Democratic\", \"MISC\"],\n    [\"George Washington's Rye Whiskey\", \"MISC\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"Virginia\", \"LOC\", \"official language\", \"English\", \"MISC\"],\n    [\"George Washington's distillery\", \"MISC\", \"located in the administrative territorial entity\", \"Virginia\", \"LOC\"],\n    [\"Mount Vernon\", \"LOC\", \"located in the administrative territorial entity\", \"Virginia\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 7,
+  "FN": 4,
+  "recall": 0.0,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Persons",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"George Washington\", \"PER\", \"place of death\", \"Mount Vernon\", \"LOC\"],\n    [\"James Anderson\", \"PER\", \"employer\", \"George Washington\", \"PER\"],\n    [\"Terry McAuliffe\", \"PER\", \"position held\", \"Governor\", \"MISC\"],\n    [\"Adam Ebbin\", \"PER\", \"member of political party\", \"Democratic\", \"MISC\"],\n    [\"George Washington's Rye Whiskey\", \"MISC\", \"location of formation\", \"Mount Vernon\", \"LOC\"],\n    [\"Virginia\", \"LOC\", \"official language\", \"English\", \"MISC\"],\n    [\"George Washington's distillery\", \"MISC\", \"located in the administrative territorial entity\", \"Virginia\", \"LOC\"],\n    [\"George Washington\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Mount Vernon\", \"LOC\", \"located in the administrative territorial entity\", \"Virginia\", \"LOC\"],\n    [\"Adam Ebbin\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 4,
+  "recall": 0.3333333333333333,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"George Washington\", \"PER\", \"place of death\", \"Mount Vernon\", \"LOC\"],\n    [\"James Anderson\", \"PER\", \"employer\", \"George Washington\", \"PER\"],\n    [\"Terry McAuliffe\", \"PER\", \"position held\", \"Governor\", \"MISC\"],\n    [\"Adam Ebbin\", \"PER\", \"member of political party\", \"Democratic\", \"MISC\"],\n    [\"George Washington's Rye Whiskey\", \"MISC\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"Virginia\", \"LOC\", \"capital\", \"Richmond\", \"LOC\"],\n    [\"George Washington's distillery\", \"MISC\", \"located in\", \"Mount Vernon\", \"LOC\"],\n    [\"George Washington\", \"PER\", \"founded by\", \"George Washington's distillery\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 4,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

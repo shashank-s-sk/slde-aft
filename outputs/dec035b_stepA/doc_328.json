@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_328",
+ "base_raw": "[\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"developer\", \"Midway\", \"ORG\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"publisher\", \"Midway\", \"ORG\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"Xbox\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"PlayStation 2\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"GameCube\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"Game Boy Advance\", \"MISC\"],\n    [\"Quan Chi\", \"PER\", \"allied with\", \"Shang Tsung\", \"PER\"],\n    [\"Quan Chi and Shang Tsung\", \"MISC\", \"goal\", \"conquer Outworld and Earthrealm\", \"MISC\"],\n    [\"Mortal Kombat: Tournament Edition\", \"MISC\", \"release date\", \"August 25, 2003\", \"TIME\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"release date\", \"November 2002\", \"TIME\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"part of series\", \"Mortal Kombat series\", \"MISC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 5,
+  "FN": 16,
+  "recall": 0.2727272727272727,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"developer\", \"Midway\", \"ORG\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"publisher\", \"Midway\", \"ORG\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"Xbox\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"PlayStation 2\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"GameCube\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"Game Boy Advance\", \"MISC\"],\n    [\"Quan Chi\", \"PER\", \"ally\", \"Shang Tsung\", \"PER\"],\n    [\"Quan Chi\", \"PER\", \"goal\", \"conquer Outworld\", \"MISC\"],\n    [\"Quan Chi\", \"PER\", \"goal\", \"conquer Earthrealm\", \"MISC\"],\n    [\"Shang Tsung\", \"PER\", \"ally\", \"Quan Chi\", \"PER\"],\n    [\"Shang Tsung\", \"PER\", \"goal\", \"conquer Outworld\", \"MISC\"],\n    [\"Shang Tsung\", \"PER\", \"goal\", \"conquer Earthrealm\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"release date\", \"November 2002\", \"TIME\"],\n    [\"Mortal Kombat: Tournament Edition\", \"MISC\", \"release date\", \"August 25, 2003\", \"TIME\"],\n    [\"Mortal Kombat: Tournament Edition\", \"MISC\", \"alternative title\", \"Mortal Kombat: Deadly Revenge\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 16,
+  "recall": 0.2727272727272727,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 16,
+  "recall": 0.2727272727272727,
+  "n_extracted": 18,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"developer\", \"Midway\", \"ORG\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"publisher\", \"Midway\", \"ORG\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"Xbox\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"PlayStation 2\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"GameCube\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"platform\", \"Game Boy Advance\", \"MISC\"],\n    [\"Quan Chi\", \"PER\", \"ally\", \"Shang Tsung\", \"PER\"],\n    [\"Quan Chi\", \"PER\", \"goal\", \"conquer Outworld\", \"MISC\"],\n    [\"Quan Chi\", \"PER\", \"goal\", \"conquer Earthrealm\", \"MISC\"],\n    [\"Shang Tsung\", \"PER\", \"ally\", \"Quan Chi\", \"PER\"],\n    [\"Shang Tsung\", \"PER\", \"goal\", \"conquer Outworld\", \"MISC\"],\n    [\"Shang Tsung\", \"PER\", \"goal\", \"conquer Earthrealm\", \"MISC\"],\n    [\"Mortal Kombat: Deadly Alliance\", \"MISC\", \"release date\", \"November 2002\", \"TIME\"],\n    [\"Mortal Kombat: Tournament Edition\", \"MISC\", \"release date\", \"August 25, 2003\", \"TIME\"],\n    [\"Mortal Kombat: Tournament Edition\", \"MISC\", \"alternative title\", \"Mortal Kombat: Deadly Revenge\", \"MISC\"]\n]"
+}

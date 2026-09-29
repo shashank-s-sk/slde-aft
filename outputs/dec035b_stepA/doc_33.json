@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_33",
+ "base_raw": "[\n    [\"Ruslan Saliej\", \"PER\", \"date of birth\", \"November 2, 1974\", \"TIME\"],\n    [\"Ruslan Saliej\", \"PER\", \"date of death\", \"September 7, 2011\", \"TIME\"],\n    [\"Ruslan Saliej\", \"PER\", \"country of citizenship\", \"Belarus\", \"LOC\"],\n    [\"Lokomotiv Yaroslavl\", \"ORG\", \"located in the administrative territorial entity\", \"Yaroslavl\", \"LOC\"],\n    [\"Yakovlev Yak-42\", \"MISC\", \"manufacturer\", \"Yakovlev\", \"ORG\"],\n    [\"Lokomotiv Yaroslavl\", \"ORG\", \"league\", \"Kontinental Hockey League\", \"ORG\"],\n    [\"Kontinental Hockey League\", \"ORG\", \"location\", \"Russia\", \"LOC\"],\n    [\"Minsk\", \"LOC\", \"country\", \"Belarus\", \"LOC\"],\n    [\"Yaroslavl\", \"LOC\", \"country\", \"Russia\", \"LOC\"],\n    [\"Detroit Red Wings\", \"ORG\", \"league\", \"National Hockey League\", \"ORG\"],\n    [\"Colorado Avalanche\", \"ORG\", \"league\", \"National Hockey League\", \"ORG\"],\n    [\"Florida Panthers\", \"ORG\", \"league\", \"National Hockey League\", \"ORG\"],\n    [\"Mighty Ducks of Anaheim\", \"ORG\", \"league\", \"National Hockey League\", \"ORG\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 4,
+  "FN": 11,
+  "recall": 0.45,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Ruslan Saliej\", \"PER\", \"date of birth\", \"November 2, 1974\", \"TIME\"],\n    [\"Ruslan Saliej\", \"PER\", \"date of death\", \"September 7, 2011\", \"TIME\"],\n    [\"Ruslan Saliej\", \"PER\", \"country of citizenship\", \"Belarus\", \"LOC\"],\n    [\"Lokomotiv Yaroslavl\", \"ORG\", \"located in\", \"Yaroslavl\", \"LOC\"],\n    [\"Yaroslavl\", \"LOC\", \"country\", \"Russia\", \"LOC\"],\n    [\"Minsk\", \"LOC\", \"country\", \"Belarus\", \"LOC\"],\n    [\"Kontinental Hockey League\", \"ORG\", \"location\", \"Russia\", \"LOC\"],\n    [\"Detroit Red Wings\", \"ORG\", \"league\", \"National Hockey League\", \"ORG\"],\n    [\"Colorado Avalanche\", \"ORG\", \"league\", \"National Hockey League\", \"ORG\"],\n    [\"Florida Panthers\", \"ORG\", \"league\", \"National Hockey League\", \"ORG\"],\n    [\"Mighty Ducks of Anaheim\", \"ORG\", \"league\", \"National Hockey League\", \"ORG\"],\n    [\"National Hockey League\", \"ORG\", \"instance of\", \"sports league\", \"MISC\"],\n    [\"Yakovlev Yak-42\", \"MISC\", \"manufacturer\", \"Yakovlev\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 6,
+  "FN": 9,
+  "recall": 0.5,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Ruslan Saliej\", \"PER\", \"date of birth\", \"November 2, 1974\", \"TIME\"],\n    [\"Ruslan Saliej\", \"PER\", \"date of death\", \"September 7, 2011\", \"TIME\"],\n    [\"Ruslan Saliej\", \"PER\", \"country of citizenship\", \"Belarus\", \"LOC\"],\n    [\"Detroit Red Wings\", \"ORG\", \"league\", \"National Hockey League\", \"MISC\"],\n    [\"Colorado Avalanche\", \"ORG\", \"league\", \"National Hockey League\", \"MISC\"],\n    [\"Florida Panthers\", \"ORG\", \"league\", \"National Hockey League\", \"MISC\"],\n    [\"Mighty Ducks of Anaheim\", \"ORG\", \"league\", \"National Hockey League\", \"MISC\"],\n    [\"Lokomotiv Yaroslavl\", \"ORG\", \"location\", \"Yaroslavl\", \"LOC\"],\n    [\"Lokomotiv Yaroslavl\", \"ORG\", \"league\", \"Kontinental Hockey League\", \"MISC\"],\n    [\"Yaroslavl\", \"LOC\", \"country\", \"Russia\", \"LOC\"],\n    [\"Minsk\", \"LOC\", \"country\", \"Belarus\", \"LOC\"],\n    [\"National Hockey League\", \"ORG\", \"instance of\", \"sports league\", \"MISC\"],\n    [\"Kontinental Hockey League\", \"ORG\", \"instance of\", \"sports league\", \"MISC\"],\n    [\"Ruslan Saliej\", \"PER\", \"member of sports team\", \"Lokomotiv Yaroslavl\", \"ORG\"],\n    [\"Ruslan Saliej\", \"PER\", \"member of sports team\", \"Detroit Red Wings\", \"ORG\"],\n    [\"Ruslan Saliej\", \"PER\", \"member of sports team\", \"Colorado Avalanche\", \"ORG\"],\n    [\"Ruslan Saliej\", \"PER\", \"member of sports team\", \"Florida Panthers\", \"ORG\"],\n    [\"Ruslan Saliej\", \"PER\", \"member of sports team\", \"Mighty Ducks of Anaheim\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 15,
+  "FP": 6,
+  "FN": 11,
+  "recall": 0.5769230769230769,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

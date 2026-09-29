@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_398",
+ "base_raw": "[\n    [\"ServusTV\", \"ORG\", \"located in\", \"Wals-Siezenheim\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"located in\", \"Salzburg\", \"LOC\"],\n    [\"Salzburg TV\", \"ORG\", \"started in\", \"1995\", \"TIME\"],\n    [\"Salzburg TV\", \"ORG\", \"available in\", \"Salzburg\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"transmission started\", \"25 October 2000\", \"TIME\"],\n    [\"Untersberg transmitter\", \"LOC\", \"owned by\", \"Germany\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"transmission restarted\", \"2002\", \"TIME\"],\n    [\"ServusTV\", \"ORG\", \"sold to\", \"Red Bull GmbH\", \"ORG\"],\n    [\"Red Bull GmbH\", \"ORG\", \"acquired shares\", \"2007\", \"TIME\"],\n    [\"ServusTV\", \"ORG\", \"renamed from\", \"Salzburg TV\", \"ORG\"],\n    [\"ServusTV\", \"ORG\", \"started transmission in\", \"Berlin\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"started transmission in\", \"Hamburg\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"transmission started in Berlin\", \"December 2011\", \"TIME\"],\n    [\"ServusTV\", \"ORG\", \"transmission started in Hamburg\", \"June 2014\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 12,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"ServusTV\", \"ORG\", \"located in\", \"Wals-Siezenheim\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"located in\", \"Salzburg\", \"LOC\"],\n    [\"Salzburg TV\", \"ORG\", \"founded by\", \"ServusTV\", \"ORG\"],\n    [\"ServusTV\", \"ORG\", \"owner\", \"Red Bull GmbH\", \"ORG\"],\n    [\"Red Bull GmbH\", \"ORG\", \"acquired\", \"ServusTV\", \"ORG\"],\n    [\"ServusTV\", \"ORG\", \"transmission facility\", \"Untersberg transmitter\", \"MISC\"],\n    [\"Untersberg transmitter\", \"MISC\", \"owned by\", \"Germany\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"started transmission\", \"25 October 2000\", \"TIME\"],\n    [\"ServusTV\", \"ORG\", \"restarted transmission\", \"2002\", \"TIME\"],\n    [\"ServusTV\", \"ORG\", \"sold to\", \"Red Bull GmbH\", \"ORG\"],\n    [\"ServusTV\", \"ORG\", \"started transmission in\", \"Berlin\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"started transmission in\", \"Hamburg\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"renamed from\", \"Salzburg TV\", \"ORG\"],\n    [\"Salzburg TV\", \"ORG\", \"started as\", \"ServusTV\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 21,
+  "FN": 12,
+  "recall": 0.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"ServusTV\", \"ORG\", \"located in\", \"Wals-Siezenheim\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"country\", \"Austria\", \"LOC\"],\n    [\"Salzburg TV\", \"ORG\", \"founded by\", \"unknown\", \"MISC\"],\n    [\"ServusTV\", \"ORG\", \"owner\", \"Red Bull GmbH\", \"ORG\"],\n    [\"Red Bull GmbH\", \"ORG\", \"acquired\", \"ServusTV\", \"ORG\"],\n    [\"ServusTV\", \"ORG\", \"transmission started\", \"25 October 2000\", \"TIME\"],\n    [\"Untersberg transmitter\", \"LOC\", \"owned by\", \"Germany\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"transmission restarted\", \"2002\", \"TIME\"],\n    [\"ServusTV\", \"ORG\", \"available in\", \"Berlin\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"available in\", \"Hamburg\", \"LOC\"],\n    [\"ServusTV\", \"ORG\", \"started transmission in\", \"December 2011\", \"TIME\"],\n    [\"ServusTV\", \"ORG\", \"started transmission in\", \"June 2014\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 21,
+  "FN": 11,
+  "recall": 0.08333333333333333,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

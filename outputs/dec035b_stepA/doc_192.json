@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_192",
+ "base_raw": "[\n    [\"Tapash Baisya\", \"PER\", \"date of birth\", \"25 December 1982\", \"TIME\"],\n    [\"Tapash Baisya\", \"PER\", \"place of birth\", \"Sylhet\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"position held\", \"cricketer\", \"MISC\"],\n    [\"Tapash Baisya\", \"PER\", \"located in\", \"United States of America\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"Sylhet Division\", \"ORG\", \"league\", \"first-class cricket\", \"MISC\"],\n    [\"Tapash Baisya\", \"PER\", \"member of sports team\", \"Sylhet Division\", \"ORG\"],\n    [\"Chittagong Division\", \"ORG\", \"league\", \"first-class cricket\", \"MISC\"],\n    [\"Dhaka Division\", \"ORG\", \"league\", \"first-class cricket\", \"MISC\"],\n    [\"Tapash Baisya\", \"PER\", \"employer\", \"cricket team in the United States of America\", \"ORG\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 7,
+  "recall": 0.3,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Tapash Baisya\", \"PER\", \"date of birth\", \"25 December 1982\", \"TIME\"],\n    [\"Tapash Baisya\", \"PER\", \"place of birth\", \"Sylhet\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"located in the administrative territorial entity\", \"United States of America\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"located in the administrative territorial entity\", \"New Jersey\", \"LOC\"],\n    [\"Sylhet Division\", \"ORG\", \"located in the administrative territorial entity\", \"Bangladesh\", \"LOC\"],\n    [\"Chittagong Division\", \"ORG\", \"located in the administrative territorial entity\", \"Bangladesh\", \"LOC\"],\n    [\"Dhaka Division\", \"ORG\", \"located in the administrative territorial entity\", \"Bangladesh\", \"LOC\"],\n    [\"Mashrafe Mortaza\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"Shahadat Hossain\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"West Indies\", \"LOC\", \"located in the administrative territorial entity\", \"Caribbean\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"member of sports team\", \"Sylhet Division\", \"ORG\"],\n    [\"Tapash Baisya\", \"PER\", \"member of sports team\", \"Bangladesh national cricket team\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 5,
+  "recall": 0.5,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Tapash Baisya\", \"PER\", \"date of birth\", \"25 December 1982\", \"TIME\"],\n    [\"Tapash Baisya\", \"PER\", \"place of birth\", \"Sylhet\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"position held\", \"cricketer\", \"MISC\"],\n    [\"Sylhet Division\", \"ORG\", \"located in\", \"Bangladesh\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"member of sports team\", \"Sylhet Division\", \"ORG\"],\n    [\"Tapash Baisya\", \"PER\", \"located in\", \"United States of America\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"Tapash Baisya\", \"PER\", \"employer\", \"cricket team in the United States of America\", \"ORG\"],\n    [\"Mashrafe Mortaza\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"Shahadat Hossain\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"West Indies\", \"ORG\", \"located in\", \"Caribbean\", \"LOC\"],\n    [\"Chittagong Division\", \"ORG\", \"located in\", \"Bangladesh\", \"LOC\"],\n    [\"Dhaka Division\", \"ORG\", \"located in\", \"Bangladesh\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 5,
+  "recall": 0.5,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

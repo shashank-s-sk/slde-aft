@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_355",
+ "base_raw": "[\n    [\"Public Image Ltd.\", \"ORG\", \"genre\", \"disco\", \"MISC\"],\n    [\"Public Image Ltd.\", \"ORG\", \"genre\", \"dub\", \"MISC\"],\n    [\"Keith Levene\", \"PER\", \"instrument\", \"guitar\", \"MISC\"],\n    [\"Tchaikovsky\", \"PER\", \"work\", \"Swan Lake\", \"MISC\"],\n    [\"Lydon\", \"PER\", \"relative\", \"mother\", \"PER\"],\n    [\"Lydon's mother\", \"PER\", \"cause of death\", \"cancer\", \"MISC\"],\n    [\"Death Disco\", \"MISC\", \"part of\", \"Metal Box\", \"MISC\"],\n    [\"Public Image Ltd.\", \"ORG\", \"member\", \"Keith Levene\", \"PER\"],\n    [\"Public Image Ltd.\", \"ORG\", \"member\", \"Lydon\", \"PER\"],\n    [\"Death Disco\", \"MISC\", \"release year\", \"1979\", \"TIME\"],\n    [\"Death Disco\", \"MISC\", \"chart position\", \"20\", \"NUM\"],\n    [\"NME\", \"ORG\", \"publication\", \"Tracks of the Year\", \"MISC\"],\n    [\"Happy Mondays\", \"ORG\", \"genre\", \"disco\", \"MISC\"],\n    [\"Paul Lester\", \"PER\", \"employer\", \"The Guardian\", \"ORG\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 11,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Numbers"
+ ],
+ "kb_orig_raw": "[\n    [\"Public Image Ltd.\", \"ORG\", \"genre\", \"disco\", \"MISC\"],\n    [\"Public Image Ltd.\", \"ORG\", \"genre\", \"dub\", \"MISC\"],\n    [\"Death Disco\", \"MISC\", \"artist\", \"Public Image Ltd.\", \"ORG\"],\n    [\"Death Disco\", \"MISC\", \"release format\", \"7\\\" single\", \"MISC\"],\n    [\"Death Disco\", \"MISC\", \"release format\", \"12\\\" single\", \"MISC\"],\n    [\"Death Disco\", \"MISC\", \"chart position\", \"20\", \"NUM\"],\n    [\"Death Disco\", \"MISC\", \"chart\", \"UK Singles Chart\", \"MISC\"],\n    [\"Swan Lake\", \"MISC\", \"album\", \"Metal Box\", \"MISC\"],\n    [\"Metal Box\", \"MISC\", \"artist\", \"Public Image Ltd.\", \"ORG\"],\n    [\"Tchaikovsky\", \"PER\", \"influenced\", \"Keith Levene\", \"PER\"],\n    [\"Keith Levene\", \"PER\", \"instrument\", \"guitar\", \"MISC\"],\n    [\"John Lydon\", \"PER\", \"mother\", \"unknown\", \"PER\"],\n    [\"John Lydon\", \"PER\", \"relative\", \"mother\", \"PER\"],\n    [\"Death Disco\", \"MISC\", \"dedication\", \"John Lydon's mother\", \"PER\"],\n    [\"John Lydon\", \"PER\", \"autobiography\", \"unknown\", \"MISC\"],\n    [\"Select\", \"ORG\", \"interviewee\", \"John Lydon\", \"PER\"],\n    [\"AllMusic\", \"ORG\", \"reviewer\", \"Death Disco\", \"MISC\"],\n    [\"NME\", \"ORG\", \"ranked\", \"Death Disco\", \"MISC\"],\n    [\"Paul Lester\", \"PER\", \"author\", \"The Guardian\", \"ORG\"],\n    [\"Happy Mondays\", \"ORG\", \"comparison\", \"Public Image Ltd.\", \"ORG\"],\n    [\"Live in Tokyo\", \"MISC\", \"artist\", \"Public Image Ltd.\", \"ORG\"],\n    [\"Live in Tokyo\", \"MISC\", \"release year\", \"1983\", \"TIME\"],\n    [\"Death Disco\", \"MISC\", \"award\", \"Tracks of the Year\", \"MISC\"],\n    [\"Death Disco\", \"MISC\", \"year\", \"1979\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 28,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 34,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Public Image Ltd.\", \"ORG\", \"genre\", \"disco\", \"MISC\"],\n    [\"Public Image Ltd.\", \"ORG\", \"genre\", \"dub\", \"MISC\"],\n    [\"Keith Levene\", \"PER\", \"instrument\", \"guitar\", \"MISC\"],\n    [\"Tchaikovsky\", \"PER\", \"work\", \"Swan Lake\", \"MISC\"],\n    [\"Lydon\", \"PER\", \"relative\", \"mother\", \"PER\"],\n    [\"Lydon's mother\", \"PER\", \"cause of death\", \"cancer\", \"MISC\"],\n    [\"Death Disco\", \"MISC\", \"included in\", \"Live in Tokyo\", \"MISC\"],\n    [\"Death Disco\", \"MISC\", \"ranked by\", \"NME\", \"ORG\"],\n    [\"Paul Lester\", \"PER\", \"employer\", \"The Guardian\", \"ORG\"],\n    [\"Happy Mondays\", \"ORG\", \"genre\", \"disco\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

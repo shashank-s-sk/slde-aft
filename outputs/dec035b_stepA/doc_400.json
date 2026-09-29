@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_400",
+ "base_raw": "[\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Michael Brown\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Bob Calilli\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Tony Sansone\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"featured on lead vocals\", \"Steve Martin Caro\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"released as a single in\", \"July 1966\", \"TIME\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"spent weeks on the US charts\", \"13\", \"NUM\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"top spot of number\", \"5\", \"NUM\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"features a flute solo played during\", \"instrumental bridge\", \"MISC\"],\n    [\"Michael Brown\", \"PER\", \"got the idea for the flute solo from\", \"California Dreamin'\", \"MISC\"],\n    [\"California Dreamin'\", \"MISC\", \"recorded in\", \"November 1965\", \"TIME\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"includes a lush string orchestration\", \"string orchestration\", \"MISC\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"includes a jangling harpsichord part\", \"harpsichord part\", \"MISC\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"includes a descending chromatic bass melody\", \"bass melody\", \"MISC\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"production credited to\", \"World United Productions, Inc.\", \"ORG\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"session produced by\", \"Harry Lookofsky\", \"PER\"],\n    [\"Harry Lookofsky\", \"PER\", \"led the string players\", \"string players\", \"MISC\"],\n    [\"Rolling Stone\", \"ORG\", \"placed Walk Away Ren\u00e9e at number\", \"220\", \"NUM\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"returned to nationwide charts with cover versions by\", \"The Four Tops\", \"ORG\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"returned to nationwide charts with cover versions by\", \"Rick Price\", \"PER\"],\n    [\"The Four Tops\", \"ORG\", \"released cover version in\", \"1967\", \"TIME\"],\n    [\"Rick Price\", \"PER\", \"released cover version in\", \"1993\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 21,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Numbers",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Michael Brown\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Bob Calilli\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Tony Sansone\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"released by\", \"the Left Banke\", \"ORG\"],\n    [\"Steve Martin Caro\", \"PER\", \"member of\", \"the Left Banke\", \"ORG\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"features\", \"Steve Martin Caro\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"released in\", \"July 1966\", \"TIME\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"peaked at\", \"number 5\", \"NUM\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"inspired by\", \"California Dreamin'\", \"MISC\"],\n    [\"California Dreamin'\", \"MISC\", \"recorded in\", \"November 1965\", \"TIME\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"produced by\", \"Harry Lookofsky\", \"PER\"],\n    [\"Harry Lookofsky\", \"PER\", \"father of\", \"Michael Brown\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"ranked\", \"number 220\", \"NUM\"],\n    [\"The Four Tops\", \"ORG\", \"covered\", \"Walk Away Ren\u00e9e\", \"MISC\"],\n    [\"Rick Price\", \"PER\", \"covered\", \"Walk Away Ren\u00e9e\", \"MISC\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"covered by\", \"The Four Tops\", \"ORG\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"covered by\", \"Rick Price\", \"PER\"],\n    [\"World United Productions, Inc.\", \"ORG\", \"production company of\", \"Walk Away Ren\u00e9e\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 24,
+  "FN": 5,
+  "recall": 0.6666666666666666,
+  "n_extracted": 35,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Michael Brown\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Bob Calilli\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"written by\", \"Tony Sansone\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"released by\", \"the Left Banke\", \"ORG\"],\n    [\"Steve Martin Caro\", \"PER\", \"member of\", \"the Left Banke\", \"ORG\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"features\", \"Steve Martin Caro\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"released in\", \"July 1966\", \"TIME\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"charted at\", \"number 5\", \"NUM\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"inspired by\", \"California Dreamin'\", \"MISC\"],\n    [\"California Dreamin'\", \"MISC\", \"recorded in\", \"November 1965\", \"TIME\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"produced by\", \"Harry Lookofsky\", \"PER\"],\n    [\"Harry Lookofsky\", \"PER\", \"father of\", \"Michael Brown\", \"PER\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"ranked in\", \"500 Greatest Songs of All Time\", \"MISC\"],\n    [\"The Four Tops\", \"ORG\", \"covered\", \"Walk Away Ren\u00e9e\", \"MISC\"],\n    [\"Rick Price\", \"PER\", \"covered\", \"Walk Away Ren\u00e9e\", \"MISC\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"covered by\", \"The Four Tops\", \"ORG\"],\n    [\"Walk Away Ren\u00e9e\", \"MISC\", \"covered by\", \"Rick Price\", \"PER\"],\n    [\"World United Productions, Inc.\", \"ORG\", \"production company of\", \"Walk Away Ren\u00e9e\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 24,
+  "FN": 5,
+  "recall": 0.6666666666666666,
+  "n_extracted": 35,
+  "judge_parse_ok": true
+ }
+}

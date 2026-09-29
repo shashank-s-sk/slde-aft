@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_102",
+ "base_raw": "[\n    [\"Tholing\", \"LOC\", \"located in\", \"Tibet Autonomous Region\", \"LOC\"],\n    [\"Tholing\", \"LOC\", \"part of\", \"Ngari Prefecture\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"located in\", \"Tholing\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"founded by\", \"Langdarma\", \"PER\"],\n    [\"Guge Kingdom\", \"ORG\", \"capital\", \"Tholing\", \"LOC\"],\n    [\"Langdarma\", \"PER\", \"ruler of\", \"Guge Kingdom\", \"ORG\"],\n    [\"Tholing\", \"LOC\", \"instance of\", \"town\", \"MISC\"],\n    [\"Zanda County\", \"LOC\", \"part of\", \"Ngari Prefecture\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"established in\", \"997 AD\", \"TIME\"],\n    [\"Langchen Tsangpo\", \"LOC\", \"located in\", \"Tibet Autonomous Region\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 15,
+  "recall": 0.16666666666666666,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Tholing\", \"LOC\", \"located in\", \"Tibet Autonomous Region\", \"LOC\"],\n    [\"Tholing\", \"LOC\", \"part of\", \"Ngari Prefecture\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"located in\", \"Tholing\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"established by\", \"Langdarma\", \"PER\"],\n    [\"Guge Kingdom\", \"ORG\", \"capital\", \"Tholing\", \"LOC\"],\n    [\"Langdarma\", \"PER\", \"ruler of\", \"Guge Kingdom\", \"ORG\"],\n    [\"Tholing\", \"LOC\", \"contains administrative territorial entity\", \"Zanda County\", \"LOC\"],\n    [\"Zanda County\", \"LOC\", \"part of\", \"Ngari Prefecture\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"founded in\", \"997 AD\", \"TIME\"],\n    [\"Langchen Tsangpo\", \"LOC\", \"located in\", \"Tibet Autonomous Region\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 14,
+  "recall": 0.2222222222222222,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 14,
+  "recall": 0.2222222222222222,
+  "n_extracted": 13,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Tholing\", \"LOC\", \"located in\", \"Tibet Autonomous Region\", \"LOC\"],\n    [\"Tholing\", \"LOC\", \"part of\", \"Ngari Prefecture\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"located in\", \"Tholing\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"established by\", \"Langdarma\", \"PER\"],\n    [\"Guge Kingdom\", \"ORG\", \"capital\", \"Tholing\", \"LOC\"],\n    [\"Langdarma\", \"PER\", \"ruler of\", \"Guge Kingdom\", \"ORG\"],\n    [\"Tholing\", \"LOC\", \"contains administrative territorial entity\", \"Zanda County\", \"LOC\"],\n    [\"Zanda County\", \"LOC\", \"part of\", \"Ngari Prefecture\", \"LOC\"],\n    [\"Tholing Monastery\", \"LOC\", \"founded in\", \"997 AD\", \"TIME\"],\n    [\"Langchen Tsangpo\", \"LOC\", \"located in\", \"Tibet Autonomous Region\", \"LOC\"]\n]"
+}

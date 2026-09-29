@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_158",
+ "base_raw": "[\n    [\"William Quintillis Dallmeyer\", \"PER\", \"place of birth\", \"Hanover, Germany\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"located in or next to body of water\", \"Missouri\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"member of\", \"Missouri House of Representatives\", \"ORG\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"position held\", \"State Treasurer\", \"MISC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"employer\", \"First National Bank\", \"ORG\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"location of formation\", \"Jefferson City, Missouri\", \"LOC\"],\n    [\"Hanover, Germany\", \"LOC\", \"country\", \"Germany\", \"LOC\"],\n    [\"New York City\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"New Orleans, Louisiana\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"St. Louis, Missouri\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Gasconade County, Missouri\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Jefferson City, Missouri\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"First National Bank\", \"ORG\", \"located in\", \"Jefferson City, Missouri\", \"LOC\"],\n    [\"Missouri House of Representatives\", \"ORG\", \"located in\", \"Missouri\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 18,
+  "recall": 0.18181818181818182,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"William Quintillis Dallmeyer\", \"PER\", \"place of birth\", \"Hanover, Germany\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"date of birth\", \"October 23, 1829\", \"TIME\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"date of death\", \"March 15, 1908\", \"TIME\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"member of\", \"Missouri House of Representatives\", \"ORG\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"position held\", \"State Treasurer\", \"MISC\"],\n    [\"Hanover, Germany\", \"LOC\", \"country\", \"Germany\", \"LOC\"],\n    [\"United States\", \"LOC\", \"continent\", \"North America\", \"LOC\"],\n    [\"New York City\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"New Orleans, Louisiana\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"St. Louis, Missouri\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Gasconade County, Missouri\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Jefferson City, Missouri\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"First National Bank\", \"ORG\", \"located in\", \"Jefferson City, Missouri\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 19,
+  "FN": 15,
+  "recall": 0.25,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"William Quintillis Dallmeyer\", \"PER\", \"place of birth\", \"Hanover\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"date of birth\", \"October 23, 1829\", \"TIME\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"date of death\", \"March 15, 1908\", \"TIME\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"located in\", \"New York City\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"located in\", \"New Orleans\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"located in\", \"St. Louis\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"located in\", \"Gasconade County\", \"LOC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"position held\", \"postmaster\", \"MISC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"position held\", \"justice of the peace\", \"MISC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"member of\", \"Missouri House of Representatives\", \"ORG\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"position held\", \"State Treasurer\", \"MISC\"],\n    [\"William Quintillis Dallmeyer\", \"PER\", \"employer\", \"First National Bank\", \"ORG\"],\n    [\"First National Bank\", \"ORG\", \"located in\", \"Jefferson City\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 21,
+  "FN": 15,
+  "recall": 0.21052631578947367,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

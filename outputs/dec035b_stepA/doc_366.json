@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_366",
+ "base_raw": "[\n    [\"Dragon Quest X\", \"MISC\", \"developer\", \"Square Enix\", \"ORG\"],\n    [\"Dragon Quest X\", \"MISC\", \"publisher\", \"Square Enix\", \"ORG\"],\n    [\"Dragon Quest X\", \"MISC\", \"series\", \"Dragon Quest\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"release year\", \"2012\", \"TIME\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Wii\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Wii U\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Android\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"iOS\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"setting\", \"Astoltia\", \"LOC\"],\n    [\"Jin Fujisawa\", \"PER\", \"position\", \"director\", \"MISC\"],\n    [\"Yuji Horii\", \"PER\", \"position\", \"series creator and designer\", \"MISC\"],\n    [\"Akira Toriyama\", \"PER\", \"position\", \"series artist\", \"MISC\"],\n    [\"Koichi Sugiyama\", \"PER\", \"position\", \"series composer\", \"MISC\"],\n    [\"Yosuke Saito\", \"PER\", \"position\", \"producer\", \"MISC\"],\n    [\"Chikara Saito\", \"PER\", \"position\", \"director\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"genre\", \"MMORPG\", \"MISC\"],\n    [\"Dragon Quest VIII\", \"MISC\", \"release order\", \"before Dragon Quest X\", \"MISC\"],\n    [\"Dragon Quest IX\", \"MISC\", \"release order\", \"before Dragon Quest X\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"sales\", \"over one million copies\", \"NUM\"],\n    [\"Dragon Quest X\", \"MISC\", \"release date\", \"2012\", \"TIME\"],\n    [\"Dragon Quest X\", \"MISC\", \"expansion packs\", \"several\", \"NUM\"]\n]",
+ "base": {
+  "TP": 10,
+  "FP": 15,
+  "FN": 6,
+  "recall": 0.625,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Dragon Quest X\", \"MISC\", \"developer\", \"Square Enix\", \"ORG\"],\n    [\"Dragon Quest X\", \"MISC\", \"publisher\", \"Square Enix\", \"ORG\"],\n    [\"Dragon Quest X\", \"MISC\", \"series\", \"Dragon Quest series\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"release year\", \"2012\", \"TIME\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Wii\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Wii U\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Android\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"iOS\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Astoltia\", \"MISC\", \"location of formation\", \"Dragon Quest X\", \"MISC\"],\n    [\"Nelgel\", \"MISC\", \"enemy\", \"Dragon Quest X\", \"MISC\"],\n    [\"Jin Fujisawa\", \"PER\", \"position held\", \"director\", \"MISC\"],\n    [\"Yuji Horii\", \"PER\", \"position held\", \"series creator and designer\", \"MISC\"],\n    [\"Akira Toriyama\", \"PER\", \"position held\", \"series artist\", \"MISC\"],\n    [\"Koichi Sugiyama\", \"PER\", \"position held\", \"series composer\", \"MISC\"],\n    [\"Yosuke Saito\", \"PER\", \"employer\", \"Orca\", \"ORG\"],\n    [\"Chikara Saito\", \"PER\", \"position held\", \"director\", \"MISC\"],\n    [\"Orca\", \"ORG\", \"developer\", \"Dragon Quest X\", \"MISC\"],\n    [\"Drakengard series\", \"MISC\", \"series\", \"Yosuke Saito\", \"PER\"],\n    [\"Dragon Quest X\", \"MISC\", \"genre\", \"MMORPG\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"inception\", \"2008\", \"TIME\"],\n    [\"Dragon Quest X\", \"MISC\", \"full reveal\", \"2011\", \"TIME\"],\n    [\"Dragon Quest X\", \"MISC\", \"sales\", \"one million copies\", \"NUM\"],\n    [\"Dragon Quest X\", \"MISC\", \"release year of sales\", \"2014\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 13,
+  "FP": 30,
+  "FN": 2,
+  "recall": 0.8666666666666667,
+  "n_extracted": 40,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Dragon Quest X\", \"MISC\", \"developer\", \"Square Enix\", \"ORG\"],\n    [\"Dragon Quest X\", \"MISC\", \"publisher\", \"Square Enix\", \"ORG\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Wii\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Wii U\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Android\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"iOS\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"location of formation\", \"Japan\", \"LOC\"],\n    [\"Jin Fujisawa\", \"PER\", \"position held\", \"director\", \"MISC\"],\n    [\"Yuji Horii\", \"PER\", \"position held\", \"series creator and designer\", \"MISC\"],\n    [\"Akira Toriyama\", \"PER\", \"position held\", \"series artist\", \"MISC\"],\n    [\"Koichi Sugiyama\", \"PER\", \"position held\", \"series composer\", \"MISC\"],\n    [\"Yosuke Saito\", \"PER\", \"position held\", \"producer\", \"MISC\"],\n    [\"Chikara Saito\", \"PER\", \"position held\", \"director\", \"MISC\"],\n    [\"Orca\", \"ORG\", \"employer\", \"Yosuke Saito\", \"PER\"],\n    [\"Dragon Quest X\", \"MISC\", \"genre\", \"MMORPG\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"release year\", \"2012\", \"TIME\"],\n    [\"Dragon Quest X\", \"MISC\", \"sales\", \"over one million copies\", \"NUM\"],\n    [\"Dragon Quest series\", \"MISC\", \"instance of\", \"game series\", \"MISC\"],\n    [\"Astoltia\", \"MISC\", \"location\", \"world of Astoltia\", \"MISC\"],\n    [\"Nelgel\", \"MISC\", \"title\", \"Lord of Hell\", \"MISC\"],\n    [\"Dragon Quest X\", \"MISC\", \"expansion packs\", \"several\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 12,
+  "FP": 24,
+  "FN": 4,
+  "recall": 0.75,
+  "n_extracted": 36,
+  "judge_parse_ok": true
+ }
+}

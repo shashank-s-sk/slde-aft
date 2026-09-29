@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_289",
+ "base_raw": "[\n    [\"Sakanaction\", \"MISC\", \"genre\", \"alternative rock\", \"MISC\"],\n    [\"Sakanaction\", \"MISC\", \"genre\", \"electronic\", \"MISC\"],\n    [\"Sakanaction\", \"MISC\", \"genre\", \"pop\", \"MISC\"],\n    [\"Sakanaction\", \"MISC\", \"genre\", \"new wave\", \"MISC\"],\n    [\"Ichiro Yamaguchi\", \"PER\", \"member of\", \"Sakanaction\", \"MISC\"],\n    [\"Motoharu Iwadera\", \"PER\", \"member of\", \"Sakanaction\", \"MISC\"],\n    [\"Ami Kusakari\", \"PER\", \"member of\", \"Sakanaction\", \"MISC\"],\n    [\"Emi Okazaki\", \"PER\", \"member of\", \"Sakanaction\", \"MISC\"],\n    [\"Keiichi Ejima\", \"PER\", \"member of\", \"Sakanaction\", \"MISC\"],\n    [\"Sakanaction\", \"MISC\", \"located in\", \"Sapporo\", \"LOC\"],\n    [\"Sakanaction\", \"MISC\", \"located in\", \"Hokkaido\", \"LOC\"],\n    [\"Sakanaction\", \"MISC\", \"located in\", \"Japan\", \"LOC\"],\n    [\"Sakanaction\", \"MISC\", \"country\", \"Japan\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Locations",
+  "Locations",
+  "Music Genre: Rock",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Sakanaction\", \"ORG\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Sakanaction\", \"ORG\", \"location\", \"Sapporo\", \"LOC\"],\n    [\"Sakanaction\", \"ORG\", \"country\", \"Japan\", \"LOC\"],\n    [\"Ichiro Yamaguchi\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Motoharu Iwadera\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Ami Kusakari\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Emi Okazaki\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Keiichi Ejima\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Sapporo\", \"LOC\", \"located in the administrative territorial entity\", \"Hokkaido\", \"LOC\"],\n    [\"Hokkaido\", \"LOC\", \"located in the administrative territorial entity\", \"Japan\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Music Genre: Rock"
+ ],
+ "kb_dedup_raw": "[\n    [\"Sakanaction\", \"ORG\", \"genre\", \"alternative rock\", \"MISC\"],\n    [\"Sakanaction\", \"ORG\", \"genre\", \"electronic\", \"MISC\"],\n    [\"Sakanaction\", \"ORG\", \"genre\", \"pop\", \"MISC\"],\n    [\"Sakanaction\", \"ORG\", \"genre\", \"new wave\", \"MISC\"],\n    [\"Sakanaction\", \"ORG\", \"located in\", \"Sapporo\", \"LOC\"],\n    [\"Sakanaction\", \"ORG\", \"located in\", \"Hokkaido\", \"LOC\"],\n    [\"Sakanaction\", \"ORG\", \"country\", \"Japan\", \"LOC\"],\n    [\"Ichiro Yamaguchi\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Motoharu Iwadera\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Ami Kusakari\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Emi Okazaki\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Keiichi Ejima\", \"PER\", \"member of\", \"Sakanaction\", \"ORG\"],\n    [\"Sakanaction\", \"ORG\", \"instance of\", \"rock band\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

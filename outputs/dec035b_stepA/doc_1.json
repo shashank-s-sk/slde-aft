@@ -1,0 +1,44 @@
+{
+ "doc_id": "doc_1",
+ "base_raw": "[\n    [\"Gary DeLong\", \"PER\", \"place of birth\", \"U.S.\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"member of sports team\", \"Vancouver Royals\", \"ORG\"],\n    [\"Vancouver Royals\", \"ORG\", \"league\", \"North American Soccer League\", \"ORG\"],\n    [\"Gary DeLong\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"educated at\", \"Balboa High School\", \"ORG\"],\n    [\"Gary DeLong\", \"PER\", \"located in or next to body of water\", \"San Francisco\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"part of\", \"San Francisco Prep Hall of Fame\", \"ORG\"],\n    [\"Gary DeLong\", \"PER\", \"position held\", \"goalkeeper\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"award received\", \"1958 All State / San Francisco Section soccer player\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"date of birth\", \"1958\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"child\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"parent taxon\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"ethnic group\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"performer\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"manufacturer\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"developer\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"series\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"sister city\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"legislative body\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"basin country\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"military branch\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"record label\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"production company\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"location\", \"San Francisco\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"subclass of\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"subsidiary\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"original language of work\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"platform\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"mouth of the watercourse\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"original network\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"member of\", \"U.S. national team\", \"ORG\"],\n    [\"Gary DeLong\", \"PER\", \"chairperson\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"has part\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"residence\", \"San Francisco\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"date of death\", \"None\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"inception\", \"None\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"dissolved, abolished or demolished\", \"None\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"publication date\", \"None\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"start time\", \"None\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"end time\", \"None\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"point in time\", \"None\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"conflict\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"characters\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"lyrics by\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"located on terrain feature\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"participant\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"influenced by\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"location of formation\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"parent organization\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"notable work\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"separated from\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"narrative location\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"work location\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"applies to jurisdiction\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"product or material produced\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"unemployment rate\", \"None\", \"NUM\"],\n    [\"Gary DeLong\", \"PER\", \"territory claimed by\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"participant of\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"replaces\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"replaced by\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"capital of\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"languages spoken, written or signed\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"present in work\", \"None\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"sibling\", \"None\", \"MISC\"],\n    [\"U.S. national team\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"U.S. national team\", \"ORG\", \"continent\", \"North America\", \"LOC\"],\n    [\"Vancouver Royals\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"Vancouver Royals\", \"ORG\", \"continent\", \"North America\", \"LOC\"],\n    [\"Balboa High School\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Balboa High School\", \"ORG\", \"continent\", \"North America\", \"LOC\"],\n    [\"San Francisco\", \"LOC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"San Francisco\", \"LOC\", \"continent\", \"North America\", \"LOC\"],\n    [\"San Francisco Prep Hall of Fame\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"San Francisco Prep Hall of Fame\", \"ORG\", \"continent\", \"North America\", \"LOC\"],\n    [\"North American Soccer League\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"North American Soccer League\", \"ORG\", \"continent\", \"North America\", \"LOC\"],\n    [\"Israel\", \"LOC\", \"continent\", \"Asia\", \"LOC\"],\n    [\"Canada\", \"LOC\", \"continent\", \"North America\", \"LOC\"],\n    [\"Bermuda\", \"LOC\", \"continent\", \"North America\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 75,
+  "FN": 4,
+  "recall": 0.5555555555555556,
+  "n_extracted": 80,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Locations in California",
+  "Organizations",
+  "Time",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Gary DeLong\", \"PER\", \"place of birth\", \"United States\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Vancouver Royals\", \"ORG\", \"league\", \"North American Soccer League\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"member of sports team\", \"Vancouver Royals\", \"ORG\"],\n    [\"Gary DeLong\", \"PER\", \"member of sports team\", \"U.S. national team\", \"ORG\"],\n    [\"Gary DeLong\", \"PER\", \"educated at\", \"Balboa High School\", \"ORG\"],\n    [\"Balboa High School\", \"ORG\", \"located in\", \"San Francisco\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"location\", \"San Francisco\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"date of birth\", \"unknown\", \"TIME\"],\n    [\"Gary DeLong\", \"PER\", \"position held\", \"goalkeeper\", \"MISC\"],\n    [\"U.S. national team\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"North American Soccer League\", \"MISC\", \"country\", \"United States\", \"LOC\"],\n    [\"1970 FIFA World Cup qualification\", \"MISC\", \"location\", \"unknown\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"participant of\", \"1970 FIFA World Cup qualification\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 82,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 89,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Locations in California"
+ ],
+ "kb_dedup_raw": "[\n    [\"Gary DeLong\", \"PER\", \"place of birth\", \"U.S.\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"member of\", \"San Francisco Prep Hall of Fame\", \"ORG\"],\n    [\"Vancouver Royals\", \"ORG\", \"league\", \"North American Soccer League\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"position held\", \"goalkeeper\", \"MISC\"],\n    [\"Gary DeLong\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Balboa High School\", \"ORG\", \"located in\", \"San Francisco, California\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"educated at\", \"Balboa High School\", \"ORG\"],\n    [\"U.S. national team\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Gary DeLong\", \"PER\", \"member of sports team\", \"Vancouver Royals\", \"ORG\"],\n    [\"Gary DeLong\", \"PER\", \"member of sports team\", \"U.S. national team\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 79,
+  "FN": 3,
+  "recall": 0.6666666666666666,
+  "n_extracted": 83,
+  "judge_parse_ok": true
+ }
+}

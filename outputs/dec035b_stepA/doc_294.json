@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_294",
+ "base_raw": "[\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Hocking River\", \"MISC\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Ohio University\", \"ORG\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"part of\", \"rail trail\", \"MISC\"],\n    [\"Eastern terminus of Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Western terminus of Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Nelsonville\", \"LOC\"],\n    [\"Rocky Brands Factory Outlet\", \"ORG\", \"located in\", \"Nelsonville\", \"LOC\"],\n    [\"Historic Square Arts District\", \"MISC\", \"located in\", \"Nelsonville\", \"LOC\"],\n    [\"Hocking College\", \"ORG\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Robbins Crossing\", \"MISC\", \"located in\", \"Hocking College\", \"ORG\"],\n    [\"US-50\", \"MISC\", \"located in\", \"Athens\", \"LOC\"],\n    [\"South Canaan Road\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Athens-Belpre Rail-Trail\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Moonville Rail-Trail\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Wayne National Forest\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Bluebell Preserve\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Athens Conservancy\", \"ORG\", \"located in\", \"Athens\", \"LOC\"],\n    [\"B&O Railroad\", \"ORG\", \"located in\", \"Athens County\", \"LOC\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 10,
+  "FN": 27,
+  "recall": 0.22857142857142856,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Hocking River\", \"MISC\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Ohio University\", \"ORG\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"part of\", \"rail trail\", \"MISC\"],\n    [\"Eastern terminus of Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Western terminus of Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Nelsonville\", \"LOC\"],\n    [\"Rocky Brands Factory Outlet\", \"ORG\", \"located in\", \"Nelsonville\", \"LOC\"],\n    [\"Historic Square Arts District\", \"MISC\", \"located in\", \"Nelsonville\", \"LOC\"],\n    [\"Hocking College\", \"ORG\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Robbins Crossing\", \"MISC\", \"located in\", \"Hocking College\", \"ORG\"],\n    [\"US-50\", \"MISC\", \"located in\", \"Athens\", \"LOC\"],\n    [\"South Canaan Road\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Athens-Belpre Rail-Trail\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Moonville Rail-Trail\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Wayne National Forest\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Bluebell Preserve\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Athens Conservancy\", \"ORG\", \"located in\", \"Athens\", \"LOC\"],\n    [\"B&O Railroad\", \"ORG\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"City of Athens\", \"ORG\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"owned by\", \"City of Athens\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 12,
+  "FN": 28,
+  "recall": 0.2222222222222222,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Athens County\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Hocking River\", \"MISC\", \"located in\", \"Ohio University\", \"ORG\"],\n    [\"Ohio University\", \"ORG\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"crosses\", \"university land\", \"MISC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"crosses\", \"city land\", \"MISC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"crosses\", \"county land\", \"MISC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"part of\", \"rail trail\", \"MISC\"],\n    [\"Eastern terminus\", \"MISC\", \"located in\", \"Athens\", \"LOC\"],\n    [\"Eastern terminus\", \"MISC\", \"located at\", \"East State Street\", \"MISC\"],\n    [\"Western terminus\", \"MISC\", \"located in\", \"Nelsonville\", \"LOC\"],\n    [\"Western terminus\", \"MISC\", \"located at\", \"Rocky Brands Factory Outlet\", \"ORG\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"connects to\", \"Nelsonville\", \"LOC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"formerly terminated at\", \"Robbins Crossing\", \"MISC\"],\n    [\"Robbins Crossing\", \"MISC\", \"located in\", \"Hocking College campus\", \"ORG\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"to be extended to\", \"South Canaan Road\", \"MISC\"],\n    [\"South Canaan Road\", \"MISC\", \"located in\", \"County Road 24A\", \"MISC\"],\n    [\"Athens-Belpre Rail-Trail\", \"MISC\", \"to be connected to\", \"Hockhocking Adena Bikeway\", \"MISC\"],\n    [\"Moonville Rail-Trail\", \"MISC\", \"to be connected to\", \"Hockhocking Adena Bikeway\", \"MISC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"borders\", \"Ohio University Campus\", \"ORG\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"borders\", \"Hocking College Campus\", \"ORG\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"borders\", \"Wayne National Forest\", \"MISC\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"borders\", \"Bluebell Preserve\", \"MISC\"],\n    [\"Bluebell Preserve\", \"MISC\", \"owned by\", \"Athens Conservancy\", \"ORG\"],\n    [\"Hockhocking Adena Bikeway\", \"MISC\", \"borders\", \"city parks\", \"MISC\"],\n    [\"City parks\", \"MISC\", \"owned by\", \"city of Athens\", \"ORG\"],\n    [\"Athens Conservancy\", \"ORG\", \"purchased\", \"B&O Railroad grade\", \"MISC\"],\n    [\"B&O Railroad grade\", \"MISC\", \"to be connected to\", \"Hockhocking Adena Bikeway\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 29,
+  "FP": 33,
+  "FN": 21,
+  "recall": 0.58,
+  "n_extracted": 44,
+  "judge_parse_ok": true
+ }
+}

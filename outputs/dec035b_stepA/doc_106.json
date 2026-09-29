@@ -1,0 +1,45 @@
+{
+ "doc_id": "doc_106",
+ "base_raw": "[\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"East Texas\", \"LOC\"],\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"Louisiana\", \"LOC\"],\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"Mexico\", \"LOC\"],\n    [\"Frank X. Tolbert\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"University of Texas at Austin\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Louisiana State University\", \"ORG\", \"located in\", \"Louisiana\", \"LOC\"],\n    [\"Peter Pepper\", \"MISC\", \"exported to\", \"South Korea\", \"LOC\"],\n    [\"Frank X. Tolbert\", \"PER\", \"employer\", \"Dallas Morning News\", \"ORG\"],\n    [\"Jean Andrews\", \"PER\", \"author\", \"Peppers: the domesticated Capsicums\", \"MISC\"],\n    [\"Peter Pepper\", \"MISC\", \"studied by\", \"University of Texas at Austin\", \"ORG\"],\n    [\"Peter Pepper\", \"MISC\", \"studied by\", \"Louisiana State University\", \"ORG\"],\n    [\"Peter Pepper\", \"MISC\", \"described by\", \"Frank X. Tolbert\", \"PER\"],\n    [\"Peter Pepper\", \"MISC\", \"described by\", \"Jean Andrews\", \"PER\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Locations",
+  "Organizations",
+  "U.S. States and Cities",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Peter Pepper\", \"MISC\", \"instance of\", \"Capsicum annuum\", \"MISC\"],\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"East Texas\", \"LOC\"],\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"Louisiana\", \"LOC\"],\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"Mexico\", \"LOC\"],\n    [\"Frank X. Tolbert\", \"PER\", \"author\", \"Tolbert's Texas\", \"MISC\"],\n    [\"Frank X. Tolbert\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"University of Texas at Austin\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Louisiana State University\", \"ORG\", \"located in\", \"Louisiana\", \"LOC\"],\n    [\"Jean Andrews\", \"PER\", \"author\", \"Peppers: the domesticated Capsicums\", \"MISC\"],\n    [\"Peter Pepper\", \"MISC\", \"country of origin\", \"unknown\", \"MISC\"],\n    [\"Peter Pepper\", \"MISC\", \"exported to\", \"South Korea\", \"LOC\"],\n    [\"Peter Pepper\", \"MISC\", \"part of\", \"Capsicum annuum var. annuum\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 17,
+  "FN": 12,
+  "recall": 0.07692307692307693,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_dedup_raw": "[\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"East Texas\", \"LOC\"],\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"Louisiana\", \"LOC\"],\n    [\"Peter Pepper\", \"MISC\", \"located in\", \"Mexico\", \"LOC\"],\n    [\"Frank X. Tolbert\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"University of Texas at Austin\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Louisiana State University\", \"ORG\", \"located in\", \"Louisiana\", \"LOC\"],\n    [\"South Korea\", \"LOC\", \"instance of\", \"Asian country\", \"MISC\"],\n    [\"Peter Pepper\", \"MISC\", \"exported to\", \"South Korea\", \"LOC\"],\n    [\"Frank X. Tolbert\", \"PER\", \"author\", \"Tolbert's Texas\", \"MISC\"],\n    [\"Jean Andrews\", \"PER\", \"author\", \"Peppers: the domesticated Capsicums\", \"MISC\"],\n    [\"Peter Pepper\", \"MISC\", \"studied at\", \"University of Texas at Austin\", \"ORG\"],\n    [\"Peter Pepper\", \"MISC\", \"studied at\", \"Louisiana State University\", \"ORG\"],\n    [\"Peter Pepper\", \"MISC\", \"mentioned in\", \"Dallas Morning News\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

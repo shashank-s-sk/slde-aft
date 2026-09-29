@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_487",
+ "base_raw": "[\n    [\"Patricia Russell\", \"PER\", \"date of birth\", \"1910\", \"TIME\"],\n    [\"Patricia Russell\", \"PER\", \"place of birth\", \"unknown\", \"MISC\"],\n    [\"Bertrand Russell\", \"PER\", \"spouse\", \"Patricia Russell\", \"PER\"],\n    [\"Patricia Russell\", \"PER\", \"educated at\", \"University of Oxford\", \"ORG\"],\n    [\"Dora Black\", \"PER\", \"employer\", \"Patricia Russell\", \"PER\"],\n    [\"Conrad Sebastian Robert Russell\", \"PER\", \"father\", \"Bertrand Russell\", \"PER\"],\n    [\"Conrad Sebastian Robert Russell\", \"PER\", \"mother\", \"Patricia Russell\", \"PER\"],\n    [\"Conrad Sebastian Robert Russell\", \"PER\", \"member of political party\", \"Liberal Democrat party\", \"ORG\"],\n    [\"Patricia Russell\", \"PER\", \"child\", \"Conrad Sebastian Robert Russell\", \"PER\"],\n    [\"Bertrand Russell\", \"PER\", \"child\", \"Conrad Sebastian Robert Russell\", \"PER\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 3,
+  "FN": 13,
+  "recall": 0.35,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Higher Education Institutions",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Patricia Russell\", \"PER\", \"date of birth\", \"1910\", \"TIME\"],\n    [\"Patricia Russell\", \"PER\", \"place of birth\", \"unknown\", \"MISC\"],\n    [\"Bertrand Russell\", \"PER\", \"spouse\", \"Patricia Russell\", \"PER\"],\n    [\"Patricia Russell\", \"PER\", \"educated at\", \"University of Oxford\", \"ORG\"],\n    [\"Dora Black\", \"PER\", \"employer\", \"Patricia Russell\", \"PER\"],\n    [\"Conrad Sebastian Robert Russell\", \"PER\", \"father\", \"Bertrand Russell\", \"PER\"],\n    [\"Conrad Sebastian Robert Russell\", \"PER\", \"mother\", \"Patricia Russell\", \"PER\"],\n    [\"Conrad Sebastian Robert Russell\", \"PER\", \"member of political party\", \"Liberal Democrat party\", \"ORG\"],\n    [\"Patricia Russell\", \"PER\", \"author\", \"A History of Western Philosophy\", \"MISC\"],\n    [\"Bertrand Russell\", \"PER\", \"author\", \"A History of Western Philosophy\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 4,
+  "FN": 13,
+  "recall": 0.38095238095238093,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Higher Education Institutions"
+ ],
+ "kb_dedup_raw": "[\n    [\"Patricia Russell\", \"PER\", \"date of birth\", \"1910\", \"TIME\"],\n    [\"Patricia Russell\", \"PER\", \"date of death\", \"2004\", \"TIME\"],\n    [\"Bertrand Russell\", \"PER\", \"spouse\", \"Patricia Russell\", \"PER\"],\n    [\"Patricia Russell\", \"PER\", \"place of birth\", \"unknown\", \"MISC\"],\n    [\"Conrad Sebastian Robert Russell\", \"PER\", \"father\", \"Bertrand Russell\", \"PER\"],\n    [\"Conrad Sebastian Robert Russell\", \"PER\", \"mother\", \"Patricia Russell\", \"PER\"],\n    [\"University of Oxford\", \"ORG\", \"educated at\", \"Patricia Russell\", \"PER\"],\n    [\"Dora Black\", \"PER\", \"employer\", \"Patricia Russell\", \"PER\"],\n    [\"Patricia Russell\", \"PER\", \"author\", \"A History of Western Philosophy\", \"MISC\"],\n    [\"Bertrand Russell\", \"PER\", \"author\", \"A History of Western Philosophy\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 5,
+  "FN": 13,
+  "recall": 0.4090909090909091,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

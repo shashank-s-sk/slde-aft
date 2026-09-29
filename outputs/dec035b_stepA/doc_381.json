@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_381",
+ "base_raw": "[\n    [\"Christopher Austin\", \"PER\", \"educated at\", \"University of Bristol\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"educated at\", \"Guildhall School of Music and Drama\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"collaborator\", \"Joby Talbot\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"employer\", \"Royal Academy of Music\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Adrian Beaumont\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Raymond Warren\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Robert Saxton\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Simon Bainbridge\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"teacher of\", \"Paul Morley\", \"PER\"],\n    [\"Brunel Ensemble\", \"ORG\", \"founder\", \"Christopher Austin\", \"PER\"],\n    [\"Royal Philharmonic Orchestra\", \"ORG\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"The Royal Ballet\", \"ORG\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"Garth Jennings\", \"PER\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"Joby Talbot\", \"PER\", \"collaborator\", \"Garth Jennings\", \"PER\"],\n    [\"The Hitchhiker's Guide to the Galaxy\", \"MISC\", \"composer\", \"Joby Talbot\", \"PER\"],\n    [\"The League of Gentlemen's Apocalypse\", \"MISC\", \"composer\", \"Joby Talbot\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 13,
+  "recall": 0.23529411764705882,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Christopher Austin\", \"PER\", \"date of birth\", \"14 November 1968\", \"TIME\"],\n    [\"Christopher Austin\", \"PER\", \"educated at\", \"University of Bristol\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"educated at\", \"Guildhall School of Music and Drama\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"collaborator\", \"Joby Talbot\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"employer\", \"Royal Academy of Music\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Adrian Beaumont\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Raymond Warren\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Robert Saxton\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Simon Bainbridge\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"teacher of\", \"Paul Morley\", \"PER\"],\n    [\"Brunel Ensemble\", \"ORG\", \"founder\", \"Christopher Austin\", \"PER\"],\n    [\"Royal Philharmonic Orchestra\", \"ORG\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"The Royal Ballet\", \"ORG\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"Joby Talbot\", \"PER\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"Garth Jennings\", \"PER\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"position held\", \"artistic director\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 19,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Christopher Austin\", \"PER\", \"date of birth\", \"14 November 1968\", \"TIME\"],\n    [\"Christopher Austin\", \"PER\", \"educated at\", \"University of Bristol\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"educated at\", \"Guildhall School of Music and Drama\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"collaborator\", \"Joby Talbot\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"employer\", \"Royal Academy of Music\", \"ORG\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Adrian Beaumont\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Raymond Warren\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Robert Saxton\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"student of\", \"Simon Bainbridge\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"teacher of\", \"Paul Morley\", \"PER\"],\n    [\"Brunel Ensemble\", \"ORG\", \"founder\", \"Christopher Austin\", \"PER\"],\n    [\"Royal Philharmonic Orchestra\", \"ORG\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"The Royal Ballet\", \"ORG\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"Joby Talbot\", \"PER\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"Garth Jennings\", \"PER\", \"collaborator\", \"Christopher Austin\", \"PER\"],\n    [\"Christopher Austin\", \"PER\", \"position held\", \"artistic director\", \"MISC\"]\n]"
+}

@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_139",
+ "base_raw": "[\n    [\"Erich Klossowski\", \"PER\", \"place of birth\", \"Ragnit\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"Poland\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"father\", \"Pierre Klossowski\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"father\", \"Balthus\", \"PER\"],\n    [\"Balthus\", \"PER\", \"birth name\", \"Balthus Klossowski\", \"MISC\"],\n    [\"Balthus\", \"PER\", \"alias\", \"Balthus de Rola\", \"MISC\"],\n    [\"Erich Klossowski\", \"PER\", \"spouse\", \"Baladine Klossowska\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"educated at\", \"Munich\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"date of death\", \"23 January 1949\", \"TIME\"],\n    [\"Erich Klossowski\", \"PER\", \"place of death\", \"Sanary-sur-Mer\", \"LOC\"],\n    [\"Honor\u00e9 Daumier\", \"PER\", \"subject of monograph\", \"Erich Klossowski\", \"PER\"],\n    [\"Rainer Maria Rilke\", \"PER\", \"acquaintance\", \"Baladine Klossowska\", \"PER\"],\n    [\"Baladine Klossowska\", \"PER\", \"nickname\", \"Merline\", \"MISC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 9,
+  "FN": 10,
+  "recall": 0.375,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Erich Klossowski\", \"PER\", \"date of birth\", \"19 December 1875\", \"TIME\"],\n    [\"Erich Klossowski\", \"PER\", \"date of death\", \"23 January 1949\", \"TIME\"],\n    [\"Erich Klossowski\", \"PER\", \"place of birth\", \"Ragnit\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"Poland\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"father\", \"Pierre Klossowski\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"father\", \"Balthus\", \"PER\"],\n    [\"Balthus\", \"PER\", \"father\", \"Erich Klossowski\", \"PER\"],\n    [\"Pierre Klossowski\", \"PER\", \"father\", \"Erich Klossowski\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"spouse\", \"Baladine Klossowska\", \"PER\"],\n    [\"Baladine Klossowska\", \"PER\", \"spouse\", \"Erich Klossowski\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"educated at\", \"Munich\", \"LOC\"],\n    [\"Honor\u00e9 Daumier\", \"PER\", \"subject of monograph\", \"Erich Klossowski\", \"PER\"],\n    [\"Rainer Maria Rilke\", \"PER\", \"acquaintance\", \"Erich Klossowski\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"location of death\", \"Sanary-sur-Mer\", \"LOC\"],\n    [\"Balthus\", \"PER\", \"alias\", \"Balthus de Rola\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 12,
+  "FN": 8,
+  "recall": 0.5294117647058824,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Erich Klossowski\", \"PER\", \"date of birth\", \"19 December 1875\", \"TIME\"],\n    [\"Erich Klossowski\", \"PER\", \"date of death\", \"23 January 1949\", \"TIME\"],\n    [\"Erich Klossowski\", \"PER\", \"place of birth\", \"Ragnit\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"Poland\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Erich Klossowski\", \"PER\", \"father\", \"Pierre Klossowski\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"father\", \"Balthus\", \"PER\"],\n    [\"Balthus\", \"PER\", \"father\", \"Erich Klossowski\", \"PER\"],\n    [\"Pierre Klossowski\", \"PER\", \"father\", \"Erich Klossowski\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"spouse\", \"Baladine Klossowska\", \"PER\"],\n    [\"Baladine Klossowska\", \"PER\", \"spouse\", \"Erich Klossowski\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"educated at\", \"Munich\", \"LOC\"],\n    [\"Honor\u00e9 Daumier\", \"PER\", \"subject of monograph\", \"Erich Klossowski\", \"PER\"],\n    [\"Rainer Maria Rilke\", \"PER\", \"acquaintance\", \"Baladine Klossowska\", \"PER\"],\n    [\"Erich Klossowski\", \"PER\", \"location of death\", \"Sanary-sur-Mer\", \"LOC\"],\n    [\"Balthus\", \"PER\", \"added name\", \"de Rola\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 12,
+  "FN": 8,
+  "recall": 0.5294117647058824,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

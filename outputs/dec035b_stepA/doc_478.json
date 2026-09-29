@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_478",
+ "base_raw": "[\n    [\"Estimates Committee\", \"ORG\", \"located in\", \"India\", \"LOC\"],\n    [\"Estimates Committee\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Public Accounts committee\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Committee on Public Undertakings\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Lok Sabha\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Rajya Sabha\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Murli Manohar Joshi\", \"PER\", \"member of\", \"Bharatiya Janata Party\", \"ORG\"],\n    [\"Murli Manohar Joshi\", \"PER\", \"position held\", \"chairperson of Estimates Committee\", \"MISC\"],\n    [\"Estimates Committee\", \"ORG\", \"chairperson\", \"Murli Manohar Joshi\", \"PER\"],\n    [\"Parliament of India\", \"ORG\", \"country\", \"India\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Estimates Committee\", \"ORG\", \"located in\", \"Parliament of India\", \"ORG\"],\n    [\"Estimates Committee\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Public Accounts committee\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Committee on Public Undertakings\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Lok Sabha\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Rajya Sabha\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Murli Manohar Joshi\", \"PER\", \"member of\", \"Bharatiya Janata Party\", \"ORG\"],\n    [\"Murli Manohar Joshi\", \"PER\", \"position held\", \"chairperson\", \"MISC\"],\n    [\"Estimates Committee\", \"ORG\", \"head of\", \"Murli Manohar Joshi\", \"PER\"],\n    [\"Bharatiya Janata Party\", \"ORG\", \"member of parliament\", \"Murli Manohar Joshi\", \"PER\"],\n    [\"Parliament of India\", \"ORG\", \"has part\", \"Lok Sabha\", \"ORG\"],\n    [\"Parliament of India\", \"ORG\", \"has part\", \"Rajya Sabha\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Estimates Committee\", \"ORG\", \"located in\", \"India\", \"LOC\"],\n    [\"Estimates Committee\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Public Accounts committee\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Committee on Public Undertakings\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Lok Sabha\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Rajya Sabha\", \"ORG\", \"part of\", \"Parliament of India\", \"ORG\"],\n    [\"Murli Manohar Joshi\", \"PER\", \"member of\", \"Bharatiya Janata Party\", \"ORG\"],\n    [\"Murli Manohar Joshi\", \"PER\", \"position held\", \"chairperson\", \"MISC\"],\n    [\"Estimates Committee\", \"ORG\", \"head of\", \"Murli Manohar Joshi\", \"PER\"],\n    [\"Bharatiya Janata Party\", \"ORG\", \"country\", \"India\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

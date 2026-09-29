@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_324",
+ "base_raw": "[\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"nickname\", \"Zorilla\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"position held\", \"second baseman\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"position held\", \"outfielder\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Chicago Cubs\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Tampa Bay Devil Rays\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Oakland Athletics\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Kansas City Royals\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"award received\", \"World Series Most Valuable Player\", \"MISC\"],\n    [\"Tim Dillard\", \"PER\", \"employer\", \"MLB\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"league\", \"Major League Baseball\", \"ORG\"],\n    [\"Jake Peavy\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Jack Morris\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Bill Skowron\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Clem Labine\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Don Gullett\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Ryan Theriot\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"date of birth\", \"May 26, 1981\", \"TIME\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"position held\", \"second baseman\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"position held\", \"outfielder\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Chicago Cubs\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Tampa Bay Devil Rays\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Oakland Athletics\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Kansas City Royals\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"award received\", \"World Series Most Valuable Player\", \"MISC\"],\n    [\"Chicago Cubs\", \"ORG\", \"league\", \"Major League Baseball\", \"MISC\"],\n    [\"Tampa Bay Devil Rays\", \"ORG\", \"league\", \"Major League Baseball\", \"MISC\"],\n    [\"Oakland Athletics\", \"ORG\", \"league\", \"Major League Baseball\", \"MISC\"],\n    [\"Kansas City Royals\", \"ORG\", \"league\", \"Major League Baseball\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 13,
+  "FN": 5,
+  "recall": 0.6428571428571429,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"nickname\", \"Zorilla\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"position held\", \"second baseman\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"position held\", \"outfielder\", \"MISC\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Chicago Cubs\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Tampa Bay Devil Rays\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Oakland Athletics\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"member of sports team\", \"Kansas City Royals\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"award received\", \"World Series Most Valuable Player\", \"MISC\"],\n    [\"Tim Dillard\", \"PER\", \"employer\", \"MLB\", \"ORG\"],\n    [\"Jake Peavy\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Jack Morris\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Bill Skowron\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Clem Labine\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Don Gullett\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Ryan Theriot\", \"PER\", \"member of sports team\", \"MLB\", \"ORG\"],\n    [\"Benjamin Thomas Zobrist\", \"PER\", \"date of birth\", \"May 26, 1981\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 2,
+  "recall": 0.7142857142857143,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

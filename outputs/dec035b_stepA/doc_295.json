@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_295",
+ "base_raw": "[\n    [\"Bernd Lange\", \"PER\", \"position held\", \"chair of INTA\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"located in\", \"European Parliament\", \"ORG\"],\n    [\"European Parliament\", \"ORG\", \"legislative body\", \"European Union\", \"ORG\"],\n    [\"INTA\", \"ORG\", \"responsible for\", \"EU's common commercial policy\", \"MISC\"],\n    [\"World Trade Organisation\", \"ORG\", \"relation\", \"European Union\", \"ORG\"],\n    [\"Treaty of Lisbon\", \"MISC\", \"resulted in\", \"co-legislator in Common Commercial Policy\", \"MISC\"],\n    [\"European Union\", \"ORG\", \"has part\", \"Common Commercial Policy\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"guided through\", \"regulations on Grandfathering\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"guided through\", \"regulations on Financial Responsibility\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"guided through\", \"macro-financial assistance to third countries\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"guided through\", \"Enforcement\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"guided through\", \"Dual Use\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"guided through\", \"Omnibus I and II packages\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"reviewed\", \"Generalised System of Preferences\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"reviewed\", \"Market Access Regulation\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"gave consent to\", \"free trade agreement with South Korea\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"gave consent to\", \"free trade agreement with Peru/Colombia\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"rejected\", \"Anti-Counterfeiting Trade Agreement\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"scrutinised\", \"trade talks with Canada\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"scrutinised\", \"trade talks with Singapore\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"scrutinised\", \"trade talks with African, Caribbean and Pacific countries\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"examining\", \"ongoing negotiations with Japan\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"examining\", \"ongoing negotiations with the US\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 23,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Bernd Lange\", \"PER\", \"position held\", \"chair of INTA\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"part of\", \"European Parliament\", \"ORG\"],\n    [\"European Parliament\", \"ORG\", \"location\", \"European Union\", \"LOC\"],\n    [\"INTA\", \"ORG\", \"responsible for\", \"EU's common commercial policy\", \"MISC\"],\n    [\"World Trade Organisation (WTO)\", \"ORG\", \"relation\", \"European Union\", \"ORG\"],\n    [\"Treaty of Lisbon\", \"MISC\", \"resulted in\", \"Parliament as co-legislator\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"legislative achievement\", \"Grandfathering regulations\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"legislative achievement\", \"Financial Responsibility regulations\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"legislative achievement\", \"macro-financial assistance to third countries\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"legislative achievement\", \"Enforcement regulations\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"legislative achievement\", \"Dual Use regulations\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"legislative achievement\", \"Omnibus I and II packages\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"legislative achievement\", \"Generalised System of Preferences (GSP) review\", \"MISC\"],\n    [\"INTA\", \"ORG\", \"legislative achievement\", \"Market Access Regulation (MAR)\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"gave consent to\", \"free trade agreement with South Korea\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"gave consent to\", \"free trade agreement with Peru/Colombia\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"rejected\", \"Anti-Counterfeiting Trade Agreement (ACTA)\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"scrutinised\", \"trade talks with Canada\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"scrutinised\", \"trade talks with Singapore\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"scrutinised\", \"trade talks with African, Caribbean and Pacific (ACP) countries\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"examining\", \"ongoing negotiations with Japan\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"examining\", \"ongoing negotiations with the US\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 41,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 41,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Committee on International Trade\", \"ORG\", \"chair\", \"Bernd Lange\", \"PER\"],\n    [\"European Parliament\", \"ORG\", \"committee\", \"Committee on International Trade\", \"ORG\"],\n    [\"Committee on International Trade\", \"ORG\", \"responsible for\", \"EU's common commercial policy\", \"MISC\"],\n    [\"Bernd Lange\", \"PER\", \"elected on\", \"7 July 2014\", \"TIME\"],\n    [\"European Parliament\", \"ORG\", \"co-legislator in\", \"Union's Common Commercial Policy\", \"MISC\"],\n    [\"Committee on International Trade\", \"ORG\", \"guided through\", \"regulations on 'Grandfathering'\", \"MISC\"],\n    [\"Committee on International Trade\", \"ORG\", \"guided through\", \"regulations on 'Financial Responsibility'\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"gave consent to\", \"free trade agreements with South Korea\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"gave consent to\", \"free trade agreements with Peru/Colombia\", \"MISC\"],\n    [\"European Parliament\", \"ORG\", \"rejected\", \"Anti-Counterfeiting Trade Agreement (ACTA)\", \"MISC\"],\n    [\"Committee on International Trade\", \"ORG\", \"scrutinised\", \"trade talks with Canada\", \"MISC\"],\n    [\"Committee on International Trade\", \"ORG\", \"scrutinised\", \"trade talks with Singapore\", \"MISC\"],\n    [\"Committee on International Trade\", \"ORG\", \"scrutinised\", \"trade talks with African, Caribbean and Pacific (ACP) countries\", \"MISC\"],\n    [\"Committee on International Trade\", \"ORG\", \"examining\", \"ongoing negotiations with Japan\", \"MISC\"],\n    [\"Committee on International Trade\", \"ORG\", \"examining\", \"ongoing negotiations with the US\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 37,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 38,
+  "judge_parse_ok": true
+ }
+}

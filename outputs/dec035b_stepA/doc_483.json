@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_483",
+ "base_raw": "[\n    [\"Howard H. Stevenson\", \"PER\", \"date of birth\", \"June 27, 1941\", \"TIME\"],\n    [\"Howard H. Stevenson\", \"PER\", \"employer\", \"Harvard University\", \"ORG\"],\n    [\"Howard H. Stevenson\", \"PER\", \"position held\", \"Sarofim-Rock Baker Foundation Professor Emeritus\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"educated at\", \"Stanford University\", \"ORG\"],\n    [\"Howard H. Stevenson\", \"PER\", \"educated at\", \"Harvard Business School\", \"ORG\"],\n    [\"Howard H. Stevenson\", \"PER\", \"author\", \"eight books\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"author\", \"41 articles\", \"MISC\"],\n    [\"Harvard Business Publishing\", \"ORG\", \"chairman\", \"Howard H. Stevenson\", \"PER\"],\n    [\"Harvard University\", \"ORG\", \"vice provost for resources and planning\", \"Howard H. Stevenson\", \"PER\"],\n    [\"HBS\", \"ORG\", \"senior associate dean\", \"Howard H. Stevenson\", \"PER\"],\n    [\"Harvard University\", \"ORG\", \"fundraiser\", \"Howard H. Stevenson\", \"PER\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Organizations",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Howard H. Stevenson\", \"PER\", \"date of birth\", \"June 27, 1941\", \"TIME\"],\n    [\"Howard H. Stevenson\", \"PER\", \"author\", \"eight books\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"author\", \"41 articles\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"educated at\", \"Stanford University\", \"ORG\"],\n    [\"Howard H. Stevenson\", \"PER\", \"educated at\", \"Harvard Business School\", \"ORG\"],\n    [\"Howard H. Stevenson\", \"PER\", \"position held\", \"chairman of Harvard Business Publishing\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"position held\", \"vice provost for resources and planning\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"position held\", \"senior associate dean at HBS\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"employer\", \"Harvard University\", \"ORG\"],\n    [\"Harvard University\", \"ORG\", \"location\", \"U.S.\", \"LOC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Harvard Business School\", \"ORG\", \"part of\", \"Harvard University\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions"
+ ],
+ "kb_dedup_raw": "[\n    [\"Howard H. Stevenson\", \"PER\", \"date of birth\", \"June 27, 1941\", \"TIME\"],\n    [\"Howard H. Stevenson\", \"PER\", \"employer\", \"Harvard University\", \"ORG\"],\n    [\"Howard H. Stevenson\", \"PER\", \"educated at\", \"Stanford University\", \"ORG\"],\n    [\"Howard H. Stevenson\", \"PER\", \"educated at\", \"Harvard Business School\", \"ORG\"],\n    [\"Howard H. Stevenson\", \"PER\", \"position held\", \"Sarofim-Rock Baker Foundation Professor Emeritus\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"position held\", \"chairman of Harvard Business Publishing\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"position held\", \"vice provost for resources and planning\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"position held\", \"senior associate dean at HBS\", \"MISC\"],\n    [\"Harvard University\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"author\", \"eight books\", \"MISC\"],\n    [\"Howard H. Stevenson\", \"PER\", \"author\", \"41 articles\", \"MISC\"],\n    [\"Harvard Business School\", \"ORG\", \"part of\", \"Harvard University\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

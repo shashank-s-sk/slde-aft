@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_346",
+ "base_raw": "[\n    [\"The Great Garrick\", \"MISC\", \"director\", \"James Whale\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Brian Aherne\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Olivia de Havilland\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Edward Everett Horton\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Lionel Atwill\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Luis Alberni\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Melville Cooper\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Lana Turner\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"based on\", \"Ladies and Gentlemen\", \"MISC\"],\n    [\"The Great Garrick\", \"MISC\", \"author\", \"Ernest Vajda\", \"PER\"],\n    [\"David Garrick\", \"PER\", \"country\", \"Britain\", \"LOC\"],\n    [\"The Great Garrick\", \"MISC\", \"genre\", \"historical comedy\", \"MISC\"],\n    [\"James Whale\", \"PER\", \"notable work\", \"The Great Garrick\", \"MISC\"],\n    [\"Jonathan Rosenbaum\", \"PER\", \"author\", \"Top 100 American Films\", \"MISC\"],\n    [\"The Great Garrick\", \"MISC\", \"year\", \"1937\", \"TIME\"],\n    [\"David Garrick\", \"PER\", \"occupation\", \"actor\", \"MISC\"],\n    [\"Com\u00e9die Fran\u00e7aise\", \"ORG\", \"location\", \"France\", \"LOC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 11,
+  "FN": 1,
+  "recall": 0.9,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"The Great Garrick\", \"MISC\", \"director\", \"James Whale\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Brian Aherne\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Olivia de Havilland\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Edward Everett Horton\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Lionel Atwill\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Luis Alberni\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Melville Cooper\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Lana Turner\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"based on\", \"Ladies and Gentlemen\", \"MISC\"],\n    [\"The Great Garrick\", \"MISC\", \"author\", \"Ernest Vajda\", \"PER\"],\n    [\"David Garrick\", \"PER\", \"country\", \"U.K.\", \"LOC\"],\n    [\"The Great Garrick\", \"MISC\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"James Whale\", \"PER\", \"notable work\", \"The Great Garrick\", \"MISC\"],\n    [\"Jonathan Rosenbaum\", \"PER\", \"author\", \"Top 100 American Films\", \"MISC\"],\n    [\"The Great Garrick\", \"MISC\", \"genre\", \"historical comedy\", \"MISC\"],\n    [\"David Garrick\", \"PER\", \"occupation\", \"actor\", \"MISC\"],\n    [\"Com\u00e9die Fran\u00e7aise\", \"ORG\", \"location\", \"France\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 10,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"The Great Garrick\", \"MISC\", \"director\", \"James Whale\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Brian Aherne\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Olivia de Havilland\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"starring\", \"Edward Everett Horton\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Lionel Atwill\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Luis Alberni\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Melville Cooper\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"features\", \"Lana Turner\", \"PER\"],\n    [\"The Great Garrick\", \"MISC\", \"based on\", \"Ladies and Gentlemen\", \"MISC\"],\n    [\"The Great Garrick\", \"MISC\", \"author\", \"Ernest Vajda\", \"PER\"],\n    [\"David Garrick\", \"PER\", \"country\", \"Britain\", \"LOC\"],\n    [\"The Great Garrick\", \"MISC\", \"genre\", \"historical comedy\", \"MISC\"],\n    [\"James Whale\", \"PER\", \"notable work\", \"The Great Garrick\", \"MISC\"],\n    [\"Jonathan Rosenbaum\", \"PER\", \"creator\", \"Top 100 American Films\", \"MISC\"],\n    [\"The Great Garrick\", \"MISC\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"The Great Garrick\", \"MISC\", \"release year\", \"1937\", \"TIME\"],\n    [\"David Garrick\", \"PER\", \"occupation\", \"actor\", \"MISC\"],\n    [\"Com\u00e9die Fran\u00e7aise\", \"ORG\", \"location\", \"France\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 9,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

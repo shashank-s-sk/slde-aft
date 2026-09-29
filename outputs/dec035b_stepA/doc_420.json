@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_420",
+ "base_raw": "[\n    [\"Hurricane Flora\", \"MISC\", \"location of formation\", \"Intertropical Convergence Zone\", \"MISC\"],\n    [\"Hurricane Flora\", \"MISC\", \"part of\", \"1963 Atlantic hurricane season\", \"MISC\"],\n    [\"Hurricane Flora\", \"MISC\", \"passed over\", \"Tobago\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"struck\", \"Haiti\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"drifted over\", \"Cuba\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"passed over\", \"Bahamas\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"became\", \"extratropical cyclone\", \"MISC\"],\n    [\"Cuba\", \"LOC\", \"part of\", \"Caribbean\", \"LOC\"],\n    [\"Haiti\", \"LOC\", \"part of\", \"Caribbean\", \"LOC\"],\n    [\"Dominican Republic\", \"LOC\", \"part of\", \"Caribbean\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"instance of\", \"tropical cyclone\", \"MISC\"],\n    [\"Hurricane Flora\", \"MISC\", \"location\", \"Atlantic Basin\", \"LOC\"],\n    [\"1900 Galveston Hurricane\", \"MISC\", \"location\", \"Galveston\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Hurricane Flora\", \"MISC\", \"location of formation\", \"Intertropical Convergence Zone\", \"MISC\"],\n    [\"Hurricane Flora\", \"MISC\", \"passed over\", \"Tobago\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"struck\", \"Haiti\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"drifted over\", \"Cuba\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"passed over\", \"Bahamas\", \"LOC\"],\n    [\"Cuba\", \"LOC\", \"part of\", \"Caribbean\", \"MISC\"],\n    [\"Haiti\", \"LOC\", \"part of\", \"Caribbean\", \"MISC\"],\n    [\"Dominican Republic\", \"LOC\", \"part of\", \"Caribbean\", \"MISC\"],\n    [\"Hurricane Flora\", \"MISC\", \"instance of\", \"tropical cyclone\", \"MISC\"],\n    [\"Hurricane Flora\", \"MISC\", \"location\", \"Atlantic Basin\", \"MISC\"],\n    [\"1900 Galveston Hurricane\", \"MISC\", \"location\", \"Galveston\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Hurricane Flora\", \"MISC\", \"location of formation\", \"Intertropical Convergence Zone\", \"MISC\"],\n    [\"Hurricane Flora\", \"MISC\", \"date of formation\", \"September 26\", \"TIME\"],\n    [\"Hurricane Flora\", \"MISC\", \"affected area\", \"Windward Islands\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"affected area\", \"Tobago\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"affected area\", \"Haiti\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"affected area\", \"Cuba\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"affected area\", \"Bahamas\", \"LOC\"],\n    [\"Hurricane Flora\", \"MISC\", \"date of dissipation\", \"October 12\", \"TIME\"],\n    [\"Cuba\", \"LOC\", \"part of\", \"Atlantic Basin\", \"MISC\"],\n    [\"Haiti\", \"LOC\", \"part of\", \"Atlantic Basin\", \"MISC\"],\n    [\"Dominican Republic\", \"LOC\", \"part of\", \"Atlantic Basin\", \"MISC\"],\n    [\"1900 Galveston Hurricane\", \"MISC\", \"location\", \"Galveston\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 23,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

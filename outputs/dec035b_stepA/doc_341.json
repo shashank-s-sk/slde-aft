@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_341",
+ "base_raw": "[\n    [\"Thomas Dekker\", \"PER\", \"author\", \"The Shoemaker's Holiday\", \"MISC\"],\n    [\"The Shoemaker's Holiday\", \"MISC\", \"genre\", \"city comedy\", \"MISC\"],\n    [\"Simon Eyre\", \"PER\", \"position held\", \"Lord Mayor of London\", \"MISC\"],\n    [\"The Admiral's Men\", \"ORG\", \"performer\", \"The Shoemaker's Holiday\", \"MISC\"],\n    [\"King Henry VI\", \"PER\", \"reign\", \"The Shoemaker's Holiday\", \"MISC\"],\n    [\"King Henry V\", \"PER\", \"father\", \"Henry IV\", \"PER\"],\n    [\"Henry IV\", \"PER\", \"date of death\", \"1413\", \"TIME\"],\n    [\"Shakespeare\", \"PER\", \"author\", \"Henry IV, Part 1\", \"MISC\"],\n    [\"Shakespeare\", \"PER\", \"author\", \"Henry IV, Part 2\", \"MISC\"],\n    [\"Shakespeare\", \"PER\", \"author\", \"Henry V\", \"MISC\"],\n    [\"The King\", \"PER\", \"appears in\", \"The Shoemaker's Holiday\", \"MISC\"],\n    [\"London\", \"LOC\", \"location of formation\", \"livery companies\", \"ORG\"],\n    [\"Thomas Dekker\", \"PER\", \"style\", \"depicting everyday life in London\", \"MISC\"],\n    [\"The Shoemaker's Holiday\", \"MISC\", \"instance of\", \"citizen drama\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 10,
+  "FN": 15,
+  "recall": 0.21052631578947367,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Thomas Dekker\", \"PER\", \"author\", \"The Shoemaker's Holiday\", \"MISC\"],\n    [\"The Shoemaker's Holiday\", \"MISC\", \"genre\", \"city comedy\", \"MISC\"],\n    [\"Simon Eyre\", \"PER\", \"position held\", \"Lord Mayor of London\", \"MISC\"],\n    [\"London\", \"LOC\", \"located in the administrative territorial entity\", \"England\", \"LOC\"],\n    [\"Henry V\", \"PER\", \"father\", \"Henry IV\", \"PER\"],\n    [\"Henry IV\", \"PER\", \"date of death\", \"1413\", \"TIME\"],\n    [\"Henry V\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"The Admiral's Men\", \"ORG\", \"performer\", \"The Shoemaker's Holiday\", \"MISC\"],\n    [\"Thomas Dekker\", \"PER\", \"style\", \"depiction of everyday life in London\", \"MISC\"],\n    [\"The Shoemaker's Holiday\", \"MISC\", \"location of formation\", \"London\", \"LOC\"],\n    [\"Henry VI\", \"PER\", \"reign\", \"England\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 13,
+  "recall": 0.3157894736842105,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 13,
+  "recall": 0.3157894736842105,
+  "n_extracted": 20,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Thomas Dekker\", \"PER\", \"author\", \"The Shoemaker's Holiday\", \"MISC\"],\n    [\"The Shoemaker's Holiday\", \"MISC\", \"genre\", \"city comedy\", \"MISC\"],\n    [\"Simon Eyre\", \"PER\", \"position held\", \"Lord Mayor of London\", \"MISC\"],\n    [\"London\", \"LOC\", \"located in the administrative territorial entity\", \"England\", \"LOC\"],\n    [\"Henry V\", \"PER\", \"father\", \"Henry IV\", \"PER\"],\n    [\"Henry IV\", \"PER\", \"date of death\", \"1413\", \"TIME\"],\n    [\"Henry V\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"The Admiral's Men\", \"ORG\", \"performer\", \"The Shoemaker's Holiday\", \"MISC\"],\n    [\"Thomas Dekker\", \"PER\", \"style\", \"depiction of everyday life in London\", \"MISC\"],\n    [\"The Shoemaker's Holiday\", \"MISC\", \"location of formation\", \"London\", \"LOC\"],\n    [\"Henry VI\", \"PER\", \"reign\", \"England\", \"LOC\"]\n]"
+}

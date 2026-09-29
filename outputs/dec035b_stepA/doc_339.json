@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_339",
+ "base_raw": "[\n    [\"Helsinki County Prison\", \"LOC\", \"located in\", \"Katajanokka\", \"LOC\"],\n    [\"Tsar Nikolai I\", \"PER\", \"established\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Helsinki Crown Prison\", \"LOC\", \"established\", \"1749\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"extended\", \"1888\", \"TIME\"],\n    [\"Risto Ryti\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"V\u00e4in\u00f6 Tanner\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Hella Wuolijoki\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Martta Koskinen\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Martta Koskinen\", \"PER\", \"executed\", \"September 29, 1943\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"renamed\", \"Helsinki Remand Prison\", \"LOC\"],\n    [\"Helsinki Remand Prison\", \"LOC\", \"closed\", \"2002\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"reopened as\", \"hotel\", \"MISC\"],\n    [\"Helsinki County Prison\", \"LOC\", \"protected as\", \"landmark\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Helsinki County Prison\", \"LOC\", \"located in\", \"Helsinki\", \"LOC\"],\n    [\"Helsinki County Prison\", \"LOC\", \"established by\", \"Tsar Nikolai I\", \"PER\"],\n    [\"Tsar Nikolai I\", \"PER\", \"established\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Helsinki Crown Prison\", \"LOC\", \"established\", \"1749\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"extended\", \"1888\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"functioned as\", \"remand prison\", \"MISC\"],\n    [\"Risto Ryti\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"V\u00e4in\u00f6 Tanner\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Hella Wuolijoki\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Martta Koskinen\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Martta Koskinen\", \"PER\", \"executed\", \"September 29, 1943\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"renamed\", \"Helsinki Remand Prison\", \"LOC\"],\n    [\"Helsinki Remand Prison\", \"LOC\", \"closed\", \"2002\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"reopened as\", \"hotel\", \"MISC\"],\n    [\"Helsinki County Prison\", \"LOC\", \"protected as\", \"landmark\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 18,
+  "recall": 0.18181818181818182,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 18,
+  "recall": 0.18181818181818182,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Helsinki County Prison\", \"LOC\", \"located in\", \"Helsinki\", \"LOC\"],\n    [\"Helsinki County Prison\", \"LOC\", \"established by\", \"Tsar Nikolai I\", \"PER\"],\n    [\"Tsar Nikolai I\", \"PER\", \"established\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Helsinki Crown Prison\", \"LOC\", \"established\", \"1749\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"extended\", \"1888\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"functioned as\", \"remand prison\", \"MISC\"],\n    [\"Risto Ryti\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"V\u00e4in\u00f6 Tanner\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Hella Wuolijoki\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Martta Koskinen\", \"PER\", \"imprisoned at\", \"Helsinki County Prison\", \"LOC\"],\n    [\"Martta Koskinen\", \"PER\", \"executed\", \"September 29, 1943\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"renamed\", \"Helsinki Remand Prison\", \"LOC\"],\n    [\"Helsinki Remand Prison\", \"LOC\", \"closed\", \"2002\", \"TIME\"],\n    [\"Helsinki County Prison\", \"LOC\", \"reopened as\", \"hotel\", \"MISC\"],\n    [\"Helsinki County Prison\", \"LOC\", \"protected as\", \"landmark\", \"MISC\"]\n]"
+}

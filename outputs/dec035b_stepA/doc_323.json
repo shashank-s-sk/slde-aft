@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_323",
+ "base_raw": "[\n    [\"Niko Nirvi\", \"PER\", \"date of birth\", \"1961\", \"TIME\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"MikroBitti\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"C=Lehti\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"Pelit\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"position held\", \"game editor\", \"MISC\"],\n    [\"MikroBitti\", \"ORG\", \"publisher\", \"Pelit\", \"ORG\"],\n    [\"Pelit\", \"ORG\", \"founded by\", \"MikroBitti publisher\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"location of formation\", \"Finland\", \"LOC\"],\n    [\"Niko Nirvi\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"Niko Nirvi\", \"PER\", \"member of\", \"Finnish gaming world\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"notable work\", \"computer game reviews\", \"MISC\"],\n    [\"MikroBitti\", \"ORG\", \"location\", \"Finland\", \"LOC\"],\n    [\"C=Lehti\", \"ORG\", \"location\", \"Finland\", \"LOC\"],\n    [\"Pelit\", \"ORG\", \"location\", \"Finland\", \"LOC\"],\n    [\"Niko Nirvi\", \"PER\", \"author\", \"computer game reviews\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"genre\", \"humorous\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 8,
+  "recall": 0.1111111111111111,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Niko Nirvi\", \"PER\", \"date of birth\", \"1961\", \"TIME\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"MikroBitti\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"C=Lehti\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"Pelit\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"position held\", \"game editor\", \"MISC\"],\n    [\"MikroBitti\", \"ORG\", \"publisher\", \"Pelit\", \"ORG\"],\n    [\"Pelit\", \"ORG\", \"founded by\", \"MikroBitti publisher\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"location of formation\", \"Finland\", \"LOC\"],\n    [\"Niko Nirvi\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"MikroBitti\", \"ORG\", \"country of origin\", \"Finland\", \"LOC\"],\n    [\"C=Lehti\", \"ORG\", \"country of origin\", \"Finland\", \"LOC\"],\n    [\"Pelit\", \"ORG\", \"country of origin\", \"Finland\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 16,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Niko Nirvi\", \"PER\", \"date of birth\", \"1961\", \"TIME\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"MikroBitti\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"C=Lehti\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"employer\", \"Pelit\", \"ORG\"],\n    [\"Niko Nirvi\", \"PER\", \"position held\", \"game editor\", \"MISC\"],\n    [\"MikroBitti\", \"ORG\", \"publisher\", \"Pelit\", \"ORG\"],\n    [\"Pelit\", \"ORG\", \"founded by\", \"MikroBitti publisher\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"location of formation\", \"Finland\", \"LOC\"],\n    [\"Niko Nirvi\", \"PER\", \"country of citizenship\", \"Finland\", \"LOC\"],\n    [\"Niko Nirvi\", \"PER\", \"member of\", \"Finnish gaming world\", \"MISC\"],\n    [\"MikroBitti\", \"ORG\", \"location\", \"Finland\", \"LOC\"],\n    [\"C=Lehti\", \"ORG\", \"location\", \"Finland\", \"LOC\"],\n    [\"Pelit\", \"ORG\", \"location\", \"Finland\", \"LOC\"],\n    [\"Niko Nirvi\", \"PER\", \"notable work\", \"computer game reviews\", \"MISC\"],\n    [\"Niko Nirvi\", \"PER\", \"inception\", \"1986\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 8,
+  "recall": 0.3333333333333333,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

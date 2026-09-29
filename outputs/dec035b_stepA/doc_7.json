@@ -1,0 +1,44 @@
+{
+ "doc_id": "doc_7",
+ "base_raw": "[\n    [\"Thomas Wolff\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"educated at\", \"University of California, Berkeley\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"University of Washington\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"University of Chicago\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"New York University\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"award received\", \"Salem Prize\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"award received\", \"B\u00f4cher Memorial Prize\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"field of work\", \"harmonic analysis\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"field of work\", \"complex analysis\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"field of work\", \"partial differential equations\", \"MISC\"],\n    [\"Bill Gates\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Donald Sarason\", \"PER\", \"employer\", \"University of California, Berkeley\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"student of\", \"Donald Sarason\", \"PER\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 6,
+  "FN": 6,
+  "recall": 0.5384615384615384,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Notable Individuals",
+  "Organizations",
+  "Persons",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Thomas Wolff\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"educated at\", \"University of California, Berkeley\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"Caltech\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"University of Washington\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"University of Chicago\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"New York University\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"award received\", \"Salem Prize\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"award received\", \"B\u00f4cher Memorial Prize\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"field of work\", \"harmonic analysis\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"field of work\", \"complex analysis\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"field of work\", \"partial differential equations\", \"MISC\"],\n    [\"Bill Gates\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Donald Sarason\", \"PER\", \"employer\", \"University of California, Berkeley\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"doctoral advisor\", \"Donald Sarason\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 8,
+  "FN": 5,
+  "recall": 0.5833333333333334,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Thomas Wolff\", \"PER\", \"place of birth\", \"New York City\", \"LOC\"],\n    [\"Thomas Wolff\", \"PER\", \"date of death\", \"July 31, 2000\", \"TIME\"],\n    [\"Thomas Wolff\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"educated at\", \"University of California, Berkeley\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"advisor\", \"Donald Sarason\", \"PER\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"Caltech\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"University of Washington\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"University of Chicago\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"employer\", \"New York University\", \"ORG\"],\n    [\"Thomas Wolff\", \"PER\", \"award received\", \"Salem Prize\", \"MISC\"],\n    [\"Thomas Wolff\", \"PER\", \"award received\", \"B\u00f4cher Memorial Prize\", \"MISC\"],\n    [\"Bill Gates\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Donald Sarason\", \"PER\", \"institution\", \"University of California, Berkeley\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 9,
+  "FN": 2,
+  "recall": 0.8181818181818182,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

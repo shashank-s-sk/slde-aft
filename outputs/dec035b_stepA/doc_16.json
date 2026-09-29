@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_16",
+ "base_raw": "[\n    [\"Paul Chambers\", \"PER\", \"born\", \"1982\", \"TIME\"],\n    [\"Norris Coleman\", \"PER\", \"born\", \"1961\", \"TIME\"],\n    [\"Sarge Ferris\", \"PER\", \"born\", \"1928\", \"TIME\"],\n    [\"Sarge Ferris\", \"PER\", \"died\", \"1989\", \"TIME\"],\n    [\"Gary Matthews\", \"PER\", \"born\", \"1950\", \"TIME\"],\n    [\"Brad McCrimmon\", \"PER\", \"born\", \"1959\", \"TIME\"],\n    [\"Brad McCrimmon\", \"PER\", \"died\", \"2011\", \"TIME\"],\n    [\"Orville Moody\", \"PER\", \"born\", \"1933\", \"TIME\"],\n    [\"Orville Moody\", \"PER\", \"died\", \"2008\", \"TIME\"],\n    [\"Charles Rangel\", \"PER\", \"born\", \"1930\", \"TIME\"],\n    [\"Mitchell Sargent\", \"PER\", \"born\", \"1979\", \"TIME\"],\n    [\"Tony Schumacher\", \"PER\", \"born\", \"1969\", \"TIME\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 3,
+  "FN": 2,
+  "recall": 0.8181818181818182,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Paul Chambers\", \"PER\", \"date of birth\", \"1982\", \"TIME\"],\n    [\"Norris Coleman\", \"PER\", \"date of birth\", \"1961\", \"TIME\"],\n    [\"Sarge Ferris\", \"PER\", \"date of birth\", \"1928\", \"TIME\"],\n    [\"Sarge Ferris\", \"PER\", \"date of death\", \"1989\", \"TIME\"],\n    [\"Gary Matthews\", \"PER\", \"date of birth\", \"1950\", \"TIME\"],\n    [\"Brad McCrimmon\", \"PER\", \"date of birth\", \"1959\", \"TIME\"],\n    [\"Brad McCrimmon\", \"PER\", \"date of death\", \"2011\", \"TIME\"],\n    [\"Orville Moody\", \"PER\", \"date of birth\", \"1933\", \"TIME\"],\n    [\"Orville Moody\", \"PER\", \"date of death\", \"2008\", \"TIME\"],\n    [\"Charles Rangel\", \"PER\", \"date of birth\", \"1930\", \"TIME\"],\n    [\"Mitchell Sargent\", \"PER\", \"date of birth\", \"1979\", \"TIME\"],\n    [\"Tony Schumacher\", \"PER\", \"date of birth\", \"1969\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 17,
+  "FP": 6,
+  "FN": 2,
+  "recall": 0.8947368421052632,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup": {
+  "TP": 17,
+  "FP": 6,
+  "FN": 2,
+  "recall": 0.8947368421052632,
+  "n_extracted": 24,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Paul Chambers\", \"PER\", \"date of birth\", \"1982\", \"TIME\"],\n    [\"Norris Coleman\", \"PER\", \"date of birth\", \"1961\", \"TIME\"],\n    [\"Sarge Ferris\", \"PER\", \"date of birth\", \"1928\", \"TIME\"],\n    [\"Sarge Ferris\", \"PER\", \"date of death\", \"1989\", \"TIME\"],\n    [\"Gary Matthews\", \"PER\", \"date of birth\", \"1950\", \"TIME\"],\n    [\"Brad McCrimmon\", \"PER\", \"date of birth\", \"1959\", \"TIME\"],\n    [\"Brad McCrimmon\", \"PER\", \"date of death\", \"2011\", \"TIME\"],\n    [\"Orville Moody\", \"PER\", \"date of birth\", \"1933\", \"TIME\"],\n    [\"Orville Moody\", \"PER\", \"date of death\", \"2008\", \"TIME\"],\n    [\"Charles Rangel\", \"PER\", \"date of birth\", \"1930\", \"TIME\"],\n    [\"Mitchell Sargent\", \"PER\", \"date of birth\", \"1979\", \"TIME\"],\n    [\"Tony Schumacher\", \"PER\", \"date of birth\", \"1969\", \"TIME\"]\n]"
+}

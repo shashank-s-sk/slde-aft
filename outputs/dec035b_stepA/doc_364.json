@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_364",
+ "base_raw": "[\n    [\"Echoes\", \"MISC\", \"release date\", \"19 August 2011\", \"TIME\"],\n    [\"Echoes\", \"MISC\", \"record label\", \"RCA Records\", \"ORG\"],\n    [\"Echoes\", \"MISC\", \"record label\", \"Sony Music\", \"ORG\"],\n    [\"Will Young\", \"PER\", \"collaborator\", \"Richard X\", \"PER\"],\n    [\"Will Young\", \"PER\", \"collaborator\", \"Pete Hofmann\", \"PER\"],\n    [\"A Night With Will Young\", \"MISC\", \"broadcaster\", \"ITV\", \"ORG\"],\n    [\"A Night With Will Young\", \"MISC\", \"air date\", \"27 August 2011\", \"TIME\"],\n    [\"Echoes\", \"MISC\", \"chart position\", \"number one\", \"NUM\"],\n    [\"Jealousy\", \"MISC\", \"release date\", \"19 August 2011\", \"TIME\"],\n    [\"Jealousy\", \"MISC\", \"chart position\", \"number five\", \"NUM\"],\n    [\"Come On\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"Losing Myself\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"I Just Want a Lover\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"Echoes\", \"MISC\", \"first week sales\", \"65,000\", \"NUM\"],\n    [\"Echoes\", \"MISC\", \"total sales\", \"550,000\", \"NUM\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 22,
+  "recall": 0.08333333333333333,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Record Labels",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Echoes\", \"MISC\", \"release date\", \"19 August 2011\", \"TIME\"],\n    [\"Echoes\", \"MISC\", \"record label\", \"RCA Records\", \"ORG\"],\n    [\"Echoes\", \"MISC\", \"record label\", \"Sony Music\", \"ORG\"],\n    [\"Will Young\", \"PER\", \"employer\", \"RCA Records\", \"ORG\"],\n    [\"Will Young\", \"PER\", \"employer\", \"Sony Music\", \"ORG\"],\n    [\"A Night With Will Young\", \"MISC\", \"air date\", \"27 August 2011\", \"TIME\"],\n    [\"A Night With Will Young\", \"MISC\", \"broadcaster\", \"ITV\", \"ORG\"],\n    [\"Will Young\", \"PER\", \"anniversary\", \"ten years in the music industry\", \"MISC\"],\n    [\"Echoes\", \"MISC\", \"chart position\", \"number one\", \"NUM\"],\n    [\"Jealousy\", \"MISC\", \"release date\", \"19 August 2011\", \"TIME\"],\n    [\"Jealousy\", \"MISC\", \"chart position\", \"number five\", \"NUM\"],\n    [\"Come On\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"Losing Myself\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"I Just Want a Lover\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"Echoes\", \"MISC\", \"sales\", \"65,000 copies in the first week\", \"NUM\"],\n    [\"Echoes\", \"MISC\", \"total sales\", \"550,000 copies in the UK\", \"NUM\"],\n    [\"Richard X\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Pete Hofmann\", \"PER\", \"occupation\", \"music producer\", \"MISC\"],\n    [\"Will Young\", \"PER\", \"collaborator\", \"Richard X\", \"PER\"],\n    [\"Will Young\", \"PER\", \"collaborator\", \"Pete Hofmann\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 20,
+  "FN": 22,
+  "recall": 0.08333333333333333,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Echoes\", \"MISC\", \"release date\", \"19 August 2011\", \"TIME\"],\n    [\"Echoes\", \"MISC\", \"record label\", \"RCA Records\", \"ORG\"],\n    [\"Echoes\", \"MISC\", \"record label\", \"Sony Music\", \"ORG\"],\n    [\"Will Young\", \"PER\", \"collaborator\", \"Richard X\", \"PER\"],\n    [\"Will Young\", \"PER\", \"collaborator\", \"Pete Hofmann\", \"PER\"],\n    [\"A Night With Will Young\", \"MISC\", \"broadcaster\", \"ITV\", \"ORG\"],\n    [\"A Night With Will Young\", \"MISC\", \"air date\", \"27 August 2011\", \"TIME\"],\n    [\"Echoes\", \"MISC\", \"chart position\", \"number one\", \"NUM\"],\n    [\"Jealousy\", \"MISC\", \"release date\", \"19 August 2011\", \"TIME\"],\n    [\"Jealousy\", \"MISC\", \"chart position\", \"number five\", \"NUM\"],\n    [\"Come On\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"Losing Myself\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"I Just Want a Lover\", \"MISC\", \"chart performance\", \"less successful\", \"MISC\"],\n    [\"Echoes\", \"MISC\", \"first week sales\", \"65,000\", \"NUM\"],\n    [\"Echoes\", \"MISC\", \"total sales\", \"550,000\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 21,
+  "recall": 0.125,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

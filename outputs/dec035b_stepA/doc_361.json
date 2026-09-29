@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_361",
+ "base_raw": "[\n    [\"Slumber Tsogwane\", \"PER\", \"position held\", \"Vice-President of the Republic of Botswana\", \"MISC\"],\n    [\"Mokgweetsi Masisi\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Ponatshego Kedikilwe\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Daniel Kwelagobe\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Samson Guma Moyo\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Lieutenant General Ian Khama\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Sir Seretse Khama\", \"PER\", \"founded by\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Quett Masire\", \"PER\", \"founded by\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Botswana Democratic Party\", \"ORG\", \"country\", \"Botswana\", \"LOC\"],\n    [\"Botswana Democratic Party\", \"ORG\", \"location\", \"Botswana\", \"LOC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 4,
+  "FN": 8,
+  "recall": 0.42857142857142855,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Slumber Tsogwane\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Slumber Tsogwane\", \"PER\", \"country of citizenship\", \"Botswana\", \"LOC\"],\n    [\"Mokgweetsi Masisi\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Ponatshego Kedikilwe\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Daniel Kwelagobe\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Samson Guma Moyo\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Lieutenant General Ian Khama\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Sir Seretse Khama\", \"PER\", \"country of citizenship\", \"Botswana\", \"LOC\"],\n    [\"Quett Masire\", \"PER\", \"country of citizenship\", \"Botswana\", \"LOC\"],\n    [\"Botswana Democratic Party\", \"ORG\", \"located in the administrative territorial entity\", \"Botswana\", \"LOC\"],\n    [\"Botswana\", \"LOC\", \"capital of\", \"Gaborone\", \"LOC\"],\n    [\"Slumber Tsogwane\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Mokgweetsi Masisi\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Ponatshego Kedikilwe\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Daniel Kwelagobe\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Samson Guma Moyo\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Lieutenant General Ian Khama\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Sir Seretse Khama\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Quett Masire\", \"PER\", \"member of political party\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Botswana Democratic Party\", \"ORG\", \"founded by\", \"Sir Seretse Khama\", \"PER\"],\n    [\"Botswana Democratic Party\", \"ORG\", \"founded by\", \"Quett Masire\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 13,
+  "FP": 12,
+  "FN": 9,
+  "recall": 0.5909090909090909,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Slumber Tsogwane\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Mokgweetsi Masisi\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Ponatshego Kedikilwe\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Daniel Kwelagobe\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Samson Guma Moyo\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Lieutenant General Ian Khama\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"Sir Seretse Khama\", \"PER\", \"founded by\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Quett Masire\", \"PER\", \"founded by\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Botswana Democratic Party\", \"ORG\", \"location\", \"Botswana\", \"LOC\"],\n    [\"Traditional Setswana communities\", \"MISC\", \"part of\", \"Botswana Democratic Party\", \"ORG\"],\n    [\"Botswana Democratic Party\", \"ORG\", \"member of\", \"Parliament\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 12,
+  "recall": 0.3333333333333333,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_207",
+ "base_raw": "[\n    [\"The Reivers\", \"MISC\", \"author\", \"William Faulkner\", \"PER\"],\n    [\"William Faulkner\", \"PER\", \"award received\", \"Pulitzer Prize for Fiction\", \"MISC\"],\n    [\"A Fable\", \"MISC\", \"author\", \"William Faulkner\", \"PER\"],\n    [\"The Reivers\", \"MISC\", \"publication date\", \"1962\", \"TIME\"],\n    [\"The Reivers\", \"MISC\", \"adapted into film\", \"1969 film\", \"MISC\"],\n    [\"1969 film\", \"MISC\", \"director\", \"Mark Rydell\", \"PER\"],\n    [\"1969 film\", \"MISC\", \"starring\", \"Steve McQueen\", \"PER\"],\n    [\"William Faulkner\", \"PER\", \"notable work\", \"The Reivers\", \"MISC\"],\n    [\"William Faulkner\", \"PER\", \"notable work\", \"A Fable\", \"MISC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 3,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"William Faulkner\", \"PER\", \"author\", \"The Reivers\", \"MISC\"],\n    [\"The Reivers\", \"MISC\", \"published\", \"1962\", \"TIME\"],\n    [\"William Faulkner\", \"PER\", \"award received\", \"Pulitzer Prize for Fiction\", \"MISC\"],\n    [\"A Fable\", \"MISC\", \"author\", \"William Faulkner\", \"PER\"],\n    [\"The Reivers\", \"MISC\", \"adapted into film\", \"1969 film\", \"MISC\"],\n    [\"Mark Rydell\", \"PER\", \"director\", \"1969 film\", \"MISC\"],\n    [\"Steve McQueen\", \"PER\", \"cast member\", \"1969 film\", \"MISC\"],\n    [\"William Faulkner\", \"PER\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"The Reivers\", \"MISC\", \"genre\", \"picaresque novel\", \"MISC\"],\n    [\"William Faulkner\", \"PER\", \"notable work\", \"The Reivers\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 9,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"The Reivers\", \"MISC\", \"author\", \"William Faulkner\", \"PER\"],\n    [\"William Faulkner\", \"PER\", \"award received\", \"Pulitzer Prize for Fiction\", \"MISC\"],\n    [\"A Fable\", \"MISC\", \"author\", \"William Faulkner\", \"PER\"],\n    [\"The Reivers\", \"MISC\", \"publication date\", \"1962\", \"TIME\"],\n    [\"The Reivers\", \"MISC\", \"adapted into\", \"1969 film\", \"MISC\"],\n    [\"Mark Rydell\", \"PER\", \"director\", \"1969 film\", \"MISC\"],\n    [\"Steve McQueen\", \"PER\", \"cast member\", \"1969 film\", \"MISC\"],\n    [\"William Faulkner\", \"PER\", \"notable work\", \"The Reivers\", \"MISC\"],\n    [\"The Reivers\", \"MISC\", \"genre\", \"picaresque novel\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 6,
+  "FN": 7,
+  "recall": 0.5333333333333333,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

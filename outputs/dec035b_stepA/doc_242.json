@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_242",
+ "base_raw": "[\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"date of birth\", \"24 October 1814\", \"TIME\"],\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"date of death\", \"14 April 1865\", \"TIME\"],\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"position held\", \"president of Guatemala\", \"MISC\"],\n    [\"Guatemala\", \"LOC\", \"head of state\", \"Jos\u00e9 Rafael Carrera Turcios\", \"PER\"],\n    [\"William Walker\", \"PER\", \"instance of\", \"invasion leader\", \"MISC\"],\n    [\"Benito Juarez\", \"PER\", \"instance of\", \"war leader\", \"MISC\"],\n    [\"Juan Jos\u00e9 de Aycinena y Pi\u00f1ol\", \"PER\", \"member of\", \"Aycinena clan\", \"ORG\"],\n    [\"Catholic Church\", \"ORG\", \"location\", \"Guatemala\", \"LOC\"],\n    [\"Mariano Galvez\", \"PER\", \"position held\", \"state government of Guatemala\", \"MISC\"],\n    [\"Federal Republic of Central America\", \"LOC\", \"dissolved, abolished or demolished\", \"yes\", \"MISC\"],\n    [\"Guatemala\", \"LOC\", \"part of\", \"Central America\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 13,
+  "recall": 0.13333333333333333,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"date of birth\", \"24 October 1814\", \"TIME\"],\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"date of death\", \"14 April 1865\", \"TIME\"],\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"president of\", \"Guatemala\", \"LOC\"],\n    [\"William Walker\", \"PER\", \"invaded\", \"Central America\", \"LOC\"],\n    [\"Benito Juarez\", \"PER\", \"led wars in\", \"Mexico\", \"LOC\"],\n    [\"Juan Jos\u00e9 de Aycinena y Pi\u00f1ol\", \"PER\", \"leader of\", \"Aycinena clan\", \"ORG\"],\n    [\"Mariano Galvez\", \"PER\", \"led\", \"liberal state government of Guatemala\", \"ORG\"],\n    [\"Guatemala\", \"LOC\", \"located in\", \"Central America\", \"LOC\"],\n    [\"Catholic Church\", \"ORG\", \"supported\", \"Jos\u00e9 Rafael Carrera Turcios\", \"PER\"],\n    [\"Aycinena clan\", \"ORG\", \"supported\", \"Jos\u00e9 Rafael Carrera Turcios\", \"PER\"],\n    [\"Federal Republic of Central America\", \"ORG\", \"dissolved by\", \"Jos\u00e9 Rafael Carrera Turcios\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"date of birth\", \"24 October 1814\", \"TIME\"],\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"date of death\", \"14 April 1865\", \"TIME\"],\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"position held\", \"president of Guatemala\", \"MISC\"],\n    [\"Guatemala\", \"LOC\", \"capital of\", \"None\", \"None\"],\n    [\"William Walker\", \"PER\", \"participant of\", \"invasions\", \"MISC\"],\n    [\"Benito Juarez\", \"PER\", \"participant of\", \"wars in Mexico\", \"MISC\"],\n    [\"Juan Jos\u00e9 de Aycinena y Pi\u00f1ol\", \"PER\", \"member of\", \"Aycinena clan\", \"ORG\"],\n    [\"Mariano Galvez\", \"PER\", \"position held\", \"liberal state government of Guatemala\", \"MISC\"],\n    [\"Catholic Church\", \"ORG\", \"location\", \"Guatemala\", \"LOC\"],\n    [\"Aycinena clan\", \"ORG\", \"location\", \"Guatemala\", \"LOC\"],\n    [\"Federal Republic of Central America\", \"MISC\", \"located in\", \"Central America\", \"LOC\"],\n    [\"Guatemala\", \"LOC\", \"part of\", \"Central America\", \"LOC\"],\n    [\"Jos\u00e9 Rafael Carrera Turcios\", \"PER\", \"country of citizenship\", \"Guatemala\", \"LOC\"],\n    [\"Belize\", \"LOC\", \"located in the administrative territorial entity\", \"Central America\", \"LOC\"],\n    [\"England\", \"LOC\", \"country\", \"Belize\", \"LOC\"],\n    [\"United States\", \"LOC\", \"country\", \"None\", \"None\"],\n    [\"Mayan\", \"MISC\", \"ethnic group\", \"indigenous people\", \"MISC\"],\n    [\"Carrera\", \"PER\", \"influenced by\", \"Catholic Church\", \"ORG\"],\n    [\"Catholic Church\", \"ORG\", \"influenced\", \"Carrera\", \"PER\"],\n    [\"Aycinena clan\", \"ORG\", \"supported\", \"Carrera\", \"PER\"],\n    [\"Mariano Galvez\", \"PER\", \"opponent of\", \"Carrera\", \"PER\"],\n    [\"Benito Juarez\", \"PER\", \"participant of\", \"conflict\", \"MISC\"],\n    [\"William Walker\", \"PER\", \"participant of\", \"conflict\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 23,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

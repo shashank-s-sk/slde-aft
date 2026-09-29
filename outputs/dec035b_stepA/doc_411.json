@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_411",
+ "base_raw": "[\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"place of birth\", \"Kvam\", \"LOC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"date of birth\", \"23 August 1956\", \"TIME\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"county governor of Oslo and Akershus\", \"MISC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"member of political party\", \"Christian Democratic Party\", \"ORG\"],\n    [\"Christian Democratic Party\", \"ORG\", \"leader\", \"Valgerd Svarstad Haugland\", \"PER\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Norwegian Broadcasting Corporation\", \"ORG\", \"board member\", \"Valgerd Svarstad Haugland\", \"PER\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"country of citizenship\", \"Norway\", \"LOC\"],\n    [\"Oslo and Akershus\", \"LOC\", \"governor\", \"Valgerd Svarstad Haugland\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 5,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"date of birth\", \"23 August 1956\", \"TIME\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"place of birth\", \"Kvam\", \"LOC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"leader of the Christian Democratic Party\", \"MISC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"minister of Minister of Children and Family Affairs\", \"MISC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"Minister of Culture and Church Affairs\", \"MISC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"county governor of Oslo and Akershus\", \"MISC\"],\n    [\"Christian Democratic Party\", \"ORG\", \"leader\", \"Valgerd Svarstad Haugland\", \"PER\"],\n    [\"Norway\", \"LOC\", \"country of citizenship\", \"Valgerd Svarstad Haugland\", \"PER\"],\n    [\"Oslo and Akershus\", \"LOC\", \"located in the administrative territorial entity\", \"Norway\", \"LOC\"],\n    [\"Norwegian Broadcasting Corporation\", \"ORG\", \"board member\", \"Valgerd Svarstad Haugland\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 10,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"date of birth\", \"23 August 1956\", \"TIME\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"place of birth\", \"Kvam\", \"LOC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"leader of the Christian Democratic Party\", \"MISC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"minister of Minister of Children and Family Affairs\", \"MISC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"Minister of Culture and Church Affairs\", \"MISC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"position held\", \"county governor of Oslo and Akershus\", \"MISC\"],\n    [\"Christian Democratic Party\", \"ORG\", \"leader\", \"Valgerd Svarstad Haugland\", \"PER\"],\n    [\"Norway\", \"LOC\", \"country of citizenship\", \"Valgerd Svarstad Haugland\", \"PER\"],\n    [\"Oslo and Akershus\", \"LOC\", \"located in the administrative territorial entity\", \"Norway\", \"LOC\"],\n    [\"Valgerd Svarstad Haugland\", \"PER\", \"member of\", \"Christian Democratic Party\", \"ORG\"],\n    [\"Norwegian Broadcasting Corporation\", \"ORG\", \"board member\", \"Valgerd Svarstad Haugland\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

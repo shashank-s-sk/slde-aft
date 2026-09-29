@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_4",
+ "base_raw": "[\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"country of origin\", \"Serbia\", \"LOC\"],\n    [\"Nije ljubav stvar\", \"MISC\", \"composer\", \"\u017deljko Joksimovi\u0107\", \"PER\"],\n    [\"Nije ljubav stvar\", \"MISC\", \"lyrics by\", \"Marina Tucakovi\u0107\", \"PER\"],\n    [\"Nije ljubav stvar\", \"MISC\", \"lyrics by\", \"Milo\u0161 Roganovi\u0107\", \"PER\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"participant of\", \"Eurovision Song Contest 2012\", \"MISC\"],\n    [\"Eurovision Song Contest 2012\", \"MISC\", \"location\", \"Baku\", \"LOC\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"position held\", \"singer\", \"MISC\"],\n    [\"Marina Tucakovi\u0107\", \"PER\", \"member of\", \"songwriters\", \"MISC\"],\n    [\"Milo\u0161 Roganovi\u0107\", \"PER\", \"member of\", \"songwriters\", \"MISC\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"creator\", \"Nije ljubav stvar\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in Asia",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"country of origin\", \"Serbia\", \"LOC\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"participant of\", \"Eurovision Song Contest 2012\", \"MISC\"],\n    [\"Nije ljubav stvar\", \"MISC\", \"composer\", \"\u017deljko Joksimovi\u0107\", \"PER\"],\n    [\"Marina Tucakovi\u0107\", \"PER\", \"author\", \"Nije ljubav stvar\", \"MISC\"],\n    [\"Milo\u0161 Roganovi\u0107\", \"PER\", \"author\", \"Nije ljubav stvar\", \"MISC\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"position held\", \"singer\", \"MISC\"],\n    [\"Eurovision Song Contest 2012\", \"MISC\", \"location\", \"Baku\", \"LOC\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"participant of\", \"Eurovision Song Contest 2004\", \"MISC\"],\n    [\"Lane moje\", \"MISC\", \"composer\", \"\u017deljko Joksimovi\u0107\", \"PER\"],\n    [\"Hari Mata Hari\", \"PER\", \"participant of\", \"Eurovision Song Contest 2006\", \"MISC\"],\n    [\"Lejla\", \"MISC\", \"composer\", \"\u017deljko Joksimovi\u0107\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"country of origin\", \"Serbia\", \"LOC\"],\n    [\"Nije ljubav stvar\", \"MISC\", \"lyrics by\", \"Marina Tucakovi\u0107\", \"PER\"],\n    [\"Nije ljubav stvar\", \"MISC\", \"lyrics by\", \"Milo\u0161 Roganovi\u0107\", \"PER\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"composer\", \"Nije ljubav stvar\", \"MISC\"],\n    [\"Eurovision Song Contest 2012\", \"MISC\", \"location\", \"Baku\", \"LOC\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"participant of\", \"Eurovision Song Contest 2012\", \"MISC\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"participant of\", \"Eurovision Song Contest 2004\", \"MISC\"],\n    [\"Lane moje\", \"MISC\", \"composer\", \"\u017deljko Joksimovi\u0107\", \"PER\"],\n    [\"Hari Mata Hari\", \"PER\", \"performer\", \"Lejla\", \"MISC\"],\n    [\"\u017deljko Joksimovi\u0107\", \"PER\", \"composer\", \"Lejla\", \"MISC\"],\n    [\"Lejla\", \"MISC\", \"participant of\", \"Eurovision Song Contest 2006\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

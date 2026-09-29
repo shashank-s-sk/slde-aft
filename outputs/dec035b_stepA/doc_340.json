@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_340",
+ "base_raw": "[\n    [\"Rod Millen\", \"PER\", \"country of origin\", \"New Zealand\", \"LOC\"],\n    [\"Possum Bourne\", \"PER\", \"country of origin\", \"New Zealand\", \"LOC\"],\n    [\"Hayden Paddon\", \"PER\", \"country of origin\", \"New Zealand\", \"LOC\"],\n    [\"New Zealand Rally Championship\", \"ORG\", \"location\", \"New Zealand\", \"LOC\"],\n    [\"Rally New Zealand\", \"ORG\", \"location\", \"Auckland\", \"LOC\"],\n    [\"International Rally of Whangarei\", \"ORG\", \"location\", \"Whangarei\", \"LOC\"],\n    [\"Asia-Pacific Rally Championship\", \"ORG\", \"location\", \"Asia-Pacific\", \"MISC\"],\n    [\"Production World Rally Championship\", \"ORG\", \"location\", \"MISC\", \"MISC\"],\n    [\"Super 2000 World Rally Championship\", \"ORG\", \"location\", \"MISC\", \"MISC\"],\n    [\"Auckland\", \"LOC\", \"country\", \"New Zealand\", \"LOC\"],\n    [\"Whangarei\", \"LOC\", \"country\", \"New Zealand\", \"LOC\"],\n    [\"Otago\", \"LOC\", \"country\", \"New Zealand\", \"LOC\"],\n    [\"Canterbury\", \"LOC\", \"country\", \"New Zealand\", \"LOC\"],\n    [\"Wairarapa\", \"LOC\", \"country\", \"New Zealand\", \"LOC\"],\n    [\"Mitsubishi Lancers\", \"MISC\", \"manufacturer\", \"Mitsubishi\", \"ORG\"],\n    [\"Subaru Imprezas\", \"MISC\", \"manufacturer\", \"Subaru\", \"ORG\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 8,
+  "FN": 10,
+  "recall": 0.4444444444444444,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Locations",
+  "Locations",
+  "Locations in Australia and New Zealand",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Rod Millen\", \"PER\", \"part of\", \"New Zealand Rally Championship\", \"ORG\"],\n    [\"Possum Bourne\", \"PER\", \"part of\", \"New Zealand Rally Championship\", \"ORG\"],\n    [\"Hayden Paddon\", \"PER\", \"part of\", \"New Zealand Rally Championship\", \"ORG\"],\n    [\"New Zealand Rally Championship\", \"ORG\", \"located in\", \"New Zealand\", \"LOC\"],\n    [\"Rally New Zealand\", \"ORG\", \"part of\", \"World Rally Championship\", \"ORG\"],\n    [\"International Rally of Whangarei\", \"ORG\", \"part of\", \"Asia-Pacific Rally Championship\", \"ORG\"],\n    [\"Auckland\", \"LOC\", \"location of\", \"Rally New Zealand\", \"ORG\"],\n    [\"Otago\", \"LOC\", \"location of\", \"New Zealand Rally Championship\", \"ORG\"],\n    [\"Canterbury\", \"LOC\", \"location of\", \"New Zealand Rally Championship\", \"ORG\"],\n    [\"Wairarapa\", \"LOC\", \"location of\", \"New Zealand Rally Championship\", \"ORG\"],\n    [\"Mitsubishi Lancers\", \"MISC\", \"used by\", \"New Zealand Rally Championship\", \"ORG\"],\n    [\"Subaru Imprezas\", \"MISC\", \"used by\", \"New Zealand Rally Championship\", \"ORG\"],\n    [\"Hayden Paddon\", \"PER\", \"participant of\", \"Asia-Pacific Rally Championship\", \"ORG\"],\n    [\"Hayden Paddon\", \"PER\", \"participant of\", \"Production World Rally Championship\", \"ORG\"],\n    [\"Hayden Paddon\", \"PER\", \"participant of\", \"Super 2000 World Rally Championships\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 24,
+  "FN": 14,
+  "recall": 0.3333333333333333,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Hayden Paddon\", \"PER\", \"competed in\", \"Asia-Pacific Rally Championship\", \"MISC\"],\n    [\"Hayden Paddon\", \"PER\", \"competed in\", \"Production World Rally Championship\", \"MISC\"],\n    [\"Hayden Paddon\", \"PER\", \"competed in\", \"Super 2000 World Rally Championship\", \"MISC\"],\n    [\"Rally New Zealand\", \"MISC\", \"joined\", \"World Rally Championship\", \"MISC\"],\n    [\"Rally New Zealand\", \"MISC\", \"year joined\", \"1977\", \"TIME\"],\n    [\"International Rally of Whangarei\", \"MISC\", \"part of\", \"Asia-Pacific Rally Championship\", \"MISC\"],\n    [\"International Rally of Whangarei\", \"MISC\", \"part of\", \"New Zealand Rally Championship\", \"MISC\"],\n    [\"New Zealand Rally Championship\", \"MISC\", \"held in\", \"Otago\", \"LOC\"],\n    [\"New Zealand Rally Championship\", \"MISC\", \"held in\", \"Canterbury\", \"LOC\"],\n    [\"New Zealand Rally Championship\", \"MISC\", \"held in\", \"Wairarapa\", \"LOC\"],\n    [\"Rod Millen\", \"PER\", \"notable driver\", \"New Zealand Rally Championship\", \"MISC\"],\n    [\"Possum Bourne\", \"PER\", \"notable driver\", \"New Zealand Rally Championship\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 21,
+  "FN": 11,
+  "recall": 0.3888888888888889,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

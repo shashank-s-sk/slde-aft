@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_245",
+ "base_raw": "[\n    [\"Oberlin College\", \"ORG\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Yale University\", \"ORG\", \"located in\", \"New Haven, Connecticut\", \"LOC\"],\n    [\"U.S. Green Building Council\", \"ORG\", \"creator of\", \"LEED\", \"MISC\"],\n    [\"LEED\", \"MISC\", \"instance of\", \"green building certification system\", \"MISC\"],\n    [\"Princeton\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Ohio University\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Florida Gulf Coast University\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Zipcars\", \"ORG\", \"operator\", \"car sharing\", \"MISC\"],\n    [\"World Commission on Environment and Development\", \"ORG\", \"author of\", \"Brundtland Commission report\", \"MISC\"],\n    [\"Brundtland Commission\", \"ORG\", \"defined\", \"sustainability\", \"MISC\"],\n    [\"American College and University Presidents\u2019 Climate Commitment\", \"ORG\", \"member of\", \"network of colleges and universities\", \"MISC\"],\n    [\"U.S.\", \"LOC\", \"country of\", \"Oberlin College\", \"ORG\"],\n    [\"U.S.\", \"LOC\", \"country of\", \"Yale University\", \"ORG\"],\n    [\"U.S.\", \"LOC\", \"country of\", \"Princeton\", \"ORG\"],\n    [\"U.S.\", \"LOC\", \"country of\", \"Ohio University\", \"ORG\"],\n    [\"U.S.\", \"LOC\", \"country of\", \"Florida Gulf Coast University\", \"ORG\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 9,
+  "FN": 13,
+  "recall": 0.38095238095238093,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Educational Institutions",
+  "Locations",
+  "Organizations",
+  "U.S. States and Cities",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Oberlin College\", \"ORG\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Yale University\", \"ORG\", \"located in\", \"New Haven, Connecticut\", \"LOC\"],\n    [\"U.S. Green Building Council\", \"ORG\", \"created\", \"LEED\", \"MISC\"],\n    [\"LEED\", \"MISC\", \"instance of\", \"green building certification system\", \"MISC\"],\n    [\"Princeton\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Ohio University\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Florida Gulf Coast University\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Brundtland Commission\", \"ORG\", \"defined\", \"sustainability\", \"MISC\"],\n    [\"World Commission on Environment and Development\", \"ORG\", \"also known as\", \"Brundtland Commission\", \"ORG\"],\n    [\"American College and University Presidents\u2019 Climate Commitment\", \"ORG\", \"instance of\", \"network of colleges and universities\", \"MISC\"],\n    [\"U.S.\", \"LOC\", \"contains administrative territorial entity\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 10,
+  "FN": 10,
+  "recall": 0.375,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Educational Institutions",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Oberlin College\", \"ORG\", \"located in\", \"Ohio\", \"LOC\"],\n    [\"Yale University\", \"ORG\", \"located in\", \"New Haven, Connecticut\", \"LOC\"],\n    [\"U.S. Green Building Council\", \"ORG\", \"creator of\", \"LEED\", \"MISC\"],\n    [\"LEED\", \"MISC\", \"instance of\", \"green building certification system\", \"MISC\"],\n    [\"Princeton\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"Ohio University\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"Florida Gulf Coast University\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"United States\", \"LOC\", \"country\", \"North America\", \"LOC\"],\n    [\"World Commission on Environment and Development\", \"ORG\", \"author of\", \"Brundtland Commission report\", \"MISC\"],\n    [\"Brundtland Commission\", \"ORG\", \"defined\", \"sustainability\", \"MISC\"],\n    [\"American College and University Presidents\u2019 Climate Commitment\", \"ORG\", \"member of\", \"network of colleges and universities\", \"MISC\"],\n    [\"Yale University\", \"ORG\", \"pledged to\", \"LEED Gold standards\", \"MISC\"],\n    [\"Oberlin College\", \"ORG\", \"features\", \"LEED Gold certified music facility\", \"MISC\"],\n    [\"U.S. Green Building Council\", \"ORG\", \"promotes\", \"green design\", \"MISC\"],\n    [\"LEED\", \"MISC\", \"reduces\", \"carbon emissions\", \"MISC\"],\n    [\"Universities\", \"ORG\", \"reduce\", \"greenhouse gas emissions\", \"MISC\"],\n    [\"Colleges\", \"ORG\", \"promote\", \"sustainable practice\", \"MISC\"],\n    [\"Students\", \"PER\", \"benefit from\", \"eco-friendly options\", \"MISC\"],\n    [\"Faculty\", \"PER\", \"ensure\", \"well being of lands and resources\", \"MISC\"],\n    [\"Staff\", \"PER\", \"incentivize\", \"eco-friendly schools\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 16,
+  "FP": 17,
+  "FN": 9,
+  "recall": 0.64,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_49",
+ "base_raw": "[\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"initiated\", \"military reforms of the Florentine Republic\", \"MISC\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"sought to establish\", \"citizen-infantry\", \"MISC\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"focused upon\", \"discipline of the Roman legions\", \"MISC\"],\n    [\"Florentine Republic\", \"ORG\", \"initiated military reforms by\", \"Niccol\u00f2 Machiavelli\", \"PER\"],\n    [\"Girolamo Savonarola\", \"PER\", \"led\", \"Republic of Florence\", \"ORG\"],\n    [\"Republic of Florence\", \"ORG\", \"existed from\", \"1498\", \"TIME\"],\n    [\"Republic of Florence\", \"ORG\", \"existed until\", \"1512\", \"TIME\"],\n    [\"Italian Condottieri\", \"MISC\", \"terrorized\", \"peninsula\", \"MISC\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"instituted\", \"series of reforms\", \"MISC\"],\n    [\"series of reforms\", \"MISC\", \"created\", \"citizen army of 20,000 men\", \"MISC\"],\n    [\"series of reforms\", \"MISC\", \"established\", \"system of readiness\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"initiated\", \"military reforms of the Florentine Republic\", \"MISC\"],\n    [\"Girolamo Savonarola\", \"PER\", \"led\", \"Republic of Florence\", \"ORG\"],\n    [\"Florence\", \"LOC\", \"location of\", \"Republic of Florence\", \"ORG\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"sought to establish\", \"citizen-infantry\", \"MISC\"],\n    [\"Roman legions\", \"MISC\", \"inspiration for\", \"citizen-infantry\", \"MISC\"],\n    [\"Italian Condottieri\", \"MISC\", \"opponent of\", \"citizen-infantry\", \"MISC\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"instituted\", \"reforms in 1506\", \"TIME\"],\n    [\"reforms in 1506\", \"TIME\", \"resulted in\", \"citizen army of 20,000 men\", \"MISC\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"established\", \"system for citizen army readiness\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.0,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.0,
+  "n_extracted": 17,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"initiated\", \"military reforms of the Florentine Republic\", \"MISC\"],\n    [\"Girolamo Savonarola\", \"PER\", \"led\", \"Republic of Florence\", \"ORG\"],\n    [\"Florence\", \"LOC\", \"location of\", \"Republic of Florence\", \"ORG\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"sought to establish\", \"citizen-infantry\", \"MISC\"],\n    [\"Roman legions\", \"MISC\", \"inspiration for\", \"citizen-infantry\", \"MISC\"],\n    [\"Italian Condottieri\", \"MISC\", \"opponent of\", \"citizen-infantry\", \"MISC\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"instituted\", \"reforms in 1506\", \"TIME\"],\n    [\"reforms in 1506\", \"TIME\", \"resulted in\", \"citizen army of 20,000 men\", \"MISC\"],\n    [\"Niccol\u00f2 Machiavelli\", \"PER\", \"established\", \"system for citizen army readiness\", \"MISC\"]\n]"
+}

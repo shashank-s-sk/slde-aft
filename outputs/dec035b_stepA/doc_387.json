@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_387",
+ "base_raw": "[\n    [\"Waterloo\", \"LOC\", \"located in\", \"Seneca County\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Waterloo\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Fayette\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Seneca Falls\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located near\", \"Geneva\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located between\", \"Seneca Lake\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located between\", \"Cayuga Lake\", \"LOC\"],\n    [\"Seneca County\", \"LOC\", \"contains administrative territorial entity\", \"Waterloo\", \"LOC\"],\n    [\"Seneca County\", \"LOC\", \"contains administrative territorial entity\", \"Ovid\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"named after\", \"Waterloo, Belgium\", \"LOC\"],\n    [\"Napoleon\", \"PER\", \"defeated at\", \"Waterloo, Belgium\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 31,
+  "recall": 0.06060606060606061,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Waterloo\", \"LOC\", \"located in\", \"Seneca County\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Waterloo\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Fayette\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Seneca Falls\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located near\", \"Geneva\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located between\", \"Seneca Lake\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located between\", \"Cayuga Lake\", \"LOC\"],\n    [\"Seneca County\", \"LOC\", \"contains administrative territorial entity\", \"Waterloo\", \"LOC\"],\n    [\"Seneca County\", \"LOC\", \"contains administrative territorial entity\", \"Ovid\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"named after\", \"Waterloo, Belgium\", \"LOC\"],\n    [\"Napoleon\", \"PER\", \"defeated at\", \"Waterloo, Belgium\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 31,
+  "recall": 0.08823529411764706,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Waterloo\", \"LOC\", \"located in\", \"Seneca County\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Waterloo\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Fayette\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"part of\", \"Town of Seneca Falls\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located near\", \"Geneva\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located between\", \"Seneca Lake\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located between\", \"Cayuga Lake\", \"LOC\"],\n    [\"Seneca County\", \"LOC\", \"contains administrative territorial entity\", \"Waterloo\", \"LOC\"],\n    [\"Seneca County\", \"LOC\", \"contains administrative territorial entity\", \"Ovid\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"located in the administrative territorial entity\", \"New York\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Waterloo\", \"LOC\", \"named after\", \"Waterloo, Belgium\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 30,
+  "recall": 0.0625,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

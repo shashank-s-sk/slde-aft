@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_129",
+ "base_raw": "[\n    [\"Ferdinand I\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Isabella Jagiellon\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"G\u00e1sp\u00e1r Ser\u00e9dy\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"J\u00e1nos Statileo\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Treaty of Gyalu\", \"MISC\", \"signed on\", \"December 29, 1541\", \"TIME\"],\n    [\"Treaty of Nagyv\u00e1rad\", \"MISC\", \"related to\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"John Sigismund Z\u00e1polya\", \"PER\", \"possessions renegotiated\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Ferdinand I\", \"PER\", \"would rule\", \"Royal Hungary\", \"LOC\"],\n    [\"Ferdinand I\", \"PER\", \"would rule\", \"Eastern Hungarian Kingdom\", \"LOC\"],\n    [\"Diet of Torda\", \"ORG\", \"negotiated\", \"Ottoman disapproval\", \"MISC\"],\n    [\"Treaty of Gyalu\", \"MISC\", \"refused by\", \"Diet of Torda\", \"ORG\"],\n    [\"Treaty of Speyer\", \"MISC\", \"related to\", \"Eastern Hungarian Kingdom\", \"LOC\"],\n    [\"King John Sigismund Z\u00e1polya\", \"PER\", \"ruled\", \"Eastern Hungarian Kingdom\", \"LOC\"],\n    [\"Eastern Hungarian Kingdom\", \"LOC\", \"ended by\", \"Treaty of Speyer\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 13,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Ferdinand I\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Isabella Jagiellon\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"G\u00e1sp\u00e1r Ser\u00e9dy\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"J\u00e1nos Statileo\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Treaty of Gyalu\", \"MISC\", \"signed in\", \"Gyalu\", \"LOC\"],\n    [\"Treaty of Gyalu\", \"MISC\", \"location of formation\", \"Gyalu\", \"LOC\"],\n    [\"Gyalu\", \"LOC\", \"located in\", \"Romania\", \"LOC\"],\n    [\"John Z\u00e1polya\", \"PER\", \"spouse\", \"Isabella Jagiellon\", \"PER\"],\n    [\"John Sigismund Z\u00e1polya\", \"PER\", \"father\", \"John Z\u00e1polya\", \"PER\"],\n    [\"Ferdinand I\", \"PER\", \"replaces\", \"John Sigismund Z\u00e1polya\", \"PER\"],\n    [\"Treaty of Nagyv\u00e1rad\", \"MISC\", \"followed by\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Diet of Torda\", \"ORG\", \"refused\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Treaty of Speyer\", \"MISC\", \"follows\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"King John Sigismund Z\u00e1polya\", \"PER\", \"ruled\", \"Eastern Hungarian Kingdom\", \"LOC\"],\n    [\"Eastern Hungarian Kingdom\", \"LOC\", \"part of\", \"Kingdom of Hungary\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 21,
+  "FN": 10,
+  "recall": 0.23076923076923078,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 21,
+  "FN": 10,
+  "recall": 0.23076923076923078,
+  "n_extracted": 24,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Ferdinand I\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Isabella Jagiellon\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"G\u00e1sp\u00e1r Ser\u00e9dy\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"J\u00e1nos Statileo\", \"PER\", \"signed\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Treaty of Gyalu\", \"MISC\", \"signed in\", \"Gyalu\", \"LOC\"],\n    [\"Treaty of Gyalu\", \"MISC\", \"location of formation\", \"Gyalu\", \"LOC\"],\n    [\"Gyalu\", \"LOC\", \"located in\", \"Romania\", \"LOC\"],\n    [\"John Z\u00e1polya\", \"PER\", \"spouse\", \"Isabella Jagiellon\", \"PER\"],\n    [\"John Sigismund Z\u00e1polya\", \"PER\", \"father\", \"John Z\u00e1polya\", \"PER\"],\n    [\"Ferdinand I\", \"PER\", \"replaces\", \"John Sigismund Z\u00e1polya\", \"PER\"],\n    [\"Treaty of Nagyv\u00e1rad\", \"MISC\", \"followed by\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Diet of Torda\", \"ORG\", \"refused\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"Treaty of Speyer\", \"MISC\", \"follows\", \"Treaty of Gyalu\", \"MISC\"],\n    [\"King John Sigismund Z\u00e1polya\", \"PER\", \"ruled\", \"Eastern Hungarian Kingdom\", \"LOC\"],\n    [\"Eastern Hungarian Kingdom\", \"LOC\", \"part of\", \"Kingdom of Hungary\", \"LOC\"]\n]"
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_496",
+ "base_raw": "[\n    [\"John Martyn\", \"PER\", \"spouse\", \"Beverley Martyn\", \"PER\"],\n    [\"The Road to Ruin\", \"MISC\", \"genre\", \"album\", \"MISC\"],\n    [\"John Martyn\", \"PER\", \"member of\", \"Island Records\", \"ORG\"],\n    [\"Danny Thompson\", \"PER\", \"collaborator\", \"John Martyn\", \"PER\"],\n    [\"Beverley Martyn\", \"PER\", \"author\", \"Primrose Hill\", \"MISC\"],\n    [\"Ray Warleigh\", \"PER\", \"performer\", \"Primrose Hill\", \"MISC\"],\n    [\"Fatboy Slim\", \"PER\", \"author\", \"North West Three\", \"MISC\"],\n    [\"Palookaville\", \"MISC\", \"genre\", \"album\", \"MISC\"],\n    [\"John Martyn\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"The Road to Ruin\", \"MISC\", \"location of formation\", \"None\", \"MISC\"],\n    [\"Island Records\", \"ORG\", \"publisher\", \"The Road to Ruin\", \"MISC\"],\n    [\"John Martyn\", \"PER\", \"creator\", \"The Road to Ruin\", \"MISC\"],\n    [\"Beverley Martyn\", \"PER\", \"creator\", \"The Road to Ruin\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 10,
+  "recall": 0.09090909090909091,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Record Labels",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"John Martyn\", \"PER\", \"spouse\", \"Beverley Martyn\", \"PER\"],\n    [\"The Road to Ruin\", \"MISC\", \"genre\", \"Music\", \"MISC\"],\n    [\"John Martyn\", \"PER\", \"member of\", \"Island Records\", \"ORG\"],\n    [\"Danny Thompson\", \"PER\", \"collaborator\", \"John Martyn\", \"PER\"],\n    [\"Beverley Martyn\", \"PER\", \"author\", \"Primrose Hill\", \"MISC\"],\n    [\"Fatboy Slim\", \"PER\", \"author\", \"North West Three\", \"MISC\"],\n    [\"Island Records\", \"ORG\", \"publisher\", \"The Road to Ruin\", \"MISC\"],\n    [\"John Martyn\", \"PER\", \"artist\", \"The Road to Ruin\", \"MISC\"],\n    [\"Beverley Martyn\", \"PER\", \"artist\", \"The Road to Ruin\", \"MISC\"],\n    [\"Ray Warleigh\", \"PER\", \"performer\", \"Primrose Hill\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.09090909090909091,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Music Record Labels"
+ ],
+ "kb_dedup_raw": "[\n    [\"John Martyn\", \"PER\", \"spouse\", \"Beverley Martyn\", \"PER\"],\n    [\"The Road to Ruin\", \"MISC\", \"genre\", \"Music\", \"MISC\"],\n    [\"John Martyn\", \"PER\", \"member of\", \"Island Records\", \"ORG\"],\n    [\"Beverley Martyn\", \"PER\", \"author\", \"Primrose Hill\", \"MISC\"],\n    [\"Danny Thompson\", \"PER\", \"collaborator\", \"John Martyn\", \"PER\"],\n    [\"Fatboy Slim\", \"PER\", \"author\", \"North West Three\", \"MISC\"],\n    [\"Island Records\", \"ORG\", \"publisher\", \"The Road to Ruin\", \"MISC\"],\n    [\"John Martyn\", \"PER\", \"composer\", \"The Road to Ruin\", \"MISC\"],\n    [\"Beverley Martyn\", \"PER\", \"performer\", \"The Road to Ruin\", \"MISC\"],\n    [\"Ray Warleigh\", \"PER\", \"performer\", \"The Road to Ruin\", \"MISC\"],\n    [\"Palookaville\", \"MISC\", \"album\", \"Fatboy Slim\", \"PER\"],\n    [\"Primrose Hill\", \"MISC\", \"sampled by\", \"North West Three\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 18,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_326",
+ "base_raw": "[\n    [\"Oleg\", \"PER\", \"date of death\", \"977\", \"TIME\"],\n    [\"Oleg\", \"PER\", \"father\", \"Sviatoslav I of Kiev\", \"PER\"],\n    [\"Oleg\", \"PER\", \"brother\", \"Yaropolk\", \"PER\"],\n    [\"Oleg\", \"PER\", \"brother\", \"Vladimir\", \"PER\"],\n    [\"Yaropolk\", \"PER\", \"chief adviser\", \"Sveneld\", \"PER\"],\n    [\"Sveneld\", \"PER\", \"son\", \"Lyut\", \"PER\"],\n    [\"Oleg\", \"PER\", \"place of death\", \"Ovruch\", \"LOC\"],\n    [\"Yaropolk\", \"PER\", \"place of rule\", \"Rus'\", \"LOC\"],\n    [\"Vladimir\", \"PER\", \"place of flight\", \"Novgorod\", \"LOC\"],\n    [\"Oleg\", \"PER\", \"place of burial\", \"Church of the Tithes\", \"LOC\"],\n    [\"Yaroslav I the Wise\", \"PER\", \"action\", \"exhumed Oleg's bones\", \"MISC\"],\n    [\"Yaroslav I the Wise\", \"PER\", \"relation\", \"Oleg\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"child\", \"Oleg\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"child\", \"Yaropolk\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"child\", \"Vladimir\", \"PER\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 9,
+  "recall": 0.35714285714285715,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Oleg\", \"PER\", \"date of death\", \"977\", \"TIME\"],\n    [\"Oleg\", \"PER\", \"father\", \"Sviatoslav I of Kiev\", \"PER\"],\n    [\"Oleg\", \"PER\", \"brother\", \"Yaropolk\", \"PER\"],\n    [\"Oleg\", \"PER\", \"place of death\", \"Ovruch\", \"LOC\"],\n    [\"Yaropolk\", \"PER\", \"brother\", \"Oleg\", \"PER\"],\n    [\"Yaropolk\", \"PER\", \"brother\", \"Vladimir\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"son\", \"Oleg\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"son\", \"Yaropolk\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"son\", \"Vladimir\", \"PER\"],\n    [\"Vladimir\", \"PER\", \"brother\", \"Oleg\", \"PER\"],\n    [\"Vladimir\", \"PER\", \"brother\", \"Yaropolk\", \"PER\"],\n    [\"Yaroslav I the Wise\", \"PER\", \"reburied\", \"Oleg\", \"PER\"],\n    [\"Oleg\", \"PER\", \"reburied by\", \"Yaroslav I the Wise\", \"PER\"],\n    [\"Oleg\", \"PER\", \"place of reburial\", \"Church of the Tithes\", \"LOC\"],\n    [\"Sveneld\", \"PER\", \"son\", \"Lyut\", \"PER\"],\n    [\"Lyut\", \"PER\", \"father\", \"Sveneld\", \"PER\"],\n    [\"Oleg\", \"PER\", \"killed\", \"Lyut\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 13,
+  "FP": 14,
+  "FN": 11,
+  "recall": 0.5416666666666666,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 13,
+  "FP": 14,
+  "FN": 11,
+  "recall": 0.5416666666666666,
+  "n_extracted": 27,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Oleg\", \"PER\", \"date of death\", \"977\", \"TIME\"],\n    [\"Oleg\", \"PER\", \"father\", \"Sviatoslav I of Kiev\", \"PER\"],\n    [\"Oleg\", \"PER\", \"brother\", \"Yaropolk\", \"PER\"],\n    [\"Oleg\", \"PER\", \"place of death\", \"Ovruch\", \"LOC\"],\n    [\"Yaropolk\", \"PER\", \"brother\", \"Oleg\", \"PER\"],\n    [\"Yaropolk\", \"PER\", \"brother\", \"Vladimir\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"son\", \"Oleg\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"son\", \"Yaropolk\", \"PER\"],\n    [\"Sviatoslav I of Kiev\", \"PER\", \"son\", \"Vladimir\", \"PER\"],\n    [\"Vladimir\", \"PER\", \"brother\", \"Oleg\", \"PER\"],\n    [\"Vladimir\", \"PER\", \"brother\", \"Yaropolk\", \"PER\"],\n    [\"Yaroslav I the Wise\", \"PER\", \"reburied\", \"Oleg\", \"PER\"],\n    [\"Oleg\", \"PER\", \"reburied by\", \"Yaroslav I the Wise\", \"PER\"],\n    [\"Oleg\", \"PER\", \"place of reburial\", \"Church of the Tithes\", \"LOC\"],\n    [\"Sveneld\", \"PER\", \"son\", \"Lyut\", \"PER\"],\n    [\"Lyut\", \"PER\", \"father\", \"Sveneld\", \"PER\"],\n    [\"Oleg\", \"PER\", \"killed\", \"Lyut\", \"PER\"]\n]"
+}

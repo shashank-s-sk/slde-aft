@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_146",
+ "base_raw": "[\n    [\"Street Mobster\", \"MISC\", \"director\", \"Kinji Fukasaku\", \"PER\"],\n    [\"Street Mobster\", \"MISC\", \"starring\", \"Bunta Sugawara\", \"PER\"],\n    [\"Street Mobster\", \"MISC\", \"starring\", \"Noboru Ando\", \"PER\"],\n    [\"Gendai Yakuza series\", \"MISC\", \"producer\", \"Toei\", \"ORG\"],\n    [\"Kinji Fukasaku\", \"PER\", \"employer\", \"Toei\", \"ORG\"],\n    [\"Bunta Sugawara\", \"PER\", \"employer\", \"Toei\", \"ORG\"],\n    [\"Street Mobster\", \"MISC\", \"location\", \"Kawasaki\", \"LOC\"],\n    [\"Complex\", \"ORG\", \"publisher\", \"The 25 Best Yakuza Movies\", \"MISC\"],\n    [\"Street Mobster\", \"MISC\", \"rank\", \"3\", \"NUM\"],\n    [\"Home Vision Entertainment\", \"ORG\", \"publisher\", \"Street Mobster\", \"MISC\"],\n    [\"Home Vision Entertainment\", \"ORG\", \"location\", \"North America\", \"LOC\"],\n    [\"Arrow Films\", \"ORG\", \"publisher\", \"Street Mobster\", \"MISC\"],\n    [\"Arrow Films\", \"ORG\", \"location\", \"Europe\", \"LOC\"],\n    [\"Arrow Films\", \"ORG\", \"location\", \"North America\", \"LOC\"],\n    [\"Street Mobster\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"Street Mobster\", \"MISC\", \"release year\", \"2018\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Numbers",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Street Mobster\", \"MISC\", \"director\", \"Kinji Fukasaku\", \"PER\"],\n    [\"Street Mobster\", \"MISC\", \"starring\", \"Bunta Sugawara\", \"PER\"],\n    [\"Street Mobster\", \"MISC\", \"starring\", \"Noboru Ando\", \"PER\"],\n    [\"Gendai Yakuza series\", \"MISC\", \"producer\", \"Toei\", \"ORG\"],\n    [\"Street Mobster\", \"MISC\", \"location\", \"Kawasaki\", \"LOC\"],\n    [\"Street Mobster\", \"MISC\", \"release year\", \"1972\", \"TIME\"],\n    [\"Complex\", \"ORG\", \"ranked\", \"Street Mobster\", \"MISC\"],\n    [\"Home Vision Entertainment\", \"ORG\", \"released\", \"Street Mobster\", \"MISC\"],\n    [\"Home Vision Entertainment\", \"ORG\", \"release year\", \"2004\", \"TIME\"],\n    [\"Arrow Films\", \"ORG\", \"released\", \"Street Mobster\", \"MISC\"],\n    [\"Arrow Films\", \"ORG\", \"release year\", \"2018\", \"TIME\"],\n    [\"Street Mobster\", \"MISC\", \"genre\", \"yakuza film\", \"MISC\"],\n    [\"Bunta Sugawara\", \"PER\", \"series\", \"Gendai Yakuza series\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 22,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Kinji Fukasaku\", \"PER\", \"director\", \"Street Mobster\", \"MISC\"],\n    [\"Bunta Sugawara\", \"PER\", \"star\", \"Street Mobster\", \"MISC\"],\n    [\"Noboru Ando\", \"PER\", \"star\", \"Street Mobster\", \"MISC\"],\n    [\"Toei\", \"ORG\", \"producer\", \"Gendai Yakuza series\", \"MISC\"],\n    [\"Kawasaki\", \"LOC\", \"location\", \"Street Mobster\", \"MISC\"],\n    [\"Okita\", \"PER\", \"main character\", \"Street Mobster\", \"MISC\"],\n    [\"Complex\", \"ORG\", \"publisher\", \"The 25 Best Yakuza Movies\", \"MISC\"],\n    [\"Home Vision Entertainment\", \"ORG\", \"distributor\", \"Street Mobster\", \"MISC\"],\n    [\"North America\", \"LOC\", \"region\", \"Home Vision Entertainment\", \"ORG\"],\n    [\"Arrow Films\", \"ORG\", \"distributor\", \"Street Mobster\", \"MISC\"],\n    [\"Europe\", \"LOC\", \"region\", \"Arrow Films\", \"ORG\"],\n    [\"June 2018\", \"TIME\", \"release date\", \"Street Mobster blu-ray\", \"MISC\"],\n    [\"2004\", \"TIME\", \"release date\", \"Street Mobster DVD\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 14,
+  "FP": 19,
+  "FN": 3,
+  "recall": 0.8235294117647058,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

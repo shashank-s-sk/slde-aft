@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_480",
+ "base_raw": "[\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"educated at\", \"Fryderyk Chopin University of Music\", \"ORG\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"student of\", \"W\u0142odzimierz Koto\u0144ski\", \"PER\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"student of\", \"Roman Haubenstock-Ramanti\", \"PER\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"student of\", \"Tadeusz Baird\", \"PER\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"country of citizenship\", \"Poland\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"place of birth\", \"Warsaw\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"residence\", \"Warsaw\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"performer in\", \"Denmark\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"performer in\", \"Austria\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"performer in\", \"Japan\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"performer in\", \"United States\", \"LOC\"],\n    [\"Silesian String Quartet\", \"ORG\", \"performer of\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Katowice Radio Symphony Orchestra\", \"ORG\", \"performer of\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Qudsja Zaher\", \"MISC\", \"composer\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"genre\", \"neoclassical\", \"MISC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"influenced by\", \"baroque\", \"MISC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"influenced by\", \"Renaissance\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"place of birth\", \"Warsaw\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"educated at\", \"Fryderyk Chopin University of Music\", \"ORG\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"influenced by\", \"baroque era\", \"MISC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"influenced by\", \"Renaissance fantasias\", \"MISC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"country of citizenship\", \"Poland\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"residence\", \"Warsaw\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"date of birth\", \"28 March 1954\", \"TIME\"],\n    [\"W\u0142odzimierz Koto\u0144ski\", \"PER\", \"student\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Roman Haubenstock-Ramanti\", \"PER\", \"student\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Tadeusz Baird\", \"PER\", \"student\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Silesian String Quartet\", \"ORG\", \"performer\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Katowice Radio Symphony Orchestra\", \"ORG\", \"performer\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Qudsja Zaher\", \"MISC\", \"composer\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"location of performance\", \"Denmark\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"location of performance\", \"Austria\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"location of performance\", \"Japan\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"location of performance\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 25,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"place of birth\", \"Warsaw\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"country of citizenship\", \"Poland\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"educated at\", \"Fryderyk Chopin University of Music\", \"ORG\"],\n    [\"W\u0142odzimierz Koto\u0144ski\", \"PER\", \"student\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Roman Haubenstock-Ramanti\", \"PER\", \"student\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Tadeusz Baird\", \"PER\", \"student\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"country\", \"Denmark\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"country\", \"Austria\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"country\", \"Japan\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"country\", \"United States\", \"LOC\"],\n    [\"Silesian String Quartet\", \"ORG\", \"performer\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Katowice Radio Symphony Orchestra\", \"ORG\", \"performer\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Qudsja Zaher\", \"MISC\", \"creator\", \"Pawe\u0142 Szyma\u0144ski\", \"PER\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"location\", \"Warsaw\", \"LOC\"],\n    [\"Pawe\u0142 Szyma\u0144ski\", \"PER\", \"date of birth\", \"28 March 1954\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 25,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ }
+}

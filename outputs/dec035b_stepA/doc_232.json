@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_232",
+ "base_raw": "[\n    [\"Shahid Imran Awan\", \"PER\", \"date of birth\", \"1980\", \"TIME\"],\n    [\"Shahid Imran Awan\", \"PER\", \"nationality\", \"Pakistani-American\", \"MISC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"occupation\", \"information technology worker\", \"MISC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"employer\", \"U.S. House of Representatives\", \"ORG\"],\n    [\"Shahid Imran Awan\", \"PER\", \"arrested for\", \"bank fraud\", \"MISC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"investigated for\", \"alleged misconduct involving congressional computer equipment\", \"MISC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"cleared of\", \"allegations of espionage\", \"MISC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"pleaded guilty to\", \"making a false representation on a home equity line of credit application\", \"MISC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"sentenced to\", \"time served and three months of supervision\", \"MISC\"],\n    [\"Tanya Chutkan\", \"PER\", \"position held\", \"U.S. District Judge\", \"MISC\"],\n    [\"Tanya Chutkan\", \"PER\", \"found\", \"conspiracies to be baseless\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Shahid Imran Awan\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"date of birth\", \"1980\", \"TIME\"],\n    [\"Shahid Imran Awan\", \"PER\", \"employer\", \"U.S. House of Representatives\", \"ORG\"],\n    [\"Shahid Imran Awan\", \"PER\", \"position held\", \"shared employee\", \"MISC\"],\n    [\"U.S. House of Representatives\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"member of\", \"Democrats\", \"ORG\"],\n    [\"Shahid Imran Awan\", \"PER\", \"arrested for\", \"bank fraud\", \"MISC\"],\n    [\"Tanya Chutkan\", \"PER\", \"position held\", \"U.S. District Judge\", \"MISC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"sentenced to\", \"time served\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Shahid Imran Awan\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"country of origin\", \"Pakistan\", \"LOC\"],\n    [\"Shahid Imran Awan\", \"PER\", \"employer\", \"U.S. House of Representatives\", \"ORG\"],\n    [\"Shahid Imran Awan\", \"PER\", \"date of birth\", \"1980\", \"TIME\"],\n    [\"U.S. House of Representatives\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Tanya Chutkan\", \"PER\", \"position held\", \"U.S. District Judge\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

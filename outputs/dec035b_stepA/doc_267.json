@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_267",
+ "base_raw": "[\n    [\"Little Big Town\", \"ORG\", \"genre\", \"country music\", \"MISC\"],\n    [\"Little Big Town\", \"ORG\", \"number of studio albums\", \"8\", \"NUM\"],\n    [\"Little Big Town\", \"ORG\", \"number of singles\", \"26\", \"NUM\"],\n    [\"Monument Nashville\", \"ORG\", \"location\", \"Nashville\", \"LOC\"],\n    [\"Equity Music Group\", \"ORG\", \"location\", \"unknown\", \"MISC\"],\n    [\"Capitol Nashville\", \"ORG\", \"location\", \"Nashville\", \"LOC\"],\n    [\"Little Big Town\", \"ORG\", \"record label\", \"Monument Nashville\", \"ORG\"],\n    [\"Little Big Town\", \"ORG\", \"record label\", \"Equity Music Group\", \"ORG\"],\n    [\"Little Big Town\", \"ORG\", \"record label\", \"Capitol Nashville\", \"ORG\"],\n    [\"The Road to Here\", \"MISC\", \"release year\", \"2005\", \"TIME\"],\n    [\"A Place to Land\", \"MISC\", \"release year\", \"unknown\", \"MISC\"],\n    [\"The Reason Why\", \"MISC\", \"release year\", \"2010\", \"TIME\"],\n    [\"Tornado\", \"MISC\", \"release year\", \"2012\", \"TIME\"],\n    [\"Little Big Town\", \"ORG\", \"release\", \"The Road to Here\", \"MISC\"],\n    [\"Little Big Town\", \"ORG\", \"release\", \"A Place to Land\", \"MISC\"],\n    [\"Little Big Town\", \"ORG\", \"release\", \"The Reason Why\", \"MISC\"],\n    [\"Little Big Town\", \"ORG\", \"release\", \"Tornado\", \"MISC\"],\n    [\"Boondocks\", \"MISC\", \"chart performance\", \"top 10\", \"MISC\"],\n    [\"Bring It on Home\", \"MISC\", \"chart performance\", \"top 10\", \"MISC\"],\n    [\"I'm with the Band\", \"MISC\", \"chart performance\", \"unsuccessful\", \"MISC\"],\n    [\"Little White Church\", \"MISC\", \"chart performance\", \"top 10\", \"MISC\"],\n    [\"Pontoon\", \"MISC\", \"chart performance\", \"number one\", \"MISC\"],\n    [\"Tornado\", \"MISC\", \"chart performance\", \"number 2\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 20,
+  "FN": 18,
+  "recall": 0.14285714285714285,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Numbers",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Little Big Town\", \"ORG\", \"genre\", \"country music\", \"MISC\"],\n    [\"Little Big Town\", \"ORG\", \"number of studio albums\", \"8\", \"NUM\"],\n    [\"Little Big Town\", \"ORG\", \"number of singles\", \"26\", \"NUM\"],\n    [\"Monument Nashville\", \"ORG\", \"location\", \"Nashville\", \"LOC\"],\n    [\"The Road to Here\", \"MISC\", \"release year\", \"2005\", \"TIME\"],\n    [\"Equity Music Group\", \"ORG\", \"location\", \"unknown\", \"MISC\"],\n    [\"A Place to Land\", \"MISC\", \"release year\", \"unknown\", \"MISC\"],\n    [\"Capitol Nashville\", \"ORG\", \"location\", \"Nashville\", \"LOC\"],\n    [\"Little Big Town\", \"ORG\", \"record label\", \"Capitol Nashville\", \"ORG\"],\n    [\"The Reason Why\", \"MISC\", \"release year\", \"2010\", \"TIME\"],\n    [\"Tornado\", \"MISC\", \"release date\", \"September 11, 2012\", \"TIME\"],\n    [\"Pontoon\", \"MISC\", \"chart position\", \"1\", \"NUM\"],\n    [\"Tornado\", \"MISC\", \"chart position\", \"2\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 19,
+  "FN": 19,
+  "recall": 0.2962962962962963,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Little Big Town\", \"ORG\", \"genre\", \"country music\", \"MISC\"],\n    [\"Little Big Town\", \"ORG\", \"number of studio albums\", \"8\", \"NUM\"],\n    [\"Little Big Town\", \"ORG\", \"number of singles\", \"26\", \"NUM\"],\n    [\"Monument Nashville\", \"ORG\", \"location\", \"Nashville\", \"LOC\"],\n    [\"The Road to Here\", \"MISC\", \"release year\", \"2005\", \"TIME\"],\n    [\"Equity Music Group\", \"ORG\", \"fate\", \"folded\", \"MISC\"],\n    [\"Capitol Nashville\", \"ORG\", \"location\", \"Nashville\", \"LOC\"],\n    [\"A Place to Land\", \"MISC\", \"release year\", \"unknown\", \"MISC\"],\n    [\"I'm with the Band\", \"MISC\", \"chart performance\", \"unsuccessful\", \"MISC\"],\n    [\"Little White Church\", \"MISC\", \"release year\", \"2010\", \"TIME\"],\n    [\"The Reason Why\", \"MISC\", \"release year\", \"2010\", \"TIME\"],\n    [\"Tornado\", \"MISC\", \"release date\", \"September 11, 2012\", \"TIME\"],\n    [\"Pontoon\", \"MISC\", \"chart performance\", \"number one\", \"MISC\"],\n    [\"Tornado\", \"MISC\", \"chart performance\", \"number 2\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 24,
+  "FN": 15,
+  "recall": 0.21052631578947367,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

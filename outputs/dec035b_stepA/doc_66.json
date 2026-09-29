@@ -1,0 +1,46 @@
+{
+ "doc_id": "doc_66",
+ "base_raw": "[\n    [\"Dirty Diana\", \"MISC\", \"genre\", \"rock\", \"MISC\"],\n    [\"Michael Jackson\", \"PER\", \"member of\", \"Epic Records\", \"ORG\"],\n    [\"Steve Stevens\", \"PER\", \"instrument\", \"guitar\", \"MISC\"],\n    [\"Quincy Jones\", \"PER\", \"employer\", \"Epic Records\", \"ORG\"],\n    [\"Dirty Diana\", \"MISC\", \"chart position\", \"No. 1\", \"NUM\"],\n    [\"United States Billboard Hot 100\", \"MISC\", \"location\", \"United States\", \"LOC\"],\n    [\"Dirty Diana\", \"MISC\", \"chart position\", \"top ten\", \"NUM\"],\n    [\"United Kingdom\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"France\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"Italy\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"New Zealand\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"Dirty Diana\", \"MISC\", \"release year\", \"1988\", \"TIME\"],\n    [\"Michael Jackson\", \"PER\", \"date of death\", \"June 2009\", \"TIME\"],\n    [\"Dirty Diana\", \"MISC\", \"re-release year\", \"2009\", \"TIME\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Music Genre: Rock",
+  "Music Record Labels",
+  "Organizations",
+  "Persons",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Dirty Diana\", \"MISC\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Michael Jackson\", \"PER\", \"member of\", \"Epic Records\", \"ORG\"],\n    [\"Bad\", \"MISC\", \"instance of\", \"album\", \"MISC\"],\n    [\"Steve Stevens\", \"PER\", \"performer\", \"Dirty Diana\", \"MISC\"],\n    [\"Quincy Jones\", \"PER\", \"producer\", \"Dirty Diana\", \"MISC\"],\n    [\"Dirty Diana\", \"MISC\", \"written by\", \"Michael Jackson\", \"PER\"],\n    [\"Dirty Diana\", \"MISC\", \"produced by\", \"Quincy Jones\", \"PER\"],\n    [\"United States\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"United Kingdom\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"France\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"Italy\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"New Zealand\", \"LOC\", \"location of charting\", \"Dirty Diana\", \"MISC\"],\n    [\"Dirty Diana\", \"MISC\", \"chart position\", \"No. 1\", \"NUM\"],\n    [\"Dirty Diana\", \"MISC\", \"release year\", \"1988\", \"TIME\"],\n    [\"Michael Jackson\", \"PER\", \"death year\", \"2009\", \"TIME\"],\n    [\"Dirty Diana\", \"MISC\", \"re-release year\", \"2009\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 22,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Michael Jackson\", \"PER\", \"genre\", \"rock\", \"MISC\"],\n    [\"Dirty Diana\", \"MISC\", \"release date\", \"April 18, 1988\", \"TIME\"],\n    [\"Steve Stevens\", \"PER\", \"instrument\", \"guitar\", \"MISC\"],\n    [\"Quincy Jones\", \"PER\", \"profession\", \"producer\", \"MISC\"],\n    [\"Dirty Diana\", \"MISC\", \"chart position\", \"No. 1\", \"NUM\"],\n    [\"United States Billboard Hot 100\", \"MISC\", \"location\", \"United States\", \"LOC\"],\n    [\"Dirty Diana\", \"MISC\", \"charting country\", \"United Kingdom\", \"LOC\"],\n    [\"Dirty Diana\", \"MISC\", \"charting country\", \"France\", \"LOC\"],\n    [\"Dirty Diana\", \"MISC\", \"charting country\", \"Italy\", \"LOC\"],\n    [\"Dirty Diana\", \"MISC\", \"charting country\", \"New Zealand\", \"LOC\"],\n    [\"Michael Jackson\", \"PER\", \"death date\", \"June 2009\", \"TIME\"],\n    [\"Dirty Diana\", \"MISC\", \"re-release year\", \"2009\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 18,
+  "FN": 12,
+  "recall": 0.2,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

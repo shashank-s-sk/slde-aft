@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_3",
+ "base_raw": "[\n    [\"Chariot\", \"MISC\", \"developer\", \"Frima Studio\", \"ORG\"],\n    [\"Chariot\", \"MISC\", \"publisher\", \"Frima Studio\", \"ORG\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"PlayStation 3\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Wii U\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"release date\", \"September 30, 2014\", \"TIME\"],\n    [\"Super Chariot\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Super Chariot\", \"MISC\", \"release year\", \"2018\", \"TIME\"],\n    [\"Chariot\", \"MISC\", \"genre\", \"Platform game\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"genre\", \"Puzzle\", \"MISC\"],\n    [\"Frima Studio\", \"ORG\", \"funded by\", \"Canada Media Fund\", \"ORG\"],\n    [\"Chariot\", \"MISC\", \"part of\", \"Xbox Live Games with Gold program\", \"MISC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 5,
+  "FN": 12,
+  "recall": 0.42857142857142855,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Chariot\", \"MISC\", \"developer\", \"Frima Studio\", \"ORG\"],\n    [\"Chariot\", \"MISC\", \"publisher\", \"Frima Studio\", \"ORG\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"PlayStation 3\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Wii U\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"release date\", \"September 30, 2014\", \"TIME\"],\n    [\"Super Chariot\", \"MISC\", \"release year\", \"2018\", \"TIME\"],\n    [\"Super Chariot\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"genre\", \"Platform game\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"genre\", \"Puzzle\", \"MISC\"],\n    [\"Frima Studio\", \"ORG\", \"funded by\", \"Canada Media Fund\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 5,
+  "FN": 13,
+  "recall": 0.4090909090909091,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Chariot\", \"MISC\", \"developer\", \"Frima Studio\", \"ORG\"],\n    [\"Chariot\", \"MISC\", \"publisher\", \"Frima Studio\", \"ORG\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"PlayStation 3\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Wii U\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"release date\", \"September 30, 2014\", \"TIME\"],\n    [\"Super Chariot\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Super Chariot\", \"MISC\", \"release year\", \"2018\", \"TIME\"],\n    [\"Chariot\", \"MISC\", \"genre\", \"Platform game\", \"MISC\"],\n    [\"Chariot\", \"MISC\", \"genre\", \"Puzzle\", \"MISC\"],\n    [\"Frima Studio\", \"ORG\", \"funded by\", \"Canada Media Fund\", \"ORG\"],\n    [\"Chariot\", \"MISC\", \"part of\", \"Xbox Live Games with Gold program\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 5,
+  "FN": 13,
+  "recall": 0.4090909090909091,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

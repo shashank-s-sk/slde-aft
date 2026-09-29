@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_97",
+ "base_raw": "[\n    [\"Zest Airways, Inc.\", \"ORG\", \"located in\", \"Pasay City\", \"LOC\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"located in\", \"Metro Manila\", \"LOC\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"located in\", \"Philippines\", \"LOC\"],\n    [\"Ninoy Aquino International Airport\", \"LOC\", \"located in\", \"Pasay City\", \"LOC\"],\n    [\"Ninoy Aquino International Airport\", \"LOC\", \"located in\", \"Metro Manila\", \"LOC\"],\n    [\"Ninoy Aquino International Airport\", \"LOC\", \"located in\", \"Philippines\", \"LOC\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"founded as\", \"Asian Spirit\", \"ORG\"],\n    [\"Asian Spirit\", \"ORG\", \"country of origin\", \"Philippines\", \"LOC\"],\n    [\"Civil Aviation Authority of the Philippines\", \"ORG\", \"country of origin\", \"Philippines\", \"LOC\"],\n    [\"AirAsia Philippines\", \"ORG\", \"country of origin\", \"Philippines\", \"LOC\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"merged into\", \"AirAsia Philippines\", \"ORG\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"rebranded as\", \"AirAsia Zest\", \"ORG\"],\n    [\"AirAsia Zest\", \"ORG\", \"affiliate of\", \"Philippines AirAsia\", \"ORG\"],\n    [\"Philippines AirAsia\", \"ORG\", \"country of origin\", \"Philippines\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 10,
+  "recall": 0.3333333333333333,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Zest Airways\", \"ORG\", \"located in\", \"Philippines\", \"LOC\"],\n    [\"Zest Airways\", \"ORG\", \"headquarters location\", \"Ninoy Aquino International Airport\", \"LOC\"],\n    [\"Ninoy Aquino International Airport\", \"LOC\", \"located in\", \"Pasay City\", \"LOC\"],\n    [\"Pasay City\", \"LOC\", \"located in\", \"Metro Manila\", \"LOC\"],\n    [\"Zest Airways\", \"ORG\", \"founded by\", \"Asian Spirit\", \"ORG\"],\n    [\"Asian Spirit\", \"ORG\", \"country of origin\", \"Philippines\", \"LOC\"],\n    [\"Civil Aviation Authority of the Philippines\", \"ORG\", \"country of origin\", \"Philippines\", \"LOC\"],\n    [\"AirAsia Philippines\", \"ORG\", \"country of origin\", \"Philippines\", \"LOC\"],\n    [\"Zest Airways\", \"ORG\", \"merged into\", \"AirAsia Philippines\", \"ORG\"],\n    [\"Zest Airways\", \"ORG\", \"rebranded as\", \"AirAsia Zest\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 13,
+  "FN": 11,
+  "recall": 0.3888888888888889,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Zest Airways, Inc.\", \"ORG\", \"located in\", \"Pasay City\", \"LOC\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"located in\", \"Metro Manila\", \"LOC\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"located in\", \"Philippines\", \"LOC\"],\n    [\"Ninoy Aquino International Airport\", \"LOC\", \"located in\", \"Pasay City\", \"LOC\"],\n    [\"Ninoy Aquino International Airport\", \"LOC\", \"located in\", \"Metro Manila\", \"LOC\"],\n    [\"Ninoy Aquino International Airport\", \"LOC\", \"located in\", \"Philippines\", \"LOC\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"founded as\", \"Asian Spirit\", \"ORG\"],\n    [\"Asian Spirit\", \"ORG\", \"type\", \"cooperative\", \"MISC\"],\n    [\"Civil Aviation Authority of the Philippines\", \"ORG\", \"regulating body of\", \"Government of the Republic of the Philippines\", \"ORG\"],\n    [\"Zest Air\", \"ORG\", \"suspended by\", \"Civil Aviation Authority of the Philippines\", \"ORG\"],\n    [\"AirAsia Philippines\", \"ORG\", \"merged with\", \"Zest Airways, Inc.\", \"ORG\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"rebranded as\", \"AirAsia Zest\", \"ORG\"],\n    [\"AirAsia\", \"ORG\", \"strategic alliance with\", \"Zest Air\", \"ORG\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"main base\", \"Ninoy Aquino International Airport\", \"LOC\"],\n    [\"Zest Airways, Inc.\", \"ORG\", \"affiliate of\", \"Philippines AirAsia\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 10,
+  "recall": 0.375,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

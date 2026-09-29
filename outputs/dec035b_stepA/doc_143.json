@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_143",
+ "base_raw": "[\n    [\"Zombie Army Trilogy\", \"MISC\", \"developer\", \"Rebellion Developments\", \"ORG\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"publisher\", \"Rebellion Developments\", \"ORG\"],\n    [\"Sniper Elite series\", \"MISC\", \"spin-off\", \"Zombie Army Trilogy\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"release date\", \"March 6, 2015\", \"TIME\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"Adolf Hitler\", \"PER\", \"position held\", \"leader of Germany\", \"MISC\"],\n    [\"Germany\", \"LOC\", \"event\", \"World War II\", \"MISC\"],\n    [\"Rebellion Developments\", \"ORG\", \"location\", \"United Kingdom\", \"LOC\"],\n    [\"Left 4 Dead series\", \"MISC\", \"similar game\", \"Killing Floor\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"mode\", \"Horde mode\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"mode\", \"Campaign mode\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"feature\", \"co-operative play\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"feature\", \"single-player campaigns\", \"MISC\"],\n    [\"Nazi Zombie Army\", \"MISC\", \"part of\", \"Sniper Elite V2\", \"MISC\"],\n    [\"Left 4 Dead series\", \"MISC\", \"main characters\", \"added to Zombie Army Trilogy\", \"MISC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 13,
+  "FN": 14,
+  "recall": 0.3333333333333333,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Military Conflicts",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Zombie Army Trilogy\", \"MISC\", \"developer\", \"Rebellion Developments\", \"ORG\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"publisher\", \"Rebellion Developments\", \"ORG\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"part of\", \"Sniper Elite series\", \"MISC\"],\n    [\"Sniper Elite series\", \"MISC\", \"instance of\", \"video game series\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"release date\", \"March 6, 2015\", \"TIME\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"Adolf Hitler\", \"PER\", \"position held\", \"leader of Germany\", \"MISC\"],\n    [\"Germany\", \"LOC\", \"location of formation\", \"Nazi Zombie Army\", \"MISC\"],\n    [\"Nazi Zombie Army\", \"MISC\", \"part of\", \"World War II\", \"MISC\"],\n    [\"World War II\", \"MISC\", \"instance of\", \"military conflict\", \"MISC\"],\n    [\"Left 4 Dead series\", \"MISC\", \"instance of\", \"video game series\", \"MISC\"],\n    [\"Killing Floor\", \"MISC\", \"instance of\", \"video game\", \"MISC\"],\n    [\"Rebellion Developments\", \"ORG\", \"developer of\", \"Zombie Army Trilogy\", \"MISC\"],\n    [\"Rebellion Developments\", \"ORG\", \"publisher of\", \"Zombie Army Trilogy\", \"MISC\"],\n    [\"Sniper Elite V2\", \"MISC\", \"instance of\", \"video game\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"genre\", \"tactical shooter stealth video game\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 23,
+  "FN": 15,
+  "recall": 0.2857142857142857,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Zombie Army Trilogy\", \"MISC\", \"developer\", \"Rebellion Developments\", \"ORG\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"publisher\", \"Rebellion Developments\", \"ORG\"],\n    [\"Sniper Elite series\", \"MISC\", \"spin-off\", \"Zombie Army Trilogy\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"release date\", \"March 6, 2015\", \"TIME\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"Adolf Hitler\", \"PER\", \"position held\", \"head of government\", \"MISC\"],\n    [\"Germany\", \"LOC\", \"country of citizenship\", \"Adolf Hitler\", \"PER\"],\n    [\"Rebellion Developments\", \"ORG\", \"location\", \"United Kingdom\", \"LOC\"],\n    [\"Left 4 Dead series\", \"MISC\", \"influenced by\", \"Zombie Army Trilogy\", \"MISC\"],\n    [\"Killing Floor\", \"MISC\", \"genre\", \"horde mode\", \"MISC\"],\n    [\"Nazi Zombie Army\", \"MISC\", \"part of\", \"Sniper Elite V2\", \"MISC\"],\n    [\"Zombie Army Trilogy\", \"MISC\", \"contains administrative territorial entity\", \"Germany\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 17,
+  "recall": 0.22727272727272727,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

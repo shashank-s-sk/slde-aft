@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_205",
+ "base_raw": "[\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"University of Vienna\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"INSEAD\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"employer\", \"Morgan Stanley\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"founded by\", \"Kohl & Hwang\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"author\", \"Leben oder gelebt werden\", \"MISC\"],\n    [\"Walter Kohl\", \"PER\", \"author\", \"Leben was du f\u00fchlst\", \"MISC\"],\n    [\"Christine Volkmann\", \"PER\", \"employer\", \"UNESCO\", \"ORG\"],\n    [\"Johannes Volkmann\", \"PER\", \"member of political party\", \"CDU\", \"ORG\"],\n    [\"Helmut Kohl\", \"PER\", \"founded by\", \"Kohl & Hwang\", \"ORG\"],\n    [\"Kyung-Sook Kohl\", \"PER\", \"country of origin\", \"Korea\", \"LOC\"],\n    [\"Walter Kohl\", \"PER\", \"spouse\", \"Kyung-Sook Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"spouse\", \"Christine Volkmann\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"child\", \"Johannes Volkmann\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"father\", \"Helmut Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"mother\", \"Hannelore Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"brother\", \"Peter Kohl\", \"PER\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 11,
+  "FN": 18,
+  "recall": 0.25,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Locations",
+  "Organizations",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Walter Kohl\", \"PER\", \"date of birth\", \"16 July 1963\", \"TIME\"],\n    [\"Walter Kohl\", \"PER\", \"father\", \"Helmut Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"mother\", \"Hannelore Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"brother\", \"Peter Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"spouse\", \"Christine Volkmann\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"spouse\", \"Kyung-Sook Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"child\", \"Johannes Volkmann\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"University of Vienna\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"INSEAD\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"employer\", \"Morgan Stanley\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Christine Volkmann\", \"PER\", \"employer\", \"UNESCO\", \"ORG\"],\n    [\"Johannes Volkmann\", \"PER\", \"member of political party\", \"CDU\", \"ORG\"],\n    [\"Helmut Kohl\", \"PER\", \"child\", \"Walter Kohl\", \"PER\"],\n    [\"Helmut Kohl\", \"PER\", \"child\", \"Peter Kohl\", \"PER\"],\n    [\"Kohl & Hwang\", \"ORG\", \"founded by\", \"Walter Kohl\", \"PER\"],\n    [\"Kohl & Hwang\", \"ORG\", \"founded by\", \"Kyung-Sook Kohl\", \"PER\"],\n    [\"Leben oder gelebt werden\", \"MISC\", \"author\", \"Walter Kohl\", \"PER\"],\n    [\"Leben oder gelebt werden\", \"MISC\", \"publication date\", \"2011\", \"TIME\"],\n    [\"Leben was du f\u00fchlst\", \"MISC\", \"author\", \"Walter Kohl\", \"PER\"],\n    [\"Leben was du f\u00fchlst\", \"MISC\", \"publication date\", \"2013\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 17,
+  "FN": 15,
+  "recall": 0.4,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions"
+ ],
+ "kb_dedup_raw": "[\n    [\"Walter Kohl\", \"PER\", \"date of birth\", \"16 July 1963\", \"TIME\"],\n    [\"Walter Kohl\", \"PER\", \"father\", \"Helmut Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"mother\", \"Hannelore Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"brother\", \"Peter Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"spouse\", \"Christine Volkmann\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"spouse\", \"Kyung-Sook Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"child\", \"Johannes Volkmann\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"Harvard University\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"University of Vienna\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"educated at\", \"INSEAD\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"employer\", \"Morgan Stanley\", \"ORG\"],\n    [\"Walter Kohl\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Christine Volkmann\", \"PER\", \"employer\", \"UNESCO\", \"ORG\"],\n    [\"Johannes Volkmann\", \"PER\", \"member of political party\", \"CDU\", \"ORG\"],\n    [\"Helmut Kohl\", \"PER\", \"child\", \"Walter Kohl\", \"PER\"],\n    [\"Helmut Kohl\", \"PER\", \"child\", \"Peter Kohl\", \"PER\"],\n    [\"Walter Kohl\", \"PER\", \"author\", \"Leben oder gelebt werden\", \"MISC\"],\n    [\"Walter Kohl\", \"PER\", \"author\", \"Leben was du f\u00fchlst\", \"MISC\"],\n    [\"Kohl & Hwang\", \"ORG\", \"founded by\", \"Walter Kohl\", \"PER\"],\n    [\"Kohl & Hwang\", \"ORG\", \"founded by\", \"Kyung-Sook Kohl\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 15,
+  "FN": 16,
+  "recall": 0.36,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

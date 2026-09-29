@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_136",
+ "base_raw": "[\n    [\"Tribune Broadcasting\", \"ORG\", \"investor\", \"The WB Television Network\", \"ORG\"],\n    [\"Warner Bros.\", \"ORG\", \"investor\", \"The WB Television Network\", \"ORG\"],\n    [\"Time Warner\", \"ORG\", \"parent organization\", \"Warner Bros.\", \"ORG\"],\n    [\"The WB Television Network\", \"ORG\", \"merged with\", \"United Paramount Network\", \"ORG\"],\n    [\"The CW\", \"ORG\", \"resulted from merger\", \"The WB Television Network\", \"ORG\"],\n    [\"The CW\", \"ORG\", \"resulted from merger\", \"United Paramount Network\", \"ORG\"],\n    [\"Tribune\", \"ORG\", \"ownership interest\", \"none\", \"MISC\"],\n    [\"KSWB-TV\", \"ORG\", \"switched affiliation to\", \"Fox\", \"ORG\"],\n    [\"XETV\", \"ORG\", \"new affiliate of\", \"The CW\", \"ORG\"],\n    [\"San Diego\", \"LOC\", \"location of affiliation switch\", \"KSWB-TV\", \"ORG\"],\n    [\"Tijuana\", \"LOC\", \"location of\", \"XETV\", \"ORG\"],\n    [\"The WB Television Network\", \"ORG\", \"shut down\", \"September 17, 2006\", \"TIME\"],\n    [\"The WB Television Network\", \"ORG\", \"launched\", \"January 1995\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 16,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Locations in California",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Tribune Broadcasting\", \"ORG\", \"investor\", \"The WB Television Network\", \"ORG\"],\n    [\"Warner Bros.\", \"ORG\", \"division of\", \"Time Warner\", \"ORG\"],\n    [\"Tribune\", \"ORG\", \"stake in\", \"22 percent\", \"NUM\"],\n    [\"The WB Television Network\", \"ORG\", \"merged with\", \"United Paramount Network\", \"ORG\"],\n    [\"The CW\", \"ORG\", \"formed by\", \"The WB Television Network\", \"ORG\"],\n    [\"The CW\", \"ORG\", \"formed by\", \"United Paramount Network\", \"ORG\"],\n    [\"Tribune\", \"ORG\", \"ownership interest in\", \"The CW\", \"ORG\"],\n    [\"KSWB-TV\", \"ORG\", \"network affiliation\", \"Fox\", \"ORG\"],\n    [\"XETV\", \"ORG\", \"network affiliation\", \"The CW\", \"ORG\"],\n    [\"Tijuana\", \"LOC\", \"location of\", \"XETV\", \"ORG\"],\n    [\"San Diego\", \"LOC\", \"location of\", \"KSWB-TV\", \"ORG\"],\n    [\"The WB\", \"ORG\", \"shut down\", \"September 17, 2006\", \"TIME\"],\n    [\"The WB\", \"ORG\", \"launched\", \"January 1995\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 16,
+  "FN": 16,
+  "recall": 0.2727272727272727,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations in California",
+  "Organizations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Tribune Broadcasting\", \"ORG\", \"investor\", \"The WB Television Network\", \"ORG\"],\n    [\"Warner Bros.\", \"ORG\", \"division of\", \"Time Warner\", \"ORG\"],\n    [\"Tribune\", \"ORG\", \"owner of\", \"12.5 percent stake\", \"NUM\"],\n    [\"Tribune\", \"ORG\", \"owner of\", \"22 percent stake\", \"NUM\"],\n    [\"Time Warner\", \"ORG\", \"controlling interest in\", \"The WB Television Network\", \"ORG\"],\n    [\"Warner Bros. Television\", \"ORG\", \"announced merger with\", \"United Paramount Network\", \"ORG\"],\n    [\"The WB\", \"ORG\", \"merged with\", \"United Paramount Network\", \"ORG\"],\n    [\"The CW\", \"ORG\", \"formed by merger of\", \"The WB\", \"ORG\"],\n    [\"Tribune\", \"ORG\", \"signed ten-year agreements with\", \"The CW\", \"ORG\"],\n    [\"KSWB-TV\", \"ORG\", \"switched network affiliation to\", \"Fox\", \"ORG\"],\n    [\"XETV\", \"ORG\", \"named as new affiliate of\", \"The CW\", \"ORG\"],\n    [\"San Diego\", \"LOC\", \"location of\", \"KSWB-TV\", \"ORG\"],\n    [\"Tijuana\", \"LOC\", \"location of\", \"XETV\", \"ORG\"],\n    [\"The WB Television Network\", \"ORG\", \"shut down on\", \"September 17, 2006\", \"TIME\"],\n    [\"The WB\", \"ORG\", \"closure\", \"September 17, 2006\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 25,
+  "FN": 16,
+  "recall": 0.058823529411764705,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

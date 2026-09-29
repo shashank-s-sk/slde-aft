@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_369",
+ "base_raw": "[\n    [\"Hendrik Dolleman\", \"PER\", \"place of birth\", \"Deventer\", \"LOC\"],\n    [\"Hendrik Dolleman\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Hendrik Dolleman\", \"PER\", \"date of birth\", \"20-03-1905\", \"TIME\"],\n    [\"Hendrik Dolleman\", \"PER\", \"employer\", \"United States Air Force\", \"ORG\"],\n    [\"Hendrik Dolleman\", \"PER\", \"award received\", \"Soldier's Medal\", \"MISC\"],\n    [\"Dolleman Island\", \"LOC\", \"located in the administrative territorial entity\", \"Palmer Land\", \"LOC\"],\n    [\"Admiral Richard E. Byrd\", \"PER\", \"member of\", \"US Antarctic Service\", \"ORG\"],\n    [\"Hendrik Dolleman\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Hendrik Dolleman\", \"PER\", \"residence\", \"Manchester, New Hampshire\", \"LOC\"],\n    [\"US Antarctic Service\", \"ORG\", \"located in\", \"Antarctica\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 3,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"place of birth\", \"Deventer\", \"LOC\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"country of birth\", \"Netherlands\", \"LOC\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"date of birth\", \"20-03-1905\", \"TIME\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"residence\", \"Manchester, New Hampshire\", \"LOC\"],\n    [\"Admiral Richard E. Byrd\", \"PER\", \"expedition\", \"1939 Deep Freeze\", \"MISC\"],\n    [\"Admiral Richard E. Byrd\", \"PER\", \"expedition\", \"1955 Deep Freeze\", \"MISC\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"employer\", \"United States Air Force\", \"ORG\"],\n    [\"Dolleman Island\", \"LOC\", \"located in the administrative territorial entity\", \"Palmer Land\", \"LOC\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"award received\", \"Soldier's Medal\", \"MISC\"],\n    [\"Westover Field\", \"LOC\", \"located in the administrative territorial entity\", \"Massachusetts\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"place of birth\", \"Deventer\", \"LOC\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"date of birth\", \"20-03-1905\", \"TIME\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"residence\", \"Manchester, New Hampshire\", \"LOC\"],\n    [\"Dolleman Island\", \"LOC\", \"located in the administrative territorial entity\", \"Palmer Land\", \"LOC\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"employer\", \"United States Air Force\", \"ORG\"],\n    [\"Admiral Richard E. Byrd\", \"PER\", \"member of\", \"US Antarctic Service\", \"ORG\"],\n    [\"Hendrik (Henry) Dolleman\", \"PER\", \"award received\", \"Soldier's Medal\", \"MISC\"],\n    [\"Westover Field\", \"LOC\", \"located in\", \"Massachusetts\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 14,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

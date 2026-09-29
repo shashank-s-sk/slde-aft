@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_465",
+ "base_raw": "[\n    [\"Genshin\", \"PER\", \"date of birth\", \"942\", \"TIME\"],\n    [\"Genshin\", \"",
+ "base": {
+  "TP": 0,
+  "FP": 0,
+  "FN": 10,
+  "recall": 0.0,
+  "n_extracted": 0,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Genshin\", \"PER\", \"date of birth\", \"942\", \"TIME\"],\n    [\"Genshin\", \"PER\", \"date of death\", \"July 6, 1017\", \"TIME\"],\n    [\"Genshin\", \"PER\", \"country\", \"Japan\", \"LOC\"],\n    [\"Genshin\", \"PER\", \"influence\", \"Japanese culture\", \"MISC\"],\n    [\"Genshin\", \"PER\", \"notable work\", \"\u014cj\u014dy\u014dsh\u016b\", \"MISC\"],\n    [\"Genshin\", \"PER\", \"position held\", \"Sixth Patriarch\", \"MISC\"],\n    [\"Genshin\", \"PER\", \"founded\", \"Enshin school of Tendai Buddhism\", \"ORG\"],\n    [\"Genshin\", \"PER\", \"teaching\", \"original enlightenment\", \"MISC\"],\n    [\"Genshin\", \"PER\", \"author\", \"\u014cj\u014dy\u014dsh\u016b\", \"MISC\"],\n    [\"Jigoku\", \"MISC\", \"influenced by\", \"Genshin\", \"PER\"],\n    [\"Jodo Shinshu Buddhism\", \"MISC\", \" Sixth Patriarch\", \"Genshin\", \"PER\"],\n    [\"Yasaka-ji Temple\", \"LOC\", \"located in\", \"Shikoku\", \"LOC\"],\n    [\"Amida Nyorai\", \"MISC\", \"image made by\", \"Genshin\", \"PER\"],\n    [\"Enshin school of Tendai Buddhism\", \"ORG\", \"founded by\", \"Genshin\", \"PER\"],\n    [\"Pure Land thought\", \"MISC\", \"influenced by\", \"Genshin\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Genshin\", \"PER\", \"date of birth\", \"942\", \"TIME\"],\n    [\"Genshin\", \"PER\", \"date of death\", \"July 6, 1017\", \"TIME\"],\n    [\"Genshin\", \"PER\", \"country\", \"Japan\", \"LOC\"],\n    [\"Genshin\", \"PER\", \"influence\", \"Japanese culture\", \"MISC\"],\n    [\"Genshin\", \"PER\", \"notable work\", \"\u014cj\u014dy\u014dsh\u016b\", \"MISC\"],\n    [\"Genshin\", \"PER\", \"position held\", \"Sixth Patriarch\", \"MISC\"],\n    [\"Genshin\", \"PER\", \"founded\", \"Enshin school of Tendai Buddhism\", \"ORG\"],\n    [\"Genshin\", \"PER\", \"teaching\", \"original enlightenment\", \"MISC\"],\n    [\"Genshin\", \"PER\", \"author\", \"\u014cj\u014dy\u014dsh\u016b\", \"MISC\"],\n    [\"Jigoku\", \"MISC\", \"influenced by\", \"Genshin\", \"PER\"],\n    [\"Jodo Shinshu Buddhism\", \"MISC\", \" Sixth Patriarch\", \"Genshin\", \"PER\"],\n    [\"Yasaka-ji Temple\", \"LOC\", \"located in\", \"Shikoku\", \"LOC\"],\n    [\"Amida Nyorai\", \"MISC\", \"image made by\", \"Genshin\", \"PER\"],\n    [\"Enshin school of Tendai Buddhism\", \"ORG\", \"founded by\", \"Genshin\", \"PER\"],\n    [\"Pure Land thought\", \"MISC\", \"influenced by\", \"Genshin\", \"PER\"]\n]"
+}

@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_178",
+ "base_raw": "[\n    [\"Michael Haneke\", \"PER\", \"date of birth\", \"23 March 1942\", \"TIME\"],\n    [\"Michael Haneke\", \"PER\", \"country of citizenship\", \"Austria\", \"LOC\"],\n    [\"Michael Haneke\", \"PER\", \"educated at\", \"Film Academy Vienna\", \"ORG\"],\n    [\"The White Ribbon\", \"MISC\", \"award received\", \"Palme d'Or\", \"MISC\"],\n    [\"The White Ribbon\", \"MISC\", \"award received\", \"Golden Globe Award for Best Foreign Language Film\", \"MISC\"],\n    [\"Amour\", \"MISC\", \"award received\", \"Palme d'Or\", \"MISC\"],\n    [\"Amour\", \"MISC\", \"award received\", \"Academy Award for Best Foreign Language Film\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"award received\", \"Prince of Asturias Award for the arts\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"employer\", \"Film Academy Vienna\", \"ORG\"],\n    [\"Emmanuelle Riva\", \"PER\", \"award received\", \"Academy Award for Best Actress in a Leading Role\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 13,
+  "recall": 0.1875,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Michael Haneke\", \"PER\", \"date of birth\", \"23 March 1942\", \"TIME\"],\n    [\"Michael Haneke\", \"PER\", \"country of citizenship\", \"Austria\", \"LOC\"],\n    [\"Michael Haneke\", \"PER\", \"educated at\", \"Film Academy Vienna\", \"ORG\"],\n    [\"Michael Haneke\", \"PER\", \"employer\", \"Film Academy Vienna\", \"ORG\"],\n    [\"The White Ribbon\", \"MISC\", \"award received\", \"Palme d'Or\", \"MISC\"],\n    [\"The White Ribbon\", \"MISC\", \"award received\", \"Golden Globe Award for Best Foreign Language Film\", \"MISC\"],\n    [\"Amour\", \"MISC\", \"award received\", \"Palme d'Or\", \"MISC\"],\n    [\"Amour\", \"MISC\", \"award received\", \"Academy Award for Best Foreign Language Film\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"award received\", \"Prince of Asturias Award for the arts\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"language\", \"French\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"language\", \"German\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Emmanuelle Riva\", \"PER\", \"award received\", \"Academy Award for Best Actress in a Leading Role\", \"MISC\"],\n    [\"The White Ribbon\", \"MISC\", \"director\", \"Michael Haneke\", \"PER\"],\n    [\"Amour\", \"MISC\", \"director\", \"Michael Haneke\", \"PER\"],\n    [\"Cach\u00e9\", \"MISC\", \"director\", \"Michael Haneke\", \"PER\"],\n    [\"Funny Games\", \"MISC\", \"director\", \"Michael Haneke\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 11,
+  "FN": 9,
+  "recall": 0.4,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Michael Haneke\", \"PER\", \"date of birth\", \"23 March 1942\", \"TIME\"],\n    [\"Michael Haneke\", \"PER\", \"country of citizenship\", \"Austria\", \"LOC\"],\n    [\"Michael Haneke\", \"PER\", \"educated at\", \"Film Academy Vienna\", \"ORG\"],\n    [\"Michael Haneke\", \"PER\", \"employer\", \"Film Academy Vienna\", \"ORG\"],\n    [\"The White Ribbon\", \"MISC\", \"award received\", \"Palme d'Or\", \"MISC\"],\n    [\"The White Ribbon\", \"MISC\", \"award received\", \"Golden Globe Award for Best Foreign Language Film\", \"MISC\"],\n    [\"Amour\", \"MISC\", \"award received\", \"Palme d'Or\", \"MISC\"],\n    [\"Amour\", \"MISC\", \"award received\", \"Academy Award for Best Foreign Language Film\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"award received\", \"Prince of Asturias Award for the arts\", \"MISC\"],\n    [\"Emmanuelle Riva\", \"PER\", \"award received\", \"Academy Award nomination for Best Actress in a Leading Role\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"language\", \"French\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"language\", \"German\", \"MISC\"],\n    [\"Michael Haneke\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"The White Ribbon\", \"MISC\", \"director\", \"Michael Haneke\", \"PER\"],\n    [\"Amour\", \"MISC\", \"director\", \"Michael Haneke\", \"PER\"],\n    [\"Cach\u00e9\", \"MISC\", \"director\", \"Michael Haneke\", \"PER\"],\n    [\"Funny Games\", \"MISC\", \"director\", \"Michael Haneke\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 10,
+  "recall": 0.375,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

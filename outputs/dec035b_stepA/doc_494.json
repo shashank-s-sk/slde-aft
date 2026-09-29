@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_494",
+ "base_raw": "[\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"creator\", \"Peter Thorsboe\", \"PER\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"creator\", \"Mai Brostr\u00f8m\", \"PER\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"producer\", \"Danmarks Radio\", \"ORG\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"country of origin\", \"Denmark\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location of formation\", \"Denmark\", \"LOC\"],\n    [\"The International Academy of Television Arts & Sciences\", \"ORG\", \"award given\", \"International Emmy Award\", \"MISC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"award received\", \"International Emmy Award\", \"MISC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Berlin\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Copenhagen\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Stockholm\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Oslo\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Iceland\", \"LOC\"],\n    [\"Peter Thorsboe\", \"PER\", \"employer\", \"Danmarks Radio\", \"ORG\"],\n    [\"Mai Brostr\u00f8m\", \"PER\", \"employer\", \"Danmarks Radio\", \"ORG\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"original language of work\", \"Danish\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 15,
+  "FN": 19,
+  "recall": 0.13636363636363635,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"creator\", \"Peter Thorsboe\", \"PER\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"creator\", \"Mai Brostr\u00f8m\", \"PER\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"producer\", \"Danmarks Radio\", \"ORG\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"country of origin\", \"Denmark\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location of filming\", \"Berlin\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location of filming\", \"Copenhagen\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location of filming\", \"Stockholm\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location of filming\", \"Oslo\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location of filming\", \"Iceland\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"award received\", \"International Emmy Award\", \"MISC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"date of birth\", \"2004\", \"TIME\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"date of death\", \"2006\", \"TIME\"],\n    [\"Peter Thorsboe\", \"PER\", \"employer\", \"Danmarks Radio\", \"ORG\"],\n    [\"Mai Brostr\u00f8m\", \"PER\", \"employer\", \"Danmarks Radio\", \"ORG\"],\n    [\"Danmarks Radio\", \"ORG\", \"location\", \"Denmark\", \"LOC\"],\n    [\"International Academy of Television Arts & Sciences\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"start time\", \"2004\", \"TIME\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"end time\", \"2006\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 26,
+  "FN": 16,
+  "recall": 0.3333333333333333,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"creator\", \"Peter Thorsboe\", \"PER\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"creator\", \"Mai Brostr\u00f8m\", \"PER\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"producer\", \"Danmarks Radio\", \"ORG\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"country of origin\", \"Denmark\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Berlin\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Copenhagen\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Stockholm\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Oslo\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"location\", \"Iceland\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"award received\", \"International Emmy Award\", \"MISC\"],\n    [\"Peter Thorsboe\", \"PER\", \"employer\", \"Danmarks Radio\", \"ORG\"],\n    [\"Mai Brostr\u00f8m\", \"PER\", \"employer\", \"Danmarks Radio\", \"ORG\"],\n    [\"Danmarks Radio\", \"ORG\", \"location\", \"Denmark\", \"LOC\"],\n    [\"International Academy of Television Arts & Sciences\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"date of birth\", \"2004\", \"TIME\"],\n    [\"The Eagle : A Crime Odyssey\", \"MISC\", \"date of death\", \"2006\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 19,
+  "FN": 18,
+  "recall": 0.18181818181818182,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

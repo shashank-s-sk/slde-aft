@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_9",
+ "base_raw": "[\n    [\"Oak Hill Cemetery Chapel\", \"LOC\", \"located in\", \"Georgetown\", \"LOC\"],\n    [\"James Renwick, Jr.\", \"PER\", \"designed\", \"Oak Hill Cemetery Chapel\", \"LOC\"],\n    [\"Oak Hill Cemetery Chapel\", \"LOC\", \"part of\", \"Georgetown Historic District\", \"LOC\"],\n    [\"Van Ness Mausoleum\", \"LOC\", \"part of\", \"Georgetown Historic District\", \"LOC\"],\n    [\"Oak Hill Cemetery\", \"LOC\", \"contains administrative territorial entity\", \"Georgetown Historic District\", \"LOC\"],\n    [\"James Renwick, Jr.\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Oak Hill Cemetery Chapel\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Georgetown Historic District\", \"LOC\", \"located in\", \"Washington, D.C.\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 7,
+  "FN": 11,
+  "recall": 0.08333333333333333,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Oak Hill Cemetery Chapel\", \"LOC\", \"located in\", \"Georgetown\", \"LOC\"],\n    [\"James Renwick, Jr.\", \"PER\", \"designed\", \"Oak Hill Cemetery Chapel\", \"LOC\"],\n    [\"Oak Hill Cemetery Chapel\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"James Renwick, Jr.\", \"PER\", \"instance of\", \"architect\", \"MISC\"],\n    [\"Oak Hill Cemetery\", \"LOC\", \"contains administrative territorial entity\", \"Oak Hill Cemetery Chapel\", \"LOC\"],\n    [\"Georgetown Historic District\", \"LOC\", \"contains administrative territorial entity\", \"Oak Hill Cemetery\", \"LOC\"],\n    [\"Van Ness Mausoleum\", \"LOC\", \"located in\", \"Oak Hill Cemetery\", \"LOC\"],\n    [\"Oak Hill Cemetery Chapel\", \"LOC\", \"part of\", \"Georgetown Historic District\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Oak Hill Cemetery Chapel\", \"LOC\", \"located in\", \"Georgetown\", \"LOC\"],\n    [\"James Renwick, Jr.\", \"PER\", \"designed\", \"Oak Hill Cemetery Chapel\", \"LOC\"],\n    [\"Oak Hill Cemetery Chapel\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Oak Hill Cemetery\", \"LOC\", \"contains administrative territorial entity\", \"Georgetown Historic District\", \"LOC\"],\n    [\"Van Ness Mausoleum\", \"LOC\", \"located in\", \"Oak Hill Cemetery\", \"LOC\"],\n    [\"Georgetown Historic District\", \"LOC\", \"located in\", \"Washington, D.C.\", \"LOC\"],\n    [\"James Renwick, Jr.\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ }
+}

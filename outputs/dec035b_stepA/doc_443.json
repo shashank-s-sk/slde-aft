@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_443",
+ "base_raw": "[\n    [\"Diane Ladd\", \"PER\", \"date of birth\", \"November 29, 1935\", \"TIME\"],\n    [\"Diane Ladd\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Diane Ladd\", \"PER\", \"child\", \"Laura Dern\", \"PER\"],\n    [\"Diane Ladd\", \"PER\", \"spouse\", \"Bruce Dern\", \"PER\"],\n    [\"Diane Ladd\", \"PER\", \"author\", \"True\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Laura Dern\", \"PER\", \"mother\", \"Diane Ladd\", \"PER\"],\n    [\"Bruce Dern\", \"PER\", \"child\", \"Laura Dern\", \"PER\"],\n    [\"Diane Ladd\", \"PER\", \"award received\", \"BAFTA Award for Best Actress in a Supporting Role\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"award received\", \"Golden Globe Award for Best Supporting Actress on Television\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 21,
+  "recall": 0.16,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Diane Ladd\", \"PER\", \"date of birth\", \"November 29, 1935\", \"TIME\"],\n    [\"Diane Ladd\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Diane Ladd\", \"PER\", \"occupation\", \"actress\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"occupation\", \"film director\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"occupation\", \"author\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"award received\", \"BAFTA Award for Best Actress in a Supporting Role\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"award received\", \"Golden Globe Award for Best Supporting Actress on Television\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"child\", \"Laura Dern\", \"PER\"],\n    [\"Diane Ladd\", \"PER\", \"spouse\", \"Bruce Dern\", \"PER\"],\n    [\"Laura Dern\", \"PER\", \"mother\", \"Diane Ladd\", \"PER\"],\n    [\"Bruce Dern\", \"PER\", \"spouse\", \"Diane Ladd\", \"PER\"],\n    [\"Alice Doesn't Live Here Anymore\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Chinatown\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Ghosts of Mississippi\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Primary Colors\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"28 Days\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"American Cowslip\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Wild at Heart\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Rambling Rose\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Alice\", \"MISC\", \"genre\", \"television\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 20,
+  "FN": 21,
+  "recall": 0.16,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 20,
+  "FN": 21,
+  "recall": 0.16,
+  "n_extracted": 24,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Diane Ladd\", \"PER\", \"date of birth\", \"November 29, 1935\", \"TIME\"],\n    [\"Diane Ladd\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Diane Ladd\", \"PER\", \"occupation\", \"actress\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"occupation\", \"film director\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"occupation\", \"author\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"award received\", \"BAFTA Award for Best Actress in a Supporting Role\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"award received\", \"Golden Globe Award for Best Supporting Actress on Television\", \"MISC\"],\n    [\"Diane Ladd\", \"PER\", \"child\", \"Laura Dern\", \"PER\"],\n    [\"Diane Ladd\", \"PER\", \"spouse\", \"Bruce Dern\", \"PER\"],\n    [\"Laura Dern\", \"PER\", \"mother\", \"Diane Ladd\", \"PER\"],\n    [\"Bruce Dern\", \"PER\", \"spouse\", \"Diane Ladd\", \"PER\"],\n    [\"Alice Doesn't Live Here Anymore\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Chinatown\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Ghosts of Mississippi\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Primary Colors\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"28 Days\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"American Cowslip\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Wild at Heart\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Rambling Rose\", \"MISC\", \"genre\", \"film\", \"MISC\"],\n    [\"Alice\", \"MISC\", \"genre\", \"television\", \"MISC\"]\n]"
+}

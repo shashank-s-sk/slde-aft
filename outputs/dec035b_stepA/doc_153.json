@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_153",
+ "base_raw": "[\n    [\"Konstantin Sokolsky\", \"PER\", \"place of birth\", \"Saint-Petersburg\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"country of citizenship\", \"Latvia\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"father\", \"Kudryavtsev\", \"PER\"],\n    [\"Ludzas County\", \"LOC\", \"located in the administrative territorial entity\", \"Latvia\", \"LOC\"],\n    [\"Oscar Strok\", \"PER\", \"genre\", \"tango music\", \"MISC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Riga Bonzo Theatre\", \"ORG\", \"located in\", \"Riga\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"member of\", \"None\", \"MISC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"author\", \"Several songs\", \"MISC\"],\n    [\"Bonophon\", \"ORG\", \"located in\", \"Russia\", \"LOC\"],\n    [\"Bellaccord\", \"ORG\", \"located in\", \"Russia\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"country\", \"Russia\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"residence\", \"Riga\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"date of death\", \"12 May 1991\", \"TIME\"],\n    [\"Alexander Vertinsky\", \"PER\", \"influenced by\", \"None\", \"MISC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"position held\", \"Singer\", \"MISC\"],\n    [\"Riga\", \"LOC\", \"country\", \"Latvia\", \"LOC\"],\n    [\"Romania\", \"LOC\", \"continent\", \"Europe\", \"MISC\"],\n    [\"Czechoslovakia\", \"LOC\", \"continent\", \"Europe\", \"MISC\"],\n    [\"Yugoslavia\", \"LOC\", \"continent\", \"Europe\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Konstantin Sokolsky\", \"PER\", \"place of birth\", \"Saint-Petersburg\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"country of citizenship\", \"Latvia\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"employer\", \"Mars cinema\", \"ORG\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"collaborator\", \"Oscar Strok\", \"PER\"],\n    [\"Oscar Strok\", \"PER\", \"genre\", \"tango music\", \"MISC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"tour locations\", \"Romania\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"tour locations\", \"Czechoslovakia\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"tour locations\", \"Yugoslavia\", \"LOC\"],\n    [\"Riga Bonzo Theatre\", \"ORG\", \"location\", \"Riga\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"record label\", \"Bonophon\", \"ORG\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"record label\", \"Bellaccord\", \"ORG\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"arrested by\", \"Germans\", \"MISC\"],\n    [\"Ludzas County\", \"LOC\", \"located in\", \"Latvia\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"date of birth\", \"7 December 1904\", \"TIME\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"date of death\", \"12 May 1991\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 26,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Konstantin Sokolsky\", \"PER\", \"place of birth\", \"Saint-Petersburg\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"country of citizenship\", \"Latvia\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"date of birth\", \"7 December 1904\", \"TIME\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"date of death\", \"12 May 1991\", \"TIME\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"father\", \"Kudryavtsev\", \"PER\"],\n    [\"Ludzas County\", \"LOC\", \"located in the administrative territorial entity\", \"Latvia\", \"LOC\"],\n    [\"Oscar Strok\", \"PER\", \"nationality\", \"Latvian\", \"MISC\"],\n    [\"Riga\", \"LOC\", \"country\", \"Latvia\", \"LOC\"],\n    [\"Alexander Vertinsky\", \"PER\", \"influenced by\", \"Pierrot\", \"MISC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Riga Bonzo Theatre\", \"ORG\", \"located in\", \"Riga\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"member of\", \"Riga Bonzo Theatre\", \"ORG\"],\n    [\"Bonophon\", \"ORG\", \"located in\", \"Russia\", \"LOC\"],\n    [\"Bellaccord\", \"ORG\", \"located in\", \"Russia\", \"LOC\"],\n    [\"Konstantin Sokolsky\", \"PER\", \"genre\", \"tango\", \"MISC\"],\n    [\"Oscar Strok\", \"PER\", \"genre\", \"tango\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 22,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

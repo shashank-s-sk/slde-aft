@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_378",
+ "base_raw": "[\n    [\"Grooverville\", \"LOC\", \"located in the administrative territorial entity\", \"Brooks County\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"located in the administrative territorial entity\", \"Georgia\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Thomasville and Madison and Sharpe's Store Road\", \"MISC\", \"located in\", \"Thomas County\", \"LOC\"],\n    [\"Brooks County\", \"LOC\", \"created from\", \"Lowndes\", \"LOC\"],\n    [\"Brooks County\", \"LOC\", \"created from\", \"Thomas County\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"incorporated on\", \"December 8, 1859\", \"TIME\"],\n    [\"Grooverville\", \"LOC\", \"charter terminated on\", \"July 1, 1995\", \"TIME\"],\n    [\"Grooverville Historic Township\", \"MISC\", \"granted by\", \"State of Georgia, Department of Community Affairs\", \"ORG\"],\n    [\"Grooverville Methodist Church\", \"ORG\", \"located in\", \"Grooverville\", \"LOC\"],\n    [\"Liberty Baptist Church\", \"ORG\", \"located in\", \"Grooverville\", \"LOC\"],\n    [\"Liberty Baptist Church\", \"ORG\", \"listed on\", \"National Register of Historic Places\", \"MISC\"],\n    [\"National Register of Historic Places\", \"MISC\", \"listing date\", \"2013\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 11,
+  "FN": 41,
+  "recall": 0.06818181818181818,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Grooverville\", \"LOC\", \"located in\", \"Brooks County\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"located in\", \"Georgia\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"Thomasville and Madison and Sharpe's Store Road\", \"MISC\", \"located in\", \"Thomas County\", \"LOC\"],\n    [\"Brooks County\", \"LOC\", \"created from\", \"Lowndes\", \"LOC\"],\n    [\"Brooks County\", \"LOC\", \"created from\", \"Thomas County\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"incorporated on\", \"December 8, 1859\", \"TIME\"],\n    [\"Grooverville\", \"LOC\", \"charter terminated on\", \"July 1, 1995\", \"TIME\"],\n    [\"Georgia Legislature\", \"ORG\", \"terminated charter of\", \"Grooverville\", \"LOC\"],\n    [\"Grooverville Methodist Church\", \"ORG\", \"located in\", \"Grooverville\", \"LOC\"],\n    [\"Liberty Baptist Church\", \"ORG\", \"located in\", \"Grooverville\", \"LOC\"],\n    [\"Liberty Baptist Church\", \"ORG\", \"listed on\", \"National Register of Historic Places\", \"MISC\"],\n    [\"Grooverville\", \"LOC\", \"granted status as\", \"Grooverville Historic Township\", \"MISC\"],\n    [\"State of Georgia, Department of Community Affairs\", \"ORG\", \"granted status to\", \"Grooverville\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 15,
+  "FN": 37,
+  "recall": 0.1590909090909091,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Grooverville\", \"LOC\", \"located in the administrative territorial entity\", \"Brooks County\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"located in the administrative territorial entity\", \"Georgia\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"],\n    [\"Thomasville and Madison and Sharpe's Store Road\", \"MISC\", \"located in\", \"Thomas County\", \"LOC\"],\n    [\"Brooks County\", \"LOC\", \"created from\", \"Lowndes\", \"LOC\"],\n    [\"Brooks County\", \"LOC\", \"created from\", \"Thomas County\", \"LOC\"],\n    [\"Grooverville\", \"LOC\", \"incorporated on\", \"December 8, 1859\", \"TIME\"],\n    [\"Grooverville\", \"LOC\", \"charter terminated on\", \"July 1, 1995\", \"TIME\"],\n    [\"Grooverville Methodist Church\", \"ORG\", \"located in\", \"Grooverville\", \"LOC\"],\n    [\"Liberty Baptist Church\", \"ORG\", \"located in\", \"Grooverville\", \"LOC\"],\n    [\"Liberty Baptist Church\", \"ORG\", \"listed on\", \"National Register of Historic Places\", \"MISC\"],\n    [\"Grooverville\", \"LOC\", \"granted status as\", \"Grooverville Historic Township\", \"MISC\"],\n    [\"Georgia Legislature\", \"ORG\", \"terminated charter of\", \"Grooverville\", \"LOC\"],\n    [\"Department of Community Affairs\", \"ORG\", \"granted status to\", \"Grooverville\", \"LOC\"],\n    [\"Department of Transportation\", \"ORG\", \"created\", \"General Highway Map of Brooks County\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 38,
+  "recall": 0.09523809523809523,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_68",
+ "base_raw": "[\n    [\"Gamal Abdel Nasser\", \"PER\", \"date of death\", \"1970\", \"TIME\"],\n    [\"Egypt\", \"LOC\", \"capital of\", \"Cairo\", \"LOC\"],\n    [\"Gamal Abdel Nasser\", \"PER\", \"president of\", \"Egypt\", \"LOC\"],\n    [\"Suez Canal\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Gamal Abdel Nasser\", \"PER\", \"leader of\", \"Egypt\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Aswan Dam\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Helwan steel works\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Abdel Halim Hafez\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Umm Kulthum\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Mohammed Abdel Wahab\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Naguib Mahfouz\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Tawfiq el-Hakim\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Faten Hamama\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Rushdi Abaza\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Hosni Mubarak\", \"PER\", \"president of\", \"Egypt\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"instance of\", \"country\", \"MISC\"]\n]",
+ "base": {
+  "TP": 13,
+  "FP": 4,
+  "FN": 11,
+  "recall": 0.5416666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Gamal Abdel Nasser\", \"PER\", \"date of death\", \"1970\", \"TIME\"],\n    [\"Egypt\", \"LOC\", \"located in the administrative territorial entity\", \"Arab world\", \"MISC\"],\n    [\"Gamal Abdel Nasser\", \"PER\", \"president of\", \"Egypt\", \"LOC\"],\n    [\"Suez Canal\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"participant of\", \"Tripartite Aggression\", \"MISC\"],\n    [\"Gamal Abdel Nasser\", \"PER\", \"leader of\", \"Egypt\", \"LOC\"],\n    [\"Aswan Dam\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Helwan steel works\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Abdel Halim Hafez\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Umm Kulthum\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Mohammed Abdel Wahab\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Naguib Mahfouz\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Tawfiq el-Hakim\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Faten Hamama\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Rushdi Abaza\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Hosni Mubarak\", \"PER\", \"president of\", \"Egypt\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"country of origin\", \"Arab\", \"MISC\"],\n    [\"Gamal Abdel Nasser\", \"PER\", \"country of citizenship\", \"Egypt\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 17,
+  "FN": 16,
+  "recall": 0.2,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Gamal Abdel Nasser\", \"PER\", \"date of death\", \"1970\", \"TIME\"],\n    [\"Egypt\", \"LOC\", \"capital of\", \"Cairo\", \"LOC\"],\n    [\"Gamal Abdel Nasser\", \"PER\", \"president of\", \"Egypt\", \"LOC\"],\n    [\"Suez Canal\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Gamal Abdel Nasser\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Egypt\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Aswan Dam\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Helwan steel works\", \"MISC\", \"located in\", \"Egypt\", \"LOC\"],\n    [\"Abdel Halim Hafez\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Umm Kulthum\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Mohammed Abdel Wahab\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Naguib Mahfouz\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Tawfiq el-Hakim\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Faten Hamama\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Rushdi Abaza\", \"PER\", \"nationality\", \"Egyptian\", \"MISC\"],\n    [\"Hosni Mubarak\", \"PER\", \"president of\", \"Egypt\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"head of state\", \"Gamal Abdel Nasser\", \"PER\"],\n    [\"Syria\", \"LOC\", \"member of\", \"Arab world\", \"MISC\"],\n    [\"Arab world\", \"MISC\", \"contains administrative territorial entity\", \"Egypt\", \"LOC\"],\n    [\"Egypt\", \"LOC\", \"instance of\", \"country\", \"MISC\"],\n    [\"Gamal Abdel Nasser\", \"PER\", \"member of\", \"Arab world\", \"MISC\"],\n    [\"Egypt\", \"LOC\", \"located in\", \"Africa\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 15,
+  "recall": 0.25,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

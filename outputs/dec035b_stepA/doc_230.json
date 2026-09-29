@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_230",
+ "base_raw": "[\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"located in\", \"Barranquilla\", \"LOC\"],\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"capacity\", \"49,612\", \"NUM\"],\n    [\"Atl\u00e9tico Junior\", \"ORG\", \"home stadium\", \"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\"],\n    [\"Uruguay\", \"ORG\", \"played against\", \"Junior\", \"ORG\"],\n    [\"Roberto Mel\u00e9ndez\", \"PER\", \"honored by\", \"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\"],\n    [\"Colombia\", \"LOC\", \"national football team stadium\", \"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\"],\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"inaugurated\", \"1986\", \"TIME\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 6,
+  "FN": 10,
+  "recall": 0.09090909090909091,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Europe and South America",
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"located in\", \"Barranquilla\", \"LOC\"],\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"country\", \"Colombia\", \"LOC\"],\n    [\"Atl\u00e9tico Junior\", \"ORG\", \"home stadium\", \"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\"],\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"capacity\", \"49,612\", \"NUM\"],\n    [\"Colombia\", \"LOC\", \"continent\", \"South America\", \"LOC\"],\n    [\"Roberto Mel\u00e9ndez\", \"PER\", \"country of citizenship\", \"Colombia\", \"LOC\"],\n    [\"Uruguay\", \"LOC\", \"participant of\", \"Colombian World Cup bid\", \"MISC\"],\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"inaugurated\", \"1986\", \"TIME\"],\n    [\"Colombian national football team\", \"ORG\", \"home stadium\", \"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\"],\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"named after\", \"Roberto Mel\u00e9ndez\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 7,
+  "recall": 0.3,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"located in\", \"Barranquilla\", \"LOC\"],\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"capacity\", \"49,612\", \"NUM\"],\n    [\"Atl\u00e9tico Junior\", \"ORG\", \"home stadium\", \"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\"],\n    [\"Uruguay\", \"ORG\", \"played against\", \"Junior\", \"ORG\"],\n    [\"Roberto Mel\u00e9ndez\", \"PER\", \"honored by\", \"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\"],\n    [\"Colombia\", \"LOC\", \"home stadium of national team\", \"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\"],\n    [\"Estadio Metropolitano Roberto Mel\u00e9ndez\", \"LOC\", \"inaugurated in\", \"1986\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 10,
+  "recall": 0.09090909090909091,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ }
+}

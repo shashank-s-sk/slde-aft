@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_322",
+ "base_raw": "[\n    [\"Giacomo Bulgarelli\", \"PER\", \"date of birth\", \"24 October 1940\", \"TIME\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"date of death\", \"12 February 2009\", \"TIME\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"position held\", \"midfielder\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"member of sports team\", \"Bologna\", \"ORG\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"member of sports team\", \"Hartford Bicentennials\", \"ORG\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"country of citizenship\", \"Italy\", \"LOC\"],\n    [\"Bologna\", \"ORG\", \"located in\", \"Italy\", \"LOC\"],\n    [\"1960 Summer Olympics\", \"MISC\", \"location\", \"Rome\", \"LOC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"1960 Summer Olympics\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"FIFA World Cup\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"UEFA Euro 1968\", \"MISC\"],\n    [\"Italy\", \"LOC\", \"participant of\", \"UEFA Euro 1968\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"employer\", \"Bologna\", \"ORG\"],\n    [\"Hartford Bicentennials\", \"ORG\", \"located in\", \"America\", \"LOC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 8,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Italian Locations",
+  "Locations",
+  "Locations in Italy and Spain",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Giacomo Bulgarelli\", \"PER\", \"date of birth\", \"24 October 1940\", \"TIME\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"date of death\", \"12 February 2009\", \"TIME\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"position held\", \"midfielder\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"member of sports team\", \"Bologna\", \"ORG\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"country of citizenship\", \"Italy\", \"LOC\"],\n    [\"Bologna\", \"ORG\", \"located in\", \"Italy\", \"LOC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"1960 Summer Olympics\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"FIFA World Cups\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"UEFA Euro 1968\", \"MISC\"],\n    [\"Hartford Bicentennials\", \"ORG\", \"located in\", \"America\", \"LOC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"member of sports team\", \"Hartford Bicentennials\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 7,
+  "recall": 0.4166666666666667,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Giacomo Bulgarelli\", \"PER\", \"date of birth\", \"24 October 1940\", \"TIME\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"date of death\", \"12 February 2009\", \"TIME\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"position held\", \"midfielder\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"member of sports team\", \"Bologna\", \"ORG\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"member of sports team\", \"Hartford Bicentennials\", \"ORG\"],\n    [\"Bologna\", \"ORG\", \"located in\", \"Italy\", \"LOC\"],\n    [\"Hartford Bicentennials\", \"ORG\", \"located in\", \"America\", \"LOC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"1960 Summer Olympics\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"1962 FIFA World Cup\", \"MISC\"],\n    [\"Giacomo Bulgarelli\", \"PER\", \"participant of\", \"UEFA Euro 1968\", \"MISC\"],\n    [\"Italy\", \"LOC\", \"continent\", \"Europe\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 5,
+  "recall": 0.5454545454545454,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

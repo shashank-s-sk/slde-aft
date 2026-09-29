@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_417",
+ "base_raw": "[\n    [\"Netherlands Antilles\", \"LOC\", \"located in\", \"Caribbean Sea\", \"LOC\"],\n    [\"Netherlands Antilles\", \"LOC\", \"dissolved, abolished or demolished\", \"2010\", \"TIME\"],\n    [\"Dutch Antilles\", \"MISC\", \"part of\", \"Kingdom of the Netherlands\", \"ORG\"],\n    [\"Cura\u00e7ao and Dependencies\", \"LOC\", \"part of\", \"Kingdom of the Netherlands\", \"ORG\"],\n    [\"Surinam\", \"LOC\", \"located in\", \"South America\", \"LOC\"],\n    [\"Surinam\", \"LOC\", \"country of origin\", \"Kingdom of the Netherlands\", \"ORG\"],\n    [\"Dutch Caribbean\", \"MISC\", \"part of\", \"Kingdom of the Netherlands\", \"ORG\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 3,
+  "FN": 11,
+  "recall": 0.26666666666666666,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Oceans",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Netherlands Antilles\", \"LOC\", \"located in\", \"Caribbean Sea\", \"LOC\"],\n    [\"Netherlands Antilles\", \"LOC\", \"part of\", \"Kingdom of the Netherlands\", \"LOC\"],\n    [\"Dutch Antilles\", \"MISC\", \"alternate name for\", \"Netherlands Antilles\", \"LOC\"],\n    [\"Cura\u00e7ao and Dependencies\", \"LOC\", \"predecessor of\", \"Netherlands Antilles\", \"LOC\"],\n    [\"Surinam\", \"LOC\", \"country of origin\", \"South America\", \"LOC\"],\n    [\"Netherlands Antilles\", \"LOC\", \"date of inception\", \"1954\", \"TIME\"],\n    [\"Netherlands Antilles\", \"LOC\", \"date of dissolution\", \"2010\", \"TIME\"],\n    [\"Dutch Caribbean\", \"MISC\", \"common name for\", \"Netherlands Antilles\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 6,
+  "FN": 10,
+  "recall": 0.4117647058823529,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Netherlands Antilles\", \"LOC\", \"located in\", \"Caribbean Sea\", \"LOC\"],\n    [\"Netherlands Antilles\", \"LOC\", \"dissolved, abolished or demolished\", \"2010\", \"TIME\"],\n    [\"Dutch Antilles\", \"MISC\", \"part of\", \"Kingdom of the Netherlands\", \"ORG\"],\n    [\"Cura\u00e7ao and Dependencies\", \"LOC\", \"part of\", \"Netherlands Antilles\", \"LOC\"],\n    [\"Surinam\", \"LOC\", \"located in\", \"South America\", \"LOC\"],\n    [\"Surinam\", \"LOC\", \"country of origin\", \"Kingdom of the Netherlands\", \"ORG\"],\n    [\"Dutch Caribbean\", \"MISC\", \"part of\", \"Kingdom of the Netherlands\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 5,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ }
+}

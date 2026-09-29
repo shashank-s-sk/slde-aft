@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_314",
+ "base_raw": "[\n    [\"EFTA Court\", \"ORG\", \"located in\", \"Europe\", \"LOC\"],\n    [\"Iceland\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"Liechtenstein\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"Norway\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"EFTA Court\", \"ORG\", \"responsible for\", \"EEA\", \"ORG\"],\n    [\"European Union\", \"ORG\", \"has internal market\", \"EEA\", \"ORG\"],\n    [\"EFTA Court\", \"ORG\", \"enforces laws of\", \"European Union\", \"ORG\"],\n    [\"ECJ\", \"ORG\", \"role replaced by\", \"EFTA Court\", \"ORG\"],\n    [\"EFTA Court\", \"ORG\", \"established in\", \"September 1995\", \"TIME\"],\n    [\"EFTA Court\", \"ORG\", \"has part\", \"judges\", \"MISC\"],\n    [\"EFTA Court judges\", \"MISC\", \"nominated by\", \"Iceland, Liechtenstein and Norway\", \"LOC\"],\n    [\"EFTA Court judges\", \"MISC\", \"appointed by\", \"Governments of Iceland, Liechtenstein and Norway\", \"ORG\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 9,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"EFTA Court\", \"ORG\", \"located in\", \"Europe\", \"LOC\"],\n    [\"Iceland\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"Liechtenstein\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"Norway\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"EFTA Court\", \"ORG\", \"responsible for\", \"EEA\", \"ORG\"],\n    [\"European Union\", \"ORG\", \"has internal market\", \"EEA\", \"ORG\"],\n    [\"EFTA Court\", \"ORG\", \"enforces laws of\", \"European Union\", \"ORG\"],\n    [\"ECJ\", \"ORG\", \"role replaced by\", \"EFTA Court\", \"ORG\"],\n    [\"EFTA Court\", \"ORG\", \"established in\", \"September 1995\", \"TIME\"],\n    [\"EFTA Court\", \"ORG\", \"has judges nominated by\", \"Iceland\", \"LOC\"],\n    [\"EFTA Court\", \"ORG\", \"has judges nominated by\", \"Liechtenstein\", \"LOC\"],\n    [\"EFTA Court\", \"ORG\", \"has judges nominated by\", \"Norway\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Iceland\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"Liechtenstein\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"Norway\", \"LOC\", \"member of\", \"EFTA\", \"ORG\"],\n    [\"EFTA Court\", \"ORG\", \"located in\", \"Europe\", \"LOC\"],\n    [\"EFTA Court\", \"ORG\", \"instance of\", \"judicial body\", \"MISC\"],\n    [\"European Economic Area\", \"ORG\", \"has part\", \"Iceland\", \"LOC\"],\n    [\"European Economic Area\", \"ORG\", \"has part\", \"Liechtenstein\", \"LOC\"],\n    [\"European Economic Area\", \"ORG\", \"has part\", \"Norway\", \"LOC\"],\n    [\"European Union\", \"ORG\", \"has part\", \"internal market\", \"MISC\"],\n    [\"EFTA Court\", \"ORG\", \"headquarters location\", \"Europe\", \"LOC\"],\n    [\"EFTA\", \"ORG\", \"located in\", \"Europe\", \"LOC\"],\n    [\"European Court of Justice\", \"ORG\", \"located in\", \"Europe\", \"LOC\"],\n    [\"EFTA Court\", \"ORG\", \"replaces\", \"European Court of Justice\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 18,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

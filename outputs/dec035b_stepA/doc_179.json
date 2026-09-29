@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_179",
+ "base_raw": "[\n    [\"Cocalico Creek\", \"LOC\", \"located in\", \"Lebanon County\", \"LOC\"],\n    [\"Cocalico Creek\", \"LOC\", \"located in\", \"Lancaster County\", \"LOC\"],\n    [\"Cocalico Creek\", \"LOC\", \"tributary of\", \"Conestoga River\", \"LOC\"],\n    [\"Stricklerstown\", \"LOC\", \"located in\", \"Millcreek Township\", \"LOC\"],\n    [\"Millcreek Township\", \"LOC\", \"part of\", \"Lebanon County\", \"LOC\"],\n    [\"Talmage\", \"LOC\", \"located in\", \"West Earl Township\", \"LOC\"],\n    [\"West Earl Township\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Lenape\", \"MISC\", \"language of origin\", \"Gookcalicunk\", \"MISC\"],\n    [\"Gookcalicunk\", \"MISC\", \"means\", \"Snake Sleep Place\", \"MISC\"],\n    [\"Cocalico Creek\", \"LOC\", \"part of\", \"Chesapeake Bay drainage basin\", \"LOC\"],\n    [\"Cocalico Creek watershed\", \"LOC\", \"drains into\", \"Susquehanna River\", \"LOC\"],\n    [\"East Cocalico\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"West Cocalico\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Clay\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Warwick\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Elizabeth\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Penn\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Middle Creek Wildlife Management Area\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 30,
+  "recall": 0.0625,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Cocalico Creek\", \"LOC\", \"located in\", \"Lebanon County\", \"LOC\"],\n    [\"Cocalico Creek\", \"LOC\", \"located in\", \"Lancaster County\", \"LOC\"],\n    [\"Cocalico Creek\", \"LOC\", \"tributary of\", \"Conestoga River\", \"LOC\"],\n    [\"Stricklerstown\", \"LOC\", \"located in\", \"Millcreek Township\", \"LOC\"],\n    [\"Millcreek Township\", \"LOC\", \"part of\", \"Lebanon County\", \"LOC\"],\n    [\"Talmage\", \"LOC\", \"located in\", \"West Earl Township\", \"LOC\"],\n    [\"West Earl Township\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Lenape\", \"MISC\", \"language of origin\", \"Gookcalicunk\", \"MISC\"],\n    [\"Gookcalicunk\", \"MISC\", \"meaning\", \"snake dens\", \"MISC\"],\n    [\"Cocalico Creek\", \"LOC\", \"part of\", \"Chesapeake Bay drainage basin\", \"LOC\"],\n    [\"Chesapeake Bay drainage basin\", \"LOC\", \"via\", \"Susquehanna River\", \"LOC\"],\n    [\"East Cocalico\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"West Cocalico\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Clay\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Warwick\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Elizabeth\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Penn\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Middle Creek Wildlife Management Area\", \"LOC\", \"part of\", \"Gookcalicunk\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 30,
+  "recall": 0.1891891891891892,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 30,
+  "recall": 0.1891891891891892,
+  "n_extracted": 21,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Cocalico Creek\", \"LOC\", \"located in\", \"Lebanon County\", \"LOC\"],\n    [\"Cocalico Creek\", \"LOC\", \"located in\", \"Lancaster County\", \"LOC\"],\n    [\"Cocalico Creek\", \"LOC\", \"tributary of\", \"Conestoga River\", \"LOC\"],\n    [\"Stricklerstown\", \"LOC\", \"located in\", \"Millcreek Township\", \"LOC\"],\n    [\"Millcreek Township\", \"LOC\", \"part of\", \"Lebanon County\", \"LOC\"],\n    [\"Talmage\", \"LOC\", \"located in\", \"West Earl Township\", \"LOC\"],\n    [\"West Earl Township\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Lenape\", \"MISC\", \"language of origin\", \"Gookcalicunk\", \"MISC\"],\n    [\"Gookcalicunk\", \"MISC\", \"meaning\", \"snake dens\", \"MISC\"],\n    [\"Cocalico Creek\", \"LOC\", \"part of\", \"Chesapeake Bay drainage basin\", \"LOC\"],\n    [\"Chesapeake Bay drainage basin\", \"LOC\", \"via\", \"Susquehanna River\", \"LOC\"],\n    [\"East Cocalico\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"West Cocalico\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Clay\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Warwick\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Elizabeth\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Penn\", \"LOC\", \"part of\", \"Lancaster County\", \"LOC\"],\n    [\"Middle Creek Wildlife Management Area\", \"LOC\", \"part of\", \"Gookcalicunk\", \"LOC\"]\n]"
+}

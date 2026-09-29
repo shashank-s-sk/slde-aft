@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_472",
+ "base_raw": "[\n    [\"Anthony Power Development Scheme\", \"MISC\", \"part of\", \"Pieman River power development scheme\", \"MISC\"],\n    [\"Hydro-Electric Commission of Tasmania\", \"ORG\", \"proposed\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Tasmanian Government\", \"ORG\", \"approved\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Anthony Power Development Scheme\", \"MISC\", \"location\", \"Western Tasmania\", \"LOC\"],\n    [\"Anthony Power Development Scheme\", \"MISC\", \"country\", \"Australia\", \"LOC\"],\n    [\"Anthony Dam\", \"MISC\", \"part of\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Anthony Levee\", \"MISC\", \"part of\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Tribute Power Station\", \"MISC\", \"enabled by\", \"Anthony Dam\", \"MISC\"],\n    [\"Lake Plimsoll\", \"MISC\", \"formed by\", \"Anthony Dam\", \"MISC\"],\n    [\"Anthony River\", \"MISC\", \"location of\", \"Anthony Dam\", \"MISC\"],\n    [\"Franklin Dam\", \"MISC\", \"overturned\", \"None\", \"MISC\"],\n    [\"West Coast Range\", \"MISC\", \"location of\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Southern Ocean\", \"MISC\", \"drains into\", \"Anthony Power Development Scheme\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 28,
+  "recall": 0.034482758620689655,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Anthony Power Development Scheme\", \"MISC\", \"part of\", \"Pieman River power development scheme\", \"MISC\"],\n    [\"Hydro - Electric Commission of Tasmania\", \"ORG\", \"proposed\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Tasmanian Government\", \"ORG\", \"approved\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Anthony Power Development Scheme\", \"MISC\", \"location\", \"Western Tasmania\", \"LOC\"],\n    [\"Anthony Power Development Scheme\", \"MISC\", \"country\", \"Australia\", \"LOC\"],\n    [\"Anthony Dam\", \"MISC\", \"part of\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Anthony Levee\", \"MISC\", \"part of\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Tribute Power Station\", \"MISC\", \"enabled by\", \"Anthony Dam\", \"MISC\"],\n    [\"Lake Plimsoll\", \"MISC\", \"formed by\", \"Anthony Dam\", \"MISC\"],\n    [\"Anthony River\", \"MISC\", \"location\", \"West Coast Range\", \"LOC\"],\n    [\"West Coast Range\", \"LOC\", \"drains to\", \"Southern Ocean\", \"LOC\"],\n    [\"Franklin Dam\", \"MISC\", \"location\", \"South West Tasmania\", \"LOC\"],\n    [\"Hydro - Electric Commission of Tasmania\", \"ORG\", \"established environmental management\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Tasmanian Government\", \"ORG\", \"established environmental management\", \"Anthony Power Development Scheme\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 19,
+  "FN": 23,
+  "recall": 0.17857142857142858,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Anthony Power Development Scheme\", \"MISC\", \"part of\", \"Pieman River power development scheme\", \"MISC\"],\n    [\"Hydro - Electric Commission of Tasmania\", \"ORG\", \"proposed\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Tasmanian Government\", \"ORG\", \"approved\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Anthony Power Development Scheme\", \"MISC\", \"location\", \"Western Tasmania\", \"LOC\"],\n    [\"Anthony Power Development Scheme\", \"MISC\", \"country\", \"Australia\", \"LOC\"],\n    [\"Anthony Dam\", \"MISC\", \"part of\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Anthony Levee\", \"MISC\", \"part of\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Tribute Power Station\", \"MISC\", \"enabled by\", \"Anthony Dam\", \"MISC\"],\n    [\"Lake Plimsoll\", \"MISC\", \"formed by\", \"Anthony Dam\", \"MISC\"],\n    [\"Anthony River\", \"MISC\", \"location\", \"West Coast Range\", \"LOC\"],\n    [\"West Coast Range\", \"LOC\", \"drains to\", \"Southern Ocean\", \"LOC\"],\n    [\"Franklin Dam\", \"MISC\", \"location\", \"South West Tasmania\", \"LOC\"],\n    [\"Hydro - Electric Commission of Tasmania\", \"ORG\", \"established environmental management\", \"Anthony Power Development Scheme\", \"MISC\"],\n    [\"Tasmanian Government\", \"ORG\", \"established environmental management\", \"Anthony Power Development Scheme\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 19,
+  "FN": 23,
+  "recall": 0.17857142857142858,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

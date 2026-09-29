@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_93",
+ "base_raw": "[\n    [\"William F. Gibson\", \"PER\", \"date of birth\", \"September 7, 1933\", \"TIME\"],\n    [\"William F. Gibson\", \"PER\", \"date of death\", \"May 2, 2002\", \"TIME\"],\n    [\"William F. Gibson\", \"PER\", \"place of death\", \"Greenville\", \"LOC\"],\n    [\"William F. Gibson\", \"PER\", \"educated at\", \"North Carolina A&T; State University\", \"ORG\"],\n    [\"William F. Gibson\", \"PER\", \"educated at\", \"Meharry Medical College\", \"ORG\"],\n    [\"William F. Gibson\", \"PER\", \"position held\", \"chair of the National Association for the Advancement of Colored People\", \"MISC\"],\n    [\"William F. Gibson\", \"PER\", \"member of\", \"NAACP\", \"ORG\"],\n    [\"National Association for the Advancement of Colored People\", \"ORG\", \"located in\", \"Greenville, South Carolina\", \"LOC\"],\n    [\"Myrlie Evers-Williams\", \"PER\", \"spouse\", \"Medgar Evers\", \"PER\"],\n    [\"Medgar Evers\", \"PER\", \"occupation\", \"civil rights activist\", \"MISC\"],\n    [\"William F. Gibson\", \"PER\", \"replaced by\", \"Myrlie Evers-Williams\", \"PER\"],\n    [\"Myrlie Evers-Williams\", \"PER\", \"replaces\", \"William F. Gibson\", \"PER\"],\n    [\"William F. Gibson\", \"PER\", \"residence\", \"Greenville, South Carolina\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"William F. Gibson\", \"PER\", \"date of birth\", \"September 7, 1933\", \"TIME\"],\n    [\"William F. Gibson\", \"PER\", \"date of death\", \"May 2, 2002\", \"TIME\"],\n    [\"William F. Gibson\", \"PER\", \"place of death\", \"Greenville\", \"LOC\"],\n    [\"William F. Gibson\", \"PER\", \"educated at\", \"North Carolina A&T; State University\", \"ORG\"],\n    [\"William F. Gibson\", \"PER\", \"educated at\", \"Meharry Medical College\", \"ORG\"],\n    [\"William F. Gibson\", \"PER\", \"member of\", \"NAACP\", \"ORG\"],\n    [\"NAACP\", \"ORG\", \"chairperson\", \"William F. Gibson\", \"PER\"],\n    [\"NAACP\", \"ORG\", \"chairperson\", \"Myrlie Evers-Williams\", \"PER\"],\n    [\"Myrlie Evers-Williams\", \"PER\", \"spouse\", \"Medgar Evers\", \"PER\"],\n    [\"William F. Gibson\", \"PER\", \"location\", \"Greenville, South Carolina\", \"LOC\"],\n    [\"NAACP\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 17,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"William F. Gibson\", \"PER\", \"date of birth\", \"September 7, 1933\", \"TIME\"],\n    [\"William F. Gibson\", \"PER\", \"date of death\", \"May 2, 2002\", \"TIME\"],\n    [\"William F. Gibson\", \"PER\", \"place of death\", \"Greenville\", \"LOC\"],\n    [\"William F. Gibson\", \"PER\", \"educated at\", \"North Carolina A&T; State University\", \"ORG\"],\n    [\"William F. Gibson\", \"PER\", \"educated at\", \"Meharry Medical College\", \"ORG\"],\n    [\"William F. Gibson\", \"PER\", \"member of\", \"NAACP\", \"ORG\"],\n    [\"NAACP\", \"ORG\", \"chairperson\", \"William F. Gibson\", \"PER\"],\n    [\"NAACP\", \"ORG\", \"chairperson\", \"Myrlie Evers-Williams\", \"PER\"],\n    [\"Myrlie Evers-Williams\", \"PER\", \"spouse\", \"Medgar Evers\", \"PER\"],\n    [\"William F. Gibson\", \"PER\", \"location\", \"Greenville, South Carolina\", \"LOC\"],\n    [\"NAACP\", \"ORG\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"]\n]"
+}

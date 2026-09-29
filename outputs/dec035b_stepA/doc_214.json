@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_214",
+ "base_raw": "[\n    [\"Manchester City Football Club\", \"ORG\", \"founded as\", \"philanthropic endeavour\", \"MISC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"location of formation\", \"Manchester, England\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"country\", \"England\", \"LOC\"],\n    [\"Hyde Road\", \"LOC\", \"located in\", \"Manchester, England\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"headquarters location\", \"Hyde Road\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"founded in\", \"1887\", \"TIME\"],\n    [\"The sport of football\", \"MISC\", \"rulebook written\", \"15 years before 1887\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 7,
+  "FN": 4,
+  "recall": 0.0,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Manchester City Football Club\", \"ORG\", \"founded in\", \"Manchester, England\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"country\", \"England\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"location of formation\", \"Manchester, England\", \"LOC\"],\n    [\"Hyde Road\", \"LOC\", \"located in\", \"Manchester, England\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"headquarters location\", \"Hyde Road\", \"LOC\"],\n    [\"Manchester\", \"LOC\", \"country\", \"England\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 9,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Manchester City Football Club\", \"ORG\", \"founded in\", \"Manchester, England\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"country\", \"England\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"location of formation\", \"Manchester, England\", \"LOC\"],\n    [\"Hyde Road\", \"LOC\", \"located in\", \"Manchester, England\", \"LOC\"],\n    [\"Manchester City Football Club\", \"ORG\", \"headquarters location\", \"Hyde Road\", \"LOC\"],\n    [\"Manchester\", \"LOC\", \"country\", \"England\", \"LOC\"]\n]"
+}

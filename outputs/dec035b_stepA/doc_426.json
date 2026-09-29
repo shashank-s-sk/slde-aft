@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_426",
+ "base_raw": "[\n    [\"British Army\", \"ORG\", \"location of formation\", \"Britain\", \"LOC\"],\n    [\"British Army\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Siege of Yorktown\", \"MISC\", \"location\", \"North America\", \"LOC\"],\n    [\"Treaty of Paris\", \"MISC\", \"location\", \"Paris\", \"LOC\"],\n    [\"Thirteen Colonies\", \"MISC\", \"located in the administrative territorial entity\", \"North America\", \"LOC\"],\n    [\"Seven Years' War\", \"MISC\", \"location\", \"North America\", \"LOC\"],\n    [\"British Empire\", \"ORG\", \"location\", \"North America\", \"LOC\"],\n    [\"British government\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"German mercenaries\", \"MISC\", \"country of origin\", \"Germany\", \"LOC\"],\n    [\"Royal Navy\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"French Navy\", \"ORG\", \"country\", \"France\", \"LOC\"],\n    [\"Cornwallis's army\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Whig opposition\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Parliament\", \"ORG\", \"location\", \"Britain\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.1,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"British Army\", \"ORG\", \"location of formation\", \"Britain\", \"LOC\"],\n    [\"British Army\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Siege of Yorktown\", \"MISC\", \"location\", \"North America\", \"LOC\"],\n    [\"Treaty of Paris\", \"MISC\", \"location\", \"Paris\", \"LOC\"],\n    [\"Thirteen Colonies\", \"MISC\", \"located in\", \"eastern North America\", \"LOC\"],\n    [\"British Empire\", \"ORG\", \"located in\", \"globally\", \"MISC\"],\n    [\"German mercenaries\", \"ORG\", \"country of origin\", \"Germany\", \"LOC\"],\n    [\"British government\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Royal Navy\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"French Navy\", \"ORG\", \"country\", \"France\", \"LOC\"],\n    [\"Cornwallis's army\", \"ORG\", \"leader\", \"Cornwallis\", \"PER\"],\n    [\"Whig opposition\", \"ORG\", \"location\", \"Britain\", \"LOC\"],\n    [\"Britain\", \"LOC\", \"continent\", \"Europe\", \"LOC\"],\n    [\"North America\", \"LOC\", \"continent\", \"North America\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 19,
+  "FN": 9,
+  "recall": 0.1,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"British Army\", \"ORG\", \"location of formation\", \"Britain\", \"LOC\"],\n    [\"British Army\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"Siege of Yorktown\", \"MISC\", \"location\", \"North America\", \"LOC\"],\n    [\"Treaty of Paris\", \"MISC\", \"location\", \"Paris\", \"LOC\"],\n    [\"Thirteen Colonies\", \"MISC\", \"located in the administrative territorial entity\", \"North America\", \"LOC\"],\n    [\"Seven Years' War\", \"MISC\", \"location\", \"Europe\", \"LOC\"],\n    [\"British Empire\", \"ORG\", \"location\", \"Globe\", \"MISC\"],\n    [\"British government\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"German mercenaries\", \"MISC\", \"country of origin\", \"Germany\", \"LOC\"],\n    [\"England\", \"LOC\", \"part of\", \"Britain\", \"LOC\"],\n    [\"Scotland\", \"LOC\", \"part of\", \"Britain\", \"LOC\"],\n    [\"Royal Navy\", \"ORG\", \"country\", \"Britain\", \"LOC\"],\n    [\"French Navy\", \"ORG\", \"country\", \"France\", \"LOC\"],\n    [\"Cornwallis's army\", \"ORG\", \"location\", \"Yorktown\", \"LOC\"],\n    [\"Whig opposition\", \"ORG\", \"location\", \"Britain\", \"LOC\"],\n    [\"Parliament\", \"ORG\", \"location\", \"Britain\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

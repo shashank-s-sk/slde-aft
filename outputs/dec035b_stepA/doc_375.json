@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_375",
+ "base_raw": "[\n    [\"Pierre Victor\", \"PER\", \"place of birth\", \"Solothurn\", \"LOC\"],\n    [\"Pierre Victor\", \"PER\", \"father\", \"Jean Victor de Besenval\", \"PER\"],\n    [\"Jean Victor de Besenval\", \"PER\", \"employer\", \"France\", \"LOC\"],\n    [\"Pierre Victor\", \"PER\", \"position held\", \"commander of the Swiss Guards\", \"MISC\"],\n    [\"Pierre Victor\", \"PER\", \"date of birth\", \"1722\", \"TIME\"],\n    [\"Pierre Victor\", \"PER\", \"date of death\", \"1794\", \"TIME\"],\n    [\"Jean Victor de Besenval\", \"PER\", \"mission\", \"reconcile Charles XII with the tsar Peter the Great\", \"MISC\"],\n    [\"Louis XIV\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Pierre Victor\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Marshall Broglie\", \"PER\", \"military branch\", \"unknown\", \"MISC\"],\n    [\"Pierre Victor\", \"PER\", \"author\", \"M\u00e9moires\", \"MISC\"],\n    [\"Vicomte de S\u00e9gur\", \"PER\", \"publisher\", \"M\u00e9moires\", \"MISC\"],\n    [\"Vicomte de S\u00e9gur\", \"PER\", \"relation\", \"Pierre Victor\", \"PER\"],\n    [\"Louis XVI\", \"PER\", \"spouse\", \"Marie Antoinette\", \"PER\"],\n    [\"Pierre Victor\", \"PER\", \"location of death\", \"Paris\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 15,
+  "recall": 0.25,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\", \"date of birth\", \"1722\", \"TIME\"],\n    [\"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\", \"date of death\", \"1794\", \"TIME\"],\n    [\"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\", \"place of birth\", \"Solothurn\", \"LOC\"],\n    [\"Jean Victor de Besenval\", \"PER\", \"child\", \"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\"],\n    [\"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\", \"author\", \"M\u00e9moires\", \"MISC\"],\n    [\"Vicomte de S\u00e9gur\", \"PER\", \"parent\", \"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\"],\n    [\"Louis XIV\", \"PER\", \"employer\", \"Jean Victor de Besenval\", \"PER\"],\n    [\"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\", \"position held\", \"commander of the Swiss Guards\", \"MISC\"],\n    [\"Marshall Broglie\", \"PER\", \"employer\", \"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\"],\n    [\"Duke of Orleans\", \"PER\", \"employer\", \"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\"],\n    [\"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Pierre Victor de Besenval de Br\u00fcnstatt\", \"PER\", \"member of\", \"Swiss Guards\", \"ORG\"],\n    [\"Charles XII\", \"PER\", \"relation\", \"Peter the Great\", \"PER\"],\n    [\"Jean Victor de Besenval\", \"PER\", \"mission\", \"Sweden\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 24,
+  "FN": 13,
+  "recall": 0.2777777777777778,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Pierre Victor\", \"PER\", \"date of birth\", \"1722\", \"TIME\"],\n    [\"Pierre Victor\", \"PER\", \"date of death\", \"1794\", \"TIME\"],\n    [\"Pierre Victor\", \"PER\", \"place of birth\", \"Solothurn\", \"LOC\"],\n    [\"Jean Victor de Besenval\", \"PER\", \"position held\", \"colonel of the regiment of Swiss Guards\", \"MISC\"],\n    [\"Louis XIV\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Charles XII\", \"PER\", \"country of citizenship\", \"Sweden\", \"LOC\"],\n    [\"Peter the Great\", \"PER\", \"country of citizenship\", \"Russia\", \"LOC\"],\n    [\"Marshall Broglie\", \"PER\", \"location of formation\", \"Bohemia\", \"LOC\"],\n    [\"Duke of Orleans\", \"PER\", \"location of formation\", \"France\", \"LOC\"],\n    [\"Pierre Victor\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Pierre Victor\", \"PER\", \"author\", \"M\u00e9moires\", \"MISC\"],\n    [\"Vicomte de S\u00e9gur\", \"PER\", \"parent\", \"Pierre Victor\", \"PER\"],\n    [\"Louis XVI\", \"PER\", \"spouse\", \"Marie Antoinette\", \"PER\"],\n    [\"Pierre Victor\", \"PER\", \"member of\", \"Swiss Guards\", \"ORG\"],\n    [\"Swiss Guards\", \"ORG\", \"located in\", \"France\", \"LOC\"],\n    [\"Pierre Victor\", \"PER\", \"position held\", \"commander of the Swiss Guards\", \"MISC\"],\n    [\"French Revolution\", \"MISC\", \"location\", \"Paris\", \"LOC\"],\n    [\"French Revolution\", \"MISC\", \"start time\", \"1789\", \"TIME\"],\n    [\"Bastille\", \"LOC\", \"located in\", \"Paris\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 20,
+  "FN": 13,
+  "recall": 0.35,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ }
+}

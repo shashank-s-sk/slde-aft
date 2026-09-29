@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_142",
+ "base_raw": "[\n    [\"James Monroe\", \"PER\", \"associate\", \"William Pinkney\", \"PER\"],\n    [\"Lord Holland\", \"PER\", \"associate\", \"Lord Auckland\", \"PER\"],\n    [\"Thomas Jefferson\", \"PER\", \"rejected\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\", \"renewal of\", \"Jay Treaty of 1795\", \"MISC\"],\n    [\"United States\", \"LOC\", \"signatory\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"Britain\", \"LOC\", \"signatory\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"Lord Grenville\", \"PER\", \"head of government\", \"Ministry of All the Talents\", \"ORG\"],\n    [\"Ministry of All the Talents\", \"ORG\", \"government of\", \"Britain\", \"LOC\"],\n    [\"Napoleon\", \"PER\", \"enemy of\", \"Britain\", \"LOC\"],\n    [\"Royal Navy\", \"ORG\", \"military branch\", \"Britain\", \"LOC\"],\n    [\"James Monroe\", \"PER\", \"negotiator\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"William Pinkney\", \"PER\", \"negotiator\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"Lord Holland\", \"PER\", \"negotiator\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"Lord Auckland\", \"PER\", \"negotiator\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\", \"signed on\", \"31 December 1806\", \"TIME\"],\n    [\"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\", \"negotiations begun on\", \"27 August 1806\", \"TIME\"],\n    [\"Thomas Jefferson\", \"PER\", \"received\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"War of 1812\", \"MISC\", \"caused by\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 18,
+  "FN": 17,
+  "recall": 0.0,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Military Conflicts",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"James Monroe\", \"PER\", \"associate\", \"William Pinkney\", \"PER\"],\n    [\"Lord Holland\", \"PER\", \"associate\", \"Lord Auckland\", \"PER\"],\n    [\"Thomas Jefferson\", \"PER\", \"rejected\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"United States\", \"LOC\", \"signed treaty with\", \"Britain\", \"LOC\"],\n    [\"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\", \"renewal of\", \"Jay Treaty of 1795\", \"MISC\"],\n    [\"Napoleonic Wars\", \"MISC\", \"involved\", \"United States\", \"LOC\"],\n    [\"Napoleonic Wars\", \"MISC\", \"involved\", \"Britain\", \"LOC\"],\n    [\"Royal Navy\", \"ORG\", \"short of manpower\", \"None\", \"MISC\"],\n    [\"Lord Grenville\", \"PER\", \"head of government\", \"Britain\", \"LOC\"],\n    [\"Ministry of All the Talents\", \"ORG\", \"headed by\", \"Lord Grenville\", \"PER\"],\n    [\"James Monroe\", \"PER\", \"negotiated with\", \"Lord Holland\", \"PER\"],\n    [\"William Pinkney\", \"PER\", \"negotiated with\", \"Lord Auckland\", \"PER\"],\n    [\"Thomas Jefferson\", \"PER\", \"received treaty\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"War of 1812\", \"MISC\", \"caused by\", \"failure to resolve differences\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 28,
+  "FN": 17,
+  "recall": 0.0,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"James Monroe\", \"PER\", \"associate\", \"William Pinkney\", \"PER\"],\n    [\"Lord Holland\", \"PER\", \"associate\", \"Lord Auckland\", \"PER\"],\n    [\"Thomas Jefferson\", \"PER\", \"rejected\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"United States\", \"LOC\", \"signed treaty with\", \"Britain\", \"LOC\"],\n    [\"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\", \"renewal of\", \"Jay Treaty of 1795\", \"MISC\"],\n    [\"Lord Grenville\", \"PER\", \"head of government\", \"Ministry of All the Talents\", \"ORG\"],\n    [\"Napoleon\", \"PER\", \"conflict\", \"War of 1812\", \"MISC\"],\n    [\"James Monroe\", \"PER\", \"negotiated with\", \"Lord Holland\", \"PER\"],\n    [\"William Pinkney\", \"PER\", \"negotiated with\", \"Lord Auckland\", \"PER\"],\n    [\"Thomas Jefferson\", \"PER\", \"received\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"],\n    [\"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\", \"signed on\", \"31 December, 1806\", \"TIME\"],\n    [\"Negotiations\", \"MISC\", \"began on\", \"27 August 1806\", \"TIME\"],\n    [\"Thomas Jefferson\", \"PER\", \"refused to submit to Senate\", \"Monroe \u2013 Pinkney Treaty of 1806\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 25,
+  "FN": 17,
+  "recall": 0.0,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

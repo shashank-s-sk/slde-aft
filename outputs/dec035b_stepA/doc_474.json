@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_474",
+ "base_raw": "[\n    [\"Grand Bank\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Grand Bank\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Burin Peninsula\", \"LOC\", \"part of\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"St. John's\", \"LOC\", \"capital of\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Admiral's Cove\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Grand Bank\", \"LOC\", \"founded by\", \"French settlers\", \"MISC\"],\n    [\"Grand Bank Seafoods Inc.\", \"ORG\", \"located in\", \"Grand Bank\", \"LOC\"],\n    [\"Fortune Bay\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Grand Bank\", \"LOC\", \"industry\", \"fishing\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 4,
+  "FN": 16,
+  "recall": 0.23809523809523808,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Grand Bank\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Grand Bank\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Burin Peninsula\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"St. John's\", \"LOC\", \"capital of\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Admiral's Cove\", \"LOC\", \"located in\", \"Grand Bank\", \"LOC\"],\n    [\"Grand Bank Seafoods Inc.\", \"ORG\", \"located in\", \"Grand Bank\", \"LOC\"],\n    [\"Fortune Bay\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Grand Bank\", \"LOC\", \"founded by\", \"French settlers\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 15,
+  "recall": 0.21052631578947367,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Grand Bank\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Grand Bank\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Burin Peninsula\", \"LOC\", \"part of\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"St. John's\", \"LOC\", \"capital of\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Admiral's Cove\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Grand Bank\", \"LOC\", \"founded by\", \"French fisherman\", \"MISC\"],\n    [\"Grand Bank Seafoods Inc.\", \"ORG\", \"located in\", \"Grand Bank\", \"LOC\"],\n    [\"Fortune Bay\", \"LOC\", \"located in\", \"Newfoundland and Labrador\", \"LOC\"],\n    [\"Grand Bank\", \"LOC\", \"industry\", \"fishing\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 16,
+  "recall": 0.2,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ }
+}

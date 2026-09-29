@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_433",
+ "base_raw": "[\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"place of birth\", \"Philadelphia, Pennsylvania\", \"LOC\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"educated at\", \"Franz Liszt Academy of Music\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"employer\", \"Florida State University\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"date of death\", \"January 6, 2000\", \"TIME\"],\n    [\"Ern\u0151 Dohn\u00e1nyi\", \"PER\", \"employer\", \"Florida State University\", \"ORG\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"country of origin\", \"Hungary\", \"LOC\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"date of birth\", \"1884\", \"TIME\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"date of death\", \"1968\", \"TIME\"],\n    [\"George Gershwin\", \"PER\", \"teacher\", \"Edward Kilenyi, Sr.\", \"PER\"],\n    [\"Sam Fox Publishing Company\", \"ORG\", \"employer\", \"Edward Kilenyi, Sr.\", \"PER\"],\n    [\"International Piano Archives at the University of Maryland\", \"ORG\", \"location\", \"University of Maryland\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"inception\", \"1910\", \"TIME\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"dissolved, abolished or demolished\", \"2000\", \"TIME\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"position held\", \"Professor of Music\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 12,
+  "recall": 0.29411764705882354,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations",
+  "Persons",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"place of birth\", \"Philadelphia, Pennsylvania\", \"LOC\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"educated at\", \"Franz Liszt Academy of Music\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"employer\", \"Florida State University\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"date of birth\", \"May 7, 1910\", \"TIME\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"date of death\", \"January 6, 2000\", \"TIME\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"country of origin\", \"Hungary\", \"LOC\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"date of birth\", \"1884\", \"TIME\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"date of death\", \"1968\", \"TIME\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"employer\", \"Sam Fox Publishing Company\", \"ORG\"],\n    [\"George Gershwin\", \"PER\", \"teacher\", \"Edward Kilenyi, Sr.\", \"PER\"],\n    [\"Ern\u0151 Dohn\u00e1nyi\", \"PER\", \"employer\", \"Florida State University\", \"ORG\"],\n    [\"International Piano Archives at the University of Maryland (IPAM)\", \"ORG\", \"location\", \"University of Maryland\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"student of\", \"Ern\u0151 Dohn\u00e1nyi\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"place of birth\", \"Philadelphia, Pennsylvania\", \"LOC\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"educated at\", \"Franz Liszt Academy of Music\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"employer\", \"Florida State University\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"date of death\", \"January 6, 2000\", \"TIME\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"place of birth\", \"Hungary\", \"LOC\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"date of birth\", \"1884\", \"TIME\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"date of death\", \"1968\", \"TIME\"],\n    [\"Edward Kilenyi, Sr.\", \"PER\", \"employer\", \"Sam Fox Publishing Company\", \"ORG\"],\n    [\"George Gershwin\", \"PER\", \"teacher\", \"Edward Kilenyi, Sr.\", \"PER\"],\n    [\"Ern\u0151 Dohn\u00e1nyi\", \"PER\", \"employer\", \"Florida State University\", \"ORG\"],\n    [\"International Piano Archives\", \"ORG\", \"located in\", \"University of Maryland\", \"ORG\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"student of\", \"Ern\u0151 Dohn\u00e1nyi\", \"PER\"],\n    [\"Edward Kilenyi, Jr.\", \"PER\", \"position held\", \"Professor of Music\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 15,
+  "FN": 11,
+  "recall": 0.26666666666666666,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

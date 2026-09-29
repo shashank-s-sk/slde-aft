@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_54",
+ "base_raw": "[\n    [\"Iglesia de Santo Tom\u00e9\", \"LOC\", \"located in\", \"Toledo\", \"LOC\"],\n    [\"Toledo\", \"LOC\", \"country\", \"Spain\", \"LOC\"],\n    [\"King Alfonso VI of Le\u00f3n\", \"PER\", \"reconquest of\", \"Toledo\", \"LOC\"],\n    [\"Gonzalo Ruiz de Toledo\", \"PER\", \"rebuilt\", \"Iglesia de Santo Tom\u00e9\", \"LOC\"],\n    [\"Gonzalo Ruiz de Toledo\", \"PER\", \"Lord of\", \"Orgaz\", \"LOC\"],\n    [\"El Greco\", \"PER\", \"author\", \"The Burial of the Count of Orgaz\", \"MISC\"],\n    [\"The Burial of the Count of Orgaz\", \"MISC\", \"located in\", \"Iglesia de Santo Tom\u00e9\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 5,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Iglesia de Santo Tom\u00e9\", \"LOC\", \"located in\", \"Toledo\", \"LOC\"],\n    [\"Toledo\", \"LOC\", \"country\", \"Spain\", \"LOC\"],\n    [\"King Alfonso VI of Le\u00f3n\", \"PER\", \"reconquest of\", \"Toledo\", \"LOC\"],\n    [\"Gonzalo Ruiz de Toledo\", \"PER\", \"rebuilt\", \"Iglesia de Santo Tom\u00e9\", \"LOC\"],\n    [\"Gonzalo Ruiz de Toledo\", \"PER\", \"Lord of\", \"Orgaz\", \"LOC\"],\n    [\"El Greco\", \"PER\", \"author\", \"The Burial of the Count of Orgaz\", \"MISC\"],\n    [\"The Burial of the Count of Orgaz\", \"MISC\", \"located in\", \"Iglesia de Santo Tom\u00e9\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 5,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Iglesia de Santo Tom\u00e9\", \"LOC\", \"located in\", \"Toledo\", \"LOC\"],\n    [\"Toledo\", \"LOC\", \"country\", \"Spain\", \"LOC\"],\n    [\"King Alfonso VI of Le\u00f3n\", \"PER\", \"reconquest of\", \"Toledo\", \"LOC\"],\n    [\"Gonzalo Ruiz de Toledo\", \"PER\", \"rebuilt\", \"Iglesia de Santo Tom\u00e9\", \"LOC\"],\n    [\"Gonzalo Ruiz de Toledo\", \"PER\", \"Lord of\", \"Orgaz\", \"LOC\"],\n    [\"El Greco\", \"PER\", \"author\", \"The Burial of the Count of Orgaz\", \"MISC\"],\n    [\"The Burial of the Count of Orgaz\", \"MISC\", \"located in\", \"Iglesia de Santo Tom\u00e9\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 5,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ }
+}

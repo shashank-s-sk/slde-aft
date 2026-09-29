@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_438",
+ "base_raw": "[\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"place of birth\", \"Suesca\", \"LOC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"date of death\", \"16 February 1579\", \"TIME\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Colombia\", \"LOC\", \"located in\", \"South America\", \"LOC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"New Granada\", \"LOC\", \"located in\", \"South America\", \"LOC\"],\n    [\"El Dorado\", \"MISC\", \"located in\", \"South America\", \"LOC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"author\", \"unknown\", \"MISC\"],\n    [\"Cervantes\", \"PER\", \"author\", \"Don Quixote\", \"MISC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"inspiration for\", \"Don Quixote\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"place of birth\", \"Suesca\", \"LOC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"date of birth\", \"1496\", \"TIME\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"date of death\", \"16 February 1579\", \"TIME\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Colombia\", \"LOC\", \"located in\", \"South America\", \"LOC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"New Granada\", \"LOC\", \"located in\", \"South America\", \"LOC\"],\n    [\"El Dorado\", \"MISC\", \"located in\", \"South America\", \"LOC\"],\n    [\"Cervantes\", \"PER\", \"author\", \"Don Quixote\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"place of birth\", \"Suesca\", \"LOC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"date of birth\", \"1496\", \"TIME\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"date of death\", \"16 February 1579\", \"TIME\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Colombia\", \"LOC\", \"located in\", \"South America\", \"LOC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"New Granada\", \"LOC\", \"located in\", \"South America\", \"LOC\"],\n    [\"El Dorado\", \"MISC\", \"located in\", \"South America\", \"LOC\"],\n    [\"Gonzalo Jim\u00e9nez de Quesada y Rivera\", \"PER\", \"author\", \"unknown\", \"MISC\"],\n    [\"Cervantes\", \"PER\", \"author\", \"Don Quixote\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 8,
+  "recall": 0.3333333333333333,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

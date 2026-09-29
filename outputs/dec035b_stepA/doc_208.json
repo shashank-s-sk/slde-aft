@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_208",
+ "base_raw": "[\n    [\"Cheap Trick\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Harold Faltermeyer\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Mark Spiro\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Top Gun\", \"MISC\", \"location of formation\", \"Miramar\", \"LOC\"],\n    [\"Mighty Wings\", \"MISC\", \"original language of work\", \"English\", \"MISC\"],\n    [\"Kenny Loggins\", \"PER\", \"member of\", \"music industry\", \"MISC\"],\n    [\"Berlin\", \"ORG\", \"member of\", \"music industry\", \"MISC\"],\n    [\"Miramar\", \"LOC\", \"located in the administrative territorial entity\", \"U.S.\", \"LOC\"],\n    [\"Cheap Trick\", \"ORG\", \"country of origin\", \"U.S.\", \"LOC\"],\n    [\"Harold Faltermeyer\", \"PER\", \"nationality\", \"American\", \"MISC\"],\n    [\"Mark Spiro\", \"PER\", \"nationality\", \"American\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Music Genre: Rock"
+ ],
+ "kb_orig_raw": "[\n    [\"Cheap Trick\", \"ORG\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Mighty Wings\", \"MISC\", \"author\", \"Harold Faltermeyer\", \"PER\"],\n    [\"Mighty Wings\", \"MISC\", \"author\", \"Mark Spiro\", \"PER\"],\n    [\"Mighty Wings\", \"MISC\", \"producer\", \"Harold Faltermeyer\", \"PER\"],\n    [\"Top Gun\", \"MISC\", \"soundtrack\", \"Mighty Wings\", \"MISC\"],\n    [\"Danger Zone\", \"MISC\", \"artist\", \"Kenny Loggins\", \"PER\"],\n    [\"Take My Breath Away\", \"MISC\", \"artist\", \"Berlin\", \"ORG\"],\n    [\"Mighty Wings\", \"MISC\", \"release year\", \"1986\", \"TIME\"],\n    [\"Top Gun\", \"MISC\", \"location\", \"Miramar\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Cheap Trick\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Harold Faltermeyer\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Mark Spiro\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Top Gun\", \"MISC\", \"type\", \"film\", \"MISC\"],\n    [\"Mighty Wings\", \"MISC\", \"album\", \"Top Gun soundtrack\", \"MISC\"],\n    [\"Kenny Loggins\", \"PER\", \"song\", \"Danger Zone\", \"MISC\"],\n    [\"Berlin\", \"ORG\", \"song\", \"Take My Breath Away\", \"MISC\"],\n    [\"Miramar\", \"LOC\", \"location of\", \"Top Gun\", \"MISC\"],\n    [\"Cheap Trick\", \"ORG\", \"released\", \"1986\", \"TIME\"],\n    [\"Harold Faltermeyer\", \"PER\", \"relation\", \"Mark Spiro\", \"PER\"],\n    [\"Top Gun soundtrack\", \"MISC\", \"contains song\", \"Mighty Wings\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 19,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_211",
+ "base_raw": "[\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"place of birth\", \"Bergamo\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"date of birth\", \"May 23, 1828\", \"TIME\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"date of death\", \"October 30, 1877\", \"TIME\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"located in or next to body of water\", \"Thames\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"member of\", \"Lutheran\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"position held\", \"Photographo da Casa Imperial\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"D. Pedro II\", \"PER\", \"title\", \"emperor\", \"MISC\"],\n    [\"D. Pedro II\", \"PER\", \"visited\", \"Recife\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"author\", \"photographies\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"participant of\", \"expositions of photographies\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"documented\", \"construction of the second Brazilian railway\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"portraited\", \"everyday life of the Black slave\", \"MISC\"],\n    [\"Bergamo\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Recife\", \"LOC\", \"located in the administrative territorial entity\", \"Pernambuco\", \"LOC\"],\n    [\"Rio de Janeiro\", \"LOC\", \"located in the administrative territorial entity\", \"Brazil\", \"LOC\"],\n    [\"Thames\", \"MISC\", \"operator\", \"Royal Mail\", \"ORG\"],\n    [\"Royal Mail\", \"ORG\", \"owned by\", \"Unknown\", \"MISC\"],\n    [\"Pernambuco\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Brazil\", \"LOC\", \"capital\", \"Rio de Janeiro\", \"LOC\"],\n    [\"D. Pedro II\", \"PER\", \"head of state\", \"Brazil\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Brazilian Locations",
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"place of birth\", \"Bergamo\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"date of birth\", \"May 23, 1828\", \"TIME\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"place of death\", \"Alsace\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"date of death\", \"October 30, 1877\", \"TIME\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"located in\", \"Brazil\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"D. Pedro II\", \"PER\", \"title\", \"emperor\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"position held\", \"Photographo da Casa Imperial\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"employer\", \"Imperial House\", \"ORG\"],\n    [\"Thames\", \"MISC\", \"operator\", \"Royal Mail\", \"ORG\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"member of\", \"Royal Mail\", \"ORG\"],\n    [\"Recife\", \"LOC\", \"located in\", \"Pernambuco\", \"LOC\"],\n    [\"Pernambuco\", \"LOC\", \"located in\", \"Brazil\", \"LOC\"],\n    [\"Rio de Janeiro\", \"LOC\", \"located in\", \"Brazil\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"residence\", \"Recife\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"residence\", \"Rio de Janeiro\", \"LOC\"],\n    [\"Dom Pedro II\", \"PER\", \"visited\", \"Recife\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"documented\", \"construction of the second Brazilian railway\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"participated in\", \"expositions of photographies\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"portrayed\", \"everyday life of the Black slave\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 23,
+  "FN": 7,
+  "recall": 0.5882352941176471,
+  "n_extracted": 35,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Brazilian Locations",
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"place of birth\", \"Bergamo\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"date of birth\", \"May 23, 1828\", \"TIME\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"date of death\", \"October 30, 1877\", \"TIME\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"located in\", \"Alsace\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"father\", \"a Lutheran priest\", \"PER\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"position held\", \"Photographo da Casa Imperial\", \"MISC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"employer\", \"Imperial House\", \"ORG\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"member of\", \"Royal Mail\", \"ORG\"],\n    [\"D. Pedro II\", \"PER\", \"title\", \"emperor\", \"MISC\"],\n    [\"D. Pedro II\", \"PER\", \"country of citizenship\", \"Brazil\", \"LOC\"],\n    [\"Recife\", \"LOC\", \"located in\", \"Pernambuco\", \"LOC\"],\n    [\"Rio de Janeiro\", \"LOC\", \"located in\", \"Brazil\", \"LOC\"],\n    [\"Thames\", \"MISC\", \"operator\", \"Royal Mail\", \"ORG\"],\n    [\"Pernambuco\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Brazil\", \"LOC\", \"continent\", \"South America\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"residence\", \"Recife\", \"LOC\"],\n    [\"The\u00f3phile Auguste Stahl\", \"PER\", \"residence\", \"Rio de Janeiro\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 27,
+  "FN": 6,
+  "recall": 0.5,
+  "n_extracted": 33,
+  "judge_parse_ok": true
+ }
+}

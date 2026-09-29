@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_348",
+ "base_raw": "[\n    [\"University of Illinois at Chicago\", \"ORG\", \"located in\", \"Chicago\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"located in\", \"Illinois\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"continent\", \"North America\", \"LOC\"],\n    [\"UIC Flames\", \"ORG\", \"member of sports team\", \"NCAA Division I Horizon League\", \"ORG\"],\n    [\"UIC Pavilion\", \"LOC\", \"located in\", \"Chicago\", \"LOC\"],\n    [\"UIC Pavilion\", \"LOC\", \"part of\", \"University of Illinois at Chicago\", \"ORG\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"league\", \"NCAA Division I Horizon League\", \"ORG\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"instance of\", \"public research university\", \"MISC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"number of students\", \"30,000\", \"NUM\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"number of colleges\", \"15\", \"NUM\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"research expenditures\", \"$412 million\", \"NUM\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"ranking\", \"129th\", \"NUM\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"ranking\", \"18th\", \"NUM\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 20,
+  "recall": 0.16666666666666666,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Numbers",
+  "Organizations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"University of Illinois at Chicago\", \"ORG\", \"located in\", \"Chicago\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"located in\", \"Illinois\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"number of students\", \"30,000\", \"NUM\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"number of colleges\", \"15\", \"NUM\"],\n    [\"UIC\", \"ORG\", \"research expenditures\", \"$412 million\", \"NUM\"],\n    [\"UIC\", \"ORG\", \"ranking\", \"129th\", \"NUM\"],\n    [\"UIC\", \"ORG\", \"ranking\", \"18th\", \"NUM\"],\n    [\"UIC Flames\", \"ORG\", \"league\", \"NCAA Division I Horizon League\", \"ORG\"],\n    [\"UIC Pavilion\", \"LOC\", \"used for\", \"concerts\", \"MISC\"],\n    [\"UIC Pavilion\", \"LOC\", \"used for\", \"UIC basketball games\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 18,
+  "FN": 15,
+  "recall": 0.34782608695652173,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"University of Illinois at Chicago\", \"ORG\", \"located in\", \"Chicago\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"located in\", \"Illinois\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"University of Illinois at Chicago\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"UIC\", \"ORG\", \"instance of\", \"public research university\", \"MISC\"],\n    [\"UIC\", \"ORG\", \"part of\", \"University of Illinois system\", \"ORG\"],\n    [\"University of Illinois system\", \"ORG\", \"has part\", \"UIC\", \"ORG\"],\n    [\"UIC\", \"ORG\", \"located in\", \"Near West Side\", \"LOC\"],\n    [\"UIC\", \"ORG\", \"adjacent to\", \"Chicago Loop\", \"LOC\"],\n    [\"UIC\", \"ORG\", \"number of students\", \"30,000\", \"NUM\"],\n    [\"UIC\", \"ORG\", \"number of colleges\", \"15\", \"NUM\"],\n    [\"UIC\", \"ORG\", \"operator\", \"largest medical school\", \"MISC\"],\n    [\"UIC\", \"ORG\", \"research expenditures\", \"$412 million\", \"NUM\"],\n    [\"UIC\", \"ORG\", \"ranked as\", \"129th best\", \"MISC\"],\n    [\"UIC\", \"ORG\", \"ranked as\", \"18th best\", \"MISC\"],\n    [\"UIC Flames\", \"ORG\", \"member of sports team\", \"NCAA Division I Horizon League\", \"ORG\"],\n    [\"UIC Pavilion\", \"LOC\", \"home to\", \"UIC basketball games\", \"MISC\"],\n    [\"UIC Pavilion\", \"LOC\", \"venue for\", \"concerts\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 16,
+  "FP": 24,
+  "FN": 7,
+  "recall": 0.6956521739130435,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

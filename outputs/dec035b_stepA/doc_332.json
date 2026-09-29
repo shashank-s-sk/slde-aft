@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_332",
+ "base_raw": "[\n    [\"Vembannur\", \"LOC\", \"located in\", \"Thiruvananthapuram District\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"part of\", \"Nedumangad taluk\", \"LOC\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"located in\", \"Vembannur\", \"LOC\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"built by\", \"Travancore princely state\", \"ORG\"],\n    [\"Travancore princely state\", \"ORG\", \"country\", \"India\", \"LOC\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"supplies water to\", \"Thiruvananthapuram\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"connected by\", \"single track bridge\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 7,
+  "FN": 13,
+  "recall": 0.0,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Vembannur\", \"LOC\", \"located in\", \"Nedumangad taluk\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"part of\", \"Thiruvananthapuram District\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"located in\", \"Kerala\", \"LOC\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"located in\", \"Vembannur\", \"LOC\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"built by\", \"Travancore princely state\", \"ORG\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"supplies water to\", \"Thiruvananthapuram\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"connected by\", \"single track bridge\", \"MISC\"],\n    [\"Aruvikkara panchayat\", \"ORG\", \"part of\", \"Nedumangad Taluk\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"governed by\", \"Aruvikkara panchayat\", \"ORG\"],\n    [\"Travancore princely state\", \"ORG\", \"located in\", \"India\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 8,
+  "FN": 12,
+  "recall": 0.29411764705882354,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Vembannur\", \"LOC\", \"located in\", \"Nedumangad taluk\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"part of\", \"Thiruvananthapuram District\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"located in\", \"Kerala\", \"LOC\"],\n    [\"Vembannur\", \"LOC\", \"country\", \"India\", \"LOC\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"located in\", \"Vembannur\", \"LOC\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"built by\", \"Travancore princely state\", \"ORG\"],\n    [\"Aruvikkara Dam\", \"MISC\", \"supplies water to\", \"Thiruvananthapuram\", \"LOC\"],\n    [\"Travancore princely state\", \"ORG\", \"located in\", \"India\", \"LOC\"],\n    [\"Thiruvananthapuram\", \"LOC\", \"located in\", \"Kerala\", \"LOC\"],\n    [\"Aruvikkara\", \"LOC\", \"part of\", \"Nedumangad Taluk\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 12,
+  "recall": 0.29411764705882354,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_244",
+ "base_raw": "[\n    [\"Cliff Edom\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Roy Stryker\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Russell Lee\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Missouri Photo Workshop\", \"ORG\", \"located in\", \"Columbia, Missouri\", \"LOC\"],\n    [\"Missouri School of Journalism\", \"ORG\", \"located in\", \"Columbia, Missouri\", \"LOC\"],\n    [\"Lee Hills Hall\", \"LOC\", \"part of\", \"Missouri School of Journalism\", \"ORG\"],\n    [\"Farm Security Administration\", \"ORG\", \"country of origin\", \"United States\", \"LOC\"],\n    [\"Sandra Eisert\", \"PER\", \"member of\", \"Missouri Photo Workshop faculty\", \"ORG\"],\n    [\"Missouri Photo Workshop\", \"ORG\", \"genre\", \"photojournalism\", \"MISC\"],\n    [\"Cliff Edom\", \"PER\", \"occupation\", \"photographer\", \"MISC\"],\n    [\"Roy Stryker\", \"PER\", \"occupation\", \"photographer\", \"MISC\"],\n    [\"Russell Lee\", \"PER\", \"occupation\", \"photographer\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 12,
+  "FN": 4,
+  "recall": 0.0,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Cliff Edom\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Roy Stryker\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Russell Lee\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Missouri Photo Workshop\", \"ORG\", \"located in\", \"Columbia, Missouri\", \"LOC\"],\n    [\"Missouri School of Journalism\", \"ORG\", \"located in\", \"Columbia, Missouri\", \"LOC\"],\n    [\"Lee Hills Hall\", \"LOC\", \"part of\", \"Missouri School of Journalism\", \"ORG\"],\n    [\"Farm Security Administration\", \"ORG\", \"country of origin\", \"United States\", \"LOC\"],\n    [\"Sandra Eisert\", \"PER\", \"member of\", \"Missouri Photo Workshop faculty\", \"ORG\"],\n    [\"Missouri Photo Workshop\", \"ORG\", \"founded by\", \"Cliff Edom\", \"PER\"],\n    [\"Missouri Photo Workshop\", \"ORG\", \"founded by\", \"Roy Stryker\", \"PER\"],\n    [\"Missouri Photo Workshop\", \"ORG\", \"founded by\", \"Russell Lee\", \"PER\"],\n    [\"Cliff Edom\", \"PER\", \"occupation\", \"photographer\", \"MISC\"],\n    [\"Roy Stryker\", \"PER\", \"occupation\", \"photographer\", \"MISC\"],\n    [\"Russell Lee\", \"PER\", \"occupation\", \"photographer\", \"MISC\"],\n    [\"Sandra Eisert\", \"PER\", \"award\", \"NPPA Picture Editor of the Year\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 16,
+  "FN": 4,
+  "recall": 0.0,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Cliff Edom\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Roy Stryker\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Russell Lee\", \"PER\", \"founded\", \"Missouri Photo Workshop\", \"ORG\"],\n    [\"Missouri Photo Workshop\", \"ORG\", \"located in\", \"Columbia, Missouri\", \"LOC\"],\n    [\"Missouri School of Journalism\", \"ORG\", \"located in\", \"Columbia, Missouri\", \"LOC\"],\n    [\"Lee Hills Hall\", \"LOC\", \"part of\", \"Missouri School of Journalism\", \"ORG\"],\n    [\"Farm Security Administration\", \"ORG\", \"country of origin\", \"United States\", \"LOC\"],\n    [\"Sandra Eisert\", \"PER\", \"position held\", \"photo editor\", \"MISC\"],\n    [\"Sandra Eisert\", \"PER\", \"award received\", \"NPPA Picture Editor of the Year\", \"MISC\"],\n    [\"Missouri Photo Workshop\", \"ORG\", \"genre\", \"photojournalism\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 4,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

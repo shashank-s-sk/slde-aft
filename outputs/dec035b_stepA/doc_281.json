@@ -1,0 +1,44 @@
+{
+ "doc_id": "doc_281",
+ "base_raw": "[\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"date of birth\", \"1 February 1929\", \"TIME\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"date of death\", \"1 February 2017\", \"TIME\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"National Reorganisation Process\", \"MISC\", \"start time\", \"1976\", \"TIME\"],\n    [\"National Reorganisation Process\", \"MISC\", \"end time\", \"1983\", \"TIME\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Third Military Junta\", \"ORG\", \"location\", \"Argentina\", \"LOC\"],\n    [\"Leopoldo Fortunato Galtieri\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Jorge Isaac Anaya\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Reynaldo Bignone\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"Omar Graffigna\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"position held\", \"commander-in-chief\", \"MISC\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Carlos Menem\", \"PER\", \"position held\", \"president\", \"MISC\"],\n    [\"Jos\u00e9 Mar\u00eda Aznar\", \"PER\", \"position held\", \"prime minister\", \"MISC\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Falklands War\", \"MISC\", \"start time\", \"1982\", \"TIME\"],\n    [\"Spanish Supreme Court\", \"ORG\", \"location\", \"Spain\", \"LOC\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"country of origin\", \"Argentina\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 14,
+  "FN": 7,
+  "recall": 0.4166666666666667,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Military Conflicts",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"date of birth\", \"1 February 1929\", \"TIME\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"date of death\", \"1 February 2017\", \"TIME\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"National Reorganisation Process\", \"MISC\", \"start time\", \"1976\", \"TIME\"],\n    [\"National Reorganisation Process\", \"MISC\", \"end time\", \"1983\", \"TIME\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Third Military Junta\", \"ORG\", \"location\", \"Argentina\", \"LOC\"],\n    [\"Leopoldo Fortunato Galtieri\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Jorge Isaac Anaya\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Reynaldo Bignone\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"Omar Graffigna\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"position held\", \"commander-in-chief\", \"MISC\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Carlos Menem\", \"PER\", \"position held\", \"president\", \"MISC\"],\n    [\"Jos\u00e9 Mar\u00eda Aznar\", \"PER\", \"position held\", \"prime minister\", \"MISC\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Falklands War\", \"MISC\", \"location\", \"Falklands\", \"LOC\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"participant of\", \"Falklands War\", \"MISC\"],\n    [\"Spanish justice system\", \"ORG\", \"location\", \"Spain\", \"LOC\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"country of origin\", \"Argentina\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 18,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"date of birth\", \"1 February 1929\", \"TIME\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"date of death\", \"1 February 2017\", \"TIME\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"National Reorganisation Process\", \"MISC\", \"start time\", \"1976\", \"TIME\"],\n    [\"National Reorganisation Process\", \"MISC\", \"end time\", \"1983\", \"TIME\"],\n    [\"Leopoldo Fortunato Galtieri\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Jorge Isaac Anaya\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"member of\", \"Third Military Junta\", \"ORG\"],\n    [\"Third Military Junta\", \"ORG\", \"location\", \"Argentina\", \"LOC\"],\n    [\"Reynaldo Bignone\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"Omar Graffigna\", \"PER\", \"member of\", \"Argentine Air Force\", \"ORG\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"position held\", \"commander-in-chief\", \"MISC\"],\n    [\"Carlos Menem\", \"PER\", \"position held\", \"president\", \"MISC\"],\n    [\"Jos\u00e9 Mar\u00eda Aznar\", \"PER\", \"position held\", \"prime minister\", \"MISC\"],\n    [\"Basilio Arturo Ignacio Lami Dozo\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Falklands War\", \"MISC\", \"location\", \"Falklands\", \"LOC\"],\n    [\"Spanish justice system\", \"ORG\", \"location\", \"Spain\", \"LOC\"],\n    [\"Argentine Air Force\", \"ORG\", \"location\", \"Argentina\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 6,
+  "recall": 0.45454545454545453,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

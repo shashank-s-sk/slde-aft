@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_184",
+ "base_raw": "[\n    [\"Gautham K Sharma\", \"PER\", \"educated at\", \"Campion School\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"educated at\", \"Jai Hind College\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"trained at\", \"Stardust Academy\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Nari Hira\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Namit Kishore Kapoor\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Shakur\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Ustad Akhtar Ali Khan\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"author\", \"None\", \"MISC\"],\n    [\"Gautham K Sharma\", \"PER\", \"member of\", \"None\", \"MISC\"],\n    [\"Stardust Academy\", \"ORG\", \"founded by\", \"Magna Publications\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"employer\", \"None\", \"MISC\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"director\", \"Ankush Bhatt\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"cast member\", \"Bhindi Baazaar Inc.\", \"MISC\"],\n    [\"Gautham K Sharma\", \"PER\", \"colleague\", \"Kay Kay Menon\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"colleague\", \"Piyush Mishra\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"colleague\", \"Pavan Malhotra\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"colleague\", \"Prashant Narayanan\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"colleague\", \"Deepti Naval\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Colgate\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Reynolds\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Asian Paints\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Bristol Cigarettes\", \"ORG\"],\n    [\"Ankush Bhatt\", \"PER\", \"creator\", \"Bhindi Baazaar Inc.\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 22,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Gautham K Sharma\", \"PER\", \"educated at\", \"Campion School\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"educated at\", \"Jai Hind College\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"trained at\", \"Stardust Academy\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Nari Hira\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Namit Kishore Kapoor\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Shakur\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Ustad Akhtar Ali Khan\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"award received\", \"All India Talent Hunt\", \"MISC\"],\n    [\"Gautham K Sharma\", \"PER\", \"employer\", \"Stardust\", \"ORG\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"director\", \"Ankush Bhatt\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"cast member\", \"Bhindi Baazaar Inc.\", \"MISC\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Kay Kay Menon\", \"PER\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Piyush Mishra\", \"PER\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Pavan Malhotra\", \"PER\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Prashant Narayanan\", \"PER\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Deepti Naval\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Colgate\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Reynolds\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Asian Paints\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Bristol Cigarettes\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 26,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 30,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 26,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 30,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Gautham K Sharma\", \"PER\", \"educated at\", \"Campion School\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"educated at\", \"Jai Hind College\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"trained at\", \"Stardust Academy\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Nari Hira\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Namit Kishore Kapoor\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Shakur\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"trainer\", \"Ustad Akhtar Ali Khan\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"award received\", \"All India Talent Hunt\", \"MISC\"],\n    [\"Gautham K Sharma\", \"PER\", \"employer\", \"Stardust\", \"ORG\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"director\", \"Ankush Bhatt\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"cast member\", \"Bhindi Baazaar Inc.\", \"MISC\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Kay Kay Menon\", \"PER\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Piyush Mishra\", \"PER\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Pavan Malhotra\", \"PER\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Prashant Narayanan\", \"PER\"],\n    [\"Bhindi Baazaar Inc.\", \"MISC\", \"cast member\", \"Deepti Naval\", \"PER\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Colgate\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Reynolds\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Asian Paints\", \"ORG\"],\n    [\"Gautham K Sharma\", \"PER\", \"advertiser\", \"Bristol Cigarettes\", \"ORG\"]\n]"
+}

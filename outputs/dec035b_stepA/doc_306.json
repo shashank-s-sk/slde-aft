@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_306",
+ "base_raw": "[\n    [\"Awake\", \"MISC\", \"creator\", \"Kyle Killen\", \"PER\"],\n    [\"Kyle Killen\", \"PER\", \"employer\", \"NBC\", \"ORG\"],\n    [\"Michael Britten\", \"PER\", \"spouse\", \"Hannah Britten\", \"PER\"],\n    [\"Michael Britten\", \"PER\", \"child\", \"Rex Britten\", \"PER\"],\n    [\"Hannah Britten\", \"PER\", \"place of death\", \"car accident\", \"MISC\"],\n    [\"Rex Britten\", \"PER\", \"place of death\", \"car accident\", \"MISC\"],\n    [\"Dr. Jonathan Lee\", \"PER\", \"patient\", \"Michael Britten\", \"PER\"],\n    [\"Dr. Judith Evans\", \"PER\", \"patient\", \"Michael Britten\", \"PER\"],\n    [\"Kyle Killen\", \"PER\", \"inspiration\", \"dreaming\", \"MISC\"],\n    [\"Awake\", \"MISC\", \"network\", \"NBC\", \"ORG\"],\n    [\"Awake\", \"MISC\", \"premiere date\", \"March 1, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"cancellation date\", \"May 11, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"final episode air date\", \"May 24, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"average viewers per episode\", \"4.8 million\", \"NUM\"],\n    [\"Awake\", \"MISC\", \"rank in viewership\", \"125th\", \"NUM\"],\n    [\"Save Awake\", \"MISC\", \"supporters\", \"fans\", \"MISC\"],\n    [\"Say Hello to My Little Friend\", \"MISC\", \"part of\", \"Awake\", \"MISC\"],\n    [\"Jason Isaacs\", \"PER\", \"award\", \"critical praise\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 15,
+  "FN": 17,
+  "recall": 0.15,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Awake\", \"MISC\", \"creator\", \"Kyle Killen\", \"PER\"],\n    [\"Awake\", \"MISC\", \"genre\", \"police procedural fantasy drama\", \"MISC\"],\n    [\"Awake\", \"MISC\", \"main character\", \"Michael Britten\", \"PER\"],\n    [\"Awake\", \"MISC\", \"network\", \"NBC\", \"ORG\"],\n    [\"Kyle Killen\", \"PER\", \"developed\", \"Lone Star\", \"MISC\"],\n    [\"Michael Britten\", \"PER\", \"played by\", \"Jason Isaacs\", \"PER\"],\n    [\"Hannah Britten\", \"PER\", \"played by\", \"Laura Allen\", \"PER\"],\n    [\"Rex Britten\", \"PER\", \"played by\", \"Dylan Minnette\", \"PER\"],\n    [\"Dr. Jonathan Lee\", \"PER\", \"played by\", \"BD Wong\", \"PER\"],\n    [\"Dr. Judith Evans\", \"PER\", \"played by\", \"Cherry Jones\", \"PER\"],\n    [\"Awake\", \"MISC\", \"premiered on\", \"March 1, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"canceled on\", \"May 11, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"final episode aired on\", \"May 24, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"average viewers per episode\", \"4.8 million\", \"NUM\"],\n    [\"Awake\", \"MISC\", \"ranked\", \"125th\", \"NUM\"],\n    [\"Save Awake\", \"MISC\", \"created by\", \"fans of Awake\", \"MISC\"],\n    [\"Say Hello to My Little Friend\", \"MISC\", \"part of\", \"Awake\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 22,
+  "FN": 15,
+  "recall": 0.34782608695652173,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Kyle Killen\", \"PER\", \"creator\", \"Awake\", \"MISC\"],\n    [\"Michael Britten\", \"PER\", \"played by\", \"Jason Isaacs\", \"PER\"],\n    [\"Hannah Britten\", \"PER\", \"played by\", \"Laura Allen\", \"PER\"],\n    [\"Rex Britten\", \"PER\", \"played by\", \"Dylan Minnette\", \"PER\"],\n    [\"Dr. Jonathan Lee\", \"PER\", \"played by\", \"BD Wong\", \"PER\"],\n    [\"Dr. Judith Evans\", \"PER\", \"played by\", \"Cherry Jones\", \"PER\"],\n    [\"Awake\", \"MISC\", \"network\", \"NBC\", \"ORG\"],\n    [\"Awake\", \"MISC\", \"premiered on\", \"March 1, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"canceled on\", \"May 11, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"final episode aired on\", \"May 24, 2012\", \"TIME\"],\n    [\"Awake\", \"MISC\", \"average viewers per episode\", \"4.8 million\", \"NUM\"],\n    [\"Awake\", \"MISC\", \"ranked\", \"125th\", \"NUM\"],\n    [\"Save Awake\", \"MISC\", \"created by\", \"fans\", \"MISC\"],\n    [\"Say Hello to My Little Friend\", \"MISC\", \"part of\", \"Awake\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 24,
+  "FN": 17,
+  "recall": 0.22727272727272727,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ }
+}

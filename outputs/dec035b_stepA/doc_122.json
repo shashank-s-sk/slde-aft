@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_122",
+ "base_raw": "[\n    [\"Juw Juwinga\", \"PER\", \"alias\", \"Jongema\", \"MISC\"],\n    [\"Juw Juwinga\", \"PER\", \"place of origin\", \"Bolsward\", \"LOC\"],\n    [\"Albrecht of Bavaria\", \"PER\", \"title\", \"count of Holland\", \"MISC\"],\n    [\"Juw Juwinga\", \"PER\", \"date of death\", \"August 29, 1396\", \"TIME\"],\n    [\"Juw Juwinga\", \"PER\", \"also known as\", \"Julius Jongema\", \"MISC\"],\n    [\"Petrus Thaborita\", \"PER\", \"wrote about\", \"Juw Juwinga\", \"PER\"],\n    [\"Hessel Martena\", \"PER\", \"position held\", \"potestate\", \"MISC\"],\n    [\"Vetkopers\", \"ORG\", \"in conflict with\", \"Schieringers\", \"ORG\"],\n    [\"Juw Juwinga\", \"PER\", \"position held\", \"potestate\", \"MISC\"],\n    [\"Friesland\", \"LOC\", \"leader\", \"Juw Juwinga\", \"PER\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 10,
+  "recall": 0.09090909090909091,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Juw Juwinga\", \"PER\", \"alias\", \"Jongema\", \"MISC\"],\n    [\"Juw Juwinga\", \"PER\", \"place of origin\", \"Bolsward\", \"LOC\"],\n    [\"Albrecht of Bavaria\", \"PER\", \"title\", \"count of Holland\", \"MISC\"],\n    [\"Juw Juwinga\", \"PER\", \"date of death\", \"August 29, 1396\", \"TIME\"],\n    [\"Juw Juwinga\", \"PER\", \"place of death\", \"Schoterzijl\", \"LOC\"],\n    [\"Hessel Martena\", \"PER\", \"position held\", \"potestate\", \"MISC\"],\n    [\"Juw Juwinga\", \"PER\", \"also known as\", \"Julius Jongema\", \"MISC\"],\n    [\"Petrus Thaborita\", \"PER\", \"author\", \"writing about Juw Juwinga\", \"MISC\"],\n    [\"Vetkopers\", \"ORG\", \"in conflict with\", \"Schieringers\", \"ORG\"],\n    [\"Juw Juwinga\", \"PER\", \"position held\", \"potestate of Friesland\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.1,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.1,
+  "n_extracted": 13,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Juw Juwinga\", \"PER\", \"alias\", \"Jongema\", \"MISC\"],\n    [\"Juw Juwinga\", \"PER\", \"place of origin\", \"Bolsward\", \"LOC\"],\n    [\"Albrecht of Bavaria\", \"PER\", \"title\", \"count of Holland\", \"MISC\"],\n    [\"Juw Juwinga\", \"PER\", \"date of death\", \"August 29, 1396\", \"TIME\"],\n    [\"Juw Juwinga\", \"PER\", \"place of death\", \"Schoterzijl\", \"LOC\"],\n    [\"Hessel Martena\", \"PER\", \"position held\", \"potestate\", \"MISC\"],\n    [\"Juw Juwinga\", \"PER\", \"also known as\", \"Julius Jongema\", \"MISC\"],\n    [\"Petrus Thaborita\", \"PER\", \"author\", \"writing about Juw Juwinga\", \"MISC\"],\n    [\"Vetkopers\", \"ORG\", \"in conflict with\", \"Schieringers\", \"ORG\"],\n    [\"Juw Juwinga\", \"PER\", \"position held\", \"potestate of Friesland\", \"MISC\"]\n]"
+}

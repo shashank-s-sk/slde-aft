@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_26",
+ "base_raw": "[\n    [\"Michelle Ferre\", \"PER\", \"place of birth\", \"Northwestern France\", \"LOC\"],\n    [\"Michelle Ferre\", \"PER\", \"educated at\", \"Sophia University\", \"ORG\"],\n    [\"Michelle Ferre\", \"PER\", \"employer\", \"international school in Kobe\", \"ORG\"],\n    [\"Michelle Ferre\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"language\", \"Japanese\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"residence\", \"Tokyo\", \"LOC\"],\n    [\"Jackie Chan\", \"PER\", \"starred in\", \"Who Am I ?\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"starred in\", \"So-Run Movie\", \"MISC\"],\n    [\"Ry\u00f4 Iwamatsu\", \"PER\", \"author\", \"Akugi\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"acted in\", \"Akugi\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Asian Languages",
+  "Cities in Asia",
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Michelle Ferre\", \"PER\", \"place of birth\", \"Northwestern France\", \"LOC\"],\n    [\"Michelle Ferre\", \"PER\", \"educated at\", \"Sophia University\", \"ORG\"],\n    [\"Michelle Ferre\", \"PER\", \"major\", \"International Relations and Political Science\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"language\", \"Japanese\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"residence\", \"Tokyo\", \"LOC\"],\n    [\"Michelle Ferre\", \"PER\", \"employer\", \"international school in Kobe\", \"ORG\"],\n    [\"Jackie Chan\", \"PER\", \"starred in\", \"Who Am I ?\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"co-star\", \"Jackie Chan\", \"PER\"],\n    [\"Michelle Ferre\", \"PER\", \"acted in\", \"So-Run Movie\", \"MISC\"],\n    [\"Ry\u00f4 Iwamatsu\", \"PER\", \"created\", \"Akugi\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"performer in\", \"Akugi\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 12,
+  "recall": 0.2,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Asian Languages",
+  "Cities in Asia",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Michelle Ferre\", \"PER\", \"place of birth\", \"Northwestern France\", \"LOC\"],\n    [\"Michelle Ferre\", \"PER\", \"educated at\", \"Sophia University\", \"ORG\"],\n    [\"Michelle Ferre\", \"PER\", \"major\", \"International Relations and Political Science\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"language\", \"Japanese\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"lived in\", \"Tokyo\", \"LOC\"],\n    [\"Michelle Ferre\", \"PER\", \"country of citizenship\", \"Japan\", \"LOC\"],\n    [\"Jackie Chan\", \"PER\", \"starred in\", \"Who Am I?\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"co-star\", \"Jackie Chan\", \"PER\"],\n    [\"Who Am I?\", \"MISC\", \"release year\", \"1998\", \"TIME\"],\n    [\"So-Run Movie\", \"MISC\", \"release year\", \"2006\", \"TIME\"],\n    [\"Michelle Ferre\", \"PER\", \"appeared in\", \"So-Run Movie\", \"MISC\"],\n    [\"Ry\u00f4 Iwamatsu\", \"PER\", \"author\", \"Akugi\", \"MISC\"],\n    [\"Michelle Ferre\", \"PER\", \"appeared in\", \"Akugi\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

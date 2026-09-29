@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_353",
+ "base_raw": "[\n    [\"Boy Scouts of America\", \"ORG\", \"located in\", \"Irving, Texas\", \"LOC\"],\n    [\"Girl Scouts of the USA\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"BSA National Headquarters\", \"ORG\", \"located in\", \"Irving, Texas\", \"LOC\"],\n    [\"Texas\", \"LOC\", \"contains administrative territorial entity\", \"Irving, Texas\", \"LOC\"],\n    [\"Boy Scouts of America\", \"ORG\", \"has part\", \"local councils\", \"ORG\"],\n    [\"Girl Scouts of the USA\", \"ORG\", \"has part\", \"local councils\", \"ORG\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 5,
+  "FN": 2,
+  "recall": 0.3333333333333333,
+  "n_extracted": 6,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Boy Scouts of America\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"BSA National Headquarters\", \"ORG\", \"located in\", \"Irving, Texas\", \"LOC\"],\n    [\"Girl Scouts of the USA\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Texas\", \"LOC\", \"instance of\", \"U.S. state\", \"MISC\"],\n    [\"Boy Scouts of America\", \"ORG\", \"has part\", \"local councils\", \"MISC\"],\n    [\"Girl Scouts of the USA\", \"ORG\", \"has part\", \"local councils\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 8,
+  "FN": 2,
+  "recall": 0.0,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "U.S. States and Cities"
+ ],
+ "kb_dedup_raw": "[\n    [\"Texas\", \"LOC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Boy Scouts of America\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"BSA National Headquarters\", \"LOC\", \"located in\", \"Irving, Texas\", \"LOC\"],\n    [\"Girl Scouts of the USA\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Texas\", \"LOC\", \"instance of\", \"U.S. state\", \"MISC\"],\n    [\"Boy Scouts of America\", \"ORG\", \"headquarters location\", \"Irving, Texas\", \"LOC\"],\n    [\"Girl Scouts of the USA\", \"ORG\", \"member of\", \"scouting movement\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 2,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

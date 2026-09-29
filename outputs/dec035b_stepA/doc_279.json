@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_279",
+ "base_raw": "[\n    [\"The Warmers\", \"MISC\", \"genre\", \"post-hardcore\", \"MISC\"],\n    [\"The Warmers\", \"MISC\", \"location\", \"Washington, D.C.\", \"LOC\"],\n    [\"The Warmers\", \"MISC\", \"active from\", \"1994\", \"TIME\"],\n    [\"The Warmers\", \"MISC\", \"active to\", \"1997\", \"TIME\"],\n    [\"Alec MacKaye\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"Juan Luis Carrera\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"Amy Farina\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"The Warmers\", \"MISC\", \"record label\", \"Dischord\", \"ORG\"],\n    [\"The Warmers\", \"MISC\", \"album\", \"The Warmers\", \"MISC\"],\n    [\"The Warmers\", \"MISC\", \"release year\", \"1996\", \"TIME\"],\n    [\"Wanted: More\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"20 Years of Dischord\", \"MISC\", \"features\", \"The Warmers\", \"MISC\"],\n    [\"Amy Farina\", \"PER\", \"spouse\", \"Ian MacKaye\", \"PER\"],\n    [\"The Evens\", \"MISC\", \"founded by\", \"Amy Farina\", \"PER\"],\n    [\"The Evens\", \"MISC\", \"founded by\", \"Ian MacKaye\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"The Warmers\", \"MISC\", \"genre\", \"post-hardcore\", \"MISC\"],\n    [\"Alec MacKaye\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"Juan Luis Carrera\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"Amy Farina\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"The Warmers\", \"MISC\", \"location\", \"Washington, D.C.\", \"LOC\"],\n    [\"Dischord\", \"ORG\", \"location\", \"Washington, D.C.\", \"LOC\"],\n    [\"The Warmers\", \"MISC\", \"record label\", \"Dischord\", \"ORG\"],\n    [\"The Warmers\", \"MISC\", \"release year\", \"1996\", \"TIME\"],\n    [\"Wanted: More\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"The Evens\", \"MISC\", \"member\", \"Ian MacKaye\", \"PER\"],\n    [\"Amy Farina\", \"PER\", \"spouse\", \"Ian MacKaye\", \"PER\"],\n    [\"Alec MacKaye\", \"PER\", \"brother\", \"Ian MacKaye\", \"PER\"],\n    [\"20 Years of Dischord\", \"MISC\", \"features\", \"The Warmers\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 13,
+  "recall": 0.2777777777777778,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"The Warmers\", \"MISC\", \"genre\", \"post-hardcore\", \"MISC\"],\n    [\"The Warmers\", \"MISC\", \"location\", \"Washington, D.C.\", \"LOC\"],\n    [\"Alec MacKaye\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"Juan Luis Carrera\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"Amy Farina\", \"PER\", \"member of\", \"The Warmers\", \"MISC\"],\n    [\"The Warmers\", \"MISC\", \"record label\", \"Dischord\", \"ORG\"],\n    [\"The Warmers\", \"MISC\", \"inception\", \"1994\", \"TIME\"],\n    [\"The Warmers\", \"MISC\", \"dissolved, abolished or demolished\", \"1997\", \"TIME\"],\n    [\"The Warmers\", \"MISC\", \"release date\", \"February 1996\", \"TIME\"],\n    [\"Wanted: More\", \"MISC\", \"release date\", \"May 2004\", \"TIME\"],\n    [\"The Evens\", \"MISC\", \"founded by\", \"Amy Farina\", \"PER\"],\n    [\"The Evens\", \"MISC\", \"founded by\", \"Ian MacKaye\", \"PER\"],\n    [\"20 Years of Dischord\", \"MISC\", \"features\", \"The Warmers\", \"MISC\"],\n    [\"Poked It With A Stick\", \"MISC\", \"part of\", \"The Warmers\", \"MISC\"],\n    [\"Poked It With A Stick\", \"MISC\", \"part of\", \"20 Years of Dischord\", \"MISC\"],\n    [\"Amy Farina\", \"PER\", \"spouse\", \"Ian MacKaye\", \"PER\"],\n    [\"Ian MacKaye\", \"PER\", \"brother\", \"Alec MacKaye\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

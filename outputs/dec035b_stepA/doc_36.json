@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_36",
+ "base_raw": "[\n    [\"Honey, I'm Good.\", \"MISC\", \"genre\", \"pop\", \"MISC\"],\n    [\"Andy Grammer\", \"PER\", \"member of\", \"none\", \"MISC\"],\n    [\"Magazines or Novels\", \"MISC\", \"release year\", \"2014\", \"TIME\"],\n    [\"Honey, I'm Good.\", \"MISC\", \"release year\", \"2014\", \"TIME\"],\n    [\"Andy Grammer\", \"PER\", \"collaborator\", \"Nolan Sipe\", \"PER\"],\n    [\"Honey, I'm Good.\", \"MISC\", \"certification\", \"triple-platinum\", \"MISC\"],\n    [\"Steve Greenberg\", \"PER\", \"producer\", \"Honey, I'm Good.\", \"MISC\"],\n    [\"Brian West\", \"PER\", \"producer\", \"Honey, I'm Good.\", \"MISC\"],\n    [\"Nolan Sipe\", \"PER\", \"producer\", \"Honey, I'm Good.\", \"MISC\"],\n    [\"Eli Young Band\", \"ORG\", \"collaborator\", \"Andy Grammer\", \"PER\"],\n    [\"Honey, I'm Good.\", \"MISC\", \"chart position\", \"9\", \"NUM\"],\n    [\"Honey, I'm Good.\", \"MISC\", \"release date\", \"November 2014\", \"TIME\"],\n    [\"Honey, I'm Good.\", \"MISC\", \"impact date\", \"February 2015\", \"TIME\"],\n    [\"Honey, I'm Good.\", \"MISC\", \"rank\", \"one of the 10 best-selling songs of 2015\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 6,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Numbers",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Andy Grammer\", \"PER\", \"genre\", \"pop\", \"MISC\"],\n    [\"Magazines or Novels\", \"MISC\", \"release year\", \"2014\", \"TIME\"],\n    [\"Honey, I'm Good\", \"MISC\", \"chart position\", \"9\", \"NUM\"],\n    [\"Andy Grammer\", \"PER\", \"certification\", \"triple-platinum\", \"MISC\"],\n    [\"Honey, I'm Good\", \"MISC\", \"release date\", \"November 2014\", \"TIME\"],\n    [\"Eli Young Band\", \"ORG\", \"collaboration\", \"Andy Grammer\", \"PER\"],\n    [\"Steve Greenberg\", \"PER\", \"role\", \"producer\", \"MISC\"],\n    [\"Brian West\", \"PER\", \"role\", \"producer\", \"MISC\"],\n    [\"Nolan Sipe\", \"PER\", \"role\", \"songwriter\", \"MISC\"],\n    [\"Honey, I'm Good\", \"MISC\", \"sales ranking\", \"10\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 23,
+  "FN": 6,
+  "recall": 0.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Andy Grammer\", \"PER\", \"genre\", \"pop\", \"MISC\"],\n    [\"Magazines or Novels\", \"MISC\", \"release year\", \"2014\", \"TIME\"],\n    [\"Honey, I'm Good\", \"MISC\", \"release year\", \"2014\", \"TIME\"],\n    [\"Andy Grammer\", \"PER\", \"collaborator\", \"Eli Young Band\", \"ORG\"],\n    [\"Honey, I'm Good\", \"MISC\", \"chart position\", \"9\", \"NUM\"],\n    [\"Andy Grammer\", \"PER\", \"certification\", \"triple-platinum\", \"MISC\"],\n    [\"Honey, I'm Good\", \"MISC\", \"sales ranking\", \"10\", \"NUM\"],\n    [\"Steve Greenberg\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Brian West\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Nolan Sipe\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Andy Grammer\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Eli Young Band\", \"ORG\", \"genre\", \"country\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 25,
+  "FN": 6,
+  "recall": 0.0,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

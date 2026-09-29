@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_186",
+ "base_raw": "[\n    [\"Aaliyah\", \"PER\", \"place of birth\", \"Detroit\", \"LOC\"],\n    [\"Back & Forth\", \"MISC\", \"genre\", \"R&B\", \"MISC\"],\n    [\"R. Kelly\", \"PER\", \"collaborator\", \"Aaliyah\", \"PER\"],\n    [\"Age Ain't Nothing but a Number\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Back & Forth\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Aaliyah\", \"PER\", \"award received\", \"gold certification\", \"MISC\"],\n    [\"Back & Forth\", \"MISC\", \"chart position\", \"number-one\", \"NUM\"],\n    [\"Back & Forth\", \"MISC\", \"chart position\", \"number 5\", \"NUM\"],\n    [\"Aaliyah\", \"PER\", \"notable work\", \"Back & Forth\", \"MISC\"],\n    [\"R. Kelly\", \"PER\", \"notable work\", \"Back & Forth\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Aaliyah\", \"PER\", \"place of birth\", \"Detroit\", \"LOC\"],\n    [\"Back & Forth\", \"MISC\", \"genre\", \"R&B\", \"MISC\"],\n    [\"Aaliyah\", \"PER\", \"author\", \"R. Kelly\", \"PER\"],\n    [\"Age Ain't Nothing but a Number\", \"MISC\", \"producer\", \"R. Kelly\", \"PER\"],\n    [\"Back & Forth\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Back & Forth\", \"MISC\", \"certification\", \"gold\", \"MISC\"],\n    [\"Aaliyah\", \"PER\", \"chart position\", \"number-one\", \"NUM\"],\n    [\"Back & Forth\", \"MISC\", \"chart\", \"U.S. Billboard Hot R&B Songs\", \"MISC\"],\n    [\"Aaliyah\", \"PER\", \"debut single\", \"Back & Forth\", \"MISC\"],\n    [\"R. Kelly\", \"PER\", \"collaborator\", \"Aaliyah\", \"PER\"],\n    [\"Back & Forth\", \"MISC\", \"peak position\", \"number 5\", \"NUM\"],\n    [\"Aaliyah\", \"PER\", \"award\", \"gold certification\", \"MISC\"],\n    [\"RIAA\", \"ORG\", \"certified\", \"Back & Forth\", \"MISC\"],\n    [\"Back & Forth\", \"MISC\", \"release date\", \"early 1994\", \"TIME\"],\n    [\"Aaliyah\", \"PER\", \"education\", \"high school\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 21,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Aaliyah\", \"PER\", \"place of birth\", \"Detroit\", \"LOC\"],\n    [\"Back & Forth\", \"MISC\", \"genre\", \"R&B\", \"MISC\"],\n    [\"R. Kelly\", \"PER\", \"collaborator\", \"Aaliyah\", \"PER\"],\n    [\"Age Ain't Nothing but a Number\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Back & Forth\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Aaliyah\", \"PER\", \"award received\", \"gold certification\", \"MISC\"],\n    [\"Back & Forth\", \"MISC\", \"chart position\", \"number-one\", \"NUM\"],\n    [\"Back & Forth\", \"MISC\", \"chart\", \"U.S. Billboard Hot R&B Songs\", \"MISC\"],\n    [\"Aaliyah\", \"PER\", \"chart position\", \"number 5\", \"NUM\"],\n    [\"Back & Forth\", \"MISC\", \"chart\", \"Billboard Hot 100\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

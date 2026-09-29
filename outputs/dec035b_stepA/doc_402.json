@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_402",
+ "base_raw": "[\n    [\"Kaesong\", \"LOC\", \"located in\", \"North Hwanghae Province\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"part of\", \"North Korea\", \"LOC\"],\n    [\"Kaesong Industrial Region\", \"LOC\", \"located in\", \"Kaesong\", \"LOC\"],\n    [\"Manwoldae palace\", \"MISC\", \"located in\", \"Kaesong\", \"LOC\"],\n    [\"Goryeo dynasty\", \"MISC\", \"founded in\", \"Kaesong\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"country\", \"North Korea\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"province\", \"North Hwanghae Province\", \"LOC\"],\n    [\"South Korea\", \"LOC\", \"shares border with\", \"Kaesong\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"population\", \"192,578\", \"NUM\"],\n    [\"Kaesong\", \"LOC\", \"year of population\", \"2009\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Kaesong\", \"LOC\", \"located in\", \"North Hwanghae Province\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"part of\", \"North Korea\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"capital of\", \"Goryeo dynasty\", \"ORG\"],\n    [\"Kaesong\", \"LOC\", \"contains\", \"Manwoldae palace\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"near\", \"Kaesong Industrial Region\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"bordering\", \"South Korea\", \"LOC\"],\n    [\"Kaesong Industrial Region\", \"LOC\", \"located in\", \"North Korea\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"population\", \"192,578\", \"NUM\"],\n    [\"Kaesong\", \"LOC\", \"year of population\", \"2009\", \"TIME\"],\n    [\"Goryeo dynasty\", \"ORG\", \"founded in\", \"Kaesong\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"formerly known as\", \"Songdo\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"controlled by\", \"South Korea\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"controlled by\", \"North Korea\", \"LOC\"],\n    [\"Korean Armistice Agreement\", \"MISC\", \"resulted in\", \"Kaesong\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"host to\", \"Kaesong Industrial Region\", \"LOC\"],\n    [\"Kaesong Industrial Region\", \"LOC\", \"jointly run by\", \"North Korea\", \"LOC\"],\n    [\"Kaesong Industrial Region\", \"LOC\", \"jointly run by\", \"South Korea\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 11,
+  "FP": 11,
+  "FN": 16,
+  "recall": 0.4074074074074074,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Kaesong\", \"LOC\", \"located in the administrative territorial entity\", \"North Hwanghae Province\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"country\", \"North Korea\", \"LOC\"],\n    [\"Kaesong Industrial Region\", \"LOC\", \"located in\", \"Kaesong\", \"LOC\"],\n    [\"Manwoldae palace\", \"MISC\", \"located in\", \"Kaesong\", \"LOC\"],\n    [\"Goryeo dynasty\", \"MISC\", \"capital\", \"Kaesong\", \"LOC\"],\n    [\"Taebong kingdom\", \"MISC\", \"capital\", \"Kaesong\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"border with\", \"South Korea\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"instance of\", \"city\", \"MISC\"],\n    [\"Kaesong\", \"LOC\", \"contains administrative territorial entity\", \"Kaesong Industrial Region\", \"LOC\"],\n    [\"DPRK\", \"ORG\", \"location of formation\", \"Kaesong\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"part of\", \"North Korea\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"located in or next to body of water\", \"none\", \"MISC\"],\n    [\"Kaesong\", \"LOC\", \"has part\", \"Manwoldae palace\", \"MISC\"],\n    [\"Kaesong\", \"LOC\", \"capital of\", \"Goryeo dynasty\", \"MISC\"],\n    [\"Kaesong\", \"LOC\", \"capital of\", \"Taebong kingdom\", \"MISC\"],\n    [\"Kaesong\", \"LOC\", \"headquarters location\", \"DPRK\", \"ORG\"],\n    [\"Kaesong Industrial Region\", \"LOC\", \"operator\", \"North Korea\", \"LOC\"],\n    [\"Kaesong Industrial Region\", \"LOC\", \"operator\", \"South Korea\", \"LOC\"],\n    [\"Kaesong\", \"LOC\", \"population\", \"192,578\", \"NUM\"],\n    [\"Kaesong\", \"LOC\", \"point in time\", \"2009\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 23,
+  "FP": 16,
+  "FN": 5,
+  "recall": 0.8214285714285714,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

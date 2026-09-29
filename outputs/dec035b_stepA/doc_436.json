@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_436",
+ "base_raw": "[\n    [\"Wyclef Jean\", \"PER\", \"genre\", \"rap\", \"MISC\"],\n    [\"Greatest Hits\", \"MISC\", \"release date\", \"October 7, 2003\", \"TIME\"],\n    [\"The Preacher's Son\", \"MISC\", \"release date\", \"November 2003\", \"TIME\"],\n    [\"Wyclef Jean\", \"PER\", \"member of\", \"The Fugees\", \"ORG\"],\n    [\"The Carnival\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Masquerade\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Ghetto Religion\", \"MISC\", \"collaborator\", \"R. Kelly\", \"PER\"],\n    [\"Hey Girl\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"No Woman, No Cry\", \"MISC\", \"artist\", \"The Fugees\", \"ORG\"],\n    [\"The Score\", \"MISC\", \"artist\", \"The Fugees\", \"ORG\"],\n    [\"Greatest Hits\", \"MISC\", \"label\", \"Columbia Records\", \"ORG\"],\n    [\"Wyclef Jean\", \"PER\", \"signed to\", \"Columbia Records\", \"ORG\"],\n    [\"Ghetto Religion\", \"MISC\", \"release date\", \"September 2003\", \"TIME\"],\n    [\"Pussycat\", \"MISC\", \"samples\", \"Tom Jones\", \"PER\"],\n    [\"Diallo\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Something About Mary\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Greatest Hits\", \"MISC\", \"contains\", \"Ghetto Religion\", \"MISC\"],\n    [\"Greatest Hits\", \"MISC\", \"contains\", \"Hey Girl\", \"MISC\"],\n    [\"Greatest Hits\", \"MISC\", \"contains\", \"No Woman, No Cry\", \"MISC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 10,
+  "FN": 23,
+  "recall": 0.28125,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Music Record Labels",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Wyclef Jean\", \"PER\", \"genre\", \"Hip-Hop\", \"MISC\"],\n    [\"Greatest Hits\", \"MISC\", \"release date\", \"October 7, 2003\", \"TIME\"],\n    [\"The Preacher's Son\", \"MISC\", \"release date\", \"November 2003\", \"TIME\"],\n    [\"Wyclef Jean\", \"PER\", \"member of\", \"The Fugees\", \"ORG\"],\n    [\"The Carnival\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Masquerade\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Ghetto Religion\", \"MISC\", \"featuring\", \"R. Kelly\", \"PER\"],\n    [\"Hey Girl\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"No Woman, No Cry\", \"MISC\", \"artist\", \"The Fugees\", \"ORG\"],\n    [\"The Score\", \"MISC\", \"artist\", \"The Fugees\", \"ORG\"],\n    [\"Columbia Records\", \"ORG\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Greatest Hits\", \"MISC\", \"label\", \"Columbia Records\", \"ORG\"],\n    [\"Wyclef Jean\", \"PER\", \"country of citizenship\", \"Haiti\", \"LOC\"],\n    [\"Ghetto Religion\", \"MISC\", \"release date\", \"September 2003\", \"TIME\"],\n    [\"Pussycat\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Tom Jones\", \"PER\", \"song\", \"Pussycat\", \"MISC\"],\n    [\"Diallo\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Something About Mary\", \"MISC\", \"artist\", \"Wyclef Jean\", \"PER\"],\n    [\"Greatest Hits\", \"MISC\", \"publisher\", \"Columbia Records\", \"ORG\"],\n    [\"Wyclef Jean\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Wyclef Jean\", \"PER\", \"occupation\", \"Rapper\", \"MISC\"],\n    [\"The Fugees\", \"ORG\", \"member\", \"Wyclef Jean\", \"PER\"],\n    [\"R. Kelly\", \"PER\", \"collaboration\", \"Wyclef Jean\", \"PER\"],\n    [\"Xzibit\", \"PER\", \"collaboration\", \"Wyclef Jean\", \"PER\"],\n    [\"King Yellowman\", \"PER\", \"collaboration\", \"Wyclef Jean\", \"PER\"],\n    [\"Beenie Man\", \"PER\", \"collaboration\", \"Wyclef Jean\", \"PER\"],\n    [\"Canibus\", \"PER\", \"collaboration\", \"Wyclef Jean\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 30,
+  "FN": 25,
+  "recall": 0.13793103448275862,
+  "n_extracted": 34,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Wyclef Jean\", \"PER\", \"genre\", \"rap\", \"MISC\"],\n    [\"Greatest Hits\", \"MISC\", \"release date\", \"October 7, 2003\", \"TIME\"],\n    [\"The Preacher's Son\", \"MISC\", \"release date\", \"November 2003\", \"TIME\"],\n    [\"Wyclef Jean\", \"PER\", \"member of\", \"The Fugees\", \"ORG\"],\n    [\"Ghetto Religion\", \"MISC\", \"collaboration with\", \"R. Kelly\", \"PER\"],\n    [\"Hey Girl\", \"MISC\", \"release date\", \"2003\", \"TIME\"],\n    [\"No Woman, No Cry\", \"MISC\", \"origin\", \"The Score\", \"MISC\"],\n    [\"Wyclef Jean\", \"PER\", \"signed to\", \"Columbia Records\", \"ORG\"],\n    [\"Greatest Hits\", \"MISC\", \"deluxe edition release date\", \"2003\", \"TIME\"],\n    [\"Greatest Hits\", \"MISC\", \"contains\", \"remixes\", \"MISC\"],\n    [\"Wyclef Jean\", \"PER\", \"collaboration with\", \"Canibus\", \"PER\"],\n    [\"Wyclef Jean\", \"PER\", \"collaboration with\", \"Xzibit\", \"PER\"],\n    [\"Wyclef Jean\", \"PER\", \"collaboration with\", \"King Yellowman\", \"PER\"],\n    [\"Wyclef Jean\", \"PER\", \"collaboration with\", \"Beenie Man\", \"PER\"],\n    [\"Pussycat\", \"MISC\", \"samples\", \"Tom Jones\", \"PER\"],\n    [\"Diallo\", \"MISC\", \"included in\", \"US edition of Greatest Hits\", \"MISC\"],\n    [\"Something About Mary\", \"MISC\", \"included in\", \"US edition of Greatest Hits\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 21,
+  "FN": 23,
+  "recall": 0.28125,
+  "n_extracted": 30,
+  "judge_parse_ok": true
+ }
+}

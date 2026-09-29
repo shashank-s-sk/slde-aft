@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_248",
+ "base_raw": "[\n    [\"Puerto Rico\", \"LOC\", \"located in or next to body of water\", \"Atlantic Ocean\", \"MISC\"],\n    [\"Dr. Ram\u00f3n Emeterio Betances\", \"PER\", \"creator\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Mariana Bracetti\", \"PER\", \"creator\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Juan de Mata Terreforte\", \"PER\", \"member of\", \"Cuban Revolutionary Committee\", \"ORG\"],\n    [\"Cuban Revolutionary Committee\", \"ORG\", \"located in\", \"New York City\", \"LOC\"],\n    [\"Puerto Rico\", \"LOC\", \"country of origin\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Luis Mu\u00f1oz Mar\u00edn\", \"PER\", \"head of government\", \"Puerto Rico\", \"LOC\"],\n    [\"Space Shuttle Discovery\", \"MISC\", \"operator\", \"United States\", \"LOC\"],\n    [\"Puerto Rico\", \"LOC\", \"part of\", \"United States\", \"LOC\"],\n    [\"The Revolutionary Flag of Lares\", \"MISC\", \"instance of\", \"flag\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 3,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Puerto Rico\", \"LOC\", \"located in or next to body of water\", \"Atlantic Ocean\", \"MISC\"],\n    [\"Dr. Ram\u00f3n Emeterio Betances\", \"PER\", \"creator\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Mariana Bracetti\", \"PER\", \"creator\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Juan de Mata Terreforte\", \"PER\", \"member of\", \"Cuban Revolutionary Committee\", \"ORG\"],\n    [\"Cuban Revolutionary Committee\", \"ORG\", \"located in\", \"New York City\", \"LOC\"],\n    [\"Puerto Rico\", \"LOC\", \"country of origin\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Luis Mu\u00f1oz Mar\u00edn\", \"PER\", \"head of government\", \"Puerto Rico\", \"LOC\"],\n    [\"Space Shuttle Discovery\", \"MISC\", \"operator\", \"United States\", \"LOC\"],\n    [\"Puerto Rico\", \"LOC\", \"part of\", \"United States\", \"LOC\"],\n    [\"The Revolutionary Flag of Lares\", \"MISC\", \"instance of\", \"flag\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 3,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Puerto Rico\", \"LOC\", \"located in or next to body of water\", \"Atlantic Ocean\", \"MISC\"],\n    [\"Dr. Ram\u00f3n Emeterio Betances\", \"PER\", \"creator\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Mariana Bracetti\", \"PER\", \"creator\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Juan de Mata Terreforte\", \"PER\", \"member of\", \"Cuban Revolutionary Committee\", \"ORG\"],\n    [\"Cuban Revolutionary Committee\", \"ORG\", \"located in\", \"New York City\", \"LOC\"],\n    [\"Puerto Rico\", \"LOC\", \"country of origin\", \"The Revolutionary Flag of Lares\", \"MISC\"],\n    [\"Luis Mu\u00f1oz Mar\u00edn\", \"PER\", \"head of government\", \"Puerto Rico\", \"LOC\"],\n    [\"Space Shuttle Discovery\", \"MISC\", \"operator\", \"United States\", \"LOC\"],\n    [\"Puerto Rico\", \"LOC\", \"part of\", \"United States\", \"LOC\"],\n    [\"The Revolutionary Flag of Lares\", \"MISC\", \"instance of\", \"flag\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 3,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ }
+}

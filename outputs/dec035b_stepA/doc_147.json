@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_147",
+ "base_raw": "[\n    [\"Sony Interactive Entertainment\", \"ORG\", \"founded by\", \"Sony Corporation\", \"ORG\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"located in\", \"San Mateo, California\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"Sony Corporation\", \"ORG\", \"subsidiary\", \"Sony Interactive Entertainment\", \"ORG\"],\n    [\"PlayStation\", \"MISC\", \"developer\", \"Sony Interactive Entertainment\", \"ORG\"],\n    [\"PlayStation\", \"MISC\", \"publisher\", \"Sony Interactive Entertainment\", \"ORG\"],\n    [\"Sony Network Entertainment International\", \"ORG\", \"reorganized into\", \"Sony Interactive Entertainment\", \"ORG\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"headquarters location\", \"San Mateo, California\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"founded on\", \"November 16, 1993\", \"TIME\"],\n    [\"PlayStation\", \"MISC\", \"release date\", \"1994\", \"TIME\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"number of consoles sold\", \"525 million\", \"NUM\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"year of sales\", \"2018\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 12,
+  "recall": 0.2,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Sony Interactive Entertainment\", \"ORG\", \"founded by\", \"Sony Corporation\", \"ORG\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"located in\", \"Tokyo\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"established\", \"November 16, 1993\", \"TIME\"],\n    [\"Sony Computer Entertainment\", \"ORG\", \"renamed to\", \"Sony Interactive Entertainment\", \"ORG\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"headquarters location\", \"San Mateo\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"moved from\", \"Tokyo\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"operates in\", \"North America\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"operates in\", \"Europe\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"operates in\", \"Asia\", \"LOC\"],\n    [\"PlayStation\", \"MISC\", \"developed by\", \"Sony Interactive Entertainment\", \"ORG\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"sold\", \"525 million\", \"NUM\"],\n    [\"PlayStation consoles\", \"MISC\", \"sold in\", \"worldwide\", \"MISC\"],\n    [\"Sony Network Entertainment International\", \"ORG\", \"merged with\", \"Sony Interactive Entertainment\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 17,
+  "FN": 12,
+  "recall": 0.4,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Sony Interactive Entertainment\", \"ORG\", \"founded by\", \"Sony Corporation\", \"ORG\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"located in\", \"Tokyo\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"established\", \"November 16, 1993\", \"TIME\"],\n    [\"Sony Corporation\", \"ORG\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"headquarters location\", \"San Mateo\", \"LOC\"],\n    [\"PlayStation\", \"MISC\", \"developer\", \"Sony Interactive Entertainment\", \"ORG\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"publisher\", \"PlayStation\", \"MISC\"],\n    [\"Sony Network Entertainment International\", \"ORG\", \"reorganized into\", \"Sony Interactive Entertainment\", \"ORG\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"moved headquarters from\", \"Tokyo\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"moved headquarters to\", \"San Mateo\", \"LOC\"],\n    [\"PlayStation consoles\", \"MISC\", \"sold\", \"525 million\", \"NUM\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"operates in\", \"North America\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"operates in\", \"Europe\", \"LOC\"],\n    [\"Sony Interactive Entertainment\", \"ORG\", \"operates in\", \"Asia\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 12,
+  "recall": 0.29411764705882354,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

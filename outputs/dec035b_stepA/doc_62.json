@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_62",
+ "base_raw": "[\n    [\"Turn Left, Turn Right\", \"MISC\", \"based on\", \"A Chance of Sunshine\", \"MISC\"],\n    [\"Johnnie To\", \"PER\", \"director\", \"Turn Left, Turn Right\", \"MISC\"],\n    [\"Wai Ka-Fai\", \"PER\", \"director\", \"Turn Left, Turn Right\", \"MISC\"],\n    [\"Takeshi Kaneshiro\", \"PER\", \"star\", \"Turn Left, Turn Right\", \"MISC\"],\n    [\"Gigi Leung\", \"PER\", \"star\", \"Turn Left, Turn Right\", \"MISC\"],\n    [\"Jimmy Liao\", \"PER\", \"author\", \"A Chance of Sunshine\", \"MISC\"],\n    [\"Jimmy Liao\", \"PER\", \"makes cameo appearance in\", \"Turn Left, Turn Right\", \"MISC\"],\n    [\"Warner Bros.\", \"ORG\", \"distributor\", \"Turn Left, Turn Right\", \"MISC\"],\n    [\"A Chance of Sunshine\", \"MISC\", \"published in\", \"1999\", \"TIME\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"filmed in\", \"Taipei, Taiwan\", \"LOC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"country\", \"Hong Kong\", \"LOC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"country\", \"Singapore\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 11,
+  "recall": 0.26666666666666666,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in Asia",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Turn Left, Turn Right\", \"MISC\", \"director\", \"Johnnie To\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"director\", \"Wai Ka-Fai\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"star\", \"Takeshi Kaneshiro\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"star\", \"Gigi Leung\", \"PER\"],\n    [\"A Chance of Sunshine\", \"MISC\", \"author\", \"Jimmy Liao\", \"PER\"],\n    [\"Jimmy Liao\", \"PER\", \"nationality\", \"Taiwanese\", \"MISC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"producer\", \"Johnnie To\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"producer\", \"Wai Ka-Fai\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"country of origin\", \"Hong Kong\", \"LOC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"country of origin\", \"Singapore\", \"LOC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"filmed in\", \"Taipei\", \"LOC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"filmed in\", \"Taiwan\", \"LOC\"],\n    [\"A Chance of Sunshine\", \"MISC\", \"publication date\", \"1999\", \"TIME\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"distributed by\", \"Warner Bros.\", \"ORG\"],\n    [\"Warner Bros.\", \"ORG\", \"location\", \"U.S.\", \"LOC\"],\n    [\"Jimmy Liao\", \"PER\", \"employer\", \"Warner Bros.\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 14,
+  "FP": 18,
+  "FN": 8,
+  "recall": 0.6363636363636364,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Organizations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Turn Left, Turn Right\", \"MISC\", \"director\", \"Johnnie To\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"director\", \"Wai Ka-Fai\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"star\", \"Takeshi Kaneshiro\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"star\", \"Gigi Leung\", \"PER\"],\n    [\"A Chance of Sunshine\", \"MISC\", \"author\", \"Jimmy Liao\", \"PER\"],\n    [\"Jimmy Liao\", \"PER\", \"nationality\", \"Taiwanese\", \"MISC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"producer\", \"Johnnie To\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"producer\", \"Wai Ka-Fai\", \"PER\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"country\", \"Hong Kong\", \"LOC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"country\", \"Singapore\", \"LOC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"filmed in\", \"Taipei, Taiwan\", \"LOC\"],\n    [\"A Chance of Sunshine\", \"MISC\", \"publisher\", \"Warner Bros.\", \"ORG\"],\n    [\"Warner Bros.\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Turn Left, Turn Right\", \"MISC\", \"language\", \"Chinese\", \"MISC\"],\n    [\"A Chance of Sunshine\", \"MISC\", \"publication date\", \"1999\", \"TIME\"],\n    [\"Jimmy Liao\", \"PER\", \"employer\", \"Warner Bros.\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 23,
+  "FN": 9,
+  "recall": 0.35714285714285715,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

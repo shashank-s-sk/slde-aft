@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_180",
+ "base_raw": "[\n    [\"Niklas Bergqvist\", \"PER\", \"place of birth\", \"Stockholm\", \"LOC\"],\n    [\"Niklas Bergqvist\", \"PER\", \"date of birth\", \"6 October 1962\", \"TIME\"],\n    [\"Shanghai\", \"ORG\", \"genre\", Synthpop, \"MISC\"],\n    [\"Kee Marcello\", \"PER\", \"member of\", \"Europe\", \"ORG\"],\n    [\"Harpo\", \"PER\", \"nationality\",Swedish, \"MISC\"],\n    [\"Niklas Bergqvist\", \"PER\", \"founded\", \"Tracks of Sweden\", \"ORG\"],\n    [\"Simon Johansson\", \"PER\", \"member of\", \"Tracks of Sweden\", \"ORG\"],\n    [\"Niklas Bergqvist\", \"PER\", \"collaborator\", \"Simon Johansson\", \"PER\"],\n    [\"Shanghai\", \"ORG\", \"founded by\", \"Niklas Bergqvist\", \"PER\"],\n    [\"Tracks of Sweden\",ORG, \"founder\", \"Niklas Bergqvist\", \"PER\"],\n    [\"Niklas Bergqvist\", \"PER\", \"educated at\",unknown, \"MISC\"],\n    [\"Shanghai\", \"ORG\", \"location\", \"Sweden\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 0,
+  "FN": 5,
+  "recall": 0.0,
+  "n_extracted": 0,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Niklas Bergqvist\", \"PER\", \"place of birth\", \"Stockholm\", \"LOC\"],\n    [\"Niklas Bergqvist\", \"PER\", \"date of birth\", \"6 October 1962\", \"TIME\"],\n    [\"Shanghai\", \"ORG\", \"genre\", \"Synthpop\", \"MISC\"],\n    [\"Kee Marcello\", \"PER\", \"member of\", \"Europe\", \"ORG\"],\n    [\"Harpo\", \"PER\", \"nationality\", \"Swedish\", \"MISC\"],\n    [\"Niklas Bergqvist\", \"PER\", \"founded\", \"Tracks of Sweden\", \"ORG\"],\n    [\"Simon Johansson\", \"PER\", \"member of\", \"Tracks of Sweden\", \"ORG\"],\n    [\"Niklas Bergqvist\", \"PER\", \"collaborator\", \"Simon Johansson\", \"PER\"],\n    [\"Tracks of Sweden\", \"ORG\", \"founded by\", \"Niklas Bergqvist\", \"PER\"],\n    [\"Tracks of Sweden\", \"ORG\", \"location\", \"Sweden\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 10,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Niklas Bergqvist\", \"PER\", \"place of birth\", \"Stockholm\", \"LOC\"],\n    [\"Niklas Bergqvist\", \"PER\", \"date of birth\", \"6 October 1962\", \"TIME\"],\n    [\"Shanghai\", \"ORG\", \"genre\", \"Synthpop\", \"MISC\"],\n    [\"Kee Marcello\", \"PER\", \"member of\", \"Europe\", \"ORG\"],\n    [\"Harpo\", \"PER\", \"nationality\", \"Swedish\", \"MISC\"],\n    [\"Niklas Bergqvist\", \"PER\", \"founded\", \"Tracks of Sweden\", \"ORG\"],\n    [\"Simon Johansson\", \"PER\", \"member of\", \"Tracks of Sweden\", \"ORG\"],\n    [\"Niklas Bergqvist\", \"PER\", \"collaborator\", \"Simon Johansson\", \"PER\"],\n    [\"Tracks of Sweden\", \"ORG\", \"founded by\", \"Niklas Bergqvist\", \"PER\"],\n    [\"Tracks of Sweden\", \"ORG\", \"location\", \"Sweden\", \"LOC\"]\n]"
+}

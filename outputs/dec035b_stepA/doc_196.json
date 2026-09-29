@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_196",
+ "base_raw": "[\n    [\"Battir\", \"LOC\", \"located in\", \"West Bank\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"distance from\", \"6.4 km\", \"NUM\"],\n    [\"Battir\", \"LOC\", \"direction from\", \"west of Bethlehem\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"direction from\", \"southwest of Jerusalem\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"period of inhabitance\", \"Byzantine and Islamic periods\", \"TIME\"],\n    [\"Battir\", \"LOC\", \"population\", \"primarily Muslim\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"route\", \"Jerusalem to Bayt Jibrin\", \"LOC\"],\n    [\"Jaffa \u2013 Jerusalem railway\", \"LOC\", \"location\", \"just above Battir\", \"LOC\"],\n    [\"Jaffa \u2013 Jerusalem railway\", \"LOC\", \"purpose\", \"armistice line between Israel and Jordan\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"population in 2007\", \"about 4,000\", \"NUM\"],\n    [\"Battir\", \"LOC\", \"inscription year in UNESCO World Heritage Site\", \"2014\", \"TIME\"],\n    [\"Battir\", \"LOC\", \"UNESCO World Heritage Site\", \"Land of Olives and Vines \u2014 Cultural Landscape of Southern Jerusalem, Battir\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 12,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Battir\", \"LOC\", \"located in the administrative territorial entity\", \"West Bank\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"located near\", \"Bethlehem\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"located near\", \"Jerusalem\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"country\", \"Palestine\", \"LOC\"],\n    [\"Jaffa \u2013 Jerusalem railway\", \"MISC\", \"located in or next to body of water\", \"None\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"part of\", \"Land of Olives and Vines \u2014 Cultural Landscape of Southern Jerusalem, Battir\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"located on terrain feature\", \"None\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"inception\", \"Byzantine period\", \"TIME\"],\n    [\"Battir\", \"LOC\", \"population\", \"4000\", \"NUM\"],\n    [\"Battir\", \"LOC\", \"award received\", \"UNESCO World Heritage Site\", \"MISC\"],\n    [\"Bayt Jibrin\", \"LOC\", \"located near\", \"Battir\", \"LOC\"],\n    [\"Israel\", \"LOC\", \"conflict\", \"Six-Day War\", \"MISC\"],\n    [\"Jordan\", \"LOC\", \"conflict\", \"Six-Day War\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"occupied by\", \"Israel\", \"LOC\"],\n    [\"Land of Olives and Vines \u2014 Cultural Landscape of Southern Jerusalem, Battir\", \"MISC\", \"located in\", \"Jerusalem\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 25,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 25,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 27,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Battir\", \"LOC\", \"located in the administrative territorial entity\", \"West Bank\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"located near\", \"Bethlehem\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"located near\", \"Jerusalem\", \"LOC\"],\n    [\"Battir\", \"LOC\", \"country\", \"Palestine\", \"LOC\"],\n    [\"Jaffa \u2013 Jerusalem railway\", \"MISC\", \"located in or next to body of water\", \"None\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"part of\", \"Land of Olives and Vines \u2014 Cultural Landscape of Southern Jerusalem, Battir\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"located on terrain feature\", \"None\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"inception\", \"Byzantine period\", \"TIME\"],\n    [\"Battir\", \"LOC\", \"population\", \"4000\", \"NUM\"],\n    [\"Battir\", \"LOC\", \"award received\", \"UNESCO World Heritage Site\", \"MISC\"],\n    [\"Bayt Jibrin\", \"LOC\", \"located near\", \"Battir\", \"LOC\"],\n    [\"Israel\", \"LOC\", \"conflict\", \"Six-Day War\", \"MISC\"],\n    [\"Jordan\", \"LOC\", \"conflict\", \"Six-Day War\", \"MISC\"],\n    [\"Battir\", \"LOC\", \"occupied by\", \"Israel\", \"LOC\"],\n    [\"Land of Olives and Vines \u2014 Cultural Landscape of Southern Jerusalem, Battir\", \"MISC\", \"located in\", \"Jerusalem\", \"LOC\"]\n]"
+}

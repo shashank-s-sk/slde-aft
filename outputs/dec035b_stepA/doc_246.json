@@ -1,0 +1,44 @@
+{
+ "doc_id": "doc_246",
+ "base_raw": "[\n    [\"Facit F\u00f6rlag AB\", \"ORG\", \"located in\", \"V\u00e4ster\u00e5s\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"language\", \"English\", \"MISC\"],\n    [\"Facit catalog\", \"MISC\", \"published in\", \"Sweden\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Denmark\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Faroes\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Finland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Iceland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Sweden\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Greenland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"\u00c5land\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Danish West Indies\", \"LOC\"],\n    [\"FACIT 2007 Special\", \"MISC\", \"published in\", \"2007\", \"TIME\"],\n    [\"FACIT Postal VII\", \"MISC\", \"published in\", \"2004\", \"TIME\"],\n    [\"FACIT Sverige 2005\", \"MISC\", \"published in\", \"2005\", \"TIME\"],\n    [\"FACIT Special Classic\", \"MISC\", \"published in\", \"2018\", \"TIME\"],\n    [\"Facit catalog\", \"MISC\", \"inception\", \"1947\", \"TIME\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Facit catalog\", \"MISC\", \"published in\", \"Sweden\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"language\", \"English\", \"MISC\"],\n    [\"Facit F\u00f6rlag AB\", \"ORG\", \"located in\", \"V\u00e4ster\u00e5s\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"published by\", \"Facit F\u00f6rlag AB\", \"ORG\"],\n    [\"Facit catalog\", \"MISC\", \"committee\", \"20 leading philatelists\", \"MISC\"],\n    [\"FACIT 2007 Special\", \"MISC\", \"published in\", \"2007\", \"TIME\"],\n    [\"FACIT Postal VII\", \"MISC\", \"published in\", \"2004\", \"TIME\"],\n    [\"FACIT Sverige 2005\", \"MISC\", \"published in\", \"2005\", \"TIME\"],\n    [\"FACIT Special Classic\", \"MISC\", \"published in\", \"2018\", \"TIME\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"Denmark\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"Faroes\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"Finland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"Iceland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"Norway\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"Sweden\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"Greenland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"\u00c5land\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"includes\", \"Danish West Indies\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 27,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries",
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Facit catalog\", \"MISC\", \"published in\", \"Sweden\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"language\", \"English\", \"MISC\"],\n    [\"Facit F\u00f6rlag AB\", \"ORG\", \"located in\", \"V\u00e4ster\u00e5s\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"published by\", \"Facit F\u00f6rlag AB\", \"ORG\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Denmark\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Faroes\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Finland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Iceland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Sweden\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Greenland\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"\u00c5land\", \"LOC\"],\n    [\"Facit catalog\", \"MISC\", \"country\", \"Danish West Indies\", \"LOC\"],\n    [\"FACIT 2007 Special\", \"MISC\", \"published in\", \"2007\", \"TIME\"],\n    [\"FACIT Postal VII\", \"MISC\", \"published in\", \"2004\", \"TIME\"],\n    [\"FACIT Sverige 2005\", \"MISC\", \"published in\", \"2005\", \"TIME\"],\n    [\"FACIT Special Classic\", \"MISC\", \"published in\", \"2018\", \"TIME\"],\n    [\"Facit catalog\", \"MISC\", \"instance of\", \"philatelists\", \"MISC\"],\n    [\"Facit catalog\", \"MISC\", \"developed by\", \"committee of 20 leading philatelists\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 18,
+  "FN": 5,
+  "recall": 0.2857142857142857,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

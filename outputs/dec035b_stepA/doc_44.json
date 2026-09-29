@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_44",
+ "base_raw": "[\n    [\"Sanjay Leela Bhansali\", \"PER\", \"director\", \"Saawariya\", \"MISC\"],\n    [\"Sony Pictures Entertainment\", \"ORG\", \"co-producer\", \"Saawariya\", \"MISC\"],\n    [\"Saawariya\", \"MISC\", \"release date\", \"9 November 2007\", \"TIME\"],\n    [\"Zohra Sehgal\", \"PER\", \"date of death\", \"2014\", \"TIME\"],\n    [\"Ranbir Kapoor\", \"PER\", \"father\", \"Rishi Kapoor\", \"PER\"],\n    [\"Ranbir Kapoor\", \"PER\", \"mother\", \"Neetu Singh\", \"PER\"],\n    [\"Sonam Kapoor\", \"PER\", \"father\", \"Anil Kapoor\", \"PER\"],\n    [\"Saawariya\", \"MISC\", \"based on\", \"White Nights\", \"MISC\"],\n    [\"Fyodor Dostoevsky\", \"PER\", \"author\", \"White Nights\", \"MISC\"],\n    [\"Saawariya\", \"MISC\", \"producer\", \"Sanjay Leela Bhansali\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 14,
+  "recall": 0.2222222222222222,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Bollywood Actors",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Sanjay Leela Bhansali\", \"PER\", \"director\", \"Saawariya\", \"MISC\"],\n    [\"Sony Pictures Entertainment\", \"ORG\", \"co-producer\", \"Saawariya\", \"MISC\"],\n    [\"Saawariya\", \"MISC\", \"release date\", \"9 November 2007\", \"TIME\"],\n    [\"Zohra Sehgal\", \"PER\", \"date of death\", \"2014\", \"TIME\"],\n    [\"Ranbir Kapoor\", \"PER\", \"father\", \"Rishi Kapoor\", \"PER\"],\n    [\"Ranbir Kapoor\", \"PER\", \"mother\", \"Neetu Singh\", \"PER\"],\n    [\"Sonam Kapoor\", \"PER\", \"father\", \"Anil Kapoor\", \"PER\"],\n    [\"Saawariya\", \"MISC\", \"based on\", \"White Nights\", \"MISC\"],\n    [\"Fyodor Dostoevsky\", \"PER\", \"author\", \"White Nights\", \"MISC\"],\n    [\"Sanjay Leela Bhansali\", \"PER\", \"producer\", \"Saawariya\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Sanjay Leela Bhansali\", \"PER\", \"producer\", \"Saawariya\", \"MISC\"],\n    [\"Sanjay Leela Bhansali\", \"PER\", \"director\", \"Saawariya\", \"MISC\"],\n    [\"Sony Pictures Entertainment\", \"ORG\", \"co-producer\", \"Saawariya\", \"MISC\"],\n    [\"Saawariya\", \"MISC\", \"release date\", \"9 November 2007\", \"TIME\"],\n    [\"Zohra Sehgal\", \"PER\", \"date of death\", \"2014\", \"TIME\"],\n    [\"Ranbir Kapoor\", \"PER\", \"father\", \"Rishi Kapoor\", \"PER\"],\n    [\"Ranbir Kapoor\", \"PER\", \"mother\", \"Neetu Singh\", \"PER\"],\n    [\"Sonam Kapoor\", \"PER\", \"father\", \"Anil Kapoor\", \"PER\"],\n    [\"Saawariya\", \"MISC\", \"based on\", \"White Nights\", \"MISC\"],\n    [\"Fyodor Dostoevsky\", \"PER\", \"author\", \"White Nights\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_287",
+ "base_raw": "[\n    [\"Petersfield\", \"LOC\", \"located in the administrative territorial entity\", \"East Hampshire\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"located in the administrative territorial entity\", \"Hampshire\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"country\", \"England\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"located on terrain feature\", \"South Downs\", \"LOC\"],\n    [\"South Downs National Park\", \"LOC\", \"contains administrative territorial entity\", \"Petersfield\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"twinned with\", \"Barentin\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"twinned with\", \"Warendorf\", \"LOC\"],\n    [\"Portsmouth\", \"LOC\", \"connected by\", \"Portsmouth Direct Line\", \"MISC\"],\n    [\"London\", \"LOC\", \"connected by\", \"Portsmouth Direct Line\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 6,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Petersfield\", \"LOC\", \"located in the administrative territorial entity\", \"East Hampshire\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"located in the administrative territorial entity\", \"Hampshire\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"country\", \"England\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"located in or next to body of water\", \"South Downs\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"part of\", \"South Downs National Park\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"sister city\", \"Barentin\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"sister city\", \"Warendorf\", \"LOC\"],\n    [\"Portsmouth\", \"LOC\", \"located in the administrative territorial entity\", \"Hampshire\", \"LOC\"],\n    [\"London\", \"LOC\", \"located in the administrative territorial entity\", \"England\", \"LOC\"],\n    [\"A3 road\", \"MISC\", \"location\", \"Petersfield\", \"LOC\"],\n    [\"A272 road\", \"MISC\", \"location\", \"Petersfield\", \"LOC\"],\n    [\"South Downs National Park\", \"LOC\", \"contains administrative territorial entity\", \"Petersfield\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 17,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Petersfield\", \"LOC\", \"located in the administrative territorial entity\", \"East Hampshire\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"located in the administrative territorial entity\", \"Hampshire\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"country\", \"England\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"located in or next to body of water\", \"South Downs\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"part of\", \"South Downs National Park\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"sister city\", \"Barentin\", \"LOC\"],\n    [\"Petersfield\", \"LOC\", \"sister city\", \"Warendorf\", \"LOC\"],\n    [\"Portsmouth\", \"LOC\", \"located in the administrative territorial entity\", \"Hampshire\", \"LOC\"],\n    [\"London\", \"LOC\", \"located in the administrative territorial entity\", \"England\", \"LOC\"],\n    [\"A3 road\", \"MISC\", \"location\", \"Petersfield\", \"LOC\"],\n    [\"A272 road\", \"MISC\", \"location\", \"Petersfield\", \"LOC\"],\n    [\"South Downs National Park\", \"LOC\", \"contains administrative territorial entity\", \"Petersfield\", \"LOC\"]\n]"
+}

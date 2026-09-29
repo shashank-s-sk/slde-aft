@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_362",
+ "base_raw": "[\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"located in\", \"Tr\u00f8ndelag county\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"part of\", \"Indre Fosen\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"near\", \"Husbysj\u00f8en\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"near\", \"H\u00f8ybakken\", \"LOC\"],\n    [\"Ramsvik Church\", \"LOC\", \"located in\", \"R\u00e5kv\u00e5g\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"population\", \"239\", \"NUM\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"population density\", \"\", \"NUM\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"country\", \"Norway\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g-dagene\", \"MISC\", \"location\", \"R\u00e5kv\u00e5g\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g-dagene\", \"MISC\", \"time\", \"last weekend of July\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 10,
+  "recall": 0.23076923076923078,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"located in\", \"Tr\u00f8ndelag\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"part of\", \"Indre Fosen\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"near\", \"Husbysj\u00f8en\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"near\", \"H\u00f8ybakken\", \"LOC\"],\n    [\"Ramsvik Church\", \"LOC\", \"located in\", \"R\u00e5kv\u00e5g\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"population\", \"239\", \"NUM\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"country\", \"Norway\", \"LOC\"],\n    [\"Rissa\", \"LOC\", \"part of\", \"Tr\u00f8ndelag\", \"LOC\"],\n    [\"Bjugn\", \"LOC\", \"near\", \"R\u00e5kv\u00e5g\", \"LOC\"],\n    [\"Stj\u00f8rnfjorden\", \"LOC\", \"located in\", \"Tr\u00f8ndelag\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 11,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"located in the administrative territorial entity\", \"Tr\u00f8ndelag\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"part of\", \"Indre Fosen\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"located in or next to body of water\", \"Stj\u00f8rnfjorden\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"near\", \"Husbysj\u00f8en\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"near\", \"H\u00f8ybakken\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"located in the administrative territorial entity\", \"Norway\", \"LOC\"],\n    [\"Ramsvik Church\", \"LOC\", \"located in the administrative territorial entity\", \"R\u00e5kv\u00e5g\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"population\", \"239\", \"NUM\"],\n    [\"R\u00e5kv\u00e5g\", \"LOC\", \"instance of\", \"village\", \"MISC\"],\n    [\"R\u00e5kv\u00e5g - dagene\", \"MISC\", \"located in the administrative territorial entity\", \"R\u00e5kv\u00e5g\", \"LOC\"],\n    [\"R\u00e5kv\u00e5g - dagene\", \"MISC\", \"happens in\", \"July\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_72",
+ "base_raw": "[\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"located in\", \"Indonesia\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"founded by\", \"Christian Church of Central Java\", \"ORG\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"member of\", \"World Communion of Reformed Churches\", \"ORG\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"publisher\", \"newspaper\", \"MISC\"],\n    [\"Reformed Church in the Netherlands\", \"ORG\", \"country of origin\", \"Netherlands\", \"LOC\"],\n    [\"Christian Church of Central Java\", \"ORG\", \"location\", \"Central Java\", \"LOC\"],\n    [\"Javanese Christian Church\", \"ORG\", \"member of\", \"Christian Church of Central Java\", \"ORG\"],\n    [\"Protestant Church in the Netherlands\", \"ORG\", \"country\", \"Netherlands\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"has part\", \"Classis\", \"MISC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"inception\", \"6 August 1987\", \"TIME\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"location of formation\", \"Sumatra\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 18,
+  "recall": 0.05263157894736842,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"located in\", \"Indonesia\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"founded by\", \"Christian Church of Central Java\", \"ORG\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"member of\", \"World Communion of Reformed Churches\", \"ORG\"],\n    [\"Protestant Church in the Netherlands\", \"ORG\", \"country\", \"Netherlands\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"country of origin\", \"Indonesia\", \"LOC\"],\n    [\"Reformed Church in the Netherlands\", \"ORG\", \"country\", \"Netherlands\", \"LOC\"],\n    [\"Christian Church of Central Java\", \"ORG\", \"location\", \"Java\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"date of inception\", \"6 August 1987\", \"TIME\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"number of members\", \"30000-35000\", \"NUM\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"number of parishes\", \"65\", \"NUM\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"number of house fellowships\", \"40\", \"NUM\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"number of Classis\", \"13\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 17,
+  "recall": 0.22727272727272727,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries"
+ ],
+ "kb_dedup_raw": "[\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"located in\", \"Indonesia\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"founded by\", \"Christian Church of Central Java\", \"ORG\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"member of\", \"World Communion of Reformed Churches\", \"ORG\"],\n    [\"Protestant Church in the Netherlands\", \"ORG\", \"country\", \"Netherlands\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"country of origin\", \"Indonesia\", \"LOC\"],\n    [\"Reformed Church in the Netherlands\", \"ORG\", \"country\", \"Netherlands\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"inception\", \"6 August 1987\", \"TIME\"],\n    [\"Christian Church of Central Java\", \"ORG\", \"location\", \"Java\", \"LOC\"],\n    [\"Javanese Christian Church\", \"ORG\", \"location\", \"Java\", \"LOC\"],\n    [\"Christian Church of Southern Sumatra\", \"ORG\", \"publisher\", \"newspaper\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

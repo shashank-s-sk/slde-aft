@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_470",
+ "base_raw": "[\n    [\"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\", \"publication date\", \"1955\", \"TIME\"],\n    [\"Lavrentiy Beria\", \"PER\", \"occupation\", \"Soviet secret police chief\", \"MISC\"],\n    [\"L. Ron Hubbard\", \"PER\", \"relation\", \"L Ron Hubbard Jr.\", \"PER\"],\n    [\"L. Ron Hubbard Jr.\", \"PER\", \"relation\", \"L. Ron Hubbard\", \"PER\"],\n    [\"Kenneth Goff\", \"PER\", \"alias\", \"Oliver Kenneth Goff\", \"MISC\"],\n    [\"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\", \"author\", \"Kenneth Goff\", \"PER\"],\n    [\"L. Ron Hubbard\", \"PER\", \"notable work\", \"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 4,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\", \"published in\", \"1955\", \"TIME\"],\n    [\"Lavrentiy Beria\", \"PER\", \"occupation\", \"Soviet secret police chief\", \"MISC\"],\n    [\"Kenneth Goff\", \"PER\", \"alias\", \"Oliver Kenneth Goff\", \"MISC\"],\n    [\"L. Ron Hubbard\", \"PER\", \"relation\", \"L Ron Hubbard Jr.\", \"PER\"],\n    [\"L. Ron Hubbard Jr.\", \"PER\", \"relation\", \"L. Ron Hubbard\", \"PER\"],\n    [\"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\", \"also referred to as\", \"The Communist Manual of Psycho-Political Warfare\", \"MISC\"],\n    [\"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\", \"also referred to as\", \"The Communist Manual of Instructions of Psychopolitical Warfare\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 10,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\", \"published in\", \"1955\", \"TIME\"],\n    [\"Lavrentiy Beria\", \"PER\", \"occupation\", \"Soviet secret police chief\", \"MISC\"],\n    [\"Kenneth Goff\", \"PER\", \"alias\", \"Oliver Kenneth Goff\", \"MISC\"],\n    [\"L. Ron Hubbard\", \"PER\", \"relation\", \"L Ron Hubbard Jr.\", \"PER\"],\n    [\"L. Ron Hubbard Jr.\", \"PER\", \"relation\", \"L. Ron Hubbard\", \"PER\"],\n    [\"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\", \"also referred to as\", \"The Communist Manual of Psycho-Political Warfare\", \"MISC\"],\n    [\"Brain-Washing: A Synthesis of the Russian Textbook on Psychopolitics\", \"MISC\", \"also referred to as\", \"The Communist Manual of Instructions of Psychopolitical Warfare\", \"MISC\"]\n]"
+}

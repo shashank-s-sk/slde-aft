@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_321",
+ "base_raw": "[\n    [\"Back for Good\", \"MISC\", \"release date\", \"30 March 1998\", \"TIME\"],\n    [\"Modern Talking\", \"MISC\", \"genre\", \"pop\", \"MISC\"],\n    [\"Back for Good\", \"MISC\", \"number of tracks\", \"18\", \"NUM\"],\n    [\"Modern Talking\", \"MISC\", \"country of origin\", \"Germany\", \"LOC\"],\n    [\"Back for Good\", \"MISC\", \"chart position\", \"1\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"certification\", \"5 gold\", \"MISC\"],\n    [\"Modern Talking\", \"MISC\", \"reunion\", \"1998\", \"TIME\"],\n    [\"Back for Good\", \"MISC\", \"sales\", \"over 1,250,000\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"chart duration\", \"54 weeks\", \"TIME\"],\n    [\"Back for Good\", \"MISC\", \"international sales\", \"over three million\", \"NUM\"],\n    [\"Modern Talking\", \"MISC\", \"album chart position\", \"1\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"release year\", \"1998\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Numbers",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Back for Good\", \"MISC\", \"release date\", \"30 March 1998\", \"TIME\"],\n    [\"Modern Talking\", \"ORG\", \"country of origin\", \"Germany\", \"LOC\"],\n    [\"Back for Good\", \"MISC\", \"number of tracks\", \"18\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"number of new songs\", \"4\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"number of previous hits\", \"13\", \"NUM\"],\n    [\"Modern Talking\", \"ORG\", \"genre\", \"pop\", \"MISC\"],\n    [\"Back for Good\", \"MISC\", \"chart position in Germany\", \"1\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"number of weeks at top of German chart\", \"5\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"number of gold awards in Germany\", \"5\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"total units sold in Germany\", \"1,250,000\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"number of weeks on German album chart\", \"54\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"total copies sold in Europe\", \"3,000,000\", \"NUM\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Sweden\", \"LOC\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Finland\", \"LOC\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Norway\", \"LOC\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Switzerland\", \"LOC\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Austria\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 22,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Back for Good\", \"MISC\", \"release date\", \"30 March 1998\", \"TIME\"],\n    [\"Modern Talking\", \"ORG\", \"country of origin\", \"Germany\", \"LOC\"],\n    [\"Back for Good\", \"MISC\", \"number of tracks\", \"18\", \"NUM\"],\n    [\"Modern Talking\", \"ORG\", \"genre\", \"pop\", \"MISC\"],\n    [\"Back for Good\", \"MISC\", \"chart position\", \"number one\", \"MISC\"],\n    [\"Back for Good\", \"MISC\", \"weeks at top\", \"5\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"gold awards\", \"5\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"units sold\", \"1,250,000\", \"NUM\"],\n    [\"Back for Good\", \"MISC\", \"weeks on chart\", \"54\", \"NUM\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Sweden\", \"LOC\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Finland\", \"LOC\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Norway\", \"LOC\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Switzerland\", \"LOC\"],\n    [\"Modern Talking\", \"ORG\", \"location of success\", \"Austria\", \"LOC\"],\n    [\"Back for Good\", \"MISC\", \"copies sold in Europe\", \"three million\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 20,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_218",
+ "base_raw": "[\n    [\"Anil Tissera\", \"PER\", \"place of birth\", \"Sri Lanka\", \"LOC\"],\n    [\"Anil Tissera\", \"PER\", \"educated at\", \"Britain\", \"LOC\"],\n    [\"Anil Tissera\", \"PER\", \"educated at\", \"United States\", \"LOC\"],\n    [\"Anil's Ghost\", \"MISC\", \"author\", \"Michael Ondaatje\", \"PER\"],\n    [\"Anil's Ghost\", \"MISC\", \"publisher\", \"McClelland and Stewart\", \"ORG\"],\n    [\"Sarath Diyasena\", \"PER\", \"occupation\", \"archaeologist\", \"MISC\"],\n    [\"Anil Tissera\", \"PER\", \"occupation\", \"forensic pathologist\", \"MISC\"],\n    [\"United Nations\", \"ORG\", \"location\", \"Sri Lanka\", \"LOC\"],\n    [\"Sri Lanka\", \"LOC\", \"event\", \"civil war\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Anil Tissera\", \"PER\", \"place of birth\", \"Sri Lanka\", \"LOC\"],\n    [\"Anil Tissera\", \"PER\", \"educated at\", \"Britain\", \"LOC\"],\n    [\"Anil Tissera\", \"PER\", \"educated at\", \"United States\", \"LOC\"],\n    [\"Anil's Ghost\", \"MISC\", \"author\", \"Michael Ondaatje\", \"PER\"],\n    [\"Anil's Ghost\", \"MISC\", \"publisher\", \"McClelland and Stewart\", \"ORG\"],\n    [\"Sarath Diyasena\", \"PER\", \"occupation\", \"archaeologist\", \"MISC\"],\n    [\"Anil Tissera\", \"PER\", \"occupation\", \"forensic pathologist\", \"MISC\"],\n    [\"United Nations\", \"ORG\", \"location\", \"Sri Lanka\", \"LOC\"],\n    [\"Sri Lanka\", \"LOC\", \"event\", \"civil war\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Anil Tissera\", \"PER\", \"place of birth\", \"Sri Lanka\", \"LOC\"],\n    [\"Anil Tissera\", \"PER\", \"country of citizenship\", \"Sri Lanka\", \"LOC\"],\n    [\"Anil's Ghost\", \"MISC\", \"author\", \"Michael Ondaatje\", \"PER\"],\n    [\"Anil's Ghost\", \"MISC\", \"publisher\", \"McClelland and Stewart\", \"ORG\"],\n    [\"Anil Tissera\", \"PER\", \"educated at\", \"Britain\", \"LOC\"],\n    [\"Anil Tissera\", \"PER\", \"educated at\", \"United States\", \"LOC\"],\n    [\"Sarath Diyasena\", \"PER\", \"occupation\", \"archaeologist\", \"MISC\"],\n    [\"Anil Tissera\", \"PER\", \"occupation\", \"forensic pathologist\", \"MISC\"],\n    [\"United Nations\", \"ORG\", \"location\", \"Sri Lanka\", \"LOC\"],\n    [\"Sri Lanka\", \"LOC\", \"location of formation\", \"Sri Lanka\", \"LOC\"],\n    [\"Anil Tissera\", \"PER\", \"member of\", \"United Nations\", \"ORG\"],\n    [\"Sarath Diyasena\", \"PER\", \"member of\", \"United Nations\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

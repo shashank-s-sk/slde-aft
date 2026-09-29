@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_425",
+ "base_raw": "[\n    [\"Rebecca Mann Pennell\", \"PER\", \"date of birth\", \"1821\", \"TIME\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"date of death\", \"1890\", \"TIME\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"niece of\", \"Horace Mann\", \"PER\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"employer\", \"Antioch College\", \"ORG\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"position held\", \"professor\", \"MISC\"],\n    [\"Antioch College\", \"ORG\", \"located in\", \"Yellow Springs, Ohio\", \"LOC\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Horace Mann\", \"PER\", \"occupation\", \"educator\", \"MISC\"],\n    [\"Antioch College\", \"ORG\", \"founded by\", \"unknown\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Rebecca Mann Pennell\", \"PER\", \"date of birth\", \"1821\", \"TIME\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"date of death\", \"1890\", \"TIME\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"niece of\", \"Horace Mann\", \"PER\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"employer\", \"Antioch College\", \"ORG\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"position held\", \"professor\", \"MISC\"],\n    [\"Antioch College\", \"ORG\", \"located in\", \"Yellow Springs, Ohio\", \"LOC\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Horace Mann\", \"PER\", \"occupation\", \"educator\", \"MISC\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"place of work\", \"Antioch College\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 8,
+  "recall": 0.1111111111111111,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Rebecca Mann Pennell\", \"PER\", \"date of birth\", \"1821\", \"TIME\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"date of death\", \"1890\", \"TIME\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"niece of\", \"Horace Mann\", \"PER\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"employer\", \"Antioch College\", \"ORG\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"position held\", \"professor\", \"MISC\"],\n    [\"Antioch College\", \"ORG\", \"located in\", \"Yellow Springs, Ohio\", \"LOC\"],\n    [\"Rebecca Mann Pennell\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Horace Mann\", \"PER\", \"occupation\", \"educator\", \"MISC\"],\n    [\"Antioch College\", \"ORG\", \"founded by\", \"unknown\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_206",
+ "base_raw": "[\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Goose Creek Symphony\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Pollution\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Sylvester and the Hot Band\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Jeff Baxter\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Burleigh Drummond\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Steve Gadd\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"contributor to album\", \"Soul Searchin'\", \"MISC\"],\n    [\"Chris Mostert\", \"PER\", \"contributor to album\", \"Strange Weather\", \"MISC\"],\n    [\"Chris Mostert\", \"PER\", \"contributor to album\", \"After Hours\", \"MISC\"],\n    [\"Chris Mostert\", \"PER\", \"contributor to album\", \"Midnight Breeze\", \"MISC\"],\n    [\"Chris Mostert\", \"PER\", \"contributor to album\", \"Long Road Out of Eden\", \"MISC\"],\n    [\"Glenn Frey\", \"PER\", \"author of album\", \"Soul Searchin'\", \"MISC\"],\n    [\"Glenn Frey\", \"PER\", \"author of album\", \"Strange Weather\", \"MISC\"],\n    [\"Glenn Frey\", \"PER\", \"author of album\", \"After Hours\", \"MISC\"],\n    [\"Don Henley\", \"PER\", \"employer\", \"Chris Mostert\", \"PER\"],\n    [\"Joe Walsh\", \"PER\", \"employer\", \"Chris Mostert\", \"PER\"],\n    [\"Glenn Frey\", \"PER\", \"employer\", \"Chris Mostert\", \"PER\"],\n    [\"Eagles\", \"ORG\", \"author of album\", \"Long Road Out of Eden\", \"MISC\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 10,
+  "FN": 6,
+  "recall": 0.5714285714285714,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Chris Mostert\", \"PER\", \"member of\", \"The Mighty Horns\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Goose Creek Symphony\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Pollution\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Sylvester and the Hot Band\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Don Henley\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Joe Walsh\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Glenn Frey\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"performer on album\", \"Soul Searchin'\", \"MISC\"],\n    [\"Chris Mostert\", \"PER\", \"performer on album\", \"Strange Weather\", \"MISC\"],\n    [\"Chris Mostert\", \"PER\", \"performer on album\", \"After Hours\", \"MISC\"],\n    [\"Chris Mostert\", \"PER\", \"performer on album\", \"Midnight Breeze\", \"MISC\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Jeff Baxter\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Burleigh Drummond\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Steve Gadd\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"contributor to album\", \"Long Road Out of Eden\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 23,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Chris Mostert\", \"PER\", \"member of\", \"The Mighty Horns\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Goose Creek Symphony\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Pollution\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"member of\", \"Sylvester and the Hot Band\", \"ORG\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Don Henley\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Joe Walsh\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"collaborator\", \"Glenn Frey\", \"PER\"],\n    [\"Chris Mostert\", \"PER\", \"participant\", \"Farewell 1 Tour\", \"MISC\"],\n    [\"Midnight Breeze\", \"MISC\", \"artist\", \"Chris Mostert\", \"PER\"],\n    [\"Midnight Breeze\", \"MISC\", \"featuring\", \"Jeff Baxter\", \"PER\"],\n    [\"Midnight Breeze\", \"MISC\", \"featuring\", \"Burleigh Drummond\", \"PER\"],\n    [\"Midnight Breeze\", \"MISC\", \"featuring\", \"Steve Gadd\", \"PER\"],\n    [\"Long Road Out of Eden\", \"MISC\", \"contributor\", \"Chris Mostert\", \"PER\"],\n    [\"Soul Searchin'\", \"MISC\", \"artist\", \"Glenn Frey\", \"PER\"],\n    [\"Soul Searchin'\", \"MISC\", \"featuring\", \"Chris Mostert\", \"PER\"],\n    [\"Strange Weather\", \"MISC\", \"artist\", \"Glenn Frey\", \"PER\"],\n    [\"Strange Weather\", \"MISC\", \"featuring\", \"Chris Mostert\", \"PER\"],\n    [\"After Hours\", \"MISC\", \"artist\", \"Glenn Frey\", \"PER\"],\n    [\"After Hours\", \"MISC\", \"featuring\", \"Chris Mostert\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 34,
+  "FN": 4,
+  "recall": 0.5,
+  "n_extracted": 34,
+  "judge_parse_ok": true
+ }
+}

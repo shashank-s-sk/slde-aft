@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_345",
+ "base_raw": "[\n    [\"Miss Little Havana\", \"MISC\", \"genre\", \"studio album\", \"MISC\"],\n    [\"Gloria Estefan\", \"PER\", \"nationality\", \"Cuban-American\", \"MISC\"],\n    [\"Unwrapped\", \"MISC\", \"release year\", \"2003\", \"TIME\"],\n    [\"Crescent Moon Records\", \"ORG\", \"distributor\", \"Verve Forecast\", \"ORG\"],\n    [\"Verve Forecast\", \"ORG\", \"parent company\", \"Universal Music Group\", \"ORG\"],\n    [\"Pharrell Williams\", \"PER\", \"occupation\", \"urban producer\", \"MISC\"],\n    [\"Emilio Estefan\", \"PER\", \"relation\", \"Gloria Estefan\", \"PER\"],\n    [\"Target stores\", \"ORG\", \"location\", \"US\", \"LOC\"],\n    [\"Billboard 200\", \"MISC\", \"chart position\", \"28\", \"NUM\"],\n    [\"Wepa\", \"MISC\", \"chart\", \"Billboard Hot Dance Club Songs\", \"MISC\"],\n    [\"Miss Little Havana\", \"MISC\", \"release date\", \"September 27, 2011\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 12,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Gloria Estefan\", \"PER\", \"country of origin\", \"Cuba\", \"LOC\"],\n    [\"Gloria Estefan\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Miss Little Havana\", \"MISC\", \"genre\", \"urban\", \"MISC\"],\n    [\"Pharrell Williams\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Emilio Estefan\", \"PER\", \"relation\", \"Gloria Estefan\", \"PER\"],\n    [\"Crescent Moon Records\", \"ORG\", \"distributor\", \"Verve Forecast\", \"ORG\"],\n    [\"Verve Forecast\", \"ORG\", \"parent organization\", \"Universal Music Group\", \"ORG\"],\n    [\"Miss Little Havana\", \"MISC\", \"release date\", \"September 27, 2011\", \"TIME\"],\n    [\"Wepa\", \"MISC\", \"release date\", \"July 2011\", \"TIME\"],\n    [\"Miss Little Havana\", \"MISC\", \"chart performance\", \"Billboard 200\", \"MISC\"],\n    [\"Miss Little Havana\", \"MISC\", \"sales\", \"13,697\", \"NUM\"],\n    [\"Miss Little Havana\", \"MISC\", \"total sales\", \"21,522\", \"NUM\"],\n    [\"Wepa\", \"MISC\", \"chart performance\", \"Billboard Hot Dance Club Songs\", \"MISC\"],\n    [\"Target\", \"ORG\", \"retailer\", \"Miss Little Havana\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 20,
+  "FN": 11,
+  "recall": 0.15384615384615385,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 20,
+  "FN": 11,
+  "recall": 0.15384615384615385,
+  "n_extracted": 22,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Gloria Estefan\", \"PER\", \"country of origin\", \"Cuba\", \"LOC\"],\n    [\"Gloria Estefan\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Miss Little Havana\", \"MISC\", \"genre\", \"urban\", \"MISC\"],\n    [\"Pharrell Williams\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Emilio Estefan\", \"PER\", \"relation\", \"Gloria Estefan\", \"PER\"],\n    [\"Crescent Moon Records\", \"ORG\", \"distributor\", \"Verve Forecast\", \"ORG\"],\n    [\"Verve Forecast\", \"ORG\", \"parent organization\", \"Universal Music Group\", \"ORG\"],\n    [\"Miss Little Havana\", \"MISC\", \"release date\", \"September 27, 2011\", \"TIME\"],\n    [\"Wepa\", \"MISC\", \"release date\", \"July 2011\", \"TIME\"],\n    [\"Miss Little Havana\", \"MISC\", \"chart performance\", \"Billboard 200\", \"MISC\"],\n    [\"Miss Little Havana\", \"MISC\", \"sales\", \"13,697\", \"NUM\"],\n    [\"Miss Little Havana\", \"MISC\", \"total sales\", \"21,522\", \"NUM\"],\n    [\"Wepa\", \"MISC\", \"chart performance\", \"Billboard Hot Dance Club Songs\", \"MISC\"],\n    [\"Target\", \"ORG\", \"retailer\", \"Miss Little Havana\", \"MISC\"]\n]"
+}

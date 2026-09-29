@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_391",
+ "base_raw": "[\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"place of birth\", \"Beauvais\", \"LOC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"educated at\", \"Coll\u00e8ge de France\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"employer\", \"\u00c9cole Normale Sup\u00e9rieure\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"employer\", \"Mus\u00e9um National d'Histoire Naturelle\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Des Cloizeaux\", \"PER\", \"author\", \"Le\u00e7ons de cristallographie\", \"MISC\"],\n    [\"Des Cloizeaux\", \"PER\", \"author\", \"Manuel de min\u00e9ralogie\", \"MISC\"],\n    [\"Iceland\", \"LOC\", \"located in the administrative territorial entity\", \"Europe\", \"LOC\"],\n    [\"Alexis Damour\", \"PER\", \"dedicated the mineral\", \"descloizite\", \"MISC\"],\n    [\"Des Cloizeaux\", \"PER\", \"award received\", \"Wollaston Medal\", \"MISC\"],\n    [\"Geological Society of London\", \"ORG\", \"award given\", \"Wollaston Medal\", \"MISC\"],\n    [\"French Academy of Sciences\", \"ORG\", \"member\", \"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"position held\", \"President of French Academy of Sciences\", \"MISC\"],\n    [\"Christian VIII of Denmark\", \"PER\", \"related to mineral\", \"Christianite\", \"MISC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"date of birth\", \"17 October 1817\", \"TIME\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"date of death\", \"6 May 1897\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"date of birth\", \"17 October 1817\", \"TIME\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"date of death\", \"6 May 1897\", \"TIME\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"place of birth\", \"Beauvais\", \"LOC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"educated at\", \"Coll\u00e8ge de France\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"position held\", \"professor of mineralogy\", \"MISC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"employer\", \"\u00c9cole Normale Sup\u00e9rieure\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"employer\", \"Mus\u00e9um National d'Histoire Naturelle\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"author\", \"Le\u00e7ons de cristallographie\", \"MISC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"author\", \"Manuel de min\u00e9ralogie\", \"MISC\"],\n    [\"Des Cloizeaux\", \"PER\", \"award received\", \"Wollaston Medal\", \"MISC\"],\n    [\"Des Cloizeaux\", \"PER\", \"member of\", \"French Academy of Sciences\", \"ORG\"],\n    [\"Iceland\", \"LOC\", \"located in\", \"Europe\", \"LOC\"],\n    [\"Jean-Baptiste Biot\", \"PER\", \"employer\", \"Coll\u00e8ge de France\", \"ORG\"],\n    [\"Alexis Damour\", \"PER\", \"author\", \"descloizite\", \"MISC\"],\n    [\"Christian VIII of Denmark\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 19,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"place of birth\", \"Beauvais\", \"LOC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"educated at\", \"Coll\u00e8ge de France\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"employer\", \"\u00c9cole Normale Sup\u00e9rieure\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"employer\", \"Mus\u00e9um National d'Histoire Naturelle\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"],\n    [\"Des Cloizeaux\", \"PER\", \"award received\", \"Wollaston Medal\", \"MISC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"member of\", \"French Academy of Sciences\", \"ORG\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Iceland\", \"LOC\", \"located in the administrative territorial entity\", \"Europe\", \"LOC\"],\n    [\"Jean-Baptiste Biot\", \"PER\", \"employer\", \"Coll\u00e8ge de France\", \"ORG\"],\n    [\"Christian VIII of Denmark\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Alexis Damour\", \"PER\", \"discoverer\", \"descloizite\", \"MISC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"author\", \"Le\u00e7ons de cristallographie\", \"MISC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"author\", \"Manuel de min\u00e9ralogie\", \"MISC\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"date of birth\", \"17 October 1817\", \"TIME\"],\n    [\"Alfred Louis Olivier Legrand Des Cloizeaux\", \"PER\", \"date of death\", \"6 May 1897\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 11,
+  "recall": 0.3125,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

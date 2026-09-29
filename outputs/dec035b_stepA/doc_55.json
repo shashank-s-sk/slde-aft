@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_55",
+ "base_raw": "[\n    [\"Gary Numan\", \"PER\", \"released\", \"Machine + Soul\", \"MISC\"],\n    [\"Machine + Soul\", \"MISC\", \"genre\", \"industrial\", \"MISC\"],\n    [\"Gary Numan\", \"PER\", \"founded by\", \"Numa Records\", \"ORG\"],\n    [\"Numa Records\", \"ORG\", \"located in\", \"England\", \"LOC\"],\n    [\"Gary Numan\", \"PER\", \"signed to\", \"IRS Records\", \"ORG\"],\n    [\"Metal Rhythm\", \"MISC\", \"released by\", \"IRS Records\", \"ORG\"],\n    [\"Outland\", \"MISC\", \"released by\", \"IRS Records\", \"ORG\"],\n    [\"Gary Numan\", \"PER\", \"quit\", \"IRS Records\", \"ORG\"],\n    [\"Sacrifice\", \"MISC\", \"released by\", \"Numa Records\", \"ORG\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 7,
+  "FN": 16,
+  "recall": 0.1111111111111111,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Gary Numan\", \"PER\", \"released\", \"Machine + Soul\", \"MISC\"],\n    [\"Machine + Soul\", \"MISC\", \"genre\", \"industrial\", \"MISC\"],\n    [\"Gary Numan\", \"PER\", \"founded by\", \"Numa Records\", \"ORG\"],\n    [\"Numa Records\", \"ORG\", \"founded by\", \"Gary Numan\", \"PER\"],\n    [\"Gary Numan\", \"PER\", \"signed to\", \"IRS Records\", \"ORG\"],\n    [\"Gary Numan\", \"PER\", \"left\", \"IRS Records\", \"ORG\"],\n    [\"Machine + Soul\", \"MISC\", \"release year\", \"1992\", \"TIME\"],\n    [\"Metal Rhythm\", \"MISC\", \"release year\", \"1988\", \"TIME\"],\n    [\"Outland\", \"MISC\", \"release year\", \"1991\", \"TIME\"],\n    [\"Gary Numan\", \"PER\", \"released\", \"Metal Rhythm\", \"MISC\"],\n    [\"Gary Numan\", \"PER\", \"released\", \"Outland\", \"MISC\"],\n    [\"Numa Records\", \"ORG\", \"reactivated by\", \"Gary Numan\", \"PER\"],\n    [\"Sacrifice\", \"MISC\", \"released on\", \"Numa Records\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 10,
+  "recall": 0.3333333333333333,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 10,
+  "recall": 0.3333333333333333,
+  "n_extracted": 18,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Gary Numan\", \"PER\", \"released\", \"Machine + Soul\", \"MISC\"],\n    [\"Machine + Soul\", \"MISC\", \"genre\", \"industrial\", \"MISC\"],\n    [\"Gary Numan\", \"PER\", \"founded by\", \"Numa Records\", \"ORG\"],\n    [\"Numa Records\", \"ORG\", \"founded by\", \"Gary Numan\", \"PER\"],\n    [\"Gary Numan\", \"PER\", \"signed to\", \"IRS Records\", \"ORG\"],\n    [\"Gary Numan\", \"PER\", \"left\", \"IRS Records\", \"ORG\"],\n    [\"Machine + Soul\", \"MISC\", \"release year\", \"1992\", \"TIME\"],\n    [\"Metal Rhythm\", \"MISC\", \"release year\", \"1988\", \"TIME\"],\n    [\"Outland\", \"MISC\", \"release year\", \"1991\", \"TIME\"],\n    [\"Gary Numan\", \"PER\", \"released\", \"Metal Rhythm\", \"MISC\"],\n    [\"Gary Numan\", \"PER\", \"released\", \"Outland\", \"MISC\"],\n    [\"Numa Records\", \"ORG\", \"reactivated by\", \"Gary Numan\", \"PER\"],\n    [\"Sacrifice\", \"MISC\", \"released on\", \"Numa Records\", \"ORG\"]\n]"
+}

@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_169",
+ "base_raw": "[\n    [\"Emanoil Bacaloglu\", \"PER\", \"place of birth\", \"Bucharest\", \"LOC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"country of citizenship\", \"Romania\", \"LOC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"educated at\", \"University of Paris\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"educated at\", \"University of Leipzig\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"member of\", \"Romanian Academy\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"position held\", \"professor\", \"MISC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"participant\", \"1848 Wallachian revolution\", \"MISC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"creator\", \"Bacaloglu pseudosphere\", \"MISC\"],\n    [\"Romanian Academy\", \"ORG\", \"located in\", \"Bucharest\", \"LOC\"],\n    [\"Society of Physical Sciences\", \"ORG\", \"founded by\", \"Emanoil Bacaloglu\", \"PER\"],\n    [\"University of Bucharest\", \"ORG\", \"employer\", \"Emanoil Bacaloglu\", \"PER\"],\n    [\"Bacaloglu pseudosphere\", \"MISC\", \"creator\", \"Emanoil Bacaloglu\", \"PER\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 9,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Emanoil Bacaloglu\", \"PER\", \"date of birth\", \"11 April 1830\", \"TIME\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"date of death\", \"30 August 1891\", \"TIME\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"place of birth\", \"Bucharest\", \"LOC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"country of citizenship\", \"Romania\", \"LOC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"educated at\", \"University of Paris\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"educated at\", \"University of Leipzig\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"member of\", \"Romanian Academy\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"position held\", \"professor\", \"MISC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"participant of\", \"1848 Wallachian revolution\", \"MISC\"],\n    [\"Society of Physical Sciences\", \"ORG\", \"founded by\", \"Emanoil Bacaloglu\", \"PER\"],\n    [\"Romanian Athenaeum\", \"ORG\", \"founded by\", \"Emanoil Bacaloglu\", \"PER\"],\n    [\"Bacaloglu pseudosphere\", \"MISC\", \"creator\", \"Emanoil Bacaloglu\", \"PER\"],\n    [\"Bacaloglu curvature\", \"MISC\", \"discoverer\", \"Emanoil Bacaloglu\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Emanoil Bacaloglu\", \"PER\", \"date of birth\", \"11 April 1830\", \"TIME\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"date of death\", \"30 August 1891\", \"TIME\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"place of birth\", \"Bucharest\", \"LOC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"country of citizenship\", \"Romania\", \"LOC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"educated at\", \"University of Paris\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"educated at\", \"University of Leipzig\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"member of\", \"Romanian Academy\", \"ORG\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"position held\", \"professor\", \"MISC\"],\n    [\"Emanoil Bacaloglu\", \"PER\", \"participant of\", \"1848 Wallachian revolution\", \"MISC\"],\n    [\"Bacaloglu pseudosphere\", \"MISC\", \"discoverer\", \"Emanoil Bacaloglu\", \"PER\"],\n    [\"Romanian Athenaeum\", \"ORG\", \"founder\", \"Emanoil Bacaloglu\", \"PER\"],\n    [\"Society of Physical Sciences\", \"ORG\", \"founder\", \"Emanoil Bacaloglu\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

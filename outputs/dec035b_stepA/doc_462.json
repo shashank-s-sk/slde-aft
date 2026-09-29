@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_462",
+ "base_raw": "[\n    [\"Ladies Night\", \"MISC\", \"release date\", \"10 November 2003\", \"TIME\"],\n   ",
+ "base": {
+  "TP": 0,
+  "FP": 0,
+  "FN": 13,
+  "recall": 0.0,
+  "n_extracted": 0,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Ladies Night\", \"MISC\", \"release date\", \"10 November 2003\", \"TIME\"],\n    [\"If You Come to Me\", \"MISC\", \"release date\", \"27 October 2003\", \"TIME\"],\n    [\"Ladies' Night\", \"MISC\", \"release date\", \"15 December 2003\", \"TIME\"],\n    [\"Someone like Me\", \"MISC\", \"release date\", \"29 March 2004\", \"TIME\"],\n    [\"Be with You\", \"MISC\", \"release date\", \"2002\", \"TIME\"],\n    [\"The Last Goodbye\", \"MISC\", \"release date\", \"2002\", \"TIME\"],\n    [\"Ladies Night\", \"MISC\", \"chart position\", \"5\", \"NUM\"],\n    [\"Atomic Kitten\", \"ORG\", \"genre\", \"pop\", \"MISC\"],\n    [\"Ladies Night\", \"MISC\", \"certification\", \"Platinum\", \"MISC\"],\n    [\"Feels So Good\", \"MISC\", \"certification\", \"Double Platinum\", \"MISC\"],\n    [\"Atomic Kitten\", \"ORG\", \"country of origin\", \"UK\", \"LOC\"],\n    [\"Kool & the Gang\", \"ORG\", \"collaborator\", \"Atomic Kitten\", \"ORG\"],\n    [\"Liz McClarnon\", \"PER\", \"member of\", \"Atomic Kitten\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 13,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Ladies Night\", \"MISC\", \"release date\", \"10 November 2003\", \"TIME\"],\n    [\"If You Come to Me\", \"MISC\", \"release date\", \"27 October 2003\", \"TIME\"],\n    [\"Ladies' Night\", \"MISC\", \"release date\", \"15 December 2003\", \"TIME\"],\n    [\"Someone like Me\", \"MISC\", \"release date\", \"29 March 2004\", \"TIME\"],\n    [\"Be with You\", \"MISC\", \"release date\", \"2002\", \"TIME\"],\n    [\"The Last Goodbye\", \"MISC\", \"release date\", \"2002\", \"TIME\"],\n    [\"Ladies Night\", \"MISC\", \"chart position\", \"5\", \"NUM\"],\n    [\"Atomic Kitten\", \"ORG\", \"genre\", \"pop\", \"MISC\"],\n    [\"Ladies Night\", \"MISC\", \"certification\", \"Platinum\", \"MISC\"],\n    [\"Feels So Good\", \"MISC\", \"certification\", \"Double Platinum\", \"MISC\"],\n    [\"Atomic Kitten\", \"ORG\", \"country of origin\", \"UK\", \"LOC\"],\n    [\"Kool & the Gang\", \"ORG\", \"collaborator\", \"Atomic Kitten\", \"ORG\"],\n    [\"Liz McClarnon\", \"PER\", \"member of\", \"Atomic Kitten\", \"ORG\"]\n]"
+}

@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_84",
+ "base_raw": "[\n    [\"Mehdi Bazargan\", \"PER\", \"member of\", \"Freedom Movement of Iran\", \"ORG\"],\n    [\"Ruhollah Khomeini\", \"PER\", \"title\", \"Ayatollah Khomeini\", \"MISC\"],\n    [\"Shapour Bakhtiar\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Ebrahim Yazdi\", \"PER\", \"position held\", \"Foreign Minister\", \"MISC\"],\n    [\"Interim Government of Iran\", \"ORG\", \"head of government\", \"Mehdi Bazargan\", \"PER\"],\n    [\"Iran\", \"LOC\", \"government\", \"Interim Government of Iran\", \"ORG\"],\n    [\"Mehdi Bazargan\", \"PER\", \"date of event\", \"4 February 1979\", \"TIME\"],\n    [\"Shapour Bakhtiar\", \"PER\", \"date of event\", \"11 February\", \"TIME\"],\n    [\"Mehdi Bazargan\", \"PER\", \"event\", \"introduction of seven-member cabinet\", \"MISC\"],\n    [\"Ebrahim Yazdi\", \"PER\", \"date of event\", \"14 February 1979\", \"TIME\"],\n    [\"Islamic Republic of Iran\", \"ORG\", \"constitution adoption date\", \"24 October 1979\", \"TIME\"],\n    [\"Islamic Republic of Iran\", \"ORG\", \"constitution effective date\", \"3 December 1979\", \"TIME\"],\n    [\"American embassy\", \"LOC\", \"event\", \"taking over\", \"MISC\"],\n    [\"Council of the Islamic Revolution\", \"ORG\", \"position held\", \"government\", \"MISC\"],\n    [\"Mehdi Bazargan\", \"PER\", \"member of\", \"Islamic Consultative Assembly\", \"ORG\"],\n    [\"Islamic Consultative Assembly\", \"ORG\", \"formation date\", \"12 August 1980\", \"TIME\"],\n    [\"Tehran\", \"LOC\", \"represented by\", \"Mehdi Bazargan\", \"PER\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 14,
+  "recall": 0.125,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Mehdi Bazargan\", \"PER\", \"member of\", \"Freedom Movement of Iran\", \"ORG\"],\n    [\"Ruhollah Khomeini\", \"PER\", \"title\", \"Ayatollah Khomeini\", \"MISC\"],\n    [\"Shapour Bakhtiar\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Ebrahim Yazdi\", \"PER\", \"position held\", \"Foreign Minister\", \"MISC\"],\n    [\"Iran\", \"LOC\", \"capital\", \"Tehran\", \"LOC\"],\n    [\"Mehdi Bazargan\", \"PER\", \"represented\", \"Tehran\", \"LOC\"],\n    [\"Islamic Republic of Iran\", \"ORG\", \"founded by\", \"Ruhollah Khomeini\", \"PER\"],\n    [\"Council of the Islamic Revolution\", \"ORG\", \"replaced by\", \"Islamic Consultative Assembly\", \"ORG\"],\n    [\"American embassy\", \"LOC\", \"located in\", \"Iran\", \"LOC\"],\n    [\"Ruhollah Khomeini\", \"PER\", \"opposed by\", \"Interim Government of Iran\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 19,
+  "FN": 15,
+  "recall": 0.21052631578947367,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Mehdi Bazargan\", \"PER\", \"member of\", \"Freedom Movement of Iran\", \"ORG\"],\n    [\"Ruhollah Khomeini\", \"PER\", \"title\", \"Ayatollah Khomeini\", \"MISC\"],\n    [\"Shapour Bakhtiar\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Ebrahim Yazdi\", \"PER\", \"position held\", \"Foreign Minister\", \"MISC\"],\n    [\"Interim Government of Iran\", \"ORG\", \"head of government\", \"Mehdi Bazargan\", \"PER\"],\n    [\"Iran\", \"LOC\", \"government\", \"Interim Government of Iran\", \"ORG\"],\n    [\"Islamic Republic of Iran\", \"ORG\", \"constitution\", \"constitution of the Islamic Republic of Iran\", \"MISC\"],\n    [\"Mehdi Bazargan\", \"PER\", \"date of event\", \"4 February 1979\", \"TIME\"],\n    [\"Shapour Bakhtiar\", \"PER\", \"date of event\", \"11 February\", \"TIME\"],\n    [\"Ebrahim Yazdi\", \"PER\", \"date of event\", \"14 February 1979\", \"TIME\"],\n    [\"Islamic Consultative Assembly\", \"ORG\", \"location\", \"Tehran\", \"LOC\"],\n    [\"Mehdi Bazargan\", \"PER\", \"member of\", \"Islamic Consultative Assembly\", \"ORG\"],\n    [\"Ruhollah Khomeini\", \"PER\", \"supporter of\", \"taking over of the American embassy\", \"MISC\"],\n    [\"Council of the Islamic Revolution\", \"ORG\", \"government of\", \"Iran\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 18,
+  "FN": 15,
+  "recall": 0.16666666666666666,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

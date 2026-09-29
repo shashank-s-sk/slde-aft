@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_427",
+ "base_raw": "[\n    [\"Frederick Joseph Stevenson\", \"PER\", \"place of birth\", \"Ontario\", \"LOC\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"country of citizenship\", \"Canada\", \"LOC\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"member of\", \"Canadian Expeditionary Force\", \"ORG\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"member of\", \"British Royal Flying Corps\", \"ORG\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"award received\", \"Distinguished Flying Cross\", \"MISC\"],\n    [\"Western Canada Airways\", \"ORG\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Stevenson Field\", \"LOC\", \"located in\", \"Winnipeg\", \"LOC\"],\n    [\"Stevenson Lake\", \"LOC\", \"located in\", \"Manitoba\", \"LOC\"],\n    [\"Stevenson River\", \"LOC\", \"located in\", \"Manitoba\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 5,
+  "FN": 4,
+  "recall": 0.5,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Frederick Joseph Stevenson\", \"PER\", \"place of birth\", \"Ontario\", \"LOC\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"country of citizenship\", \"Canada\", \"LOC\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"date of birth\", \"December 2, 1895\", \"TIME\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"date of death\", \"January 5, 1928\", \"TIME\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"member of\", \"Canadian Expeditionary Force\", \"ORG\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"member of\", \"British Royal Flying Corps\", \"ORG\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"award received\", \"Distinguished Flying Cross\", \"MISC\"],\n    [\"Western Canada Airways\", \"ORG\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Stevenson Field\", \"LOC\", \"located in\", \"Winnipeg\", \"LOC\"],\n    [\"Stevenson Lake\", \"LOC\", \"located in\", \"Manitoba\", \"LOC\"],\n    [\"Stevenson River\", \"LOC\", \"located in\", \"Manitoba\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 5,
+  "FN": 2,
+  "recall": 0.75,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Frederick Joseph Stevenson\", \"PER\", \"place of birth\", \"Ontario\", \"LOC\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"country of citizenship\", \"Canada\", \"LOC\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"date of birth\", \"December 2, 1895\", \"TIME\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"date of death\", \"January 5, 1928\", \"TIME\"],\n    [\"Western Canada Airways\", \"ORG\", \"located in\", \"Canada\", \"LOC\"],\n    [\"Stevenson Field\", \"LOC\", \"located in\", \"Winnipeg\", \"LOC\"],\n    [\"Stevenson Lake\", \"LOC\", \"located in\", \"Manitoba\", \"LOC\"],\n    [\"Stevenson River\", \"LOC\", \"located in\", \"Manitoba\", \"LOC\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Frederick Joseph Stevenson\", \"PER\", \"employer\", \"Western Canada Airways\", \"ORG\"],\n    [\"Canadian Expeditionary Force\", \"ORG\", \"located in\", \"Canada\", \"LOC\"],\n    [\"British Royal Flying Corps\", \"ORG\", \"located in\", \"United Kingdom\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 8,
+  "FN": 2,
+  "recall": 0.7777777777777778,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

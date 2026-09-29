@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_412",
+ "base_raw": "[\n    [\"Stop Wasting Food\", \"ORG\", \"founded by\", \"Selina Juul\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"leader\", \"Selina Juul\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"spokesperson\", \"Selina Juul\", \"PER\"],\n    [\"Denmark\", \"LOC\", \"country of origin\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Selina Juul\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Eva Kjer Hansen\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Poul Nyrup Rasmussen\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Ritt Bjerregaard\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Connie Hedegaard\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Bertel Haarder\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Frank Jensen\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Dan J\u00f8rgensen\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Karen Ellemann\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Henrik H\u00f8egh\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Kirsten Brosb\u00f8l\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Rema 1000\", \"ORG\"],\n    [\"Stop Wasting Food\", \"ORG\", \"supported by\", \"Coop Danmark\", \"ORG\"],\n    [\"Denmark\", \"LOC\", \"reduction of food waste\", \"25%\", \"NUM\"],\n    [\"Denmark\", \"LOC\", \"food waste reduction period\", \"2010-2015\", \"TIME\"],\n    [\"Stop Wasting Food\", \"ORG\", \"established in\", \"2008\", \"TIME\"],\n    [\"Denmark\", \"LOC\", \"estimated food waste\", \"700,000 tons\", \"NUM\"],\n    [\"Denmark\", \"LOC\", \"cost of food waste\", \"DKK 11.6 billion\", \"NUM\"]\n]",
+ "base": {
+  "TP": 12,
+  "FP": 10,
+  "FN": 2,
+  "recall": 0.8571428571428571,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Stop Wasting Food\", \"ORG\", \"founded by\", \"Selina Juul\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"leader\", \"Selina Juul\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"spokesperson\", \"Selina Juul\", \"PER\"],\n    [\"Denmark\", \"LOC\", \"country of origin\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Selina Juul\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Stop Wasting Food\", \"ORG\", \"location\", \"Denmark\", \"LOC\"],\n    [\"Denmark\", \"LOC\", \"amount of food waste\", \"700,000 tons\", \"NUM\"],\n    [\"Denmark\", \"LOC\", \"cost of food waste\", \"DKK 11.6 billion\", \"NUM\"],\n    [\"Eva Kjer Hansen\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Poul Nyrup Rasmussen\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Ritt Bjerregaard\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Connie Hedegaard\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Bertel Haarder\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Frank Jensen\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Dan J\u00f8rgensen\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Karen Ellemann\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Henrik H\u00f8egh\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Kirsten Brosb\u00f8l\", \"PER\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Rema 1000\", \"ORG\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Coop Danmark\", \"ORG\", \"supports\", \"Stop Wasting Food\", \"ORG\"],\n    [\"Denmark\", \"LOC\", \"reduction in food waste\", \"25%\", \"NUM\"],\n    [\"Stop Wasting Food\", \"ORG\", \"time of establishment\", \"2008\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 17,
+  "FP": 34,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 38,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Stop Wasting Food\", \"ORG\", \"founded by\", \"Selina Juul\", \"PER\"],\n    [\"Stop Wasting Food\", \"ORG\", \"country\", \"Denmark\", \"LOC\"],\n    [\"Selina Juul\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Denmark\", \"LOC\", \"capital\", \"Copenhagen\", \"LOC\"],\n    [\"Stop Wasting Food\", \"ORG\", \"location\", \"Denmark\", \"LOC\"],\n    [\"Eva Kjer Hansen\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Poul Nyrup Rasmussen\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Ritt Bjerregaard\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Connie Hedegaard\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Bertel Haarder\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Frank Jensen\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Dan J\u00f8rgensen\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Karen Ellemann\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Henrik H\u00f8egh\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Kirsten Brosb\u00f8l\", \"PER\", \"country of citizenship\", \"Denmark\", \"LOC\"],\n    [\"Rema 1000\", \"ORG\", \"country\", \"Denmark\", \"LOC\"],\n    [\"Coop Danmark\", \"ORG\", \"country\", \"Denmark\", \"LOC\"],\n    [\"Denmark\", \"LOC\", \"instance of\", \"country\", \"MISC\"],\n    [\"Stop Wasting Food\", \"ORG\", \"member of\", \"Danish Agriculture and Food Council\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 13,
+  "FP": 26,
+  "FN": 2,
+  "recall": 0.8666666666666667,
+  "n_extracted": 39,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_498",
+ "base_raw": "[\n    [\"Tina Fey\", \"PER\", \"creator of\", \"30 Rock\", \"MISC\"],\n    [\"Adam Bernstein\", \"PER\", \"director of\", \"The C Word\", \"MISC\"],\n    [\"National Broadcasting Company (NBC)\", \"ORG\", \"broadcaster of\", \"The C Word\", \"MISC\"],\n    [\"Kevin Brown\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Grizz Chapman\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Rachel Dratch\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"John Lutz\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Keith Powell\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Lonny Ross\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Rip Torn\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Charlyne Yi\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Liz Lemon\", \"PER\", \"played by\", \"Tina Fey\", \"PER\"],\n    [\"Jack Donaghy\", \"PER\", \"played by\", \"Alec Baldwin\", \"PER\"],\n    [\"Tracy Jordan\", \"PER\", \"played by\", \"Tracy Morgan\", \"PER\"],\n    [\"Don Geiss\", \"PER\", \"played by\", \"Rip Torn\", \"PER\"],\n    [\"General Electric (GE)\", \"ORG\", \"employer of\", \"Don Geiss\", \"PER\"],\n    [\"The C Word\", \"MISC\", \"part of\", \"30 Rock\", \"MISC\"],\n    [\"February 15, 2007\", \"TIME\", \"air date of\", \"The C Word\", \"MISC\"],\n    [\"5.0 million households\", \"NUM\", \"viewer count of\", \"The C Word\", \"MISC\"],\n    [\"2.5 rating/6 share\", \"NUM\", \"rating of\", \"The C Word\", \"MISC\"],\n    [\"18-49 demographic\", \"MISC\", \"target audience of\", \"The C Word\", \"MISC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 15,
+  "FN": 27,
+  "recall": 0.18181818181818182,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Tina Fey\", \"PER\", \"creator of\", \"30 Rock\", \"MISC\"],\n    [\"Adam Bernstein\", \"PER\", \"director of\", \"The C Word\", \"MISC\"],\n    [\"Kevin Brown\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Grizz Chapman\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Rachel Dratch\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"John Lutz\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Keith Powell\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Lonny Ross\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Rip Torn\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Charlyne Yi\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Alec Baldwin\", \"PER\", \"actor in\", \"The C Word\", \"MISC\"],\n    [\"Tracy Morgan\", \"PER\", \"actor in\", \"The C Word\", \"MISC\"],\n    [\"Don Geiss\", \"PER\", \"CEO of\", \"General Electric\", \"ORG\"],\n    [\"General Electric\", \"ORG\", \"employer of\", \"Don Geiss\", \"PER\"],\n    [\"30 Rock\", \"MISC\", \"aired on\", \"NBC\", \"ORG\"],\n    [\"The C Word\", \"MISC\", \"part of\", \"30 Rock\", \"MISC\"],\n    [\"NBC\", \"ORG\", \"broadcaster of\", \"The C Word\", \"MISC\"],\n    [\"February 15, 2007\", \"TIME\", \"air date of\", \"The C Word\", \"MISC\"],\n    [\"5.0 million\", \"NUM\", \"viewer count of\", \"The C Word\", \"MISC\"],\n    [\"2.5\", \"NUM\", \"rating of\", \"The C Word\", \"MISC\"],\n    [\"18-49\", \"MISC\", \"demographic of\", \"The C Word\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 24,
+  "FN": 27,
+  "recall": 0.18181818181818182,
+  "n_extracted": 30,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Tina Fey\", \"PER\", \"creator of\", \"30 Rock\", \"MISC\"],\n    [\"Adam Bernstein\", \"PER\", \"director of\", \"The C Word\", \"MISC\"],\n    [\"National Broadcasting Company (NBC)\", \"ORG\", \"broadcaster of\", \"The C Word\", \"MISC\"],\n    [\"Kevin Brown\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Grizz Chapman\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Rachel Dratch\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"John Lutz\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Keith Powell\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Lonny Ross\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Rip Torn\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Charlyne Yi\", \"PER\", \"guest star in\", \"The C Word\", \"MISC\"],\n    [\"Liz Lemon\", \"PER\", \"played by\", \"Tina Fey\", \"PER\"],\n    [\"Jack Donaghy\", \"PER\", \"played by\", \"Alec Baldwin\", \"PER\"],\n    [\"Tracy Jordan\", \"PER\", \"played by\", \"Tracy Morgan\", \"PER\"],\n    [\"Don Geiss\", \"PER\", \"played by\", \"Rip Torn\", \"PER\"],\n    [\"General Electric (GE)\", \"ORG\", \"employer of\", \"Don Geiss\", \"PER\"],\n    [\"The C Word\", \"MISC\", \"part of\", \"30 Rock\", \"MISC\"],\n    [\"30 Rock\", \"MISC\", \"genre\", \"comedy\", \"MISC\"],\n    [\"The C Word\", \"MISC\", \"original air date\", \"February 15, 2007\", \"TIME\"],\n    [\"The C Word\", \"MISC\", \"rating\", \"2.5\", \"NUM\"],\n    [\"The C Word\", \"MISC\", \"viewers\", \"5.0 million\", \"NUM\"],\n    [\"The C Word\", \"MISC\", \"demographic\", \"18-49\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 20,
+  "FN": 28,
+  "recall": 0.17647058823529413,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

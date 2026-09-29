@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_337",
+ "base_raw": "[\n    [\"Howell Works\", \"ORG\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"James P. Allaire\", \"PER\", \"founded\", \"Howell Works\", \"ORG\"],\n    [\"Allaire Iron Works\", \"ORG\", \"located in\", \"New York\", \"LOC\"],\n    [\"Howell Works\", \"ORG\", \"manufacturer of\", \"cast iron products\", \"MISC\"],\n    [\"James P. Allaire\", \"PER\", \"owner of\", \"Howell Works\", \"ORG\"],\n    [\"Howell Works\", \"ORG\", \"closed by\", \"James P. Allaire\", \"PER\"],\n    [\"Allaire Village\", \"LOC\", \"formerly known as\", \"Howell Works\", \"ORG\"],\n    [\"Howell Works\", \"ORG\", \"bequeathed to\", \"the state\", \"ORG\"],\n    [\"James P. Allaire\", \"PER\", \"retired to\", \"Howell Works\", \"ORG\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 7,
+  "FN": 4,
+  "recall": 0.3333333333333333,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Howell Works\", \"ORG\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"James P. Allaire\", \"PER\", \"founded\", \"Howell Works\", \"ORG\"],\n    [\"Allaire Iron Works\", \"ORG\", \"located in\", \"New York\", \"LOC\"],\n    [\"Howell Works\", \"ORG\", \"manufacturer of\", \"cast iron products\", \"MISC\"],\n    [\"Allaire Village\", \"LOC\", \"formerly known as\", \"Howell Works\", \"ORG\"],\n    [\"James P. Allaire\", \"PER\", \"retired in\", \"Howell Works\", \"ORG\"],\n    [\"Howell Works\", \"ORG\", \"bequeathed to\", \"the state\", \"ORG\"],\n    [\"Howell Works\", \"ORG\", \"established in\", \"early 19th century\", \"TIME\"],\n    [\"Allaire Iron Works\", \"ORG\", \"manufacturer of\", \"marine steam engines\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Howell Works\", \"ORG\", \"located in\", \"New Jersey\", \"LOC\"],\n    [\"James P. Allaire\", \"PER\", \"founded\", \"Howell Works\", \"ORG\"],\n    [\"Allaire Iron Works\", \"ORG\", \"located in\", \"New York\", \"LOC\"],\n    [\"Howell Works\", \"ORG\", \"manufacturer of\", \"cast iron products\", \"MISC\"],\n    [\"James P. Allaire\", \"PER\", \"owner of\", \"Howell Works\", \"ORG\"],\n    [\"Howell Works\", \"ORG\", \"has part\", \"post office\", \"MISC\"],\n    [\"Howell Works\", \"ORG\", \"has part\", \"church\", \"MISC\"],\n    [\"Howell Works\", \"ORG\", \"has part\", \"school\", \"MISC\"],\n    [\"Howell Works\", \"ORG\", \"has part\", \"company store\", \"MISC\"],\n    [\"Allaire Village\", \"LOC\", \"formerly known as\", \"Howell Works\", \"ORG\"],\n    [\"Howell Works\", \"ORG\", \"closed by\", \"James P. Allaire\", \"PER\"],\n    [\"Howell Works\", \"ORG\", \"bequeathed to\", \"the state\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

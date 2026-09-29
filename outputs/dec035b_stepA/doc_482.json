@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_482",
+ "base_raw": "[\n    [\"Andrzej Nowak\", \"PER\", \"nationality\", \"Polish\", \"MISC\"],\n    [\"Joseph Stalin\", \"PER\", \"country of citizenship\", \"Soviet\", \"MISC\"],\n    [\"NKVD\", \"ORG\", \"country of origin\", \"Soviet\", \"MISC\"],\n    [\"Poland\", \"LOC\", \"continent\", \"Europe\", \"MISC\"],\n    [\"Soviet Union\", \"LOC\", \"capital\", \"Moscow\", \"LOC\"],\n    [\"Nazi German army\", \"ORG\", \"country of origin\", \"Germany\", \"LOC\"],\n    [\"Andrzej Nowak\", \"PER\", \"occupation\", \"historian\", \"MISC\"],\n    [\"Russian historians\", \"PER\", \"nationality\", \"Russian\", \"MISC\"],\n    [\"Polish internment camps\", \"LOC\", \"located in the administrative territorial entity\", \"Poland\", \"LOC\"],\n    [\"Soviet POWs\", \"PER\", \"nationality\", \"Soviet\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Andrzej Nowak\", \"PER\", \"nationality\", \"Polish\", \"MISC\"],\n    [\"Joseph Stalin\", \"PER\", \"country of citizenship\", \"Soviet\", \"MISC\"],\n    [\"NKVD\", \"ORG\", \"country\", \"Soviet\", \"MISC\"],\n    [\"Poland\", \"LOC\", \"located in\", \"Europe\", \"MISC\"],\n    [\"Soviet government\", \"ORG\", \"admitted responsibility for\", \"Katyn massacre\", \"MISC\"],\n    [\"Nazi German army\", \"ORG\", \"accused of\", \"Katyn massacre\", \"MISC\"],\n    [\"Andrzej Nowak\", \"PER\", \"occupation\", \"historian\", \"MISC\"],\n    [\"Russian historians\", \"PER\", \"created\", \"Anti-Katyn campaign\", \"MISC\"],\n    [\"Soviet system\", \"MISC\", \"committed crimes against\", \"Poles\", \"MISC\"],\n    [\"Polish internment camps\", \"LOC\", \"held\", \"Soviet POWs\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Andrzej Nowak\", \"PER\", \"nationality\", \"Polish\", \"MISC\"],\n    [\"Joseph Stalin\", \"PER\", \"country of citizenship\", \"Soviet\", \"MISC\"],\n    [\"NKVD\", \"ORG\", \"country\", \"Soviet\", \"LOC\"],\n    [\"Poland\", \"LOC\", \"located in the administrative territorial entity\", \"Europe\", \"LOC\"],\n    [\"Soviet government\", \"ORG\", \"admitted responsibility for\", \"Katyn massacre\", \"MISC\"],\n    [\"Nazi German army\", \"ORG\", \"accused of\", \"Katyn massacre\", \"MISC\"],\n    [\"Andrzej Nowak\", \"PER\", \"occupation\", \"historian\", \"MISC\"],\n    [\"Russian historians\", \"PER\", \"created\", \"Anti-Katyn campaign\", \"MISC\"],\n    [\"Soviet system\", \"MISC\", \"committed crimes against\", \"Poles\", \"MISC\"],\n    [\"Polish internment camps\", \"LOC\", \"held\", \"Soviet POWs\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

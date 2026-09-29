@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_471",
+ "base_raw": "[\n    [\"Loyola University Chicago\", \"ORG\", \"located in\", \"Chicago\", \"LOC\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"founded by\", \"Michael R. Quinlan\", \"PER\"],\n    [\"Michael R. Quinlan\", \"PER\", \"educated at\", \"Loyola University Chicago\", \"ORG\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"location\", \"downtown Chicago\", \"LOC\"],\n    [\"Loyola University Chicago\", \"ORG\", \"has part\", \"Quinlan School of Business\", \"ORG\"],\n    [\"Quinlan School of Business\", \"ORG\", \"inception\", \"1922\", \"TIME\"],\n    [\"Michael R. Quinlan\", \"PER\", \"position held\", \"chairman and CEO\", \"MISC\"],\n    [\"Michael R. Quinlan\", \"PER\", \"employer\", \"McDonald's\", \"ORG\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 7,
+  "FN": 9,
+  "recall": 0.1,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations",
+  "Time",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Loyola University Chicago\", \"ORG\", \"located in\", \"Chicago\", \"LOC\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"founded by\", \"Michael R. Quinlan\", \"PER\"],\n    [\"Michael R. Quinlan\", \"PER\", \"educated at\", \"Loyola University Chicago\", \"ORG\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"location of formation\", \"Chicago\", \"LOC\"],\n    [\"Michael R. Quinlan\", \"PER\", \"position held\", \"chairman and CEO\", \"MISC\"],\n    [\"Michael R. Quinlan\", \"PER\", \"employer\", \"McDonald's\", \"ORG\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"part of\", \"Loyola University Chicago\", \"ORG\"],\n    [\"Quinlan School of Business\", \"ORG\", \"located in\", \"Rome\", \"LOC\"],\n    [\"Quinlan School of Business\", \"ORG\", \"located in\", \"Beijing\", \"LOC\"],\n    [\"Quinlan School of Business\", \"ORG\", \"located in\", \"Saigon-Ho Chi Minh City\", \"LOC\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"inception\", \"1922\", \"TIME\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"ranked\", \"top 3 MBA program\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 7,
+  "recall": 0.3,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Loyola University Chicago\", \"ORG\", \"located in\", \"Chicago\", \"LOC\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"located in\", \"Rome\", \"LOC\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"located in\", \"Beijing\", \"LOC\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"located in\", \"Saigon-Ho Chi Minh City\", \"LOC\"],\n    [\"Michael R. Quinlan\", \"PER\", \"alumni of\", \"Loyola University Chicago\", \"ORG\"],\n    [\"Michael R. Quinlan\", \"PER\", \"position held\", \"chairman and CEO\", \"MISC\"],\n    [\"Michael R. Quinlan\", \"PER\", \"employer\", \"McDonald's\", \"ORG\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"founded by\", \"Michael R. Quinlan\", \"PER\"],\n    [\"Loyola University Chicago Quinlan School of Business\", \"ORG\", \"date of founding\", \"1922\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

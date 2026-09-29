@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_367",
+ "base_raw": "[\n    [\"Super Mario World\", \"MISC\", \"developer\", \"Nintendo Entertainment Analysis & Development\", \"ORG\"],\n    [\"Super Mario World\", \"MISC\", \"publisher\", \"Nintendo\", \"ORG\"],\n    [\"Super Mario World\", \"MISC\", \"platform\", \"Super Nintendo Entertainment System\", \"MISC\"],\n    [\"Takashi Tezuka\", \"PER\", \"position held\", \"director\", \"MISC\"],\n    [\"Shigeru Miyamoto\", \"PER\", \"position held\", \"producer\", \"MISC\"],\n    [\"Shigeru Miyamoto\", \"PER\", \"position held\", \"series creator\", \"MISC\"],\n    [\"Yoshi\", \"MISC\", \"first appearance\", \"Super Mario World\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"genre\", \"side-scrolling platform game\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"release year\", \"1990\", \"TIME\"],\n    [\"Super Mario World\", \"MISC\", \"sales\", \"20 million\", \"NUM\"],\n    [\"Super Mario World\", \"MISC\", \"award received\", \"bestselling SNES game\", \"MISC\"],\n    [\"Yoshi's Island\", \"MISC\", \"release month\", \"October\", \"TIME\"],\n    [\"Yoshi's Island\", \"MISC\", \"release year\", \"1995\", \"TIME\"],\n    [\"Super Mario All-Stars + Super Mario World\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Super Mario World: Super Mario Advance 2\", \"MISC\", \"release year\", \"2001\", \"TIME\"],\n    [\"Super Mario World\", \"MISC\", \"re-release platform\", \"Game Boy Advance\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"re-release platform\", \"Virtual Console\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"re-release platform\", \"Super NES Classic Edition\", \"MISC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 11,
+  "FN": 12,
+  "recall": 0.3684210526315789,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Super Mario World\", \"MISC\", \"developer\", \"Nintendo\", \"ORG\"],\n    [\"Super Mario World\", \"MISC\", \"publisher\", \"Nintendo\", \"ORG\"],\n    [\"Super Mario World\", \"MISC\", \"platform\", \"Super Nintendo Entertainment System\", \"MISC\"],\n    [\"Nintendo Entertainment Analysis & Development\", \"ORG\", \"developer\", \"Super Mario World\", \"MISC\"],\n    [\"Takashi Tezuka\", \"PER\", \"position held\", \"director\", \"MISC\"],\n    [\"Shigeru Miyamoto\", \"PER\", \"position held\", \"producer\", \"MISC\"],\n    [\"Shigeru Miyamoto\", \"PER\", \"position held\", \"series creator\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"genre\", \"side-scrolling platform game\", \"MISC\"],\n    [\"Yoshi\", \"MISC\", \"first appearance\", \"Super Mario World\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"release year\", \"1990\", \"TIME\"],\n    [\"Super Mario World\", \"MISC\", \"sales\", \"20 million\", \"NUM\"],\n    [\"Super Mario All-Stars + Super Mario World\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Super Mario World: Super Mario Advance 2\", \"MISC\", \"release year\", \"2001\", \"TIME\"],\n    [\"Yoshi's Island\", \"MISC\", \"release month\", \"August\", \"TIME\"],\n    [\"Yoshi's Island\", \"MISC\", \"release month\", \"October\", \"TIME\"],\n    [\"Yoshi's Island\", \"MISC\", \"release year\", \"1995\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 64,
+  "recall": 0.08571428571428572,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Super Mario World\", \"MISC\", \"developer\", \"Nintendo\", \"ORG\"],\n    [\"Super Mario World\", \"MISC\", \"publisher\", \"Nintendo\", \"ORG\"],\n    [\"Super Mario World\", \"MISC\", \"platform\", \"Super Nintendo Entertainment System\", \"MISC\"],\n    [\"Mario\", \"PER\", \"brother\", \"Luigi\", \"PER\"],\n    [\"Yoshi\", \"MISC\", \"introduced in\", \"Super Mario World\", \"MISC\"],\n    [\"Takashi Tezuka\", \"PER\", \"position held\", \"director\", \"MISC\"],\n    [\"Shigeru Miyamoto\", \"PER\", \"position held\", \"producer\", \"MISC\"],\n    [\"Shigeru Miyamoto\", \"PER\", \"position held\", \"series creator\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"genre\", \"side-scrolling platform game\", \"MISC\"],\n    [\"Nintendo Entertainment Analysis & Development\", \"ORG\", \"developed\", \"Super Mario World\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"release year\", \"1990\", \"TIME\"],\n    [\"Super Mario World\", \"MISC\", \"sold\", \"20 million copies\", \"NUM\"],\n    [\"Yoshi's Island\", \"MISC\", \"release month\", \"August\", \"TIME\"],\n    [\"Yoshi's Island\", \"MISC\", \"release month\", \"October\", \"TIME\"],\n    [\"Yoshi's Island\", \"MISC\", \"release year\", \"1995\", \"TIME\"],\n    [\"Super Mario World\", \"MISC\", \"rereleased on\", \"Game Boy Advance\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"rereleased on\", \"Virtual Console\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"rereleased on\", \"Wii\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"rereleased on\", \"Wii U\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"rereleased on\", \"New Nintendo 3DS\", \"MISC\"],\n    [\"Super Mario World\", \"MISC\", \"part of\", \"Super NES Classic Edition\", \"MISC\"],\n    [\"Super Mario Advance 2\", \"MISC\", \"release year\", \"2001\", \"TIME\"],\n    [\"Super Mario All-Stars + Super Mario World\", \"MISC\", \"release year\", \"1994\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 17,
+  "FP": 14,
+  "FN": 63,
+  "recall": 0.2125,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ }
+}

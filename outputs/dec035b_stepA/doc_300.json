@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_300",
+ "base_raw": "[\n    [\"Conklin Shows\", \"ORG\", \"located in\", \"Brantford, Ontario\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"located in\", \"West Palm Beach, Florida\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Conklin Shows International\", \"ORG\", \"sold to\", \"North American Midway Entertainment\", \"ORG\"],\n    [\"World's Finest Shows\", \"ORG\", \"part of\", \"Conklin Group of Carnival Companies\", \"ORG\"],\n    [\"Conklin Super Shows\", \"ORG\", \"part of\", \"Conklin Group of Carnival Companies\", \"ORG\"],\n    [\"World's Finest Shows\", \"ORG\", \"located in\", \"Ontario, Canada\", \"LOC\"],\n    [\"Conklin Super Shows\", \"ORG\", \"located in\", \"Ontario, Canada\", \"LOC\"],\n    [\"North American Midway Entertainment\", \"ORG\", \"operator of\", \"Conklin Shows\", \"ORG\"],\n    [\"Miami-Dade County Fair\", \"ORG\", \"location\", \"Miami, Florida\", \"LOC\"],\n    [\"K-Days\", \"ORG\", \"location\", \"Edmonton, Alberta\", \"LOC\"],\n    [\"Calgary Stampede\", \"ORG\", \"location\", \"Calgary, Alberta\", \"LOC\"],\n    [\"The Canadian National Exhibition\", \"ORG\", \"location\", \"Toronto, Ontario\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Conklin Shows\", \"ORG\", \"located in\", \"Brantford, Ontario\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"located in\", \"West Palm Beach, Florida\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Conklin Shows International\", \"ORG\", \"sold to\", \"North American Midway Entertainment\", \"ORG\"],\n    [\"World's Finest Shows\", \"ORG\", \"part of\", \"Conklin Group of Carnival Companies\", \"ORG\"],\n    [\"Conklin Super Shows\", \"ORG\", \"part of\", \"Conklin Group of Carnival Companies\", \"ORG\"],\n    [\"World's Finest Shows\", \"ORG\", \"located in\", \"Ontario, Canada\", \"LOC\"],\n    [\"Conklin Super Shows\", \"ORG\", \"located in\", \"Ontario, Canada\", \"LOC\"],\n    [\"North American Midway Entertainment\", \"ORG\", \"operator of\", \"Conklin Shows\", \"ORG\"],\n    [\"Miami-Dade County Fair\", \"ORG\", \"location\", \"Miami, Florida\", \"LOC\"],\n    [\"K-Days\", \"ORG\", \"location\", \"Edmonton, Alberta\", \"LOC\"],\n    [\"Calgary Stampede\", \"ORG\", \"location\", \"Calgary, Alberta\", \"LOC\"],\n    [\"The Canadian National Exhibition\", \"ORG\", \"location\", \"Toronto, Ontario\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 11,
+  "recall": 0.21428571428571427,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Conklin Shows\", \"ORG\", \"located in\", \"Brantford, Ontario\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"located in\", \"West Palm Beach, Florida\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"Conklin Shows\", \"ORG\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Conklin Shows International\", \"ORG\", \"sold to\", \"North American Midway Entertainment\", \"ORG\"],\n    [\"World's Finest Shows\", \"ORG\", \"part of\", \"Conklin Group of Carnival Companies\", \"ORG\"],\n    [\"Conklin Super Shows\", \"ORG\", \"part of\", \"Conklin Group of Carnival Companies\", \"ORG\"],\n    [\"World's Finest Shows\", \"ORG\", \"located in\", \"Ontario, Canada\", \"LOC\"],\n    [\"Conklin Super Shows\", \"ORG\", \"located in\", \"Ontario, Canada\", \"LOC\"],\n    [\"North American Midway Entertainment\", \"ORG\", \"operator of\", \"Conklin Shows\", \"ORG\"],\n    [\"Miami-Dade County Fair\", \"ORG\", \"located in\", \"Miami, Florida\", \"LOC\"],\n    [\"K-Days\", \"ORG\", \"located in\", \"Edmonton, Alberta\", \"LOC\"],\n    [\"Calgary Stampede\", \"ORG\", \"located in\", \"Calgary, Alberta\", \"LOC\"],\n    [\"The Canadian National Exhibition\", \"ORG\", \"located in\", \"Toronto, Ontario\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 14,
+  "FN": 8,
+  "recall": 0.5294117647058824,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

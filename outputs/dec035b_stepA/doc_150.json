@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_150",
+ "base_raw": "[\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"located in\", \"Zambales\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"founded by\", \"Government of the Philippines\", \"ORG\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"named after\", \"Ramon Magsaysay\", \"PER\"],\n    [\"Ramon Magsaysay\", \"PER\", \"title\", \"President of the Republic of the Philippines\", \"MISC\"],\n    [\"Mondriaan Aura College\", \"ORG\", \"located in\", \"Subic Bay Freeport Zone\", \"LOC\"],\n    [\"Wesleyan College of Manila\", \"ORG\", \"partner of\", \"Ramon Magsaysay Technological University\", \"ORG\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"offers courses at\", \"Mondriaan Aura College\", \"ORG\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"offers courses at\", \"Wesleyan College of Manila\", \"ORG\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"located in\", \"Iba\", \"LOC\"],\n    [\"Iba\", \"LOC\", \"part of\", \"Zambales\", \"LOC\"],\n    [\"Sta. Cruz\", \"LOC\", \"part of\", \"Zambales\", \"LOC\"],\n    [\"Candelaria\", \"LOC\", \"part of\", \"Zambales\", \"LOC\"],\n    [\"Masinloc\", \"LOC\", \"part of\", \"Zambales\", \"LOC\"],\n    [\"Botolan\", \"LOC\", \"part of\", \"Zambales\", \"LOC\"],\n    [\"San Marcelino\", \"LOC\", \"part of\", \"Zambales\", \"LOC\"],\n    [\"Castillejos\", \"LOC\", \"part of\", \"Zambales\", \"LOC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 10,
+  "FN": 22,
+  "recall": 0.21428571428571427,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"located in\", \"Zambales\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"founded by\", \"Government of the Philippines\", \"ORG\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"named after\", \"Ramon Magsaysay\", \"PER\"],\n    [\"Ramon Magsaysay\", \"PER\", \"president of\", \"Republic of the Philippines\", \"LOC\"],\n    [\"Mondriaan Aura College\", \"ORG\", \"located in\", \"Subic Bay Freeport Zone\", \"LOC\"],\n    [\"Wesleyan College of Manila\", \"ORG\", \"located in\", \"Manila\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Sta. Cruz\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Candelaria\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Masinloc\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Botolan\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"San Marcelino\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Castillejos\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 19,
+  "FN": 22,
+  "recall": 0.18518518518518517,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 19,
+  "FN": 22,
+  "recall": 0.18518518518518517,
+  "n_extracted": 24,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"located in\", \"Zambales\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"founded by\", \"Government of the Philippines\", \"ORG\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"named after\", \"Ramon Magsaysay\", \"PER\"],\n    [\"Ramon Magsaysay\", \"PER\", \"president of\", \"Republic of the Philippines\", \"LOC\"],\n    [\"Mondriaan Aura College\", \"ORG\", \"located in\", \"Subic Bay Freeport Zone\", \"LOC\"],\n    [\"Wesleyan College of Manila\", \"ORG\", \"located in\", \"Manila\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Sta. Cruz\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Candelaria\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Masinloc\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Botolan\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"San Marcelino\", \"LOC\"],\n    [\"Ramon Magsaysay Technological University\", \"ORG\", \"has campus in\", \"Castillejos\", \"LOC\"]\n]"
+}

@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_432",
+ "base_raw": "[\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"tropical southern Asia\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"located in\", \"India\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"located in\", \"southern China\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"located in\", \"Indonesia\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"located in\", \"the Philippines\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"forests\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"gardens\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"hilly country\", \"MISC\"],\n    [\"Male scarlet minivet\", \"MISC\", \"color\", \"scarlet to orange\", \"MISC\"],\n    [\"Male scarlet minivet\", \"MISC\", \"upper parts color\", \"black\", \"MISC\"],\n    [\"Female scarlet minivet\", \"MISC\", \"color\", \"yellow\", \"MISC\"],\n    [\"Female scarlet minivet\", \"MISC\", \"upper parts color\", \"greyish olive\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"diet\", \"insects\", \"MISC\"],\n    [\"The orange minivet\", \"MISC\", \"former subspecies of\", \"The scarlet minivet\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"tropical southern Asia\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"India\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"southern China\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"Indonesia\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"the Philippines\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"forests\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"gardens\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"hilly country\", \"MISC\"],\n    [\"Male scarlet minivet\", \"MISC\", \"color\", \"scarlet to orange\", \"MISC\"],\n    [\"Male scarlet minivet\", \"MISC\", \"color\", \"black\", \"MISC\"],\n    [\"Female scarlet minivet\", \"MISC\", \"color\", \"yellow\", \"MISC\"],\n    [\"Female scarlet minivet\", \"MISC\", \"color\", \"greyish olive\", \"MISC\"],\n    [\"The orange minivet\", \"MISC\", \"formerly\", \"subspecies of The scarlet minivet\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"diet\", \"insects\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"behavior\", \"gleaning\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"behavior\", \"mixed-species foraging flocks\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 23,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"India\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"southern China\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"Indonesia\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"found in\", \"the Philippines\", \"LOC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"forests\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"gardens\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"habitat\", \"hilly country\", \"MISC\"],\n    [\"male scarlet minivet\", \"MISC\", \"color\", \"scarlet\", \"MISC\"],\n    [\"male scarlet minivet\", \"MISC\", \"color\", \"orange\", \"MISC\"],\n    [\"male scarlet minivet\", \"MISC\", \"upper parts color\", \"black\", \"MISC\"],\n    [\"female scarlet minivet\", \"MISC\", \"color\", \"yellow\", \"MISC\"],\n    [\"female scarlet minivet\", \"MISC\", \"upper parts color\", \"greyish olive\", \"MISC\"],\n    [\"The orange minivet\", \"MISC\", \"former subspecies of\", \"The scarlet minivet\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"diet\", \"insects\", \"MISC\"],\n    [\"The scarlet minivet\", \"MISC\", \"foraging behavior\", \"mixed-species foraging flocks\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 24,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ }
+}

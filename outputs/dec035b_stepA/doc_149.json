@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_149",
+ "base_raw": "[\n    [\"Family Affair\", \"MISC\", \"creator\", \"Edmund Hartmann\", \"PER\"],\n    [\"Family Affair\", \"MISC\", \"creator\", \"Don Fedderson\", \"PER\"],\n    [\"Edmund Hartmann\", \"PER\", \"notable work\", \"My Three Sons\", \"MISC\"],\n    [\"Don Fedderson\", \"PER\", \"notable work\", \"My Three Sons\", \"MISC\"],\n    [\"Edmund Hartmann\", \"PER\", \"notable work\", \"The Millionaire\", \"MISC\"],\n    [\"Don Fedderson\", \"PER\", \"notable work\", \"The Millionaire\", \"MISC\"],\n    [\"Family Affair\", \"MISC\", \"producer\", \"Edmund Hartmann\", \"PER\"],\n    [\"Family Affair\", \"MISC\", \"producer\", \"Don Fedderson\", \"PER\"],\n    [\"Bill Davis\", \"PER\", \"portrayed by\", \"Brian Keith\", \"PER\"],\n    [\"Mr. Giles French\", \"PER\", \"portrayed by\", \"Sebastian Cabot\", \"PER\"],\n    [\"Cissy\", \"PER\", \"portrayed by\", \"Kathy Garver\", \"PER\"],\n    [\"Jody\", \"PER\", \"portrayed by\", \"Johnny Whitaker\", \"PER\"],\n    [\"Buffy\", \"PER\", \"portrayed by\", \"Anissa Jones\", \"PER\"],\n    [\"Family Affair\", \"MISC\", \"number of episodes\", \"138\", \"NUM\"],\n    [\"Family Affair\", \"MISC\", \"number of seasons\", \"5\", \"NUM\"],\n    [\"Family Affair\", \"MISC\", \"start date\", \"September 12, 1966\", \"TIME\"],\n    [\"Family Affair\", \"MISC\", \"end date\", \"March 4, 1971\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Numbers"
+ ],
+ "kb_orig_raw": "[\n    [\"Family Affair\", \"MISC\", \"genre\", \"sitcom\", \"MISC\"],\n    [\"Bill Davis\", \"PER\", \"portrayed by\", \"Brian Keith\", \"PER\"],\n    [\"Mr. Giles French\", \"PER\", \"portrayed by\", \"Sebastian Cabot\", \"PER\"],\n    [\"Cissy\", \"PER\", \"portrayed by\", \"Kathy Garver\", \"PER\"],\n    [\"Jody\", \"PER\", \"portrayed by\", \"Johnny Whitaker\", \"PER\"],\n    [\"Buffy\", \"PER\", \"portrayed by\", \"Anissa Jones\", \"PER\"],\n    [\"Family Affair\", \"MISC\", \"creator\", \"Edmund Hartmann\", \"PER\"],\n    [\"Family Affair\", \"MISC\", \"creator\", \"Don Fedderson\", \"PER\"],\n    [\"Edmund Hartmann\", \"PER\", \"also known for\", \"My Three Sons\", \"MISC\"],\n    [\"Don Fedderson\", \"PER\", \"also known for\", \"My Three Sons\", \"MISC\"],\n    [\"Edmund Hartmann\", \"PER\", \"also known for\", \"The Millionaire\", \"MISC\"],\n    [\"Don Fedderson\", \"PER\", \"also known for\", \"The Millionaire\", \"MISC\"],\n    [\"Family Affair\", \"MISC\", \"number of episodes\", \"138\", \"NUM\"],\n    [\"Family Affair\", \"MISC\", \"number of seasons\", \"5\", \"NUM\"],\n    [\"Bill Davis\", \"PER\", \"residence\", \"New York City\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 21,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Family Affair\", \"MISC\", \"creator\", \"Edmund Hartmann\", \"PER\"],\n    [\"Family Affair\", \"MISC\", \"creator\", \"Don Fedderson\", \"PER\"],\n    [\"Family Affair\", \"MISC\", \"producer\", \"Edmund Hartmann\", \"PER\"],\n    [\"Family Affair\", \"MISC\", \"producer\", \"Don Fedderson\", \"PER\"],\n    [\"Edmund Hartmann\", \"PER\", \"notable work\", \"My Three Sons\", \"MISC\"],\n    [\"Edmund Hartmann\", \"PER\", \"notable work\", \"The Millionaire\", \"MISC\"],\n    [\"Don Fedderson\", \"PER\", \"notable work\", \"My Three Sons\", \"MISC\"],\n    [\"Don Fedderson\", \"PER\", \"notable work\", \"The Millionaire\", \"MISC\"],\n    [\"Family Affair\", \"MISC\", \"number of episodes\", \"138\", \"NUM\"],\n    [\"Family Affair\", \"MISC\", \"number of seasons\", \"5\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 15,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

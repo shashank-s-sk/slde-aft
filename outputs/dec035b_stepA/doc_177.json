@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_177",
+ "base_raw": "[\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"genre\", \"pop\", \"MISC\"],\n    [\"Martha Reeves\", \"PER\", \"place of birth\", \"rural Alabama\", \"LOC\"],\n    [\"Honey Chile\", \"MISC\", \"release year\", \"1967\", \"TIME\"],\n    [\"Richard Morris\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Sylvia Moy\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"record label\", \"Gordy\", \"ORG\"],\n    [\"Sandra 'Lois' Reeves\", \"PER\", \"relation\", \"Martha Reeves\", \"PER\"],\n    [\"Betty Kelley\", \"PER\", \"former member of\", \"Martha Reeves and the Vandellas\", \"ORG\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"number of top 40 pop singles\", \"12\", \"NUM\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"last top 40 hit year\", \"1967\", \"TIME\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"year left Motown\", \"1973\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Numbers",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"genre\", \"pop\", \"MISC\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"genre\", \"R&B\", \"MISC\"],\n    [\"Martha Reeves\", \"PER\", \"place of birth\", \"rural Alabama\", \"LOC\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"member of\", \"Sandra 'Lois' Reeves\", \"PER\"],\n    [\"Sandra 'Lois' Reeves\", \"PER\", \"relation\", \"Martha Reeves\", \"PER\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"founded by\", \"Martha Reeves\", \"PER\"],\n    [\"Honey Chile\", \"MISC\", \"instance of\", \"single\", \"MISC\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"record label\", \"Gordy\", \"ORG\"],\n    [\"Richard Morris\", \"PER\", \"relation\", \"Sylvia Moy\", \"PER\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"position held\", \"Motown girl group\", \"MISC\"],\n    [\"Martha Reeves\", \"PER\", \"employer\", \"Motown\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 15,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"genre\", \"pop\", \"MISC\"],\n    [\"Martha Reeves\", \"PER\", \"place of birth\", \"rural Alabama\", \"LOC\"],\n    [\"Honey Chile\", \"MISC\", \"release year\", \"1967\", \"TIME\"],\n    [\"Richard Morris\", \"PER\", \"occupation\", \"producer\", \"MISC\"],\n    [\"Sylvia Moy\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"record label\", \"Gordy\", \"ORG\"],\n    [\"Sandra 'Lois' Reeves\", \"PER\", \"relation\", \"Martha Reeves\", \"PER\"],\n    [\"Betty Kelley\", \"PER\", \"former member of\", \"Martha Reeves and the Vandellas\", \"ORG\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"number of top 40 pop singles\", \"12\", \"NUM\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"last top 40 hit year\", \"1967\", \"TIME\"],\n    [\"Martha Reeves and the Vandellas\", \"ORG\", \"year left Motown\", \"1973\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 7,
+  "recall": 0.2222222222222222,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

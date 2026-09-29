@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_235",
+ "base_raw": "[\n    [\"Arabian peninsula\", \"LOC\", \"located in\", \"Asia\", \"LOC\"],\n    [\"Persia\", \"LOC\", \"located in\", \"Asia\", \"LOC\"],\n    [\"India\", \"LOC\", \"located in\", \"Asia\", \"LOC\"],\n    [\"Southeast Asia\", \"LOC\", \"part of\", \"Asia\", \"LOC\"],\n    [\"Oceania\", \"LOC\", \"part of\", \"Asia\", \"LOC\"],\n    [\"Africa\", \"LOC\", \"continent\", \"None\", \"MISC\"],\n    [\"Bab-el-Mandeb straits\", \"LOC\", \"located in\", \"Red Sea\", \"LOC\"],\n    [\"Red Sea\", \"LOC\", \"located in\", \"Asia\", \"LOC\"],\n    [\"East Africa\", \"LOC\", \"part of\", \"Africa\", \"LOC\"],\n    [\"Homo sapiens\", \"MISC\", \"origin\", \"Africa\", \"LOC\"],\n    [\"mtDNA haplogroup M\", \"MISC\", \"found in\", \"Southeast Asia\", \"LOC\"],\n    [\"mtDNA haplogroup N\", \"MISC\", \"found in\", \"Southeast Asia\", \"LOC\"],\n    [\"Y-DNA haplogroup C\", \"MISC\", \"found in\", \"Southeast Asia\", \"LOC\"],\n    [\"Y-DNA haplogroup D\", \"MISC\", \"found in\", \"Southeast Asia\", \"LOC\"],\n    [\"mitochondrial haplogroup L3\", \"MISC\", \"origin\", \"East Africa\", \"LOC\"],\n    [\"Southern Dispersal scenario\", \"MISC\", \"describes\", \"coastal migration\", \"MISC\"],\n    [\"coastal migration hypothesis\", \"MISC\", \"same as\", \"Southern Dispersal scenario\", \"MISC\"],\n    [\"southern coastal route\", \"MISC\", \"same as\", \"Southern Dispersal scenario\", \"MISC\"],\n    [\"rapid coastal settlement\", \"MISC\", \"same as\", \"Southern Dispersal scenario\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 16,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Oceans",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Arabian peninsula\", \"LOC\", \"part of\", \"Asia\", \"LOC\"],\n    [\"Persia\", \"LOC\", \"part of\", \"Asia\", \"LOC\"],\n    [\"India\", \"LOC\", \"part of\", \"Asia\", \"LOC\"],\n    [\"Southeast Asia\", \"LOC\", \"part of\", \"Asia\", \"LOC\"],\n    [\"Oceania\", \"LOC\", \"located in or next to body of water\", \"Ocean\", \"MISC\"],\n    [\"Africa\", \"LOC\", \"continent\", \"Africa\", \"LOC\"],\n    [\"Bab-el-Mandeb straits\", \"LOC\", \"located in or next to body of water\", \"Red Sea\", \"MISC\"],\n    [\"Red Sea\", \"MISC\", \"located in\", \"Africa\", \"LOC\"],\n    [\"Homo sapiens\", \"MISC\", \"origin\", \"Africa\", \"LOC\"],\n    [\"mtDNA haplogroup M\", \"MISC\", \"found in\", \"Arabian peninsula\", \"LOC\"],\n    [\"mtDNA haplogroup N\", \"MISC\", \"found in\", \"Arabian peninsula\", \"LOC\"],\n    [\"Y-DNA haplogroup C\", \"MISC\", \"found in\", \"Arabian peninsula\", \"LOC\"],\n    [\"Y-DNA haplogroup D\", \"MISC\", \"found in\", \"Arabian peninsula\", \"LOC\"],\n    [\"mitochondrial haplogroup L3\", \"MISC\", \"origin\", \"East Africa\", \"LOC\"],\n    [\"East Africa\", \"LOC\", \"part of\", \"Africa\", \"LOC\"],\n    [\"Sundaland\", \"LOC\", \"part of\", \"Southeast Asia\", \"LOC\"],\n    [\"Sahul\", \"LOC\", \"part of\", \"Oceania\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 29,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Arabian peninsula\", \"LOC\", \"located in\", \"Asia\", \"LOC\"],\n    [\"Persia\", \"LOC\", \"located in\", \"Asia\", \"LOC\"],\n    [\"India\", \"LOC\", \"located in\", \"Asia\", \"LOC\"],\n    [\"Southeast Asia\", \"LOC\", \"part of\", \"Asia\", \"LOC\"],\n    [\"Oceania\", \"LOC\", \"part of\", \"Asia\", \"LOC\"],\n    [\"Africa\", \"LOC\", \"continent\", \"None\", \"MISC\"],\n    [\"East Africa\", \"LOC\", \"part of\", \"Africa\", \"LOC\"],\n    [\"Bab-el-Mandeb straits\", \"LOC\", \"located in\", \"Africa\", \"LOC\"],\n    [\"Red Sea\", \"LOC\", \"located in\", \"Africa\", \"LOC\"],\n    [\"Sundaland\", \"LOC\", \"part of\", \"Southeast Asia\", \"LOC\"],\n    [\"Sahul\", \"LOC\", \"part of\", \"Oceania\", \"LOC\"],\n    [\"Homo sapiens\", \"MISC\", \"origin\", \"Africa\", \"LOC\"],\n    [\"mtDNA haplogroup M\", \"MISC\", \"found in\", \"Arabian peninsula\", \"LOC\"],\n    [\"mtDNA haplogroup N\", \"MISC\", \"found in\", \"Arabian peninsula\", \"LOC\"],\n    [\"Y-DNA haplogroup C\", \"MISC\", \"found in\", \"Arabian peninsula\", \"LOC\"],\n    [\"Y-DNA haplogroup D\", \"MISC\", \"found in\", \"Arabian peninsula\", \"LOC\"],\n    [\"mitochondrial haplogroup L3\", \"MISC\", \"origin\", \"Africa\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 25,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

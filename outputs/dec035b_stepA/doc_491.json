@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_491",
+ "base_raw": "[\n    [\"Rhoda Grant\", \"PER\", \"date of birth\", \"26 June 1963\", \"TIME\"],\n    [\"Rhoda Grant\", \"PER\", \"member of political party\", \"Scottish Labour and Co-operative Party\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"educated at\", \"Open University\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"employer\", \"UNISON\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"employer\", \"Highland Regional Council\", \"ORG\"],\n    [\"Scottish Labour and Co-operative Party\", \"ORG\", \"location\", \"Scotland\", \"LOC\"],\n    [\"Highlands and Islands\", \"LOC\", \"part of\", \"Scotland\", \"LOC\"],\n    [\"Inverness East, Nairn and Lochaber\", \"LOC\", \"located in the administrative territorial entity\", \"Scotland\", \"LOC\"],\n    [\"Eleanor Scott\", \"PER\", \"member of political party\", \"Scottish Green Party\", \"ORG\"],\n    [\"Open University\", \"ORG\", \"location\", \"United Kingdom\", \"LOC\"],\n    [\"UNISON\", \"ORG\", \"location\", \"United Kingdom\", \"LOC\"],\n    [\"Highland Regional Council\", \"ORG\", \"located in the administrative territorial entity\", \"Scotland\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 9,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Rhoda Grant\", \"PER\", \"date of birth\", \"26 June 1963\", \"TIME\"],\n    [\"Rhoda Grant\", \"PER\", \"member of political party\", \"Scottish Labour and Co-operative Party\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"position held\", \"Member of the Scottish Parliament\", \"MISC\"],\n    [\"Rhoda Grant\", \"PER\", \"educated at\", \"Open University\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"employer\", \"UNISON\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"employer\", \"Highland Regional Council\", \"ORG\"],\n    [\"Scottish Labour and Co-operative Party\", \"ORG\", \"location\", \"Scotland\", \"LOC\"],\n    [\"Highlands and Islands\", \"LOC\", \"located in the administrative territorial entity\", \"Scotland\", \"LOC\"],\n    [\"Inverness East, Nairn and Lochaber\", \"LOC\", \"located in the administrative territorial entity\", \"Highlands and Islands\", \"LOC\"],\n    [\"Eleanor Scott\", \"PER\", \"member of political party\", \"Scottish Green Party\", \"ORG\"],\n    [\"UNISON\", \"ORG\", \"type\", \"trade union\", \"MISC\"],\n    [\"Open University\", \"ORG\", \"field of study\", \"social sciences\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Rhoda Grant\", \"PER\", \"date of birth\", \"26 June 1963\", \"TIME\"],\n    [\"Rhoda Grant\", \"PER\", \"member of political party\", \"Scottish Labour and Co-operative Party\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"educated at\", \"Open University\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"employer\", \"UNISON\", \"ORG\"],\n    [\"Rhoda Grant\", \"PER\", \"employer\", \"Highland Regional Council\", \"ORG\"],\n    [\"Scottish Labour and Co-operative Party\", \"ORG\", \"location\", \"Scotland\", \"LOC\"],\n    [\"UNISON\", \"ORG\", \"location\", \"Scotland\", \"LOC\"],\n    [\"Highland Regional Council\", \"ORG\", \"location\", \"Scotland\", \"LOC\"],\n    [\"Open University\", \"ORG\", \"location\", \"Scotland\", \"LOC\"],\n    [\"Inverness East, Nairn and Lochaber\", \"LOC\", \"located in the administrative territorial entity\", \"Scotland\", \"LOC\"],\n    [\"Eleanor Scott\", \"PER\", \"member of political party\", \"Scottish Green Party\", \"ORG\"],\n    [\"Scottish Green Party\", \"ORG\", \"location\", \"Scotland\", \"LOC\"],\n    [\"Highlands and Islands\", \"LOC\", \"located in the administrative territorial entity\", \"Scotland\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

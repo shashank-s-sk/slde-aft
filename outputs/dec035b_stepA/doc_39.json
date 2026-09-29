@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_39",
+ "base_raw": "[\n    [\"William Duane\", \"PER\", \"place of birth\", \"Champlain, New York\", \"LOC\"],\n    [\"William Duane\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"John Shore, 1st Baron Teignmouth\", \"PER\", \"position held\", \"Governor-General of India\", \"MISC\"],\n    [\"The Bengal Journal\", \"MISC\", \"founded by\", \"William Duane\", \"PER\"],\n    [\"The World\", \"MISC\", \"founded by\", \"William Duane\", \"PER\"],\n    [\"The Aurora\", \"MISC\", \"founded by\", \"William Duane\", \"PER\"],\n    [\"William Duane\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"Thomas Jefferson\", \"PER\", \"presidential victory attributed to\", \"The Aurora\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"position held\", \"lieutenant colonel\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"position held\", \"adjutant general\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"child\", \"William John Duane\", \"PER\"],\n    [\"William Duane\", \"PER\", \"date of death\", \"1835\", \"TIME\"],\n    [\"William Duane\", \"PER\", \"place of death\", \"Philadelphia\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 10,
+  "recall": 0.2857142857142857,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"William Duane\", \"PER\", \"date of birth\", \"1760\", \"TIME\"],\n    [\"William Duane\", \"PER\", \"date of death\", \"1835\", \"TIME\"],\n    [\"William Duane\", \"PER\", \"place of birth\", \"Champlain, New York\", \"LOC\"],\n    [\"William Duane\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"William Duane\", \"PER\", \"founded\", \"Bengal Journal\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"founded\", \"The World\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"founded\", \"Aurora\", \"MISC\"],\n    [\"John Shore, 1st Baron Teignmouth\", \"PER\", \"position held\", \"Governor-General of India\", \"MISC\"],\n    [\"Thomas Jefferson\", \"PER\", \"presidential victory attributed to\", \"Aurora\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"position held\", \"lieutenant colonel\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"position held\", \"adjutant general\", \"MISC\"],\n    [\"William John Duane\", \"PER\", \"father\", \"William Duane\", \"PER\"],\n    [\"William Duane\", \"PER\", \"child\", \"William John Duane\", \"PER\"],\n    [\"Bengal Journal\", \"MISC\", \"located in\", \"Calcutta\", \"LOC\"],\n    [\"The World\", \"MISC\", \"located in\", \"Calcutta\", \"LOC\"],\n    [\"Aurora\", \"MISC\", \"located in\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 9,
+  "recall": 0.35714285714285715,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"William Duane\", \"PER\", \"date of birth\", \"1760\", \"TIME\"],\n    [\"William Duane\", \"PER\", \"date of death\", \"1835\", \"TIME\"],\n    [\"William Duane\", \"PER\", \"place of birth\", \"Champlain, New York\", \"LOC\"],\n    [\"William Duane\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"William Duane\", \"PER\", \"founded\", \"Bengal Journal\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"founded\", \"The World\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"founded\", \"Aurora\", \"MISC\"],\n    [\"John Shore, 1st Baron Teignmouth\", \"PER\", \"position held\", \"Governor-General of India\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"child\", \"William John Duane\", \"PER\"],\n    [\"William Duane\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"Thomas Jefferson\", \"PER\", \"presidential victory attributed to\", \"Aurora\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"position held\", \"lieutenant colonel\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"position held\", \"adjutant general\", \"MISC\"],\n    [\"William Duane\", \"PER\", \"died in\", \"Philadelphia\", \"LOC\"],\n    [\"Historical Society of Pennsylvania\", \"ORG\", \"located in\", \"Pennsylvania\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

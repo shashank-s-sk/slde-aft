@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_409",
+ "base_raw": "[\n    [\"George Harrison Shull\", \"PER\", \"date of birth\", \"April 15, 1874\", \"TIME\"],\n    [\"George Harrison Shull\", \"PER\", \"date of death\", \"September 28, 1954\", \"TIME\"],\n    [\"George Harrison Shull\", \"PER\", \"place of birth\", \"Clark County, Ohio\", \"LOC\"],\n    [\"George Harrison Shull\", \"PER\", \"educated at\", \"Antioch College\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"educated at\", \"University of Chicago\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"employer\", \"Bureau of Plant Industry\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"employer\", \"Carnegie Institution\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"award received\", \"Public Welfare Medal\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"member of\", \"National Academy of Sciences\", \"ORG\"],\n    [\"J. Marion Shull\", \"PER\", \"brother\", \"George Harrison Shull\", \"PER\"],\n    [\"Harrison Shull\", \"PER\", \"father\", \"George Harrison Shull\", \"PER\"],\n    [\"Luther Burbank\", \"PER\", \"influenced by\", \"George Harrison Shull\", \"PER\"],\n    [\"George Harrison Shull\", \"PER\", \"location of formation\", \"Cold Spring Harbor, N.Y.\", \"LOC\"],\n    [\"George Harrison Shull\", \"PER\", \"position held\", \"botanical investigator\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"notable work\", \"hybrid maize\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"field of work\", \"genetics\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"founder of\", \"Genetics\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 19,
+  "recall": 0.17391304347826086,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Organizations",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"George Harrison Shull\", \"PER\", \"date of birth\", \"April 15, 1874\", \"TIME\"],\n    [\"George Harrison Shull\", \"PER\", \"date of death\", \"September 28, 1954\", \"TIME\"],\n    [\"George Harrison Shull\", \"PER\", \"place of birth\", \"Clark County, Ohio\", \"LOC\"],\n    [\"George Harrison Shull\", \"PER\", \"educated at\", \"Antioch College\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"educated at\", \"University of Chicago\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"employer\", \"Bureau of Plant Industry\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"employer\", \"Carnegie Institution\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"award received\", \"Public Welfare Medal\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"member of\", \"National Academy of Sciences\", \"ORG\"],\n    [\"J. Marion Shull\", \"PER\", \"brother\", \"George Harrison Shull\", \"PER\"],\n    [\"Harrison Shull\", \"PER\", \"father\", \"George Harrison Shull\", \"PER\"],\n    [\"Luther Burbank\", \"PER\", \"influenced by\", \"George Harrison Shull\", \"PER\"],\n    [\"George Harrison Shull\", \"PER\", \"location of formation\", \"Cold Spring Harbor\", \"LOC\"],\n    [\"George Harrison Shull\", \"PER\", \"position held\", \"botanical investigator\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"notable work\", \"hybrid maize\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"founded by\", \"Genetics\", \"MISC\"],\n    [\"Harrison Shull\", \"PER\", \"field of work\", \"quantum mechanics of small-molecule electronic spectra\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 13,
+  "FN": 17,
+  "recall": 0.2916666666666667,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions"
+ ],
+ "kb_dedup_raw": "[\n    [\"George Harrison Shull\", \"PER\", \"date of birth\", \"April 15, 1874\", \"TIME\"],\n    [\"George Harrison Shull\", \"PER\", \"date of death\", \"September 28, 1954\", \"TIME\"],\n    [\"George Harrison Shull\", \"PER\", \"place of birth\", \"Clark County, Ohio\", \"LOC\"],\n    [\"George Harrison Shull\", \"PER\", \"educated at\", \"Antioch College\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"educated at\", \"University of Chicago\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"employer\", \"Bureau of Plant Industry\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"employer\", \"Carnegie Institution\", \"ORG\"],\n    [\"George Harrison Shull\", \"PER\", \"award received\", \"Public Welfare Medal\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"member of\", \"National Academy of Sciences\", \"ORG\"],\n    [\"J. Marion Shull\", \"PER\", \"brother\", \"George Harrison Shull\", \"PER\"],\n    [\"Harrison Shull\", \"PER\", \"father\", \"George Harrison Shull\", \"PER\"],\n    [\"Luther Burbank\", \"PER\", \"influenced by\", \"George Harrison Shull\", \"PER\"],\n    [\"George Harrison Shull\", \"PER\", \"location of formation\", \"Cold Spring Harbor\", \"LOC\"],\n    [\"George Harrison Shull\", \"PER\", \"position held\", \"botanical investigator\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"field of work\", \"genetics\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"notable work\", \"hybrid maize\", \"MISC\"],\n    [\"George Harrison Shull\", \"PER\", \"author\", \"Genetics\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 12,
+  "FN": 17,
+  "recall": 0.2916666666666667,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

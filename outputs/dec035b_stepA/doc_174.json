@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_174",
+ "base_raw": "[\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"date of birth\", \"March 30, 1963\", \"TIME\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"position held\", \"director of sport\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"member of\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"country of citizenship\", \"Ukraine\", \"LOC\"],\n    [\"Valeriy Lobanovsky\", \"PER\", \"employer\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Ukraine national football team\", \"ORG\", \"head coach\", \"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"location of formation\", \"Ukraine\", \"LOC\"],\n    [\"Dynamo Kyiv\", \"ORG\", \"located in the administrative territorial entity\", \"Ukraine\", \"LOC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"employer\", \"Ukraine national football team\", \"ORG\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 7,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"date of birth\", \"March 30, 1963\", \"TIME\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"position held\", \"director of sport\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"member of\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"country of citizenship\", \"Ukraine\", \"LOC\"],\n    [\"Valeriy Lobanovsky\", \"PER\", \"employer\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Ukraine national football team\", \"ORG\", \"head of government\", \"None\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"head coach\", \"Ukraine national football team\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"assistant coach\", \"Valeriy Lobanovsky\", \"PER\"],\n    [\"Dynamo Kyiv\", \"ORG\", \"located in the administrative territorial entity\", \"Ukraine\", \"LOC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"author\", \"None\", \"MISC\"],\n    [\"Sampdoria\", \"ORG\", \"league\", \"None\", \"MISC\"],\n    [\"Rangers\", \"ORG\", \"league\", \"None\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"child\", \"None\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"parent organization\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Valeriy Lobanovsky\", \"PER\", \"head coach\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"notable work\", \"None\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 4,
+  "recall": 0.5555555555555556,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"date of birth\", \"March 30, 1963\", \"TIME\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"position held\", \"director of sport\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"member of\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"country of citizenship\", \"Ukraine\", \"LOC\"],\n    [\"Valeriy Lobanovsky\", \"PER\", \"employer\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Ukraine national football team\", \"ORG\", \"head coach\", \"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"location of formation\", \"Ukraine\", \"LOC\"],\n    [\"Dynamo Kyiv\", \"ORG\", \"located in the administrative territorial entity\", \"Ukraine\", \"LOC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"child\", \"None\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"parent organization\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Sampdoria\", \"ORG\", \"league\", \"None\", \"MISC\"],\n    [\"Rangers\", \"ORG\", \"league\", \"None\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"author\", \"None\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"award received\", \"Distinguished Master of Sports of USSR\", \"MISC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"award received\", \"Distinguished Coach of Ukraine\", \"MISC\"],\n    [\"Ukraine\", \"LOC\", \"capital\", \"None\", \"MISC\"],\n    [\"Dynamo Kyiv\", \"ORG\", \"country\", \"Ukraine\", \"LOC\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"member of sports team\", \"Dynamo Kyiv\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"member of sports team\", \"Sampdoria\", \"ORG\"],\n    [\"Oleksiy Oleksandrovych Mykhaylychenko\", \"PER\", \"member of sports team\", \"Rangers\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 15,
+  "FN": 1,
+  "recall": 0.8888888888888888,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

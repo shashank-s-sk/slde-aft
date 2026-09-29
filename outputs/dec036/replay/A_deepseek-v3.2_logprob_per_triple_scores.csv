@@ -1,0 +1,649 @@
+triple_key,subject,predicate,object,split,functional_predicate,competitor_count,gold_label,R1_max_merge,R2_published,R3_source_count,R4_evidence_share,R5_combined,R6_evidence_share_unsquared,R1_max_merge_admitted_at_test_tau,R2_published_admitted_at_test_tau,R3_source_count_admitted_at_test_tau,R4_evidence_share_admitted_at_test_tau,R5_combined_admitted_at_test_tau,R6_evidence_share_unsquared_admitted_at_test_tau
+auralex smartphone max 1|manufactured_by|auralex,Auralex Smartphone Max 1,manufactured_by,Auralex,test,True,0,1,0.999995,0.9989647661111198,0.93374900625,0.9989647661111198,0.93374900625,1.0,True,True,True,True,True,True
+auralex smartphone max 1|belongs_to_category|smartphone,Auralex Smartphone Max 1,belongs_to_category,smartphone,test,True,1,1,0.98,0.3675,0.3675,0.3264791210777744,0.36772006920468214,0.4441892803779243,True,False,False,False,False,False
+auralex smartphone max 1|has_price_usd|249,Auralex Smartphone Max 1,has_price_usd,249,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone max 1|has_screen_size_inch|14.0,Auralex Smartphone Max 1,has_screen_size_inch,14.0,test,True,0,1,0.99998,0.998882855647116,0.933746025,0.998882855647116,0.933746025,1.0,True,True,True,True,True,True
+auralex smartphone max 1|has_ram_gb|32,Auralex Smartphone Max 1,has_ram_gb,32,test,True,0,1,0.999999,0.9989647567947229,0.93374980125,0.9989647567947229,0.93374980125,1.0,True,True,True,True,True,True
+auralex smartphone max 1|has_storage_gb|1024,Auralex Smartphone Max 1,has_storage_gb,1024,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone max 1|has_battery_life_hours|8,Auralex Smartphone Max 1,has_battery_life_hours,8,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone max 1|has_weight_kg|1.2,Auralex Smartphone Max 1,has_weight_kg,1.2,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone max 1|has_color|blue,Auralex Smartphone Max 1,has_color,blue,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+auralex smartphone max 1|made_of_material|aluminum,Auralex Smartphone Max 1,made_of_material,aluminum,test,True,0,1,0.999981,0.9989640982529704,0.93374622375,0.9989640982529704,0.93374622375,1.0,True,True,True,True,True,True
+auralex smartphone max 1|target_market_region|us,Auralex Smartphone Max 1,target_market_region,US,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone max 1|supports_fast_charging|no,Auralex Smartphone Max 1,supports_fast_charging,no,test,True,0,1,0.999984,0.9989534679914306,0.93374682,0.9989534679914306,0.93374682,1.0,True,True,True,True,True,True
+auralex smartphone max 1|has_noise_cancellation|no,Auralex Smartphone Max 1,has_noise_cancellation,no,test,True,0,1,0.999999,0.99896478163974,0.93374980125,0.99896478163974,0.93374980125,1.0,True,True,True,True,True,True
+auralex smartphone max 1|belongs_to_category|smartphone device,Auralex Smartphone Max 1,belongs_to_category,smartphone device,test,True,1,0,0.978827,0.4598499974770312,0.367060125,0.5111791160318367,0.3668403192046822,0.5558107196220756,False,False,False,False,False,False
+technova laptop air 2|manufactured_by|technova,TechNova Laptop Air 2,manufactured_by,TechNova,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|belongs_to_category|laptop,TechNova Laptop Air 2,belongs_to_category,laptop,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|has_price_usd|499,TechNova Laptop Air 2,has_price_usd,499,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|has_screen_size_inch|15.6,TechNova Laptop Air 2,has_screen_size_inch,15.6,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|has_ram_gb|4,TechNova Laptop Air 2,has_ram_gb,4,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|has_storage_gb|128,TechNova Laptop Air 2,has_storage_gb,128,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|has_battery_life_hours|20,TechNova Laptop Air 2,has_battery_life_hours,20,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|has_weight_kg|0.55,TechNova Laptop Air 2,has_weight_kg,0.55,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|has_color|green,TechNova Laptop Air 2,has_color,green,test,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+technova laptop air 2|made_of_material|plastic,TechNova Laptop Air 2,made_of_material,plastic,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|target_market_region|us,TechNova Laptop Air 2,target_market_region,US,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|supports_fast_charging|no,TechNova Laptop Air 2,supports_fast_charging,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 2|has_noise_cancellation|no,TechNova Laptop Air 2,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+it|belongs_to_category|laptop device,It,belongs_to_category,laptop device,val,True,3,0,0.821315,0.2067344188321875,0.2067344188321875,0.24769667666873557,0.24769667666873557,0.29953487917969573,False,False,False,False,False,False
+it|has_price_usd|499,It,has_price_usd,499,val,True,2,0,0.999698,0.2499245,0.2499245,0.24988317350137848,0.24988317350137848,0.3332782146893409,True,False,False,False,False,False
+it|has_screen_size_inch|15.6,It,has_screen_size_inch,15.6,val,True,3,0,0.999981,0.1874964375,0.1874964375,0.19036191466455432,0.19036191466455432,0.2538207088128732,True,False,False,False,False,False
+it|has_ram_gb|4,It,has_ram_gb,4,val,True,3,0,0.999995,0.1874990624999999,0.18749906249999998,0.20071173092015204,0.20071173092015204,0.267616979311766,True,False,False,False,False,False
+it|has_storage_gb|128,It,has_storage_gb,128,val,True,3,0,0.999998,0.2460905858724255,0.2460905858724255,0.34648858621275697,0.34648858621275697,0.35199293075800375,True,False,False,False,False,False
+it|has_color|green,It,has_color,green,val,False,2,0,0.999812,0.749859,0.749859,0.749859,0.749859,0.749859,True,True,True,True,True,True
+it|target_market_region|us,It,target_market_region,US,val,True,1,0,0.999834,0.46868979027675,0.46868979027675,0.4686797977141418,0.4686797977141418,0.49998933989728866,True,False,True,False,False,False
+auralex headphones air 8|manufactured_by|auralex,Auralex Headphones Air 8,manufactured_by,Auralex,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|belongs_to_category|headphones,Auralex Headphones Air 8,belongs_to_category,headphones,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|has_price_usd|199,Auralex Headphones Air 8,has_price_usd,199,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|has_screen_size_inch|14.0,Auralex Headphones Air 8,has_screen_size_inch,14.0,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|has_ram_gb|32,Auralex Headphones Air 8,has_ram_gb,32,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|has_storage_gb|256,Auralex Headphones Air 8,has_storage_gb,256,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|has_battery_life_hours|18,Auralex Headphones Air 8,has_battery_life_hours,18,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|has_weight_kg|1.8,Auralex Headphones Air 8,has_weight_kg,1.8,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|has_color|blue,Auralex Headphones Air 8,has_color,blue,val,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+auralex headphones air 8|made_of_material|plastic,Auralex Headphones Air 8,made_of_material,plastic,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|target_market_region|us,Auralex Headphones Air 8,target_market_region,US,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|supports_fast_charging|yes,Auralex Headphones Air 8,supports_fast_charging,yes,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex headphones air 8|has_noise_cancellation|yes,Auralex Headphones Air 8,has_noise_cancellation,yes,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+product|has_price_usd|199,product,has_price_usd,199,val,True,1,0,0.930674,0.45047607294225,0.34900275000000003,0.4305588841555559,0.31976298274680404,0.47789317792551494,False,False,False,False,False,False
+product|has_screen_size_inch|14.0,product,has_screen_size_inch,14.0,val,True,3,0,0.999975,0.2343579831867187,0.18749531249999998,0.2504144752368849,0.19395846093474806,0.26712816844537957,True,False,False,False,False,False
+product|has_ram_gb|32,product,has_ram_gb,32,val,True,2,0,0.999999,0.312499562498875,0.24999975,0.3073766118006643,0.24999991666677776,0.32786884493827184,True,False,False,False,False,False
+product|has_weight_kg|1.8,product,has_weight_kg,1.8,val,True,1,0,0.999995,0.4921865859055075,0.4687481249789062,0.4921866562212167,0.5208307870035944,0.5000000714319642,True,False,True,False,True,False
+product|has_color|blue,product,has_color,blue,val,False,0,0,0.999991,0.999755203940902,0.9843649203946077,0.999755203940902,0.9843649203946077,0.999755203940902,True,True,True,True,True,True
+product|target_market_region|us,product,target_market_region,US,val,True,1,0,0.999969,0.4995111970503514,0.49218335089492066,0.503200944655797,0.5586978930740919,0.5036933582542632,True,False,True,False,True,False
+product|supports_fast_charging|yes,product,supports_fast_charging,yes,val,True,1,0,0.999118,0.4514569252426875,0.4514569252426875,0.4286557366369559,0.4431877030738891,0.47474710506049445,True,False,False,False,False,False
+zenbyte laptop air 9|manufactured_by|zenbyte,Zenbyte Laptop Air 9,manufactured_by,Zenbyte,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|belongs_to_category|laptop,Zenbyte Laptop Air 9,belongs_to_category,laptop,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|has_price_usd|199,Zenbyte Laptop Air 9,has_price_usd,199,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|has_screen_size_inch|6.1,Zenbyte Laptop Air 9,has_screen_size_inch,6.1,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|has_ram_gb|8,Zenbyte Laptop Air 9,has_ram_gb,8,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|has_storage_gb|256,Zenbyte Laptop Air 9,has_storage_gb,256,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|has_battery_life_hours|10,Zenbyte Laptop Air 9,has_battery_life_hours,10,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|has_weight_kg|0.18,Zenbyte Laptop Air 9,has_weight_kg,0.18,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|has_color|green,Zenbyte Laptop Air 9,has_color,green,val,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+zenbyte laptop air 9|made_of_material|aluminum,Zenbyte Laptop Air 9,made_of_material,aluminum,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|target_market_region|apac,Zenbyte Laptop Air 9,target_market_region,APAC,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|supports_fast_charging|yes,Zenbyte Laptop Air 9,supports_fast_charging,yes,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop air 9|has_noise_cancellation|no,Zenbyte Laptop Air 9,has_noise_cancellation,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+laptop device|has_price_usd|199,laptop device,has_price_usd,199,test,True,2,0,0.996613,0.333304737102293,0.311997259861875,0.33703935558805864,0.36012097093306467,0.33706827223462615,True,False,False,False,False,False
+laptop device|has_weight_kg|0.18,laptop device,has_weight_kg,0.18,test,True,1,0,0.999984,0.4980462245299177,0.374994,0.5009930488241024,0.37499156251584387,0.5029583843316613,True,False,False,False,False,False
+laptop device|has_color|green,laptop device,has_color,green,test,False,0,0,0.999979,0.9999386496208384,0.9374478719641876,0.9999386496208384,0.9374478719641876,0.9999386496208384,True,True,True,True,True,True
+laptop device|made_of_material|aluminum,laptop device,made_of_material,aluminum,test,True,2,0,0.999986,0.3320306405299316,0.24999650000000004,0.3346568700274733,0.2500003333921129,0.33596986660964995,True,False,False,False,False,False
+laptop device|target_market_region|apac,laptop device,target_market_region,APAC,test,True,1,0,0.999995,0.4980463710525281,0.37499812499999996,0.5009941351695341,0.37499981250759373,0.5029593269706759,True,False,False,False,False,False
+laptop device|supports_fast_charging|yes,laptop device,supports_fast_charging,yes,test,True,1,0,0.999995,0.4980445538655775,0.37499812499999996,0.500998515930248,0.37500262505400084,0.5029655600505449,True,False,False,False,False,False
+pixelware laptop plus 11|manufactured_by|pixelware,PixelWare Laptop Plus 11,manufactured_by,PixelWare,test,True,0,1,0.999991,0.9989645735532096,0.93374821125,0.9989645735532096,0.93374821125,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|belongs_to_category|laptop,PixelWare Laptop Plus 11,belongs_to_category,laptop,test,True,1,1,0.98,0.3675,0.3675,0.3126605728909166,0.3660940866376929,0.42538853454546477,True,False,False,False,False,False
+pixelware laptop plus 11|has_price_usd|1299,PixelWare Laptop Plus 11,has_price_usd,1299,test,True,0,1,0.999997,0.9989646977862328,0.93374940375,0.9989646977862328,0.93374940375,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|has_screen_size_inch|6.7,PixelWare Laptop Plus 11,has_screen_size_inch,6.7,test,True,0,1,0.999877,0.9989582065663756,0.93372555375,0.9989582065663756,0.93372555375,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|has_ram_gb|16,PixelWare Laptop Plus 11,has_ram_gb,16,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|has_storage_gb|128,PixelWare Laptop Plus 11,has_storage_gb,128,test,True,0,1,0.999999,0.9989648282225724,0.93374980125,0.9989648282225724,0.93374980125,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|has_battery_life_hours|8,PixelWare Laptop Plus 11,has_battery_life_hours,8,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|has_weight_kg|0.18,PixelWare Laptop Plus 11,has_weight_kg,0.18,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|has_color|black,PixelWare Laptop Plus 11,has_color,black,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+pixelware laptop plus 11|made_of_material|plastic,PixelWare Laptop Plus 11,made_of_material,plastic,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|target_market_region|eu,PixelWare Laptop Plus 11,target_market_region,EU,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|supports_fast_charging|yes,PixelWare Laptop Plus 11,supports_fast_charging,yes,test,True,0,1,0.999992,0.9989643654342364,0.93374841,0.9989643654342364,0.93374841,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|has_noise_cancellation|no,PixelWare Laptop Plus 11,has_noise_cancellation,no,test,True,0,1,0.999999,0.9989648158005112,0.93374980125,0.9989648158005112,0.93374980125,1.0,True,True,True,True,True,True
+pixelware laptop plus 11|belongs_to_category|laptop device,PixelWare Laptop Plus 11,belongs_to_category,laptop device,test,True,1,0,0.987527,0.4964160911863323,0.370322625,0.5704927552635812,0.37173933663769293,0.5746114654545352,True,False,False,True,False,True
+pixelware tablet max 12|manufactured_by|pixelware,PixelWare Tablet Max 12,manufactured_by,PixelWare,val,True,0,1,0.999995,0.9989647536885368,0.93374900625,0.9989647536885368,0.93374900625,1.0,True,True,True,True,True,True
+pixelware tablet max 12|belongs_to_category|tablet,PixelWare Tablet Max 12,belongs_to_category,tablet,val,True,1,1,0.98,0.3675,0.3675,0.31502029478955457,0.3664602624899456,0.42859904053000625,True,False,False,False,False,False
+pixelware tablet max 12|has_price_usd|1099,PixelWare Tablet Max 12,has_price_usd,1099,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet max 12|has_screen_size_inch|15.6,PixelWare Tablet Max 12,has_screen_size_inch,15.6,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet max 12|has_ram_gb|12,PixelWare Tablet Max 12,has_ram_gb,12,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet max 12|has_storage_gb|128,PixelWare Tablet Max 12,has_storage_gb,128,val,True,0,1,0.999998,0.9987904410171904,0.9337496025,0.9987904410171904,0.9337496025000002,1.0,True,True,True,True,True,True
+pixelware tablet max 12|has_battery_life_hours|8,PixelWare Tablet Max 12,has_battery_life_hours,8,val,True,0,1,0.999994,0.9989646760456968,0.9337488075,0.9989646760456968,0.9337488075,1.0,True,True,True,True,True,True
+pixelware tablet max 12|has_weight_kg|0.18,PixelWare Tablet Max 12,has_weight_kg,0.18,val,True,0,1,0.999998,0.9989647909561368,0.9337496025,0.9989647909561368,0.9337496025000002,1.0,True,True,True,True,True,True
+pixelware tablet max 12|has_color|green,PixelWare Tablet Max 12,has_color,green,val,False,0,1,0.999996,0.9989647630056044,0.933749205,0.9989647630056044,0.933749205,0.9989647630056044,True,True,True,True,True,True
+pixelware tablet max 12|made_of_material|aluminum,PixelWare Tablet Max 12,made_of_material,aluminum,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet max 12|target_market_region|global,PixelWare Tablet Max 12,target_market_region,Global,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet max 12|supports_fast_charging|no,PixelWare Tablet Max 12,supports_fast_charging,no,val,True,0,1,0.999994,0.9989571895339222,0.9337488075,0.9989571895339222,0.9337488075,1.0,True,True,True,True,True,True
+pixelware tablet max 12|has_noise_cancellation|no,PixelWare Tablet Max 12,has_noise_cancellation,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet max 12|belongs_to_category|tablet device,PixelWare Tablet Max 12,belongs_to_category,tablet device,val,True,1,0,0.985561,0.4899447566320935,0.369585375,0.5599098080537417,0.3706310124899456,0.5714009594699938,True,False,False,True,False,True
+technova tablet max 13|manufactured_by|technova,TechNova Tablet Max 13,manufactured_by,TechNova,test,True,0,1,0.999995,0.998964433779622,0.93374900625,0.998964433779622,0.93374900625,1.0,True,True,True,True,True,True
+technova tablet max 13|belongs_to_category|tablet,TechNova Tablet Max 13,belongs_to_category,tablet,test,True,1,1,0.993907,0.466269508125,0.466269508125,0.4664143303971964,0.5197512069244621,0.500155298887953,True,False,True,False,True,False
+technova tablet max 13|has_price_usd|349,TechNova Tablet Max 13,has_price_usd,349,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet max 13|has_screen_size_inch|13.3,TechNova Tablet Max 13,has_screen_size_inch,13.3,test,True,0,1,0.999971,0.9989249698988956,0.93374423625,0.9989249698988956,0.93374423625,1.0,True,True,True,True,True,True
+technova tablet max 13|has_ram_gb|12,TechNova Tablet Max 13,has_ram_gb,12,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet max 13|has_storage_gb|128,TechNova Tablet Max 13,has_storage_gb,128,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet max 13|has_battery_life_hours|14,TechNova Tablet Max 13,has_battery_life_hours,14,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet max 13|has_weight_kg|0.23,TechNova Tablet Max 13,has_weight_kg,0.23,test,True,0,1,0.999995,0.9989643623599528,0.93374900625,0.9989643623599528,0.93374900625,1.0,True,True,True,True,True,True
+technova tablet max 13|has_color|blue,TechNova Tablet Max 13,has_color,blue,test,False,0,1,0.999987,0.998964082736756,0.93374741625,0.998964082736756,0.93374741625,0.998964082736756,True,True,True,True,True,True
+technova tablet max 13|made_of_material|aluminum,TechNova Tablet Max 13,made_of_material,aluminum,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet max 13|target_market_region|us,TechNova Tablet Max 13,target_market_region,US,test,True,0,1,0.999986,0.9989644213478516,0.9337472175,0.9989644213478516,0.9337472175,1.0,True,True,True,True,True,True
+technova tablet max 13|supports_fast_charging|no,TechNova Tablet Max 13,supports_fast_charging,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet max 13|has_noise_cancellation|no,TechNova Tablet Max 13,has_noise_cancellation,no,test,True,0,1,0.999997,0.9989584716512622,0.93374940375,0.9989584716512622,0.93374940375,1.0,True,True,True,True,True,True
+technova tablet max 13|belongs_to_category|tablet device,TechNova Tablet Max 13,belongs_to_category,tablet device,test,True,1,0,0.9875,0.465979953515625,0.37031250000000004,0.46583522117844633,0.32783719067446215,0.4998447011120471,True,False,False,False,False,False
+technova smartwatch lite 15|manufactured_by|technova,TechNova Smartwatch Lite 15,manufactured_by,TechNova,val,True,0,1,0.999995,0.998964707103282,0.93374900625,0.998964707103282,0.93374900625,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|belongs_to_category|smartwatch,TechNova Smartwatch Lite 15,belongs_to_category,smartwatch,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|has_price_usd|349,TechNova Smartwatch Lite 15,has_price_usd,349,val,True,0,1,0.999986,0.9989639895578408,0.9337472175,0.9989639895578408,0.9337472175,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|has_screen_size_inch|6.1,TechNova Smartwatch Lite 15,has_screen_size_inch,6.1,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|has_ram_gb|16,TechNova Smartwatch Lite 15,has_ram_gb,16,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|has_storage_gb|1024,TechNova Smartwatch Lite 15,has_storage_gb,1024,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|has_battery_life_hours|8,TechNova Smartwatch Lite 15,has_battery_life_hours,8,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|has_weight_kg|1.45,TechNova Smartwatch Lite 15,has_weight_kg,1.45,val,True,0,1,0.999969,0.998963958443161,0.93374383875,0.998963958443161,0.93374383875,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|has_color|white,TechNova Smartwatch Lite 15,has_color,white,val,False,0,1,0.999994,0.998964716420359,0.9337488075,0.998964716420359,0.9337488075,0.998964716420359,True,True,True,True,True,True
+technova smartwatch lite 15|made_of_material|aluminum,TechNova Smartwatch Lite 15,made_of_material,aluminum,val,True,0,1,0.999989,0.998964598396736,0.9337478137499999,0.998964598396736,0.9337478137499999,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|target_market_region|us,TechNova Smartwatch Lite 15,target_market_region,US,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|supports_fast_charging|no,TechNova Smartwatch Lite 15,supports_fast_charging,no,val,True,0,1,0.999992,0.998957524105481,0.93374841,0.998957524105481,0.93374841,1.0,True,True,True,True,True,True
+technova smartwatch lite 15|has_noise_cancellation|no,TechNova Smartwatch Lite 15,has_noise_cancellation,no,val,True,0,1,0.999999,0.9989648220115604,0.93374980125,0.9989648220115604,0.93374980125,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|manufactured_by|auralex,Auralex Smartwatch Max 16,manufactured_by,Auralex,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|belongs_to_category|smartwatch,Auralex Smartwatch Max 16,belongs_to_category,smartwatch,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|has_price_usd|899,Auralex Smartwatch Max 16,has_price_usd,899,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|has_screen_size_inch|6.1,Auralex Smartwatch Max 16,has_screen_size_inch,6.1,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|has_ram_gb|16,Auralex Smartwatch Max 16,has_ram_gb,16,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|has_storage_gb|128,Auralex Smartwatch Max 16,has_storage_gb,128,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|has_battery_life_hours|18,Auralex Smartwatch Max 16,has_battery_life_hours,18,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|has_weight_kg|1.2,Auralex Smartwatch Max 16,has_weight_kg,1.2,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|has_color|silver,Auralex Smartwatch Max 16,has_color,silver,val,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+auralex smartwatch max 16|made_of_material|aluminum,Auralex Smartwatch Max 16,made_of_material,aluminum,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|target_market_region|eu,Auralex Smartwatch Max 16,target_market_region,EU,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|supports_fast_charging|yes,Auralex Smartwatch Max 16,supports_fast_charging,yes,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartwatch max 16|has_noise_cancellation|no,Auralex Smartwatch Max 16,has_noise_cancellation,no,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+smartwatch device|has_price_usd|899,smartwatch device,has_price_usd,899,test,True,0,0,0.997415,0.9955611914119588,0.74806125,0.9955611914119588,0.74806125,1.0,True,True,True,True,True,True
+smartwatch device|has_storage_gb|128,smartwatch device,has_storage_gb,128,test,True,0,0,0.999999,0.9999998905874278,0.9843607967063902,0.9999998905874278,0.9843607967063902,1.0,True,True,True,True,True,True
+smartwatch device|has_battery_life_hours|18,smartwatch device,has_battery_life_hours,18,test,True,1,0,0.999999,0.498046751950875,0.374999625,0.4980484166307514,0.37500543759009525,0.5000016712084457,True,False,False,False,False,False
+smartwatch device|has_color|silver,smartwatch device,has_color,silver,test,False,1,0,0.999988,0.9960922966965732,0.749991,0.9960922966965732,0.749991,0.9960922966965732,True,True,True,True,True,True
+smartwatch device|made_of_material|aluminum,smartwatch device,made_of_material,aluminum,test,True,1,0,0.999972,0.4999923542739531,0.468744093474375,0.5009676342767366,0.5208266315021205,0.500975294916459,True,False,True,False,True,False
+smartwatch device|has_noise_cancellation|no,smartwatch device,has_noise_cancellation,no,test,True,0,0,0.999997,0.9952571828540788,0.74999775,0.9952571828540788,0.7499977499999999,1.0,True,True,True,True,True,True
+technova laptop air 17|manufactured_by|technova,TechNova Laptop Air 17,manufactured_by,TechNova,test,True,0,1,0.999997,0.9989647878504724,0.93374940375,0.9989647878504724,0.93374940375,1.0,True,True,True,True,True,True
+technova laptop air 17|belongs_to_category|laptop,TechNova Laptop Air 17,belongs_to_category,laptop,test,True,1,1,0.992855,0.491311890625739,0.466164965625,0.5043416716530236,0.5198480753459812,0.513260193042234,True,False,True,False,True,False
+technova laptop air 17|has_price_usd|299,TechNova Laptop Air 17,has_price_usd,299,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 17|has_screen_size_inch|14.0,TechNova Laptop Air 17,has_screen_size_inch,14.0,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 17|has_ram_gb|32,TechNova Laptop Air 17,has_ram_gb,32,test,True,0,1,0.999974,0.9989643157244488,0.9337448325,0.9989643157244488,0.9337448325,1.0,True,True,True,True,True,True
+technova laptop air 17|has_storage_gb|256,TechNova Laptop Air 17,has_storage_gb,256,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 17|has_battery_life_hours|14,TechNova Laptop Air 17,has_battery_life_hours,14,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 17|has_weight_kg|0.42,TechNova Laptop Air 17,has_weight_kg,0.42,test,True,0,1,0.999997,0.998964753688779,0.93374940375,0.998964753688779,0.93374940375,1.0,True,True,True,True,True,True
+technova laptop air 17|has_color|blue,TechNova Laptop Air 17,has_color,blue,test,False,0,1,0.999996,0.9989644648510706,0.933749205,0.9989644648510706,0.933749205,0.9989644648510706,True,True,True,True,True,True
+technova laptop air 17|made_of_material|aluminum,TechNova Laptop Air 17,made_of_material,aluminum,test,True,0,1,0.999995,0.9989647443715156,0.93374900625,0.9989647443715156,0.93374900625,1.0,True,True,True,True,True,True
+technova laptop air 17|target_market_region|apac,TechNova Laptop Air 17,target_market_region,APAC,test,True,0,1,0.999998,0.9989647940618293,0.9337496025,0.9989647940618293,0.9337496025000002,1.0,True,True,True,True,True,True
+technova laptop air 17|supports_fast_charging|yes,TechNova Laptop Air 17,supports_fast_charging,yes,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 17|has_noise_cancellation|no,TechNova Laptop Air 17,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop air 17|belongs_to_category|laptop device,TechNova Laptop Air 17,belongs_to_category,laptop device,test,True,1,0,0.986363,0.4659255832441875,0.369886125,0.45356905688992055,0.3272903940959813,0.48673980695776586,True,False,False,False,False,False
+zenbyte laptop pro 18|manufactured_by|zenbyte,Zenbyte Laptop Pro 18,manufactured_by,Zenbyte,test,True,0,1,0.999997,0.9989647630055486,0.93374940375,0.9989647630055486,0.93374940375,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|belongs_to_category|laptop,Zenbyte Laptop Pro 18,belongs_to_category,laptop,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|has_price_usd|349,Zenbyte Laptop Pro 18,has_price_usd,349,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|has_screen_size_inch|10.9,Zenbyte Laptop Pro 18,has_screen_size_inch,10.9,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|has_ram_gb|8,Zenbyte Laptop Pro 18,has_ram_gb,8,test,True,0,1,0.999968,0.9989641510653376,0.93374364,0.9989641510653376,0.93374364,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|has_storage_gb|128,Zenbyte Laptop Pro 18,has_storage_gb,128,test,True,0,1,0.999994,0.9989641448698529,0.9337488075,0.9989641448698529,0.9337488075,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|has_battery_life_hours|14,Zenbyte Laptop Pro 18,has_battery_life_hours,14,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|has_weight_kg|1.8,Zenbyte Laptop Pro 18,has_weight_kg,1.8,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|has_color|blue,Zenbyte Laptop Pro 18,has_color,blue,test,False,0,1,0.999988,0.9989632658199498,0.933747615,0.9989632658199498,0.933747615,0.9989632658199498,True,True,True,True,True,True
+zenbyte laptop pro 18|made_of_material|aluminum,Zenbyte Laptop Pro 18,made_of_material,aluminum,test,True,0,1,0.999996,0.9989646946799442,0.933749205,0.9989646946799442,0.933749205,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|target_market_region|apac,Zenbyte Laptop Pro 18,target_market_region,APAC,test,True,0,1,0.999998,0.9989647971672048,0.9337496025,0.9989647971672048,0.9337496025000002,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|supports_fast_charging|no,Zenbyte Laptop Pro 18,supports_fast_charging,no,test,True,0,1,0.999993,0.9989580840266776,0.93374860875,0.9989580840266776,0.93374860875,1.0,True,True,True,True,True,True
+zenbyte laptop pro 18|has_noise_cancellation|no,Zenbyte Laptop Pro 18,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|manufactured_by|pixelware,PixelWare Smartphone Plus 19,manufactured_by,PixelWare,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|belongs_to_category|smartphone,PixelWare Smartphone Plus 19,belongs_to_category,smartphone,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|has_price_usd|299,PixelWare Smartphone Plus 19,has_price_usd,299,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|has_screen_size_inch|10.9,PixelWare Smartphone Plus 19,has_screen_size_inch,10.9,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|has_ram_gb|8,PixelWare Smartphone Plus 19,has_ram_gb,8,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|has_storage_gb|1024,PixelWare Smartphone Plus 19,has_storage_gb,1024,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|has_battery_life_hours|10,PixelWare Smartphone Plus 19,has_battery_life_hours,10,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|has_weight_kg|1.45,PixelWare Smartphone Plus 19,has_weight_kg,1.45,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|has_color|blue,PixelWare Smartphone Plus 19,has_color,blue,val,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+pixelware smartphone plus 19|made_of_material|aluminum,PixelWare Smartphone Plus 19,made_of_material,aluminum,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|target_market_region|eu,PixelWare Smartphone Plus 19,target_market_region,EU,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|supports_fast_charging|no,PixelWare Smartphone Plus 19,supports_fast_charging,no,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 19|has_noise_cancellation|no,PixelWare Smartphone Plus 19,has_noise_cancellation,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+product|has_price_usd|299,Product,has_price_usd,299,val,True,1,0,0.799927,0.4921531457834081,0.4128297702076875,0.5139130298378719,0.447417023162179,0.5221068220744851,False,False,False,False,False,False
+product|has_screen_size_inch|10.9,Product,has_screen_size_inch,10.9,val,True,3,0,0.999989,0.2460933163902537,0.1874979375,0.27612108017853376,0.1939638919454463,0.2805044487074389,True,False,False,False,False,False
+product|has_ram_gb|8,Product,has_ram_gb,8,val,True,2,0,0.999999,0.3281244999873906,0.24999975,0.3388826305726994,0.24999991666677776,0.34426224455018567,True,False,False,False,False,False
+product|has_weight_kg|1.45,Product,has_weight_kg,1.45,val,True,1,0,0.999998,0.4921864452741092,0.37499925,0.4921863749584201,0.33333303704578193,0.49999992856803577,True,False,False,False,False,False
+product|target_market_region|eu,Product,target_market_region,EU,val,True,1,0,0.999978,0.4921858123793409,0.37499175,0.488550175313776,0.3243146912842505,0.49630664174573685,True,False,False,False,False,False
+product|supports_fast_charging|no,Product,supports_fast_charging,no,val,True,1,0,0.997702,0.4994849982160365,0.4683039523085625,0.5247118825836539,0.476881757205639,0.5252528949395056,True,False,True,False,False,False
+auralex smartphone pro 20|manufactured_by|auralex,Auralex Smartphone Pro 20,manufactured_by,Auralex,val,True,0,1,0.999996,0.9989647630055486,0.933749205,0.9989647630055486,0.933749205,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|belongs_to_category|smartphone,Auralex Smartphone Pro 20,belongs_to_category,smartphone,val,True,1,1,0.992475,0.4912969860851133,0.466127203125,0.5704670369889648,0.5292546529649453,0.580572498047175,True,False,True,True,True,True
+auralex smartphone pro 20|has_price_usd|699,Auralex Smartphone Pro 20,has_price_usd,699,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|has_screen_size_inch|15.6,Auralex Smartphone Pro 20,has_screen_size_inch,15.6,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|has_ram_gb|6,Auralex Smartphone Pro 20,has_ram_gb,6,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|has_storage_gb|256,Auralex Smartphone Pro 20,has_storage_gb,256,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|has_battery_life_hours|10,Auralex Smartphone Pro 20,has_battery_life_hours,10,val,True,0,1,0.999955,0.9989283677753216,0.93374105625,0.9989283677753216,0.93374105625,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|has_weight_kg|1.45,Auralex Smartphone Pro 20,has_weight_kg,1.45,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|has_color|white,Auralex Smartphone Pro 20,has_color,white,val,False,0,1,0.999995,0.9989645052305868,0.93374900625,0.9989645052305868,0.93374900625,0.9989645052305868,True,True,True,True,True,True
+auralex smartphone pro 20|made_of_material|plastic,Auralex Smartphone Pro 20,made_of_material,plastic,val,True,0,1,0.99999,0.9989646760445976,0.9337480125000001,0.9989646760445976,0.9337480125000001,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|target_market_region|eu,Auralex Smartphone Pro 20,target_market_region,EU,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|supports_fast_charging|no,Auralex Smartphone Pro 20,supports_fast_charging,no,val,True,0,1,0.999992,0.9989597175984566,0.93374841,0.9989597175984566,0.93374841,1.0,True,True,True,True,True,True
+auralex smartphone pro 20|has_noise_cancellation|no,Auralex Smartphone Pro 20,has_noise_cancellation,no,val,True,0,1,0.999999,0.9989648251170664,0.93374980125,0.9989648251170664,0.93374980125,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|manufactured_by|voltedge,VoltEdge Smartwatch Max 22,manufactured_by,VoltEdge,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|belongs_to_category|smartwatch,VoltEdge Smartwatch Max 22,belongs_to_category,smartwatch,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|has_price_usd|299,VoltEdge Smartwatch Max 22,has_price_usd,299,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|has_screen_size_inch|15.6,VoltEdge Smartwatch Max 22,has_screen_size_inch,15.6,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|has_ram_gb|6,VoltEdge Smartwatch Max 22,has_ram_gb,6,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|has_storage_gb|512,VoltEdge Smartwatch Max 22,has_storage_gb,512,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|has_battery_life_hours|8,VoltEdge Smartwatch Max 22,has_battery_life_hours,8,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|has_weight_kg|0.23,VoltEdge Smartwatch Max 22,has_weight_kg,0.23,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|has_color|green,VoltEdge Smartwatch Max 22,has_color,green,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+voltedge smartwatch max 22|made_of_material|carbon fiber,VoltEdge Smartwatch Max 22,made_of_material,carbon fiber,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|target_market_region|us,VoltEdge Smartwatch Max 22,target_market_region,US,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|supports_fast_charging|no,VoltEdge Smartwatch Max 22,supports_fast_charging,no,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartwatch max 22|has_noise_cancellation|no,VoltEdge Smartwatch Max 22,has_noise_cancellation,no,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+product|has_screen_size_inch|15.6,Product,has_screen_size_inch,15.6,val,True,3,0,0.999989,0.2343738749798906,0.1874979375,0.25044843755316315,0.1939638919454463,0.26714628238178395,True,False,False,False,False,False
+product|has_ram_gb|6,Product,has_ram_gb,6,val,True,2,0,0.999997,0.3124996249983125,0.24999925,0.3073767347503869,0.24999891666711108,0.32786891051154243,True,False,False,False,False,False
+product|has_battery_life_hours|8,Product,has_battery_life_hours,8,val,True,1,0,0.999965,0.4687420307578125,0.374986875,0.5208279506221037,0.37498631250084385,0.5555592590876525,True,False,False,False,False,False
+product|has_noise_cancellation|no,Product,has_noise_cancellation,no,val,True,1,0,0.999998,0.46874943749775,0.37499925,0.5208393750817234,0.37500450007350117,0.5555626667650384,True,False,False,False,False,False
+voltedge smartphone max 23|manufactured_by|voltedge,VoltEdge Smartphone Max 23,manufactured_by,VoltEdge,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|belongs_to_category|smartphone,VoltEdge Smartphone Max 23,belongs_to_category,smartphone,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|has_price_usd|1099,VoltEdge Smartphone Max 23,has_price_usd,1099,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|has_screen_size_inch|10.9,VoltEdge Smartphone Max 23,has_screen_size_inch,10.9,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|has_ram_gb|8,VoltEdge Smartphone Max 23,has_ram_gb,8,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|has_storage_gb|128,VoltEdge Smartphone Max 23,has_storage_gb,128,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|has_battery_life_hours|10,VoltEdge Smartphone Max 23,has_battery_life_hours,10,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|has_weight_kg|0.18,VoltEdge Smartphone Max 23,has_weight_kg,0.18,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|has_color|black,VoltEdge Smartphone Max 23,has_color,black,val,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+voltedge smartphone max 23|made_of_material|plastic,VoltEdge Smartphone Max 23,made_of_material,plastic,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|target_market_region|us,VoltEdge Smartphone Max 23,target_market_region,US,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|supports_fast_charging|yes,VoltEdge Smartphone Max 23,supports_fast_charging,yes,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge smartphone max 23|has_noise_cancellation|no,VoltEdge Smartphone Max 23,has_noise_cancellation,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+it|has_ram_gb|8,It,has_ram_gb,8,val,True,3,0,0.736764,0.13814325,0.13814325,0.10895167047942485,0.10895167047942485,0.19717154200336398,False,False,False,False,False,False
+it|has_battery_life_hours|10,It,has_battery_life_hours,10,val,True,2,0,0.999649,0.24991225,0.24991225000000003,0.23063392403272437,0.23063392403272437,0.30761987328582246,True,False,False,False,False,False
+it|has_weight_kg|0.18,It,has_weight_kg,0.18,val,True,1,0,0.999994,0.4687426873785,0.4687426873785,0.46874109363616884,0.46874109363616884,0.49999829998165934,True,False,True,False,False,False
+it|supports_fast_charging|yes,It,supports_fast_charging,yes,val,True,1,0,0.999454,0.4921085536704397,0.49210855367043976,0.4921648520931498,0.49216485209314975,0.5000572012234802,True,False,True,False,False,False
+pixelware smartwatch pro 25|manufactured_by|pixelware,PixelWare Smartwatch Pro 25,manufactured_by,PixelWare,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|belongs_to_category|smartwatch,PixelWare Smartwatch Pro 25,belongs_to_category,smartwatch,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|has_price_usd|1299,PixelWare Smartwatch Pro 25,has_price_usd,1299,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|has_screen_size_inch|15.6,PixelWare Smartwatch Pro 25,has_screen_size_inch,15.6,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|has_ram_gb|16,PixelWare Smartwatch Pro 25,has_ram_gb,16,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|has_storage_gb|128,PixelWare Smartwatch Pro 25,has_storage_gb,128,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|has_battery_life_hours|12,PixelWare Smartwatch Pro 25,has_battery_life_hours,12,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|has_weight_kg|0.55,PixelWare Smartwatch Pro 25,has_weight_kg,0.55,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|has_color|blue,PixelWare Smartwatch Pro 25,has_color,blue,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+pixelware smartwatch pro 25|made_of_material|aluminum,PixelWare Smartwatch Pro 25,made_of_material,aluminum,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|target_market_region|global,PixelWare Smartwatch Pro 25,target_market_region,Global,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|supports_fast_charging|yes,PixelWare Smartwatch Pro 25,supports_fast_charging,yes,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartwatch pro 25|has_noise_cancellation|no,PixelWare Smartwatch Pro 25,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+smartwatch device|has_ram_gb|16,smartwatch device,has_ram_gb,16,test,True,0,0,0.997857,0.9952655917589092,0.74839275,0.9952655917589092,0.74839275,1.0,True,True,True,True,True,True
+smartwatch device|has_weight_kg|0.55,smartwatch device,has_weight_kg,0.55,test,True,0,0,0.999989,0.9960899871081996,0.74999175,0.9960899871081996,0.7499917499999998,1.0,True,True,True,True,True,True
+smartwatch device|target_market_region|global,smartwatch device,target_market_region,Global,test,True,0,0,0.999993,0.9999847080089568,0.9374958749409374,0.9999847080089568,0.9374958749409374,1.0,True,True,True,True,True,True
+smartwatch device|supports_fast_charging|yes,smartwatch device,supports_fast_charging,yes,test,True,1,0,0.999997,0.498045075627319,0.374998875,0.49805007472180074,0.37499981250234377,0.5000050187169057,True,False,False,False,False,False
+zenbyte smartwatch air 27|manufactured_by|zenbyte,Zenbyte Smartwatch Air 27,manufactured_by,Zenbyte,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|belongs_to_category|smartwatch,Zenbyte Smartwatch Air 27,belongs_to_category,smartwatch,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|has_price_usd|349,Zenbyte Smartwatch Air 27,has_price_usd,349,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|has_screen_size_inch|13.3,Zenbyte Smartwatch Air 27,has_screen_size_inch,13.3,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|has_ram_gb|12,Zenbyte Smartwatch Air 27,has_ram_gb,12,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|has_storage_gb|128,Zenbyte Smartwatch Air 27,has_storage_gb,128,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|has_battery_life_hours|20,Zenbyte Smartwatch Air 27,has_battery_life_hours,20,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|has_weight_kg|0.18,Zenbyte Smartwatch Air 27,has_weight_kg,0.18,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|has_color|blue,Zenbyte Smartwatch Air 27,has_color,blue,test,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+zenbyte smartwatch air 27|made_of_material|plastic,Zenbyte Smartwatch Air 27,made_of_material,plastic,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|target_market_region|global,Zenbyte Smartwatch Air 27,target_market_region,Global,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|supports_fast_charging|no,Zenbyte Smartwatch Air 27,supports_fast_charging,no,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte smartwatch air 27|has_noise_cancellation|no,Zenbyte Smartwatch Air 27,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+smartwatch device|has_battery_life_hours|20,smartwatch device,has_battery_life_hours,20,test,True,1,0,0.999968,0.4980434226022502,0.374988,0.49804175793350186,0.3749821875900953,0.4999983287915543,True,False,False,False,False,False
+smartwatch device|has_color|blue,smartwatch device,has_color,blue,test,False,1,0,0.99994,0.9960897641356452,0.749955,0.9960897641356452,0.749955,0.9960897641356452,True,True,True,True,True,True
+smartwatch device|made_of_material|plastic,smartwatch device,made_of_material,plastic,test,True,1,0,0.999988,0.4980455916038573,0.3749955,0.49707410893654524,0.33332944455337044,0.49902470508354096,True,False,False,False,False,False
+smartwatch device|supports_fast_charging|no,smartwatch device,supports_fast_charging,no,test,True,1,0,0.999992,0.4980350775387106,0.374997,0.49803007854458403,0.3749960625023438,0.4999949812830943,True,False,False,False,False,False
+technova laptop max 28|manufactured_by|technova,TechNova Laptop Max 28,manufactured_by,TechNova,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|belongs_to_category|laptop,TechNova Laptop Max 28,belongs_to_category,laptop,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|has_price_usd|199,TechNova Laptop Max 28,has_price_usd,199,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|has_screen_size_inch|6.1,TechNova Laptop Max 28,has_screen_size_inch,6.1,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|has_ram_gb|6,TechNova Laptop Max 28,has_ram_gb,6,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|has_storage_gb|512,TechNova Laptop Max 28,has_storage_gb,512,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|has_battery_life_hours|18,TechNova Laptop Max 28,has_battery_life_hours,18,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|has_weight_kg|1.8,TechNova Laptop Max 28,has_weight_kg,1.8,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|has_color|blue,TechNova Laptop Max 28,has_color,blue,val,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+technova laptop max 28|made_of_material|aluminum,TechNova Laptop Max 28,made_of_material,aluminum,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|target_market_region|us,TechNova Laptop Max 28,target_market_region,US,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|supports_fast_charging|yes,TechNova Laptop Max 28,supports_fast_charging,yes,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop max 28|has_noise_cancellation|no,TechNova Laptop Max 28,has_noise_cancellation,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+the display|has_screen_size_inch|6.1,The display,has_screen_size_inch,6.1,val,True,0,0,0.816894,0.6126705,0.6126705,0.6126705,0.6126705,1.0,False,False,True,True,True,True
+battery|has_battery_life_hours|18,Battery,has_battery_life_hours,18,test,True,0,0,0.999345,0.7495087500000001,0.7495087500000001,0.74950875,0.74950875,1.0,True,True,True,True,True,True
+weighs|has_weight_kg|1.8,Weighs,has_weight_kg,1.8,test,True,0,0,0.69448,0.52086,0.52086,0.52086,0.52086,1.0,False,False,True,False,True,True
+available|has_color|blue,Available,has_color,blue,test,False,0,0,0.986953,0.74021475,0.74021475,0.74021475,0.74021475,0.74021475,True,True,True,True,True,True
+built|made_of_material|aluminum,Built,made_of_material,aluminum,test,True,0,0,0.999759,0.7498192499999999,0.7498192499999999,0.7498192499999999,0.7498192499999999,1.0,True,True,True,True,True,True
+targeted|target_market_region|us,Targeted,target_market_region,US,val,True,0,0,0.999593,0.74969475,0.74969475,0.7496947500000001,0.7496947500000001,1.0,True,True,True,True,True,True
+fast charging|supports_fast_charging|yes,Fast charging,supports_fast_charging,yes,test,True,0,0,0.999905,0.74992875,0.74992875,0.74992875,0.74992875,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|manufactured_by|pixelware,PixelWare Tablet Pro 29,manufactured_by,PixelWare,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|belongs_to_category|tablet,PixelWare Tablet Pro 29,belongs_to_category,tablet,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|has_price_usd|899,PixelWare Tablet Pro 29,has_price_usd,899,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|has_screen_size_inch|6.7,PixelWare Tablet Pro 29,has_screen_size_inch,6.7,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|has_ram_gb|6,PixelWare Tablet Pro 29,has_ram_gb,6,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|has_storage_gb|1024,PixelWare Tablet Pro 29,has_storage_gb,1024,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|has_battery_life_hours|14,PixelWare Tablet Pro 29,has_battery_life_hours,14,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|has_weight_kg|0.18,PixelWare Tablet Pro 29,has_weight_kg,0.18,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|has_color|silver,PixelWare Tablet Pro 29,has_color,silver,val,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+pixelware tablet pro 29|made_of_material|carbon fiber,PixelWare Tablet Pro 29,made_of_material,carbon fiber,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|target_market_region|eu,PixelWare Tablet Pro 29,target_market_region,EU,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|supports_fast_charging|yes,PixelWare Tablet Pro 29,supports_fast_charging,yes,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet pro 29|has_noise_cancellation|no,PixelWare Tablet Pro 29,has_noise_cancellation,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+it|belongs_to_category|tablet device,It,belongs_to_category,tablet device,val,True,3,0,0.85665,0.160621875,0.160621875,0.1495216177410511,0.1495216177410511,0.2327229988771005,False,False,False,False,False,False
+it|has_price_usd|899,It,has_price_usd,899,val,True,2,0,0.999957,0.2499892499999999,0.24998924999999997,0.2500126688603275,0.2500126688603275,0.3333645598231758,True,False,False,False,False,False
+it|has_storage_gb|1024,It,has_storage_gb,1024,val,True,3,0,0.999997,0.1874994375,0.1874994375,0.20114019688634005,0.20114019688634005,0.268187733744988,True,False,False,False,False,False
+it|has_battery_life_hours|14,It,has_battery_life_hours,14,val,True,2,0,0.999995,0.312499062490625,0.312499062490625,0.3606164524110002,0.3606164524110003,0.3846587032260497,True,False,False,False,False,False
+it|has_color|silver,It,has_color,silver,val,False,2,0,0.999985,0.74998875,0.74998875,0.74998875,0.74998875,0.74998875,True,True,True,True,True,True
+zenbyte tablet max 30|manufactured_by|zenbyte,Zenbyte Tablet Max 30,manufactured_by,Zenbyte,val,True,0,1,0.999995,0.9989647661111104,0.93374900625,0.9989647661111104,0.93374900625,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|belongs_to_category|tablet,Zenbyte Tablet Max 30,belongs_to_category,tablet,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|has_price_usd|1099,Zenbyte Tablet Max 30,has_price_usd,1099,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|has_screen_size_inch|11.0,Zenbyte Tablet Max 30,has_screen_size_inch,11.0,val,True,0,1,0.999905,0.9989563515588574,0.93373111875,0.9989563515588574,0.93373111875,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|has_ram_gb|8,Zenbyte Tablet Max 30,has_ram_gb,8,val,True,0,1,0.999993,0.9989647102084804,0.93374860875,0.9989647102084804,0.93374860875,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|has_storage_gb|128,Zenbyte Tablet Max 30,has_storage_gb,128,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|has_battery_life_hours|24,Zenbyte Tablet Max 30,has_battery_life_hours,24,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|has_weight_kg|1.45,Zenbyte Tablet Max 30,has_weight_kg,1.45,val,True,0,1,0.999996,0.9989647133145456,0.933749205,0.9989647133145456,0.933749205,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|has_color|green,Zenbyte Tablet Max 30,has_color,green,val,False,0,1,0.999966,0.9989637689541762,0.9337432425,0.9989637689541762,0.9337432425,0.9989637689541762,True,True,True,True,True,True
+zenbyte tablet max 30|made_of_material|plastic,Zenbyte Tablet Max 30,made_of_material,plastic,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|target_market_region|global,Zenbyte Tablet Max 30,target_market_region,Global,val,True,0,1,0.999996,0.9989646325655568,0.933749205,0.9989646325655568,0.933749205,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|supports_fast_charging|no,Zenbyte Tablet Max 30,supports_fast_charging,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet max 30|has_noise_cancellation|no,Zenbyte Tablet Max 30,has_noise_cancellation,no,val,True,0,1,0.999998,0.9989595899457732,0.9337496025,0.9989595899457732,0.9337496025000002,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|manufactured_by|pixelware,PixelWare Headphones Plus 31,manufactured_by,PixelWare,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|belongs_to_category|headphones,PixelWare Headphones Plus 31,belongs_to_category,headphones,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|has_price_usd|249,PixelWare Headphones Plus 31,has_price_usd,249,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|has_screen_size_inch|6.7,PixelWare Headphones Plus 31,has_screen_size_inch,6.7,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|has_ram_gb|6,PixelWare Headphones Plus 31,has_ram_gb,6,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|has_storage_gb|128,PixelWare Headphones Plus 31,has_storage_gb,128,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|has_battery_life_hours|14,PixelWare Headphones Plus 31,has_battery_life_hours,14,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|has_weight_kg|1.45,PixelWare Headphones Plus 31,has_weight_kg,1.45,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|has_color|blue,PixelWare Headphones Plus 31,has_color,blue,test,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+pixelware headphones plus 31|made_of_material|plastic,PixelWare Headphones Plus 31,made_of_material,plastic,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|target_market_region|apac,PixelWare Headphones Plus 31,target_market_region,APAC,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|supports_fast_charging|yes,PixelWare Headphones Plus 31,supports_fast_charging,yes,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones plus 31|has_noise_cancellation|yes,PixelWare Headphones Plus 31,has_noise_cancellation,yes,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+it|belongs_to_category|headphones,It,belongs_to_category,headphones,val,True,3,0,0.895162,0.167842875,0.167842875,0.16326775634593435,0.16326775634593435,0.24318541425415635,False,False,False,False,False,False
+it|has_screen_size_inch|6.7,It,has_screen_size_inch,6.7,val,True,3,0,0.98416,0.18453,0.18453,0.18438601868054383,0.18438601868054383,0.24980493507904383,True,False,False,False,False,False
+it|has_weight_kg|1.45,It,has_weight_kg,1.45,val,True,1,0,0.999984,0.468745874874,0.468745874874,0.46874746862716876,0.46874746862716876,0.5000017000183407,True,False,True,False,False,False
+it|has_color|blue,It,has_color,blue,val,False,2,0,0.999983,0.74998725,0.74998725,0.74998725,0.74998725,0.74998725,True,True,True,True,True,True
+pixelware smartphone plus 32|manufactured_by|pixelware,PixelWare Smartphone Plus 32,manufactured_by,PixelWare,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|belongs_to_category|smartphone,PixelWare Smartphone Plus 32,belongs_to_category,smartphone,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|has_price_usd|899,PixelWare Smartphone Plus 32,has_price_usd,899,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|has_screen_size_inch|11.0,PixelWare Smartphone Plus 32,has_screen_size_inch,11.0,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|has_ram_gb|4,PixelWare Smartphone Plus 32,has_ram_gb,4,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|has_storage_gb|256,PixelWare Smartphone Plus 32,has_storage_gb,256,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|has_battery_life_hours|12,PixelWare Smartphone Plus 32,has_battery_life_hours,12,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|has_weight_kg|1.8,PixelWare Smartphone Plus 32,has_weight_kg,1.8,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|has_color|white,PixelWare Smartphone Plus 32,has_color,white,test,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+pixelware smartphone plus 32|made_of_material|plastic,PixelWare Smartphone Plus 32,made_of_material,plastic,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|target_market_region|eu,PixelWare Smartphone Plus 32,target_market_region,EU,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|supports_fast_charging|no,PixelWare Smartphone Plus 32,supports_fast_charging,no,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware smartphone plus 32|has_noise_cancellation|no,PixelWare Smartphone Plus 32,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+smartphone device|has_screen_size_inch|11.0,smartphone device,has_screen_size_inch,11.0,val,True,0,0,0.997006,0.995542256649666,0.7477545,0.995542256649666,0.7477545000000001,1.0,True,True,True,True,True,True
+smartphone device|has_battery_life_hours|12,smartphone device,has_battery_life_hours,12,val,True,1,0,0.999994,0.4980464648230953,0.37499775,0.5009939917553907,0.37499868750234383,0.5029590882984606,True,False,False,False,False,False
+smartphone device|has_weight_kg|1.8,smartphone device,has_weight_kg,1.8,val,True,1,0,0.999993,0.4980465351353842,0.374997375,0.5009940739217686,0.37499925000937506,0.5029590997812917,True,False,False,False,False,False
+smartphone device|has_color|white,smartphone device,has_color,white,val,False,0,0,0.999992,0.9960929647898892,0.749994,0.9960929647898892,0.749994,0.9960929647898892,True,True,True,True,True,True
+smartphone device|made_of_material|plastic,smartphone device,made_of_material,plastic,val,True,0,0,0.999986,0.9960927772581062,0.7499895000000001,0.9960927772581062,0.7499895000000001,1.0,True,True,True,True,True,True
+smartphone device|supports_fast_charging|no,smartphone device,supports_fast_charging,no,val,True,1,0,0.999989,0.4980145098881214,0.374995875,0.5009507702972972,0.37499437500599997,0.5029479667267479,True,False,False,False,False,False
+pixelware tablet lite 34|manufactured_by|pixelware,PixelWare Tablet Lite 34,manufactured_by,PixelWare,val,True,0,1,0.999996,0.9989647692167656,0.933749205,0.9989647692167656,0.933749205,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|belongs_to_category|tablet,PixelWare Tablet Lite 34,belongs_to_category,tablet,val,True,1,1,0.989469,0.465828481875,0.465828481875,0.4675897213306233,0.5182200183555475,0.5018904377084611,True,False,True,False,True,False
+pixelware tablet lite 34|has_price_usd|349,PixelWare Tablet Lite 34,has_price_usd,349,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|has_screen_size_inch|11.0,PixelWare Tablet Lite 34,has_screen_size_inch,11.0,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|has_ram_gb|8,PixelWare Tablet Lite 34,has_ram_gb,8,val,True,0,1,0.999992,0.9988660002080624,0.93374841,0.9988660002080624,0.93374841,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|has_storage_gb|256,PixelWare Tablet Lite 34,has_storage_gb,256,val,True,0,1,0.999999,0.9989648033785242,0.93374980125,0.9989648033785242,0.93374980125,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|has_battery_life_hours|24,PixelWare Tablet Lite 34,has_battery_life_hours,24,val,True,0,1,0.999996,0.9989646915754444,0.933749205,0.9989646915754444,0.933749205,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|has_weight_kg|0.55,PixelWare Tablet Lite 34,has_weight_kg,0.55,val,True,0,1,0.999998,0.998964763005828,0.9337496025,0.998964763005828,0.9337496025000002,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|has_color|black,PixelWare Tablet Lite 34,has_color,black,val,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+pixelware tablet lite 34|made_of_material|plastic,PixelWare Tablet Lite 34,made_of_material,plastic,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|target_market_region|global,PixelWare Tablet Lite 34,target_market_region,Global,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|supports_fast_charging|no,PixelWare Tablet Lite 34,supports_fast_charging,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|has_noise_cancellation|no,PixelWare Tablet Lite 34,has_noise_cancellation,no,val,True,0,1,0.999994,0.9989518227994262,0.9337488075,0.9989518227994262,0.9337488075,1.0,True,True,True,True,True,True
+pixelware tablet lite 34|belongs_to_category|tablet device,PixelWare Tablet Lite 34,belongs_to_category,tablet device,val,True,1,0,0.991037,0.4623192708534375,0.371638875,0.46057129928749835,0.32984080460554754,0.49810956229153897,True,False,False,False,False,False
+neotech headphones max 36|manufactured_by|neotech,NeoTech Headphones Max 36,manufactured_by,NeoTech,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|belongs_to_category|headphones,NeoTech Headphones Max 36,belongs_to_category,headphones,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|has_price_usd|499,NeoTech Headphones Max 36,has_price_usd,499,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|has_screen_size_inch|6.1,NeoTech Headphones Max 36,has_screen_size_inch,6.1,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|has_ram_gb|16,NeoTech Headphones Max 36,has_ram_gb,16,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|has_storage_gb|64,NeoTech Headphones Max 36,has_storage_gb,64,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|has_battery_life_hours|12,NeoTech Headphones Max 36,has_battery_life_hours,12,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|has_weight_kg|1.2,NeoTech Headphones Max 36,has_weight_kg,1.2,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|has_color|silver,NeoTech Headphones Max 36,has_color,silver,val,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+neotech headphones max 36|made_of_material|carbon fiber,NeoTech Headphones Max 36,made_of_material,carbon fiber,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|target_market_region|eu,NeoTech Headphones Max 36,target_market_region,EU,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|supports_fast_charging|no,NeoTech Headphones Max 36,supports_fast_charging,no,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech headphones max 36|has_noise_cancellation|no,NeoTech Headphones Max 36,has_noise_cancellation,no,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+it|has_storage_gb|64,It,has_storage_gb,64,val,True,3,0,0.416243,0.0780455625,0.0780455625,0.034849404606049635,0.034849404606049635,0.11163160175202029,False,False,False,False,False,False
+it|has_screen_size_inch|6.1,It,has_screen_size_inch,6.1,val,True,3,0,0.9558,0.1792125,0.1792125,0.17391242866868,0.17391242866868,0.24260644300576134,False,False,False,False,False,False
+it|made_of_material|carbon fiber,It,made_of_material,carbon fiber,val,True,1,0,0.981952,0.368232,0.368232,0.3649034864594024,0.3649034864594024,0.49548041242939567,True,False,False,False,False,False
+it|target_market_region|eu,It,target_market_region,EU,val,True,1,0,0.999949,0.4687097758280625,0.4687097758280625,0.4687197688167668,0.4687197688167668,0.5000106601027113,True,False,True,False,False,False
+it|supports_fast_charging|no,It,supports_fast_charging,no,val,True,1,0,0.999029,0.4919959697049009,0.49199596970490095,0.4919396841620722,0.4919396841620721,0.49994279877651987,True,False,True,False,False,False
+it|has_noise_cancellation|no,It,has_noise_cancellation,no,val,True,0,0,0.999996,0.937480499775,0.937480499775,0.937480499775,0.937480499775,1.0,True,True,True,True,True,True
+technova headphones lite 37|manufactured_by|technova,TechNova Headphones Lite 37,manufactured_by,TechNova,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|belongs_to_category|headphones,TechNova Headphones Lite 37,belongs_to_category,headphones,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|has_price_usd|1299,TechNova Headphones Lite 37,has_price_usd,1299,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|has_screen_size_inch|11.0,TechNova Headphones Lite 37,has_screen_size_inch,11.0,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|has_ram_gb|32,TechNova Headphones Lite 37,has_ram_gb,32,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|has_storage_gb|256,TechNova Headphones Lite 37,has_storage_gb,256,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|has_battery_life_hours|8,TechNova Headphones Lite 37,has_battery_life_hours,8,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|has_weight_kg|1.2,TechNova Headphones Lite 37,has_weight_kg,1.2,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|has_color|green,TechNova Headphones Lite 37,has_color,green,val,False,0,1,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+technova headphones lite 37|made_of_material|aluminum,TechNova Headphones Lite 37,made_of_material,aluminum,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|target_market_region|eu,TechNova Headphones Lite 37,target_market_region,EU,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|supports_fast_charging|no,TechNova Headphones Lite 37,supports_fast_charging,no,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova headphones lite 37|has_noise_cancellation|yes,TechNova Headphones Lite 37,has_noise_cancellation,yes,val,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+headphones device|has_storage_gb|256,headphones device,has_storage_gb,256,test,True,3,0,0.999023,0.24893234284318,0.18731681249999999,0.2569930715285039,0.18718064593083167,0.2580953007082751,True,False,False,False,False,False
+headphones device|has_battery_life_hours|8,headphones device,has_battery_life_hours,8,test,True,2,0,0.999994,0.3320306874491039,0.2499985,0.340286025895603,0.2499986666667778,0.34162105969774703,True,False,False,False,False,False
+headphones device|has_weight_kg|1.2,headphones device,has_weight_kg,1.2,test,True,1,0,0.999993,0.4980466171751072,0.374997375,0.4973152532947725,0.33333059260731274,0.49926576764592545,True,False,False,False,False,False
+headphones device|has_color|green,headphones device,has_color,green,test,False,1,0,0.999996,0.996093093712839,0.749997,0.996093093712839,0.749997,0.996093093712839,True,True,True,True,True,True
+headphones device|supports_fast_charging|no,headphones device,supports_fast_charging,no,test,True,1,0,0.99999,0.4999921883691198,0.49218583583217,0.5000494648142995,0.5041899795330071,0.5000572773400385,True,False,True,False,False,False
+headphones device|has_noise_cancellation|yes,headphones device,has_noise_cancellation,yes,test,True,1,0,0.999999,0.498046839843539,0.374999625,0.5131393000387492,0.374999625,0.5151516473831572,True,False,False,False,False,False
+zenbyte tablet lite 39|manufactured_by|zenbyte,Zenbyte Tablet Lite 39,manufactured_by,Zenbyte,val,True,0,1,0.999993,0.9989645331808302,0.93374860875,0.9989645331808302,0.93374860875,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|belongs_to_category|tablet,Zenbyte Tablet Lite 39,belongs_to_category,tablet,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|has_price_usd|199,Zenbyte Tablet Lite 39,has_price_usd,199,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|has_screen_size_inch|11.0,Zenbyte Tablet Lite 39,has_screen_size_inch,11.0,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|has_ram_gb|8,Zenbyte Tablet Lite 39,has_ram_gb,8,val,True,0,1,0.999985,0.9989640765575348,0.93374701875,0.9989640765575348,0.93374701875,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|has_storage_gb|128,Zenbyte Tablet Lite 39,has_storage_gb,128,val,True,0,1,0.999999,0.9989646543076116,0.93374980125,0.9989646543076116,0.93374980125,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|has_battery_life_hours|14,Zenbyte Tablet Lite 39,has_battery_life_hours,14,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|has_weight_kg|0.23,Zenbyte Tablet Lite 39,has_weight_kg,0.23,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|has_color|green,Zenbyte Tablet Lite 39,has_color,green,val,False,0,1,0.999989,0.9989645269582836,0.9337478137499999,0.9989645269582836,0.9337478137499999,0.9989645269582836,True,True,True,True,True,True
+zenbyte tablet lite 39|made_of_material|carbon fiber,Zenbyte Tablet Lite 39,made_of_material,carbon fiber,val,True,0,1,0.999995,0.9989647133145642,0.93374900625,0.9989647133145642,0.93374900625,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|target_market_region|global,Zenbyte Tablet Lite 39,target_market_region,Global,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|supports_fast_charging|no,Zenbyte Tablet Lite 39,supports_fast_charging,no,val,True,0,1,0.999947,0.9989596367834714,0.93373946625,0.9989596367834714,0.93373946625,1.0,True,True,True,True,True,True
+zenbyte tablet lite 39|has_noise_cancellation|no,Zenbyte Tablet Lite 39,has_noise_cancellation,no,val,True,0,1,0.999999,0.9989648251170664,0.93374980125,0.9989648251170664,0.93374980125,1.0,True,True,True,True,True,True
+auralex laptop air 40|manufactured_by|auralex,Auralex Laptop Air 40,manufactured_by,Auralex,test,True,0,1,0.999996,0.99896477542802,0.933749205,0.99896477542802,0.933749205,1.0,True,True,True,True,True,True
+auralex laptop air 40|belongs_to_category|laptop,Auralex Laptop Air 40,belongs_to_category,laptop,test,True,1,1,0.98,0.4898881183180547,0.464674340625,0.5602255589903167,0.5193249934089667,0.5717892902911722,True,False,True,True,True,True
+auralex laptop air 40|has_price_usd|1299,Auralex Laptop Air 40,has_price_usd,1299,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex laptop air 40|has_screen_size_inch|15.6,Auralex Laptop Air 40,has_screen_size_inch,15.6,test,True,0,1,0.999994,0.9984903257980104,0.9337488075,0.9984903257980104,0.9337488075,1.0,True,True,True,True,True,True
+auralex laptop air 40|has_ram_gb|6,Auralex Laptop Air 40,has_ram_gb,6,test,True,0,1,0.999999,0.9989646946846864,0.93374980125,0.9989646946846864,0.93374980125,1.0,True,True,True,True,True,True
+auralex laptop air 40|has_storage_gb|512,Auralex Laptop Air 40,has_storage_gb,512,test,True,0,1,0.999999,0.9989648282225724,0.93374980125,0.9989648282225724,0.93374980125,1.0,True,True,True,True,True,True
+auralex laptop air 40|has_battery_life_hours|20,Auralex Laptop Air 40,has_battery_life_hours,20,test,True,0,1,0.999998,0.9989647443721306,0.9337496025,0.9989647443721306,0.9337496025000002,1.0,True,True,True,True,True,True
+auralex laptop air 40|has_weight_kg|1.45,Auralex Laptop Air 40,has_weight_kg,1.45,test,True,0,1,0.999999,0.9989648126950144,0.93374980125,0.9989648126950144,0.93374980125,1.0,True,True,True,True,True,True
+auralex laptop air 40|has_color|silver,Auralex Laptop Air 40,has_color,silver,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+auralex laptop air 40|made_of_material|carbon fiber,Auralex Laptop Air 40,made_of_material,carbon fiber,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex laptop air 40|target_market_region|global,Auralex Laptop Air 40,target_market_region,Global,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex laptop air 40|supports_fast_charging|no,Auralex Laptop Air 40,supports_fast_charging,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex laptop air 40|has_noise_cancellation|no,Auralex Laptop Air 40,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+auralex laptop air 40|belongs_to_category|laptop device,Auralex Laptop Air 40,belongs_to_category,laptop device,test,True,1,0,0.978334,0.36687525,0.36687525,0.31419982235420724,0.32372681215896665,0.42821070970882774,False,False,False,False,False,False
+neotech laptop plus 41|manufactured_by|neotech,NeoTech Laptop Plus 41,manufactured_by,NeoTech,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|belongs_to_category|laptop,NeoTech Laptop Plus 41,belongs_to_category,laptop,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|has_price_usd|1299,NeoTech Laptop Plus 41,has_price_usd,1299,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|has_screen_size_inch|10.9,NeoTech Laptop Plus 41,has_screen_size_inch,10.9,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|has_ram_gb|12,NeoTech Laptop Plus 41,has_ram_gb,12,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|has_storage_gb|1024,NeoTech Laptop Plus 41,has_storage_gb,1024,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|has_battery_life_hours|12,NeoTech Laptop Plus 41,has_battery_life_hours,12,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|has_weight_kg|0.42,NeoTech Laptop Plus 41,has_weight_kg,0.42,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|has_color|green,NeoTech Laptop Plus 41,has_color,green,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+neotech laptop plus 41|made_of_material|plastic,NeoTech Laptop Plus 41,made_of_material,plastic,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|target_market_region|global,NeoTech Laptop Plus 41,target_market_region,Global,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|supports_fast_charging|no,NeoTech Laptop Plus 41,supports_fast_charging,no,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop plus 41|has_noise_cancellation|no,NeoTech Laptop Plus 41,has_noise_cancellation,no,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+it|has_price_usd|1299,it,has_price_usd,1299,val,True,2,0,0.999935,0.24998375,0.24998375000000003,0.25000166795087,0.25000166795087,0.3333572254874833,True,False,False,False,False,False
+it|has_screen_size_inch|10.9,it,has_screen_size_inch,10.9,val,True,3,0,0.999773,0.1874574375,0.1874574375,0.19028273083953554,0.19028273083953554,0.25376791310232166,True,False,False,False,False,False
+it|has_ram_gb|12,it,has_ram_gb,12,val,True,3,0,0.999997,0.1874994375,0.1874994375,0.20071253377189285,0.20071253377189285,0.2676175145484008,True,False,False,False,False,False
+it|made_of_material|plastic,it,made_of_material,plastic,val,True,1,0,0.999866,0.37494975,0.37494975,0.3783389864594025,0.3783389864594025,0.5045195875706044,True,False,False,False,False,False
+technova smartphone pro 43|manufactured_by|technova,TechNova Smartphone Pro 43,manufactured_by,TechNova,val,True,0,1,0.999996,0.9989646884690812,0.933749205,0.9989646884690812,0.933749205,1.0,True,True,True,True,True,True
+technova smartphone pro 43|belongs_to_category|smartphone,TechNova Smartphone Pro 43,belongs_to_category,smartphone,val,True,1,1,0.98,0.46416424875,0.46416424875,0.46667245863462314,0.5177717513554428,0.5027018559608778,True,False,True,False,True,False
+technova smartphone pro 43|has_price_usd|199,TechNova Smartphone Pro 43,has_price_usd,199,val,True,1,0,0.98,0.3675,0.3675,0.4058222506429885,0.4058222506429885,0.5521391165210728,True,False,False,False,False,False
+technova smartphone pro 43|has_screen_size_inch|13.3,TechNova Smartphone Pro 43,has_screen_size_inch,13.3,val,True,1,1,0.999962,0.4994736291134686,0.46687122375,0.5705881475215686,0.5178374309381584,0.5711894625291063,True,False,True,True,True,True
+technova smartphone pro 43|has_ram_gb|8,TechNova Smartphone Pro 43,has_ram_gb,8,val,True,0,1,0.999997,0.9997411767756156,0.9834367546821338,0.9997411767756156,0.9834367546821337,1.0,True,True,True,True,True,True
+technova smartphone pro 43|has_storage_gb|128,TechNova Smartphone Pro 43,has_storage_gb,128,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartphone pro 43|has_battery_life_hours|20,TechNova Smartphone Pro 43,has_battery_life_hours,20,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartphone pro 43|has_weight_kg|1.8,TechNova Smartphone Pro 43,has_weight_kg,1.8,val,True,1,1,0.999996,0.4994823737386878,0.4668746025,0.570585292650807,0.5178267011732981,0.5711766046716574,True,False,True,True,True,True
+technova smartphone pro 43|has_color|green,TechNova Smartphone Pro 43,has_color,green,val,False,1,1,0.999998,0.998964626357582,0.9337496025,0.998964626357582,0.9337496025,0.998964626357582,True,True,True,True,True,True
+technova smartphone pro 43|made_of_material|aluminum,TechNova Smartphone Pro 43,made_of_material,aluminum,val,True,0,1,0.999997,0.9989647785336564,0.93374940375,0.9989647785336564,0.93374940375,1.0,True,True,True,True,True,True
+technova smartphone pro 43|target_market_region|apac,TechNova Smartphone Pro 43,target_market_region,APAC,val,True,1,0,0.98,0.3675,0.3675,0.36379265586315773,0.36379265586315773,0.4949559943716432,True,False,False,False,False,False
+technova smartphone pro 43|supports_fast_charging|no,TechNova Smartphone Pro 43,supports_fast_charging,no,val,True,0,0,0.999986,0.9337472175,0.9337472175,0.9337472175,0.9337472175,1.0,True,True,True,True,True,True
+technova smartphone pro 43|has_noise_cancellation|no,TechNova Smartphone Pro 43,has_noise_cancellation,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova smartphone pro 43|belongs_to_category|smartphone device,TechNova Smartphone Pro 43,belongs_to_category,smartphone device,val,True,1,0,0.981466,0.4591747905753749,0.36804974999999995,0.4566935422853732,0.32554275385544273,0.49729814403912215,True,False,False,False,False,False
+pixelware headphones pro 44|manufactured_by|pixelware,PixelWare Headphones Pro 44,manufactured_by,PixelWare,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|belongs_to_category|headphones,PixelWare Headphones Pro 44,belongs_to_category,headphones,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|has_price_usd|249,PixelWare Headphones Pro 44,has_price_usd,249,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|has_screen_size_inch|11.0,PixelWare Headphones Pro 44,has_screen_size_inch,11.0,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|has_ram_gb|12,PixelWare Headphones Pro 44,has_ram_gb,12,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|has_storage_gb|64,PixelWare Headphones Pro 44,has_storage_gb,64,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|has_battery_life_hours|18,PixelWare Headphones Pro 44,has_battery_life_hours,18,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|has_weight_kg|1.45,PixelWare Headphones Pro 44,has_weight_kg,1.45,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|has_color|black,PixelWare Headphones Pro 44,has_color,black,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+pixelware headphones pro 44|made_of_material|plastic,PixelWare Headphones Pro 44,made_of_material,plastic,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|target_market_region|global,PixelWare Headphones Pro 44,target_market_region,Global,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|supports_fast_charging|yes,PixelWare Headphones Pro 44,supports_fast_charging,yes,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+pixelware headphones pro 44|has_noise_cancellation|yes,PixelWare Headphones Pro 44,has_noise_cancellation,yes,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+headphones device|has_price_usd|249,headphones device,has_price_usd,249,test,True,0,0,0.998345,0.9948746493159896,0.74875875,0.9948746493159896,0.74875875,1.0,True,True,True,True,True,True
+headphones device|has_screen_size_inch|11.0,headphones device,has_screen_size_inch,11.0,test,True,2,0,0.999693,0.3319763595211897,0.24992325,0.3648184134206861,0.2506150764634044,0.3663096311505078,True,False,False,False,False,False
+headphones device|has_ram_gb|12,headphones device,has_ram_gb,12,test,True,1,0,0.999998,0.4980465468656307,0.37499925,0.5010687398011383,0.37533047981089274,0.5030340466714679,True,False,False,False,False,False
+headphones device|made_of_material|plastic,headphones device,made_of_material,plastic,test,True,1,0,0.99991,0.498043304522629,0.37496625,0.500992305003738,0.3749670000015002,0.5029605864131992,True,False,False,False,False,False
+headphones device|target_market_region|global,headphones device,target_market_region,Global,test,True,1,0,0.999993,0.4980451989722774,0.374997375,0.4971305284199988,0.33333037038044855,0.49908173941424794,True,False,False,False,False,False
+headphones device|supports_fast_charging|yes,headphones device,supports_fast_charging,yes,test,True,1,0,0.999996,0.4998776485998271,0.46874915624437496,0.49982038527571426,0.4573166203574171,0.49994272265996154,True,False,True,False,False,False
+zenbyte tablet plus 45|manufactured_by|zenbyte,Zenbyte Tablet Plus 45,manufactured_by,Zenbyte,test,True,0,1,0.999997,0.9989647816392556,0.93374940375,0.9989647816392556,0.93374940375,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|belongs_to_category|tablet,Zenbyte Tablet Plus 45,belongs_to_category,tablet,test,True,1,1,0.98,0.464809888125,0.464809888125,0.45314737230334595,0.5217561414235187,0.4874545312829945,True,False,True,False,True,False
+zenbyte tablet plus 45|has_price_usd|899,Zenbyte Tablet Plus 45,has_price_usd,899,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|has_screen_size_inch|11.0,Zenbyte Tablet Plus 45,has_screen_size_inch,11.0,test,True,0,1,0.99998,0.9989643996006627,0.933746025,0.9989643996006627,0.933746025,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|has_ram_gb|12,Zenbyte Tablet Plus 45,has_ram_gb,12,test,True,0,1,0.999999,0.998964812695005,0.93374980125,0.998964812695005,0.93374980125,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|has_storage_gb|256,Zenbyte Tablet Plus 45,has_storage_gb,256,test,True,0,1,0.999999,0.9989648282225724,0.93374980125,0.9989648282225724,0.93374980125,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|has_battery_life_hours|24,Zenbyte Tablet Plus 45,has_battery_life_hours,24,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|has_weight_kg|1.2,Zenbyte Tablet Plus 45,has_weight_kg,1.2,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|has_color|green,Zenbyte Tablet Plus 45,has_color,green,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+zenbyte tablet plus 45|made_of_material|carbon fiber,Zenbyte Tablet Plus 45,made_of_material,carbon fiber,test,True,0,1,0.999988,0.9989644493106176,0.933747615,0.9989644493106176,0.933747615,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|target_market_region|us,Zenbyte Tablet Plus 45,target_market_region,US,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|supports_fast_charging|no,Zenbyte Tablet Plus 45,supports_fast_charging,no,test,True,0,1,0.999995,0.9989583223697126,0.93374900625,0.9989583223697126,0.93374900625,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|has_noise_cancellation|no,Zenbyte Tablet Plus 45,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+zenbyte tablet plus 45|belongs_to_category|tablet device,Zenbyte Tablet Plus 45,belongs_to_category,tablet device,test,True,1,0,0.968928,0.4887352289992718,0.363348,0.5009980540518896,0.31883236517351865,0.5125454687170055,False,False,False,False,False,False
+neotech laptop air 47|manufactured_by|neotech,NeoTech Laptop Air 47,manufactured_by,NeoTech,val,True,0,1,0.999995,0.9989647567941732,0.93374900625,0.9989647567941732,0.93374900625,1.0,True,True,True,True,True,True
+neotech laptop air 47|belongs_to_category|laptop,NeoTech Laptop Air 47,belongs_to_category,laptop,val,True,1,1,0.982158,0.4905521821295953,0.46510195125,0.5596920767655943,0.5184688958586642,0.570471498399872,True,False,True,True,True,True
+neotech laptop air 47|has_price_usd|249,NeoTech Laptop Air 47,has_price_usd,249,val,True,0,1,0.999997,0.9986232869450764,0.93374940375,0.9986232869450764,0.93374940375,1.0,True,True,True,True,True,True
+neotech laptop air 47|has_screen_size_inch|13.3,NeoTech Laptop Air 47,has_screen_size_inch,13.3,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop air 47|has_ram_gb|6,NeoTech Laptop Air 47,has_ram_gb,6,val,True,0,1,0.999974,0.9989638156148528,0.9337448325,0.9989638156148528,0.9337448325,1.0,True,True,True,True,True,True
+neotech laptop air 47|has_storage_gb|128,NeoTech Laptop Air 47,has_storage_gb,128,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop air 47|has_battery_life_hours|12,NeoTech Laptop Air 47,has_battery_life_hours,12,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop air 47|has_weight_kg|1.8,NeoTech Laptop Air 47,has_weight_kg,1.8,val,True,0,1,0.999999,0.9989647878508824,0.93374980125,0.9989647878508824,0.93374980125,1.0,True,True,True,True,True,True
+neotech laptop air 47|has_color|green,NeoTech Laptop Air 47,has_color,green,val,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+neotech laptop air 47|made_of_material|carbon fiber,NeoTech Laptop Air 47,made_of_material,carbon fiber,val,True,0,1,0.999993,0.9989639927077012,0.93374860875,0.9989639927077012,0.93374860875,1.0,True,True,True,True,True,True
+neotech laptop air 47|target_market_region|us,NeoTech Laptop Air 47,target_market_region,US,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+neotech laptop air 47|supports_fast_charging|yes,NeoTech Laptop Air 47,supports_fast_charging,yes,val,True,0,1,0.999996,0.9989603986802438,0.933749205,0.9989603986802438,0.933749205,1.0,True,True,True,True,True,True
+neotech laptop air 47|has_noise_cancellation|no,NeoTech Laptop Air 47,has_noise_cancellation,no,val,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet lite 48|manufactured_by|technova,TechNova Tablet Lite 48,manufactured_by,TechNova,test,True,0,1,0.999996,0.99896473505469,0.933749205,0.99896473505469,0.933749205,1.0,True,True,True,True,True,True
+technova tablet lite 48|belongs_to_category|tablet,TechNova Tablet Lite 48,belongs_to_category,tablet,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet lite 48|has_price_usd|1299,TechNova Tablet Lite 48,has_price_usd,1299,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet lite 48|has_screen_size_inch|13.3,TechNova Tablet Lite 48,has_screen_size_inch,13.3,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet lite 48|has_ram_gb|12,TechNova Tablet Lite 48,has_ram_gb,12,test,True,0,1,0.999998,0.9989647195261911,0.9337496025,0.9989647195261911,0.9337496025000002,1.0,True,True,True,True,True,True
+technova tablet lite 48|has_storage_gb|512,TechNova Tablet Lite 48,has_storage_gb,512,test,True,0,1,0.999999,0.9989646294633304,0.93374980125,0.9989646294633304,0.93374980125,1.0,True,True,True,True,True,True
+technova tablet lite 48|has_battery_life_hours|8,TechNova Tablet Lite 48,has_battery_life_hours,8,test,True,0,1,0.999997,0.998964759899968,0.93374940375,0.998964759899968,0.93374940375,1.0,True,True,True,True,True,True
+technova tablet lite 48|has_weight_kg|1.2,TechNova Tablet Lite 48,has_weight_kg,1.2,test,True,0,1,0.999998,0.9989648064838904,0.9337496025,0.9989648064838904,0.9337496025000002,1.0,True,True,True,True,True,True
+technova tablet lite 48|has_color|blue,TechNova Tablet Lite 48,has_color,blue,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+technova tablet lite 48|made_of_material|carbon fiber,TechNova Tablet Lite 48,made_of_material,carbon fiber,test,True,0,1,0.999983,0.9989645362760314,0.93374662125,0.9989645362760314,0.93374662125,1.0,True,True,True,True,True,True
+technova tablet lite 48|target_market_region|global,TechNova Tablet Lite 48,target_market_region,Global,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova tablet lite 48|supports_fast_charging|yes,TechNova Tablet Lite 48,supports_fast_charging,yes,test,True,0,1,0.999998,0.998963104065072,0.9337496025,0.998963104065072,0.9337496025000002,1.0,True,True,True,True,True,True
+technova tablet lite 48|has_noise_cancellation|no,TechNova Tablet Lite 48,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|manufactured_by|technova,TechNova Laptop Lite 49,manufactured_by,TechNova,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|belongs_to_category|laptop,TechNova Laptop Lite 49,belongs_to_category,laptop,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|has_price_usd|199,TechNova Laptop Lite 49,has_price_usd,199,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|has_screen_size_inch|15.6,TechNova Laptop Lite 49,has_screen_size_inch,15.6,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|has_ram_gb|6,TechNova Laptop Lite 49,has_ram_gb,6,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|has_storage_gb|512,TechNova Laptop Lite 49,has_storage_gb,512,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|has_battery_life_hours|18,TechNova Laptop Lite 49,has_battery_life_hours,18,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|has_weight_kg|1.45,TechNova Laptop Lite 49,has_weight_kg,1.45,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|has_color|green,TechNova Laptop Lite 49,has_color,green,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+technova laptop lite 49|made_of_material|carbon fiber,TechNova Laptop Lite 49,made_of_material,carbon fiber,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|target_market_region|eu,TechNova Laptop Lite 49,target_market_region,EU,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|supports_fast_charging|no,TechNova Laptop Lite 49,supports_fast_charging,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+technova laptop lite 49|has_noise_cancellation|no,TechNova Laptop Lite 49,has_noise_cancellation,no,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+laptop|has_price_usd|199,laptop,has_price_usd,199,test,True,0,0,0.88957,0.6671775,0.6671775,0.6671775,0.6671775,1.0,False,False,True,True,True,True
+laptop|has_screen_size_inch|15.6,laptop,has_screen_size_inch,15.6,test,True,0,0,0.999697,0.74977275,0.74977275,0.7497727499999999,0.7497727499999999,1.0,True,True,True,True,True,True
+laptop|has_ram_gb|6,laptop,has_ram_gb,6,test,True,0,0,0.999981,0.74998575,0.74998575,0.7499857499999999,0.7499857499999999,1.0,True,True,True,True,True,True
+laptop|has_battery_life_hours|18,laptop,has_battery_life_hours,18,test,True,0,0,0.999973,0.7499797500000001,0.7499797500000001,0.7499797500000001,0.7499797500000001,1.0,True,True,True,True,True,True
+laptop|has_weight_kg|1.45,laptop,has_weight_kg,1.45,test,True,0,0,0.999991,0.74999325,0.74999325,0.7499932500000001,0.7499932500000001,1.0,True,True,True,True,True,True
+laptop|made_of_material|carbon fiber,laptop,made_of_material,carbon fiber,test,True,0,0,0.99992,0.74994,0.74994,0.74994,0.74994,1.0,True,True,True,True,True,True
+voltedge headphones max 50|manufactured_by|voltedge,VoltEdge Headphones Max 50,manufactured_by,VoltEdge,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|belongs_to_category|headphones,VoltEdge Headphones Max 50,belongs_to_category,headphones,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|has_price_usd|699,VoltEdge Headphones Max 50,has_price_usd,699,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|has_screen_size_inch|11.0,VoltEdge Headphones Max 50,has_screen_size_inch,11.0,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|has_ram_gb|32,VoltEdge Headphones Max 50,has_ram_gb,32,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|has_storage_gb|512,VoltEdge Headphones Max 50,has_storage_gb,512,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|has_battery_life_hours|12,VoltEdge Headphones Max 50,has_battery_life_hours,12,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|has_weight_kg|1.45,VoltEdge Headphones Max 50,has_weight_kg,1.45,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|has_color|blue,VoltEdge Headphones Max 50,has_color,blue,test,False,0,0,0.98,0.735,0.735,0.735,0.735,0.735,True,True,True,True,True,True
+voltedge headphones max 50|made_of_material|plastic,VoltEdge Headphones Max 50,made_of_material,plastic,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|target_market_region|eu,VoltEdge Headphones Max 50,target_market_region,EU,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|supports_fast_charging|no,VoltEdge Headphones Max 50,supports_fast_charging,no,test,True,0,1,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+voltedge headphones max 50|has_noise_cancellation|yes,VoltEdge Headphones Max 50,has_noise_cancellation,yes,test,True,0,0,0.98,0.735,0.735,0.735,0.735,1.0,True,True,True,True,True,True
+it|belongs_to_category|headphones device,It,belongs_to_category,headphones device,val,True,3,0,0.82659,0.154985625,0.15498562500000002,0.13921224675651733,0.13921224675651733,0.22455670768904748,False,False,False,False,False,False
+it|has_ram_gb|32,It,has_ram_gb,32,val,True,3,0,0.999909,0.1874829375,0.1874829375,0.20067720981429965,0.20067720981429965,0.2675939641364693,True,False,False,False,False,False
+it|has_storage_gb|512,It,has_storage_gb,512,val,True,3,0,0.999997,0.1874994375,0.1874994375,0.20114019688634005,0.20114019688634005,0.268187733744988,True,False,False,False,False,False
+it|has_battery_life_hours|12,It,has_battery_life_hours,12,val,True,2,0,0.999979,0.24999475,0.24999475000000002,0.23078622100367588,0.23078622100367588,0.30772142348812775,True,False,False,False,False,False
+laptop device|has_price_usd|499,laptop device,has_price_usd,499,test,True,2,0,0.996841,0.3276849069173702,0.24921025,0.3257695742059984,0.22976223886994204,0.3313849853208174,True,False,False,False,False,False
+laptop device|has_screen_size_inch|15.6,laptop device,has_screen_size_inch,15.6,test,True,1,0,0.999996,0.4998779157708405,0.46874906249325,0.5037534074792387,0.5208336805484258,0.5038764382123401,True,False,True,False,True,False
+laptop device|has_ram_gb|4,laptop device,has_ram_gb,4,test,True,2,0,0.999998,0.3281248749990156,0.2499995,0.32812486458228673,0.2499995,0.3333333227512556,True,False,False,False,False,False
+laptop device|has_storage_gb|128,laptop device,has_storage_gb,128,test,True,0,0,0.999999,0.984374765623875,0.74999925,0.984374765623875,0.74999925,1.0,True,True,True,True,True,True
+laptop device|target_market_region|us,laptop device,target_market_region,US,test,True,1,0,0.999986,0.4921855311019888,0.37499475000000004,0.4892724552684556,0.37499306250759395,0.497040673029324,True,False,False,False,False,False
+product|has_noise_cancellation|yes,product,has_noise_cancellation,yes,val,True,1,0,0.99997,0.37498875,0.37498875,0.33331800008622336,0.3749835000735012,0.44443733323496154,True,False,False,False,False,False
+technova smartphone pro 43|has_price_usd|299,TechNova Smartphone Pro 43,has_price_usd,299,val,True,1,0,0.794915,0.298093125,0.298093125,0.2670085006429886,0.2670085006429886,0.44786088347892716,False,False,False,False,False,False
+technova smartphone pro 43|has_screen_size_inch|10.9,TechNova Smartphone Pro 43,has_screen_size_inch,10.9,val,True,1,0,0.999923,0.374971125,0.374971125,0.3215831392946314,0.3340372334381584,0.4288105374708938,True,False,False,False,False,False
+technova smartphone pro 43|has_weight_kg|1.45,TechNova Smartphone Pro 43,has_weight_kg,1.45,val,True,1,0,0.999993,0.374997375,0.374997375,0.32161529517343146,0.33407224617329806,0.42882339532834257,True,False,False,False,False,False
+technova smartphone pro 43|has_color|blue,TechNova Smartphone Pro 43,has_color,blue,val,False,1,0,0.999943,0.74995725,0.74995725,0.74995725,0.74995725,0.74995725,True,True,True,True,True,True
+technova smartphone pro 43|target_market_region|eu,TechNova Smartphone Pro 43,target_market_region,EU,val,True,1,0,0.999974,0.37499025,0.37499025,0.37877315586315785,0.37877315586315785,0.5050440056283567,True,False,False,False,False,False
+auralex smartphone pro 20|belongs_to_category|smartphone device,Auralex Smartphone Pro 20,belongs_to_category,smartphone device,val,True,1,0,0.946484,0.3549315,0.3549315,0.29773606481873827,0.3068632467149454,0.419427501952825,False,False,False,False,False,False
+device|has_price_usd|299,device,has_price_usd,299,val,True,1,0,0.890455,0.3339206249999999,0.33392062499999997,0.30248907064651775,0.36104321308654536,0.4529355900770098,False,False,False,False,False,False
+device|has_screen_size_inch|15.6,device,has_screen_size_inch,15.6,val,True,2,0,0.999961,0.24999025,0.24999025,0.24088392157153274,0.26192150164001843,0.32119108854783035,True,False,False,False,False,False
+device|has_ram_gb|6,device,has_ram_gb,6,val,True,1,0,0.999997,0.374998875,0.374998875,0.3333324074107572,0.3749986875000937,0.4444445432146393,True,False,False,False,False,False
+device|has_battery_life_hours|8,device,has_battery_life_hours,8,val,True,1,0,0.999988,0.3749955,0.3749955,0.3749977500135003,0.3749977500135003,0.500003000054001,True,False,False,False,False,False
+device|target_market_region|us,device,target_market_region,US,val,True,0,0,0.999981,0.9960893305740006,0.9843582608003546,0.9960893305740006,0.9843582608003546,1.0,True,True,True,True,True,True
+device|supports_fast_charging|no,device,supports_fast_charging,no,val,True,1,0,0.999941,0.374977875,0.374977875,0.34249882542100185,0.34249882542100185,0.4566920453920139,True,False,False,False,False,False
+device|has_noise_cancellation|no,device,has_noise_cancellation,no,val,True,1,0,0.999999,0.374999625,0.374999625,0.37558365817249134,0.37558365817249134,0.5007787116753668,True,False,False,False,False,False
+smartphone device|has_ram_gb|8,smartphone device,has_ram_gb,8,val,True,0,0,0.99585,0.9835044842977324,0.7468875,0.9835044842977324,0.7468875,1.0,True,True,True,True,True,True
+smartphone device|has_storage_gb|128,smartphone device,has_storage_gb,128,val,True,0,0,0.999998,0.9843741093617812,0.7499985,0.9843741093617812,0.7499985,1.0,True,True,True,True,True,True
+smartphone device|has_battery_life_hours|10,smartphone device,has_battery_life_hours,10,val,True,1,0,0.999989,0.4921860936699126,0.374995875,0.4892732494490252,0.3749949375023437,0.49704091170153936,True,False,False,False,False,False
+smartphone device|has_weight_kg|0.18,smartphone device,has_weight_kg,0.18,val,True,1,0,0.999983,0.4921861405473032,0.374993625,0.4892732847456066,0.37499175000937507,0.49704090021870834,True,False,False,False,False,False
+smartphone device|target_market_region|us,smartphone device,target_market_region,US,val,True,0,0,0.999984,0.9843689526195816,0.749988,0.9843689526195816,0.749988,1.0,True,True,True,True,True,True
+smartphone device|supports_fast_charging|yes,smartphone device,supports_fast_charging,yes,val,True,1,0,0.999997,0.4921764101175123,0.374998875,0.4892745707560789,0.3750003750060001,0.49705203327325204,True,False,False,False,False,False
+device|has_screen_size_inch|6.1,device,has_screen_size_inch,6.1,val,True,2,0,0.863394,0.2158485,0.2158485,0.17958073346839473,0.19526440398675618,0.2773252743913667,False,False,False,False,False,False
+device|has_battery_life_hours|18,device,has_battery_life_hours,18,val,True,1,0,0.999976,0.3749909999999999,0.37499099999999996,0.37498875001350024,0.37498875001350024,0.49999699994599905,True,False,False,False,False,False
+device|has_weight_kg|1.8,device,has_weight_kg,1.8,val,True,0,0,0.999993,0.9843733593221244,0.937496812460625,0.9843733593221244,0.937496812460625,1.0,True,True,True,True,True,True
+device|has_color|blue,device,has_color,blue,val,False,0,0,0.999983,0.9843675929223968,0.937490812194,0.9843675929223968,0.937490812194,0.9843675929223968,True,True,True,True,True,True
+device|made_of_material|aluminum,device,made_of_material,aluminum,val,True,0,0,0.999984,0.749988,0.749988,0.749988,0.749988,1.0,True,True,True,True,True,True
+device|supports_fast_charging|yes,device,supports_fast_charging,yes,val,True,1,0,0.999987,0.4460959290732187,0.44609592907321877,0.48473493356743935,0.48473493356743935,0.543307954607986,True,False,False,False,False,False
+tablet device|has_price_usd|899,tablet device,has_price_usd,899,test,True,0,0,0.996931,0.9835566887265944,0.74769825,0.9835566887265944,0.74769825,1.0,True,True,True,True,True,True
+tablet device|has_storage_gb|1024,tablet device,has_storage_gb,1024,test,True,0,0,0.999999,0.9843739687374844,0.74999925,0.9843739687374844,0.74999925,1.0,True,True,True,True,True,True
+tablet device|has_battery_life_hours|14,tablet device,has_battery_life_hours,14,test,True,0,0,0.999998,0.9843743906185312,0.7499985,0.9843743906185312,0.7499985,1.0,True,True,True,True,True,True
+tablet device|has_weight_kg|0.18,tablet device,has_weight_kg,0.18,test,True,0,0,0.999998,0.9843745781213438,0.7499985,0.9843745781213438,0.7499985,1.0,True,True,True,True,True,True
+tablet device|has_color|silver,tablet device,has_color,silver,test,False,0,0,0.999995,0.9843712028690594,0.7499962499999999,0.9843712028690594,0.7499962499999999,0.9843712028690594,True,True,True,True,True,True
+tablet device|supports_fast_charging|yes,tablet device,supports_fast_charging,yes,test,True,0,0,0.999993,0.9843673583671226,0.74999475,0.9843673583671226,0.7499947499999999,1.0,True,True,True,True,True,True
+headphones device|has_screen_size_inch|6.7,headphones device,has_screen_size_inch,6.7,test,True,2,0,0.996203,0.24905075,0.24905075,0.20532325564069526,0.24886830042354888,0.27480778601776984,True,False,False,False,False,False
+headphones device|has_storage_gb|128,headphones device,has_storage_gb,128,test,True,3,0,0.999987,0.223379336834625,0.1874975625,0.20694014855742127,0.18754205743155974,0.23160171335657806,True,False,False,False,False,False
+headphones device|has_battery_life_hours|14,headphones device,has_battery_life_hours,14,test,True,2,0,0.999998,0.311772370635,0.2499995,0.300028780070595,0.2500006666721111,0.3207776017905988,True,False,False,False,False,False
+headphones device|has_weight_kg|1.45,headphones device,has_weight_kg,1.45,test,True,1,0,0.999992,0.4995114960587187,0.468747749964,0.5002450110619958,0.5208313425353127,0.5007342323540745,True,False,True,False,True,False
+headphones device|has_color|blue,headphones device,has_color,blue,test,False,1,0,0.999978,0.9374666230695,0.7499835,0.9374666230695,0.7499835,0.9374666230695,True,True,True,True,True,True
+headphones device|has_screen_size_inch|6.1,headphones device,has_screen_size_inch,6.1,test,True,2,0,0.994904,0.3252454295832724,0.248726,0.3501747594691737,0.2482196993821051,0.3588825828317223,True,False,False,False,False,False
+headphones device|has_storage_gb|64,headphones device,has_storage_gb,64,test,True,3,0,0.99999,0.2460924960096547,0.18749812500000002,0.25116290888847453,0.18754318270022075,0.25515092186986155,True,False,False,False,False,False
+headphones device|made_of_material|carbon fiber,headphones device,made_of_material,carbon fiber,test,True,1,0,0.999906,0.4921800210750344,0.37496474999999996,0.4892657381085488,0.3749640000015001,0.49703941358680087,True,False,False,False,False,False
+headphones device|target_market_region|eu,headphones device,target_market_region,EU,test,True,1,0,0.999992,0.4998779058818751,0.46874831247750004,0.5007959422391944,0.5208322453354486,0.5009182605857521,True,False,True,False,True,False
+headphones device|has_noise_cancellation|no,headphones device,has_noise_cancellation,no,test,True,1,0,0.999999,0.4687497187494375,0.374999625,0.4545450578505462,0.374999625,0.48484835261684267,True,False,False,False,False,False
+laptop device|has_price_usd|1299,laptop device,has_price_usd,1299,test,True,2,0,0.998823,0.3278448579422616,0.24970575000000003,0.3260876840338656,0.23067681095885612,0.3315467424445565,True,False,False,False,False,False
+laptop device|has_screen_size_inch|10.9,laptop device,has_screen_size_inch,10.9,test,True,1,0,0.999992,0.4921865624657574,0.374997,0.48837070086907225,0.33332955556192595,0.4961235617876599,True,False,False,False,False,False
+laptop device|has_ram_gb|12,laptop device,has_ram_gb,12,test,True,2,0,0.999999,0.3281249374997656,0.24999975,0.32812498958379477,0.25000000000025,0.3333333862441032,True,False,False,False,False,False
+laptop device|made_of_material|plastic,laptop device,made_of_material,plastic,test,True,2,0,0.99994,0.328121139690614,0.249985,0.32682241976207965,0.24997733356845137,0.33201398328093207,True,False,False,False,False,False
+laptop device|supports_fast_charging|no,laptop device,supports_fast_charging,no,test,True,1,0,0.999971,0.4921714637391412,0.37498912500000003,0.48925233567737525,0.374984625054001,0.4970344399494552,True,False,False,False,False,False
+laptop device|has_noise_cancellation|no,laptop device,has_noise_cancellation,no,test,True,0,0,0.999998,0.9843744374942344,0.7499985,0.9843744374942344,0.7499985,1.0,True,True,True,True,True,True
+laptop device|has_ram_gb|6,laptop device,has_ram_gb,6,test,True,2,0,0.999997,0.3281248437484531,0.24999925,0.32812480208116673,0.24999900000025002,0.3333332910046413,True,False,False,False,False,False
+laptop device|has_battery_life_hours|18,laptop device,has_battery_life_hours,18,test,True,0,0,0.999997,0.9843742031127656,0.74999775,0.9843742031127656,0.7499977499999999,1.0,True,True,True,True,True,True
+laptop device|has_weight_kg|1.45,laptop device,has_weight_kg,1.45,test,True,1,0,0.999997,0.4921872421846875,0.374998875,0.489275084133642,0.3750013125158439,0.49704161566833877,True,False,False,False,False,False
+laptop device|made_of_material|carbon fiber,laptop device,made_of_material,carbon fiber,test,True,2,0,0.999986,0.3281232811131687,0.24999650000000004,0.32682668566939377,0.2500003333921129,0.332016150109418,True,False,False,False,False,False
+headphones device|has_ram_gb|32,headphones device,has_ram_gb,32,test,True,1,0,0.998233,0.4920386176697739,0.374337375,0.4890528814094247,0.37400672981089284,0.4969659533285321,True,False,False,False,False,False
+headphones device|has_storage_gb|512,headphones device,has_storage_gb,512,test,True,3,0,0.999999,0.2460935976545976,0.1874998125,0.25116515757928976,0.18754655852645874,0.2551520640652853,True,False,False,False,False,False
+headphones device|has_battery_life_hours|12,headphones device,has_battery_life_hours,12,test,True,2,0,0.999988,0.3281238124164201,0.249997,0.3323251148079911,0.24999566667377782,0.3376013385116542,True,False,False,False,False,False
+device|has_price_usd|199,device,has_price_usd,199,val,True,1,0,0.756668,0.40331582167275,0.2837505,0.44127946399201795,0.2607029630865455,0.5470644099229902,False,False,False,False,False,False
+device|has_screen_size_inch|14.0,device,has_screen_size_inch,14.0,val,True,2,0,0.999875,0.3124837468359375,0.24996875,0.37637133360623803,0.2618764513220209,0.4014836370608029,True,False,False,False,False,False
+device|has_ram_gb|32,device,has_ram_gb,32,val,True,1,0,0.999998,0.4687484062415625,0.37499925,0.5208314698938822,0.37499943750009374,0.5555554567853608,True,False,False,False,False,False
+unknown_product|has_price_usd|299,unknown_product,has_price_usd,299,val,True,0,0,0.471602,0.3537015,0.3537015,0.3537015,0.3537015,1.0,False,False,False,False,False,True
+unknown_product|has_screen_size_inch|15.6,unknown_product,has_screen_size_inch,15.6,val,True,0,0,0.999963,0.74997225,0.74997225,0.74997225,0.74997225,1.0,True,True,True,True,True,True
+unknown_product|has_ram_gb|6,unknown_product,has_ram_gb,6,val,True,0,0,0.999994,0.7499955,0.7499955,0.7499955,0.7499955,1.0,True,True,True,True,True,True
+unknown_product|has_battery_life_hours|8,unknown_product,has_battery_life_hours,8,val,True,0,0,0.999992,0.749994,0.749994,0.749994,0.749994,1.0,True,True,True,True,True,True
+unknown_product|target_market_region|us,unknown_product,target_market_region,US,val,True,0,0,0.999961,0.74997075,0.74997075,0.7499707499999999,0.7499707499999999,1.0,True,True,True,True,True,True
+unknown_product|supports_fast_charging|no,unknown_product,supports_fast_charging,no,val,True,0,0,0.999025,0.74926875,0.74926875,0.74926875,0.74926875,1.0,True,True,True,True,True,True
+unknown_product|has_noise_cancellation|no,unknown_product,has_noise_cancellation,no,val,True,0,0,0.999998,0.7499985,0.7499985,0.7499985,0.7499985,1.0,True,True,True,True,True,True
+unknown device|has_screen_size_inch|6.1,unknown device,has_screen_size_inch,6.1,val,True,0,0,0.739008,0.554256,0.554256,0.554256,0.554256,1.0,False,False,True,True,True,True
+unknown device|has_battery_life_hours|18,unknown device,has_battery_life_hours,18,val,True,0,0,0.999981,0.74998575,0.74998575,0.7499857499999999,0.7499857499999999,1.0,True,True,True,True,True,True
+unknown device|has_weight_kg|1.8,unknown device,has_weight_kg,1.8,val,True,0,0,0.999995,0.7499962499999999,0.7499962499999999,0.7499962499999999,0.7499962499999999,1.0,True,True,True,True,True,True
+unknown device|has_color|blue,unknown device,has_color,blue,val,False,0,0,0.99998,0.749985,0.749985,0.749985,0.749985,0.749985,True,True,True,True,True,True
+unknown device|made_of_material|aluminum,unknown device,made_of_material,aluminum,val,True,0,0,0.999987,0.74999025,0.74999025,0.74999025,0.74999025,1.0,True,True,True,True,True,True
+unknown device|target_market_region|us,unknown device,target_market_region,US,val,True,0,0,0.999982,0.7499865,0.7499865,0.7499865000000001,0.7499865000000001,1.0,True,True,True,True,True,True
+unknown device|supports_fast_charging|yes,unknown device,supports_fast_charging,yes,val,True,0,0,0.999702,0.7497765,0.7497765,0.7497764999999998,0.7497764999999998,1.0,True,True,True,True,True,True
+device|has_noise_cancellation|yes,device,has_noise_cancellation,yes,val,True,1,0,0.996889,0.373833375,0.373833375,0.3732511581724914,0.3732511581724914,0.4992212883246331,True,False,False,False,False,False
+product|has_screen_size_inch|6.1,product,has_screen_size_inch,6.1,val,True,3,0,0.866661,0.1624989375,0.1624989375,0.12039292811283148,0.14568973440088667,0.18522110046539764,False,False,False,False,False,False
+product|has_battery_life_hours|18,product,has_battery_life_hours,18,val,True,1,0,0.999968,0.374988,0.374988,0.3333198891064788,0.3749885625008438,0.4444407409123476,True,False,False,False,False,False
+product|made_of_material|aluminum,product,made_of_material,aluminum,val,True,0,0,0.99995,0.7499625,0.7499625,0.7499624999999999,0.7499624999999999,1.0,True,True,True,True,True,True
+neotech laptop air 47|belongs_to_category|laptop device,NeoTech Laptop Air 47,belongs_to_category,laptop device,val,True,1,0,0.984945,0.369354375,0.369354375,0.3172964625064036,0.3269737433586642,0.42952850160012807,True,False,False,False,False,False

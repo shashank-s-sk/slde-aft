@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_226",
+ "base_raw": "[\n    [\"Smilacaceae\", \"MISC\", \"diverged from\", \"Liliaceae\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"characterized by\", \"true vessels in conducting tissue\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"distinguished by\", \"reticulate leaf veins\", \"MISC\"],\n    [\"Liliaceae\", \"MISC\", \"related to\", \"Liliales\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"time of divergence\", \"55 million years ago\", \"TIME\"],\n    [\"Smilacaceae\", \"MISC\", \"geological era of divergence\", \"Early Paleogene\", \"MISC\"],\n    [\"Paleogene\", \"MISC\", \"boundary with\", \"Paleocene and Eocene\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 7,
+  "FN": 4,
+  "recall": 0.0,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Smilacaceae\", \"MISC\", \"instance of\", \"family of flowering plants\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"diverged from\", \"Liliaceae\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"time of divergence\", \"55 millions years ago\", \"TIME\"],\n    [\"Smilacaceae\", \"MISC\", \"location of divergence\", \"Early Paleogene\", \"TIME\"],\n    [\"Smilacaceae\", \"MISC\", \"characteristic\", \"true vessels in its conducting tissue\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"characteristic\", \"reticulate veins in leaves\", \"MISC\"],\n    [\"Liliaceae\", \"MISC\", \"instance of\", \"family of flowering plants\", \"MISC\"],\n    [\"Liliales\", \"MISC\", \"instance of\", \"order of flowering plants\", \"MISC\"],\n    [\"Paleocene\", \"TIME\", \"followed by\", \"Eocene\", \"TIME\"],\n    [\"Early Paleogene\", \"TIME\", \"contains administrative territorial entity\", \"Paleocene\", \"TIME\"],\n    [\"Early Paleogene\", \"TIME\", \"contains administrative territorial entity\", \"Eocene\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 1,
+  "recall": 0.8571428571428571,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Smilacaceae\", \"MISC\", \"diverged from\", \"Liliaceae\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"characterized by\", \"true vessels in conducting tissue\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"distinguished by\", \"reticulate leaf veins\", \"MISC\"],\n    [\"Liliaceae\", \"MISC\", \"related to\", \"Liliales\", \"MISC\"],\n    [\"Smilacaceae\", \"MISC\", \"originated in\", \"Early Paleogene\", \"TIME\"],\n    [\"Smilacaceae\", \"MISC\", \"separated from Liliaceae\", \"55 million years ago\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ }
+}

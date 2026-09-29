@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_140",
+ "base_raw": "[\n    [\"F\u00e0n Chun Yip\", \"PER\", \"date of birth\", \"1 May 1976\", \"TIME\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"place of birth\", \"Hong Kong\", \"LOC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Hong Kong Pegasus FC\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Shatin Sports Association\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Instant-Dict\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Yee Hope\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Hong Kong Rangers\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Happy Valley\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"position held\", \"goalkeeper\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"position held\", \"goalkeeping coach\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"award received\", \"Hong Kong Footballer of the Year\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"award received\", \"Goalkeeper of the Tournament\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"award received\", \"Hong Kong First Division League Most Popular Player\", \"MISC\"],\n    [\"Hong Kong Pegasus FC\", \"ORG\", \"league\", \"Hong Kong First Division League\", \"MISC\"],\n    [\"Shatin Sports Association\", \"ORG\", \"league\", \"Hong Kong First Division League\", \"MISC\"],\n    [\"Instant-Dict\", \"ORG\", \"league\", \"Hong Kong First Division League\", \"MISC\"],\n    [\"Yee Hope\", \"ORG\", \"league\", \"Hong Kong First Division League\", \"MISC\"],\n    [\"Hong Kong Rangers\", \"ORG\", \"league\", \"Hong Kong First Division League\", \"MISC\"],\n    [\"Happy Valley\", \"ORG\", \"league\", \"Hong Kong First Division League\", \"MISC\"],\n    [\"Hong Kong\", \"LOC\", \"continent\", \"Asia\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"country of citizenship\", \"Hong Kong\", \"LOC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"located in the administrative territorial entity\", \"Hong Kong\", \"LOC\"],\n    [\"East Asian Cup\", \"MISC\", \"location\", \"Asia\", \"MISC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 14,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"F\u00e0n Chun Yip\", \"PER\", \"place of birth\", \"Hong Kong\", \"LOC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"date of birth\", \"1 May 1976\", \"TIME\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Hong Kong Pegasus FC\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Shatin Sports Association\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Instant-Dict\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Yee Hope\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Hong Kong Rangers\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Happy Valley\", \"ORG\"],\n    [\"Hong Kong Pegasus FC\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Shatin Sports Association\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Instant-Dict\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Yee Hope\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Hong Kong Rangers\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Happy Valley\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"award received\", \"Hong Kong Footballer of the Year\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"award received\", \"Goalkeeper of the Tournament\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"award received\", \"Hong Kong First Division League Most Popular Player\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"country of citizenship\", \"Hong Kong\", \"LOC\"],\n    [\"Hong Kong national football team\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"East Asian Cup\", \"MISC\", \"location\", \"Asia\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 20,
+  "FN": 1,
+  "recall": 0.9090909090909091,
+  "n_extracted": 30,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"F\u00e0n Chun Yip\", \"PER\", \"date of birth\", \"1 May 1976\", \"TIME\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"place of birth\", \"Hong Kong\", \"LOC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Hong Kong Pegasus FC\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Shatin Sports Association\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Instant-Dict\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Yee Hope\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Hong Kong Rangers\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"member of sports team\", \"Happy Valley\", \"ORG\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"position held\", \"goalkeeper\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"position held\", \"goalkeeping coach\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"award received\", \"Hong Kong Footballer of the Year\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"award received\", \"Goalkeeper of the Tournament\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"country of citizenship\", \"Hong Kong\", \"LOC\"],\n    [\"Hong Kong Pegasus FC\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Shatin Sports Association\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Instant-Dict\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Yee Hope\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Hong Kong Rangers\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Happy Valley\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Hong Kong national football team\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"East Asian Cup\", \"MISC\", \"location\", \"Asia\", \"LOC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"participant of\", \"East Asian Cup\", \"MISC\"],\n    [\"F\u00e0n Chun Yip\", \"PER\", \"participant of\", \"Hong Kong First Division League\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 23,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ }
+}

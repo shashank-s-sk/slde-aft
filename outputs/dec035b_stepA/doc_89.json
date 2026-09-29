@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_89",
+ "base_raw": "[\n    [\"John Riggi\", \"PER\", \"director\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Josh Siegal\", \"PER\", \"writer\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Dylan Morgan\", \"PER\", \"writer\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Will Forte\", \"PER\", \"guest star\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Steve Buscemi\", \"PER\", \"guest star\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Alec Baldwin\", \"PER\", \"actor\", \"Jack Donaghy\", \"MISC\"],\n    [\"Tina Fey\", \"PER\", \"actor\", \"Liz Lemon\", \"MISC\"],\n    [\"Jane Krakowski\", \"PER\", \"actor\", \"Jenna Maroney\", \"MISC\"],\n    [\"The Tuxedo Begins\", \"MISC\", \"episode of\", \"30 Rock\", \"MISC\"],\n    [\"30 Rock\", \"MISC\", \"country of origin\", \"United States\", \"LOC\"],\n    [\"National Broadcasting Company (NBC)\", \"ORG\", \"network\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"February 16, 2012\", \"TIME\", \"air date\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"New York City\", \"LOC\", \"location\", \"The Tuxedo Begins\", \"MISC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 6,
+  "FN": 19,
+  "recall": 0.2692307692307692,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"John Riggi\", \"PER\", \"director\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Josh Siegal\", \"PER\", \"writer\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Dylan Morgan\", \"PER\", \"writer\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Will Forte\", \"PER\", \"guest star\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Steve Buscemi\", \"PER\", \"guest star\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Alec Baldwin\", \"PER\", \"actor\", \"Jack Donaghy\", \"MISC\"],\n    [\"Tina Fey\", \"PER\", \"actor\", \"Liz Lemon\", \"MISC\"],\n    [\"Jane Krakowski\", \"PER\", \"actor\", \"Jenna Maroney\", \"MISC\"],\n    [\"The Tuxedo Begins\", \"MISC\", \"episode of\", \"30 Rock\", \"MISC\"],\n    [\"30 Rock\", \"MISC\", \"series\", \"National Broadcasting Company (NBC)\", \"ORG\"],\n    [\"National Broadcasting Company (NBC)\", \"ORG\", \"network\", \"United States\", \"LOC\"],\n    [\"The Tuxedo Begins\", \"MISC\", \"air date\", \"February 16, 2012\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 7,
+  "FN": 19,
+  "recall": 0.32142857142857145,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"John Riggi\", \"PER\", \"director\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Josh Siegal\", \"PER\", \"writer\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Dylan Morgan\", \"PER\", \"writer\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Will Forte\", \"PER\", \"guest star\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Steve Buscemi\", \"PER\", \"guest star\", \"The Tuxedo Begins\", \"MISC\"],\n    [\"Alec Baldwin\", \"PER\", \"actor\", \"Jack Donaghy\", \"MISC\"],\n    [\"Tina Fey\", \"PER\", \"actor\", \"Liz Lemon\", \"MISC\"],\n    [\"Jane Krakowski\", \"PER\", \"actor\", \"Jenna Maroney\", \"MISC\"],\n    [\"The Tuxedo Begins\", \"MISC\", \"episode of\", \"30 Rock\", \"MISC\"],\n    [\"30 Rock\", \"MISC\", \"series\", \"National Broadcasting Company (NBC)\", \"ORG\"],\n    [\"National Broadcasting Company (NBC)\", \"ORG\", \"network\", \"United States\", \"LOC\"],\n    [\"The Tuxedo Begins\", \"MISC\", \"air date\", \"February 16, 2012\", \"TIME\"],\n    [\"Jack Donaghy\", \"MISC\", \"considered position\", \"mayor of New York City\", \"MISC\"],\n    [\"Liz Lemon\", \"MISC\", \"location of frustration\", \"subway\", \"MISC\"],\n    [\"Jenna Maroney\", \"MISC\", \"partner\", \"Paul\", \"MISC\"],\n    [\"Paul\", \"MISC\", \"actor\", \"Will Forte\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 11,
+  "FN": 19,
+  "recall": 0.32142857142857145,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

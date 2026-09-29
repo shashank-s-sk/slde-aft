@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_22",
+ "base_raw": "[\n    [\"Baltimore\", \"LOC\", \"setting\", \"He's Just Not That Into You\", \"MISC\"],\n    [\"F. Scott Fitzgerald\", \"PER\", \"lived in\", \"Baltimore\", \"LOC\"],\n    [\"Anne Tyler\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"],\n    [\"John Waters\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"],\n    [\"Barry Levinson\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 5,
+  "FN": 13,
+  "recall": 0.0,
+  "n_extracted": 5,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Persons",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Baltimore\", \"LOC\", \"located in\", \"United States\", \"LOC\"],\n    [\"F. Scott Fitzgerald\", \"PER\", \"lived in\", \"Baltimore\", \"LOC\"],\n    [\"Anne Tyler\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"],\n    [\"John Waters\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"],\n    [\"Barry Levinson\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"],\n    [\"He's Just Not That Into You\", \"MISC\", \"set in\", \"Baltimore\", \"LOC\"],\n    [\"Baltimore\", \"LOC\", \"instance of\", \"American urban city\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 6,
+  "FN": 13,
+  "recall": 0.13333333333333333,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Baltimore\", \"LOC\", \"located in\", \"U.S.A.\", \"LOC\"],\n    [\"F. Scott Fitzgerald\", \"PER\", \"lived in\", \"Baltimore\", \"LOC\"],\n    [\"Anne Tyler\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"],\n    [\"John Waters\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"],\n    [\"Barry Levinson\", \"PER\", \"native of\", \"Baltimore\", \"LOC\"],\n    [\"He's Just Not That Into You\", \"MISC\", \"set in\", \"Baltimore\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 4,
+  "FN": 13,
+  "recall": 0.1875,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ }
+}

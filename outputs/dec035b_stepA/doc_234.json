@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_234",
+ "base_raw": "[\n    [\"Ingeniero Ballester Dam\", \"MISC\", \"located in\", \"Argentine Patagonia\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"MISC\", \"located near\", \"Barda del Medio\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"MISC\", \"province\", \"R\u00edo Negro\", \"LOC\"],\n    [\"El Cha\u00f1ar Dam\", \"MISC\", \"located near\", \"Ingeniero Ballester Dam\", \"MISC\"],\n    [\"Neuqu\u00e9n River\", \"MISC\", \"flows through\", \"Argentine Patagonia\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"MISC\", \"year of completion\", \"1916\", \"TIME\"],\n    [\"Neuqu\u00e9n River\", \"MISC\", \"re-routed to\", \"irrigation canal\", \"MISC\"],\n    [\"irrigation canal\", \"MISC\", \"passes through\", \"Barda del Medio\", \"LOC\"],\n    [\"irrigation canal\", \"MISC\", \"passes through\", \"Cinco Saltos\", \"LOC\"],\n    [\"irrigation canal\", \"MISC\", \"passes through\", \"Cipolletti\", \"LOC\"],\n    [\"irrigation canal\", \"MISC\", \"passes through\", \"Allen\", \"LOC\"],\n    [\"irrigation canal\", \"MISC\", \"passes through\", \"General Roca\", \"LOC\"],\n    [\"irrigation canal\", \"MISC\", \"passes through\", \"Ingeniero Luis A. Huergo\", \"LOC\"],\n    [\"irrigation canal\", \"MISC\", \"passes through\", \"Villa Regina\", \"LOC\"],\n    [\"irrigation canal\", \"MISC\", \"empties into\", \"R\u00edo Negro\", \"LOC\"],\n    [\"Pellegrini Lake\", \"MISC\", \"fed by\", \"irrigation canal\", \"MISC\"],\n    [\"Ballester Bridge\", \"MISC\", \"located on\", \"Ingeniero Ballester Dam\", \"MISC\"],\n    [\"National Route 151\", \"MISC\", \"crosses\", \"Ballester Bridge\", \"MISC\"],\n    [\"National Route 151\", \"MISC\", \"connects\", \"R\u00edo Negro\", \"LOC\"],\n    [\"National Route 151\", \"MISC\", \"connects\", \"Neuqu\u00e9n\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 20,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"located in\", \"Argentine Patagonia\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"near\", \"Barda del Medio\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"downstream from\", \"El Cha\u00f1ar Dam\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"north-northeast from\", \"Neuqu\u00e9n\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"completed in\", \"1916\", \"TIME\"],\n    [\"National Route 151\", \"LOC\", \"crosses over\", \"Ingeniero Ballester Dam\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"used to re-route part of flow of\", \"Neuqu\u00e9n River\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"sends water to\", \"Pellegrini Lake\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"emptying into\", \"flood plain of R\u00edo Negro\", \"LOC\"],\n    [\"Ballester Bridge\", \"LOC\", \"over\", \"Ingeniero Ballester Dam\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"part of\", \"Cerros Colorados Complex\", \"MISC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"downstream from\", \"El Cha\u00f1ar Dam\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"near\", \"Barda del Medio\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"north-northeast from\", \"Neuqu\u00e9n\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"located in\", \"Argentine Patagonia\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 30,
+  "FN": 4,
+  "recall": 0.5555555555555556,
+  "n_extracted": 30,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 30,
+  "FN": 4,
+  "recall": 0.5555555555555556,
+  "n_extracted": 30,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"located in\", \"Argentine Patagonia\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"near\", \"Barda del Medio\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"downstream from\", \"El Cha\u00f1ar Dam\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"north-northeast from\", \"Neuqu\u00e9n\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"completed in\", \"1916\", \"TIME\"],\n    [\"National Route 151\", \"LOC\", \"crosses over\", \"Ingeniero Ballester Dam\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"used to re-route part of flow of\", \"Neuqu\u00e9n River\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"sends water to\", \"Pellegrini Lake\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"emptying into\", \"flood plain of R\u00edo Negro\", \"LOC\"],\n    [\"Ballester Bridge\", \"LOC\", \"over\", \"Ingeniero Ballester Dam\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"part of\", \"Cerros Colorados Complex\", \"MISC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"downstream from\", \"El Cha\u00f1ar Dam\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"near\", \"Barda del Medio\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"north-northeast from\", \"Neuqu\u00e9n\", \"LOC\"],\n    [\"Ingeniero Ballester Dam\", \"LOC\", \"located in\", \"Argentine Patagonia\", \"LOC\"]\n]"
+}

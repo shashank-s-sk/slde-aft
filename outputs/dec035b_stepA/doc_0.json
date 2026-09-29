@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_0",
+ "base_raw": "[\n    [\"Hebridean crofting\", \"MISC\", \"location\", \"Western Isles of Scotland\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Hebridean islands\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Uists\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Barra\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"preserved in\", \"National Museum of Scotland\", \"ORG\"],\n    [\"Barvas\", \"LOC\", \"located in\", \"Lewis\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Lewis\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Harris\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 8,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Hebridean crofting\", \"MISC\", \"location\", \"Western Isles of Scotland\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Hebridean islands\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Uists\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Barra\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"preserved in\", \"National Museum of Scotland\", \"ORG\"],\n    [\"Barvas\", \"LOC\", \"located in\", \"Lewis\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Harris\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"location of use\", \"Lewis\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 9,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 9,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 9,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Hebridean crofting\", \"MISC\", \"location\", \"Western Isles of Scotland\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Hebridean islands\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Uists\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Barra\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"preserved in\", \"National Museum of Scotland\", \"ORG\"],\n    [\"Barvas\", \"LOC\", \"located in\", \"Lewis\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"used in\", \"Harris\", \"LOC\"],\n    [\"crann-nan-gad\", \"MISC\", \"location of use\", \"Lewis\", \"LOC\"]\n]"
+}

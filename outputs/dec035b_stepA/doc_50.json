@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_50",
+ "base_raw": "[\n    [\"Friedrich Nietzsche\", \"PER\", \"wrote\", \"On the Pathos of Truth\", \"MISC\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"written in\", \"1872\", \"TIME\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"gave\", \"Cosima Wagner\", \"PER\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"intended as\", \"preface\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"discusses\", \"Heraclitus\", \"PER\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"discusses\", \"Pythagoras\", \"PER\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"discusses\", \"Empedocles\", \"PER\"],\n    [\"Heraclitus\", \"PER\", \"psychologically distant from\", \"other people\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"identifies need for\", \"art\", \"MISC\"],\n    [\"art\", \"MISC\", \"adds\", \"emotion\", \"MISC\"],\n    [\"art\", \"MISC\", \"adds\", \"purpose\", \"MISC\"],\n    [\"knowledge\", \"MISC\", \"limited\", \"MISC\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"collects\", \"prefaces\", \"MISC\"],\n    [\"Cosima Wagner\", \"PER\", \"received\", \"Christmas present\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"author of\", \"On the Genealogy of Morals\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"author of\", \"Beyond Good and Evil\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"author of\", \"The Gay Science\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Friedrich Nietzsche\", \"PER\", \"wrote\", \"On the Pathos of Truth\", \"MISC\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"written in\", \"1872\", \"TIME\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"gave\", \"Cosima Wagner\", \"PER\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"intended as\", \"preface\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"discusses\", \"Heraclitus\", \"PER\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"discusses\", \"Pythagoras\", \"PER\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"discusses\", \"Empedocles\", \"PER\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"part of\", \"collection of prefaces\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"collected\", \"prefaces to unwritten books\", \"MISC\"],\n    [\"Cosima Wagner\", \"PER\", \"received\", \"collection of prefaces\", \"MISC\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"prefigures\", \"On the Genealogy of Morals\", \"MISC\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"prefigures\", \"Beyond Good and Evil\", \"MISC\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"prefigures\", \"The Gay Science\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 19,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Friedrich Nietzsche\", \"PER\", \"wrote\", \"On the Pathos of Truth\", \"MISC\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"written in\", \"1872\", \"TIME\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"gave\", \"Cosima Wagner\", \"PER\"],\n    [\"On the Pathos of Truth\", \"MISC\", \"intended as\", \"preface\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"collected\", \"prefaces to unwritten books\", \"MISC\"],\n    [\"Cosima Wagner\", \"PER\", \"received\", \"edition of prefaces\", \"MISC\"],\n    [\"Heraclitus\", \"PER\", \"discussed in\", \"On the Pathos of Truth\", \"MISC\"],\n    [\"Pythagoras\", \"PER\", \"discussed in\", \"On the Pathos of Truth\", \"MISC\"],\n    [\"Empedocles\", \"PER\", \"discussed in\", \"On the Pathos of Truth\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"author of\", \"On the Genealogy of Morals\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"author of\", \"Beyond Good and Evil\", \"MISC\"],\n    [\"Friedrich Nietzsche\", \"PER\", \"author of\", \"The Gay Science\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 18,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

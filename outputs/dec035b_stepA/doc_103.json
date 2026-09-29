@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_103",
+ "base_raw": "[\n    [\"Auburn\", \"LOC\", \"located in\", \"Baker County\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"near\", \"Baker City\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"near\", \"McEwen\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"part of\", \"Blue Mountains\", \"LOC\"],\n    [\"Oregon Route 7\", \"MISC\", \"location\", \"Auburn\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"founded\", \"1861\", \"TIME\"],\n    [\"Auburn\", \"LOC\", \"population\", \"1000\", \"NUM\"],\n    [\"Auburn\", \"LOC\", \"county seat of\", \"Baker County\", \"LOC\"],\n    [\"Baker County\", \"LOC\", \"legislative body\", \"Oregon Legislative Assembly\", \"ORG\"],\n    [\"Auburn\", \"LOC\", \"post office opened\", \"November 1, 1862\", \"TIME\"],\n    [\"William F. McCrary\", \"PER\", \"position held\", \"postmaster\", \"MISC\"],\n    [\"Auburn\", \"LOC\", \"post office closed\", \"1903\", \"TIME\"],\n    [\"Auburn\", \"LOC\", \"population\", \"200\", \"NUM\"],\n    [\"Auburn\", \"LOC\", \"deserted\", \"1870s\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 21,
+  "recall": 0.125,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Numbers",
+  "Time",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Auburn\", \"LOC\", \"located in\", \"Baker County\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"near\", \"Baker City\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"near\", \"McEwen\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"part of\", \"Blue Mountains\", \"LOC\"],\n    [\"Oregon Route 7\", \"MISC\", \"location\", \"Auburn\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"founded\", \"1861\", \"TIME\"],\n    [\"Auburn\", \"LOC\", \"population\", \"1000\", \"NUM\"],\n    [\"Auburn\", \"LOC\", \"county seat of\", \"Baker County\", \"LOC\"],\n    [\"Baker County\", \"LOC\", \"legislative body\", \"Oregon Legislative Assembly\", \"ORG\"],\n    [\"Auburn\", \"LOC\", \"post office opened\", \"November 1, 1862\", \"TIME\"],\n    [\"William F. McCrary\", \"PER\", \"position held\", \"postmaster\", \"MISC\"],\n    [\"Auburn\", \"LOC\", \"post office closed\", \"1903\", \"TIME\"],\n    [\"Auburn\", \"LOC\", \"population\", \"200\", \"NUM\"],\n    [\"Auburn\", \"LOC\", \"year deserted\", \"1870s\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 21,
+  "recall": 0.125,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Auburn\", \"LOC\", \"located in\", \"Baker County\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"near\", \"Baker City\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"near\", \"McEwen\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"part of\", \"Blue Mountains\", \"LOC\"],\n    [\"Oregon Route 7\", \"MISC\", \"location\", \"Auburn\", \"LOC\"],\n    [\"Baker County\", \"LOC\", \"contains administrative territorial entity\", \"Auburn\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"founded by\", \"gold mining industry\", \"MISC\"],\n    [\"William F. McCrary\", \"PER\", \"position held\", \"postmaster\", \"MISC\"],\n    [\"Auburn\", \"LOC\", \"has part\", \"post office\", \"MISC\"],\n    [\"Oregon Legislative Assembly\", \"ORG\", \"made\", \"Auburn\", \"LOC\"],\n    [\"Auburn\", \"LOC\", \"instance of\", \"ghost town\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 16,
+  "FN": 21,
+  "recall": 0.16,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

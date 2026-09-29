@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_19",
+ "base_raw": "[\n    [\"The Rocket Post\", \"MISC\", \"director\", \"Stephen Whittaker\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Ulrich Thomsen\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Shauna Macdonald\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Kevin McKidd\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Patrick Malahide\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"set in\", \"Scotland\", \"LOC\"],\n    [\"Gerhard Zucker\", \"PER\", \"nationality\", \"German\", \"MISC\"],\n    [\"The Rocket Post\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"The Rocket Post\", \"MISC\", \"filming year\", \"2001\", \"TIME\"],\n    [\"The Rocket Post\", \"MISC\", \"additional footage year\", \"2005\", \"TIME\"],\n    [\"Gerhard Zucker\", \"PER\", \"occupation\", \"rocket scientist\", \"MISC\"],\n    [\"The Rocket Post\", \"MISC\", \"original score composer\", \"Nigel Clarke\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"original score composer\", \"Michael Csanyi-Wills\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"recorded by\", \"Royal Philharmonic Orchestra\", \"ORG\"],\n    [\"Royal Philharmonic Orchestra\", \"ORG\", \"location\", \"London\", \"LOC\"],\n    [\"The Rocket Post\", \"MISC\", \"based on\", \"experiments by Gerhard Zucker\", \"MISC\"],\n    [\"Gerhard Zucker\", \"PER\", \"experiment location\", \"Scarp\", \"LOC\"],\n    [\"The Rocket Post\", \"MISC\", \"limited release location\", \"Scotland\", \"LOC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 9,
+  "FN": 2,
+  "recall": 0.8181818181818182,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"The Rocket Post\", \"MISC\", \"director\", \"Stephen Whittaker\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Ulrich Thomsen\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Shauna Macdonald\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Kevin McKidd\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Patrick Malahide\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"set in\", \"Scottish island\", \"LOC\"],\n    [\"The Rocket Post\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"Gerhard Zucker\", \"PER\", \"nationality\", \"German\", \"MISC\"],\n    [\"The Rocket Post\", \"MISC\", \"filming location\", \"Scotland\", \"LOC\"],\n    [\"The Rocket Post\", \"MISC\", \"filming year\", \"2001\", \"TIME\"],\n    [\"The Rocket Post\", \"MISC\", \"additional footage year\", \"2005\", \"TIME\"],\n    [\"Gerhard Zucker\", \"PER\", \"occupation\", \"rocket scientist\", \"MISC\"],\n    [\"The Rocket Post\", \"MISC\", \"original score composer\", \"Nigel Clarke\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"original score composer\", \"Michael Csanyi-Wills\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"original score recorded by\", \"Royal Philharmonic Orchestra\", \"ORG\"],\n    [\"The Rocket Post\", \"MISC\", \"original score recording location\", \"London\", \"LOC\"],\n    [\"Scarp\", \"LOC\", \"location of experiment\", \"Scottish island\", \"LOC\"],\n    [\"Gerhard Zucker\", \"PER\", \"experiment year\", \"1934\", \"TIME\"],\n    [\"The Rocket Post\", \"MISC\", \"basis\", \"experiments by Gerhard Zucker\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 14,
+  "FN": 8,
+  "recall": 0.5555555555555556,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"The Rocket Post\", \"MISC\", \"director\", \"Stephen Whittaker\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Ulrich Thomsen\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Shauna Macdonald\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Kevin McKidd\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"starring\", \"Patrick Malahide\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"set in\", \"Scotland\", \"LOC\"],\n    [\"The Rocket Post\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"Gerhard Zucker\", \"PER\", \"nationality\", \"German\", \"MISC\"],\n    [\"Gerhard Zucker\", \"PER\", \"occupation\", \"rocket scientist\", \"MISC\"],\n    [\"The Rocket Post\", \"MISC\", \"filming location\", \"Scotland\", \"LOC\"],\n    [\"The Rocket Post\", \"MISC\", \"filming year\", \"2001\", \"TIME\"],\n    [\"The Rocket Post\", \"MISC\", \"additional footage year\", \"2005\", \"TIME\"],\n    [\"The Rocket Post\", \"MISC\", \"release location\", \"Scotland\", \"LOC\"],\n    [\"The Rocket Post\", \"MISC\", \"release year\", \"2006\", \"TIME\"],\n    [\"Gerhard Zucker\", \"PER\", \"experiment year\", \"1934\", \"TIME\"],\n    [\"Scarp\", \"LOC\", \"location of experiment\", \"Gerhard Zucker\", \"PER\"],\n    [\"The Rocket Post\", \"MISC\", \"based on\", \"experiments by Gerhard Zucker\", \"MISC\"],\n    [\"Nigel Clarke & Michael Csanyi-Wills\", \"PER\", \"composer\", \"The Rocket Post\", \"MISC\"],\n    [\"Royal Philharmonic Orchestra\", \"ORG\", \"recorded in\", \"London\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 17,
+  "FN": 8,
+  "recall": 0.5,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

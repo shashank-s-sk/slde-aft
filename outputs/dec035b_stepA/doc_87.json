@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_87",
+ "base_raw": "[\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"developer\", \"Westwood Studios\", \"ORG\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"released by\", \"Virgin Games\", \"ORG\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"based on\", \"David Lynch's 1984 movie Dune\", \"MISC\"],\n    [\"David Lynch's 1984 movie Dune\", \"MISC\", \"based on\", \"Frank Herbert's science fiction novel\", \"MISC\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"influenced\", \"Command & Conquer\", \"MISC\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"influenced\", \"Warcraft\", \"MISC\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"influenced\", \"StarCraft\", \"MISC\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"release date\", \"December 1992\", \"TIME\"],\n    [\"Frank Herbert\", \"PER\", \"author\", \"Dune\", \"MISC\"],\n    [\"David Lynch\", \"PER\", \"director\", \"Dune\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Science Fiction Movies"
+ ],
+ "kb_orig_raw": "[\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"developer\", \"Westwood Studios\", \"ORG\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"released by\", \"Virgin Games\", \"ORG\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"based on\", \"David Lynch's 1984 movie Dune\", \"MISC\"],\n    [\"David Lynch's 1984 movie Dune\", \"MISC\", \"based on\", \"Frank Herbert's science fiction novel\", \"MISC\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"inception\", \"December 1992\", \"TIME\"],\n    [\"Command & Conquer\", \"MISC\", \"influenced by\", \"Dune II\", \"MISC\"],\n    [\"Warcraft\", \"MISC\", \"influenced by\", \"Dune II\", \"MISC\"],\n    [\"StarCraft\", \"MISC\", \"influenced by\", \"Dune II\", \"MISC\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"genre\", \"real-time strategy\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 7,
+  "recall": 0.4166666666666667,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"developer\", \"Westwood Studios\", \"ORG\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"released by\", \"Virgin Games\", \"ORG\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"based on\", \"David Lynch's 1984 movie Dune\", \"MISC\"],\n    [\"David Lynch's 1984 movie Dune\", \"MISC\", \"based on\", \"Frank Herbert's science fiction novel\", \"MISC\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"inception\", \"December 1992\", \"TIME\"],\n    [\"Command & Conquer\", \"MISC\", \"influenced by\", \"Dune II\", \"MISC\"],\n    [\"Warcraft\", \"MISC\", \"influenced by\", \"Dune II\", \"MISC\"],\n    [\"StarCraft\", \"MISC\", \"influenced by\", \"Dune II\", \"MISC\"],\n    [\"Dune II : The Building of a Dynasty\", \"MISC\", \"genre\", \"real-time strategy\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 6,
+  "recall": 0.45454545454545453,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

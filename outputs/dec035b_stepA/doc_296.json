@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_296",
+ "base_raw": "[\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"date of birth\", \"November 25, 1857\", \"TIME\"],\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"date of death\", \"January 3, 1923\", \"TIME\"],\n    [\"Gardiner Greene Hubbard\", \"PER\", \"position held\", \"first president of the Bell Telephone Company\", \"MISC\"],\n    [\"Alexander Graham Bell\", \"PER\", \"spouse\", \"Mabel Bell\", \"PER\"],\n    [\"Mabel Bell\", \"PER\", \"father\", \"Gardiner Greene Hubbard\", \"PER\"],\n    [\"Alexander Graham Bell\", \"PER\", \"date of death\", \"1922\", \"TIME\"],\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"place of birth\", \"Boston\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 4,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Time",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"date of birth\", \"November 25, 1857\", \"TIME\"],\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"date of death\", \"January 3, 1923\", \"TIME\"],\n    [\"Gardiner Greene Hubbard\", \"PER\", \"position held\", \"president of the Bell Telephone Company\", \"MISC\"],\n    [\"Alexander Graham Bell\", \"PER\", \"spouse\", \"Mabel Bell\", \"PER\"],\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"father\", \"Gardiner Greene Hubbard\", \"PER\"],\n    [\"Alexander Graham Bell\", \"PER\", \"employer\", \"Bell Telephone Company\", \"ORG\"],\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"place of birth\", \"Boston\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 4,
+  "FN": 6,
+  "recall": 0.5,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"date of birth\", \"November 25, 1857\", \"TIME\"],\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"date of death\", \"January 3, 1923\", \"TIME\"],\n    [\"Gardiner Greene Hubbard\", \"PER\", \"position held\", \"president of the Bell Telephone Company\", \"MISC\"],\n    [\"Alexander Graham Bell\", \"PER\", \"spouse\", \"Mabel Bell\", \"PER\"],\n    [\"Mabel Bell\", \"PER\", \"father\", \"Gardiner Greene Hubbard\", \"PER\"],\n    [\"Alexander Graham Bell\", \"PER\", \"date of death\", \"1922\", \"TIME\"],\n    [\"Mabel Gardiner Hubbard\", \"PER\", \"place of birth\", \"Boston\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 5,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ }
+}

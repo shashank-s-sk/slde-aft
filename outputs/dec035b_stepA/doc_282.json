@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_282",
+ "base_raw": "[\n    [\"Rafael del Riego\", \"PER\", \"location of formation\", \"Cabezas de San Juan\", \"LOC\"],\n    [\"Ferdinand VII\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Tr\u00e1gala\", \"MISC\", \"genre\", \"satire\", \"MISC\"],\n    [\"Duke of Angoul\u00eame\", \"PER\", \"country of origin\", \"France\", \"LOC\"],\n    [\"Holy Alliance\", \"ORG\", \"member of\", \"France\", \"LOC\"],\n    [\"Spanish liberals\", \"ORG\", \"ideology\", \"liberalism\", \"MISC\"],\n    [\"Ferdinand VII\", \"PER\", \"position held\", \"king\", \"MISC\"],\n    [\"Rafael del Riego\", \"PER\", \"military branch\", \"Spanish Army\", \"ORG\"],\n    [\"Tr\u00e1gala\", \"MISC\", \"lyrics by\", \"anonymous\", \"MISC\"],\n    [\"La Pitita\", \"MISC\", \"relation\", \"Tr\u00e1gala\", \"MISC\"],\n    [\"Second Republic\", \"ORG\", \"location\", \"Spain\", \"LOC\"],\n    [\"Spanish Civil War\", \"EVENT\", \"location\", \"Spain\", \"LOC\"],\n    [\"\u00c7a Ira\", \"MISC\", \"influenced by\", \"French Revolution\", \"EVENT\"],\n    [\"Ferdinand VII\", \"PER\", \"conflict\", \"Spanish Civil War\", \"EVENT\"],\n    [\"Rafael del Riego\", \"PER\", \"participant of\", \"Trienio Liberal\", \"EVENT\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 14,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Military Conflicts",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Rafael del Riego\", \"PER\", \"location of military pronunciamiento\", \"Cabezas de San Juan\", \"LOC\"],\n    [\"Ferdinand VII\", \"PER\", \"swore constitution\", \"Constitution of Cadiz\", \"MISC\"],\n    [\"Rafael de Riego\", \"PER\", \"entered city\", \"Madrid\", \"LOC\"],\n    [\"Duke of Angoul\u00eame\", \"PER\", \"commanded expedition\", \"French expedition of the Hundred Thousand Sons of Saint Louis\", \"MISC\"],\n    [\"Holy Alliance\", \"ORG\", \"intervened in\", \"Spain\", \"LOC\"],\n    [\"Tr\u00e1gala\", \"MISC\", \"inspired by\", \"\u00c7a Ira\", \"MISC\"],\n    [\"Tr\u00e1gala\", \"MISC\", \"sung during\", \"Second Republic\", \"MISC\"],\n    [\"Tr\u00e1gala\", \"MISC\", \"sung during\", \"Spanish Civil War\", \"MISC\"],\n    [\"La Pitita\", \"MISC\", \"counter song to\", \"Tr\u00e1gala\", \"MISC\"],\n    [\"Ferdinand VII\", \"PER\", \"supported by song\", \"La Pitita\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 24,
+  "FN": 1,
+  "recall": 0.8,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Rafael del Riego\", \"PER\", \"location of formation\", \"Cabezas de San Juan\", \"LOC\"],\n    [\"Ferdinand VII\", \"PER\", \"place of residence\", \"Madrid\", \"LOC\"],\n    [\"Tr\u00e1gala\", \"MISC\", \"genre\", \"satire\", \"MISC\"],\n    [\"Spanish liberals\", \"ORG\", \"opponent\", \"absolutists\", \"ORG\"],\n    [\"Duke of Angoul\u00eame\", \"PER\", \"commander of\", \"French expedition of the Hundred Thousand Sons of Saint Louis\", \"ORG\"],\n    [\"Holy Alliance\", \"ORG\", \"member\", \"France\", \"LOC\"],\n    [\"\u00c7a Ira\", \"MISC\", \"influenced by\", \"French Revolution\", \"MISC\"],\n    [\"La Pitita\", \"MISC\", \"opponent\", \"Tr\u00e1gala\", \"MISC\"],\n    [\"Second Republic\", \"MISC\", \"location\", \"Spain\", \"LOC\"],\n    [\"Spanish Civil War\", \"MISC\", \"location\", \"Spain\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 18,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

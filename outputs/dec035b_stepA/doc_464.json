@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_464",
+ "base_raw": "[\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"spouse\", \"Gnaeus Claudius Severus\", \"PER\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"place of birth\", \"Pompeiopolis\", \"LOC\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"country of citizenship\", \"Roman Empire\", \"LOC\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"father\", \"Gnaeus Claudius Severus\", \"PER\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"mother\", \"Annia Galeria Aurelia Faustina\", \"PER\"],\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"child\", \"Tiberius Claudius Severus Proculus\", \"PER\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"child\", \"Tiberius Claudius Severus Proculus\", \"PER\"],\n    [\"Pompeiopolis\", \"LOC\", \"located in the administrative territorial entity\", \"Roman Empire\", \"LOC\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"position held\", \"consul\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 7,
+  "FN": 30,
+  "recall": 0.0625,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"place of birth\", \"Rome\", \"LOC\"],\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"spouse\", \"Gnaeus Claudius Severus\", \"PER\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"place of origin\", \"Pompeiopolis\", \"LOC\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"ethnic group\", \"Pontian Greek\", \"MISC\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"father\", \"Gnaeus Claudius Severus\", \"PER\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"mother\", \"Annia Galeria Aurelia Faustina\", \"PER\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"position held\", \"consul\", \"MISC\"],\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"child\", \"Tiberius Claudius Severus Proculus\", \"PER\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"child\", \"Tiberius Claudius Severus Proculus\", \"PER\"],\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"residence\", \"Pompeiopolis\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 13,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"place of birth\", \"Rome\", \"LOC\"],\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"spouse\", \"Gnaeus Claudius Severus\", \"PER\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"place of origin\", \"Pompeiopolis\", \"LOC\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"ethnic group\", \"Pontian Greek\", \"MISC\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"father\", \"Gnaeus Claudius Severus\", \"PER\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"mother\", \"Annia Galeria Aurelia Faustina\", \"PER\"],\n    [\"Tiberius Claudius Severus Proculus\", \"PER\", \"position held\", \"consul\", \"MISC\"],\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"child\", \"Tiberius Claudius Severus Proculus\", \"PER\"],\n    [\"Gnaeus Claudius Severus\", \"PER\", \"child\", \"Tiberius Claudius Severus Proculus\", \"PER\"],\n    [\"Annia Galeria Aurelia Faustina\", \"PER\", \"residence\", \"Pompeiopolis\", \"LOC\"]\n]"
+}

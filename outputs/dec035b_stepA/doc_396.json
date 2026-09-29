@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_396",
+ "base_raw": "[\n    [\"Ted Failon\", \"PER\", \"host of\", \"Failon Ngayon\", \"MISC\"],\n    [\"Failon Ngayon\", \"MISC\", \"broadcast on\", \"DZMM-AM\", \"ORG\"],\n    [\"DZMM-AM\", \"ORG\", \"part of\", \"ABS-CBN\", \"ORG\"],\n    [\"Failon Ngayon\", \"MISC\", \"simulcast on\", \"DZMM TeleRadyo\", \"ORG\"],\n    [\"Pinky Webb\", \"PER\", \"former host of\", \"Failon Ngayon\", \"MISC\"],\n    [\"Failon Ngayon\", \"MISC\", \"broadcast time\", \"8:00am to 10:00am PHT\", \"TIME\"],\n    [\"ABS-CBN\", \"ORG\", \"operator of\", \"Radyo Patrol\", \"MISC\"],\n    [\"Radyo Patrol\", \"MISC\", \"radio network of\", \"ABS-CBN\", \"ORG\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 8,
+  "FN": 2,
+  "recall": 0.0,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Ted Failon\", \"PER\", \"employer\", \"ABS-CBN\", \"ORG\"],\n    [\"Failon Ngayon\", \"MISC\", \"genre\", \"talk show\", \"MISC\"],\n    [\"DZMM-AM\", \"MISC\", \"located in the administrative territorial entity\", \"Philippines\", \"LOC\"],\n    [\"Pinky Webb\", \"PER\", \"former affiliate\", \"Failon Ngayon\", \"MISC\"],\n    [\"ABS-CBN\", \"ORG\", \"owner\", \"DZMM TeleRadyo\", \"MISC\"],\n    [\"Ted Failon\", \"PER\", \"host of\", \"Failon Ngayon\", \"MISC\"],\n    [\"Failon Ngayon\", \"MISC\", \"broadcast by\", \"Radyo Patrol\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 2,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 2,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Ted Failon\", \"PER\", \"employer\", \"ABS-CBN\", \"ORG\"],\n    [\"Failon Ngayon\", \"MISC\", \"genre\", \"talk show\", \"MISC\"],\n    [\"DZMM-AM\", \"MISC\", \"located in the administrative territorial entity\", \"Philippines\", \"LOC\"],\n    [\"Pinky Webb\", \"PER\", \"former affiliate\", \"Failon Ngayon\", \"MISC\"],\n    [\"ABS-CBN\", \"ORG\", \"owner\", \"DZMM TeleRadyo\", \"MISC\"],\n    [\"Ted Failon\", \"PER\", \"host of\", \"Failon Ngayon\", \"MISC\"],\n    [\"Failon Ngayon\", \"MISC\", \"broadcast by\", \"Radyo Patrol\", \"MISC\"]\n]"
+}

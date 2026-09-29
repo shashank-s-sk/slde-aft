@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_78",
+ "base_raw": "[\n    [\"IBM Personal Computer\", \"MISC\", \"introduced\", \"volume boot record\", \"MISC\"],\n    [\"volume boot record\", \"MISC\", \"contains\", \"machine code\", \"MISC\"],\n    [\"machine code\", \"MISC\", \"used for\", \"bootstrapping programs\", \"MISC\"],\n    [\"bootstrapping programs\", \"MISC\", \"stored in\", \"other parts of the device\", \"MISC\"],\n    [\"volume boot record\", \"MISC\", \"found on\", \"partitioned data storage device\", \"MISC\"],\n    [\"volume boot record\", \"MISC\", \"found on\", \"unpartitioned device\", \"MISC\"],\n    [\"Master Boot Record\", \"MISC\", \"contains\", \"partition table\", \"MISC\"],\n    [\"code in volume boot records\", \"MISC\", \"invoked by\", \"machine's firmware\", \"MISC\"],\n    [\"code in volume boot records\", \"MISC\", \"invoked by\", \"code in the master boot record\", \"MISC\"],\n    [\"code in volume boot records\", \"MISC\", \"invoked by\", \"boot manager\", \"MISC\"],\n    [\"NTLDR\", \"MISC\", \"replaced by\", \"WINLOAD.EXE\", \"MISC\"],\n    [\"NTLDR\", \"MISC\", \"replaced by\", \"Windows Boot Manager\", \"MISC\"],\n    [\"WINLOAD.EXE\", \"MISC\", \"part of\", \"Windows Vista\", \"MISC\"],\n    [\"Windows Boot Manager\", \"MISC\", \"part of\", \"Windows Vista\", \"MISC\"],\n    [\"FAT12\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"FAT16\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"FAT32\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"HPFS\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"NTFS\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"BIOS Parameter Block\", \"MISC\", \"specifies\", \"location and layout of the principal on-disk data structures\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 18,
+  "FN": 16,
+  "recall": 0.1111111111111111,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Operating Systems: Microsoft Windows"
+ ],
+ "kb_orig_raw": "[\n    [\"NTLDR\", \"MISC\", \"replaced by\", \"WINLOAD.EXE\", \"MISC\"],\n    [\"NTLDR\", \"MISC\", \"replaced by\", \"Windows Boot Manager\", \"MISC\"],\n    [\"Windows Vista\", \"MISC\", \"uses\", \"WINLOAD.EXE\", \"MISC\"],\n    [\"Windows Server 2008\", \"MISC\", \"uses\", \"WINLOAD.EXE\", \"MISC\"],\n    [\"FAT12\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"FAT16\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"FAT32\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"HPFS\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"NTFS\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"IBM Personal Computer\", \"MISC\", \"introduced\", \"volume boot record\", \"MISC\"],\n    [\"Master Boot Record\", \"MISC\", \"contains\", \"partition table\", \"MISC\"],\n    [\"Windows XP\", \"MISC\", \"uses\", \"NTLDR\", \"MISC\"],\n    [\"Windows Server 2003\", \"MISC\", \"uses\", \"NTLDR\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 22,
+  "FN": 16,
+  "recall": 0.1111111111111111,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Operating Systems: Microsoft Windows"
+ ],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 22,
+  "FN": 16,
+  "recall": 0.1111111111111111,
+  "n_extracted": 24,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"NTLDR\", \"MISC\", \"replaced by\", \"WINLOAD.EXE\", \"MISC\"],\n    [\"NTLDR\", \"MISC\", \"replaced by\", \"Windows Boot Manager\", \"MISC\"],\n    [\"Windows Vista\", \"MISC\", \"uses\", \"WINLOAD.EXE\", \"MISC\"],\n    [\"Windows Server 2008\", \"MISC\", \"uses\", \"WINLOAD.EXE\", \"MISC\"],\n    [\"FAT12\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"FAT16\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"FAT32\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"HPFS\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"NTFS\", \"MISC\", \"contains\", \"BIOS Parameter Block\", \"MISC\"],\n    [\"IBM Personal Computer\", \"MISC\", \"introduced\", \"volume boot record\", \"MISC\"],\n    [\"Master Boot Record\", \"MISC\", \"contains\", \"partition table\", \"MISC\"],\n    [\"Windows XP\", \"MISC\", \"uses\", \"NTLDR\", \"MISC\"],\n    [\"Windows Server 2003\", \"MISC\", \"uses\", \"NTLDR\", \"MISC\"]\n]"
+}

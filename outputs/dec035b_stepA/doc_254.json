@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_254",
+ "base_raw": "[\n    [\"J. J. Abrams\", \"PER\", \"creator\", \"Cloverfield\", \"MISC\"],\n    [\"Cloverfield\", \"MISC\", \"genre\", \"science fiction horror\", \"MISC\"],\n    [\"Cloverfield Station\", \"LOC\", \"location\", \"outer-space\", \"MISC\"],\n    [\"Cloverfield / Kishin\", \"MISC\", \"type\", \"manga\", \"MISC\"],\n    [\"10 Cloverfield Lane\", \"MISC\", \"release date\", \"March 11, 2016\", \"TIME\"],\n    [\"The Cloverfield Paradox\", \"MISC\", \"release date\", \"February 4, 2018\", \"TIME\"],\n    [\"The Cloverfield Paradox\", \"MISC\", \"distributor\", \"Netflix\", \"ORG\"],\n    [\"Cloverfield\", \"MISC\", \"release date\", \"January 18, 2008\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 8,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"J. J. Abrams\", \"PER\", \"creator\", \"Cloverfield\", \"MISC\"],\n    [\"Cloverfield\", \"MISC\", \"genre\", \"science fiction horror\", \"MISC\"],\n    [\"Cloverfield\", \"MISC\", \"instance of\", \"anthology film series\", \"MISC\"],\n    [\"Cloverfield Station\", \"MISC\", \"location\", \"outer-space\", \"LOC\"],\n    [\"Cloverfield / Kishin\", \"MISC\", \"part of\", \"Cloverfield\", \"MISC\"],\n    [\"10 Cloverfield Lane\", \"MISC\", \"part of\", \"Cloverfield\", \"MISC\"],\n    [\"The Cloverfield Paradox\", \"MISC\", \"part of\", \"Cloverfield\", \"MISC\"],\n    [\"J. J. Abrams\", \"PER\", \"producer\", \"Cloverfield\", \"MISC\"],\n    [\"Netflix\", \"ORG\", \"distributor\", \"The Cloverfield Paradox\", \"MISC\"],\n    [\"January 18, 2008\", \"TIME\", \"release date\", \"Cloverfield\", \"MISC\"],\n    [\"March 11, 2016\", \"TIME\", \"release date\", \"10 Cloverfield Lane\", \"MISC\"],\n    [\"February 4, 2018\", \"TIME\", \"release date\", \"The Cloverfield Paradox\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 6,
+  "recall": 0.45454545454545453,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"J. J. Abrams\", \"PER\", \"creator\", \"Cloverfield\", \"MISC\"],\n    [\"Cloverfield\", \"MISC\", \"genre\", \"science fiction horror\", \"MISC\"],\n    [\"Cloverfield Station\", \"MISC\", \"location\", \"outer-space\", \"LOC\"],\n    [\"Cloverfield / Kishin\", \"MISC\", \"type\", \"manga\", \"MISC\"],\n    [\"10 Cloverfield Lane\", \"MISC\", \"release date\", \"March 11, 2016\", \"TIME\"],\n    [\"The Cloverfield Paradox\", \"MISC\", \"release date\", \"February 4, 2018\", \"TIME\"],\n    [\"The Cloverfield Paradox\", \"MISC\", \"distributor\", \"Netflix\", \"ORG\"],\n    [\"Cloverfield\", \"MISC\", \"release date\", \"January 18, 2008\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 8,
+  "FN": 7,
+  "recall": 0.0,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_96",
+ "base_raw": "[\n    [\"Beyaz\u0131t Square\", \"LOC\", \"located in\", \"Fatih\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"located in\", \"Istanbul\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"part of\", \"European part\", \"MISC\"],\n    [\"Bayezid II Mosque\", \"LOC\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Istanbul University\", \"ORG\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Beyaz\u0131t Tower\", \"LOC\", \"located in\", \"Istanbul University\", \"ORG\"],\n    [\"Turgut Cansever\", \"PER\", \"designed\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Constantine the Great\", \"PER\", \"built\", \"Forum of Theodosius\", \"LOC\"],\n    [\"Forum of Theodosius\", \"LOC\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"site of\", \"Bloody Sunday\", \"MISC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"site of\", \"Beyaz\u0131t Massacre\", \"MISC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"site of\", \"The 20 Hunchakian gallows\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 21,
+  "recall": 0.125,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Beyaz\u0131t Square\", \"LOC\", \"located in\", \"Fatih\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"located in\", \"Istanbul\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"part of\", \"European part\", \"LOC\"],\n    [\"Bayezid II Mosque\", \"LOC\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Istanbul University\", \"ORG\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Beyaz\u0131t Tower\", \"LOC\", \"located in\", \"Istanbul University\", \"ORG\"],\n    [\"Turgut Cansever\", \"PER\", \"designed\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Constantine the Great\", \"PER\", \"built\", \"Forum of Theodosius\", \"LOC\"],\n    [\"Forum of Theodosius\", \"LOC\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 21,
+  "recall": 0.08695652173913043,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Beyaz\u0131t Square\", \"LOC\", \"located in\", \"Fatih\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"located in\", \"Istanbul\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"part of\", \"Turkey\", \"LOC\"],\n    [\"Bayezid II Mosque\", \"LOC\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Istanbul University\", \"ORG\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Beyaz\u0131t Tower\", \"LOC\", \"located in\", \"Istanbul University\", \"ORG\"],\n    [\"Turgut Cansever\", \"PER\", \"designed\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Constantine the Great\", \"PER\", \"built\", \"Forum of Theodosius\", \"LOC\"],\n    [\"Forum of Theodosius\", \"LOC\", \"located in\", \"Beyaz\u0131t Square\", \"LOC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"site of\", \"Bloody Sunday\", \"MISC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"site of\", \"Beyaz\u0131t Massacre\", \"MISC\"],\n    [\"Beyaz\u0131t Square\", \"LOC\", \"site of\", \"The 20 Hunchakian gallows\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

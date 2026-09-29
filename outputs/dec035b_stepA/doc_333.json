@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_333",
+ "base_raw": "[\n    [\"Strathcona\", \"LOC\", \"located in\", \"Edmonton\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"province\", \"Alberta\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Strathcona Community League\", \"ORG\", \"founded by\", \"Strathcona\", \"LOC\"],\n    [\"Strathcona Community League\", \"ORG\", \"location\", \"101 Street and 87 Avenue\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"overlooks\", \"North Saskatchewan River\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"overlooks\", \"Mill Creek Ravine\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Whyte Avenue\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Saskatchewan Drive\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"107 Street\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Mill Creek Ravine\", \"LOC\"],\n    [\"Strathcona Community League\", \"ORG\", \"established\", \"1918\", \"TIME\"],\n    [\"Strathcona\", \"LOC\", \"near\", \"Queen Elizabeth Pool\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"part of\", \"Old Strathcona\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 16,
+  "recall": 0.1111111111111111,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Strathcona\", \"LOC\", \"located in\", \"Edmonton\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"province\", \"Alberta\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Strathcona Community League\", \"ORG\", \"established\", \"1918\", \"TIME\"],\n    [\"Strathcona Community League\", \"ORG\", \"location\", \"101 Street and 87 Avenue\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"overlooks\", \"North Saskatchewan River\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"overlooks\", \"Mill Creek Ravine\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Whyte Avenue\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Saskatchewan Drive\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"107 Street\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Mill Creek Ravine\", \"LOC\"],\n    [\"Strathcona Community League\", \"ORG\", \"founded by\", \"community\", \"MISC\"],\n    [\"Strathcona\", \"LOC\", \"near\", \"Queen Elizabeth Pool\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"part of\", \"Old Strathcona\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 16,
+  "recall": 0.1111111111111111,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Strathcona\", \"LOC\", \"located in\", \"Edmonton\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"located in\", \"Alberta\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Strathcona Community League\", \"ORG\", \"established\", \"1918\", \"TIME\"],\n    [\"Strathcona Community League\", \"ORG\", \"location\", \"101 Street and 87 Avenue\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Whyte Avenue\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Saskatchewan Drive\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"107 Street\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"bounded by\", \"Mill Creek Ravine\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"overlooks\", \"North Saskatchewan River\", \"LOC\"],\n    [\"Strathcona\", \"LOC\", \"overlooks\", \"Mill Creek Ravine\", \"LOC\"],\n    [\"Strathcona Community League\", \"ORG\", \"maintains\", \"community hall\", \"MISC\"],\n    [\"Strathcona Community League\", \"ORG\", \"maintains\", \"outdoor rink\", \"MISC\"],\n    [\"Strathcona Community League\", \"ORG\", \"maintains\", \"tennis courts\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 16,
+  "recall": 0.15789473684210525,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

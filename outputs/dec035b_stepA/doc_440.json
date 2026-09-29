@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_440",
+ "base_raw": "[\n    [\"Richard Wettstein\", \"PER\", \"date of birth\", \"30 June 1863\", \"TIME\"],\n    [\"Richard Wettstein\", \"PER\", \"place of birth\", \"Vienna\", \"LOC\"],\n    [\"Richard Wettstein\", \"PER\", \"date of death\", \"10 August 1931\", \"TIME\"],\n    [\"Richard Wettstein\", \"PER\", \"place of death\", \"Trins\", \"LOC\"],\n    [\"Richard Wettstein\", \"PER\", \"educated at\", \"University of Vienna\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"employer\", \"University of Prague\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"employer\", \"University of Vienna\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"spouse\", \"Adele\", \"PER\"],\n    [\"Richard Wettstein\", \"PER\", \"child\", \"Friedrich\", \"PER\"],\n    [\"Richard Wettstein\", \"PER\", \"member of\", \"Vienna Zoological-Botanical Society\", \"ORG\"],\n    [\"Anton Kerner von Marilaun\", \"PER\", \"date of birth\", \"1831\", \"TIME\"],\n    [\"Anton Kerner von Marilaun\", \"PER\", \"date of death\", \"1898\", \"TIME\"],\n    [\"Wettsteinina\", \"MISC\", \"named after\", \"Richard Wettstein\", \"PER\"],\n    [\"Richard Wettstein\", \"PER\", \"position held\", \"president\", \"MISC\"],\n    [\"Richard Wettstein\", \"PER\", \"position held\", \"vice-president\", \"MISC\"],\n    [\"Richard Wettstein\", \"PER\", \"member of\", \"Vienna Academy of Sciences\", \"ORG\"],\n    [\"International Botanical Congress\", \"MISC\", \"location\", \"Vienna\", \"LOC\"],\n    [\"Richard Wettstein\", \"PER\", \"location of formation\", \"Vienna\", \"LOC\"],\n    [\"University of Vienna\", \"ORG\", \"located in\", \"Vienna\", \"LOC\"],\n    [\"University of Prague\", \"ORG\", \"located in\", \"Prague\", \"LOC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 13,
+  "FN": 8,
+  "recall": 0.4666666666666667,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Persons",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Richard Wettstein\", \"PER\", \"place of birth\", \"Vienna\", \"LOC\"],\n    [\"Richard Wettstein\", \"PER\", \"date of birth\", \"30 June 1863\", \"TIME\"],\n    [\"Richard Wettstein\", \"PER\", \"date of death\", \"10 August 1931\", \"TIME\"],\n    [\"Richard Wettstein\", \"PER\", \"educated at\", \"University of Vienna\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"employer\", \"University of Prague\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"employer\", \"University of Vienna\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"spouse\", \"Adele\", \"PER\"],\n    [\"Richard Wettstein\", \"PER\", \"child\", \"Friedrich\", \"PER\"],\n    [\"Richard Wettstein\", \"PER\", \"member of\", \"Vienna Zoological-Botanical Society\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"position held\", \"president\", \"MISC\"],\n    [\"Richard Wettstein\", \"PER\", \"position held\", \"vice-president\", \"MISC\"],\n    [\"Richard Wettstein\", \"PER\", \"location of formation\", \"Vienna\", \"LOC\"],\n    [\"Wettstein system\", \"MISC\", \"creator\", \"Richard Wettstein\", \"PER\"],\n    [\"University of Vienna\", \"ORG\", \"located in\", \"Vienna\", \"LOC\"],\n    [\"Vienna Zoological-Botanical Society\", \"ORG\", \"located in\", \"Vienna\", \"LOC\"],\n    [\"International Botanical Congress\", \"ORG\", \"location\", \"Vienna\", \"LOC\"],\n    [\"Adele\", \"PER\", \"father\", \"Anton Kerner von Marilaun\", \"PER\"],\n    [\"Anton Kerner von Marilaun\", \"PER\", \"date of birth\", \"1831\", \"TIME\"],\n    [\"Anton Kerner von Marilaun\", \"PER\", \"date of death\", \"1898\", \"TIME\"],\n    [\"Friedrich\", \"PER\", \"father\", \"Richard Wettstein\", \"PER\"],\n    [\"Wettsteinina\", \"MISC\", \"named after\", \"Richard Wettstein\", \"PER\"],\n    [\"Richard Wettstein\", \"PER\", \"traveled to\", \"Brazil\", \"LOC\"],\n    [\"Richard Wettstein\", \"PER\", \"traveled to\", \"eastern Africa\", \"LOC\"],\n    [\"Richard Wettstein\", \"PER\", \"traveled to\", \"southern Africa\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 19,
+  "FN": 7,
+  "recall": 0.5333333333333333,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Richard Wettstein\", \"PER\", \"date of birth\", \"30 June 1863\", \"TIME\"],\n    [\"Richard Wettstein\", \"PER\", \"place of birth\", \"Vienna\", \"LOC\"],\n    [\"Richard Wettstein\", \"PER\", \"date of death\", \"10 August 1931\", \"TIME\"],\n    [\"Richard Wettstein\", \"PER\", \"place of death\", \"Trins\", \"LOC\"],\n    [\"Richard Wettstein\", \"PER\", \"educated at\", \"University of Vienna\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"employer\", \"University of Prague\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"employer\", \"University of Vienna\", \"ORG\"],\n    [\"Richard Wettstein\", \"PER\", \"spouse\", \"Adele\", \"PER\"],\n    [\"Richard Wettstein\", \"PER\", \"child\", \"Friedrich\", \"PER\"],\n    [\"Anton Kerner von Marilaun\", \"PER\", \"date of birth\", \"1831\", \"TIME\"],\n    [\"Anton Kerner von Marilaun\", \"PER\", \"date of death\", \"1898\", \"TIME\"],\n    [\"Wettstein system\", \"MISC\", \"creator\", \"Richard Wettstein\", \"PER\"],\n    [\"Vienna Zoological-Botanical Society\", \"ORG\", \"president\", \"Richard Wettstein\", \"PER\"],\n    [\"Vienna Academy of Sciences\", \"ORG\", \"vice-president\", \"Richard Wettstein\", \"PER\"],\n    [\"International Botanical Congress\", \"ORG\", \"co-president\", \"Richard Wettstein\", \"PER\"],\n    [\"Wettsteinina\", \"MISC\", \"named after\", \"Richard Wettstein\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 16,
+  "FN": 7,
+  "recall": 0.5333333333333333,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ }
+}

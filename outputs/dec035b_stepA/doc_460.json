@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_460",
+ "base_raw": "[\n    [\"Hannibal\", \"PER\", \"commanded\", \"Carthaginian army\", \"ORG\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"elected as\", \"Roman dictator\", \"MISC\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"commander of\", \"Roman field forces\", \"ORG\"],\n    [\"Battle of Ager Falernus\", \"MISC\", \"part of\", \"Second Punic War\", \"MISC\"],\n    [\"Carthaginian army\", \"ORG\", \"located in\", \"Falernum\", \"LOC\"],\n    [\"Roman army\", \"ORG\", \"led by\", \"Quintus Fabius Maximus Verrucosus\", \"PER\"],\n    [\"Hannibal\", \"PER\", \"used\", \"Fabian Strategy\", \"MISC\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"employed\", \"Fabian Strategy\", \"MISC\"],\n    [\"Battle of Lake Trasimene\", \"MISC\", \"location\", \"Italy\", \"LOC\"],\n    [\"Carthaginian army\", \"ORG\", \"moved to\", \"Campania\", \"LOC\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"camped near\", \"pass\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Hannibal\", \"PER\", \"commanded\", \"Carthaginian army\", \"ORG\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"elected\", \"Roman dictator\", \"MISC\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"commander of\", \"Roman field forces\", \"ORG\"],\n    [\"Battle of Lake Trasimene\", \"MISC\", \"location\", \"Italy\", \"LOC\"],\n    [\"Second Punic War\", \"MISC\", \"involved\", \"Rome\", \"LOC\"],\n    [\"Second Punic War\", \"MISC\", \"involved\", \"Carthage\", \"LOC\"],\n    [\"Campania\", \"LOC\", \"part of\", \"Italy\", \"LOC\"],\n    [\"Falernum\", \"LOC\", \"located in\", \"Campania\", \"LOC\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"employed\", \"Fabian Strategy\", \"MISC\"],\n    [\"Hannibal\", \"PER\", \"used\", \"brilliant tactics\", \"MISC\"],\n    [\"Roman guard\", \"ORG\", \"part of\", \"Roman army\", \"ORG\"],\n    [\"Carthaginian army\", \"ORG\", \"escaped from\", \"Roman trap\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 17,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Hannibal\", \"PER\", \"commanded\", \"army of Carthage\", \"ORG\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"commander of\", \"Roman field forces\", \"ORG\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"elected\", \"Roman dictator\", \"MISC\"],\n    [\"Battle of Ager Falernus\", \"MISC\", \"part of\", \"Second Punic War\", \"MISC\"],\n    [\"Campania\", \"LOC\", \"located in\", \"Italy\", \"LOC\"],\n    [\"Falernum\", \"LOC\", \"located in\", \"Campania\", \"LOC\"],\n    [\"Hannibal\", \"PER\", \"marched to\", \"Campania\", \"LOC\"],\n    [\"Quintus Fabius Maximus Verrucosus\", \"PER\", \"employed\", \"Fabian Strategy\", \"MISC\"],\n    [\"Roman field forces\", \"ORG\", \"commanded by\", \"Quintus Fabius Maximus Verrucosus\", \"PER\"],\n    [\"Carthaginian army\", \"ORG\", \"led by\", \"Hannibal\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

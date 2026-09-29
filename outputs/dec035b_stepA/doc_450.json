@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_450",
+ "base_raw": "[\n    [\"Carl Frederik Bricka\", \"PER\", \"date of birth\", \"July 10, 1845\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"date of death\", \"August 23, 1903\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"place of birth\", \"Copenhagen, Denmark\", \"LOC\"],\n    [\"Frederik Vilhelm Theodor Bricka\", \"PER\", \"date of birth\", \"1809\", \"TIME\"],\n    [\"Frederik Vilhelm Theodor Bricka\", \"PER\", \"date of death\", \"1879\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"father\", \"Frederik Vilhelm Theodor Bricka\", \"PER\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"educated at\", \"Metropolitanskolen\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"educated at\", \"University of Copenhagen\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"employer\", \"Danish Royal Library\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"employer\", \"Danish National Archives\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"member of\", \"Danish Historical Society\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"editor of\", \"Danske Magazin\", \"MISC\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"publisher of\", \"Dansk biografisk lexikon\", \"MISC\"],\n    [\"Dansk biografisk lexikon\", \"MISC\", \"publisher\", \"Gyldendal\", \"ORG\"],\n    [\"University of Copenhagen\", \"ORG\", \"location\", \"Copenhagen, Denmark\", \"LOC\"],\n    [\"Danish Royal Library\", \"ORG\", \"location\", \"Copenhagen, Denmark\", \"LOC\"],\n    [\"Danish National Archives\", \"ORG\", \"location\", \"Copenhagen, Denmark\", \"LOC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 11,
+  "FN": 11,
+  "recall": 0.35294117647058826,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Carl Frederik Bricka\", \"PER\", \"date of birth\", \"July 10, 1845\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"date of death\", \"August 23, 1903\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"place of birth\", \"Copenhagen\", \"LOC\"],\n    [\"Frederik Vilhelm Theodor Bricka\", \"PER\", \"date of birth\", \"1809\", \"TIME\"],\n    [\"Frederik Vilhelm Theodor Bricka\", \"PER\", \"date of death\", \"1879\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"father\", \"Frederik Vilhelm Theodor Bricka\", \"PER\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"educated at\", \"Metropolitanskolen\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"educated at\", \"University of Copenhagen\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"employer\", \"Danish Royal Library\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"employer\", \"Danish National Archives\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"position held\", \"department head\", \"MISC\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"member of\", \"Danish Historical Society\", \"ORG\"],\n    [\"Dansk biografisk lexikon\", \"MISC\", \"publisher\", \"Carl Frederik Bricka\", \"PER\"],\n    [\"Dansk biografisk lexikon\", \"MISC\", \"publisher\", \"Gyldendal\", \"ORG\"],\n    [\"Danske Magazin\", \"MISC\", \"editor\", \"Carl Frederik Bricka\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 10,
+  "recall": 0.4117647058823529,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 10,
+  "recall": 0.4117647058823529,
+  "n_extracted": 21,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Carl Frederik Bricka\", \"PER\", \"date of birth\", \"July 10, 1845\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"date of death\", \"August 23, 1903\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"place of birth\", \"Copenhagen\", \"LOC\"],\n    [\"Frederik Vilhelm Theodor Bricka\", \"PER\", \"date of birth\", \"1809\", \"TIME\"],\n    [\"Frederik Vilhelm Theodor Bricka\", \"PER\", \"date of death\", \"1879\", \"TIME\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"father\", \"Frederik Vilhelm Theodor Bricka\", \"PER\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"educated at\", \"Metropolitanskolen\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"educated at\", \"University of Copenhagen\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"employer\", \"Danish Royal Library\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"employer\", \"Danish National Archives\", \"ORG\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"position held\", \"department head\", \"MISC\"],\n    [\"Carl Frederik Bricka\", \"PER\", \"member of\", \"Danish Historical Society\", \"ORG\"],\n    [\"Dansk biografisk lexikon\", \"MISC\", \"publisher\", \"Carl Frederik Bricka\", \"PER\"],\n    [\"Dansk biografisk lexikon\", \"MISC\", \"publisher\", \"Gyldendal\", \"ORG\"],\n    [\"Danske Magazin\", \"MISC\", \"editor\", \"Carl Frederik Bricka\", \"PER\"]\n]"
+}

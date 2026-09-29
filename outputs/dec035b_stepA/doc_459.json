@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_459",
+ "base_raw": "[\n    [\"Birendra Krishna Bhadra\", \"PER\", \"place of birth\", \"Kolkata\", \"LOC\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"employer\", \"All India Radio\", \"ORG\"],\n    [\"Pankaj Mallick\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"Kazi Nazrul Islam\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"All India Radio\", \"ORG\", \"located in the administrative territorial entity\", \"India\", \"LOC\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Nishiddha Phal\", \"MISC\", \"director\", \"Birendra Krishna Bhadra\", \"PER\"],\n    [\"Mahishashura Mardini\", \"MISC\", \"author\", \"Birendra Krishna Bhadra\", \"PER\"],\n    [\"All India Radio Calcutta\", \"ORG\", \"located in\", \"Kolkata\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 7,
+  "recall": 0.3,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Indian Cities",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Birendra Krishna Bhadra\", \"PER\", \"date of birth\", \"1905\", \"TIME\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"date of death\", \"1991\", \"TIME\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"place of birth\", \"Kolkata\", \"LOC\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"employer\", \"All India Radio\", \"ORG\"],\n    [\"All India Radio\", \"ORG\", \"location\", \"India\", \"LOC\"],\n    [\"Pankaj Mallick\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"Kazi Nazrul Islam\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"notable work\", \"Mahishashura Mardini\", \"MISC\"],\n    [\"Mahishashura Mardini\", \"MISC\", \"genre\", \"Sanskrit recitation\", \"MISC\"],\n    [\"Nishiddha Phal\", \"MISC\", \"director\", \"Birendra Krishna Bhadra\", \"PER\"],\n    [\"All India Radio Calcutta\", \"ORG\", \"located in\", \"Kolkata\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Birendra Krishna Bhadra\", \"PER\", \"date of birth\", \"1905\", \"TIME\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"date of death\", \"1991\", \"TIME\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"place of birth\", \"Kolkata\", \"LOC\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"employer\", \"All India Radio\", \"ORG\"],\n    [\"Pankaj Mallick\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"Kazi Nazrul Islam\", \"PER\", \"country of citizenship\", \"India\", \"LOC\"],\n    [\"All India Radio\", \"ORG\", \"country\", \"India\", \"LOC\"],\n    [\"All India Radio Calcutta\", \"ORG\", \"located in\", \"Kolkata\", \"LOC\"],\n    [\"Mahishashura Mardini\", \"MISC\", \"author\", \"Birendra Krishna Bhadra\", \"PER\"],\n    [\"Nishiddha Phal\", \"MISC\", \"screenwriter\", \"Birendra Krishna Bhadra\", \"PER\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"Bengali theatre\", \"ORG\", \"location\", \"Kolkata\", \"LOC\"],\n    [\"Birendra Krishna Bhadra\", \"PER\", \"member of\", \"Bengali theatre\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 4,
+  "recall": 0.6,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

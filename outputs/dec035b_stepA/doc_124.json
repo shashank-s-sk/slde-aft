@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_124",
+ "base_raw": "[\n    [\"PocketStation\", \"MISC\", \"developer\", \"Sony Computer Entertainment\", \"ORG\"],\n    [\"PocketStation\", \"MISC\", \"release date\", \"January 23, 1999\", \"TIME\"],\n    [\"PocketStation\", \"MISC\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"Sony Computer Entertainment\", \"ORG\", \"country\", \"Japan\", \"LOC\"],\n    [\"PlayStation\", \"MISC\", \"manufacturer\", \"Sony Computer Entertainment, ORG\"],\n    [\"Dokodemo Issho\", \"MISC\", \"platform\", \"PocketStation\", \"MISC\"],\n    [\"Toro\", \"MISC\", \"creator\", \"Sony\", \"ORG\"],\n    [\"PocketStation\", \"MISC\", \"discontinued date\", \"July 2002\", \"TIME\"],\n    [\"PlayStation Vita\", \"MISC\", \"manufacturer\", \"Sony Computer Entertainment\", \"ORG\"],\n    [\"PocketStation\", \"MISC\", \"revival date\", \"November 5, 2013\", \"TIME\"],\n    [\"Sega\", \"ORG\", \"country\", \"Japan\", LOC],\n    [\"VMU\", \"MISC\", \"developer\", \"Sega\", \"ORG\"],\n    [\"Dreamcast\", \"MISC\", \"manufacturer\", \"Sega\", \"ORG\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 0,
+  "FN": 17,
+  "recall": 0.0,
+  "n_extracted": 0,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"PocketStation\", \"MISC\", \"release date\", \"January 23, 1999\", \"TIME\"],\n    [\"PocketStation\", \"MISC\", \"discontinued date\", \"July 2002\", \"TIME\"],\n    [\"PocketStation\", \"MISC\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"Dokodemo Issho\", \"MISC\", \"sales\", \"1.5 million\", \"NUM\"],\n    [\"Toro\", \"MISC\", \"employer\", \"Sony\", \"ORG\"],\n    [\"Final Fantasy VIII\", \"MISC\", \"platform\", \"PlayStation\", \"MISC\"],\n    [\"SaGa Frontier 2\", \"MISC\", \"platform\", \"PlayStation\", \"MISC\"],\n    [\"PlayStation Vita\", \"MISC\", \"release date\", \"November 5, 2013\", \"TIME\"],\n    [\"Sega\", \"ORG\", \"developer\", \"VMU\", \"MISC\"],\n    [\"VMU\", \"MISC\", \"platform\", \"Dreamcast\", \"MISC\"],\n    [\"PlayStation Plus\", \"MISC\", \"member benefit\", \"PocketStation application\", \"MISC\"],\n    [\"Sony Computer Entertainment\", \"ORG\", \"developer\", \"PocketStation\", \"MISC\"],\n    [\"PocketStation\", \"MISC\", \"manufacturer\", \"Sony\", \"ORG\"],\n    [\"PlayStation\", \"MISC\", \"accessory\", \"PocketStation\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 14,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"PocketStation\", \"MISC\", \"release date\", \"January 23, 1999\", \"TIME\"],\n    [\"PocketStation\", \"MISC\", \"discontinued date\", \"July 2002\", \"TIME\"],\n    [\"PocketStation\", \"MISC\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"Dokodemo Issho\", \"MISC\", \"sales\", \"1.5 million\", \"NUM\"],\n    [\"Toro\", \"MISC\", \"employer\", \"Sony\", \"ORG\"],\n    [\"Final Fantasy VIII\", \"MISC\", \"platform\", \"PlayStation\", \"MISC\"],\n    [\"SaGa Frontier 2\", \"MISC\", \"platform\", \"PlayStation\", \"MISC\"],\n    [\"PlayStation Vita\", \"MISC\", \"release date\", \"November 5, 2013\", \"TIME\"],\n    [\"Sega\", \"ORG\", \"developer\", \"VMU\", \"MISC\"],\n    [\"VMU\", \"MISC\", \"platform\", \"Dreamcast\", \"MISC\"],\n    [\"PlayStation Plus\", \"MISC\", \"member benefit\", \"PocketStation application\", \"MISC\"],\n    [\"Sony Computer Entertainment\", \"ORG\", \"developer\", \"PocketStation\", \"MISC\"],\n    [\"PocketStation\", \"MISC\", \"manufacturer\", \"Sony\", \"ORG\"],\n    [\"PlayStation\", \"MISC\", \"accessory\", \"PocketStation\", \"MISC\"]\n]"
+}

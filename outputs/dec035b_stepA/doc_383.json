@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_383",
+ "base_raw": "[\n    [\"Nina Landis\", \"PER\", \"educated at\", \"Flinders University Adelaide\", \"ORG\"],\n    [\"Nina Landis\", \"PER\", \"place of education\", \"Australia\", \"LOC\"],\n    [\"Nina Landis\", \"PER\", \"trained in\", \"New York\", \"LOC\"],\n    [\"Nina Landis\", \"PER\", \"member of\", \"State theatre companies\", \"ORG\"],\n    [\"Nina Landis\", \"PER\", \"performer\", \"fringe theatres\", \"ORG\"],\n    [\"Nina Landis\", \"PER\", \"lectures on\", \"The Art and Nature of Acting\", \"MISC\"],\n    [\"Nina Landis\", \"PER\", \"occupation\", \"voice-over artist\", \"MISC\"],\n    [\"Nina Landis\", \"PER\", \"occupation\", \"documentary photographer\", \"MISC\"],\n    [\"Rikky and Pete\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"Komodo\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"Four of a Kind\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"Handle with Care\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"Embassy\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"Prime Time\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"The Keepers\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"One Summer Again\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"MDA\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"The Flying Doctors\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"Prisoner\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"],\n    [\"A Country Practice\", \"MISC\", \"starring\", \"Nina Landis\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 16,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Nina Landis\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Nina Landis\", \"PER\", \"educated at\", \"Flinders University\", \"ORG\"],\n    [\"Nina Landis\", \"PER\", \"place of education\", \"Adelaide\", \"LOC\"],\n    [\"Nina Landis\", \"PER\", \"trained at\", \"New York\", \"LOC\"],\n    [\"Rikky and Pete\", \"MISC\", \"genre\", \"feature film\", \"MISC\"],\n    [\"Nina Landis\", \"PER\", \"member of\", \"State theatre companies\", \"ORG\"],\n    [\"Nina Landis\", \"PER\", \"lectures on\", \"The Art and Nature of Acting\", \"MISC\"],\n    [\"Nina Landis\", \"PER\", \"occupation\", \"voice-over artist\", \"MISC\"],\n    [\"Nina Landis\", \"PER\", \"occupation\", \"documentary photographer\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 21,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Nina Landis\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Nina Landis\", \"PER\", \"educated at\", \"Flinders University\", \"ORG\"],\n    [\"Nina Landis\", \"PER\", \"place of education\", \"Adelaide\", \"LOC\"],\n    [\"Nina Landis\", \"PER\", \"trained in\", \"New York\", \"LOC\"],\n    [\"Rikky and Pete\", \"MISC\", \"genre\", \"feature film\", \"MISC\"],\n    [\"Nina Landis\", \"PER\", \"member of\", \"State theatre companies\", \"ORG\"],\n    [\"Nina Landis\", \"PER\", \"lectures on\", \"The Art and Nature of Acting\", \"MISC\"],\n    [\"Nina Landis\", \"PER\", \"occupation\", \"voice-over artist\", \"MISC\"],\n    [\"Nina Landis\", \"PER\", \"occupation\", \"documentary photographer\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 20,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ }
+}

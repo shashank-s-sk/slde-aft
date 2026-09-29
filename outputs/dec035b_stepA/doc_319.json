@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_319",
+ "base_raw": "[\n    [\"Nancy Nigrosh\", \"PER\", \"educated at\", \"NYU\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"educated at\", \"UCLA\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"mentor\", \"Terry Southern\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"employer\", \"The Gersh Agency\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"employer\", \"Innovative Artists\", \"ORG\"],\n    [\"Chris Eyre\", \"PER\", \"represented by\", \"Nancy Nigrosh\", \"PER\"],\n    [\"Kathryn Bigelow\", \"PER\", \"represented by\", \"Nancy Nigrosh\", \"PER\"],\n    [\"Amanda Brown\", \"PER\", \"represented by\", \"Nancy Nigrosh\", \"PER\"],\n    [\"Stuart Beattie\", \"PER\", \"represented by\", \"Nancy Nigrosh\", \"PER\"],\n    [\"Leslye Headland\", \"PER\", \"represented by\", \"Nancy Nigrosh\", \"PER\"],\n    [\"Barry Morrow\", \"PER\", \"represented by\", \"Nancy Nigrosh\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"position held\", \"script supervisor\", \"MISC\"],\n    [\"Nancy Nigrosh\", \"PER\", \"position held\", \"literary agent\", \"MISC\"],\n    [\"Nancy Nigrosh\", \"PER\", \"position held\", \"writers' career consultant\", \"MISC\"],\n    [\"Nancy Nigrosh\", \"PER\", \"affiliation\", \"UCLA Extension Writers' Program\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"contributor to\", \"Indiewire\", \"ORG\"],\n    [\"Terry Southern\", \"PER\", \"position held\", \"mentor\", \"MISC\"],\n    [\"Martin Scorsese\", \"PER\", \"work\", \"Mean Streets\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 15,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Nancy Nigrosh\", \"PER\", \"employer\", \"The Gersh Agency\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"member of\", \"Innovative Artists\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Chris Eyre\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Kathryn Bigelow\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Amanda Brown\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Stuart Beattie\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Leslye Headland\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Barry Morrow\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"educated at\", \"NYU's Tisch School of the Arts\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"mentor\", \"Terry Southern\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"educated at\", \"UCLA's School of Theater Film & Television Department\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"worked with\", \"Martin Scorsese\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"position held\", \"script supervisor\", \"MISC\"],\n    [\"Nancy Nigrosh\", \"PER\", \"position held\", \"freelance reader\", \"MISC\"],\n    [\"Nancy Nigrosh\", \"PER\", \"position held\", \"literary agent\", \"MISC\"],\n    [\"Nancy Nigrosh\", \"PER\", \"position held\", \"writers' career consultant\", \"MISC\"],\n    [\"Nancy Nigrosh\", \"PER\", \"teacher at\", \"UCLA Extension Writers' Program\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"contributor to\", \"Indiewire's 'Thompson on Hollywood' blog\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 29,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Nancy Nigrosh\", \"PER\", \"educated at\", \"NYU\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"educated at\", \"UCLA\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"mentor\", \"Terry Southern\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"employer\", \"Innovative Artists\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"member of\", \"The Gersh Agency Literary Department\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Chris Eyre\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Kathryn Bigelow\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Amanda Brown\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Stuart Beattie\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Leslye Headland\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"client\", \"Barry Morrow\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"position held\", \"script supervisor\", \"MISC\"],\n    [\"Nancy Nigrosh\", \"PER\", \"worked with\", \"Martin Scorsese\", \"PER\"],\n    [\"Mean Streets\", \"MISC\", \"director\", \"Martin Scorsese\", \"PER\"],\n    [\"Nancy Nigrosh\", \"PER\", \"contributor to\", \"Indiewire\", \"ORG\"],\n    [\"Nancy Nigrosh\", \"PER\", \"teacher at\", \"UCLA Extension Writers' Program\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 27,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

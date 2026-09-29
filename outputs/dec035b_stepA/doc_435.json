@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_435",
+ "base_raw": "[\n    [\"Ibergeregg Pass\", \"LOC\", \"located in the administrative territorial entity\", \"Schwyz\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"connects\", \"Schwyz\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"connects\", \"Oberiberg\", \"LOC\"],\n    [\"Minster\", \"MISC\", \"located near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Sihl\", \"MISC\", \"has tributary\", \"Minster\", \"MISC\"],\n    [\"Furggelenstock\", \"LOC\", \"located near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Firstspitz\", \"LOC\", \"located near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"has maximum grade\", \"14 percent\", \"NUM\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"has\", \"inn\", \"MISC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"has\", \"chapel\", \"MISC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"has\", \"ski station\", \"MISC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"part of\", \"Alps\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 11,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Ibergeregg Pass\", \"LOC\", \"located in\", \"Swiss canton of Schwyz\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"connects\", \"Schwyz\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"connects\", \"Oberiberg\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"near\", \"Einsiedeln\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"near\", \"Sihlsee\", \"LOC\"],\n    [\"Minster\", \"LOC\", \"located near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Sihl\", \"LOC\", \"has tributary\", \"Minster\", \"LOC\"],\n    [\"Furggelenstock\", \"LOC\", \"near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Firstspitz\", \"LOC\", \"near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"has maximum grade\", \"14 percent\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Ibergeregg Pass\", \"LOC\", \"located in\", \"Swiss canton of Schwyz\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"connects\", \"Schwyz\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"connects\", \"Oberiberg\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"near\", \"Einsiedeln\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"near\", \"Sihlsee\", \"LOC\"],\n    [\"Minster\", \"LOC\", \"located near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Sihl\", \"LOC\", \"has tributary\", \"Minster\", \"LOC\"],\n    [\"Furggelenstock\", \"LOC\", \"near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Firstspitz\", \"LOC\", \"near\", \"Ibergeregg Pass\", \"LOC\"],\n    [\"Ibergeregg Pass\", \"LOC\", \"has maximum grade\", \"14 percent\", \"NUM\"]\n]"
+}

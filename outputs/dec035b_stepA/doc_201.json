@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_201",
+ "base_raw": "[\n    [\"Scotland\", \"LOC\", \"located in the administrative territorial entity\", \"United Kingdom\", \"LOC\"],\n    [\"Gretna Green\", \"LOC\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Scots law\", \"MISC\", \"part of\", \"law of marriage\", \"MISC\"],\n    [\"Church of Scotland\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Humanist Society Scotland\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Human Rights Act 1998\", \"MISC\", \"applies to jurisdiction\", \"United Kingdom\", \"LOC\"],\n    [\"Marriage (Scotland) Act 1977\", \"MISC\", \"part of\", \"Scots law\", \"MISC\"],\n    [\"Registrar General\", \"PER\", \"position held\", \"registrar\", \"MISC\"],\n    [\"Scottish Government\", \"ORG\", \"headquarters location\", \"Scotland\", \"LOC\"],\n    [\"Scottish Parliament\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Humanist Society Scotland\", \"ORG\", \"member of\", \"humanists\", \"MISC\"],\n    [\"Church of Scotland\", \"ORG\", \"member of\", \"Christians\", \"MISC\"],\n    [\"Scotland\", \"LOC\", \"country of origin\", \"humanist marriages\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 19,
+  "recall": 0.05,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Scotland\", \"LOC\", \"located in\", \"United Kingdom\", \"LOC\"],\n    [\"Gretna Green\", \"LOC\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Church of Scotland\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Scots law\", \"MISC\", \"part of\", \"Scotland\", \"LOC\"],\n    [\"Humanist Society Scotland\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Human Rights Act 1998\", \"MISC\", \"applies to jurisdiction\", \"United Kingdom\", \"LOC\"],\n    [\"Scotland\", \"LOC\", \"country of origin\", \"humanist marriages\", \"MISC\"],\n    [\"Scottish Government\", \"ORG\", \"headquarters location\", \"Scotland\", \"LOC\"],\n    [\"Scottish Parliament\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"same-sex marriage\", \"MISC\", \"legal in\", \"Scotland\", \"LOC\"],\n    [\"2005\", \"TIME\", \"year of\", \"introduction of civil partnerships\", \"MISC\"],\n    [\"2011\", \"TIME\", \"year of\", \"public consultation on same-sex marriage\", \"MISC\"],\n    [\"2014\", \"TIME\", \"year of\", \"passage of same-sex marriage bill\", \"MISC\"],\n    [\"2017\", \"TIME\", \"year of\", \"Humanist Society Scotland conducting more marriages than Church of Scotland\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 19,
+  "FN": 15,
+  "recall": 0.21052631578947367,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Scotland\", \"LOC\", \"located in\", \"United Kingdom\", \"LOC\"],\n    [\"Gretna Green\", \"LOC\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Church of Scotland\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Scots law\", \"MISC\", \"part of\", \"Scotland\", \"LOC\"],\n    [\"Marriage (Scotland) Act 1977\", \"MISC\", \"applies to jurisdiction\", \"Scotland\", \"LOC\"],\n    [\"Humanist Society Scotland\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Human Rights Act 1998\", \"MISC\", \"applies to jurisdiction\", \"United Kingdom\", \"LOC\"],\n    [\"Scottish Government\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"Scottish Parliament\", \"ORG\", \"located in\", \"Scotland\", \"LOC\"],\n    [\"United Kingdom\", \"LOC\", \"contains administrative territorial entity\", \"Scotland\", \"LOC\"],\n    [\"Scotland\", \"LOC\", \"country of origin\", \"Humanist Society Scotland\", \"ORG\"],\n    [\"Church of Scotland\", \"ORG\", \"member of\", \"Scotland\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 18,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

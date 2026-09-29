@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_128",
+ "base_raw": "[\n    [\"Charles Abraham Chasselat\", \"PER\", \"place of birth\", \"Paris\", \"LOC\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"father\", \"Pierre Chasselat\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"date of birth\", \"1782\", \"TIME\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"educated at\", \"Vincent\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrator of\", \"Voltaire\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrator of\", \"Racine\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrator of\", \"Moli\u00e8re\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrator of\", \"Jane Austen\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"date of death\", \"1843\", \"TIME\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"father\", \"Charles Abraham Chasselat\", \"PER\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"date of birth\", \"1813\", \"TIME\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"date of death\", \"1880\", \"TIME\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"educated at\", \"Lethi\u00e8re\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Persons",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Charles Abraham Chasselat\", \"PER\", \"father\", \"Pierre Chasselat\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"place of birth\", \"Paris\", \"LOC\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"date of birth\", \"1782\", \"TIME\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"educated at\", \"Vincent\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrated works of\", \"Voltaire\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrated works of\", \"Racine\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrated works of\", \"Moli\u00e8re\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrated works of\", \"Jane Austen\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"date of death\", \"1843\", \"TIME\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"father\", \"Charles Abraham Chasselat\", \"PER\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"date of birth\", \"1813\", \"TIME\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"educated at\", \"Lethi\u00e8re\", \"PER\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"date of death\", \"1880\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 13,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Charles Abraham Chasselat\", \"PER\", \"place of birth\", \"Paris\", \"LOC\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"father\", \"Pierre Chasselat\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"date of birth\", \"1782\", \"TIME\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"educated at\", \"Vincent\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrator of\", \"Voltaire\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrator of\", \"Racine\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrator of\", \"Moli\u00e8re\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"illustrator of\", \"Jane Austen\", \"PER\"],\n    [\"Charles Abraham Chasselat\", \"PER\", \"date of death\", \"1843\", \"TIME\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"father\", \"Charles Abraham Chasselat\", \"PER\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"date of birth\", \"1813\", \"TIME\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"educated at\", \"Lethi\u00e8re\", \"PER\"],\n    [\"Henri J. Saint-Ange Chasselat\", \"PER\", \"date of death\", \"1880\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

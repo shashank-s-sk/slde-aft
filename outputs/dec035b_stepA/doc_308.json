@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_308",
+ "base_raw": "[\n    [\"Garry Kasparov\", \"PER\", \"member of\", \"Solidarnost\", \"ORG\"],\n    [\"Boris Nemtsov\", \"PER\", \"member of\", \"Solidarnost\", \"ORG\"],\n    [\"Yabloko\", \"ORG\", \"member of\", \"Solidarnost\", \"ORG\"],\n    [\"Union of Right Forces\", \"ORG\", \"merged with\", \"Democratic Party of Russia\", \"ORG\"],\n    [\"Union of Right Forces\", \"ORG\", \"merged with\", \"Civilian Power\", \"ORG\"],\n    [\"Dmitri Medvedev\", \"PER\", \"nominated\", \"Nikita Belykh\", \"PER\"],\n    [\"Nikita Belykh\", \"PER\", \"governor of\", \"Kirov Oblast\", \"LOC\"],\n    [\"Nikita Belykh\", \"PER\", \"former leader of\", \"Union of Right Forces\", \"ORG\"],\n    [\"Solidarnost\", \"ORG\", \"founded by\", \"Garry Kasparov\", \"PER\"],\n    [\"Solidarnost\", \"ORG\", \"founded by\", \"Boris Nemtsov\", \"PER\"],\n    [\"Committee 2008\", \"ORG\", \"member of\", \"Solidarnost\", \"ORG\"],\n    [\"People's Democratic Union\", \"ORG\", \"member of\", \"Solidarnost\", \"ORG\"],\n    [\"United Civil Front\", \"ORG\", \"member of\", \"Solidarnost\", \"ORG\"],\n    [\"The Other Russia\", \"ORG\", \"member of\", \"Solidarnost\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Union of Right Forces\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Democratic Party of Russia\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Civilian Power\", \"ORG\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 15,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Garry Kasparov\", \"PER\", \"member of\", \"Yabloko\", \"ORG\"],\n    [\"Boris Nemtsov\", \"PER\", \"member of\", \"Yabloko\", \"ORG\"],\n    [\"Nikita Belykh\", \"PER\", \"leader of\", \"Union of Right Forces\", \"ORG\"],\n    [\"Nikita Belykh\", \"PER\", \"governor of\", \"Kirov Oblast\", \"LOC\"],\n    [\"Dmitri Medvedev\", \"PER\", \"president of\", \"Russia\", \"LOC\"],\n    [\"Solidarnost\", \"ORG\", \"founded by\", \"Garry Kasparov\", \"PER\"],\n    [\"Solidarnost\", \"ORG\", \"founded by\", \"Boris Nemtsov\", \"PER\"],\n    [\"Union of Right Forces\", \"ORG\", \"merged with\", \"Democratic Party of Russia\", \"ORG\"],\n    [\"Union of Right Forces\", \"ORG\", \"merged with\", \"Civilian Power\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Union of Right Forces\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Democratic Party of Russia\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Civilian Power\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 21,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 21,
+  "FN": 9,
+  "recall": 0.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Garry Kasparov\", \"PER\", \"member of\", \"Yabloko\", \"ORG\"],\n    [\"Boris Nemtsov\", \"PER\", \"member of\", \"Yabloko\", \"ORG\"],\n    [\"Nikita Belykh\", \"PER\", \"leader of\", \"Union of Right Forces\", \"ORG\"],\n    [\"Nikita Belykh\", \"PER\", \"governor of\", \"Kirov Oblast\", \"LOC\"],\n    [\"Dmitri Medvedev\", \"PER\", \"president of\", \"Russia\", \"LOC\"],\n    [\"Solidarnost\", \"ORG\", \"founded by\", \"Garry Kasparov\", \"PER\"],\n    [\"Solidarnost\", \"ORG\", \"founded by\", \"Boris Nemtsov\", \"PER\"],\n    [\"Union of Right Forces\", \"ORG\", \"merged with\", \"Democratic Party of Russia\", \"ORG\"],\n    [\"Union of Right Forces\", \"ORG\", \"merged with\", \"Civilian Power\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Union of Right Forces\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Democratic Party of Russia\", \"ORG\"],\n    [\"Right Cause\", \"ORG\", \"formed by\", \"Civilian Power\", \"ORG\"]\n]"
+}

@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_82",
+ "base_raw": "[\n    [\"Brasiguaio\", \"MISC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Brasiguaios\", \"MISC\", \"country of origin\", \"Brazil\", \"LOC\"],\n    [\"Canindey\u00fa\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Alto Paran\u00e1\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Paran\u00e1\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Santa Catarina\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Rio Grande do Sul\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"San Alberto de Mbaracay\u00fa\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Brasiguaios\", \"MISC\", \"ethnic group\", \"White\", \"MISC\"],\n    [\"Brasiguaios\", \"MISC\", \"ethnic group\", \"German\", \"MISC\"],\n    [\"Brasiguaios\", \"MISC\", \"ethnic group\", \"Italian\", \"MISC\"],\n    [\"Brasiguaios\", \"MISC\", \"ethnic group\", \"Polish\", \"MISC\"],\n    [\"Portuguese\", \"MISC\", \"language spoken in\", \"San Alberto de Mbaracay\u00fa\", \"LOC\"],\n    [\"Brasiguaios\", \"MISC\", \"population\", \"455,000\", \"NUM\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 8,
+  "FN": 15,
+  "recall": 0.2857142857142857,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Brasiguaio\", \"MISC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Brasiguaio\", \"MISC\", \"originated from\", \"Brazil\", \"LOC\"],\n    [\"Canindey\u00fa\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Alto Paran\u00e1\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Paraguay\", \"LOC\", \"shares border with\", \"Brazil\", \"LOC\"],\n    [\"Brasiguayos\", \"MISC\", \"language spoken\", \"Portuguese\", \"MISC\"],\n    [\"San Alberto de Mbaracay\u00fa\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Paran\u00e1\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Santa Catarina\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Rio Grande do Sul\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Brasiguayos\", \"MISC\", \"ethnic group\", \"White\", \"MISC\"],\n    [\"Brasiguayos\", \"MISC\", \"ancestry\", \"German\", \"MISC\"],\n    [\"Brasiguayos\", \"MISC\", \"ancestry\", \"Italian\", \"MISC\"],\n    [\"Brasiguayos\", \"MISC\", \"ancestry\", \"Polish\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 15,
+  "FN": 16,
+  "recall": 0.2727272727272727,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Brasiguaio\", \"MISC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Brasiguaios\", \"MISC\", \"country of origin\", \"Brazil\", \"LOC\"],\n    [\"Canindey\u00fa\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Alto Paran\u00e1\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Paran\u00e1\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Santa Catarina\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"Rio Grande do Sul\", \"LOC\", \"part of\", \"Brazil\", \"LOC\"],\n    [\"San Alberto de Mbaracay\u00fa\", \"LOC\", \"located in\", \"Paraguay\", \"LOC\"],\n    [\"Brasiguaios\", \"MISC\", \"ethnic group\", \"White\", \"MISC\"],\n    [\"Brasiguaios\", \"MISC\", \"ethnic group\", \"German\", \"MISC\"],\n    [\"Brasiguaios\", \"MISC\", \"ethnic group\", \"Italian\", \"MISC\"],\n    [\"Brasiguaios\", \"MISC\", \"ethnic group\", \"Polish\", \"MISC\"],\n    [\"Portuguese\", \"MISC\", \"language spoken in\", \"San Alberto de Mbaracay\u00fa\", \"LOC\"],\n    [\"Brasiguaios\", \"MISC\", \"population\", \"455,000\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 8,
+  "FN": 15,
+  "recall": 0.2857142857142857,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

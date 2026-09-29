@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_371",
+ "base_raw": "[\n    [\"The City of Ember\", \"MISC\", \"author\", \"Jeanne DuPrau\", \"PER\"],\n    [\"The City of Ember\", \"MISC\", \"publication date\", \"2003\", \"TIME\"],\n    [\"Lina Mayfleet\", \"PER\", \"friend\", \"Doon Harrow\", \"PER\"],\n    [\"The City of Ember\", \"MISC\", \"adapted into film by\", \"Walden Media\", \"ORG\"],\n    [\"The City of Ember\", \"MISC\", \"adapted into film by\", \"Playtone\", \"ORG\"],\n    [\"The City of Ember\", \"MISC\", \"graphic novel adaptation by\", \"Niklas Asker\", \"PER\"],\n    [\"The graphic novel adaptation of The City of Ember\", \"MISC\", \"publication date\", \"September 25, 2012\", \"TIME\"],\n    [\"The City of Ember\", \"MISC\", \"part of\", \"Book of Ember series\", \"MISC\"],\n    [\"The Book of Ember series\", \"MISC\", \"includes\", \"The People of Sparks\", \"MISC\"],\n    [\"The Book of Ember series\", \"MISC\", \"includes\", \"The Prophet of Yonwood\", \"MISC\"],\n    [\"The Book of Ember series\", \"MISC\", \"includes\", \"The Diamond of Darkhold\", \"MISC\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 3,
+  "FN": 22,
+  "recall": 0.26666666666666666,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"The City of Ember\", \"MISC\", \"author\", \"Jeanne DuPrau\", \"PER\"],\n    [\"The City of Ember\", \"MISC\", \"publication date\", \"2003\", \"TIME\"],\n    [\"Lina Mayfleet\", \"PER\", \"friend\", \"Doon Harrow\", \"PER\"],\n    [\"The City of Ember\", \"MISC\", \"adapted into film by\", \"Walden Media\", \"ORG\"],\n    [\"The City of Ember\", \"MISC\", \"adapted into film by\", \"Playtone\", \"ORG\"],\n    [\"The City of Ember\", \"MISC\", \"graphic novel adaptation by\", \"Niklas Asker\", \"PER\"],\n    [\"The City of Ember\", \"MISC\", \"graphic novel adaptation release date\", \"September 25, 2012\", \"TIME\"],\n    [\"The People of Sparks\", \"MISC\", \"part of series\", \"Book of Ember\", \"MISC\"],\n    [\"The Prophet of Yonwood\", \"MISC\", \"part of series\", \"Book of Ember\", \"MISC\"],\n    [\"The Diamond of Darkhold\", \"MISC\", \"part of series\", \"Book of Ember\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 21,
+  "recall": 0.125,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 12,
+  "FN": 21,
+  "recall": 0.125,
+  "n_extracted": 15,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"The City of Ember\", \"MISC\", \"author\", \"Jeanne DuPrau\", \"PER\"],\n    [\"The City of Ember\", \"MISC\", \"publication date\", \"2003\", \"TIME\"],\n    [\"Lina Mayfleet\", \"PER\", \"friend\", \"Doon Harrow\", \"PER\"],\n    [\"The City of Ember\", \"MISC\", \"adapted into film by\", \"Walden Media\", \"ORG\"],\n    [\"The City of Ember\", \"MISC\", \"adapted into film by\", \"Playtone\", \"ORG\"],\n    [\"The City of Ember\", \"MISC\", \"graphic novel adaptation by\", \"Niklas Asker\", \"PER\"],\n    [\"The City of Ember\", \"MISC\", \"graphic novel adaptation release date\", \"September 25, 2012\", \"TIME\"],\n    [\"The People of Sparks\", \"MISC\", \"part of series\", \"Book of Ember\", \"MISC\"],\n    [\"The Prophet of Yonwood\", \"MISC\", \"part of series\", \"Book of Ember\", \"MISC\"],\n    [\"The Diamond of Darkhold\", \"MISC\", \"part of series\", \"Book of Ember\", \"MISC\"]\n]"
+}

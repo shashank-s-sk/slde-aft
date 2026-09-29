@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_38",
+ "base_raw": "[\n    [\"Al-Nasir Muhammad ibn Qalawun\", \"PER\", \"reign\", \"1296\", \"TIME\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"reign\", \"1296\", \"TIME\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"return to throne\", \"1299\", \"TIME\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"completion of construction\", \"1303\", \"TIME\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"construction of mausoleum\", \"Madrassa of Al-Nasir Muhammad\", \"MISC\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"construction of minaret\", \"Madrassa of Al-Nasir Muhammad\", \"MISC\"],\n    [\"Al-Nuwayri\", \"PER\", \"author\", \"Islamic history\", \"MISC\"],\n    [\"Al-Maqrizi\", \"PER\", \"author\", \"Islamic history\", \"MISC\"],\n    [\"Madrassa of Al-Nasir Muhammad\", \"MISC\", \"located in\", \"Bayn al-Qasrayn\", \"LOC\"],\n    [\"Madrassa of Al-Nasir Muhammad\", \"MISC\", \"part of\", \"Qalawun complex\", \"MISC\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"construction of prayer iwan\", \"Madrassa of Al-Nasir Muhammad\", \"MISC\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"completion of building\", \"Madrassa of Al-Nasir Muhammad\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 12,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Al-Nasir Muhammad ibn Qalawun\", \"PER\", \"reign\", \"1296\", \"TIME\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"reign\", \"1296\", \"TIME\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"return to throne\", \"1299\", \"TIME\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"completion of construction\", \"1303\", \"TIME\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"construction of mausoleum\", \"Madrassa of Al-Nasir Muhammad\", \"MISC\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"construction of minaret\", \"Madrassa of Al-Nasir Muhammad\", \"MISC\"],\n    [\"Al-Nuwayri\", \"PER\", \"author\", \"Islamic history\", \"MISC\"],\n    [\"Al-Maqrizi\", \"PER\", \"author\", \"Islamic history\", \"MISC\"],\n    [\"Madrassa of Al-Nasir Muhammad\", \"MISC\", \"located in\", \"Bayn al-Qasrayn\", \"LOC\"],\n    [\"Madrassa of Al-Nasir Muhammad\", \"MISC\", \"part of\", \"Qalawun complex\", \"MISC\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"construction up to\", \"top of inscription band\", \"MISC\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"carried out construction\", \"rest of building\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 14,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 14,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Al-Nasir Muhammad ibn Qalawun\", \"PER\", \"reign\", \"1296\", \"TIME\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"reign\", \"1296\", \"TIME\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"return to throne\", \"1299\", \"TIME\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"completion of construction\", \"1303\", \"TIME\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"construction of mausoleum\", \"Madrassa of Al-Nasir Muhammad\", \"MISC\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"construction of minaret\", \"Madrassa of Al-Nasir Muhammad\", \"MISC\"],\n    [\"Al-Nuwayri\", \"PER\", \"author\", \"Islamic history\", \"MISC\"],\n    [\"Al-Maqrizi\", \"PER\", \"author\", \"Islamic history\", \"MISC\"],\n    [\"Madrassa of Al-Nasir Muhammad\", \"MISC\", \"located in\", \"Bayn al-Qasrayn\", \"LOC\"],\n    [\"Madrassa of Al-Nasir Muhammad\", \"MISC\", \"part of\", \"Qalawun complex\", \"MISC\"],\n    [\"Al-Adil Kitbugha\", \"PER\", \"construction up to\", \"top of inscription band\", \"MISC\"],\n    [\"Al-Nasir Muhammad\", \"PER\", \"carried out construction\", \"rest of building\", \"MISC\"]\n]"
+}

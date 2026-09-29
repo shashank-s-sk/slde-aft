@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_58",
+ "base_raw": "[\n    [\"\u015eemdin Sak\u0131k\", \"PER\", \"member of\", \"PKK\", \"ORG\"],\n    [\"Do\u011fu \u00c7al\u0131\u015fma Grubu\", \"ORG\", \"part of\", \"Turkish military\", \"ORG\"],\n    [\"Turkish Gendarmerie\", \"ORG\", \"has part\", \"JITEM\", \"ORG\"],\n    [\"Turgut \u00d6zal\", \"PER\", \"place of death\", \"Turkey\", \"LOC\"],\n    [\"Cem Ersever\", \"PER\", \"member of\", \"Turkish military\", \"ORG\"],\n    [\"E\u015fref Bitlis\", \"PER\", \"position held\", \"general commander\", \"MISC\"],\n    [\"Bahtiyar Ayd\u0131n\", \"PER\", \"position held\", \"General\", \"MISC\"],\n    [\"R\u0131dvan \u00d6zden\", \"PER\", \"member of\", \"Turkish military\", \"ORG\"],\n    [\"Do\u011fu \u00c7al\u0131\u015fma Grubu\", \"ORG\", \"linked to\", \"Ergenekon organization\", \"ORG\"],\n    [\"\u015eemdin Sak\u0131k\", \"PER\", \"former position\", \"commander\", \"MISC\"],\n    [\"Turgut \u00d6zal\", \"PER\", \"date of death\", \"17 April 1993\", \"TIME\"],\n    [\"R\u0131dvan \u00d6zden\", \"PER\", \"date of death\", \"1995\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 12,
+  "FN": 12,
+  "recall": 0.0,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Do\u011fu \u00c7al\u0131\u015fma Grubu\", \"ORG\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"\u015eemdin Sak\u0131k\", \"PER\", \"member of\", \"PKK\", \"ORG\"],\n    [\"Turgut \u00d6zal\", \"PER\", \"place of death\", \"Turkey\", \"LOC\"],\n    [\"Cem Ersever\", \"PER\", \"member of\", \"Turkish military\", \"ORG\"],\n    [\"E\u015fref Bitlis\", \"PER\", \"member of\", \"Turkish Gendarmerie\", \"ORG\"],\n    [\"Bahtiyar Ayd\u0131n\", \"PER\", \"member of\", \"Turkish military\", \"ORG\"],\n    [\"R\u0131dvan \u00d6zden\", \"PER\", \"member of\", \"Turkish military\", \"ORG\"],\n    [\"Do\u011fu \u00c7al\u0131\u015fma Grubu\", \"ORG\", \"founded by\", \"Turkish military\", \"ORG\"],\n    [\"JITEM\", \"ORG\", \"part of\", \"Turkish Gendarmerie\", \"ORG\"],\n    [\"Ergenekon\", \"ORG\", \"located in\", \"Turkey\", \"LOC\"],\n    [\"Turgut \u00d6zal\", \"PER\", \"date of death\", \"17 April 1993\", \"TIME\"],\n    [\"\u015eemdin Sak\u0131k\", \"PER\", \"position held\", \"commander\", \"MISC\"],\n    [\"PKK\", \"ORG\", \"located in\", \"Turkey\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"\u015eemdin Sak\u0131k\", \"PER\", \"former organization\", \"PKK\", \"ORG\"],\n    [\"Turgut \u00d6zal\", \"PER\", \"date of death\", \"17 April 1993\", \"TIME\"],\n    [\"Turgut \u00d6zal\", \"PER\", \"place of death\", \"unknown\", \"MISC\"],\n    [\"Cem Ersever\", \"PER\", \"member of\", \"Turkish military\", \"ORG\"],\n    [\"E\u015fref Bitlis\", \"PER\", \"member of\", \"Turkish Gendarmerie\", \"ORG\"],\n    [\"Bahtiyar Ayd\u0131n\", \"PER\", \"member of\", \"Turkish military\", \"ORG\"],\n    [\"R\u0131dvan \u00d6zden\", \"PER\", \"date of death\", \"1995\", \"TIME\"],\n    [\"R\u0131dvan \u00d6zden\", \"PER\", \"member of\", \"Turkish military\", \"ORG\"],\n    [\"Do\u011fu \u00c7al\u0131\u015fma Grubu\", \"ORG\", \"part of\", \"Turkish military\", \"ORG\"],\n    [\"Do\u011fu \u00c7al\u0131\u015fma Grubu\", \"ORG\", \"related to\", \"Ergenekon organization\", \"ORG\"],\n    [\"JITEM\", \"ORG\", \"part of\", \"Turkish Gendarmerie\", \"ORG\"],\n    [\"Turkish Gendarmerie\", \"ORG\", \"part of\", \"Turkish military\", \"ORG\"],\n    [\"PKK\", \"ORG\", \"involved in\", \"1993 alleged Turkish military coup\", \"MISC\"],\n    [\"Ergenekon organization\", \"ORG\", \"involved in\", \"1993 alleged Turkish military coup\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 21,
+  "FN": 12,
+  "recall": 0.0,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

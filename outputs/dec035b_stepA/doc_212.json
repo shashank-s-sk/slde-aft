@@ -1,0 +1,45 @@
+{
+ "doc_id": "doc_212",
+ "base_raw": "[\n    [\"Detlef Schrempf\", \"PER\", \"date of birth\", \"21 January 1963\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Detlef Schrempf\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Detlef Schrempf\", \"PER\", \"educated at\", \"University of Washington\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Washington Huskies\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Dallas Mavericks\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Indiana Pacers\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Seattle SuperSonics\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Portland Trail Blazers\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"position held\", \"NBA player\", \"MISC\"],\n    [\"1985 NBA draft\", \"MISC\", \"location\", \"U.S.\", \"LOC\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant of\", \"1984 Summer Olympics\", \"MISC\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant of\", \"1992 Summer Olympics\", \"MISC\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant of\", \"1983 EuroBasket\", \"MISC\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant of\", \"1985 EuroBasket\", \"MISC\"],\n    [\"Seattle SuperSonics\", \"ORG\", \"league\", \"NBA\", \"ORG\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 8,
+  "FN": 5,
+  "recall": 0.6153846153846154,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Educational Institutions",
+  "European Countries",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Locations",
+  "Organizations",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Detlef Schrempf\", \"PER\", \"date of birth\", \"21 January 1963\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Detlef Schrempf\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Detlef Schrempf\", \"PER\", \"educated at\", \"University of Washington\", \"ORG\"],\n    [\"Washington Huskies\", \"ORG\", \"located in\", \"University of Washington\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Dallas Mavericks\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Indiana Pacers\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Seattle SuperSonics\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Portland Trail Blazers\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant of\", \"1984 Summer Olympics\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant of\", \"1992 Summer Olympics\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant of\", \"1983 EuroBasket\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant of\", \"1985 EuroBasket\", \"TIME\"],\n    [\"Seattle SuperSonics\", \"ORG\", \"league\", \"NBA\", \"ORG\"],\n    [\"Portland Trail Blazers\", \"ORG\", \"league\", \"NBA\", \"ORG\"],\n    [\"Indiana Pacers\", \"ORG\", \"league\", \"NBA\", \"ORG\"],\n    [\"Dallas Mavericks\", \"ORG\", \"league\", \"NBA\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 11,
+  "FN": 5,
+  "recall": 0.6428571428571429,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Higher Education Institutions",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Detlef Schrempf\", \"PER\", \"date of birth\", \"21 January 1963\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Detlef Schrempf\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Detlef Schrempf\", \"PER\", \"educated at\", \"University of Washington\", \"ORG\"],\n    [\"Washington Huskies\", \"ORG\", \"location\", \"University of Washington\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Dallas Mavericks\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Indiana Pacers\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Seattle SuperSonics\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"member of sports team\", \"Portland Trail Blazers\", \"ORG\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant\", \"1984 Summer Olympics\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant\", \"1992 Summer Olympics\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant\", \"1983 EuroBasket\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"participant\", \"1985 EuroBasket\", \"TIME\"],\n    [\"Detlef Schrempf\", \"PER\", \"position held\", \"NBA Sixth Man of the Year\", \"MISC\"],\n    [\"Detlef Schrempf\", \"PER\", \"award received\", \"NBA All-Star\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 5,
+  "recall": 0.5833333333333334,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

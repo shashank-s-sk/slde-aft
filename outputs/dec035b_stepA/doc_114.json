@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_114",
+ "base_raw": "[\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Tennessee\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"part of\", \"Upper Cumberland Plateau\", \"LOC\"],\n    [\"Tennessee Wildlife Resources Agency\", \"ORG\", \"administrator of\", \"Catoosa Wildlife Management Area\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"funded by\", \"hunters and fishermen\", \"MISC\"],\n    [\"Cumberland Trail\", \"LOC\", \"located in\", \"Catoosa Wildlife Management Area\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"contains\", \"Cumberland Mountains\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Morgan county\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Cumberland county\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Fentress county\", \"LOC\"],\n    [\"Tennessee Wildlife Resources Agency\", \"ORG\", \"manages\", \"Catoosa Wildlife Management Area\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 23,
+  "recall": 0.041666666666666664,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Tennessee\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"part of\", \"Upper Cumberland Plateau\", \"LOC\"],\n    [\"Tennessee Wildlife Resources Agency\", \"ORG\", \"administrator of\", \"Catoosa Wildlife Management Area\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"funded by\", \"hunters and fishermen\", \"MISC\"],\n    [\"Cumberland Trail\", \"LOC\", \"located in\", \"Catoosa Wildlife Management Area\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"contains\", \"Cumberland Mountains\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Morgan County\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Cumberland County\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Fentress County\", \"LOC\"],\n    [\"Tennessee Wildlife Resources Agency\", \"ORG\", \"manages\", \"Catoosa Wildlife Management Area\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 23,
+  "recall": 0.041666666666666664,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "U.S. States and Cities"
+ ],
+ "kb_dedup_raw": "[\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Tennessee\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"part of\", \"Upper Cumberland Plateau\", \"LOC\"],\n    [\"Tennessee Wildlife Resources Agency\", \"ORG\", \"administrator of\", \"Catoosa Wildlife Management Area\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"funded by\", \"hunters and fishermen\", \"MISC\"],\n    [\"Cumberland Trail\", \"LOC\", \"located in\", \"Catoosa Wildlife Management Area\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"contains\", \"Cumberland Mountains\", \"LOC\"],\n    [\"Tennessee Wildlife Resources Agency\", \"ORG\", \"manages\", \"Catoosa Wildlife Management Area\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"country\", \"United States\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Morgan county\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Cumberland county\", \"LOC\"],\n    [\"Catoosa Wildlife Management Area\", \"LOC\", \"located in\", \"Fentress county\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 23,
+  "recall": 0.08,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

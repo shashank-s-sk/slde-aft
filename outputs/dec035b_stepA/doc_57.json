@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_57",
+ "base_raw": "[\n    [\"Gary Norman Hurring\", \"PER\", \"place of birth\", \"Auckland\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"father\", \"Lincoln Hurring\", \"PER\"],\n    [\"Gary Norman Hurring\", \"PER\", \"mother\", \"Jean Stewart\", \"PER\"],\n    [\"Lincoln Hurring\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Jean Stewart\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Jean Stewart\", \"PER\", \"award received\", \"bronze medal\", \"MISC\"],\n    [\"1978 Commonwealth Games\", \"MISC\", \"location\", \"New Zealand\", \"LOC\"],\n    [\"1978 World Aquatics Championships\", \"MISC\", \"location\", \"New Zealand\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"member of sports team\", \"New Zealand Olympic team\", \"ORG\"],\n    [\"Lincoln Hurring\", \"PER\", \"member of sports team\", \"New Zealand Olympic team\", \"ORG\"],\n    [\"Jean Stewart\", \"PER\", \"member of sports team\", \"New Zealand Olympic team\", \"ORG\"],\n    [\"Gary Norman Hurring\", \"PER\", \"position held\", \"coach\", \"MISC\"],\n    [\"New Zealand\", \"LOC\", \"continent\", \"Oceania\", \"LOC\"],\n    [\"Auckland\", \"LOC\", \"country\", \"New Zealand\", \"LOC\"],\n    [\"Helsinki\", \"LOC\", \"country\", \"Finland\", \"LOC\"],\n    [\"Finland\", \"LOC\", \"continent\", \"Europe\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"date of birth\", \"10 October 1961\", \"TIME\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 14,
+  "FN": 15,
+  "recall": 0.25,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Locations in Australia and New Zealand",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Gary Norman Hurring\", \"PER\", \"date of birth\", \"10 October 1961\", \"TIME\"],\n    [\"Gary Norman Hurring\", \"PER\", \"place of birth\", \"Auckland\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"father\", \"Lincoln Hurring\", \"PER\"],\n    [\"Gary Norman Hurring\", \"PER\", \"mother\", \"Jean Stewart\", \"PER\"],\n    [\"Lincoln Hurring\", \"PER\", \"spouse\", \"Jean Stewart\", \"PER\"],\n    [\"Jean Stewart\", \"PER\", \"spouse\", \"Lincoln Hurring\", \"PER\"],\n    [\"Jean Stewart\", \"PER\", \"award received\", \"bronze medal\", \"MISC\"],\n    [\"1978 Commonwealth Games\", \"MISC\", \"location\", \"MISC\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"member of sports team\", \"New Zealand Olympic sports associations\", \"ORG\"],\n    [\"Gary Norman Hurring\", \"PER\", \"position held\", \"New Zealand swim team coach\", \"MISC\"],\n    [\"2012 Summer Olympics\", \"MISC\", \"location\", \"MISC\", \"LOC\"],\n    [\"Lincoln Hurring\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Jean Stewart\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"educated at\", \"MISC\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 19,
+  "FN": 14,
+  "recall": 0.3,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "European Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Gary Norman Hurring\", \"PER\", \"place of birth\", \"Auckland\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"father\", \"Lincoln Hurring\", \"PER\"],\n    [\"Gary Norman Hurring\", \"PER\", \"mother\", \"Jean Stewart\", \"PER\"],\n    [\"Lincoln Hurring\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Jean Stewart\", \"PER\", \"country of citizenship\", \"New Zealand\", \"LOC\"],\n    [\"Jean Stewart\", \"PER\", \"place of birth\", \"New Zealand\", \"LOC\"],\n    [\"1978 Commonwealth Games\", \"MISC\", \"location\", \"New Zealand\", \"LOC\"],\n    [\"Gary Norman Hurring\", \"PER\", \"date of birth\", \"10 October 1961\", \"TIME\"],\n    [\"Jean Stewart\", \"PER\", \"award received\", \"bronze medal\", \"MISC\"],\n    [\"Lincoln Hurring\", \"PER\", \"occupation\", \"swimmer\", \"MISC\"],\n    [\"Jean Stewart\", \"PER\", \"occupation\", \"swimmer\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 15,
+  "recall": 0.25,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

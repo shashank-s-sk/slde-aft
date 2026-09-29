@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_476",
+ "base_raw": "[\n    [\"KBOI\", \"ORG\", \"located in\", \"Boise\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"owned by\", \"Cumulus Media\", \"ORG\"],\n    [\"KBOI\", \"ORG\", \"broadcasting on\", \"670 kHz\", \"NUM\"],\n    [\"KBOI\", \"ORG\", \"genre\", \"news/talk\", \"MISC\"],\n    [\"KBOI\", \"ORG\", \"studios located on\", \"Bannock Street\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"transmits from\", \"Nampa\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"power\", \"50,000 watts\", \"NUM\"],\n    [\"KBOI\", \"ORG\", \"broadcasts to\", \"southwestern Idaho\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"broadcasts to\", \"eastern Oregon\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"interferes with\", \"WSCR\", \"ORG\"],\n    [\"KBOI\", \"ORG\", \"licensed by\", \"FCC\", \"ORG\"],\n    [\"KBOI\", \"ORG\", \"format\", \"HD\", \"MISC\"],\n    [\"KBOI\", \"ORG\", \"location of formation\", \"Boise\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"KBOI\", \"ORG\", \"located in\", \"Boise\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"owned by\", \"Cumulus Media\", \"ORG\"],\n    [\"KBOI\", \"ORG\", \"broadcasting on\", \"670 kHz\", \"NUM\"],\n    [\"KBOI\", \"ORG\", \"genre\", \"news/talk\", \"MISC\"],\n    [\"KBOI\", \"ORG\", \"transmits from\", \"Nampa\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"power\", \"50,000 watts\", \"NUM\"],\n    [\"KBOI\", \"ORG\", \"broadcasts to\", \"southwestern Idaho\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"broadcasts to\", \"eastern Oregon\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"licensed by\", \"FCC\", \"ORG\"],\n    [\"KBOI\", \"ORG\", \"format\", \"HD\", \"MISC\"],\n    [\"KBOI\", \"ORG\", \"location of formation\", \"western United States\", \"LOC\"],\n    [\"Cumulus Media\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"FCC\", \"ORG\", \"located in\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 16,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 16,
+  "FN": 1,
+  "recall": 0.0,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"KBOI\", \"ORG\", \"located in\", \"Boise\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"owned by\", \"Cumulus Media\", \"ORG\"],\n    [\"KBOI\", \"ORG\", \"broadcasting on\", \"670 kHz\", \"NUM\"],\n    [\"KBOI\", \"ORG\", \"genre\", \"news/talk\", \"MISC\"],\n    [\"KBOI\", \"ORG\", \"transmits from\", \"Nampa\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"power\", \"50,000 watts\", \"NUM\"],\n    [\"KBOI\", \"ORG\", \"broadcasts to\", \"southwestern Idaho\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"broadcasts to\", \"eastern Oregon\", \"LOC\"],\n    [\"KBOI\", \"ORG\", \"licensed by\", \"FCC\", \"ORG\"],\n    [\"KBOI\", \"ORG\", \"format\", \"HD\", \"MISC\"],\n    [\"KBOI\", \"ORG\", \"location of formation\", \"western United States\", \"LOC\"],\n    [\"Cumulus Media\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"FCC\", \"ORG\", \"located in\", \"United States\", \"LOC\"]\n]"
+}

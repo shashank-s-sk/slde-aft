@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_199",
+ "base_raw": "[\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"developer\", \"Armature Studio\", \"ORG\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"publisher\", \"Warner Bros. Interactive Entertainment\", \"ORG\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"October 25, 2013\", \"TIME\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"PlayStation Vita\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"part of\", \"Batman series\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"genre\", \"action-adventure\", \"MISC\"],\n    [\"Warner Bros. Interactive Entertainment\", \"ORG\", \"published\", \"Batman: Arkham Origins Blackgate\", \"MISC\"],\n    [\"Armature Studio\", \"ORG\", \"developed\", \"Batman: Arkham Origins Blackgate\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"November 8, 2013\", \"TIME\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"location of release\", \"Europe\", \"LOC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"December 5, 2013\", \"TIME\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"location of release\", \"Japan\", \"LOC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Wii U\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"PlayStation Network\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Xbox Live Arcade\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"April 1, 2014\", \"TIME\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"location of release\", \"North America\", \"LOC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"April 2, 2014\", \"TIME\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"location of release\", \"Europe\", \"LOC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"edition\", \"deluxe edition\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"developer\", \"Armature Studio\", \"ORG\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"released by\", \"Warner Bros. Interactive Entertainment\", \"ORG\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"platform\", \"PlayStation Vita\", \"MISC\"],\n    [\"Batman\", \"MISC\", \"based on\", \"DC Comics\", \"ORG\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"release date\", \"October 25, 2013\", \"TIME\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"release date\", \"November 8, 2013\", \"TIME\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"release date\", \"December 5, 2013\", \"TIME\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"release date\", \"April 1, 2014\", \"TIME\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"release date\", \"April 2, 2014\", \"TIME\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"genre\", \"2.5D video game\", \"MISC\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"part of\", \"Batman series\", \"MISC\"],\n    [\"Warner Bros. Interactive Entertainment\", \"ORG\", \"publisher\", \"Batman : Arkham Origins Blackgate\", \"MISC\"],\n    [\"Armature Studio\", \"ORG\", \"developer\", \"Batman : Arkham Origins Blackgate\", \"MISC\"],\n    [\"Nintendo 3DS\", \"MISC\", \"manufacturer\", \"Nintendo\", \"ORG\"],\n    [\"PlayStation Vita\", \"MISC\", \"manufacturer\", \"Sony\", \"ORG\"],\n    [\"Batman : Arkham Origins Blackgate\", \"MISC\", \"located in or next to body of water\", \"None\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 33,
+  "FN": 4,
+  "recall": 0.5555555555555556,
+  "n_extracted": 38,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"developer\", \"Armature Studio\", \"ORG\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"released by\", \"Warner Bros. Interactive Entertainment\", \"ORG\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"PlayStation Vita\", \"MISC\"],\n    [\"Batman\", \"MISC\", \"inspiration for\", \"Batman: Arkham Origins Blackgate\", \"MISC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"October 25, 2013\", \"TIME\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"November 8, 2013\", \"TIME\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"December 5, 2013\", \"TIME\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release region\", \"Japan\", \"LOC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release region\", \"Europe\", \"LOC\"],\n    [\"Batman: Arkham Origins Blackgate\", \"MISC\", \"release region\", \"North America\", \"LOC\"],\n    [\"Deluxe edition of Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"April 1, 2014\", \"TIME\"],\n    [\"Deluxe edition of Batman: Arkham Origins Blackgate\", \"MISC\", \"release date\", \"April 2, 2014\", \"TIME\"],\n    [\"Deluxe edition of Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Wii U eShop\", \"MISC\"],\n    [\"Deluxe edition of Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"PlayStation Network\", \"MISC\"],\n    [\"Deluxe edition of Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"Deluxe edition of Batman: Arkham Origins Blackgate\", \"MISC\", \"platform\", \"Xbox Live Arcade\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 27,
+  "FN": 3,
+  "recall": 0.6666666666666666,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ }
+}

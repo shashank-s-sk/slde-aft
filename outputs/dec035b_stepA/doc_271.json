@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_271",
+ "base_raw": "[\n    [\"Arnau Alemany\", \"PER\", \"educated at\", \"Conservatori d'arts sumptu\u00e0ries\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"educated at\", \"Massana Art School\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Ren\u00e9 Magritte\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Balthus\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Pierre Roy\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"won award\", \"Biennal d'Art of Montecarlo second prize\", \"MISC\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Galeria Serrallonga\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Sala Par\u00e9s\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Marugame Hirai Museum\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"style\", \"magical realism\", \"MISC\"],\n    [\"Arnau Alemany\", \"PER\", \"style\", \"surrealism\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Arnau Alemany\", \"PER\", \"educated at\", \"Conservatori d\u2019arts sumptu\u00e0ries\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"educated at\", \"Massana Art School\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Ren\u00e9 Magritte\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Balthus\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Pierre Roy\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"award received\", \"Biennal d\u2019Art of Montecarlo second prize\", \"MISC\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Galeria Serrallonga\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Sala Par\u00e9s\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Marugame Hirai Museum\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Val\u00e8ncia\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"London\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Paris\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Lyon\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Madrid\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"San Francisco\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"New York\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Miami\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Los Angeles\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Chicago\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Japan\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"style\", \"magical realism\", \"MISC\"],\n    [\"Arnau Alemany\", \"PER\", \"style\", \"surrealism\", \"MISC\"],\n    [\"Arnau Alemany\", \"PER\", \"date of birth\", \"1948\", \"TIME\"],\n    [\"Arnau Alemany\", \"PER\", \"place of birth\", \"Barcelona\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 24,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 24,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 27,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Arnau Alemany\", \"PER\", \"educated at\", \"Conservatori d\u2019arts sumptu\u00e0ries\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"educated at\", \"Massana Art School\", \"ORG\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Ren\u00e9 Magritte\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Balthus\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"influenced by\", \"Pierre Roy\", \"PER\"],\n    [\"Arnau Alemany\", \"PER\", \"award received\", \"Biennal d\u2019Art of Montecarlo second prize\", \"MISC\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Galeria Serrallonga\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Sala Par\u00e9s\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"exhibited at\", \"Marugame Hirai Museum\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Val\u00e8ncia\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"London\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Paris\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Lyon\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Madrid\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"San Francisco\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"New York\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Miami\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Los Angeles\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Chicago\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"location of exhibition\", \"Japan\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"style\", \"magical realism\", \"MISC\"],\n    [\"Arnau Alemany\", \"PER\", \"style\", \"surrealism\", \"MISC\"],\n    [\"Arnau Alemany\", \"PER\", \"date of birth\", \"1948\", \"TIME\"],\n    [\"Arnau Alemany\", \"PER\", \"place of birth\", \"Barcelona\", \"LOC\"],\n    [\"Arnau Alemany\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"]\n]"
+}

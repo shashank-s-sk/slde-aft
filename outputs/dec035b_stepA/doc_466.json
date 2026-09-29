@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_466",
+ "base_raw": "[\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"place of birth\", \"Villa Mercedes\", \"LOC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"profession\", \"architect\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"member of political party\", \"Peronist\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"position held\", \"Mayor of Juana Koslay\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"position held\", \"Member of the Provincial Legislature\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"position held\", \"National Deputy\", \"MISC\"],\n    [\"Adolfo Rodr\u00edguez Sa\u00e1\", \"PER\", \"position held\", \"President of Argentina\", \"MISC\"],\n    [\"Adolfo Rodr\u00edguez Sa\u00e1\", \"PER\", \"brother\", \"Alberto Rodr\u00edguez Sa\u00e1\", \"PER\"],\n    [\"Alberto Rodr\u00edguez Sa\u00e1\", \"PER\", \"position held\", \"Governor of San Luis Province\", \"MISC\"],\n    [\"Alfonso Verg\u00e9s\", \"PER\", \"position held\", \"Mayor of San Luis\", \"MISC\"],\n    [\"N\u00e9stor Kirchner\", \"PER\", \"position held\", \"President of Argentina\", \"MISC\"],\n    [\"San Luis Province\", \"LOC\", \"capital\", \"San Luis\", \"LOC\"],\n    [\"San Luis\", \"LOC\", \"located in the administrative territorial entity\", \"San Luis Province\", \"LOC\"],\n    [\"Juana Koslay\", \"LOC\", \"located in the administrative territorial entity\", \"San Luis Province\", \"LOC\"],\n    [\"Villa Mercedes\", \"LOC\", \"located in the administrative territorial entity\", \"San Luis Province\", \"LOC\"],\n    [\"Front for Victory\", \"ORG\", \"leader\", \"N\u00e9stor Kirchner\", \"PER\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"date of birth\", \"1954\", \"TIME\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 24,
+  "recall": 0.1724137931034483,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"place of birth\", \"Villa Mercedes\", \"LOC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"position held\", \"Vice-Governor\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"position held\", \"Governor\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"position held\", \"Mayor\", \"MISC\"],\n    [\"San Luis Province\", \"LOC\", \"located in the administrative territorial entity\", \"Argentina\", \"LOC\"],\n    [\"Adolfo Rodr\u00edguez Sa\u00e1\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Adolfo Rodr\u00edguez Sa\u00e1\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Alberto Rodr\u00edguez Sa\u00e1\", \"PER\", \"position held\", \"Governor\", \"MISC\"],\n    [\"Alberto Rodr\u00edguez Sa\u00e1\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"educated at\", \"architect\", \"MISC\"],\n    [\"Juana Koslay\", \"LOC\", \"located in the administrative territorial entity\", \"San Luis Province\", \"LOC\"],\n    [\"Alfonso Verg\u00e9s\", \"PER\", \"position held\", \"Mayor\", \"MISC\"],\n    [\"N\u00e9stor Kirchner\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"N\u00e9stor Kirchner\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"member of political party\", \"Peronist\", \"MISC\"],\n    [\"Adolfo Rodr\u00edguez Sa\u00e1\", \"PER\", \"member of political party\", \"Peronist\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 9,
+  "FP": 23,
+  "FN": 19,
+  "recall": 0.32142857142857145,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"place of birth\", \"Villa Mercedes\", \"LOC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"profession\", \"architect\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"member of political party\", \"Peronist\", \"MISC\"],\n    [\"Adolfo Rodr\u00edguez Sa\u00e1\", \"PER\", \"position held\", \"President of Argentina\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Juana Koslay\", \"LOC\", \"located in the administrative territorial entity\", \"San Luis Province\", \"LOC\"],\n    [\"San Luis Province\", \"LOC\", \"country\", \"Argentina\", \"LOC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"child\", \"unknown\", \"MISC\"],\n    [\"Adolfo Rodr\u00edguez Sa\u00e1\", \"PER\", \"brother\", \"Alberto Rodr\u00edguez Sa\u00e1\", \"PER\"],\n    [\"N\u00e9stor Kirchner\", \"PER\", \"position held\", \"President of Argentina\", \"MISC\"],\n    [\"Alfonso Verg\u00e9s\", \"PER\", \"member of political party\", \"Front for Victory\", \"MISC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"employer\", \"unknown\", \"MISC\"],\n    [\"San Luis\", \"LOC\", \"located in the administrative territorial entity\", \"San Luis Province\", \"LOC\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"date of birth\", \"1954\", \"TIME\"],\n    [\"Mar\u00eda Alicia Lemme\", \"PER\", \"position held\", \"National Deputy\", \"MISC\"],\n    [\"Adolfo Rodr\u00edguez Sa\u00e1\", \"PER\", \"position held\", \"Governor of San Luis Province\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 22,
+  "recall": 0.18518518518518517,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_137",
+ "base_raw": "[\n    [\"Polonium\", \"MISC\", \"discovered by\", \"Marie and Pierre Curie\", \"PER\"],\n    [\"Polonium\", \"MISC\", \"named after\", \"Poland\", \"LOC\"],\n    [\"Marie Curie\", \"PER\", \"homeland\", \"Poland\", \"LOC\"],\n    [\"Polonium\", \"MISC\", \"extracted from\", \"uranium ore\", \"MISC\"],\n    [\"Polonium-210\", \"MISC\", \"half-life\", \"138 days\", \"TIME\"],\n    [\"Uranium-238\", \"MISC\", \"daughter\", \"Polonium-210\", \"MISC\"],\n    [\"Bismuth\", \"MISC\", \"used to produce\", \"Polonium\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"producer of\", \"neutrons\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"producer of\", \"alpha particles\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"used in\", \"space probes\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"used in\", \"antistatic devices\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "European Countries",
+  "Locations",
+  "Notable Individuals",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Polonium\", \"MISC\", \"discovered by\", \"Marie and Pierre Curie\", \"PER\"],\n    [\"Polonium\", \"MISC\", \"named after\", \"Poland\", \"LOC\"],\n    [\"Marie Curie\", \"PER\", \"homeland\", \"Poland\", \"LOC\"],\n    [\"Polonium\", \"MISC\", \"extracted from\", \"uranium ore\", \"MISC\"],\n    [\"Polonium-210\", \"MISC\", \"half-life\", \"138 days\", \"TIME\"],\n    [\"Uranium-238\", \"MISC\", \"daughter\", \"Polonium-210\", \"MISC\"],\n    [\"Bismuth\", \"MISC\", \"used to produce\", \"Polonium\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"used in\", \"space probes\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"used in\", \"antistatic devices\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"source of\", \"neutrons\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"source of\", \"alpha particles\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Polonium\", \"MISC\", \"discovered by\", \"Marie and Pierre Curie\", \"PER\"],\n    [\"Polonium\", \"MISC\", \"named after\", \"Poland\", \"LOC\"],\n    [\"Marie Curie\", \"PER\", \"homeland\", \"Poland\", \"LOC\"],\n    [\"Polonium\", \"MISC\", \"extracted from\", \"uranium ore\", \"MISC\"],\n    [\"Polonium-210\", \"MISC\", \"half-life\", \"138 days\", \"TIME\"],\n    [\"Uranium-238\", \"MISC\", \"daughter\", \"Polonium-210\", \"MISC\"],\n    [\"Bismuth\", \"MISC\", \"used to produce\", \"Polonium\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"producer of\", \"neutrons\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"producer of\", \"alpha particles\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"used in\", \"space probes\", \"MISC\"],\n    [\"Polonium\", \"MISC\", \"used in\", \"antistatic devices\", \"MISC\"],\n    [\"Marie Curie\", \"PER\", \"country of citizenship\", \"Poland\", \"LOC\"],\n    [\"Pierre Curie\", \"PER\", \"country of citizenship\", \"France\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

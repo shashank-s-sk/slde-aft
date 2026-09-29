@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_167",
+ "base_raw": "[\n    [\"Seal\", \"PER\", \"date of birth\", \"19 February 1963\", \"TIME\"],\n    [\"Seal\", \"PER\", \"nationality\", \"British\", \"MISC\"],\n    [\"Seal\", \"PER\", \"occupation\", \"singer\", \"MISC\"],\n    [\"Seal\", \"PER\", \"occupation\", \"songwriter\", \"MISC\"],\n    [\"Crazy\", \"MISC\", \"release year\", \"1991\", \"TIME\"],\n    [\"Kiss from a Rose\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Seal\", \"PER\", \"award received\", \"Brit Awards\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"Grammy Awards\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"MTV Video Music Award\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"Ivor Novello Awards\", \"MISC\"],\n    [\"Killer\", \"MISC\", \"release year\", \"1990\", \"TIME\"],\n    [\"The Voice Australia\", \"MISC\", \"location\", \"Australia\", \"LOC\"],\n    [\"Seal\", \"PER\", \"participant of\", \"The Voice Australia\", \"MISC\"],\n    [\"Seal\", \"PER\", \"work location\", \"Australia\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 10,
+  "FN": 14,
+  "recall": 0.2222222222222222,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Seal\", \"PER\", \"date of birth\", \"19 February 1963\", \"TIME\"],\n    [\"Seal\", \"PER\", \"country of citizenship\", \"Britain\", \"LOC\"],\n    [\"Seal\", \"PER\", \"genre\", \"singer\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"Brit Awards\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"Grammy Awards\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"MTV Video Music Award\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"Ivor Novello Awards\", \"MISC\"],\n    [\"The Voice Australia\", \"ORG\", \"location\", \"Australia\", \"LOC\"],\n    [\"Seal\", \"PER\", \"position held\", \"coach\", \"MISC\"],\n    [\"Seal\", \"PER\", \"member of\", \"The Voice Australia\", \"ORG\"],\n    [\"Seal\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Killer\", \"MISC\", \"author\", \"Seal\", \"PER\"],\n    [\"Crazy\", \"MISC\", \"author\", \"Seal\", \"PER\"],\n    [\"Kiss from a Rose\", \"MISC\", \"author\", \"Seal\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 14,
+  "FN": 14,
+  "recall": 0.36363636363636365,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Seal\", \"PER\", \"date of birth\", \"19 February 1963\", \"TIME\"],\n    [\"Seal\", \"PER\", \"country of citizenship\", \"British\", \"LOC\"],\n    [\"Seal\", \"PER\", \"genre\", \"singer and songwriter\", \"MISC\"],\n    [\"Crazy\", \"MISC\", \"release year\", \"1991\", \"TIME\"],\n    [\"Kiss from a Rose\", \"MISC\", \"release year\", \"1994\", \"TIME\"],\n    [\"Seal\", \"PER\", \"award received\", \"Brit Awards\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"Grammy Awards\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"MTV Video Music Award\", \"MISC\"],\n    [\"Seal\", \"PER\", \"award received\", \"Ivor Novello Awards\", \"MISC\"],\n    [\"Killer\", \"MISC\", \"release year\", \"1990\", \"TIME\"],\n    [\"The Voice Australia\", \"MISC\", \"location\", \"Australia\", \"LOC\"],\n    [\"Seal\", \"PER\", \"position held\", \"coach\", \"MISC\"],\n    [\"Seal\", \"PER\", \"member of\", \"The Voice Australia\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 14,
+  "recall": 0.2631578947368421,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

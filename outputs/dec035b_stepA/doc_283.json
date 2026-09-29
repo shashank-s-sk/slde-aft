@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_283",
+ "base_raw": "[\n    [\"Willamette Falls Locks\", \"MISC\", \"located in\", \"Portland metropolitan area\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"MISC\", \"operator\", \"United States Army Corps of Engineers\", \"ORG\"],\n    [\"Willamette Falls Locks\", \"MISC\", \"added to\", \"National Register of Historic Places\", \"MISC\"],\n    [\"Willamette Falls Locks\", \"MISC\", \"year added to National Register of Historic Places\", \"1974\", \"TIME\"],\n    [\"Willamette Falls Locks\", \"MISC\", \"location of formation\", \"West Linn\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"MISC\", \"located on terrain feature\", \"Willamette River\", \"MISC\"],\n    [\"Willamette River\", \"MISC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"United States Army Corps of Engineers\", \"ORG\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"West Linn\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Oregon City\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Columbia River\", \"MISC\", \"located in\", \"U.S.\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Willamette Falls Locks\", \"LOC\", \"located in\", \"Portland metropolitan area\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"located in the administrative territorial entity\", \"Oregon\", \"LOC\"],\n    [\"United States Army Corps of Engineers\", \"ORG\", \"operator\", \"Willamette Falls Locks\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"added to\", \"National Register of Historic Places\", \"MISC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"date of opening\", \"1873\", \"TIME\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"date of closure\", \"2011\", \"TIME\"],\n    [\"West Linn\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Oregon City\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"Columbia River\", \"LOC\", \"located near\", \"Willamette Falls Locks\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 14,
+  "FN": 6,
+  "recall": 0.45454545454545453,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Willamette Falls Locks\", \"LOC\", \"located in\", \"Portland metropolitan area\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"country\", \"U.S.\", \"LOC\"],\n    [\"United States Army Corps of Engineers\", \"ORG\", \"operator\", \"Willamette Falls Locks\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"added to\", \"National Register of Historic Places\", \"MISC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"year added to National Register of Historic Places\", \"1974\", \"TIME\"],\n    [\"Willamette River\", \"LOC\", \"located in\", \"Oregon\", \"LOC\"],\n    [\"West Linn\", \"LOC\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Oregon City\", \"LOC\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Columbia River\", \"LOC\", \"located in\", \"U.S.\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"located near\", \"Oregon City\", \"LOC\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"year opened\", \"1873\", \"TIME\"],\n    [\"Willamette Falls Locks\", \"LOC\", \"year closed\", \"2011\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 13,
+  "FN": 9,
+  "recall": 0.4,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_479",
+ "base_raw": "[\n    [\"William Wilkie Collins\", \"PER\", \"date of birth\", \"8 January 1824\", \"TIME\"],\n    [\"William Wilkie Collins\", \"PER\", \"date of death\", \"23 September 1889\", \"TIME\"],\n    [\"William Wilkie Collins\", \"PER\", \"place of birth\", \"London\", \"LOC\"],\n    [\"William Wilkie Collins\", \"PER\", \"father\", \"William Collins\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"language\", \"French\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"language\", \"Italian\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"employer\", \"tea merchant\", \"ORG\"],\n    [\"William Wilkie Collins\", \"PER\", \"friend\", \"Charles Dickens\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"mentor\", \"Charles Dickens\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"collaborator\", \"Charles Dickens\", \"PER\"],\n    [\"The Woman in White\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"No Name\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"Armadale\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"The Moonstone\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"Antonina\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"All the Year Round\", \"MISC\", \"publisher\", \"Charles Dickens\", \"PER\"],\n    [\"Household Words\", \"MISC\", \"publisher\", \"Charles Dickens\", \"PER\"],\n    [\"Caroline Graves\", \"PER\", \"partner\", \"William Wilkie Collins\", \"PER\"],\n    [\"Martha Rudd\", \"PER\", \"partner\", \"William Wilkie Collins\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"child\", \"MISC\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"residence\", \"Italy\", \"LOC\"],\n    [\"William Wilkie Collins\", \"PER\", \"residence\", \"France\", \"LOC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 15,
+  "FN": 8,
+  "recall": 0.4666666666666667,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"William Wilkie Collins\", \"PER\", \"date of birth\", \"8 January 1824\", \"TIME\"],\n    [\"William Wilkie Collins\", \"PER\", \"date of death\", \"23 September 1889\", \"TIME\"],\n    [\"William Wilkie Collins\", \"PER\", \"place of birth\", \"London\", \"LOC\"],\n    [\"William Wilkie Collins\", \"PER\", \"nationality\", \"English\", \"MISC\"],\n    [\"The Woman in White\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"The Moonstone\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"language\", \"French\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"language\", \"Italian\", \"MISC\"],\n    [\"William Collins\", \"PER\", \"occupation\", \"painter\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"child\", \"unknown\", \"PER\"],\n    [\"Charles Dickens\", \"PER\", \"relation\", \"William Wilkie Collins\", \"PER\"],\n    [\"All the Year Round\", \"MISC\", \"publisher\", \"Charles Dickens\", \"PER\"],\n    [\"Household Words\", \"MISC\", \"publisher\", \"Charles Dickens\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"collaborator\", \"Charles Dickens\", \"PER\"],\n    [\"Caroline Graves\", \"PER\", \"relation\", \"William Wilkie Collins\", \"PER\"],\n    [\"Martha Rudd\", \"PER\", \"relation\", \"William Wilkie Collins\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"health condition\", \"gout\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"addiction\", \"opium\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 23,
+  "FN": 8,
+  "recall": 0.4666666666666667,
+  "n_extracted": 30,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"William Wilkie Collins\", \"PER\", \"date of birth\", \"8 January 1824\", \"TIME\"],\n    [\"William Wilkie Collins\", \"PER\", \"date of death\", \"23 September 1889\", \"TIME\"],\n    [\"William Wilkie Collins\", \"PER\", \"place of birth\", \"London\", \"LOC\"],\n    [\"William Wilkie Collins\", \"PER\", \"father\", \"William Collins\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"language\", \"French\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"language\", \"Italian\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"employer\", \"tea merchant\", \"ORG\"],\n    [\"William Wilkie Collins\", \"PER\", \"friend\", \"Charles Dickens\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"mentor\", \"Charles Dickens\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"collaborator\", \"Charles Dickens\", \"PER\"],\n    [\"The Woman in White\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"No Name\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"Armadale\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"The Moonstone\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"Antonina\", \"MISC\", \"author\", \"William Wilkie Collins\", \"PER\"],\n    [\"All the Year Round\", \"MISC\", \"publisher\", \"Charles Dickens\", \"PER\"],\n    [\"Household Words\", \"MISC\", \"publisher\", \"Charles Dickens\", \"PER\"],\n    [\"Caroline Graves\", \"PER\", \"partner\", \"William Wilkie Collins\", \"PER\"],\n    [\"Martha Rudd\", \"PER\", \"partner\", \"William Wilkie Collins\", \"PER\"],\n    [\"William Wilkie Collins\", \"PER\", \"child\", \"MISC\", \"MISC\"],\n    [\"William Wilkie Collins\", \"PER\", \"residence\", \"Italy\", \"LOC\"],\n    [\"William Wilkie Collins\", \"PER\", \"residence\", \"France\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 15,
+  "FN": 8,
+  "recall": 0.4666666666666667,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

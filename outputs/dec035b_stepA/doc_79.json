@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_79",
+ "base_raw": "[\n    [\"Maham Begam\", \"PER\", \"date of death\", \"28 March 1534\", \"TIME\"],\n    [\"Maham Begam\", \"PER\", \"spouse\", \"Babur\", \"PER\"],\n    [\"Maham Begam\", \"PER\", \"title\", \"Padshah Begum\", \"MISC\"],\n    [\"Babur\", \"PER\", \"title\", \"founder of the Mughal Empire\", \"MISC\"],\n    [\"Gulbadan Begum\", \"PER\", \"relation\", \"Maham Begam\", \"PER\"],\n    [\"Maham Begam\", \"PER\", \"mentioned in\", \"Humayun Nama\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 4,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 6,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Maham Begam\", \"PER\", \"date of death\", \"28 March 1534\", \"TIME\"],\n    [\"Maham Begam\", \"PER\", \"spouse\", \"Babur\", \"PER\"],\n    [\"Maham Begam\", \"PER\", \"title\", \"Padshah Begum\", \"MISC\"],\n    [\"Babur\", \"PER\", \"title\", \"founder of the Mughal Empire\", \"MISC\"],\n    [\"Gulbadan Begum\", \"PER\", \"relation\", \"Maham Begam\", \"PER\"],\n    [\"Maham Begam\", \"PER\", \"mentioned in\", \"Humayun Nama\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 4,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 6,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 4,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 6,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Maham Begam\", \"PER\", \"date of death\", \"28 March 1534\", \"TIME\"],\n    [\"Maham Begam\", \"PER\", \"spouse\", \"Babur\", \"PER\"],\n    [\"Maham Begam\", \"PER\", \"title\", \"Padshah Begum\", \"MISC\"],\n    [\"Babur\", \"PER\", \"title\", \"founder of the Mughal Empire\", \"MISC\"],\n    [\"Gulbadan Begum\", \"PER\", \"relation\", \"Maham Begam\", \"PER\"],\n    [\"Maham Begam\", \"PER\", \"mentioned in\", \"Humayun Nama\", \"MISC\"]\n]"
+}

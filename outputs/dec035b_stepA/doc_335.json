@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_335",
+ "base_raw": "[\n    [\"Franz Josef Niedenzu\", \"PER\", \"place of birth\", \"K\u00f6ppernig\", \"LOC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"Lyceum Hosianum\", \"ORG\", \"located in\", \"Braunsberg\", \"LOC\"],\n    [\"Braunsberg\", \"LOC\", \"country\", \"East Prussia\", \"LOC\"],\n    [\"Braunsberg\", \"LOC\", \"located in the administrative territorial entity\", \"Poland\", \"LOC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"employer\", \"Lyceum Hosianum\", \"ORG\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"position held\", \"professor\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"position held\", \"rector\", \"MISC\"],\n    [\"Adolf Engler\", \"PER\", \"author\", \"Das Pflanzenreich\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"author\", \"chapter on Malpighiaceae\", \"MISC\"],\n    [\"Engler and Prantl\", \"MISC\", \"author\", \"Die Nat\u00fcrlichen Pflanzenfamilien\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"contributor\", \"Die Nat\u00fcrlichen Pflanzenfamilien\", \"MISC\"],\n    [\"Alcoceratothrix\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Callyntranthele\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Cordobia\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Diaspis\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Malpighiodes\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Sprucina\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"date of birth\", \"29 November 1857\", \"TIME\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"date of death\", \"30 September 1937\", \"TIME\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Franz Josef Niedenzu\", \"PER\", \"date of birth\", \"29 November 1857\", \"TIME\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"date of death\", \"30 September 1937\", \"TIME\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"place of birth\", \"K\u00f6ppernig\", \"LOC\"],\n    [\"Lyceum Hosianum\", \"ORG\", \"located in\", \"Braunsberg\", \"LOC\"],\n    [\"Braunsberg\", \"LOC\", \"located in the administrative territorial entity\", \"East Prussia\", \"LOC\"],\n    [\"Braunsberg\", \"LOC\", \"located in the administrative territorial entity\", \"Poland\", \"LOC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"educated at\", \"Lyceum Hosianum\", \"ORG\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"employer\", \"Lyceum Hosianum\", \"ORG\"],\n    [\"Adolf Engler\", \"PER\", \"author\", \"Das Pflanzenreich\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"author\", \"chapter on Malpighiaceae\", \"MISC\"],\n    [\"Engler and Prantl\", \"MISC\", \"author\", \"Die Nat\u00fcrlichen Pflanzenfamilien\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"contributor\", \"Die Nat\u00fcrlichen Pflanzenfamilien\", \"MISC\"],\n    [\"Malpighiaceae\", \"MISC\", \"instance of\", \"botanical family\", \"MISC\"],\n    [\"Alcoceratothrix\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Callyntranthele\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Cordobia\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Diaspis\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Malpighiodes\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Sprucina\", \"MISC\", \"instance of\", \"genus\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 17,
+  "FN": 7,
+  "recall": 0.46153846153846156,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Franz Josef Niedenzu\", \"PER\", \"date of birth\", \"29 November 1857\", \"TIME\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"date of death\", \"30 September 1937\", \"TIME\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"place of birth\", \"K\u00f6ppernig\", \"LOC\"],\n    [\"Lyceum Hosianum\", \"ORG\", \"located in\", \"Braunsberg\", \"LOC\"],\n    [\"Braunsberg\", \"LOC\", \"located in the administrative territorial entity\", \"East Prussia\", \"LOC\"],\n    [\"Braunsberg\", \"LOC\", \"located in the administrative territorial entity\", \"Poland\", \"LOC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"educated at\", \"Lyceum Hosianum\", \"ORG\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"employer\", \"Lyceum Hosianum\", \"ORG\"],\n    [\"Adolf Engler\", \"PER\", \"author\", \"Das Pflanzenreich\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"author\", \"chapter on Malpighiaceae\", \"MISC\"],\n    [\"Engler and Prantl\", \"MISC\", \"author\", \"Die Nat\u00fcrlichen Pflanzenfamilien\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"contributor\", \"Die Nat\u00fcrlichen Pflanzenfamilien\", \"MISC\"],\n    [\"Malpighiaceae\", \"MISC\", \"instance of\", \"botanical family\", \"MISC\"],\n    [\"Alcoceratothrix\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Callyntranthele\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Cordobia\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Diaspis\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Malpighiodes\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Sprucina\", \"MISC\", \"instance of\", \"genus\", \"MISC\"],\n    [\"Franz Josef Niedenzu\", \"PER\", \"identified\", \"new species\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 20,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_243",
+ "base_raw": "[\n    [\"Chelsea\", \"MISC\", \"located in\", \"New York City\", \"LOC\"],\n    [\"Peter Criss\", \"PER\", \"member of\", \"Chelsea\", \"MISC\"],\n    [\"Michael Benvenga\", \"PER\", \"member of\", \"Chelsea\", \"MISC\"],\n    [\"Stan Penridge\", \"PER\", \"member of\", \"Chelsea\", \"MISC\"],\n    [\"Lips\", \"MISC\", \"instance of\", \"Chelsea\", \"MISC\"],\n    [\"Pete Shepley\", \"PER\", \"collaborator\", \"Mike Brand\", \"PER\"],\n    [\"Mike Brand\", \"PER\", \"collaborator\", \"Pete Shepley\", \"PER\"],\n    [\"Gene Simmons\", \"PER\", \"session musician for\", \"Pete Shepley & Mike Brand\", \"MISC\"],\n    [\"Captain Sanity\", \"MISC\", \"album by\", \"Pete Shepley & Mike Brand\", \"MISC\"],\n    [\"Chelsea\", \"MISC\", \"genre\", \"Moody Blues and Procol Harum\", \"MISC\"],\n    [\"Peter Criss\", \"PER\", \"part of\", \"Lips\", \"MISC\"],\n    [\"Stan Penridge\", \"PER\", \"part of\", \"Lips\", \"MISC\"],\n    [\"Michael Benvenga\", \"PER\", \"participant of\", \"Captain Sanity\", \"MISC\"],\n    [\"Peter Criss\", \"PER\", \"participant of\", \"Captain Sanity\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Peter Criss\", \"PER\", \"member of\", \"Chelsea\", \"ORG\"],\n    [\"Michael Benvenga\", \"PER\", \"member of\", \"Chelsea\", \"ORG\"],\n    [\"Stan Penridge\", \"PER\", \"member of\", \"Chelsea\", \"ORG\"],\n    [\"Chelsea\", \"ORG\", \"located in\", \"New York City\", \"LOC\"],\n    [\"Peter Criss\", \"PER\", \"member of\", \"Lips\", \"ORG\"],\n    [\"Michael Benvenga\", \"PER\", \"member of\", \"Lips\", \"ORG\"],\n    [\"Stan Penridge\", \"PER\", \"member of\", \"Lips\", \"ORG\"],\n    [\"Lips\", \"ORG\", \"instance of\", \"duo\", \"MISC\"],\n    [\"Pete Shepley\", \"PER\", \"collaborator\", \"Mike Brand\", \"PER\"],\n    [\"Mike Brand\", \"PER\", \"collaborator\", \"Pete Shepley\", \"PER\"],\n    [\"Michael Benvenga\", \"PER\", \"session musician for\", \"Pete Shepley & Mike Brand\", \"ORG\"],\n    [\"Peter Criss\", \"PER\", \"session musician for\", \"Pete Shepley & Mike Brand\", \"ORG\"],\n    [\"Gene Simmons\", \"PER\", \"session musician for\", \"Pete Shepley & Mike Brand\", \"ORG\"],\n    [\"Captain Sanity\", \"MISC\", \"album by\", \"Pete Shepley & Mike Brand\", \"ORG\"],\n    [\"Chelsea\", \"ORG\", \"genre\", \"Moody Blues-like\", \"MISC\"],\n    [\"Chelsea\", \"ORG\", \"genre\", \"Procol Harum-like\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 20,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 20,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 22,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Peter Criss\", \"PER\", \"member of\", \"Chelsea\", \"ORG\"],\n    [\"Michael Benvenga\", \"PER\", \"member of\", \"Chelsea\", \"ORG\"],\n    [\"Stan Penridge\", \"PER\", \"member of\", \"Chelsea\", \"ORG\"],\n    [\"Chelsea\", \"ORG\", \"located in\", \"New York City\", \"LOC\"],\n    [\"Peter Criss\", \"PER\", \"member of\", \"Lips\", \"ORG\"],\n    [\"Michael Benvenga\", \"PER\", \"member of\", \"Lips\", \"ORG\"],\n    [\"Stan Penridge\", \"PER\", \"member of\", \"Lips\", \"ORG\"],\n    [\"Lips\", \"ORG\", \"instance of\", \"duo\", \"MISC\"],\n    [\"Pete Shepley\", \"PER\", \"collaborator\", \"Mike Brand\", \"PER\"],\n    [\"Mike Brand\", \"PER\", \"collaborator\", \"Pete Shepley\", \"PER\"],\n    [\"Michael Benvenga\", \"PER\", \"session musician for\", \"Pete Shepley & Mike Brand\", \"ORG\"],\n    [\"Peter Criss\", \"PER\", \"session musician for\", \"Pete Shepley & Mike Brand\", \"ORG\"],\n    [\"Gene Simmons\", \"PER\", \"session musician for\", \"Pete Shepley & Mike Brand\", \"ORG\"],\n    [\"Captain Sanity\", \"MISC\", \"album by\", \"Pete Shepley & Mike Brand\", \"ORG\"],\n    [\"Chelsea\", \"ORG\", \"genre\", \"Moody Blues-like\", \"MISC\"],\n    [\"Chelsea\", \"ORG\", \"genre\", \"Procol Harum-like\", \"MISC\"]\n]"
+}

@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_164",
+ "base_raw": "[\n    [\"Jeddah\", \"LOC\", \"located in\", \"Saudi Arabia\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"part of\", \"Makkah Province\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"located on\", \"Red Sea\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"population\", \"four million\", \"NUM\"],\n    [\"Jeddah\", \"LOC\", \"commercial capital of\", \"Saudi Arabia\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"principal gateway to\", \"Mecca\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"principal gateway to\", \"Medina\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"focusing on\", \"scientific and engineering leadership\", \"MISC\"],\n    [\"Jeddah\", \"LOC\", \"ranked\", \"fourth\", \"NUM\"],\n    [\"Jeddah\", \"LOC\", \"type of city\", \"Beta world city\", \"MISC\"],\n    [\"Jeddah\", \"LOC\", \"named by\", \"Globalization and World Cities Study Group and Network\", \"ORG\"],\n    [\"Jeddah\", \"LOC\", \"motto\", \"Jeddah Ghair\", \"MISC\"],\n    [\"Jeddah\", \"LOC\", \"translated to\", \"Jeddah is different\", \"MISC\"],\n    [\"Red Sea\", \"LOC\", \"contains\", \"Jeddah\", \"LOC\"],\n    [\"Saudi Arabia\", \"LOC\", \"has city\", \"Jeddah\", \"LOC\"],\n    [\"Makkah Province\", \"LOC\", \"has city\", \"Jeddah\", \"LOC\"],\n    [\"Mecca\", \"LOC\", \"located near\", \"Jeddah\", \"LOC\"],\n    [\"Medina\", \"LOC\", \"located near\", \"Jeddah\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 13,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Oceans",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Jeddah\", \"LOC\", \"located in the administrative territorial entity\", \"Makkah Province\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"part of\", \"Hejaz\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"located on terrain feature\", \"Red Sea\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"country\", \"Saudi Arabia\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"continent\", \"Asia\", \"LOC\"],\n    [\"Red Sea\", \"LOC\", \"located in or next to body of water\", \"Jeddah\", \"LOC\"],\n    [\"Mecca\", \"LOC\", \"located in the administrative territorial entity\", \"Saudi Arabia\", \"LOC\"],\n    [\"Medina\", \"LOC\", \"located in the administrative territorial entity\", \"Saudi Arabia\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"instance of\", \"Beta world city\", \"MISC\"],\n    [\"Globalization and World Cities Study Group and Network (GaWC)\", \"ORG\", \"located in\", \"Jeddah\", \"LOC\"],\n    [\"Saudi Arabia\", \"LOC\", \"contains administrative territorial entity\", \"Makkah Province\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"has part\", \"Tihamah region\", \"LOC\"],\n    [\"Tihamah region\", \"LOC\", \"part of\", \"Hejaz\", \"LOC\"],\n    [\"Hejaz\", \"LOC\", \"located in\", \"Saudi Arabia\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 28,
+  "FN": 17,
+  "recall": 0.19047619047619047,
+  "n_extracted": 32,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Jeddah\", \"LOC\", \"located in the administrative territorial entity\", \"Makkah Province\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"part of\", \"Hejaz\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"located on terrain feature\", \"Red Sea\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"country\", \"Saudi Arabia\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"league\", \"Beta world city\", \"MISC\"],\n    [\"Jeddah\", \"LOC\", \"ranked\", \"fourth\", \"NUM\"],\n    [\"Jeddah\", \"LOC\", \"location of formation\", \"Africa \u2013 Mid - East region\", \"LOC\"],\n    [\"Red Sea\", \"LOC\", \"contains administrative territorial entity\", \"Jeddah\", \"LOC\"],\n    [\"Saudi Arabia\", \"LOC\", \"has part\", \"Jeddah\", \"LOC\"],\n    [\"Mecca\", \"LOC\", \"located in the administrative territorial entity\", \"Hejaz\", \"LOC\"],\n    [\"Medina\", \"LOC\", \"located in the administrative territorial entity\", \"Hejaz\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"sister city\", \"Riyadh\", \"LOC\"],\n    [\"Riyadh\", \"LOC\", \"capital of\", \"Saudi Arabia\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"instance of\", \"resort city\", \"MISC\"],\n    [\"GaWC\", \"ORG\", \"creator\", \"Innovation Cities Index\", \"MISC\"],\n    [\"Jeddah\", \"LOC\", \"educated at\", \"scientific and engineering leadership\", \"MISC\"],\n    [\"Hejaz\", \"LOC\", \"part of\", \"Saudi Arabia\", \"LOC\"],\n    [\"Tihamah\", \"LOC\", \"part of\", \"Hejaz\", \"LOC\"],\n    [\"Jeddah\", \"LOC\", \"point in time\", \"2009\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 30,
+  "FN": 18,
+  "recall": 0.25,
+  "n_extracted": 36,
+  "judge_parse_ok": true
+ }
+}

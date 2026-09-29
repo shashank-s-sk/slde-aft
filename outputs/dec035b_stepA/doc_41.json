@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_41",
+ "base_raw": "[\n    [\"Chief Poundmaker\", \"PER\", \"leader of\", \"Cree\", \"MISC\"],\n    [\"Chief Big Bear\", \"PER\", \"leader of\", \"Cree\", \"MISC\"],\n    [\"Treaty 6\", \"MISC\", \"signed by\", \"Chief Poundmaker\", \"PER\"],\n    [\"Treaty 6\", \"MISC\", \"signed by\", \"Chief Big Bear\", \"PER\"],\n    [\"Canadian government\", \"ORG\", \"implementer of\", \"Treaty 6\", \"MISC\"],\n    [\"Cut Knife\", \"LOC\", \"location of reserve\", \"Chief Poundmaker\", \"PER\"],\n    [\"Frog Lake\", \"LOC\", \"location of settlement\", \"Chief Big Bear\", \"PER\"],\n    [\"Fort Pitt\", \"LOC\", \"location near\", \"Frog Lake\", \"LOC\"],\n    [\"Fort Battleford\", \"LOC\", \"location near\", \"Cut Knife\", \"LOC\"],\n    [\"North-West Territories\", \"LOC\", \"part of\", \"District of Saskatchewan\", \"LOC\"],\n    [\"North-West Rebellion\", \"MISC\", \"involved\", \"Cree\", \"MISC\"],\n    [\"Battle of Duck Lake\", \"MISC\", \"preceded\", \"Looting of Battleford\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 12,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Chief Poundmaker\", \"PER\", \"leader of\", \"Cree\", \"MISC\"],\n    [\"Chief Big Bear\", \"PER\", \"leader of\", \"Cree\", \"MISC\"],\n    [\"Treaty 6\", \"MISC\", \"signed by\", \"Chief Poundmaker\", \"PER\"],\n    [\"Treaty 6\", \"MISC\", \"signed by\", \"Chief Big Bear\", \"PER\"],\n    [\"Cut Knife\", \"LOC\", \"location of reserve\", \"Chief Poundmaker\", \"PER\"],\n    [\"Frog Lake\", \"LOC\", \"location of settlement\", \"Chief Big Bear\", \"PER\"],\n    [\"Fort Pitt\", \"LOC\", \"near\", \"Frog Lake\", \"LOC\"],\n    [\"Fort Battleford\", \"LOC\", \"near\", \"Cut Knife\", \"LOC\"],\n    [\"North-West Territories\", \"LOC\", \"part of\", \"District of Saskatchewan\", \"LOC\"],\n    [\"Canadian government\", \"ORG\", \"implementer of\", \"Treaty 6\", \"MISC\"],\n    [\"Cree\", \"MISC\", \"affected by\", \"loss of buffalo\", \"MISC\"],\n    [\"Indian agents\", \"MISC\", \"provider of\", \"inadequate rations\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 16,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 16,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Chief Poundmaker\", \"PER\", \"leader of\", \"Cree\", \"MISC\"],\n    [\"Chief Big Bear\", \"PER\", \"leader of\", \"Cree\", \"MISC\"],\n    [\"Treaty 6\", \"MISC\", \"signed by\", \"Chief Poundmaker\", \"PER\"],\n    [\"Treaty 6\", \"MISC\", \"signed by\", \"Chief Big Bear\", \"PER\"],\n    [\"Cut Knife\", \"LOC\", \"location of reserve\", \"Chief Poundmaker\", \"PER\"],\n    [\"Frog Lake\", \"LOC\", \"location of settlement\", \"Chief Big Bear\", \"PER\"],\n    [\"Fort Pitt\", \"LOC\", \"near\", \"Frog Lake\", \"LOC\"],\n    [\"Fort Battleford\", \"LOC\", \"near\", \"Cut Knife\", \"LOC\"],\n    [\"North-West Territories\", \"LOC\", \"part of\", \"District of Saskatchewan\", \"LOC\"],\n    [\"Canadian government\", \"ORG\", \"implementer of\", \"Treaty 6\", \"MISC\"],\n    [\"Cree\", \"MISC\", \"affected by\", \"loss of buffalo\", \"MISC\"],\n    [\"Indian agents\", \"MISC\", \"provider of\", \"inadequate rations\", \"MISC\"]\n]"
+}

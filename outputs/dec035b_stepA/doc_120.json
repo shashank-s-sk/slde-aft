@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_120",
+ "base_raw": "[\n    [\"The X-Files\", \"MISC\", \"genre\", \"science fiction\", \"MISC\"],\n    [\"David Nutter\", \"PER\", \"director of\", \"Nisei\", \"MISC\"],\n    [\"Chris Carter\", \"PER\", \"writer of\", \"Nisei\", \"MISC\"],\n    [\"Frank Spotnitz\", \"PER\", \"writer of\", \"Nisei\", \"MISC\"],\n    [\"Howard Gordon\", \"PER\", \"writer of\", \"Nisei\", \"MISC\"],\n    [\"Steven Williams\", \"PER\", \"guest star of\", \"Nisei\", \"MISC\"],\n    [\"Raymond J. Barry\", \"PER\", \"guest star of\", \"Nisei\", \"MISC\"],\n    [\"Stephen McHattie\", \"PER\", \"guest star of\", \"Nisei\", \"MISC\"],\n    [\"Nisei\", \"MISC\", \"part of\", \"The X-Files\", \"MISC\"],\n    [\"Fox Mulder\", \"PER\", \"investigator of\", \"X-Files\", \"MISC\"],\n    [\"Dana Scully\", \"PER\", \"investigator of\", \"X-Files\", \"MISC\"],\n    [\"Unit 731\", \"ORG\", \"inspiration for\", \"Nisei\", \"MISC\"],\n    [\"David Duchovny\", \"PER\", \"performer of\", \"stunt work\", \"MISC\"],\n    [\"Nisei\", \"MISC\", \"title refers to\", \"nisei\", \"MISC\"],\n    [\"Issei\", \"MISC\", \"related to\", \"nisei\", \"MISC\"],\n    [\"Japan\", \"LOC\", \"related to\", \"nisei\", \"MISC\"],\n    [\"World War II\", \"TIME\", \"time of\", \"Unit 731\", \"ORG\"],\n    [\"Nisei\", \"MISC\", \"followed by\", \"731\", \"MISC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 17,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Locations",
+  "Locations",
+  "Military Conflicts",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"The X-Files\", \"MISC\", \"genre\", \"science fiction\", \"MISC\"],\n    [\"David Nutter\", \"PER\", \"director of\", \"Nisei\", \"MISC\"],\n    [\"Chris Carter\", \"PER\", \"writer of\", \"Nisei\", \"MISC\"],\n    [\"Frank Spotnitz\", \"PER\", \"writer of\", \"Nisei\", \"MISC\"],\n    [\"Howard Gordon\", \"PER\", \"writer of\", \"Nisei\", \"MISC\"],\n    [\"Steven Williams\", \"PER\", \"guest star of\", \"Nisei\", \"MISC\"],\n    [\"Raymond J. Barry\", \"PER\", \"guest star of\", \"Nisei\", \"MISC\"],\n    [\"Stephen McHattie\", \"PER\", \"guest star of\", \"Nisei\", \"MISC\"],\n    [\"Fox Mulder\", \"PER\", \"investigator of\", \"X-Files\", \"MISC\"],\n    [\"Dana Scully\", \"PER\", \"investigator of\", \"X-Files\", \"MISC\"],\n    [\"Unit 731\", \"ORG\", \"location of\", \"Japan\", \"LOC\"],\n    [\"David Duchovny\", \"PER\", \"performer of\", \"stunt work\", \"MISC\"],\n    [\"Nisei\", \"MISC\", \"part of\", \"The X-Files\", \"MISC\"],\n    [\"Nisei\", \"MISC\", \"followed by\", \"731\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 18,
+  "FN": 12,
+  "recall": 0.29411764705882354,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"The X-Files\", \"MISC\", \"genre\", \"science fiction\", \"MISC\"],\n    [\"David Nutter\", \"PER\", \"position held\", \"director\", \"MISC\"],\n    [\"Chris Carter\", \"PER\", \"position held\", \"writer\", \"MISC\"],\n    [\"Frank Spotnitz\", \"PER\", \"position held\", \"writer\", \"MISC\"],\n    [\"Howard Gordon\", \"PER\", \"position held\", \"writer\", \"MISC\"],\n    [\"Steven Williams\", \"PER\", \"member of\", \"The X-Files\", \"MISC\"],\n    [\"Raymond J. Barry\", \"PER\", \"member of\", \"The X-Files\", \"MISC\"],\n    [\"Stephen McHattie\", \"PER\", \"member of\", \"The X-Files\", \"MISC\"],\n    [\"Fox Mulder\", \"PER\", \"employer\", \"FBI\", \"ORG\"],\n    [\"Dana Scully\", \"PER\", \"employer\", \"FBI\", \"ORG\"],\n    [\"The X-Files\", \"MISC\", \"creator\", \"Chris Carter\", \"PER\"],\n    [\"Unit 731\", \"ORG\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"David Duchovny\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Gillian Anderson\", \"PER\", \"member of\", \"The X-Files\", \"MISC\"],\n    [\"The X-Files\", \"MISC\", \"original language of work\", \"English\", \"MISC\"],\n    [\"Nisei\", \"MISC\", \"part of\", \"The X-Files\", \"MISC\"],\n    [\"731\", \"MISC\", \"part of\", \"The X-Files\", \"MISC\"],\n    [\"Fox\", \"ORG\", \"broadcaster\", \"The X-Files\", \"MISC\"],\n    [\"Nielsen\", \"ORG\", \"operator\", \"television ratings\", \"MISC\"],\n    [\"Japan\", \"LOC\", \"location of formation\", \"Unit 731\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 25,
+  "FN": 15,
+  "recall": 0.4,
+  "n_extracted": 36,
+  "judge_parse_ok": true
+ }
+}

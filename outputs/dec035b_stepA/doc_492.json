@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_492",
+ "base_raw": "[\n    [\"Suits\", \"MISC\", \"premiered on\", \"USA Network\", \"ORG\"],\n    [\"Aaron Korsh\", \"PER\", \"creator of\", \"Suits\", \"MISC\"],\n    [\"Kevin Bray\", \"PER\", \"director of\", \"Pilot\", \"MISC\"],\n    [\"Harvey Specter\", \"PER\", \"played by\", \"Gabriel Macht\", \"PER\"],\n    [\"Mike Ross\", \"PER\", \"played by\", \"Patrick J. Adams\", \"PER\"],\n    [\"Pearson Hardman\", \"ORG\", \"employer of\", \"Harvey Specter\", \"PER\"],\n    [\"Harvard Law School\", \"ORG\", \"alumni of\", \"Harvey Specter\", \"PER\"],\n    [\"Pilot\", \"MISC\", \"written by\", \"Aaron Korsh\", \"PER\"],\n    [\"Suits\", \"MISC\", \"genre\", \"legal comedy-drama\", \"MISC\"],\n    [\"Fairly Legal\", \"MISC\", \"premiered on\", \"USA Network\", \"ORG\"],\n    [\"Suits\", \"MISC\", \"watched by\", \"4.64 million viewers\", \"NUM\"],\n    [\"Pilot\", \"MISC\", \"original language of work\", \"English\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 11,
+  "recall": 0.15384615384615385,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Suits\", \"MISC\", \"creator\", \"Aaron Korsh\", \"PER\"],\n    [\"Aaron Korsh\", \"PER\", \"employer\", \"USA Network\", \"ORG\"],\n    [\"Kevin Bray\", \"PER\", \"employer\", \"USA Network\", \"ORG\"],\n    [\"Gabriel Macht\", \"PER\", \"employer\", \"USA Network\", \"ORG\"],\n    [\"Patrick J. Adams\", \"PER\", \"employer\", \"USA Network\", \"ORG\"],\n    [\"Harvey Specter\", \"PER\", \"employer\", \"Pearson Hardman\", \"ORG\"],\n    [\"Mike Ross\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Pearson Hardman\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"USA Network\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Harvard Law School\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"Fairly Legal\", \"MISC\", \"network\", \"USA Network\", \"ORG\"],\n    [\"Suits\", \"MISC\", \"premiere date\", \"June 23, 2011\", \"TIME\"],\n    [\"Suits\", \"MISC\", \"genre\", \"legal comedy-drama\", \"MISC\"],\n    [\"Aaron Korsh\", \"PER\", \"occupation\", \"series creator\", \"MISC\"],\n    [\"Kevin Bray\", \"PER\", \"occupation\", \"director\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 23,
+  "FN": 9,
+  "recall": 0.35714285714285715,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Suits\", \"MISC\", \"premiered on\", \"USA Network\", \"ORG\"],\n    [\"Aaron Korsh\", \"PER\", \"creator of\", \"Suits\", \"MISC\"],\n    [\"Kevin Bray\", \"PER\", \"director of\", \"Pilot\", \"MISC\"],\n    [\"Harvey Specter\", \"PER\", \"played by\", \"Gabriel Macht\", \"PER\"],\n    [\"Mike Ross\", \"PER\", \"played by\", \"Patrick J. Adams\", \"PER\"],\n    [\"Pearson Hardman\", \"ORG\", \"employer of\", \"Harvey Specter\", \"PER\"],\n    [\"Harvard Law School\", \"ORG\", \"alumni of\", \"Harvey Specter\", \"PER\"],\n    [\"Pilot\", \"MISC\", \"part of\", \"Suits\", \"MISC\"],\n    [\"Fairly Legal\", \"MISC\", \"compared to\", \"Suits\", \"MISC\"],\n    [\"June 23, 2011\", \"TIME\", \"premiere date of\", \"Suits\", \"MISC\"],\n    [\"United States\", \"LOC\", \"location of\", \"USA Network\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

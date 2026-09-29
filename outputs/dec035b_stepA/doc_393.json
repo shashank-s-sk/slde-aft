@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_393",
+ "base_raw": "[\n    [\"Caligavis chrysops\", \"MISC\", \"instance of\", \"honeyeater\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"part of\", \"Meliphagidae\", \"MISC\"],\n    [\"Meliphagidae\", \"MISC\", \"contains administrative territorial entity\", \"eastern Australia\", \"LOC\"],\n    [\"eastern Australia\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"southern Queensland\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"southern New South Wales\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Victoria\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Banksia\", \"MISC\", \"genre\", \"plant\", \"MISC\"],\n    [\"Grevillea\", \"MISC\", \"genre\", \"plant\", \"MISC\"],\n    [\"International Union for Conservation of Nature\", \"ORG\", \"location\", \"southern Queensland\", \"LOC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"inception\", \"March\", \"TIME\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"end time\", \"May\", \"TIME\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"start time\", \"July\", \"TIME\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"end time\", \"August\", \"TIME\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"location of formation\", \"southern New South Wales\", \"LOC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"location of formation\", \"Victoria\", \"LOC\"],\n    [\"honeyeater\", \"MISC\", \"applies to jurisdiction\", \"Australia\", \"LOC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"product or material produced\", \"eggs\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"parent taxon\", \"Meliphagidae\", \"MISC\"],\n    [\"Meliphagidae\", \"MISC\", \"subclass of\", \"bird\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 19,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Caligavis chrysops\", \"MISC\", \"family\", \"Meliphagidae\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"found in\", \"eastern Australia\", \"LOC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"found in\", \"south eastern Australia\", \"LOC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"found in\", \"open sclerophyll forests\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"found in\", \"coastal dunes\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"found in\", \"high-altitude subalpine areas\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"found in\", \"woodlands\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"eats\", \"flies\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"eats\", \"spiders\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"eats\", \"beetles\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"eats\", \"nectar\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"eats\", \"pollen\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"eats\", \"soft fruits\", \"MISC\"],\n    [\"Banksia\", \"MISC\", \"has part\", \"flowers\", \"MISC\"],\n    [\"Grevillea\", \"MISC\", \"has part\", \"flowers\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"migrates to\", \"southern Queensland\", \"LOC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"breeds in\", \"southern New South Wales\", \"LOC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"breeds in\", \"Victoria\", \"LOC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"lays eggs in\", \"delicate cup-shaped nest\", \"MISC\"],\n    [\"International Union for Conservation of Nature\", \"ORG\", \"considers\", \"Caligavis chrysops\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"is considered\", \"least concern\", \"MISC\"],\n    [\"Caligavis chrysops\", \"MISC\", \"is a pest in\", \"orchards\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 39,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 42,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Caligavis chrysops\", \"MISC\", \"instance of\", \"honeyeater\", \"MISC\"],\n    [\"Meliphagidae\", \"MISC\", \"instance of\", \"honeyeater family\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"located in\", \"eastern Australia\", \"LOC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"located in\", \"south eastern Australia\", \"LOC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"found in\", \"open sclerophyll forests\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"found in\", \"coastal dunes\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"found in\", \"high-altitude subalpine areas\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"found in\", \"woodlands along creeks and rivers\", \"MISC\"],\n    [\"Banksia\", \"MISC\", \"instance of\", \"plant\", \"MISC\"],\n    [\"Grevillea\", \"MISC\", \"instance of\", \"plant\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"eats\", \"flies\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"eats\", \"spiders\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"eats\", \"beetles\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"eats\", \"nectar\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"eats\", \"pollen\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"eats\", \"soft fruits\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"migrates to\", \"southern Queensland\", \"LOC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"breeds in\", \"southern New South Wales\", \"LOC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"breeds in\", \"Victoria\", \"LOC\"],\n    [\"International Union for Conservation of Nature\", \"ORG\", \"considers\", \"yellow-faced honeyeater\", \"MISC\"],\n    [\"yellow-faced honeyeater\", \"MISC\", \"considered a pest in\", \"orchards\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 36,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 40,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_173",
+ "base_raw": "[\n    [\"Victorian Gay and Lesbian Rights Lobby\", \"ORG\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"Victorian Gay and Lesbian Rights Lobby\", \"ORG\", \"country of origin\", \"Australia\", \"LOC\"],\n    [\"VGLRL\", \"ORG\", \"founded by\", \"Victorian Gay and Lesbian community\", \"MISC\"],\n    [\"VGLRL\", \"ORG\", \"inception\", \"October 1997\", \"TIME\"],\n    [\"VGLRL\", \"ORG\", \"member of\", \"GLBTI community\", \"MISC\"],\n    [\"GLBTI community\", \"MISC\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"GLBTI community\", \"MISC\", \"country of origin\", \"Australia\", \"LOC\"],\n    [\"VGLRL\", \"ORG\", \"position held\", \"peak lobby group\", \"MISC\"],\n    [\"VGLRL\", \"ORG\", \"parent organization\", \"None\", \"MISC\"],\n    [\"Equal Love campaign\", \"MISC\", \"initiated by\", \"VGLRL\", \"ORG\"],\n    [\"Equal Love campaign\", \"MISC\", \"location\", \"Australia\", \"LOC\"],\n    [\"VGLRL\", \"ORG\", \"notable work\", \"Equal Love campaign\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 9,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Victorian Gay and Lesbian Rights Lobby\", \"ORG\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"Victorian Gay and Lesbian Rights Lobby\", \"ORG\", \"country\", \"Australia\", \"LOC\"],\n    [\"Victorian Gay and Lesbian Rights Lobby\", \"ORG\", \"founded by\", \"None\", \"MISC\"],\n    [\"Victorian Gay and Lesbian Rights Lobby\", \"ORG\", \"inception\", \"October 1997\", \"TIME\"],\n    [\"VGLRL\", \"ORG\", \"instance of\", \"lobby group\", \"MISC\"],\n    [\"Gay, Lesbian, Bisexual, Transgender and Intersex community\", \"MISC\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"Victorian Gay and Lesbian Rights Lobby\", \"ORG\", \"position held\", \"peak lobby group\", \"MISC\"],\n    [\"Equal Love campaign\", \"MISC\", \"initiated by\", \"Victorian Gay and Lesbian Rights Lobby\", \"ORG\"],\n    [\"Australian gay and lesbian couples\", \"MISC\", \"location\", \"Australia\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 18,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"VGLRL\", \"ORG\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"VGLRL\", \"ORG\", \"country\", \"Australia\", \"LOC\"],\n    [\"VGLRL\", \"ORG\", \"founded by\", \"None\", \"MISC\"],\n    [\"VGLRL\", \"ORG\", \"inception\", \"October 1997\", \"TIME\"],\n    [\"VGLRL\", \"ORG\", \"member of\", \"GLBTI community\", \"MISC\"],\n    [\"GLBTI community\", \"MISC\", \"located in\", \"Victoria\", \"LOC\"],\n    [\"GLBTI community\", \"MISC\", \"country\", \"Australia\", \"LOC\"],\n    [\"VGLRL\", \"ORG\", \"position held\", \"peak lobby group\", \"MISC\"],\n    [\"VGLRL\", \"ORG\", \"author\", \"None\", \"MISC\"],\n    [\"Equal Love campaign\", \"MISC\", \"initiated by\", \"VGLRL\", \"ORG\"],\n    [\"Equal Love campaign\", \"MISC\", \"country\", \"Australia\", \"LOC\"],\n    [\"VGLRL\", \"ORG\", \"criticized\", \"Concerning the Criteria for the Discernment of Vocations with regard to Persons with Homosexual Tendencies in view of their Admission to the Seminary and to Holy Orders\", \"MISC\"],\n    [\"Concerning the Criteria for the Discernment of Vocations with regard to Persons with Homosexual Tendencies in view of their Admission to the Seminary and to Holy Orders\", \"MISC\", \"applies to jurisdiction\", \"Australian dioceses\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 6,
+  "recall": 0.45454545454545453,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

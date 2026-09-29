@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_77",
+ "base_raw": "[\n    [\"Joseph Charlier\", \"PER\", \"influenced by\", \"Charles Fourier\", \"PER\"],\n    [\"Dennis Milner\", \"PER\", \"nationality\", \"British\", \"MISC\"],\n    [\"John Stuart Mill\", \"PER\", \"described\", \"Fourierism\", \"MISC\"],\n    [\"Victor Prosper Consid\u00e9rant\", \"PER\", \"disciple of\", \"Charles Fourier\", \"PER\"],\n    [\"Charles Fourier\", \"PER\", \"criticized\", \"civilization\", \"MISC\"],\n    [\"Joseph Charlier\", \"PER\", \"died at\", \"Brussels\", \"LOC\"],\n    [\"Joseph Charlier\", \"PER\", \"born at\", \"Brussels\", \"LOC\"],\n    [\"Dennis Milner\", \"PER\", \"date of birth\", \"1892\", \"TIME\"],\n    [\"Dennis Milner\", \"PER\", \"date of death\", \"1956\", \"TIME\"],\n    [\"Joseph Charlier\", \"PER\", \"date of death\", \"6 December 1896\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 4,
+  "recall": 0.3333333333333333,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Joseph Charlier\", \"PER\", \"date of birth\", \"20 June 1816\", \"TIME\"],\n    [\"Joseph Charlier\", \"PER\", \"date of death\", \"6 December 1896\", \"TIME\"],\n    [\"Joseph Charlier\", \"PER\", \"place of birth\", \"Brussels\", \"LOC\"],\n    [\"Joseph Charlier\", \"PER\", \"place of death\", \"Brussels\", \"LOC\"],\n    [\"Dennis Milner\", \"PER\", \"date of birth\", \"1892\", \"TIME\"],\n    [\"Dennis Milner\", \"PER\", \"date of death\", \"1956\", \"TIME\"],\n    [\"Charles Fourier\", \"PER\", \"influenced by\", \"Joseph Charlier\", \"PER\"],\n    [\"Victor Prosper Consid\u00e9rant\", \"PER\", \"influenced by\", \"Charles Fourier\", \"PER\"],\n    [\"John Stuart Mill\", \"PER\", \"mentioned\", \"Charles Fourier\", \"PER\"],\n    [\"Joseph Charlier\", \"PER\", \"influenced by\", \"Charles Fourier\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Joseph Charlier\", \"PER\", \"influenced by\", \"Charles Fourier\", \"PER\"],\n    [\"Dennis Milner\", \"PER\", \"nationality\", \"British\", \"MISC\"],\n    [\"John Stuart Mill\", \"PER\", \"described\", \"Fourierism\", \"MISC\"],\n    [\"Victor Prosper Consid\u00e9rant\", \"PER\", \"disciple of\", \"Charles Fourier\", \"PER\"],\n    [\"Joseph Charlier\", \"PER\", \"died at\", \"Brussels\", \"LOC\"],\n    [\"Joseph Charlier\", \"PER\", \"born at\", \"Brussels\", \"LOC\"],\n    [\"Charles Fourier\", \"PER\", \"criticized\", \"civilization\", \"MISC\"],\n    [\"Victor Prosper Consid\u00e9rant\", \"PER\", \"suggested\", \"right to work\", \"MISC\"],\n    [\"Dennis Milner\", \"PER\", \"published\", \"state bonus scheme\", \"MISC\"],\n    [\"Joseph Charlier\", \"PER\", \"proposed\", \"basic income\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 10,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

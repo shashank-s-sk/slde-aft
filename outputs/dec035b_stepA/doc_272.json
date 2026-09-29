@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_272",
+ "base_raw": "[\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"date of birth\", \"14 July 1874\", \"TIME\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"date of death\", \"31 August 1949\", \"TIME\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"educated at\", \"\u00c9cole sup\u00e9rieure de physique et de chimie industrielles de la ville de Paris\", \"ORG\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"student of\", \"Charles Friedel\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"friend of\", \"Pierre Curie\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"friend of\", \"Marie Curie\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"discoverer of\", \"actinium\", \"MISC\"],\n    [\"Pierre Curie\", \"PER\", \"date of death\", \"1906\", \"TIME\"],\n    [\"Marie Curie\", \"PER\", \"research collaborator\", \"Andr\u00e9-Louis Debierne\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"research collaborator\", \"Marie Curie\", \"PER\"],\n    [\"actinium\", \"MISC\", \"discovered by\", \"Andr\u00e9-Louis Debierne\", \"PER\"],\n    [\"\u00c9cole sup\u00e9rieure de physique et de chimie industrielles de la ville de Paris\", \"ORG\", \"attended by\", \"Andr\u00e9-Louis Debierne\", \"PER\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Notable Individuals",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"date of birth\", \"14 July 1874\", \"TIME\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"date of death\", \"31 August 1949\", \"TIME\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"educated at\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"student of\", \"Charles Friedel\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"friend of\", \"Pierre Curie\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"friend of\", \"Marie Curie\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"discoverer of\", \"actinium\", \"MISC\"],\n    [\"Charles Friedel\", \"PER\", \"student\", \"Andr\u00e9-Louis Debierne\", \"PER\"],\n    [\"Pierre Curie\", \"PER\", \"friend\", \"Andr\u00e9-Louis Debierne\", \"PER\"],\n    [\"Marie Curie\", \"PER\", \"friend\", \"Andr\u00e9-Louis Debierne\", \"PER\"],\n    [\"Pierre Curie\", \"PER\", \"date of death\", \"1906\", \"TIME\"],\n    [\"ESPCI ParisTech\", \"ORG\", \"alumni\", \"Andr\u00e9-Louis Debierne\", \"PER\"],\n    [\"actinium\", \"MISC\", \"discoverer\", \"Andr\u00e9-Louis Debierne\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 11,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"date of birth\", \"14 July 1874\", \"TIME\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"date of death\", \"31 August 1949\", \"TIME\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"educated at\", \"ESPCI ParisTech\", \"ORG\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"student of\", \"Charles Friedel\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"friend of\", \"Pierre Curie\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"friend of\", \"Marie Curie\", \"PER\"],\n    [\"Andr\u00e9-Louis Debierne\", \"PER\", \"discoverer of\", \"actinium\", \"MISC\"],\n    [\"Pierre Curie\", \"PER\", \"date of death\", \"1906\", \"TIME\"],\n    [\"Marie Curie\", \"PER\", \"research collaborator\", \"Andr\u00e9-Louis Debierne\", \"PER\"],\n    [\"ESPCI ParisTech\", \"ORG\", \"location\", \"Paris\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 6,
+  "FN": 1,
+  "recall": 0.8888888888888888,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

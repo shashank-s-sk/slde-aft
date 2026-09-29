@@ -1,0 +1,410 @@
+
+=== Dataset A_llama-3.1-8b-instruct_verbalized ===
+Gold reconstruction sanity check: 0/665 mismatches against stored gold_label.
+Subjects: 74 total (37 val / 37 test); triples: 665 total (359 val / 306 test)
+Recall denominator: 245 total gold_unstructured keys (140 val / 105 test); 245 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.5385 R=1.0000 F1=0.7000 admitted=195 contested_admitted=5 | [tau=0.88] P=0.3559 R=1.0000 F1=0.5250 admitted=295 contested_admitted=25 | ECE=0.6100 Brier=0.5800
+  R2_published: [F1-selected] tau=0.73 P=0.4764 R=0.9619 F1=0.6372 admitted=212 contested_admitted=0 | [tau=0.88] P=0.7846 R=0.4857 F1=0.6000 admitted=65 contested_admitted=0 | ECE=0.3569 Brier=0.3023
+  R3_source_count: [F1-selected] tau=0.73 P=0.5101 R=0.9619 F1=0.6667 admitted=198 contested_admitted=0 | [tau=0.88] P=0.8793 R=0.4857 F1=0.6258 admitted=58 contested_admitted=0 | ECE=0.3296 Brier=0.2804
+  R4_evidence_share: [F1-selected] tau=0.57 P=0.4198 R=0.9714 F1=0.5862 admitted=243 contested_admitted=1 | [tau=0.88] P=0.7846 R=0.4857 F1=0.6000 admitted=65 contested_admitted=0 | ECE=0.3575 Brier=0.3022
+  R5_combined: [F1-selected] tau=0.73 P=0.5101 R=0.9619 F1=0.6667 admitted=198 contested_admitted=0 | [tau=0.88] P=0.8793 R=0.4857 F1=0.6258 admitted=58 contested_admitted=0 | ECE=0.3300 Brier=0.2798
+  R6_evidence_share_unsquared: [F1-selected] tau=0.58 P=0.4198 R=0.9714 F1=0.5862 admitted=243 contested_admitted=1 | [tau=0.88] P=0.4248 R=0.9143 F1=0.5801 admitted=226 contested_admitted=0 | ECE=0.5184 Brier=0.4810
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=0.0656 95% CI=[0.0243, 0.1268] excludes_zero=True
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0307 95% CI=[0.0050, 0.0739] excludes_zero=True
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=-0.0525 95% CI=[-0.1055, -0.0149] excludes_zero=True
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0307 95% CI=[0.0050, 0.0739] excludes_zero=True
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=-0.0525 95% CI=[-0.1055, -0.0149] excludes_zero=True
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.4150 CI=[-0.5242, -0.2573] excl0=True | R diff mean=0.5146 CI=[0.2747, 0.7551] excl0=True | F1 diff mean=-0.0659 CI=[-0.2781, 0.1780] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.0980 CI=[0.0200, 0.2151] excl0=True | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0263 CI=[0.0051, 0.0610] excl0=True
+Saved -> outputs\dec036\replay/A_llama-3.1-8b-instruct_verbalized_*
+
+=== Dataset A_llama-3.1-8b-instruct_logprob ===
+Gold reconstruction sanity check: 0/665 mismatches against stored gold_label.
+Subjects: 74 total (37 val / 37 test); triples: 665 total (359 val / 306 test)
+Recall denominator: 245 total gold_unstructured keys (140 val / 105 test); 245 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.3832 R=1.0000 F1=0.5541 admitted=274 contested_admitted=24 | [tau=0.88] P=0.3535 R=1.0000 F1=0.5224 admitted=297 contested_admitted=25 | ECE=0.6351 Brier=0.6236
+  R2_published: [F1-selected] tau=0.49 P=0.4080 R=0.9714 F1=0.5746 admitted=250 contested_admitted=5 | [tau=0.88] P=0.6986 R=0.4857 F1=0.5730 admitted=73 contested_admitted=0 | ECE=0.3679 Brier=0.3163
+  R3_source_count: [F1-selected] tau=0.46 P=0.4160 R=0.9905 F1=0.5859 admitted=250 contested_admitted=7 | [tau=0.88] P=0.8361 R=0.4857 F1=0.6145 admitted=61 contested_admitted=0 | ECE=0.3421 Brier=0.2956
+  R4_evidence_share: [F1-selected] tau=0.55 P=0.4180 R=0.9714 F1=0.5845 admitted=244 contested_admitted=2 | [tau=0.88] P=0.6986 R=0.4857 F1=0.5730 admitted=73 contested_admitted=0 | ECE=0.3687 Brier=0.3163
+  R5_combined: [F1-selected] tau=0.51 P=0.4194 R=0.9905 F1=0.5892 admitted=248 contested_admitted=6 | [tau=0.88] P=0.8361 R=0.4857 F1=0.6145 admitted=61 contested_admitted=0 | ECE=0.3426 Brier=0.2952
+  R6_evidence_share_unsquared: [F1-selected] tau=0.56 P=0.4211 R=0.9905 F1=0.5909 admitted=247 contested_admitted=5 | [tau=0.88] P=0.4211 R=0.9143 F1=0.5766 admitted=228 contested_admitted=0 | ECE=0.5197 Brier=0.4831
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=-0.0193 95% CI=[-0.0707, 0.0290] excludes_zero=False
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0113 95% CI=[-0.0054, 0.0340] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0099 95% CI=[-0.0043, 0.0363] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0146 95% CI=[-0.0054, 0.0423] excludes_zero=False
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=0.0163 95% CI=[-0.0054, 0.0470] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.3327 CI=[-0.4601, -0.1425] excl0=True | R diff mean=0.5146 CI=[0.2747, 0.7551] excl0=True | F1 diff mean=-0.0417 CI=[-0.2435, 0.1922] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.1382 CI=[0.0300, 0.2838] excl0=True | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0417 CI=[0.0081, 0.0952] excl0=True
+Saved -> outputs\dec036\replay/A_llama-3.1-8b-instruct_logprob_*
+
+=== Dataset A_llama-3.1-8b-instruct_logprob_object ===
+Gold reconstruction sanity check: 0/665 mismatches against stored gold_label.
+Subjects: 74 total (37 val / 37 test); triples: 665 total (359 val / 306 test)
+Recall denominator: 245 total gold_unstructured keys (140 val / 105 test); 245 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.3684 R=1.0000 F1=0.5385 admitted=285 contested_admitted=26 | [tau=0.88] P=0.3584 R=1.0000 F1=0.5276 admitted=293 contested_admitted=26 | ECE=0.6262 Brier=0.6143
+  R2_published: [F1-selected] tau=0.49 P=0.4064 R=0.9714 F1=0.5730 admitted=251 contested_admitted=6 | [tau=0.88] P=0.6800 R=0.4857 F1=0.5667 admitted=75 contested_admitted=0 | ECE=0.3652 Brier=0.3163
+  R3_source_count: [F1-selected] tau=0.46 P=0.4160 R=0.9905 F1=0.5859 admitted=250 contested_admitted=7 | [tau=0.88] P=0.8361 R=0.4857 F1=0.6145 admitted=61 contested_admitted=0 | ECE=0.3397 Brier=0.2958
+  R4_evidence_share: [F1-selected] tau=0.56 P=0.4228 R=0.9905 F1=0.5926 admitted=246 contested_admitted=5 | [tau=0.88] P=0.6800 R=0.4857 F1=0.5667 admitted=75 contested_admitted=0 | ECE=0.3755 Brier=0.3168
+  R5_combined: [F1-selected] tau=0.52 P=0.4177 R=0.9905 F1=0.5876 admitted=249 contested_admitted=7 | [tau=0.88] P=0.8361 R=0.4857 F1=0.6145 admitted=61 contested_admitted=0 | ECE=0.3473 Brier=0.2957
+  R6_evidence_share_unsquared: [F1-selected] tau=0.57 P=0.4211 R=0.9905 F1=0.5909 admitted=247 contested_admitted=6 | [tau=0.88] P=0.4211 R=0.9143 F1=0.5766 admitted=228 contested_admitted=0 | ECE=0.5195 Brier=0.4817
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=-0.0329 95% CI=[-0.0867, 0.0197] excludes_zero=False
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0129 95% CI=[-0.0034, 0.0352] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0196 95% CI=[0.0000, 0.0498] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0145 95% CI=[-0.0067, 0.0424] excludes_zero=False
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=0.0180 95% CI=[-0.0033, 0.0485] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.3114 CI=[-0.4518, -0.1136] excl0=True | R diff mean=0.5146 CI=[0.2747, 0.7551] excl0=True | F1 diff mean=-0.0305 CI=[-0.2307, 0.1992] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.1546 CI=[0.0300, 0.3223] excl0=True | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0478 CI=[0.0081, 0.1129] excl0=True
+Saved -> outputs\dec036\replay/A_llama-3.1-8b-instruct_logprob_object_*
+
+=== Dataset A_deepseek-v3.2_verbalized ===
+Gold reconstruction sanity check: 0/648 mismatches against stored gold_label.
+Subjects: 55 total (27 val / 28 test); triples: 648 total (331 val / 317 test)
+Recall denominator: 245 total gold_unstructured keys (119 val / 126 test); 245 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.5385 R=1.0000 F1=0.7000 admitted=234 contested_admitted=6 | [tau=0.88] P=0.4013 R=1.0000 F1=0.5727 admitted=314 contested_admitted=25 | ECE=0.5681 Brier=0.5515
+  R2_published: [F1-selected] tau=0.73 P=0.4819 R=0.9524 F1=0.6400 admitted=249 contested_admitted=0 | [tau=0.88] P=0.7143 R=0.3968 F1=0.5102 admitted=70 contested_admitted=0 | ECE=0.3361 Brier=0.3145
+  R3_source_count: [F1-selected] tau=0.73 P=0.5195 R=0.9524 F1=0.6723 admitted=231 contested_admitted=0 | [tau=0.88] P=0.9434 R=0.3968 F1=0.5587 admitted=53 contested_admitted=0 | ECE=0.2988 Brier=0.2761
+  R4_evidence_share: [F1-selected] tau=0.73 P=0.4819 R=0.9524 F1=0.6400 admitted=249 contested_admitted=0 | [tau=0.88] P=0.7143 R=0.3968 F1=0.5102 admitted=70 contested_admitted=0 | ECE=0.3364 Brier=0.3150
+  R5_combined: [F1-selected] tau=0.73 P=0.5195 R=0.9524 F1=0.6723 admitted=231 contested_admitted=0 | [tau=0.88] P=0.9434 R=0.3968 F1=0.5587 admitted=53 contested_admitted=0 | ECE=0.2992 Brier=0.2753
+  R6_evidence_share_unsquared: [F1-selected] tau=0.59 P=0.4615 R=0.9524 F1=0.6218 admitted=260 contested_admitted=0 | [tau=0.88] P=0.4774 R=0.9206 F1=0.6287 admitted=243 contested_admitted=0 | ECE=0.4875 Brier=0.4602
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=0.0618 95% CI=[0.0240, 0.1149] excludes_zero=True
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0337 95% CI=[0.0049, 0.0753] excludes_zero=True
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0000 95% CI=[0.0000, 0.0000] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0337 95% CI=[0.0049, 0.0753] excludes_zero=True
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=-0.0191 95% CI=[-0.0462, -0.0029] excludes_zero=True
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.3089 CI=[-0.4959, -0.0739] excl0=True | R diff mean=0.6039 CI=[0.3889, 0.8061] excl0=True | F1 diff mean=0.0700 CI=[-0.1333, 0.2949] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.2265 CI=[0.0379, 0.4170] excl0=True | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0483 CI=[0.0059, 0.1092] excl0=True
+Saved -> outputs\dec036\replay/A_deepseek-v3.2_verbalized_*
+
+=== Dataset A_deepseek-v3.2_logprob ===
+Gold reconstruction sanity check: 0/648 mismatches against stored gold_label.
+Subjects: 55 total (27 val / 28 test); triples: 648 total (331 val / 317 test)
+Recall denominator: 245 total gold_unstructured keys (119 val / 126 test); 245 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.4038 R=1.0000 F1=0.5753 admitted=312 contested_admitted=25 | [tau=0.88] P=0.3987 R=1.0000 F1=0.5701 admitted=316 contested_admitted=25 | ECE=0.5892 Brier=0.5859
+  R2_published: [F1-selected] tau=0.73 P=0.4651 R=0.9524 F1=0.6250 admitted=258 contested_admitted=0 | [tau=0.88] P=0.7042 R=0.3968 F1=0.5076 admitted=71 contested_admitted=0 | ECE=0.3393 Brier=0.3183
+  R3_source_count: [F1-selected] tau=0.46 P=0.4593 R=0.9841 F1=0.6263 admitted=270 contested_admitted=9 | [tau=0.88] P=0.9434 R=0.3968 F1=0.5587 admitted=53 contested_admitted=0 | ECE=0.3041 Brier=0.2842
+  R4_evidence_share: [F1-selected] tau=0.55 P=0.4636 R=0.9603 F1=0.6253 admitted=261 contested_admitted=2 | [tau=0.88] P=0.7042 R=0.3968 F1=0.5076 admitted=71 contested_admitted=0 | ECE=0.3395 Brier=0.3189
+  R5_combined: [F1-selected] tau=0.51 P=0.4627 R=0.9841 F1=0.6294 admitted=268 contested_admitted=8 | [tau=0.88] P=0.9434 R=0.3968 F1=0.5587 admitted=53 contested_admitted=0 | ECE=0.3044 Brier=0.2835
+  R6_evidence_share_unsquared: [F1-selected] tau=0.57 P=0.4618 R=0.9603 F1=0.6237 admitted=262 contested_admitted=2 | [tau=0.88] P=0.4754 R=0.9206 F1=0.6270 admitted=244 contested_admitted=0 | ECE=0.4879 Brier=0.4611
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=-0.0488 95% CI=[-0.1277, 0.0154] excludes_zero=False
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0009 95% CI=[-0.0196, 0.0189] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0003 95% CI=[-0.0069, 0.0093] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0041 95% CI=[-0.0115, 0.0198] excludes_zero=False
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=-0.0014 95% CI=[-0.0097, 0.0080] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.3009 CI=[-0.4860, -0.0686] excl0=True | R diff mean=0.6039 CI=[0.3889, 0.8061] excl0=True | F1 diff mean=0.0702 CI=[-0.1321, 0.2954] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.2367 CI=[0.0491, 0.4291] excl0=True | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0509 CI=[0.0079, 0.1129] excl0=True
+Saved -> outputs\dec036\replay/A_deepseek-v3.2_logprob_*
+
+=== Dataset A_deepseek-v3.2_logprob_object ===
+Gold reconstruction sanity check: 0/648 mismatches against stored gold_label.
+Subjects: 55 total (27 val / 28 test); triples: 648 total (331 val / 317 test)
+Recall denominator: 245 total gold_unstructured keys (119 val / 126 test); 245 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.4051 R=1.0000 F1=0.5767 admitted=311 contested_admitted=25 | [tau=0.88] P=0.4000 R=1.0000 F1=0.5714 admitted=315 contested_admitted=25 | ECE=0.5894 Brier=0.5858
+  R2_published: [F1-selected] tau=0.73 P=0.4615 R=0.9524 F1=0.6218 admitted=260 contested_admitted=0 | [tau=0.88] P=0.7042 R=0.3968 F1=0.5076 admitted=71 contested_admitted=0 | ECE=0.3397 Brier=0.3191
+  R3_source_count: [F1-selected] tau=0.46 P=0.4593 R=0.9841 F1=0.6263 admitted=270 contested_admitted=9 | [tau=0.88] P=0.9434 R=0.3968 F1=0.5587 admitted=53 contested_admitted=0 | ECE=0.3046 Brier=0.2852
+  R4_evidence_share: [F1-selected] tau=0.57 P=0.4636 R=0.9603 F1=0.6253 admitted=261 contested_admitted=1 | [tau=0.88] P=0.7042 R=0.3968 F1=0.5076 admitted=71 contested_admitted=0 | ECE=0.3425 Brier=0.3191
+  R5_combined: [F1-selected] tau=0.51 P=0.4627 R=0.9841 F1=0.6294 admitted=268 contested_admitted=8 | [tau=0.88] P=0.9434 R=0.3968 F1=0.5587 admitted=53 contested_admitted=0 | ECE=0.3051 Brier=0.2841
+  R6_evidence_share_unsquared: [F1-selected] tau=0.57 P=0.4636 R=0.9603 F1=0.6253 admitted=261 contested_admitted=1 | [tau=0.88] P=0.4754 R=0.9206 F1=0.6270 admitted=244 contested_admitted=0 | ECE=0.4904 Brier=0.4604
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=-0.0442 95% CI=[-0.1238, 0.0207] excludes_zero=False
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0043 95% CI=[-0.0156, 0.0216] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0035 95% CI=[0.0000, 0.0114] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0075 95% CI=[-0.0071, 0.0225] excludes_zero=False
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=0.0035 95% CI=[0.0000, 0.0114] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.2997 CI=[-0.4833, -0.0683] excl0=True | R diff mean=0.6039 CI=[0.3889, 0.8061] excl0=True | F1 diff mean=0.0715 CI=[-0.1299, 0.2949] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.2367 CI=[0.0491, 0.4291] excl0=True | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0509 CI=[0.0079, 0.1129] excl0=True
+Saved -> outputs\dec036\replay/A_deepseek-v3.2_logprob_object_*
+
+=== Dataset B_llama-3.1-8b-instruct_verbalized ===
+Gold reconstruction sanity check: 0/2240 mismatches against stored gold_label.
+Subjects: 197 total (98 val / 99 test); triples: 2240 total (1045 val / 1195 test)
+Recall denominator: 980 total gold_unstructured keys (462 val / 518 test); 980 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.5340 R=1.0000 F1=0.6962 admitted=970 contested_admitted=44 | [tau=0.88] P=0.4446 R=1.0000 F1=0.6156 admitted=1165 contested_admitted=71 | ECE=0.5325 Brier=0.5180
+  R2_published: [F1-selected] tau=0.90 P=0.9306 R=0.3880 F1=0.5477 admitted=216 contested_admitted=0 | [tau=0.88] P=0.9095 R=0.3880 F1=0.5440 admitted=221 contested_admitted=0 | ECE=0.2917 Brier=0.2709
+  R3_source_count: [F1-selected] tau=0.89 P=0.9306 R=0.3880 F1=0.5477 admitted=216 contested_admitted=0 | [tau=0.88] P=0.9220 R=0.3880 F1=0.5462 admitted=218 contested_admitted=0 | ECE=0.2900 Brier=0.2692
+  R4_evidence_share: [F1-selected] tau=0.90 P=0.9306 R=0.3880 F1=0.5477 admitted=216 contested_admitted=0 | [tau=0.88] P=0.9095 R=0.3880 F1=0.5440 admitted=221 contested_admitted=0 | ECE=0.2896 Brier=0.2680
+  R5_combined: [F1-selected] tau=0.89 P=0.9306 R=0.3880 F1=0.5477 admitted=216 contested_admitted=0 | [tau=0.88] P=0.9220 R=0.3880 F1=0.5462 admitted=218 contested_admitted=0 | ECE=0.2905 Brier=0.2664
+  R6_evidence_share_unsquared: [F1-selected] tau=0.99 P=0.4967 R=0.8745 F1=0.6336 admitted=912 contested_admitted=0 | [tau=0.88] P=0.4984 R=0.8842 F1=0.6374 admitted=919 contested_admitted=0 | ECE=0.4414 Brier=0.4308
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=0.1505 95% CI=[0.0531, 0.2577] excludes_zero=True
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=-0.0000 95% CI=[-0.0039, 0.0044] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0000 95% CI=[0.0000, 0.0000] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=-0.0000 95% CI=[-0.0039, 0.0044] excludes_zero=False
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=0.0874 95% CI=[-0.0128, 0.1955] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.4629 CI=[-0.4913, -0.4251] excl0=True | R diff mean=0.6120 CI=[0.5124, 0.7105] excl0=True | F1 diff mean=0.0745 CI=[-0.0364, 0.1906] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.0124 CI=[0.0000, 0.0334] excl0=False | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0022 CI=[0.0000, 0.0060] excl0=False
+Saved -> outputs\dec036\replay/B_llama-3.1-8b-instruct_verbalized_*
+
+=== Dataset B_llama-3.1-8b-instruct_logprob ===
+Gold reconstruction sanity check: 0/2240 mismatches against stored gold_label.
+Subjects: 197 total (98 val / 99 test); triples: 2240 total (1045 val / 1195 test)
+Recall denominator: 980 total gold_unstructured keys (462 val / 518 test); 980 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.4633 R=1.0000 F1=0.6333 admitted=1118 contested_admitted=67 | [tau=0.88] P=0.4390 R=1.0000 F1=0.6101 admitted=1180 contested_admitted=70 | ECE=0.5480 Brier=0.5417
+  R2_published: [F1-selected] tau=0.93 P=0.9078 R=0.3803 F1=0.5361 admitted=217 contested_admitted=0 | [tau=0.88] P=0.8894 R=0.3880 F1=0.5403 admitted=226 contested_admitted=0 | ECE=0.2961 Brier=0.2758
+  R3_source_count: [F1-selected] tau=0.92 P=0.9095 R=0.3880 F1=0.5440 admitted=221 contested_admitted=0 | [tau=0.88] P=0.9095 R=0.3880 F1=0.5440 admitted=221 contested_admitted=0 | ECE=0.2871 Brier=0.2738
+  R4_evidence_share: [F1-selected] tau=0.93 P=0.9078 R=0.3803 F1=0.5361 admitted=217 contested_admitted=0 | [tau=0.88] P=0.8894 R=0.3880 F1=0.5403 admitted=226 contested_admitted=0 | ECE=0.2910 Brier=0.2733
+  R5_combined: [F1-selected] tau=0.92 P=0.9095 R=0.3880 F1=0.5440 admitted=221 contested_admitted=0 | [tau=0.88] P=0.9095 R=0.3880 F1=0.5440 admitted=221 contested_admitted=0 | ECE=0.2847 Brier=0.2715
+  R6_evidence_share_unsquared: [F1-selected] tau=0.50 P=0.4933 R=1.0000 F1=0.6607 admitted=1050 contested_admitted=57 | [tau=0.88] P=0.4978 R=0.8842 F1=0.6370 admitted=920 contested_admitted=0 | ECE=0.4493 Brier=0.4329
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=0.0998 95% CI=[-0.0063, 0.2128] excludes_zero=False
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0079 95% CI=[-0.0008, 0.0194] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0000 95% CI=[0.0000, 0.0000] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0079 95% CI=[-0.0008, 0.0194] excludes_zero=False
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=0.1263 95% CI=[0.0287, 0.2323] excludes_zero=True
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.4482 CI=[-0.4842, -0.4011] excl0=True | R diff mean=0.6120 CI=[0.5124, 0.7105] excl0=True | F1 diff mean=0.0726 CI=[-0.0368, 0.1878] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.0202 CI=[0.0036, 0.0439] excl0=True | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0036 CI=[0.0007, 0.0080] excl0=True
+Saved -> outputs\dec036\replay/B_llama-3.1-8b-instruct_logprob_*
+
+=== Dataset B_llama-3.1-8b-instruct_logprob_object ===
+Gold reconstruction sanity check: 0/2240 mismatches against stored gold_label.
+Subjects: 197 total (98 val / 99 test); triples: 2240 total (1045 val / 1195 test)
+Recall denominator: 980 total gold_unstructured keys (462 val / 518 test); 980 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.4560 R=1.0000 F1=0.6264 admitted=1136 contested_admitted=70 | [tau=0.88] P=0.4473 R=1.0000 F1=0.6181 admitted=1158 contested_admitted=72 | ECE=0.5416 Brier=0.5317
+  R2_published: [F1-selected] tau=0.45 P=0.4971 R=0.9961 F1=0.6632 admitted=1038 contested_admitted=42 | [tau=0.88] P=0.8894 R=0.3880 F1=0.5403 admitted=226 contested_admitted=0 | ECE=0.2960 Brier=0.2746
+  R3_source_count: [F1-selected] tau=0.91 P=0.9136 R=0.3880 F1=0.5447 admitted=220 contested_admitted=0 | [tau=0.88] P=0.9095 R=0.3880 F1=0.5440 admitted=221 contested_admitted=0 | ECE=0.2864 Brier=0.2728
+  R4_evidence_share: [F1-selected] tau=0.46 P=0.4971 R=0.9981 F1=0.6637 admitted=1040 contested_admitted=45 | [tau=0.88] P=0.8894 R=0.3880 F1=0.5403 admitted=226 contested_admitted=0 | ECE=0.2851 Brier=0.2710
+  R5_combined: [F1-selected] tau=0.91 P=0.9136 R=0.3880 F1=0.5447 admitted=220 contested_admitted=0 | [tau=0.88] P=0.9095 R=0.3880 F1=0.5440 admitted=221 contested_admitted=0 | ECE=0.2807 Brier=0.2694
+  R6_evidence_share_unsquared: [F1-selected] tau=0.51 P=0.4976 R=0.9981 F1=0.6641 admitted=1039 contested_admitted=47 | [tau=0.88] P=0.4978 R=0.8842 F1=0.6370 admitted=920 contested_admitted=0 | ECE=0.4461 Brier=0.4306
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=-0.0358 95% CI=[-0.0793, -0.0030] excludes_zero=True
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=-0.1202 95% CI=[-0.2270, -0.0220] excludes_zero=True
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0004 95% CI=[-0.0017, 0.0029] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=-0.1202 95% CI=[-0.2270, -0.0220] excludes_zero=True
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=0.0008 95% CI=[-0.0043, 0.0065] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.4399 CI=[-0.4736, -0.3953] excl0=True | R diff mean=0.6120 CI=[0.5124, 0.7105] excl0=True | F1 diff mean=0.0806 CI=[-0.0292, 0.1944] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.0202 CI=[0.0036, 0.0439] excl0=True | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0036 CI=[0.0007, 0.0080] excl0=True
+Saved -> outputs\dec036\replay/B_llama-3.1-8b-instruct_logprob_object_*
+
+=== Dataset B_deepseek-v3.2_verbalized ===
+Gold reconstruction sanity check: 0/2138 mismatches against stored gold_label.
+Subjects: 154 total (77 val / 77 test); triples: 2138 total (1077 val / 1061 test)
+Recall denominator: 980 total gold_unstructured keys (490 val / 490 test); 980 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.5385 R=1.0000 F1=0.7000 admitted=910 contested_admitted=18 | [tau=0.88] P=0.4627 R=1.0000 F1=0.6327 admitted=1059 contested_admitted=45 | ECE=0.5113 Brier=0.5040
+  R2_published: [F1-selected] tau=0.73 P=0.5232 R=0.9653 F1=0.6786 admitted=904 contested_admitted=0 | [tau=0.88] P=0.9500 R=0.4653 F1=0.6247 admitted=240 contested_admitted=0 | ECE=0.2707 Brier=0.2619
+  R3_source_count: [F1-selected] tau=0.36 P=0.5169 R=1.0000 F1=0.6815 admitted=948 contested_admitted=23 | [tau=0.88] P=0.9580 R=0.4653 F1=0.6264 admitted=238 contested_admitted=0 | ECE=0.2770 Brier=0.2616
+  R4_evidence_share: [F1-selected] tau=0.73 P=0.5232 R=0.9653 F1=0.6786 admitted=904 contested_admitted=0 | [tau=0.88] P=0.9500 R=0.4653 F1=0.6247 admitted=240 contested_admitted=0 | ECE=0.2711 Brier=0.2621
+  R5_combined: [F1-selected] tau=0.37 P=0.5174 R=1.0000 F1=0.6820 admitted=947 contested_admitted=23 | [tau=0.88] P=0.9580 R=0.4653 F1=0.6264 admitted=238 contested_admitted=0 | ECE=0.2794 Brier=0.2606
+  R6_evidence_share_unsquared: [F1-selected] tau=0.99 P=0.5299 R=0.9224 F1=0.6731 admitted=853 contested_admitted=0 | [tau=0.88] P=0.5287 R=0.9224 F1=0.6721 admitted=855 contested_admitted=0 | ECE=0.4317 Brier=0.4200
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=0.0214 95% CI=[0.0122, 0.0318] excludes_zero=True
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0028 95% CI=[-0.0116, 0.0150] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0000 95% CI=[0.0000, 0.0000] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0033 95% CI=[-0.0112, 0.0158] excludes_zero=False
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=-0.0056 95% CI=[-0.0192, 0.0067] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.4852 CI=[-0.5090, -0.4626] excl0=True | R diff mean=0.5348 CI=[0.4226, 0.6450] excl0=True | F1 diff mean=0.0109 CI=[-0.0996, 0.1269] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.0080 CI=[0.0000, 0.0271] excl0=False | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0017 CI=[0.0000, 0.0055] excl0=False
+Saved -> outputs\dec036\replay/B_deepseek-v3.2_verbalized_*
+
+=== Dataset B_deepseek-v3.2_logprob ===
+Gold reconstruction sanity check: 0/2138 mismatches against stored gold_label.
+Subjects: 154 total (77 val / 77 test); triples: 2138 total (1077 val / 1061 test)
+Recall denominator: 980 total gold_unstructured keys (490 val / 490 test); 980 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.4743 R=1.0000 F1=0.6435 admitted=1033 contested_admitted=43 | [tau=0.88] P=0.4627 R=1.0000 F1=0.6327 admitted=1059 contested_admitted=45 | ECE=0.5236 Brier=0.5192
+  R2_published: [F1-selected] tau=0.73 P=0.5153 R=0.9653 F1=0.6719 admitted=918 contested_admitted=0 | [tau=0.88] P=0.9500 R=0.4653 F1=0.6247 admitted=240 contested_admitted=0 | ECE=0.2727 Brier=0.2636
+  R3_source_count: [F1-selected] tau=0.46 P=0.5149 R=0.9878 F1=0.6769 admitted=940 contested_admitted=16 | [tau=0.88] P=0.9580 R=0.4653 F1=0.6264 admitted=238 contested_admitted=0 | ECE=0.2706 Brier=0.2630
+  R4_evidence_share: [F1-selected] tau=0.73 P=0.5153 R=0.9653 F1=0.6719 admitted=918 contested_admitted=0 | [tau=0.88] P=0.9500 R=0.4653 F1=0.6247 admitted=240 contested_admitted=0 | ECE=0.2730 Brier=0.2638
+  R5_combined: [F1-selected] tau=0.51 P=0.5182 R=0.9878 F1=0.6798 admitted=934 contested_admitted=13 | [tau=0.88] P=0.9580 R=0.4653 F1=0.6264 admitted=238 contested_admitted=0 | ECE=0.2719 Brier=0.2622
+  R6_evidence_share_unsquared: [F1-selected] tau=0.99 P=0.5299 R=0.9224 F1=0.6731 admitted=853 contested_admitted=0 | [tau=0.88] P=0.5287 R=0.9224 F1=0.6721 admitted=855 contested_admitted=0 | ECE=0.4328 Brier=0.4207
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=-0.0277 95% CI=[-0.0802, 0.0100] excludes_zero=False
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0051 95% CI=[-0.0027, 0.0125] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0000 95% CI=[0.0000, 0.0000] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0079 95% CI=[0.0017, 0.0143] excludes_zero=True
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=0.0012 95% CI=[-0.0108, 0.0132] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.4852 CI=[-0.5094, -0.4625] excl0=True | R diff mean=0.5348 CI=[0.4226, 0.6450] excl0=True | F1 diff mean=0.0109 CI=[-0.0999, 0.1269] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.0080 CI=[0.0000, 0.0271] excl0=False | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0017 CI=[0.0000, 0.0055] excl0=False
+Saved -> outputs\dec036\replay/B_deepseek-v3.2_logprob_*
+
+=== Dataset B_deepseek-v3.2_logprob_object ===
+Gold reconstruction sanity check: 0/2138 mismatches against stored gold_label.
+Subjects: 154 total (77 val / 77 test); triples: 2138 total (1077 val / 1061 test)
+Recall denominator: 980 total gold_unstructured keys (490 val / 490 test); 980 gold-positive candidate rows already in the snapshot (equal: True).
+  R1_max_merge: [F1-selected] tau=0.98 P=0.4721 R=1.0000 F1=0.6414 admitted=1038 contested_admitted=45 | [tau=0.88] P=0.4662 R=1.0000 F1=0.6360 admitted=1051 contested_admitted=45 | ECE=0.5214 Brier=0.5160
+  R2_published: [F1-selected] tau=0.73 P=0.5136 R=0.9653 F1=0.6704 admitted=921 contested_admitted=0 | [tau=0.88] P=0.9500 R=0.4653 F1=0.6247 admitted=240 contested_admitted=0 | ECE=0.2721 Brier=0.2634
+  R3_source_count: [F1-selected] tau=0.46 P=0.5149 R=0.9878 F1=0.6769 admitted=940 contested_admitted=16 | [tau=0.88] P=0.9580 R=0.4653 F1=0.6264 admitted=238 contested_admitted=0 | ECE=0.2699 Brier=0.2628
+  R4_evidence_share: [F1-selected] tau=0.60 P=0.5152 R=0.9714 F1=0.6733 admitted=924 contested_admitted=3 | [tau=0.88] P=0.9502 R=0.4673 F1=0.6265 admitted=241 contested_admitted=1 | ECE=0.2743 Brier=0.2630
+  R5_combined: [F1-selected] tau=0.54 P=0.5172 R=0.9796 F1=0.6770 admitted=928 contested_admitted=7 | [tau=0.88] P=0.9582 R=0.4673 F1=0.6283 admitted=239 contested_admitted=1 | ECE=0.2715 Brier=0.2613
+  R6_evidence_share_unsquared: [F1-selected] tau=0.99 P=0.5299 R=0.9224 F1=0.6731 admitted=853 contested_admitted=0 | [tau=0.88] P=0.5292 R=0.9245 F1=0.6731 admitted=856 contested_admitted=1 | ECE=0.4342 Brier=0.4197
+  bootstrap F1(R1_max_merge) - F1(R2_published): mean=-0.0283 95% CI=[-0.0813, 0.0129] excludes_zero=False
+  bootstrap F1(R3_source_count) - F1(R2_published): mean=0.0065 95% CI=[-0.0009, 0.0136] excludes_zero=False
+  bootstrap F1(R4_evidence_share) - F1(R2_published): mean=0.0028 95% CI=[0.0000, 0.0064] excludes_zero=False
+  bootstrap F1(R5_combined) - F1(R2_published): mean=0.0066 95% CI=[0.0027, 0.0115] excludes_zero=True
+  bootstrap F1(R6_evidence_share_unsquared) - F1(R2_published): mean=0.0027 95% CI=[-0.0091, 0.0145] excludes_zero=False
+  [tau=0.88] bootstrap R1_max_merge - R2_published: P diff mean=-0.4817 CI=[-0.5051, -0.4599] excl0=True | R diff mean=0.5348 CI=[0.4226, 0.6450] excl0=True | F1 diff mean=0.0142 CI=[-0.0961, 0.1293] excl0=False
+  [tau=0.88] bootstrap R3_source_count - R2_published: P diff mean=0.0080 CI=[0.0000, 0.0271] excl0=False | R diff mean=0.0000 CI=[0.0000, 0.0000] excl0=False | F1 diff mean=0.0017 CI=[0.0000, 0.0055] excl0=False
+Saved -> outputs\dec036\replay/B_deepseek-v3.2_logprob_object_*
+{
+  "A_llama-3.1-8b-instruct_verbalized": {
+    "llm_obs": 842,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 455,
+    "triples": 665,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.8948406023101468,
+      "p": 1.981971702518901e-234
+    },
+    "llm_conf_min_median_max": [
+      0.8,
+      0.91,
+      0.998
+    ]
+  },
+  "A_llama-3.1-8b-instruct_logprob": {
+    "llm_obs": 842,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 455,
+    "triples": 665,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.8944434147614251,
+      "p": 6.454374901288196e-234
+    },
+    "llm_conf_min_median_max": [
+      0.648415,
+      0.995411,
+      0.999987
+    ]
+  },
+  "A_llama-3.1-8b-instruct_logprob_object": {
+    "llm_obs": 842,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 455,
+    "triples": 665,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.8778798908480893,
+      "p": 3.4531958664705134e-214
+    },
+    "llm_conf_min_median_max": [
+      0.127712,
+      0.9993675,
+      0.999999
+    ]
+  },
+  "A_deepseek-v3.2_verbalized": {
+    "llm_obs": 906,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 455,
+    "triples": 648,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9239639670499976,
+      "p": 7.866436808543571e-272
+    },
+    "llm_conf_min_median_max": [
+      0.82,
+      0.91,
+      0.96
+    ]
+  },
+  "A_deepseek-v3.2_logprob": {
+    "llm_obs": 906,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 455,
+    "triples": 648,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9236158389805808,
+      "p": 3.2459683240519295e-271
+    },
+    "llm_conf_min_median_max": [
+      0.416243,
+      0.99998,
+      0.999999
+    ]
+  },
+  "A_deepseek-v3.2_logprob_object": {
+    "llm_obs": 906,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 455,
+    "triples": 648,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9238449387163927,
+      "p": 1.2781329972377505e-271
+    },
+    "llm_conf_min_median_max": [
+      0.320783,
+      0.999987,
+      1.0
+    ]
+  },
+  "B_llama-3.1-8b-instruct_verbalized": {
+    "llm_obs": 3487,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 1820,
+    "triples": 2240,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9330202567576334,
+      "p": 0.0
+    },
+    "llm_conf_min_median_max": [
+      0.8,
+      0.91,
+      1.0
+    ]
+  },
+  "B_llama-3.1-8b-instruct_logprob": {
+    "llm_obs": 3487,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 1820,
+    "triples": 2240,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9331038800107727,
+      "p": 0.0
+    },
+    "llm_conf_min_median_max": [
+      0.713138,
+      0.996699,
+      0.999985
+    ]
+  },
+  "B_llama-3.1-8b-instruct_logprob_object": {
+    "llm_obs": 3487,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 1820,
+    "triples": 2240,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9227676370705558,
+      "p": 0.0
+    },
+    "llm_conf_min_median_max": [
+      0.143231,
+      0.999373,
+      0.999999
+    ]
+  },
+  "B_deepseek-v3.2_verbalized": {
+    "llm_obs": 3820,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 1820,
+    "triples": 2138,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9491405370547292,
+      "p": 0.0
+    },
+    "llm_conf_min_median_max": [
+      0.8,
+      0.92,
+      0.96
+    ]
+  },
+  "B_deepseek-v3.2_logprob": {
+    "llm_obs": 3820,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 1820,
+    "triples": 2138,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9489428628467265,
+      "p": 0.0
+    },
+    "llm_conf_min_median_max": [
+      0.491536,
+      0.999975,
+      1.0
+    ]
+  },
+  "B_deepseek-v3.2_logprob_object": {
+    "llm_obs": 3820,
+    "llm_obs_no_logprob": 0,
+    "structured_obs": 1820,
+    "triples": 2138,
+    "spearman_support_vs_obs_count": {
+      "rho": 0.9376173213613095,
+      "p": 0.0
+    },
+    "llm_conf_min_median_max": [
+      0.075562,
+      0.999989,
+      1.0
+    ]
+  }
+}

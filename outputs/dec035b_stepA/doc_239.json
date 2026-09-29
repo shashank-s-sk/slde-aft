@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_239",
+ "base_raw": "[\n    [\"Elbe Lateral Canal\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"connects to\", \"Mittelland Canal\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"connects to\", \"Elbe\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"location of formation\", \"Germany\", \"LOC\"],\n    [\"Gifhorn\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Artlenburg\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Uelzen\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Scharnebeck\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"L\u00fcneburg\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Wittingen\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Wulfstorf\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Bienenb\u00fcttel\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"part of\", \"Germany\", \"LOC\"],\n    [\"Mittelland Canal\", \"LOC\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Elbe\", \"LOC\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"instance of\", \"canal\", \"MISC\"],\n    [\"1968\", \"TIME\", \"start time\", \"construction of Elbe Lateral Canal\", \"MISC\"],\n    [\"June 1976\", \"TIME\", \"end time\", \"construction of Elbe Lateral Canal\", \"MISC\"],\n    [\"July 1976\", \"TIME\", \"start time\", \"closure of Elbe Lateral Canal\", \"MISC\"],\n    [\"June 1977\", \"TIME\", \"end time\", \"closure of Elbe Lateral Canal\", \"MISC\"],\n    [\"GDR\", \"ORG\", \"country\", \"Germany\", \"LOC\"]\n]",
+ "base": {
+  "TP": 14,
+  "FP": 16,
+  "FN": 1,
+  "recall": 0.9333333333333333,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Elbe Lateral Canal\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"connects to\", \"Mittelland Canal\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"connects to\", \"Elbe\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"location of formation\", \"Germany\", \"LOC\"],\n    [\"Gifhorn\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Artlenburg\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Uelzen\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Scharnebeck\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"L\u00fcneburg\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Wittingen\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Wulfstorf\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Bienenb\u00fcttel\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"country\", \"Germany\", \"LOC\"],\n    [\"Elbe\", \"LOC\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Mittelland Canal\", \"LOC\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"instance of\", \"canal\", \"MISC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"inception\", \"1968\", \"TIME\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"start time\", \"1968\", \"TIME\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"end time\", \"1976\", \"TIME\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"point in time\", \"1976\", \"TIME\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"point in time\", \"1977\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 11,
+  "FP": 23,
+  "FN": 4,
+  "recall": 0.7333333333333333,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Elbe Lateral Canal\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"connects to\", \"Mittelland Canal\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"connects to\", \"Elbe\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"location of formation\", \"Germany\", \"LOC\"],\n    [\"Gifhorn\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Artlenburg\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Uelzen\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Scharnebeck\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"L\u00fcneburg\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Wittingen\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Wulfstorf\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Bienenb\u00fcttel\", \"LOC\", \"located in\", \"Lower Saxony\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"country\", \"Germany\", \"LOC\"],\n    [\"Elbe\", \"LOC\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Mittelland Canal\", \"LOC\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Elbe Lateral Canal\", \"LOC\", \"instance of\", \"canal\", \"MISC\"],\n    [\"1968\", \"TIME\", \"start time\", \"construction of Elbe Lateral Canal\", \"MISC\"],\n    [\"June 1976\", \"TIME\", \"end time\", \"construction of Elbe Lateral Canal\", \"MISC\"],\n    [\"July 1976\", \"TIME\", \"start time\", \"closure of Elbe Lateral Canal\", \"MISC\"],\n    [\"June 1977\", \"TIME\", \"end time\", \"closure of Elbe Lateral Canal\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 13,
+  "FP": 16,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

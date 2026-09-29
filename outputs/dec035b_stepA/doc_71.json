@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_71",
+ "base_raw": "[\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"place of birth\", \"Kharkiv\", \"LOC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"mother\", \"Valentina Borok\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"father\", \"Yakov Zhitomirskii\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"educated at\", \"Moscow State University\", \"ORG\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"advisor\", \"Yakov Sinai\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"employer\", \"University of California, Irvine\", \"ORG\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"position held\", \"assistant professor\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"position held\", \"full professor\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"collaborator\", \"Artur Avila\", \"PER\"],\n    [\"Valentina Borok\", \"PER\", \"field of work\", \"mathematics\", \"MISC\"],\n    [\"Yakov Zhitomirskii\", \"PER\", \"field of work\", \"mathematics\", \"MISC\"],\n    [\"Yakov Sinai\", \"PER\", \"student\", \"Svetlana Yakovlevna Jitomirskaya\", \"PER\"],\n    [\"Vladimir Arnold\", \"PER\", \"student\", \"Svetlana Yakovlevna Jitomirskaya\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"date of birth\", \"June 4, 1966\", \"TIME\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"field of work\", \"dynamical systems\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"field of work\", \"mathematical physics\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 2,
+  "recall": 0.7142857142857143,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"place of birth\", \"Kharkiv\", \"LOC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"mother\", \"Valentina Borok\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"father\", \"Yakov Zhitomirskii\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"educated at\", \"Moscow State University\", \"ORG\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"advisor\", \"Yakov Sinai\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"employer\", \"University of California, Irvine\", \"ORG\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"position held\", \"assistant professor\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"position held\", \"full professor\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"collaborator\", \"Artur Avila\", \"PER\"],\n    [\"Valentina Borok\", \"PER\", \"field of work\", \"mathematics\", \"MISC\"],\n    [\"Yakov Zhitomirskii\", \"PER\", \"field of work\", \"mathematics\", \"MISC\"],\n    [\"Yakov Sinai\", \"PER\", \"student\", \"Svetlana Yakovlevna Jitomirskaya\", \"PER\"],\n    [\"Vladimir Arnold\", \"PER\", \"student\", \"Svetlana Yakovlevna Jitomirskaya\", \"PER\"],\n    [\"Artur Avila\", \"PER\", \"collaborator\", \"Svetlana Yakovlevna Jitomirskaya\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"date of birth\", \"June 4, 1966\", \"TIME\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"field of work\", \"dynamical systems\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"field of work\", \"mathematical physics\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 17,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"place of birth\", \"Kharkiv\", \"LOC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"mother\", \"Valentina Borok\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"father\", \"Yakov Zhitomirskii\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"educated at\", \"Moscow State University\", \"ORG\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"advisor\", \"Yakov Sinai\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"employer\", \"University of California, Irvine\", \"ORG\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"position held\", \"assistant professor\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"position held\", \"full professor\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"collaborator\", \"Artur Avila\", \"PER\"],\n    [\"Valentina Borok\", \"PER\", \"field of work\", \"mathematics\", \"MISC\"],\n    [\"Yakov Zhitomirskii\", \"PER\", \"field of work\", \"mathematics\", \"MISC\"],\n    [\"Yakov Sinai\", \"PER\", \"student\", \"Svetlana Yakovlevna Jitomirskaya\", \"PER\"],\n    [\"Vladimir Arnold\", \"PER\", \"student\", \"Svetlana Yakovlevna Jitomirskaya\", \"PER\"],\n    [\"Artur Avila\", \"PER\", \"collaborator\", \"Svetlana Yakovlevna Jitomirskaya\", \"PER\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"date of birth\", \"June 4, 1966\", \"TIME\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"field of work\", \"dynamical systems\", \"MISC\"],\n    [\"Svetlana Yakovlevna Jitomirskaya\", \"PER\", \"field of work\", \"mathematical physics\", \"MISC\"]\n]"
+}

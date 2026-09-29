@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_407",
+ "base_raw": "[\n    [\"Miguel Zavaleta\", \"PER\", \"place of birth\", \"Buenos Aires\", \"LOC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"date of birth\", \"February 16, 1955\", \"TIME\"],\n    [\"Su\u00e9ter\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Su\u00e9ter\", \"ORG\", \"genre\", \"new wave\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"member of\", \"Su\u00e9ter\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Amanece en la ruta\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"\u00c9l anda diciendo\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Comiendo gefilte fish\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Desvanecidos\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Extra\u00f1o ser\", \"MISC\"],\n    [\"No s\u00e9, quiz\u00e1s, suerte\", \"MISC\", \"producer\", \"Palo Pandolfo\", \"PER\"],\n    [\"No s\u00e9, quiz\u00e1s, suerte\", \"MISC\", \"producer\", \"Mario Breuer\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Charly Garcia\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Fito Paez\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Fabiana Cantilo\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Los Twist\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Los Aut\u00e9nticos Decadentes\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Bersuit Vergarabat\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"cast member\", \"The Warrior and the Sorceress\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Music Genre: Rock"
+ ],
+ "kb_orig_raw": "[\n    [\"Miguel Zavaleta\", \"PER\", \"place of birth\", \"Buenos Aires\", \"LOC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"date of birth\", \"February 16, 1955\", \"TIME\"],\n    [\"Su\u00e9ter\", \"ORG\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"member of\", \"Su\u00e9ter\", \"ORG\"],\n    [\"Su\u00e9ter\", \"ORG\", \"location\", \"Argentina\", \"LOC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Amanece en la ruta\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"\u00c9l anda diciendo\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Comiendo gefilte fish\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Desvanecidos\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Extra\u00f1o ser\", \"MISC\"],\n    [\"No s\u00e9, quiz\u00e1s, suerte\", \"MISC\", \"producer\", \"Palo Pandolfo\", \"PER\"],\n    [\"No s\u00e9, quiz\u00e1s, suerte\", \"MISC\", \"producer\", \"Mario Breuer\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Charly Garcia\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Fito Paez\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Fabiana Cantilo\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Los Twist\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Los Aut\u00e9nticos Decadentes\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Bersuit Vergarabat\", \"ORG\"],\n    [\"The Warrior and the Sorceress\", \"MISC\", \"cast member\", \"Miguel Zavaleta\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 20,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Miguel Zavaleta\", \"PER\", \"place of birth\", \"Buenos Aires\", \"LOC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"date of birth\", \"February 16, 1955\", \"TIME\"],\n    [\"Su\u00e9ter\", \"ORG\", \"genre\", \"rock\", \"MISC\"],\n    [\"Su\u00e9ter\", \"ORG\", \"genre\", \"new wave\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"member of\", \"Su\u00e9ter\", \"ORG\"],\n    [\"Su\u00e9ter\", \"ORG\", \"location of formation\", \"Argentina\", \"LOC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Amanece en la ruta\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"\u00c9l anda diciendo\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Comiendo gefilte fish\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Desvanecidos\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"author\", \"Extra\u00f1o ser\", \"MISC\"],\n    [\"No s\u00e9, quiz\u00e1s, suerte\", \"MISC\", \"producer\", \"Palo Pandolfo\", \"PER\"],\n    [\"No s\u00e9, quiz\u00e1s, suerte\", \"MISC\", \"producer\", \"Mario Breuer\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"performer\", \"No s\u00e9, quiz\u00e1s, suerte\", \"MISC\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Charly Garcia\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Fito Paez\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Fabiana Cantilo\", \"PER\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Los Twist\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Los Aut\u00e9nticos Decadentes\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"collaborator\", \"Bersuit Vergarabat\", \"ORG\"],\n    [\"Miguel Zavaleta\", \"PER\", \"actor\", \"The Warrior and the Sorceress\", \"MISC\"],\n    [\"The Warrior and the Sorceress\", \"MISC\", \"country of origin\", \"United States\", \"LOC\"],\n    [\"The Warrior and the Sorceress\", \"MISC\", \"country of origin\", \"Argentina\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 22,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

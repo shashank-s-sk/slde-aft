@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_80",
+ "base_raw": "[\n    [\"United States Department of Defense\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"United States\", \"LOC\", \"instance of\", \"country with military top-level domain\", \"MISC\"],\n    [\"United Kingdom\", \"LOC\", \"instance of\", \"country using second-level domain for military\", \"MISC\"],\n    [\"Canada\", \"LOC\", \"instance of\", \"country using norad.mil\", \"MISC\"],\n    [\"North American Aerospace Defense Command\", \"ORG\", \"location of formation\", \"United States\", \"LOC\"],\n    [\"United States Military Academy\", \"ORG\", \"instance of\", \"service academy using edu domain\", \"MISC\"],\n    [\"United States Coast Guard Academy\", \"ORG\", \"instance of\", \"service academy using edu domain\", \"MISC\"],\n    [\"United States Naval Academy\", \"ORG\", \"instance of\", \"service academy using edu domain\", \"MISC\"],\n    [\"United States Air Force Academy\", \"ORG\", \"instance of\", \"service academy using edu domain\", \"MISC\"],\n    [\"Army\", \"ORG\", \"member of\", \"NCAA Division I\", \"ORG\"],\n    [\"Navy\", \"ORG\", \"member of\", \"NCAA Division I\", \"ORG\"],\n    [\"Air Force\", \"ORG\", \"member of\", \"NCAA Division I\", \"ORG\"],\n    [\"Coast Guard\", \"ORG\", \"member of\", \"NCAA Division III\", \"ORG\"],\n    [\"Department of Defense\", \"ORG\", \"official language\", \"English\", \"MISC\"],\n    [\"United States Department of Homeland Security\", \"ORG\", \"parent organization\", \"United States Coast Guard\", \"ORG\"],\n    [\"www.defense.gov\", \"MISC\", \"instance of\", \"gov domain\", \"MISC\"],\n    [\"defense.mil\", \"MISC\", \"redirects to\", \"www.defense.gov\", \"MISC\"],\n    [\"dod.mil\", \"MISC\", \"redirects to\", \"www.defense.gov\", \"MISC\"],\n    [\"pentagon.mil\", \"MISC\", \"redirects to\", \"www.defense.gov\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 18,
+  "FN": 18,
+  "recall": 0.05263157894736842,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"United States Department of Defense\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"United States\", \"LOC\", \"instance of\", \"country with top-level domain for military\", \"MISC\"],\n    [\"United Kingdom\", \"LOC\", \"instance of\", \"country using second-level domain for military\", \"MISC\"],\n    [\"Canada\", \"LOC\", \"instance of\", \"country using norad.mil\", \"MISC\"],\n    [\"North American Aerospace Defense Command\", \"ORG\", \"located in\", \"United States\", \"LOC\"],\n    [\"North American Aerospace Defense Command\", \"ORG\", \"located in\", \"Canada\", \"LOC\"],\n    [\"United States Military Academy\", \"ORG\", \"uses domain\", \"edu\", \"MISC\"],\n    [\"United States Coast Guard Academy\", \"ORG\", \"uses domain\", \"edu\", \"MISC\"],\n    [\"United States Naval Academy\", \"ORG\", \"uses domain\", \"edu\", \"MISC\"],\n    [\"United States Air Force Academy\", \"ORG\", \"uses domain\", \"edu\", \"MISC\"],\n    [\"Department of Defense\", \"ORG\", \"uses domain\", \"gov\", \"MISC\"],\n    [\"United States Coast Guard\", \"ORG\", \"parent organization\", \"United States Department of Homeland Security\", \"ORG\"],\n    [\"United States Coast Guard\", \"ORG\", \"parent organization\", \"United States Department of Defense\", \"ORG\"],\n    [\"Army\", \"ORG\", \"member of\", \"NCAA Division I\", \"ORG\"],\n    [\"Navy\", \"ORG\", \"member of\", \"NCAA Division I\", \"ORG\"],\n    [\"Air Force\", \"ORG\", \"member of\", \"NCAA Division I\", \"ORG\"],\n    [\"Coast Guard\", \"ORG\", \"member of\", \"NCAA Division III\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 21,
+  "FN": 14,
+  "recall": 0.36363636363636365,
+  "n_extracted": 29,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"United States Department of Defense\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"United States\", \"LOC\", \"instance of\", \"country with military top-level domain\", \"MISC\"],\n    [\"United Kingdom\", \"LOC\", \"instance of\", \"country using second-level domain for military\", \"MISC\"],\n    [\"Canada\", \"LOC\", \"instance of\", \"country using norad.mil\", \"MISC\"],\n    [\"North American Aerospace Defense Command\", \"ORG\", \"location\", \"United States\", \"LOC\"],\n    [\"North American Aerospace Defense Command\", \"ORG\", \"location\", \"Canada\", \"LOC\"],\n    [\"United States Military Academy\", \"ORG\", \"instance of\", \"service academy\", \"MISC\"],\n    [\"United States Coast Guard Academy\", \"ORG\", \"instance of\", \"service academy\", \"MISC\"],\n    [\"United States Naval Academy\", \"ORG\", \"instance of\", \"service academy\", \"MISC\"],\n    [\"United States Air Force Academy\", \"ORG\", \"instance of\", \"service academy\", \"MISC\"],\n    [\"Department of Defense\", \"ORG\", \"official website\", \"www.defense.gov\", \"MISC\"],\n    [\"United States Coast Guard\", \"ORG\", \"parent organization\", \"United States Department of Homeland Security\", \"ORG\"],\n    [\"United States Coast Guard\", \"ORG\", \"parent organization\", \"United States Department of Defense\", \"ORG\"],\n    [\"Army\", \"ORG\", \"member of\", \"NCAA Division I\", \"MISC\"],\n    [\"Navy\", \"ORG\", \"member of\", \"NCAA Division I\", \"MISC\"],\n    [\"Air Force\", \"ORG\", \"member of\", \"NCAA Division I\", \"MISC\"],\n    [\"Coast Guard\", \"ORG\", \"member of\", \"NCAA Division III\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 19,
+  "FN": 10,
+  "recall": 0.5,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

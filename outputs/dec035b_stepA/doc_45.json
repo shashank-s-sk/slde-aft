@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_45",
+ "base_raw": "[\n    [\"Alex Shelley\", \"PER\", \"date of birth\", \"May 23, 1983\", \"TIME\"],\n    [\"The Motor City Machine Guns\", \"MISC\", \"member of\", \"Alex Shelley\", \"PER\"],\n    [\"The Motor City Machine Guns\", \"MISC\", \"member of\", \"Chris Sabin\", \"PER\"],\n    [\"Alex Shelley\", \"PER\", \"member of sports team\", \"The Motor City Machine Guns\", \"MISC\"],\n    [\"Chris Sabin\", \"PER\", \"member of sports team\", \"The Motor City Machine Guns\", \"MISC\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"Ring of Honor\", \"ORG\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"Pro Wrestling Zero1-Max\", \"ORG\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"New Japan Pro-Wrestling\", \"ORG\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Alex Shelley\", \"PER\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Chris Sabin\", \"PER\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Petey Williams\", \"PER\"],\n    [\"Alex Shelley\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"],\n    [\"Chris Sabin\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"],\n    [\"Petey Williams\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 4,
+  "recall": 0.3333333333333333,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Alex Shelley\", \"PER\", \"date of birth\", \"May 23, 1983\", \"TIME\"],\n    [\"The Motor City Machine Guns\", \"MISC\", \"member of\", \"Alex Shelley\", \"PER\"],\n    [\"The Motor City Machine Guns\", \"MISC\", \"member of\", \"Chris Sabin\", \"PER\"],\n    [\"Alex Shelley\", \"PER\", \"member of sports team\", \"The Motor City Machine Guns\", \"MISC\"],\n    [\"Chris Sabin\", \"PER\", \"member of sports team\", \"The Motor City Machine Guns\", \"MISC\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"Ring of Honor\", \"ORG\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"Pro Wrestling Zero1-Max\", \"ORG\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"New Japan Pro-Wrestling\", \"ORG\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Alex Shelley\", \"PER\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Chris Sabin\", \"PER\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Petey Williams\", \"PER\"],\n    [\"Alex Shelley\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"],\n    [\"Chris Sabin\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"],\n    [\"Petey Williams\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 5,
+  "recall": 0.2857142857142857,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 5,
+  "recall": 0.2857142857142857,
+  "n_extracted": 14,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Alex Shelley\", \"PER\", \"date of birth\", \"May 23, 1983\", \"TIME\"],\n    [\"The Motor City Machine Guns\", \"MISC\", \"member of\", \"Alex Shelley\", \"PER\"],\n    [\"The Motor City Machine Guns\", \"MISC\", \"member of\", \"Chris Sabin\", \"PER\"],\n    [\"Alex Shelley\", \"PER\", \"member of sports team\", \"The Motor City Machine Guns\", \"MISC\"],\n    [\"Chris Sabin\", \"PER\", \"member of sports team\", \"The Motor City Machine Guns\", \"MISC\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"Ring of Honor\", \"ORG\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"Pro Wrestling Zero1-Max\", \"ORG\"],\n    [\"Alex Shelley\", \"PER\", \"worked for\", \"New Japan Pro-Wrestling\", \"ORG\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Alex Shelley\", \"PER\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Chris Sabin\", \"PER\"],\n    [\"The High Crusade\", \"MISC\", \"member of\", \"Petey Williams\", \"PER\"],\n    [\"Alex Shelley\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"],\n    [\"Chris Sabin\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"],\n    [\"Petey Williams\", \"PER\", \"member of\", \"The High Crusade\", \"MISC\"]\n]"
+}

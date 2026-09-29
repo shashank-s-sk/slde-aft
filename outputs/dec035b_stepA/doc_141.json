@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_141",
+ "base_raw": "[\n    [\"Roberto Fernandez Canuto\", \"PER\", \"place of birth\", \"Gijon\", \"LOC\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"date of birth\", \"April 13, 1973\", \"TIME\"],\n    [\"Roberto F. Canuto\", \"PER\", \"nationality\", \"Spanish\", \"MISC\"],\n    [\"Roberto F. Canuto\", \"PER\", \"occupation\", \"film director\", \"MISC\"],\n    [\"Roberto F. Canuto\", \"PER\", \"occupation\", \"screenwriter\", \"MISC\"],\n    [\"Roberto F. Canuto\", \"PER\", \"collaborator\", \"Xu Xiaoxi\", \"PER\"],\n    [\"Almost Red Productions\", \"ORG\", \"founder\", \"Roberto F. Canuto\", \"PER\"],\n    [\"Almost Red Productions\", \"ORG\", \"founder\", \"Xu Xiaoxi\", \"PER\"],\n    [\"Roberto F. Canuto\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 6,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Roberto Fernandez Canuto\", \"PER\", \"date of birth\", \"April 13, 1973\", \"TIME\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"place of birth\", \"Gijon\", \"LOC\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"position held\", \"film director\", \"MISC\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"position held\", \"screenwriter\", \"MISC\"],\n    [\"Xu Xiaoxi\", \"PER\", \"nationality\", \"Chinese\", \"MISC\"],\n    [\"Almost Red Productions\", \"ORG\", \"located in\", \"China\", \"LOC\"],\n    [\"Almost Red Productions\", \"ORG\", \"founded by\", \"Roberto Fernandez Canuto\", \"PER\"],\n    [\"Almost Red Productions\", \"ORG\", \"founded by\", \"Xu Xiaoxi\", \"PER\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"collaborator\", \"Xu Xiaoxi\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 14,
+  "FN": 2,
+  "recall": 0.6666666666666666,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Roberto Fernandez Canuto\", \"PER\", \"date of birth\", \"April 13, 1973\", \"TIME\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"place of birth\", \"Gijon\", \"LOC\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"country of citizenship\", \"Spain\", \"LOC\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"position held\", \"film director\", \"MISC\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"position held\", \"screenwriter\", \"MISC\"],\n    [\"Xu Xiaoxi\", \"PER\", \"nationality\", \"Chinese\", \"MISC\"],\n    [\"Almost Red Productions\", \"ORG\", \"location\", \"China\", \"LOC\"],\n    [\"Almost Red Productions\", \"ORG\", \"founded by\", \"Roberto Fernandez Canuto\", \"PER\"],\n    [\"Almost Red Productions\", \"ORG\", \"founded by\", \"Xu Xiaoxi\", \"PER\"],\n    [\"Roberto Fernandez Canuto\", \"PER\", \"collaborator\", \"Xu Xiaoxi\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

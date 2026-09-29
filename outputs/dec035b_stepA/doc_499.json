@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_499",
+ "base_raw": "[\n    [\"Marissa Nadler\", \"PER\", \"date of birth\", \"April 5, 1981\", \"TIME\"],\n    [\"Marissa Nadler\", \"PER\", \"location\", \"Boston, Massachusetts\", \"LOC\"],\n    [\"Marissa Nadler\", \"PER\", \"genre\", \"dream folk\", \"MISC\"],\n    [\"Marissa Nadler\", \"PER\", \"genre\", \"old-school country\", \"MISC\"],\n    [\"Marissa Nadler\", \"PER\", \"genre\", \"folk\", \"MISC\"],\n    [\"Marissa Nadler\", \"PER\", \"genre\", \"experimental\", \"MISC\"],\n    [\"Marissa Nadler\", \"PER\", \"genre\", \"black metal\", \"MISC\"],\n    [\"Marissa Nadler\", \"PER\", \"vocal range\", \"mezzo-soprano\", \"MISC\"],\n    [\"Strangers\", \"MISC\", \"release year\", \"2016\", \"TIME\"],\n    [\"Marissa Nadler\", \"PER\", \"employer\", \"Sacred Bones Records\", \"ORG\"],\n    [\"Marissa Nadler\", \"PER\", \"employer\", \"Bella Union\", \"ORG\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 4,
+  "recall": 0.2,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Marissa Nadler\", \"PER\", \"date of birth\", \"April 5, 1981\", \"TIME\"],\n    [\"Marissa Nadler\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Marissa Nadler\", \"PER\", \"location\", \"Boston, Massachusetts\", \"LOC\"],\n    [\"Marissa Nadler\", \"PER\", \"employer\", \"Sacred Bones Records\", \"ORG\"],\n    [\"Marissa Nadler\", \"PER\", \"employer\", \"Bella Union\", \"ORG\"],\n    [\"Strangers\", \"MISC\", \"genre\", \"dream folk\", \"MISC\"],\n    [\"Strangers\", \"MISC\", \"release year\", \"2016\", \"TIME\"],\n    [\"Marissa Nadler\", \"PER\", \"position held\", \"singer-songwriter\", \"MISC\"],\n    [\"Marissa Nadler\", \"PER\", \"educated at\", \"unknown\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 15,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Marissa Nadler\", \"PER\", \"date of birth\", \"April 5, 1981\", \"TIME\"],\n    [\"Marissa Nadler\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Marissa Nadler\", \"PER\", \"location\", \"Boston, Massachusetts\", \"LOC\"],\n    [\"Marissa Nadler\", \"PER\", \"employer\", \"Sacred Bones Records\", \"ORG\"],\n    [\"Marissa Nadler\", \"PER\", \"employer\", \"Bella Union\", \"ORG\"],\n    [\"Strangers\", \"MISC\", \"genre\", \"dream folk\", \"MISC\"],\n    [\"Strangers\", \"MISC\", \"release year\", \"2016\", \"TIME\"],\n    [\"Marissa Nadler\", \"PER\", \"position held\", \"singer-songwriter\", \"MISC\"],\n    [\"Marissa Nadler\", \"PER\", \"educated at\", \"unknown\", \"MISC\"]\n]"
+}

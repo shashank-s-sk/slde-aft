@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_422",
+ "base_raw": "[\n    [\"Serbian language\", \"MISC\", \"written in\", \"Serbian Cyrillic alphabet\", \"MISC\"],\n    [\"Serbian language\", \"MISC\", \"written in\", \"Serbian Latin alphabet\", \"MISC\"],\n    [\"Serbian Cyrillic alphabet\", \"MISC\", \"instance of\", \"Cyrillic\", \"MISC\"],\n    [\"Serbian Latin alphabet\", \"MISC\", \"instance of\", \"Latin alphabet\", \"MISC\"],\n    [\"Gaj's Latin alphabet\", \"MISC\", \"used in\", \"Bosnian\", \"MISC\"],\n    [\"Gaj's Latin alphabet\", \"MISC\", \"used in\", \"Croatian\", \"MISC\"],\n    [\"Gaj's Latin alphabet\", \"MISC\", \"used in\", \"Serbian\", \"MISC\"],\n    [\"Montenegrin\", \"MISC\", \"uses\", \"modified version of Gaj's Latin alphabet\", \"MISC\"],\n    [\"Serbian population\", \"MISC\", \"favors\", \"Latin alphabet\", \"MISC\"],\n    [\"Serbian population\", \"MISC\", \"percentage\", \"47%\", \"NUM\"],\n    [\"Serbian population\", \"MISC\", \"favors\", \"Cyrillic alphabet\", \"MISC\"],\n    [\"Serbian population\", \"MISC\", \"percentage\", \"36%\", \"NUM\"],\n    [\"Survey\", \"MISC\", \"year\", \"2014\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Numbers",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Serbian language\", \"MISC\", \"written in\", \"Serbian Cyrillic alphabet\", \"MISC\"],\n    [\"Serbian language\", \"MISC\", \"written in\", \"Serbian Latin alphabet\", \"MISC\"],\n    [\"Serbian Cyrillic alphabet\", \"MISC\", \"variation of\", \"Cyrillic\", \"MISC\"],\n    [\"Serbian Latin alphabet\", \"MISC\", \"variation of\", \"Latin alphabet\", \"MISC\"],\n    [\"Gaj's Latin alphabet\", \"MISC\", \"used in\", \"Serbia\", \"LOC\"],\n    [\"Gaj's Latin alphabet\", \"MISC\", \"used in\", \"Bosnian\", \"MISC\"],\n    [\"Gaj's Latin alphabet\", \"MISC\", \"used in\", \"Croatian\", \"MISC\"],\n    [\"Montenegrin\", \"MISC\", \"uses\", \"modified version of Gaj's Latin alphabet\", \"MISC\"],\n    [\"Serbian population\", \"MISC\", \"favors\", \"Latin alphabet\", \"MISC\"],\n    [\"Serbian population\", \"MISC\", \"favors\", \"Cyrillic alphabet\", \"MISC\"],\n    [\"2014\", \"TIME\", \"year of survey\", \"survey on alphabet preference\", \"MISC\"],\n    [\"47 %\", \"NUM\", \"percentage of population favoring\", \"Latin alphabet\", \"MISC\"],\n    [\"36 %\", \"NUM\", \"percentage of population favoring\", \"Cyrillic alphabet\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 19,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Serbian language\", \"MISC\", \"written in\", \"Serbian Cyrillic alphabet\", \"MISC\"],\n    [\"Serbian language\", \"MISC\", \"written in\", \"Serbian Latin alphabet\", \"MISC\"],\n    [\"Serbian\", \"MISC\", \"instance of\", \"Digraphia\", \"MISC\"],\n    [\"Gaj's Latin alphabet\", \"MISC\", \"used in\", \"Bosnian\", \"MISC\"],\n    [\"Gaj's Latin alphabet\", \"MISC\", \"used in\", \"Croatian\", \"MISC\"],\n    [\"Montenegrin\", \"MISC\", \"uses\", \"modified version of Gaj's Latin alphabet\", \"MISC\"],\n    [\"Serbian population\", \"MISC\", \"favors\", \"Latin alphabet\", \"MISC\"],\n    [\"Serbian population\", \"MISC\", \"favors\", \"Cyrillic alphabet\", \"MISC\"],\n    [\"Survey\", \"MISC\", \"year\", \"2014\", \"TIME\"],\n    [\"Serbian language\", \"MISC\", \"uses\", \"both alphabets\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 15,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ }
+}

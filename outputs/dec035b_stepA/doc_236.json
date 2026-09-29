@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_236",
+ "base_raw": "[\n    [\"I Love Mama\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"I Love Mama\", \"MISC\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"Koakuma Ageha\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"Happie Nuts\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"I Love Mama\", \"MISC\", \"launch year\", \"2008\", \"TIME\"],\n    [\"I Love Mama\", \"MISC\", \"available on\", \"Amazon\", \"MISC\"],\n    [\"I Love Mama\", \"MISC\", \"available on\", \"eBay\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 4,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"I Love Mama\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"I Love Mama\", \"MISC\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"Koakuma Ageha\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"Happie Nuts\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"I Love Mama\", \"MISC\", \"launch year\", \"2008\", \"TIME\"],\n    [\"I Love Mama\", \"MISC\", \"available on\", \"Amazon\", \"ORG\"],\n    [\"I Love Mama\", \"MISC\", \"available on\", \"eBay\", \"ORG\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 4,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"I Love Mama\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"I Love Mama\", \"MISC\", \"country of origin\", \"Japan\", \"LOC\"],\n    [\"Koakuma Ageha\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"Happie Nuts\", \"MISC\", \"publisher\", \"Inforest Publishing\", \"ORG\"],\n    [\"I Love Mama\", \"MISC\", \"launch year\", \"2008\", \"TIME\"],\n    [\"I Love Mama\", \"MISC\", \"available on\", \"Amazon\", \"MISC\"],\n    [\"I Love Mama\", \"MISC\", \"available on\", \"eBay\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 4,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_424",
+ "base_raw": "[\n    [\"Green Party of Quebec\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"Alex Tyrrell\", \"PER\", \"age\", \"25\", \"NUM\"],\n    [\"Alex Tyrrell\", \"PER\", \"position held\", \"party leader\", \"MISC\"],\n    [\"Green Party of Quebec\", \"ORG\", \"leader\", \"Alex Tyrrell\", \"PER\"],\n    [\"Green Party of Quebec\", \"ORG\", \"location\", \"Quebec\", \"LOC\"],\n    [\"2018 Quebec election\", \"MISC\", \"year\", \"2018\", \"TIME\"],\n    [\"Alex Tyrrell\", \"PER\", \"date of nomination\", \"September 21, 2013\", \"TIME\"],\n    [\"Green Party of Quebec\", \"ORG\", \"percentage of popular vote\", \"1.69%\", \"NUM\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 7,
+  "FN": 7,
+  "recall": 0.125,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Green Party of Quebec\", \"ORG\", \"leader\", \"Alex Tyrrell\", \"PER\"],\n    [\"Alex Tyrrell\", \"PER\", \"date of birth\", \"before September 21, 1988\", \"TIME\"],\n    [\"Green Party of Quebec\", \"ORG\", \"founded by\", \"unknown\", \"MISC\"],\n    [\"Alex Tyrrell\", \"PER\", \"age\", \"25\", \"NUM\"],\n    [\"2018 Quebec election\", \"MISC\", \"year\", \"2018\", \"TIME\"],\n    [\"Green Party of Quebec\", \"ORG\", \"percentage of popular vote\", \"1.69%\", \"NUM\"],\n    [\"Global Greens Charter\", \"MISC\", \"inspiration for\", \"Green Party of Quebec\", \"ORG\"],\n    [\"Alex Tyrrell\", \"PER\", \"position held\", \"party leader\", \"MISC\"],\n    [\"Green Party of Quebec\", \"ORG\", \"location\", \"Quebec\", \"LOC\"],\n    [\"Green Party of Quebec\", \"ORG\", \"country\", \"Canada\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Green Party of Quebec\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"Alex Tyrrell\", \"PER\", \"age\", \"25\", \"NUM\"],\n    [\"Alex Tyrrell\", \"PER\", \"date of nomination as party leader\", \"September 21, 2013\", \"TIME\"],\n    [\"Green Party of Quebec\", \"ORG\", \"leader\", \"Alex Tyrrell\", \"PER\"],\n    [\"Green Party of Quebec\", \"ORG\", \"location\", \"Quebec\", \"LOC\"],\n    [\"2018 Quebec election\", \"MISC\", \"result for Green Party of Quebec\", \"1.69%\", \"NUM\"],\n    [\"Global Greens Charter\", \"MISC\", \"influenced by\", \"ecological wisdom\", \"MISC\"],\n    [\"Global Greens Charter\", \"MISC\", \"influenced by\", \"social justice\", \"MISC\"],\n    [\"Global Greens Charter\", \"MISC\", \"influenced by\", \"participatory democracy\", \"MISC\"],\n    [\"Global Greens Charter\", \"MISC\", \"influenced by\", \"nonviolence\", \"MISC\"],\n    [\"Global Greens Charter\", \"MISC\", \"influenced by\", \"sustainability\", \"MISC\"],\n    [\"Global Greens Charter\", \"MISC\", \"influenced by\", \"respect for diversity\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

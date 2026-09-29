@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_473",
+ "base_raw": "[\n    [\"Paul Atkins\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Paul Atkins\", \"PER\", \"employer\", \"IATSE\", \"ORG\"],\n    [\"Paul Atkins\", \"PER\", \"residence\", \"Hawaii\", \"LOC\"],\n    [\"Paul Atkins\", \"PER\", \"spouse\", \"Grace Atkins\", \"PER\"],\n    [\"Paul Atkins\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"member of\", \"IATSE\", \"ORG\"],\n    [\"Terrence Malick\", \"PER\", \"collaborator\", \"Paul Atkins\", \"PER\"],\n    [\"The Tree of Life\", \"MISC\", \"director\", \"Terrence Malick\", \"PER\"],\n    [\"Voyage of Time\", \"MISC\", \"director of photography\", \"Paul Atkins\", \"PER\"],\n    [\"Paul Atkins\", \"PER\", \"award received\", \"Emmy award\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"award received\", \"BAFTA award\", \"MISC\"],\n    [\"Great White Shark\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"Hawaii: Strangers in Paradise\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"The Trials of Life\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"Cape Horn\", \"MISC\", \"director of photography\", \"Paul Atkins\", \"PER\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 14,
+  "FN": 8,
+  "recall": 0.1111111111111111,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Paul Atkins\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Paul Atkins\", \"PER\", \"residence\", \"Hawaii\", \"LOC\"],\n    [\"Paul Atkins\", \"PER\", \"employer\", \"IATSE\", \"ORG\"],\n    [\"Paul Atkins\", \"PER\", \"spouse\", \"Grace Atkins\", \"PER\"],\n    [\"Paul Atkins\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"member of\", \"Moana Productions\", \"ORG\"],\n    [\"Moana Productions\", \"ORG\", \"founder\", \"Paul Atkins\", \"PER\"],\n    [\"Moana Productions\", \"ORG\", \"founder\", \"Grace Atkins\", \"PER\"],\n    [\"Terrence Malick\", \"PER\", \"collaborator\", \"Paul Atkins\", \"PER\"],\n    [\"Paul Atkins\", \"PER\", \"award received\", \"Emmy award\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"award received\", \"BAFTA award\", \"MISC\"],\n    [\"The Tree of Life\", \"MISC\", \"director of photography\", \"Paul Atkins\", \"PER\"],\n    [\"Voyage of Time\", \"MISC\", \"director of photography\", \"Paul Atkins\", \"PER\"],\n    [\"Hawaii: Strangers in Paradise\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"Great White Shark\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"The Trials of Life\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"Russell Boyd\", \"PER\", \"award received\", \"Academy Award for Cinematography\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"position held\", \"second-unit director\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"position held\", \"director of photography\", \"MISC\"],\n    [\"IATSE\", \"ORG\", \"member\", \"Paul Atkins\", \"PER\"],\n    [\"Hawaiian Electric Company\", \"ORG\", \"client\", \"Paul Atkins\", \"PER\"],\n    [\"Daniel Inouye\", \"PER\", \"client\", \"Paul Atkins\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 23,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 23,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 25,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Paul Atkins\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Paul Atkins\", \"PER\", \"residence\", \"Hawaii\", \"LOC\"],\n    [\"Paul Atkins\", \"PER\", \"employer\", \"IATSE\", \"ORG\"],\n    [\"Paul Atkins\", \"PER\", \"spouse\", \"Grace Atkins\", \"PER\"],\n    [\"Paul Atkins\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"member of\", \"Moana Productions\", \"ORG\"],\n    [\"Moana Productions\", \"ORG\", \"founder\", \"Paul Atkins\", \"PER\"],\n    [\"Moana Productions\", \"ORG\", \"founder\", \"Grace Atkins\", \"PER\"],\n    [\"Terrence Malick\", \"PER\", \"collaborator\", \"Paul Atkins\", \"PER\"],\n    [\"Paul Atkins\", \"PER\", \"award received\", \"Emmy award\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"award received\", \"BAFTA award\", \"MISC\"],\n    [\"The Tree of Life\", \"MISC\", \"director of photography\", \"Paul Atkins\", \"PER\"],\n    [\"Voyage of Time\", \"MISC\", \"director of photography\", \"Paul Atkins\", \"PER\"],\n    [\"Hawaii: Strangers in Paradise\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"Great White Shark\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"The Trials of Life\", \"MISC\", \"cinematographer\", \"Paul Atkins\", \"PER\"],\n    [\"Russell Boyd\", \"PER\", \"award received\", \"Academy Award for Cinematography\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"position held\", \"second-unit director\", \"MISC\"],\n    [\"Paul Atkins\", \"PER\", \"position held\", \"director of photography\", \"MISC\"],\n    [\"IATSE\", \"ORG\", \"member\", \"Paul Atkins\", \"PER\"],\n    [\"Hawaiian Electric Company\", \"ORG\", \"client\", \"Paul Atkins\", \"PER\"],\n    [\"Daniel Inouye\", \"PER\", \"client\", \"Paul Atkins\", \"PER\"]\n]"
+}

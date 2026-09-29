@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_135",
+ "base_raw": "[\n    [\"Girls Trip\", \"MISC\", \"genre\", \"comedy\", \"MISC\"],\n    [\"Girls Trip\", \"MISC\", \"director\", \"Malcolm D. Lee\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"screenwriter\", \"Kenya Barris\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"screenwriter\", \"Tracy Oliver\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"story by\", \"Erica Rivinoja\", \"PER\"],\n    [\"Regina Hall\", \"PER\", \"cast member\", \"Girls Trip\", \"MISC\"],\n    [\"Queen Latifah\", \"PER\", \"cast member\", \"Girls Trip\", \"MISC\"],\n    [\"Tiffany Haddish\", \"PER\", \"cast member\", \"Girls Trip\", \"MISC\"],\n    [\"Jada Pinkett Smith\", \"PER\", \"cast member\", \"Girls Trip\", \"MISC\"],\n    [\"Essence Music Festival\", \"MISC\", \"location\", \"New Orleans\", \"LOC\"],\n    [\"Girls Trip\", \"MISC\", \"premiered at\", \"American Black Film Festival\", \"MISC\"],\n    [\"American Black Film Festival\", \"MISC\", \"location\", \"Miami\", \"LOC\"],\n    [\"Girls Trip\", \"MISC\", \"released by\", \"Universal Pictures\", \"ORG\"],\n    [\"Time magazine\", \"ORG\", \"award received\", \"top ten films of 2017\", \"MISC\"],\n    [\"Girls Trip\", \"MISC\", \"grossed\", \"$140 million\", \"NUM\"],\n    [\"Girls Trip\", \"MISC\", \"domestic gross\", \"over $100 million\", \"NUM\"],\n    [\"Tracy Oliver\", \"PER\", \"member of\", \"African-American female screenwriters\", \"MISC\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 10,
+  "FN": 18,
+  "recall": 0.28,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations",
+  "Persons",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Girls Trip\", \"MISC\", \"genre\", \"comedy\", \"MISC\"],\n    [\"Girls Trip\", \"MISC\", \"director\", \"Malcolm D. Lee\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"screenwriter\", \"Kenya Barris\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"screenwriter\", \"Tracy Oliver\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"story by\", \"Erica Rivinoja\", \"PER\"],\n    [\"Regina Hall\", \"PER\", \"cast member\", \"Girls Trip\", \"MISC\"],\n    [\"Queen Latifah\", \"PER\", \"cast member\", \"Girls Trip\", \"MISC\"],\n    [\"Tiffany Haddish\", \"PER\", \"cast member\", \"Girls Trip\", \"MISC\"],\n    [\"Jada Pinkett Smith\", \"PER\", \"cast member\", \"Girls Trip\", \"MISC\"],\n    [\"Essence Music Festival\", \"MISC\", \"location\", \"New Orleans\", \"LOC\"],\n    [\"Girls Trip\", \"MISC\", \"premiered at\", \"American Black Film Festival\", \"MISC\"],\n    [\"American Black Film Festival\", \"MISC\", \"location\", \"Miami\", \"LOC\"],\n    [\"Girls Trip\", \"MISC\", \"released by\", \"Universal Pictures\", \"ORG\"],\n    [\"Girls Trip\", \"MISC\", \"release date\", \"July 21, 2017\", \"TIME\"],\n    [\"Time magazine\", \"ORG\", \"publisher\", \"top ten films of 2017\", \"MISC\"],\n    [\"Girls Trip\", \"MISC\", \"gross\", \"$140 million\", \"NUM\"],\n    [\"Girls Trip\", \"MISC\", \"domestic gross\", \"over $100 million\", \"NUM\"],\n    [\"Tracy Oliver\", \"PER\", \"member of\", \"African-American female screenwriters\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 10,
+  "FN": 21,
+  "recall": 0.3225806451612903,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Girls Trip\", \"MISC\", \"director\", \"Malcolm D. Lee\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"screenwriter\", \"Kenya Barris\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"screenwriter\", \"Tracy Oliver\", \"PER\"],\n    [\"Girls Trip\", \"MISC\", \"story by\", \"Erica Rivinoja\", \"PER\"],\n    [\"Essence Music Festival\", \"MISC\", \"location\", \"New Orleans\", \"LOC\"],\n    [\"Girls Trip\", \"MISC\", \"premiere location\", \"American Black Film Festival\", \"MISC\"],\n    [\"Girls Trip\", \"MISC\", \"premiere date\", \"June 14, 2017\", \"TIME\"],\n    [\"Girls Trip\", \"MISC\", \"release date\", \"July 21, 2017\", \"TIME\"],\n    [\"Girls Trip\", \"MISC\", \"distributor\", \"Universal Pictures\", \"ORG\"],\n    [\"Tiffany Haddish\", \"PER\", \"award\", \"positive reviews\", \"MISC\"],\n    [\"Time magazine\", \"ORG\", \"ranking\", \"top ten films of 2017\", \"MISC\"],\n    [\"Girls Trip\", \"MISC\", \"box office gross\", \"$140 million\", \"NUM\"],\n    [\"Girls Trip\", \"MISC\", \"domestic box office gross\", \"$100 million\", \"NUM\"],\n    [\"Tracy Oliver\", \"PER\", \"notable work\", \"Girls Trip\", \"MISC\"],\n    [\"Kenya Barris\", \"PER\", \"notable work\", \"Girls Trip\", \"MISC\"],\n    [\"Erica Rivinoja\", \"PER\", \"notable work\", \"Girls Trip\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 18,
+  "FN": 16,
+  "recall": 0.36,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

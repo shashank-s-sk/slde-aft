@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_354",
+ "base_raw": "[\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"located in or next to body of water\", \"Pacific Ocean\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"part of\", \"Ecuador\", \"LOC\"],\n    [\"Isabela\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Espa\u00f1ola\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Fernandina\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Platform\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Charles Darwin\", \"PER\", \"visited\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"country\", \"Ecuador\", \"LOC\"],\n    [\"Hawaiian volcanoes\", \"LOC\", \"similar to\", \"Gal\u00e1pagos volcanoes\", \"LOC\"],\n    [\"Cobb \u2013 Eickelberg Seamount chain\", \"LOC\", \"similar to\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"age\", \"4.2 million years\", \"TIME\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"age\", \"700,000 years\", \"TIME\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 9,
+  "FN": 9,
+  "recall": 0.25,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries in Europe and South America",
+  "Locations",
+  "Notable Individuals",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"located in or next to body of water\", \"Pacific Ocean\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"part of\", \"Ecuador\", \"LOC\"],\n    [\"Isabela\", \"LOC\", \"part of\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Espa\u00f1ola\", \"LOC\", \"part of\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Fernandina\", \"LOC\", \"part of\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Platform\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Charles Darwin\", \"PER\", \"visited\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"country\", \"Ecuador\", \"LOC\"],\n    [\"Hawaiian volcanoes\", \"LOC\", \"similar to\", \"Gal\u00e1pagos volcanoes\", \"LOC\"],\n    [\"Cobb \u2013 Eickelberg Seamount chain\", \"LOC\", \"similar to\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"age\", \"4.2 million years\", \"TIME\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"age\", \"700,000 years\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 7,
+  "FN": 9,
+  "recall": 0.47058823529411764,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"located in or next to body of water\", \"Pacific Ocean\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"part of\", \"Ecuador\", \"LOC\"],\n    [\"Isabela\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Espa\u00f1ola\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Fernandina\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Platform\", \"LOC\", \"located in\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Charles Darwin\", \"PER\", \"visited\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"country\", \"Ecuador\", \"LOC\"],\n    [\"Hawaiian volcanoes\", \"LOC\", \"similar to\", \"Gal\u00e1pagos volcanoes\", \"LOC\"],\n    [\"Cobb \u2013 Eickelberg Seamount chain\", \"LOC\", \"similar to\", \"Gal\u00e1pagos Islands\", \"LOC\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"age\", \"4.2 million years\", \"TIME\"],\n    [\"Gal\u00e1pagos Islands\", \"LOC\", \"age\", \"700,000 years\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 9,
+  "recall": 0.3076923076923077,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ }
+}

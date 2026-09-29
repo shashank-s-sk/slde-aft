@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_359",
+ "base_raw": "[\n    [\"Animal Crossing\", \"MISC\", \"developer\", \"Nintendo\", \"ORG\"],\n    [\"Animal Crossing\", \"MISC\", \"publisher\", \"Nintendo\", \"ORG\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo 64\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"GameCube\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo DS\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Wii\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"genre\", \"community simulation\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"release year\", \"2019\", \"TIME\"],\n    [\"Animal Crossing\", \"MISC\", \"sales\", \"30 million\", \"NUM\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 4,
+  "FN": 1,
+  "recall": 0.875,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Animal Crossing\", \"MISC\", \"developer\", \"Nintendo\", \"ORG\"],\n    [\"Animal Crossing\", \"MISC\", \"publisher\", \"Nintendo\", \"ORG\"],\n    [\"Nintendo 64\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"GameCube\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Nintendo DS\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Wii\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Nintendo 3DS\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Nintendo Switch\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo 64\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"GameCube\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo DS\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Wii\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"genre\", \"community simulation\", \"MISC\"],\n    [\"Nintendo\", \"ORG\", \"developer of\", \"Animal Crossing\", \"MISC\"],\n    [\"Nintendo\", \"ORG\", \"publisher of\", \"Animal Crossing\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"release year\", \"2019\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 12,
+  "FN": 1,
+  "recall": 0.875,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Animal Crossing\", \"MISC\", \"developer\", \"Nintendo\", \"ORG\"],\n    [\"Animal Crossing\", \"MISC\", \"publisher\", \"Nintendo\", \"ORG\"],\n    [\"Nintendo 64\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"GameCube\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Nintendo DS\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Wii\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Nintendo 3DS\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Nintendo Switch\", \"MISC\", \"instance of\", \"console\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo 64\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"GameCube\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo DS\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Wii\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo 3DS\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Animal Crossing series\", \"MISC\", \"genre\", \"community simulation\", \"MISC\"],\n    [\"Animal Crossing\", \"MISC\", \"number of units sold\", \"30 million\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 12,
+  "FN": 1,
+  "recall": 0.875,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

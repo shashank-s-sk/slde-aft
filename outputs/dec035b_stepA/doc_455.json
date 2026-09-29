@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_455",
+ "base_raw": "[\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"date of birth\", \"January 14, 1887\", \"TIME\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"date of death\", \"February 25, 1972\", \"TIME\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"educated at\", \"G\u00f6ttingen University\", \"ORG\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"advisor\", \"David Hilbert\", \"PER\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"employer\", \"Jan Kazimierz University\", \"ORG\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"employer\", \"Wroc\u0142aw University\", \"ORG\"],\n    [\"Stefan Banach\", \"PER\", \"discoverer\", \"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"field of work\", \"functional analysis\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"field of work\", \"geometry\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"field of work\", \"mathematical logic\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"field of work\", \"trigonometry\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"field of work\", \"game theory\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\", \"field of work\", \"probability theory\", \"MISC\"],\n    [\"Lw\u00f3w School of Mathematics\", \"MISC\", \"founder\", \"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\"],\n    [\"Banach-Steinhaus theorem\", \"MISC\", \"author\", \"W\u0142adys\u0142aw Hugo Dionizy Steinhaus\", \"PER\"],\n    [\"Banach-Steinhaus theorem\", \"MISC\", \"author\", \"Stefan Banach\", \"PER\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"date of birth\", \"January 14, 1887\", \"TIME\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"date of death\", \"February 25, 1972\", \"TIME\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"educated at\", \"G\u00f6ttingen University\", \"ORG\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"advisor\", \"David Hilbert\", \"PER\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"employer\", \"Jan Kazimierz University\", \"ORG\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"employer\", \"Wroc\u0142aw University\", \"ORG\"],\n    [\"Stefan Banach\", \"PER\", \"discoverer\", \"W\u0142adys\u0142aw Steinhaus\", \"PER\"],\n    [\"Lw\u00f3w School of Mathematics\", \"MISC\", \"founder\", \"W\u0142adys\u0142aw Steinhaus\", \"PER\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"field of work\", \"functional analysis\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"field of work\", \"geometry\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"field of work\", \"mathematical logic\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"field of work\", \"trigonometry\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"contributor to\", \"game theory\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"contributor to\", \"probability theory\", \"MISC\"],\n    [\"Banach-Steinhaus theorem\", \"MISC\", \"author\", \"W\u0142adys\u0142aw Steinhaus\", \"PER\"],\n    [\"Banach-Steinhaus theorem\", \"MISC\", \"author\", \"Stefan Banach\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 28,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 28,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 31,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"date of birth\", \"January 14, 1887\", \"TIME\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"date of death\", \"February 25, 1972\", \"TIME\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"educated at\", \"G\u00f6ttingen University\", \"ORG\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"advisor\", \"David Hilbert\", \"PER\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"employer\", \"Jan Kazimierz University\", \"ORG\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"employer\", \"Wroc\u0142aw University\", \"ORG\"],\n    [\"Stefan Banach\", \"PER\", \"discoverer\", \"W\u0142adys\u0142aw Steinhaus\", \"PER\"],\n    [\"Lw\u00f3w School of Mathematics\", \"MISC\", \"founder\", \"W\u0142adys\u0142aw Steinhaus\", \"PER\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"field of work\", \"functional analysis\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"field of work\", \"geometry\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"field of work\", \"mathematical logic\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"field of work\", \"trigonometry\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"contributor to\", \"game theory\", \"MISC\"],\n    [\"W\u0142adys\u0142aw Steinhaus\", \"PER\", \"contributor to\", \"probability theory\", \"MISC\"],\n    [\"Banach-Steinhaus theorem\", \"MISC\", \"author\", \"W\u0142adys\u0142aw Steinhaus\", \"PER\"],\n    [\"Banach-Steinhaus theorem\", \"MISC\", \"author\", \"Stefan Banach\", \"PER\"]\n]"
+}

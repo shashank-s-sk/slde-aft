@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_452",
+ "base_raw": "[\n    [\"Bruce McLean\", \"PER\", \"educated at\", \"Glasgow School of Art\", \"ORG\"],\n    [\"Bruce McLean\", \"PER\", \"educated at\", \"Saint Martin's School of Art\", \"ORG\"],\n    [\"Bruce McLean\", \"PER\", \"teacher\", \"Anthony Caro\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"teacher\", \"Phillip King\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"position held\", \"Head of Graduate Painting\", \"MISC\"],\n    [\"Bruce McLean\", \"PER\", \"employer\", \"The Slade School of Fine Art\", \"ORG\"],\n    [\"Bruce McLean\", \"PER\", \"award received\", \"John Moores Painting Prize\", \"MISC\"],\n    [\"Bruce McLean\", \"PER\", \"residence\", \"London\", \"LOC\"],\n    [\"Will McLean\", \"PER\", \"father\", \"Bruce McLean\", \"PER\"],\n    [\"Will McLean\", \"PER\", \"occupation\", \"architect\", \"MISC\"],\n    [\"Tate Gallery\", \"ORG\", \"located in\", \"London\", \"LOC\"],\n    [\"The Modern Art Gallery\", \"ORG\", \"located in\", \"Vienna\", \"LOC\"],\n    [\"Museum of Modern Art\", \"ORG\", \"located in\", \"Oxford\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Bruce McLean\", \"PER\", \"place of birth\", \"Glasgow\", \"LOC\"],\n    [\"Bruce McLean\", \"PER\", \"educated at\", \"Glasgow School of Art\", \"ORG\"],\n    [\"Bruce McLean\", \"PER\", \"educated at\", \"Saint Martin's School of Art\", \"ORG\"],\n    [\"Bruce McLean\", \"PER\", \"teacher\", \"Anthony Caro\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"teacher\", \"Phillip King\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"award received\", \"John Moores Painting Prize\", \"MISC\"],\n    [\"Bruce McLean\", \"PER\", \"position held\", \"Head of Graduate Painting\", \"MISC\"],\n    [\"The Slade School of Fine Art\", \"ORG\", \"located in\", \"London\", \"LOC\"],\n    [\"Tate Gallery\", \"ORG\", \"located in\", \"London\", \"LOC\"],\n    [\"The Modern Art Gallery\", \"ORG\", \"located in\", \"Vienna\", \"LOC\"],\n    [\"Museum of Modern Art\", \"ORG\", \"located in\", \"Oxford\", \"LOC\"],\n    [\"Will McLean\", \"PER\", \"father\", \"Bruce McLean\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"child\", \"Will McLean\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"residence\", \"London\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Bruce McLean\", \"PER\", \"place of birth\", \"Glasgow\", \"LOC\"],\n    [\"Bruce McLean\", \"PER\", \"educated at\", \"Glasgow School of Art\", \"ORG\"],\n    [\"Bruce McLean\", \"PER\", \"educated at\", \"Saint Martin's School of Art\", \"ORG\"],\n    [\"Bruce McLean\", \"PER\", \"teacher\", \"Anthony Caro\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"teacher\", \"Phillip King\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"award received\", \"John Moores Painting Prize\", \"MISC\"],\n    [\"Bruce McLean\", \"PER\", \"position held\", \"Head of Graduate Painting\", \"MISC\"],\n    [\"The Slade School of Fine Art\", \"ORG\", \"located in\", \"London\", \"LOC\"],\n    [\"Tate Gallery\", \"ORG\", \"located in\", \"London\", \"LOC\"],\n    [\"The Modern Art Gallery\", \"ORG\", \"located in\", \"Vienna\", \"LOC\"],\n    [\"Museum of Modern Art\", \"ORG\", \"located in\", \"Oxford\", \"LOC\"],\n    [\"Will McLean\", \"PER\", \"father\", \"Bruce McLean\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"child\", \"Will McLean\", \"PER\"],\n    [\"Bruce McLean\", \"PER\", \"residence\", \"London\", \"LOC\"]\n]"
+}

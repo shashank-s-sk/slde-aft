@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_403",
+ "base_raw": "[\n    [\"Astragalus iselyi\", \"MISC\", \"located in\", \"Utah\", \"LOC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"found in\", \"San Juan County\", \"LOC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"found in\", \"Grand County\", \"LOC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"grows in\", \"Morrison Formation\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"grows in\", \"Mancos Formation\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"grows in\", \"Paradox Formation\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"contains\", \"selenium\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"contains\", \"gypsum\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"contains\", \"uranium\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"threatened by\", \"uranium mining\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 10,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Astragalus iselyi\", \"MISC\", \"located in\", \"Utah\", \"LOC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"found in\", \"San Juan County\", \"LOC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"found in\", \"Grand County\", \"LOC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"grows in\", \"Morrison Formation\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"grows in\", \"Mancos Formation\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"associated with\", \"Paradox Formation\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"contains\", \"selenium\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"contains\", \"gypsum\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"contains\", \"uranium\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"threatened by\", \"uranium mining\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Astragalus iselyi\", \"MISC\", \"located in\", \"Utah\", \"LOC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"part of\", \"legume family\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"has part\", \"yellowish white flowers\", \"MISC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"has part\", \"inflated, rough-haired legume pod\", \"MISC\"],\n    [\"San Juan County\", \"LOC\", \"located in\", \"Utah\", \"LOC\"],\n    [\"Grand County\", \"LOC\", \"located in\", \"Utah\", \"LOC\"],\n    [\"Morrison Formation\", \"MISC\", \"located in\", \"Utah\", \"LOC\"],\n    [\"Mancos Formation\", \"MISC\", \"located in\", \"Utah\", \"LOC\"],\n    [\"Paradox Formation\", \"MISC\", \"located in\", \"Utah\", \"LOC\"],\n    [\"Astragalus iselyi\", \"MISC\", \"threatened by\", \"uranium mining\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 18,
+  "FN": 0,
+  "recall": 0.0,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

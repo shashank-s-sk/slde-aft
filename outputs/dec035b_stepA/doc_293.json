@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_293",
+ "base_raw": "[\n    [\"WhatDoTheyKnow\", \"MISC\", \"country\", \"United Kingdom\", \"LOC\"],\n    [\"mySociety\", \"ORG\", \"country\", \"United Kingdom\", \"LOC\"],\n    [\"The Guardian\", \"ORG\", \"description of\", \"WhatDoTheyKnow\", \"MISC\"],\n    [\"The Information Commissioner's Office\", \"ORG\", \"description of\", \"WhatDoTheyKnow\", \"MISC\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"language\", \"English\", \"MISC\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"language\", \"Welsh\", \"MISC\"],\n    [\"UK Central Government\", \"ORG\", \"percentage of requests\", \"15% to 20%\", \"NUM\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"number of public bodies\", \"16,800\", \"NUM\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"number of requests\", \"294,000\", \"NUM\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"number of visitors\", \"4.5 million\", \"NUM\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"year of visitor count\", \"2014\", \"TIME\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 12,
+  "recall": 0.07692307692307693,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"WhatDoTheyKnow\", \"ORG\", \"country\", \"United Kingdom\", \"LOC\"],\n    [\"WhatDoTheyKnow\", \"ORG\", \"language\", \"English\", \"MISC\"],\n    [\"WhatDoTheyKnow\", \"ORG\", \"language\", \"Welsh\", \"MISC\"],\n    [\"The Guardian\", \"ORG\", \"mention\", \"WhatDoTheyKnow\", \"ORG\"],\n    [\"The Information Commissioner's Office\", \"ORG\", \"mention\", \"WhatDoTheyKnow\", \"ORG\"],\n    [\"mySociety\", \"ORG\", \"creator\", \"WhatDoTheyKnow\", \"ORG\"],\n    [\"UK Central Government\", \"ORG\", \"user of\", \"WhatDoTheyKnow\", \"ORG\"],\n    [\"WhatDoTheyKnow\", \"ORG\", \"number of public bodies\", \"16,800\", \"NUM\"],\n    [\"WhatDoTheyKnow\", \"ORG\", \"number of requests\", \"294,000\", \"NUM\"],\n    [\"WhatDoTheyKnow\", \"ORG\", \"number of visitors\", \"4.5 million\", \"NUM\"],\n    [\"WhatDoTheyKnow\", \"ORG\", \"year of visitor count\", \"2014\", \"TIME\"],\n    [\"WhatDoTheyKnow\", \"ORG\", \"translation year\", \"2013\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 15,
+  "FN": 11,
+  "recall": 0.08333333333333333,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"WhatDoTheyKnow\", \"MISC\", \"country\", \"United Kingdom\", \"LOC\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"language\", \"English\", \"MISC\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"language\", \"Welsh\", \"MISC\"],\n    [\"The Guardian\", \"ORG\", \"describes\", \"WhatDoTheyKnow\", \"MISC\"],\n    [\"The Information Commissioner's Office\", \"ORG\", \"believes\", \"WhatDoTheyKnow\", \"MISC\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"used by\", \"MPs\", \"PER\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"founded by\", \"mySociety\", \"ORG\"],\n    [\"mySociety\", \"ORG\", \"located in\", \"United Kingdom\", \"LOC\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"publication date\", \"2013\", \"TIME\"],\n    [\"WhatDoTheyKnow\", \"MISC\", \"visited by\", \"4.5 million people\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 10,
+  "recall": 0.23076923076923078,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

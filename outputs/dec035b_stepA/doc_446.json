@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_446",
+ "base_raw": "[\n    [\"Clarence Profit\", \"PER\", \"place of birth\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"place of death\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"date of birth\", \"June 26, 1912\", \"TIME\"],\n    [\"Clarence Profit\", \"PER\", \"date of death\", \"October 22, 1944\", \"TIME\"],\n    [\"Clarence Profit\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"genre\", \"jazz\", \"MISC\"],\n    [\"Clarence Profit\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Clarence Profit\", \"PER\", \"location of formation\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"notable work\", \"Lullaby In Rhythm\", \"MISC\"],\n    [\"Clarence Profit\", \"PER\", \"collaborator\", \"Edgar Sampson\", \"PER\"],\n    [\"Lullaby In Rhythm\", \"MISC\", \"composer\", \"Clarence Profit\", \"PER\"],\n    [\"Lullaby In Rhythm\", \"MISC\", \"composer\", \"Edgar Sampson\", \"PER\"],\n    [\"Clarence Profit\", \"PER\", \"location\", \"Antigua\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"location\", \"Bermuda\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"location\", \"Caribbean\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Clarence Profit\", \"PER\", \"date of birth\", \"June 26, 1912\", \"TIME\"],\n    [\"Clarence Profit\", \"PER\", \"date of death\", \"October 22, 1944\", \"TIME\"],\n    [\"Clarence Profit\", \"PER\", \"place of birth\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"place of death\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"genre\", \"jazz\", \"MISC\"],\n    [\"Clarence Profit\", \"PER\", \"educated at\", \"musical family\", \"MISC\"],\n    [\"Clarence Profit\", \"PER\", \"location of formation\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"associated with\", \"swing\", \"MISC\"],\n    [\"Antigua\", \"LOC\", \"located in\", \"Caribbean\", \"LOC\"],\n    [\"Bermuda\", \"LOC\", \"located in\", \"Caribbean\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"visited\", \"Antigua\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"led group in\", \"Bermuda\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"co-composed\", \"Lullaby In Rhythm\", \"MISC\"],\n    [\"Edgar Sampson\", \"PER\", \"co-composed\", \"Lullaby In Rhythm\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 16,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 16,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 23,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Clarence Profit\", \"PER\", \"date of birth\", \"June 26, 1912\", \"TIME\"],\n    [\"Clarence Profit\", \"PER\", \"date of death\", \"October 22, 1944\", \"TIME\"],\n    [\"Clarence Profit\", \"PER\", \"place of birth\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"place of death\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"genre\", \"jazz\", \"MISC\"],\n    [\"Clarence Profit\", \"PER\", \"educated at\", \"musical family\", \"MISC\"],\n    [\"Clarence Profit\", \"PER\", \"location of formation\", \"New York City\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"associated with\", \"swing\", \"MISC\"],\n    [\"Antigua\", \"LOC\", \"located in\", \"Caribbean\", \"LOC\"],\n    [\"Bermuda\", \"LOC\", \"located in\", \"Caribbean\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"visited\", \"Antigua\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"led group in\", \"Bermuda\", \"LOC\"],\n    [\"Clarence Profit\", \"PER\", \"co-composed\", \"Lullaby In Rhythm\", \"MISC\"],\n    [\"Edgar Sampson\", \"PER\", \"co-composed\", \"Lullaby In Rhythm\", \"MISC\"]\n]"
+}

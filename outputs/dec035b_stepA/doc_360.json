@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_360",
+ "base_raw": "[\n    [\"Tin Pan Alley Cats\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"production company\", \"Leon Schlesinger Productions\", \"ORG\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"part of\", \"Merrie Melodies series\", \"MISC\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"release year\", \"1943\", \"TIME\"],\n    [\"Coal Black and de Sebben Dwarfs\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Coal Black and de Sebben Dwarfs\", \"MISC\", \"release year\", \"1943\", \"TIME\"],\n    [\"Fats Waller\", \"PER\", \"depicted as\", \"anthropomorphic cat\", \"MISC\"],\n    [\"Porky in Wackyland\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Porky in Wackyland\", \"MISC\", \"release year\", \"1938\", \"TIME\"],\n    [\"Censored Eleven\", \"MISC\", \"includes\", \"Tin Pan Alley Cats\", \"MISC\"],\n    [\"Censored Eleven\", \"MISC\", \"year withheld from television\", \"1968\", \"TIME\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 3,
+  "FN": 5,
+  "recall": 0.5833333333333334,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Tin Pan Alley Cats\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"production company\", \"Leon Schlesinger Productions\", \"ORG\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"part of\", \"Merrie Melodies series\", \"MISC\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"release year\", \"1943\", \"TIME\"],\n    [\"Coal Black and de Sebben Dwarfs\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Coal Black and de Sebben Dwarfs\", \"MISC\", \"release year\", \"1943\", \"TIME\"],\n    [\"Fats Waller\", \"PER\", \"depicted as\", \"anthropomorphic cat\", \"MISC\"],\n    [\"Porky in Wackyland\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Porky in Wackyland\", \"MISC\", \"release year\", \"1938\", \"TIME\"],\n    [\"Censored Eleven\", \"MISC\", \"includes\", \"Tin Pan Alley Cats\", \"MISC\"],\n    [\"Censored Eleven\", \"MISC\", \"withdrawn from television distribution since\", \"1968\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 7,
+  "FN": 4,
+  "recall": 0.6363636363636364,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 7,
+  "FN": 4,
+  "recall": 0.6363636363636364,
+  "n_extracted": 12,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Tin Pan Alley Cats\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"production company\", \"Leon Schlesinger Productions\", \"ORG\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"part of\", \"Merrie Melodies series\", \"MISC\"],\n    [\"Tin Pan Alley Cats\", \"MISC\", \"release year\", \"1943\", \"TIME\"],\n    [\"Coal Black and de Sebben Dwarfs\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Coal Black and de Sebben Dwarfs\", \"MISC\", \"release year\", \"1943\", \"TIME\"],\n    [\"Fats Waller\", \"PER\", \"depicted as\", \"anthropomorphic cat\", \"MISC\"],\n    [\"Porky in Wackyland\", \"MISC\", \"director\", \"Bob Clampett\", \"PER\"],\n    [\"Porky in Wackyland\", \"MISC\", \"release year\", \"1938\", \"TIME\"],\n    [\"Censored Eleven\", \"MISC\", \"includes\", \"Tin Pan Alley Cats\", \"MISC\"],\n    [\"Censored Eleven\", \"MISC\", \"withdrawn from television distribution since\", \"1968\", \"TIME\"]\n]"
+}

@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_34",
+ "base_raw": "[\n    [\"Mary Tudor\", \"PER\", \"date of birth\", \"18 March 1496\", \"TIME\"],\n    [\"Mary Tudor\", \"PER\", \"date of death\", \"25 June 1533\", \"TIME\"],\n    [\"Mary Tudor\", \"PER\", \"father\", \"Henry VII\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"mother\", \"Elizabeth of York\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"spouse\", \"Louis XII of France\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"spouse\", \"Charles Brandon\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"child\", \"Frances\", \"PER\"],\n    [\"Frances\", \"PER\", \"child\", \"Lady Jane Grey\", \"PER\"],\n    [\"Lady Jane Grey\", \"PER\", \"date of birth\", \"unknown\", \"TIME\"],\n    [\"Lady Jane Grey\", \"PER\", \"position held\", \"monarch of England\", \"MISC\"],\n    [\"Charles Brandon\", \"PER\", \"title\", \"1st Duke of Suffolk\", \"MISC\"],\n    [\"Henry VII\", \"PER\", \"child\", \"Mary Tudor\", \"PER\"],\n    [\"Henry VII\", \"PER\", \"child\", \"Henry VIII\", \"PER\"],\n    [\"Henry VIII\", \"PER\", \"sibling\", \"Mary Tudor\", \"PER\"],\n    [\"Thomas Wolsey\", \"PER\", \"position held\", \"intervener\", \"MISC\"],\n    [\"Louis XII of France\", \"PER\", \"spouse\", \"Mary Tudor\", \"PER\"],\n    [\"Lady Jane Grey\", \"PER\", \"date of death\", \"unknown\", \"TIME\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 9,
+  "FN": 11,
+  "recall": 0.42105263157894735,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Mary Tudor\", \"PER\", \"date of birth\", \"18 March 1496\", \"TIME\"],\n    [\"Mary Tudor\", \"PER\", \"date of death\", \"25 June 1533\", \"TIME\"],\n    [\"Mary Tudor\", \"PER\", \"father\", \"Henry VII\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"mother\", \"Elizabeth of York\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"spouse\", \"Louis XII of France\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"spouse\", \"Charles Brandon\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"child\", \"Frances\", \"PER\"],\n    [\"Frances\", \"PER\", \"child\", \"Lady Jane Grey\", \"PER\"],\n    [\"Lady Jane Grey\", \"PER\", \"date of birth\", \"unknown\", \"TIME\"],\n    [\"Lady Jane Grey\", \"PER\", \"position held\", \"monarch of England\", \"MISC\"],\n    [\"Henry VII\", \"PER\", \"child\", \"Mary Tudor\", \"PER\"],\n    [\"Henry VII\", \"PER\", \"child\", \"Henry VIII\", \"PER\"],\n    [\"Henry VIII\", \"PER\", \"sibling\", \"Mary Tudor\", \"PER\"],\n    [\"Charles Brandon\", \"PER\", \"title\", \"1st Duke of Suffolk\", \"MISC\"],\n    [\"Thomas Wolsey\", \"PER\", \"position held\", \"intervener\", \"MISC\"],\n    [\"Louis XII of France\", \"PER\", \"country\", \"France\", \"LOC\"],\n    [\"Henry VIII\", \"PER\", \"country\", \"England\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 12,
+  "FN": 9,
+  "recall": 0.4375,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Mary Tudor\", \"PER\", \"date of birth\", \"18 March 1496\", \"TIME\"],\n    [\"Mary Tudor\", \"PER\", \"date of death\", \"25 June 1533\", \"TIME\"],\n    [\"Mary Tudor\", \"PER\", \"father\", \"Henry VII\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"mother\", \"Elizabeth of York\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"spouse\", \"Louis XII of France\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"spouse\", \"Charles Brandon\", \"PER\"],\n    [\"Mary Tudor\", \"PER\", \"child\", \"Frances\", \"PER\"],\n    [\"Frances\", \"PER\", \"child\", \"Lady Jane Grey\", \"PER\"],\n    [\"Lady Jane Grey\", \"PER\", \"date of birth\", \"unknown\", \"TIME\"],\n    [\"Lady Jane Grey\", \"PER\", \"position held\", \"monarch of England\", \"MISC\"],\n    [\"Charles Brandon\", \"PER\", \"title\", \"1st Duke of Suffolk\", \"MISC\"],\n    [\"Henry VII\", \"PER\", \"child\", \"Mary Tudor\", \"PER\"],\n    [\"Henry VII\", \"PER\", \"child\", \"Henry VIII\", \"PER\"],\n    [\"Thomas Wolsey\", \"PER\", \"position held\", \"intervener\", \"MISC\"],\n    [\"Henry VIII\", \"PER\", \"sibling\", \"Mary Tudor\", \"PER\"],\n    [\"Louis XII of France\", \"PER\", \"spouse\", \"Mary Tudor\", \"PER\"],\n    [\"Charles Brandon\", \"PER\", \"child\", \"unknown\", \"MISC\"],\n    [\"Mary Tudor\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"Lady Jane Grey\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 10,
+  "FN": 10,
+  "recall": 0.5,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

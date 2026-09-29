@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_317",
+ "base_raw": "[\n    [\"Dover School District\", \"ORG\", \"located in\", \"Morris County\", \"LOC\"],\n    [\"Dover School District\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Dover School District\", \"ORG\", \"state\", \"New Jersey\", \"LOC\"],\n    [\"Victory Gardens\", \"LOC\", \"school district\", \"Dover School District\", \"ORG\"],\n    [\"Mine Hill Township\", \"LOC\", \"school district\", \"Dover School District\", \"ORG\"],\n    [\"New Jersey Department of Education\", \"ORG\", \"classification\", \"District Factor Group A\", \"MISC\"],\n    [\"Dover School District\", \"ORG\", \"enrollment\", \"3149\", \"NUM\"],\n    [\"Dover School District\", \"ORG\", \"number of teachers\", \"216.1\", \"NUM\"],\n    [\"Dover School District\", \"ORG\", \"student-teacher ratio\", \"14.6:1\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Dover School District\", \"ORG\", \"located in\", \"Morris County\", \"LOC\"],\n    [\"Dover School District\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Dover School District\", \"ORG\", \"state\", \"New Jersey\", \"LOC\"],\n    [\"Victory Gardens\", \"LOC\", \"school district\", \"Dover School District\", \"ORG\"],\n    [\"Mine Hill Township\", \"LOC\", \"school district\", \"Dover School District\", \"ORG\"],\n    [\"New Jersey Department of Education\", \"ORG\", \"classification\", \"District Factor Group A\", \"MISC\"],\n    [\"Dover\", \"LOC\", \"school district\", \"Dover School District\", \"ORG\"],\n    [\"Dover School District\", \"ORG\", \"enrollment\", \"3149\", \"NUM\"],\n    [\"Dover School District\", \"ORG\", \"number of teachers\", \"216.1\", \"NUM\"],\n    [\"Dover School District\", \"ORG\", \"student-teacher ratio\", \"14.6:1\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Dover School District\", \"ORG\", \"located in\", \"Morris County\", \"LOC\"],\n    [\"Dover School District\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Dover School District\", \"ORG\", \"state\", \"New Jersey\", \"LOC\"],\n    [\"Victory Gardens\", \"LOC\", \"school district\", \"Dover School District\", \"ORG\"],\n    [\"Mine Hill Township\", \"LOC\", \"school district\", \"Dover School District\", \"ORG\"],\n    [\"New Jersey Department of Education\", \"ORG\", \"location\", \"New Jersey\", \"LOC\"],\n    [\"Dover\", \"LOC\", \"school district\", \"Dover School District\", \"ORG\"],\n    [\"Dover School District\", \"ORG\", \"enrollment\", \"3149\", \"NUM\"],\n    [\"Dover School District\", \"ORG\", \"number of teachers\", \"216.1\", \"NUM\"],\n    [\"Dover School District\", \"ORG\", \"student-teacher ratio\", \"14.6:1\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 10,
+  "FN": 13,
+  "recall": 0.07142857142857142,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

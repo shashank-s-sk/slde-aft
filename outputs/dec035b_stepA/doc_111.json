@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_111",
+ "base_raw": "[\n    [\"Carin Mannheimer\", \"PER\", \"place of birth\", \"Osby, Sweden\", \"LOC\"],\n    [\"Carin Mannheimer\", \"PER\", \"date of birth\", \"17 August 1934\", \"TIME\"],\n    [\"Carin Mannheimer\", \"PER\", \"date of death\", \"11 July 2014\", \"TIME\"],\n    [\"Rapport om kvinnor\", \"MISC\", \"author\", \"Carin Mannheimer\", \"PER\"],\n    [\"Rapport om kvinnor\", \"MISC\", \"publication date\", \"1969\", \"TIME\"],\n    [\"Carin Mannheimer\", \"PER\", \"nationality\", \"Swedish\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 4,
+  "FN": 7,
+  "recall": 0.2222222222222222,
+  "n_extracted": 6,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Carin Mannheimer\", \"PER\", \"place of birth\", \"Osby, Sweden\", \"LOC\"],\n    [\"Carin Mannheimer\", \"PER\", \"date of birth\", \"17 August 1934\", \"TIME\"],\n    [\"Carin Mannheimer\", \"PER\", \"date of death\", \"11 July 2014\", \"TIME\"],\n    [\"Rapport om kvinnor\", \"MISC\", \"author\", \"Carin Mannheimer\", \"PER\"],\n    [\"Rapport om kvinnor\", \"MISC\", \"publication date\", \"1969\", \"TIME\"],\n    [\"Carin Mannheimer\", \"PER\", \"nationality\", \"Swedish\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 4,
+  "FN": 7,
+  "recall": 0.2222222222222222,
+  "n_extracted": 6,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Carin Mannheimer\", \"PER\", \"place of birth\", \"Osby, Sweden\", \"LOC\"],\n    [\"Carin Mannheimer\", \"PER\", \"date of birth\", \"17 August 1934\", \"TIME\"],\n    [\"Carin Mannheimer\", \"PER\", \"date of death\", \"11 July 2014\", \"TIME\"],\n    [\"Rapport om kvinnor\", \"MISC\", \"author\", \"Carin Mannheimer\", \"PER\"],\n    [\"Rapport om kvinnor\", \"MISC\", \"publication date\", \"1969\", \"TIME\"],\n    [\"Carin Mannheimer\", \"PER\", \"nationality\", \"Swedish\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 4,
+  "FN": 7,
+  "recall": 0.2222222222222222,
+  "n_extracted": 6,
+  "judge_parse_ok": true
+ }
+}

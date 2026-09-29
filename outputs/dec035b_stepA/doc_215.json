@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_215",
+ "base_raw": "[\n    [\"United Sound Systems\", \"ORG\", \"located in\", \"Detroit\", \"LOC\"],\n    [\"United Sound Systems\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"John Lee Hooker\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Funkadelic\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Berry Gordy\", \"PER\", \"founded\", \"Tamla\", \"ORG\"],\n    [\"Tamla\", \"ORG\", \"evolved into\", \"Motown Records\", \"ORG\"],\n    [\"Michigan Department of Transportation\", \"ORG\", \"planning\", \"highway service drive expansion\", \"MISC\"],\n    [\"United Sound Systems\", \"ORG\", \"ownership changed\", \"2009\", \"TIME\"],\n    [\"United Sound Systems\", \"ORG\", \"reopened\", \"2014\", \"TIME\"],\n    [\"City of Detroit\", \"ORG\", \"designated\", \"United Sound Systems\", \"ORG\"],\n    [\"Johnnie Ray\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Dizzy Gillespie\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Jackie Wilson\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Dan Schafer\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Alberta Adams\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"United Sound Systems\", \"ORG\", \"designated historic district\", \"2015\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 14,
+  "FN": 13,
+  "recall": 0.13333333333333333,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Music Record Labels",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"United Sound Systems\", \"ORG\", \"located in\", \"Detroit\", \"LOC\"],\n    [\"United Sound Systems\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"John Lee Hooker\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Funkadelic\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Berry Gordy\", \"PER\", \"founded\", \"Tamla label\", \"ORG\"],\n    [\"Tamla label\", \"ORG\", \"evolved into\", \"Motown Records\", \"ORG\"],\n    [\"Michigan Department of Transportation\", \"ORG\", \"planned expansion at\", \"United Sound Systems\", \"ORG\"],\n    [\"United Sound Systems\", \"ORG\", \"reopened in\", \"2014\", \"TIME\"],\n    [\"City of Detroit\", \"ORG\", \"designated historic district\", \"United Sound Systems\", \"ORG\"],\n    [\"Johnnie Ray\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Dizzy Gillespie\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Jackie Wilson\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Dan Schafer\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Alberta Adams\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"United Sound Systems\", \"ORG\", \"designation year\", \"2015\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 19,
+  "FN": 13,
+  "recall": 0.1875,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"United Sound Systems\", \"ORG\", \"located in\", \"Detroit\", \"LOC\"],\n    [\"United Sound Systems\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"John Lee Hooker\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Funkadelic\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Berry Gordy\", \"PER\", \"founded\", \"Tamla\", \"ORG\"],\n    [\"Tamla\", \"ORG\", \"became\", \"Motown Records\", \"ORG\"],\n    [\"Michigan Department of Transportation\", \"ORG\", \"planned\", \"highway service drive expansion\", \"MISC\"],\n    [\"United Sound Systems\", \"ORG\", \"reopened in\", \"2014\", \"TIME\"],\n    [\"City of Detroit\", \"ORG\", \"designated\", \"United Sound Systems\", \"ORG\"],\n    [\"Johnnie Ray\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Dizzy Gillespie\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Jackie Wilson\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Dan Schafer\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"],\n    [\"Alberta Adams\", \"PER\", \"recorded at\", \"United Sound Systems\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 12,
+  "recall": 0.2,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

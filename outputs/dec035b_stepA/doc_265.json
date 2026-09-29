@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_265",
+ "base_raw": "[\n    [\"Kaji Biraj Thapa Magar\", \"PER\", \"date of death\", \"1721\", \"TIME\"],\n    [\"Narbaupal Shah\", \"PER\", \"place of death\", \"unknown\", \"LOC\"],\n    [\"Narabhupal Shah\", \"PER\", \"mother\", \"Malikavati\", \"PER\"],\n    [\"Malikavati\", \"PER\", \"child\", \"Narabhupal Shah\", \"PER\"],\n    [\"Kaji Biraj Thapa Magar\", \"PER\", \"residence\", \"Gorkha Kingdom\", \"LOC\"],\n    [\"Narabhupal Shah\", \"PER\", \"date of birth\", \"unknown\", \"TIME\"],\n    [\"Prithvi Narayan Shah\", \"PER\", \"father\", \"Narabhupal Shah\", \"PER\"],\n    [\"Gorkha Kingdom\", \"LOC\", \"capital\", \"unknown\", \"LOC\"],\n    [\"Narabhupal Shah\", \"PER\", \"position held\", \"King of Gorkha\", \"MISC\"],\n    [\"Prithvi Narayan Shah\", \"PER\", \"position held\", \"King of Gorkha\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Kaji Biraj Thapa Magar\", \"PER\", \"date of death\", \"1721\", \"TIME\"],\n    [\"Narbaupal Shah\", \"PER\", \"place of death\", \"unknown\", \"LOC\"],\n    [\"Narbaupal Shah\", \"PER\", \"father\", \"unknown\", \"PER\"],\n    [\"Malikavati\", \"PER\", \"child\", \"Narbaupal Shah\", \"PER\"],\n    [\"Kaji Biraj Thapa Magar\", \"PER\", \"residence\", \"unknown\", \"LOC\"],\n    [\"Prithvi Narayan Shah\", \"PER\", \"father\", \"Narabhupal Shah\", \"PER\"],\n    [\"Gorkha Kingdom\", \"LOC\", \"capital\", \"unknown\", \"LOC\"],\n    [\"Narabhupal Shah\", \"PER\", \"country of citizenship\", \"Gorkha Kingdom\", \"LOC\"],\n    [\"Prithvi Narayan Shah\", \"PER\", \"country of citizenship\", \"Gorkha Kingdom\", \"LOC\"],\n    [\"Kaji Biraj Thapa Magar\", \"PER\", \"country of citizenship\", \"Gorkha Kingdom\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 16,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Kaji Biraj Thapa Magar\", \"PER\", \"date of death\", \"1721\", \"TIME\"],\n    [\"Narbaupal Shah\", \"PER\", \"place of death\", \"unknown\", \"LOC\"],\n    [\"Narbaupal Shah\", \"PER\", \"father\", \"unknown\", \"PER\"],\n    [\"Malikavati\", \"PER\", \"child\", \"Narbaupal Shah\", \"PER\"],\n    [\"Kaji Biraj Thapa Magar\", \"PER\", \"residence\", \"unknown\", \"LOC\"],\n    [\"Prithvi Narayan Shah\", \"PER\", \"father\", \"Narabhupal Shah\", \"PER\"],\n    [\"Gorkha Kingdom\", \"LOC\", \"capital\", \"unknown\", \"LOC\"],\n    [\"Narabhupal Shah\", \"PER\", \"country of citizenship\", \"Gorkha Kingdom\", \"LOC\"],\n    [\"Prithvi Narayan Shah\", \"PER\", \"country of citizenship\", \"Gorkha Kingdom\", \"LOC\"],\n    [\"Kaji Biraj Thapa Magar\", \"PER\", \"country of citizenship\", \"Gorkha Kingdom\", \"LOC\"]\n]"
+}

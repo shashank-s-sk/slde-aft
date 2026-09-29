@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_23",
+ "base_raw": "[\n    [\"Dong\", \"MISC\", \"director\", \"Jia Zhangke\", \"PER\"],\n    [\"Dong\", \"MISC\", \"runtime\", \"66 minutes\", \"TIME\"],\n    [\"Liu Xiaodong\", \"PER\", \"collaborator\", \"Jia Zhangke\", \"PER\"],\n    [\"Dong\", \"MISC\", \"production company\", \"Xstream Pictures\", \"ORG\"],\n    [\"Xstream Pictures\", \"ORG\", \"location\", \"Hong Kong\", \"LOC\"],\n    [\"Xstream Pictures\", \"ORG\", \"location\", \"Beijing\", \"LOC\"],\n    [\"Dong\", \"MISC\", \"festival\", \"Venice International Film Festival\", \"MISC\"],\n    [\"Dong\", \"MISC\", \"festival\", \"Toronto International Film Festival\", \"MISC\"],\n    [\"Dong\", \"MISC\", \"filming format\", \"HD digital video\", \"MISC\"],\n    [\"Jia Zhangke\", \"PER\", \"employer\", \"Xstream Pictures\", \"ORG\"],\n    [\"Liu Xiaodong\", \"PER\", \"subject\", \"Three Gorges Dam\", \"MISC\"],\n    [\"Liu Xiaodong\", \"PER\", \"location of work\", \"Bangkok\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 7,
+  "recall": 0.2222222222222222,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in Asia",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Dong\", \"MISC\", \"director\", \"Jia Zhangke\", \"PER\"],\n    [\"Dong\", \"MISC\", \"genre\", \"documentary\", \"MISC\"],\n    [\"Jia Zhangke\", \"PER\", \"country of citizenship\", \"China\", \"LOC\"],\n    [\"Liu Xiaodong\", \"PER\", \"nationality\", \"Chinese\", \"MISC\"],\n    [\"Three Gorges Dam\", \"LOC\", \"located in the administrative territorial entity\", \"China\", \"LOC\"],\n    [\"Xstream Pictures\", \"ORG\", \"located in\", \"Hong Kong\", \"LOC\"],\n    [\"Xstream Pictures\", \"ORG\", \"located in\", \"Beijing\", \"LOC\"],\n    [\"Dong\", \"MISC\", \"language\", \"Chinese\", \"MISC\"],\n    [\"2006 Venice International Film Festival\", \"ORG\", \"location\", \"Venice\", \"LOC\"],\n    [\"2006 Toronto International Film Festival\", \"ORG\", \"location\", \"Toronto\", \"LOC\"],\n    [\"Dong\", \"MISC\", \"filming location\", \"Bangkok\", \"LOC\"],\n    [\"Dong\", \"MISC\", \"filming location\", \"Three Gorges Dam\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 19,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Cities in Asia"
+ ],
+ "kb_dedup_raw": "[\n    [\"Dong\", \"MISC\", \"director\", \"Jia Zhangke\", \"PER\"],\n    [\"Dong\", \"MISC\", \"genre\", \"documentary\", \"MISC\"],\n    [\"Jia Zhangke\", \"PER\", \"country of citizenship\", \"China\", \"LOC\"],\n    [\"Liu Xiaodong\", \"PER\", \"occupation\", \"artist\", \"MISC\"],\n    [\"Liu Xiaodong\", \"PER\", \"occupation\", \"actor\", \"MISC\"],\n    [\"Three Gorges Dam\", \"MISC\", \"located in\", \"China\", \"LOC\"],\n    [\"Xstream Pictures\", \"ORG\", \"location\", \"Hong Kong\", \"LOC\"],\n    [\"Xstream Pictures\", \"ORG\", \"location\", \"Beijing\", \"LOC\"],\n    [\"Dong\", \"MISC\", \"language\", \"Chinese\", \"MISC\"],\n    [\"2006 Venice International Film Festival\", \"ORG\", \"location\", \"Venice\", \"LOC\"],\n    [\"2006 Toronto International Film Festival\", \"ORG\", \"location\", \"Toronto\", \"LOC\"],\n    [\"Dong\", \"MISC\", \"filming location\", \"Bangkok\", \"LOC\"],\n    [\"Dong\", \"MISC\", \"filming location\", \"Three Gorges Dam\", \"MISC\"],\n    [\"Jia Zhangke\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Liu Xiaodong\", \"PER\", \"nationality\", \"Chinese\", \"MISC\"],\n    [\"Xstream Pictures\", \"ORG\", \"founded by\", \"Jia Zhangke\", \"PER\"],\n    [\"Dong\", \"MISC\", \"release year\", \"2006\", \"TIME\"],\n    [\"Dong\", \"MISC\", \"duration\", \"66 minutes\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 24,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ }
+}

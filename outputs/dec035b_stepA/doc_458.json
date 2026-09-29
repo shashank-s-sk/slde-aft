@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_458",
+ "base_raw": "[\n    [\"Baauer\", \"PER\", \"genre\", \"trap\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"genre\", \"hip hop\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"genre\", \"bass music\", \"MISC\"],\n    [\"Harlem Shake\", \"MISC\", \"sampled from\", \"Plastic Little\", \"PER\"],\n    [\"Harlem Shake\", \"MISC\", \"sampled from\", \"Miller Time\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"released by\", \"Mad Decent\", \"ORG\"],\n    [\"Baauer\", \"PER\", \"label\", \"Jeffree's\", \"ORG\"],\n    [\"Harlem Shake\", \"MISC\", \"chart position\", \"number one\", \"NUM\"],\n    [\"Harlem Shake\", \"MISC\", \"chart position\", \"number three\", \"NUM\"],\n    [\"Baauer\", \"PER\", \"collaboration\", \"Diplo\", \"PER\"],\n    [\"Azealia Banks\", \"PER\", \"remix of\", \"Harlem Shake\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"dispute with\", \"Azealia Banks\", \"PER\"],\n    [\"Harlem Shake\", \"MISC\", \"published on\", \"May 22, 2012\", \"TIME\"],\n    [\"Harlem Shake\", \"MISC\", \"charted in\", \"US Billboard Hot 100\", \"MISC\"],\n    [\"Harlem Shake\", \"MISC\", \"charted in\", \"United Kingdom\", \"LOC\"],\n    [\"Harlem Shake\", \"MISC\", \"charted in\", \"Australia\", \"LOC\"],\n    [\"Harlem Shake\", \"MISC\", \"charted in\", \"New Zealand\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 14,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Baauer\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Baauer\", \"PER\", \"genre\", \"trap\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"genre\", \"hip hop\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"genre\", \"bass music\", \"MISC\"],\n    [\"Mad Decent\", \"ORG\", \"location\", \"U.S.\", \"LOC\"],\n    [\"Jeffree's\", \"ORG\", \"type\", \"imprint label\", \"MISC\"],\n    [\"Plastic Little\", \"PER\", \"notable work\", \"Miller Time\", \"MISC\"],\n    [\"Azealia Banks\", \"PER\", \"genre\", \"hip hop\", \"MISC\"],\n    [\"Azealia Banks\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Diplo\", \"PER\", \"position held\", \"label head\", \"MISC\"],\n    [\"Diplo\", \"PER\", \"employer\", \"Mad Decent\", \"ORG\"],\n    [\"Harlem Shake\", \"MISC\", \"genre\", \"trap\", \"MISC\"],\n    [\"Harlem Shake\", \"MISC\", \"genre\", \"hip hop\", \"MISC\"],\n    [\"Harlem Shake\", \"MISC\", \"genre\", \"bass music\", \"MISC\"],\n    [\"Harlem Shake\", \"MISC\", \"release date\", \"May 22, 2012\", \"TIME\"],\n    [\"Harlem Shake\", \"MISC\", \"chart position\", \"number one\", \"NUM\"],\n    [\"Harlem Shake\", \"MISC\", \"chart position\", \"number three\", \"NUM\"],\n    [\"U.S.\", \"LOC\", \"contains administrative territorial entity\", \"United Kingdom\", \"LOC\"],\n    [\"Australia\", \"LOC\", \"continent\", \"Australia\", \"LOC\"],\n    [\"New Zealand\", \"LOC\", \"continent\", \"Oceania\", \"LOC\"],\n    [\"Billboard\", \"ORG\", \"location\", \"U.S.\", \"LOC\"],\n    [\"Billboard Hot 100\", \"MISC\", \"type\", \"music chart\", \"MISC\"],\n    [\"YouTube\", \"ORG\", \"type\", \"video sharing platform\", \"MISC\"],\n    [\"Internet\", \"MISC\", \"type\", \"global network\", \"MISC\"],\n    [\"SoundCloud\", \"ORG\", \"type\", \"music streaming platform\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 36,
+  "FN": 2,
+  "recall": 0.75,
+  "n_extracted": 37,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Baauer\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Harlem Shake\", \"MISC\", \"genre\", \"trap\", \"MISC\"],\n    [\"Harlem Shake\", \"MISC\", \"genre\", \"hip hop\", \"MISC\"],\n    [\"Harlem Shake\", \"MISC\", \"genre\", \"bass music\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"employer\", \"Mad Decent\", \"ORG\"],\n    [\"Mad Decent\", \"ORG\", \"located in the administrative territorial entity\", \"U.S.\", \"LOC\"],\n    [\"Harlem Shake\", \"MISC\", \"release date\", \"May 22, 2012\", \"TIME\"],\n    [\"Baauer\", \"PER\", \"notable work\", \"Harlem Shake\", \"MISC\"],\n    [\"Azealia Banks\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Azealia Banks\", \"PER\", \"genre\", \"hip hop\", \"MISC\"],\n    [\"Diplo\", \"PER\", \"position held\", \"label head\", \"MISC\"],\n    [\"Diplo\", \"PER\", \"employer\", \"Mad Decent\", \"ORG\"],\n    [\"Jeffree's\", \"ORG\", \"parent organization\", \"Mad Decent\", \"ORG\"],\n    [\"Plastic Little\", \"PER\", \"notable work\", \"Miller Time\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"collaborator\", \"Plastic Little\", \"PER\"],\n    [\"Harlem Shake\", \"MISC\", \"chart performance\", \"number one\", \"NUM\"],\n    [\"Harlem Shake\", \"MISC\", \"chart performance\", \"number three\", \"NUM\"],\n    [\"Baauer\", \"PER\", \"award received\", \"none\", \"MISC\"],\n    [\"Harlem Shake\", \"MISC\", \"certification\", \"none\", \"MISC\"],\n    [\"Azealia Banks\", \"PER\", \"member of\", \"none\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"member of\", \"none\", \"MISC\"],\n    [\"Mad Decent\", \"ORG\", \"founded by\", \"Diplo\", \"PER\"],\n    [\"Harlem Shake\", \"MISC\", \"samples\", \"Miller Time\", \"MISC\"],\n    [\"Baauer\", \"PER\", \"samples\", \"Plastic Little\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 41,
+  "FN": 0,
+  "recall": 1.0,
+  "n_extracted": 41,
+  "judge_parse_ok": true
+ }
+}

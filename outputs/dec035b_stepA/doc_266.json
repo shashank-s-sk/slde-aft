@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_266",
+ "base_raw": "[\n    [\"Ukraine\", \"LOC\", \"introduced\", \"biometric controls\", \"MISC\"],\n    [\"Ukrainian President Petro Poroshenko\", \"PER\", \"signed\", \"decree\", \"MISC\"],\n    [\"State Border Guard Service of Ukraine\", \"ORG\", \"protects\", \"State Border of Ukraine\", \"MISC\"],\n    [\"Armed Forces of Ukraine\", \"ORG\", \"protects\", \"State Border of Ukraine\", \"MISC\"],\n    [\"Ukraine\", \"LOC\", \"has law\", \"Law of Ukraine on the State Border\", \"MISC\"],\n    [\"Ukraine\", \"LOC\", \"has law\", \"Law of Ukraine On Legal Succession of Ukraine\", \"MISC\"],\n    [\"Ukraine\", \"LOC\", \"has law\", \"Law of Ukraine On State Border of Ukraine\", \"MISC\"],\n    [\"Petro Poroshenko\", \"PER\", \"position held\", \"President of Ukraine\", \"MISC\"],\n    [\"State Border of Ukraine\", \"MISC\", \"protected by\", \"State Border Guard Service of Ukraine\", \"ORG\"],\n    [\"State Border of Ukraine\", \"MISC\", \"protected by\", \"Armed Forces of Ukraine\", \"ORG\"],\n    [\"Ukraine\", \"LOC\", \"located in or next to body of water\", \"Black Sea\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 11,
+  "FN": 4,
+  "recall": 0.0,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Oceans"
+ ],
+ "kb_orig_raw": "[\n    [\"Ukraine\", \"LOC\", \"located in or next to body of water\", \"Black Sea\", \"LOC\"],\n    [\"State Border Guard Service of Ukraine\", \"ORG\", \"employer\", \"Ukraine\", \"LOC\"],\n    [\"Armed Forces of Ukraine\", \"ORG\", \"employer\", \"Ukraine\", \"LOC\"],\n    [\"Ukrainian President Petro Poroshenko\", \"PER\", \"position held\", \"President of Ukraine\", \"MISC\"],\n    [\"Ukraine\", \"LOC\", \"head of state\", \"Petro Poroshenko\", \"PER\"],\n    [\"Ukraine\", \"LOC\", \"country of citizenship\", \"Ukrainian\", \"MISC\"],\n    [\"State Border of Ukraine\", \"MISC\", \"part of\", \"Ukraine\", \"LOC\"],\n    [\"Law of Ukraine on the State Border\", \"MISC\", \"applies to jurisdiction\", \"Ukraine\", \"LOC\"],\n    [\"Law of Ukraine On Legal Succession of Ukraine\", \"MISC\", \"publication date\", \"September 12, 1991\", \"TIME\"],\n    [\"Law of Ukraine On State Border of Ukraine\", \"MISC\", \"publication date\", \"November 4, 1991\", \"TIME\"],\n    [\"Ukraine\", \"LOC\", \"date of inception\", \"September 12, 1991\", \"TIME\"],\n    [\"Ukraine\", \"LOC\", \"inception\", \"September 12, 1991\", \"TIME\"],\n    [\"Ukrainian authorities\", \"ORG\", \"located in\", \"Ukraine\", \"LOC\"],\n    [\"Russian citizens\", \"MISC\", \"country of origin\", \"Russia\", \"LOC\"],\n    [\"Ukraine\", \"LOC\", \"bordering country\", \"Russia\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 23,
+  "FN": 1,
+  "recall": 0.8333333333333334,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Ukraine\", \"LOC\", \"located in or next to body of water\", \"Black Sea\", \"LOC\"],\n    [\"State Border Guard Service of Ukraine\", \"ORG\", \"employer\", \"Ukraine\", \"LOC\"],\n    [\"Armed Forces of Ukraine\", \"ORG\", \"employer\", \"Ukraine\", \"LOC\"],\n    [\"Petro Poroshenko\", \"PER\", \"position held\", \"President of Ukraine\", \"MISC\"],\n    [\"Ukraine\", \"LOC\", \"head of state\", \"Petro Poroshenko\", \"PER\"],\n    [\"Ukrainian authorities\", \"ORG\", \"located in\", \"Ukraine\", \"LOC\"],\n    [\"Russia\", \"LOC\", \"bordering country\", \"Ukraine\", \"LOC\"],\n    [\"Ukraine\", \"LOC\", \"country of citizenship\", \"Ukrainian citizens\", \"MISC\"],\n    [\"State Border of Ukraine\", \"MISC\", \"part of\", \"Ukraine\", \"LOC\"],\n    [\"Ukraine\", \"LOC\", \"inception\", \"August 24, 1991\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 18,
+  "FN": 2,
+  "recall": 0.6,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

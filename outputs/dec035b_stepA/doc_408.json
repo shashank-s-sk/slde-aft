@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_408",
+ "base_raw": "[\n    [\"Candler\", \"LOC\", \"located in\", \"Buncombe County\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"elevation\", \"2,122.7\", \"NUM\"],\n    [\"Candler\", \"LOC\", \"ZIP code\", \"28715\", \"NUM\"],\n    [\"Candler\", \"LOC\", \"part of\", \"Asheville Metropolitan Statistical Area\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"located in\", \"Hominy Valley\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"near\", \"Asheville\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"near\", \"Canton\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"close to\", \"Mount Pisgah\", \"LOC\"],\n    [\"Enka High School\", \"ORG\", \"located in\", \"Candler\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 8,
+  "FN": 26,
+  "recall": 0.037037037037037035,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Candler\", \"LOC\", \"located in\", \"Buncombe County\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"elevation\", \"2,122.7\", \"NUM\"],\n    [\"Candler\", \"LOC\", \"ZIP code\", \"28715\", \"NUM\"],\n    [\"Candler\", \"LOC\", \"part of\", \"Asheville Metropolitan Statistical Area\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"located in\", \"Hominy Valley\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"near\", \"Asheville\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"near\", \"Canton\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"close to\", \"Mount Pisgah\", \"LOC\"],\n    [\"Enka High School\", \"ORG\", \"location\", \"Candler\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 26,
+  "recall": 0.037037037037037035,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 26,
+  "recall": 0.037037037037037035,
+  "n_extracted": 10,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Candler\", \"LOC\", \"located in\", \"Buncombe County\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"elevation\", \"2,122.7\", \"NUM\"],\n    [\"Candler\", \"LOC\", \"ZIP code\", \"28715\", \"NUM\"],\n    [\"Candler\", \"LOC\", \"part of\", \"Asheville Metropolitan Statistical Area\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"located in\", \"Hominy Valley\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"near\", \"Asheville\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"near\", \"Canton\", \"LOC\"],\n    [\"Candler\", \"LOC\", \"close to\", \"Mount Pisgah\", \"LOC\"],\n    [\"Enka High School\", \"ORG\", \"location\", \"Candler\", \"LOC\"]\n]"
+}

@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_370",
+ "base_raw": "[\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"date of birth\", \"1844\", \"TIME\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"date of death\", \"1927\", \"TIME\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"father\", \"Fyodor Koni\", \"PER\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"prosecutor\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"vice director of the Ministry of Justice\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"presiding judge of the district court of Saint Petersburg\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"member of the State Council\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"educated at\", \"Imperial School of Law\", \"ORG\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"educated at\", \"University of Saint Petersburg\", \"ORG\"],\n    [\"Fyodor Koni\", \"PER\", \"occupation\", \"dramatist\", \"MISC\"],\n    [\"Vera Zasulich\", \"PER\", \"occupation\", \"revolutionary\", \"MISC\"],\n    [\"Pyotr Stolypin\", \"PER\", \"position held\", \"Minister of Justice\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"poems\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"works of literary criticism\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"memoirs\", \"MISC\"],\n    [\"Russia\", \"LOC\", \"capital\", \"Saint Petersburg\", \"LOC\"],\n    [\"Kharkiv\", \"LOC\", \"country\", \"Russia\", \"LOC\"],\n    [\"Saint Petersburg\", \"LOC\", \"country\", \"Russia\", \"LOC\"],\n    [\"University of Saint Petersburg\", \"ORG\", \"location\", \"Saint Petersburg\", \"LOC\"],\n    [\"Imperial School of Law\", \"ORG\", \"location\", \"Russia\", \"LOC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 14,
+  "FN": 19,
+  "recall": 0.24,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"date of birth\", \"1844\", \"TIME\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"date of death\", \"1927\", \"TIME\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"father\", \"Fyodor Koni\", \"PER\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"prosecutor\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"vice director of the Ministry of Justice\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"presiding judge of the district court of Saint Petersburg\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"member of\", \"State Council\", \"ORG\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"educated at\", \"Imperial School of Law\", \"ORG\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"educated at\", \"University of Saint Petersburg\", \"ORG\"],\n    [\"Vera Zasulich\", \"PER\", \"position held\", \"revolutionary\", \"MISC\"],\n    [\"Pyotr Stolypin\", \"PER\", \"position held\", \"Minister of Justice\", \"MISC\"],\n    [\"Fyodor Koni\", \"PER\", \"notable work\", \"dramatist\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"poems\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"works of literary criticism\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"memoirs\", \"MISC\"],\n    [\"Russia\", \"LOC\", \"capital\", \"Saint Petersburg\", \"LOC\"],\n    [\"Kharkiv\", \"LOC\", \"located in the administrative territorial entity\", \"Russian Empire\", \"LOC\"],\n    [\"Saint Petersburg\", \"LOC\", \"located in the administrative territorial entity\", \"Russian Empire\", \"LOC\"],\n    [\"Russian Empire\", \"LOC\", \"continent\", \"Europe\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 21,
+  "FN": 19,
+  "recall": 0.20833333333333334,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"date of birth\", \"1844\", \"TIME\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"date of death\", \"1927\", \"TIME\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"father\", \"Fyodor Koni\", \"PER\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"prosecutor\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"vice director of the Ministry of Justice\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"position held\", \"presiding judge of the district court\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"member of\", \"State Council\", \"ORG\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"educated at\", \"Imperial School of Law\", \"ORG\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"educated at\", \"University of Saint Petersburg\", \"ORG\"],\n    [\"Fyodor Koni\", \"PER\", \"occupation\", \"dramatist\", \"MISC\"],\n    [\"Vera Zasulich\", \"PER\", \"occupation\", \"revolutionary\", \"MISC\"],\n    [\"Pyotr Stolypin\", \"PER\", \"position held\", \"Minister of Justice\", \"MISC\"],\n    [\"Kharkiv\", \"LOC\", \"located in the administrative territorial entity\", \"Russian Empire\", \"LOC\"],\n    [\"Saint Petersburg\", \"LOC\", \"located in the administrative territorial entity\", \"Russian Empire\", \"LOC\"],\n    [\"Russian Empire\", \"LOC\", \"capital\", \"Saint Petersburg\", \"LOC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"memoirs\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"poems\", \"MISC\"],\n    [\"Anatoly Fedorovich Koni\", \"PER\", \"author\", \"works of literary criticism\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 20,
+  "FN": 18,
+  "recall": 0.21739130434782608,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

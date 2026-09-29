@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_390",
+ "base_raw": "[\n    [\"ZEEP\", \"MISC\", \"location\", \"Chalk River Laboratories\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Chalk River Laboratories\", \"LOC\", \"located in the administrative territorial entity\", \"Ontario\", \"LOC\"],\n    [\"Montreal Laboratory\", \"ORG\", \"located in the administrative territorial entity\", \"Canada\", \"LOC\"],\n    [\"National Research Council of Canada\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"NRX\", \"MISC\", \"developed at\", \"Chalk River Laboratories\", \"LOC\"],\n    [\"NRU\", \"MISC\", \"developed at\", \"Chalk River Laboratories\", \"LOC\"],\n    [\"CANDU\", \"MISC\", \"developed at\", \"Chalk River Laboratories\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"operator\", \"National Research Council of Canada\", \"ORG\"],\n    [\"Canada Science and Technology Museum\", \"ORG\", \"location\", \"Ottawa\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"date of decommissioning\", \"1973\", \"TIME\"],\n    [\"ZEEP\", \"MISC\", \"date of dismantling\", \"1997\", \"TIME\"],\n    [\"ZEEP\", \"MISC\", \"year of historic site designation\", \"1966\", \"TIME\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Chalk River Laboratories\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"country\", \"Canada\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"location\", \"Chalk River\", \"LOC\"],\n    [\"National Research Council of Canada\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"Montreal Laboratory\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"date of inception\", \"September 5, 1945\", \"TIME\"],\n    [\"ZEEP\", \"MISC\", \"end time\", \"1970\", \"TIME\"],\n    [\"ZEEP\", \"MISC\", \"dissolved, abolished or demolished\", \"1997\", \"TIME\"],\n    [\"Canada Science and Technology Museum\", \"ORG\", \"location\", \"Ottawa\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"located in\", \"Canada Science and Technology Museum\", \"ORG\"],\n    [\"Ontario\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Chalk River\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"],\n    [\"Ottawa\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 19,
+  "FN": 8,
+  "recall": 0.42857142857142855,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Chalk River Laboratories\", \"LOC\", \"located in\", \"Ontario\", \"LOC\"],\n    [\"Chalk River Laboratories\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Montreal Laboratory\", \"LOC\", \"located in\", \"Canada\", \"LOC\"],\n    [\"National Research Council of Canada\", \"ORG\", \"country\", \"Canada\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"location\", \"Chalk River Laboratories\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"country\", \"Canada\", \"LOC\"],\n    [\"NRX\", \"MISC\", \"developed at\", \"Chalk River Laboratories\", \"LOC\"],\n    [\"NRU\", \"MISC\", \"located at\", \"Chalk River Laboratories\", \"LOC\"],\n    [\"CANDU\", \"MISC\", \"developed from\", \"ZEEP\", \"MISC\"],\n    [\"Canada Science and Technology Museum\", \"LOC\", \"located in\", \"Ottawa\", \"LOC\"],\n    [\"Canada Science and Technology Museum\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"ZEEP\", \"MISC\", \"operator\", \"National Research Council of Canada\", \"ORG\"],\n    [\"ZEEP\", \"MISC\", \"inception\", \"September 5, 1945\", \"TIME\"],\n    [\"ZEEP\", \"MISC\", \"dissolved, abolished or demolished\", \"1997\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 13,
+  "FN": 10,
+  "recall": 0.47368421052631576,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

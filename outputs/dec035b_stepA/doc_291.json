@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_291",
+ "base_raw": "[\n    [\"Chipilo\", \"LOC\", \"located in\", \"Puebla\", \"LOC\"],\n    [\"Chipilo\", \"LOC\", \"founded by\", \"immigrants from Veneto\", \"MISC\"],\n    [\"Veneto\", \"MISC\", \"location of origin\", \"northern Italian region\", \"MISC\"],\n    [\"Segusino\", \"LOC\", \"part of\", \"province of Treviso\", \"MISC\"],\n    [\"Chipilo\", \"LOC\", \"celebrated\", \"100th anniversary of foundation\", \"TIME\"],\n    [\"Chipilo\", \"LOC\", \"twin city\", \"Segusino, Italy\", \"LOC\"],\n    [\"Chipilo\", \"LOC\", \"language\", \"Venetian dialect\", \"MISC\"],\n    [\"Chipilo\", \"LOC\", \"founded on\", \"October 2, 1882\", \"TIME\"],\n    [\"Veneto\", \"MISC\", \"reason for immigration\", \"poverty\", \"MISC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 9,
+  "FN": 17,
+  "recall": 0.0,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Chipilo\", \"LOC\", \"located in the administrative territorial entity\", \"Puebla\", \"LOC\"],\n    [\"Chipilo\", \"LOC\", \"founded by\", \"immigrants from Veneto\", \"MISC\"],\n    [\"Veneto\", \"MISC\", \"located in\", \"northern Italy\", \"LOC\"],\n    [\"Segusino\", \"LOC\", \"located in\", \"Treviso\", \"LOC\"],\n    [\"Chipilo\", \"LOC\", \"language\", \"Venetian\", \"MISC\"],\n    [\"Chipilo\", \"LOC\", \"twin city\", \"Segusino\", \"LOC\"],\n    [\"Chipilo\", \"LOC\", \"country\", \"Mexico\", \"LOC\"],\n    [\"Chipilo de Francisco Javier Mina\", \"LOC\", \"instance of\", \"city\", \"MISC\"],\n    [\"October 2, 1882\", \"TIME\", \"date of foundation\", \"Chipilo\", \"LOC\"],\n    [\"Veneto\", \"MISC\", \"region of origin\", \"immigrants\", \"MISC\"],\n    [\"Treviso\", \"LOC\", \"province\", \"Veneto\", \"MISC\"],\n    [\"Chipilo\", \"LOC\", \"product or material produced\", \"dairy products\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 15,
+  "recall": 0.16666666666666666,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 15,
+  "recall": 0.16666666666666666,
+  "n_extracted": 20,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Chipilo\", \"LOC\", \"located in the administrative territorial entity\", \"Puebla\", \"LOC\"],\n    [\"Chipilo\", \"LOC\", \"founded by\", \"immigrants from Veneto\", \"MISC\"],\n    [\"Veneto\", \"MISC\", \"located in\", \"northern Italy\", \"LOC\"],\n    [\"Segusino\", \"LOC\", \"located in\", \"Treviso\", \"LOC\"],\n    [\"Chipilo\", \"LOC\", \"language\", \"Venetian\", \"MISC\"],\n    [\"Chipilo\", \"LOC\", \"twin city\", \"Segusino\", \"LOC\"],\n    [\"Chipilo\", \"LOC\", \"country\", \"Mexico\", \"LOC\"],\n    [\"Chipilo de Francisco Javier Mina\", \"LOC\", \"instance of\", \"city\", \"MISC\"],\n    [\"October 2, 1882\", \"TIME\", \"date of foundation\", \"Chipilo\", \"LOC\"],\n    [\"Veneto\", \"MISC\", \"region of origin\", \"immigrants\", \"MISC\"],\n    [\"Treviso\", \"LOC\", \"province\", \"Veneto\", \"MISC\"],\n    [\"Chipilo\", \"LOC\", \"product or material produced\", \"dairy products\", \"MISC\"]\n]"
+}

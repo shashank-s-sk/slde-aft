@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_73",
+ "base_raw": "[\n    [\"Henry C. Nields\", \"PER\", \"date of birth\", \"18 March 1838\", \"TIME\"],\n    [\"Henry C. Nields\", \"PER\", \"place of birth\", \"West Chester, Pennsylvania\", \"LOC\"],\n    [\"Henry C. Nields\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Henry C. Nields\", \"PER\", \"date of death\", \"13 December 1880\", \"TIME\"],\n    [\"USS Nields (DD-616)\", \"MISC\", \"named for\", \"Henry C. Nields\", \"PER\"],\n    [\"Henry C. Nields\", \"PER\", \"member of\", \"United States Navy\", \"ORG\"],\n    [\"Henry C. Nields\", \"PER\", \"position held\", \"Lieutenant Commander\", \"MISC\"],\n    [\"Henry C. Nields\", \"PER\", \"position held\", \"Mate\", \"MISC\"],\n    [\"Henry C. Nields\", \"PER\", \"position held\", \"Acting Ensign\", \"MISC\"],\n    [\"Metacomet\", \"MISC\", \"part of\", \"United States Navy\", \"ORG\"],\n    [\"Admiral David G. Farragut\", \"PER\", \"member of\", \"United States Navy\", \"ORG\"],\n    [\"Tecumseh\", \"MISC\", \"part of\", \"United States Navy\", \"ORG\"],\n    [\"Battle of Mobile Bay\", \"MISC\", \"location\", \"Mobile Bay\", \"LOC\"],\n    [\"United States Navy\", \"ORG\", \"country\", \"United States\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 11,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Henry C. Nields\", \"PER\", \"place of birth\", \"West Chester\", \"LOC\"],\n    [\"Henry C. Nields\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"Henry C. Nields\", \"PER\", \"date of birth\", \"18 March 1838\", \"TIME\"],\n    [\"Henry C. Nields\", \"PER\", \"date of death\", \"13 December 1880\", \"TIME\"],\n    [\"USS Nields (DD-616)\", \"MISC\", \"named for\", \"Henry C. Nields\", \"PER\"],\n    [\"Henry C. Nields\", \"PER\", \"member of\", \"United States Navy\", \"ORG\"],\n    [\"Metacomet\", \"MISC\", \"part of\", \"United States Navy\", \"ORG\"],\n    [\"Admiral David G. Farragut\", \"PER\", \"member of\", \"United States Navy\", \"ORG\"],\n    [\"Tecumseh\", \"MISC\", \"part of\", \"United States Navy\", \"ORG\"],\n    [\"Henry C. Nields\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"United States Navy\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"West Chester\", \"LOC\", \"located in the administrative territorial entity\", \"Pennsylvania\", \"LOC\"],\n    [\"Pennsylvania\", \"LOC\", \"country\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 16,
+  "FN": 5,
+  "recall": 0.375,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Henry C. Nields\", \"PER\", \"place of birth\", \"West Chester, Pennsylvania\", \"LOC\"],\n    [\"Henry C. Nields\", \"PER\", \"date of birth\", \"18 March 1838\", \"TIME\"],\n    [\"Henry C. Nields\", \"PER\", \"date of death\", \"13 December 1880\", \"TIME\"],\n    [\"Henry C. Nields\", \"PER\", \"country of citizenship\", \"United States\", \"LOC\"],\n    [\"USS Nields (DD-616)\", \"MISC\", \"named for\", \"Henry C. Nields\", \"PER\"],\n    [\"Henry C. Nields\", \"PER\", \"member of\", \"United States Navy\", \"ORG\"],\n    [\"Metacomet\", \"MISC\", \"location of formation\", \"United States\", \"LOC\"],\n    [\"Admiral David G. Farragut\", \"PER\", \"member of\", \"United States Navy\", \"ORG\"],\n    [\"Tecumseh\", \"MISC\", \"location of formation\", \"United States\", \"LOC\"],\n    [\"Henry C. Nields\", \"PER\", \"educated at\", \"Unknown\", \"MISC\"],\n    [\"United States Navy\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"American Civil War\", \"MISC\", \"location\", \"United States\", \"LOC\"],\n    [\"Battle of Mobile Bay\", \"MISC\", \"location\", \"Mobile Bay\", \"LOC\"],\n    [\"Mobile Bay\", \"LOC\", \"located in the administrative territorial entity\", \"United States\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 16,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

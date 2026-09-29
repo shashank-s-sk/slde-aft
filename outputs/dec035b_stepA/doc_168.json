@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_168",
+ "base_raw": "[\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"educated at\", \"\u00c9cole royale des \u00e9l\u00e8ves prot\u00e9g\u00e9s\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"educated at\", \"Acad\u00e9mie de France\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"collaborated with\", \"Pierre-Adrien P\u00e2ris\", \"PER\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"creator of\", \"Cupid and Psyche\", \"MISC\"],\n    [\"Cupid and Psyche\", \"MISC\", \"located in\", \"Louvre\", \"LOC\"],\n    [\"Pierre-Adrien P\u00e2ris\", \"PER\", \"member of\", \"French Academy\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"award received\", \"Prix de Rome\", \"MISC\"],\n    [\"Delaistre\", \"PER\", \"relative of\", \"Fran\u00e7ois-Nicolas Delaistre\", \"PER\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 6,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"educated at\", \"\u00c9cole royale des \u00e9l\u00e8ves prot\u00e9g\u00e9s\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"educated at\", \"Acad\u00e9mie de France\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"collaborated with\", \"Pierre-Adrien P\u00e2ris\", \"PER\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"creator of\", \"Cupid and Psyche\", \"MISC\"],\n    [\"Cupid and Psyche\", \"MISC\", \"located in\", \"Louvre\", \"LOC\"],\n    [\"Pierre-Adrien P\u00e2ris\", \"PER\", \"member of\", \"French Academy\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"award received\", \"Prix de Rome\", \"MISC\"],\n    [\"F\u00e9lix Lecomte\", \"PER\", \"educated\", \"Fran\u00e7ois-Nicolas Delaistre\", \"PER\"],\n    [\"Louis-Claude Vass\u00e9\", \"PER\", \"educated\", \"Fran\u00e7ois-Nicolas Delaistre\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 10,
+  "recall": 0.16666666666666666,
+  "n_extracted": 10,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"educated at\", \"\u00c9cole royale des \u00e9l\u00e8ves prot\u00e9g\u00e9s\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"educated at\", \"Acad\u00e9mie de France\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"collaborated with\", \"Pierre-Adrien P\u00e2ris\", \"PER\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"creator of\", \"Cupid and Psyche\", \"MISC\"],\n    [\"Cupid and Psyche\", \"MISC\", \"located in\", \"Louvre\", \"LOC\"],\n    [\"Pierre-Adrien P\u00e2ris\", \"PER\", \"member of\", \"French Academy\", \"ORG\"],\n    [\"Fran\u00e7ois-Nicolas Delaistre\", \"PER\", \"award received\", \"Prix de Rome\", \"MISC\"],\n    [\"F\u00e9lix Lecomte\", \"PER\", \"educated\", \"Fran\u00e7ois-Nicolas Delaistre\", \"PER\"],\n    [\"Louis-Claude Vass\u00e9\", \"PER\", \"educated\", \"Fran\u00e7ois-Nicolas Delaistre\", \"PER\"]\n]"
+}

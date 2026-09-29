@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_132",
+ "base_raw": "[\n    [\"The Lakes\", \"LOC\", \"located in\", \"Shire of Mundaring\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"located in\", \"Metropolitan Region Scheme\", \"MISC\"],\n    [\"The Lakes\", \"LOC\", \"bordering\", \"Shire of Northam\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"bordering\", \"Woottating\", \"LOC\"],\n    [\"Buckeridge Group of Companies\", \"ORG\", \"located in\", \"The Lakes\", \"LOC\"],\n    [\"BGC\", \"ORG\", \"operator\", \"quarry\", \"MISC\"],\n    [\"Great Eastern Highway\", \"LOC\", \"connects to\", \"Perth Airport\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"near\", \"Perth\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"part of\", \"Western Australia\", \"LOC\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 9,
+  "FN": 12,
+  "recall": 0.0,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations in Australia and New Zealand"
+ ],
+ "kb_orig_raw": "[\n    [\"The Lakes\", \"LOC\", \"located in\", \"Shire of Mundaring\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"east of\", \"Perth\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"part of\", \"Metropolitan Region Scheme\", \"MISC\"],\n    [\"The Lakes\", \"LOC\", \"borders on\", \"Shire of Northam\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"borders on\", \"Woottating\", \"LOC\"],\n    [\"Buckeridge Group of Companies\", \"ORG\", \"has operations in\", \"The Lakes\", \"LOC\"],\n    [\"Buckeridge Group of Companies\", \"ORG\", \"uses\", \"Great Eastern Highway\", \"LOC\"],\n    [\"Perth Airport\", \"LOC\", \"located near\", \"brick manufacturing location\", \"MISC\"],\n    [\"The Lakes\", \"LOC\", \"connected to\", \"Northam\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"connected to\", \"York\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 0,
+  "FP": 18,
+  "FN": 12,
+  "recall": 0.0,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"The Lakes\", \"LOC\", \"located in\", \"Shire of Mundaring\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"located in\", \"Metropolitan Region Scheme\", \"MISC\"],\n    [\"The Lakes\", \"LOC\", \"bordering\", \"Shire of Northam\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"bordering\", \"Woottating\", \"LOC\"],\n    [\"Buckeridge Group of Companies\", \"ORG\", \"located in\", \"The Lakes\", \"LOC\"],\n    [\"Buckeridge Group of Companies\", \"ORG\", \"operator\", \"quarry\", \"MISC\"],\n    [\"Great Eastern Highway\", \"LOC\", \"connects to\", \"Perth Airport\", \"LOC\"],\n    [\"Great Eastern Highway\", \"LOC\", \"connects to\", \"Northam\", \"LOC\"],\n    [\"Great Eastern Highway\", \"LOC\", \"connects to\", \"York\", \"LOC\"],\n    [\"The Lakes\", \"LOC\", \"population\", \"45\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 12,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

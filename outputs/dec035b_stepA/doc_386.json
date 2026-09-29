@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_386",
+ "base_raw": "[\n    [\"Hydrozagadka\", \"MISC\", \"genre\", \"comedy\", \"MISC\"],\n    [\"Hydrozagadka\", \"MISC\", \"country of origin\", \"Poland\", \"LOC\"],\n    [\"As\", \"PER\", \"occupation\", \"engineer\", \"MISC\"],\n    [\"As\", \"PER\", \"alias\", \"Ace\", \"MISC\"],\n    [\"Maharaja\", \"PER\", \"relation\", \"Doctor Spot\", \"PER\"],\n    [\"Hydrozagadka\", \"MISC\", \"release date\", \"30 April 1971\", \"TIME\"],\n    [\"Hydrozagadka\", \"MISC\", \"premiered on\", \"Polish television\", \"ORG\"],\n    [\"Doctor Spot\", \"PER\", \"collaborator\", \"Maharaja\", \"PER\"],\n    [\"Warsaw\", \"LOC\", \"country\", \"Poland\", \"LOC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "European Countries",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Hydrozagadka\", \"MISC\", \"country of origin\", \"Poland\", \"LOC\"],\n    [\"As\", \"PER\", \"location of formation\", \"Warsaw\", \"LOC\"],\n    [\"Maharaja\", \"PER\", \"country\", \"MISC\", \"LOC\"],\n    [\"Doctor Spot\", \"PER\", \"collaborator\", \"Maharaja\", \"PER\"],\n    [\"Hydrozagadka\", \"MISC\", \"release date\", \"30 April 1971\", \"TIME\"],\n    [\"Hydrozagadka\", \"MISC\", \"director\", \"MISC\", \"MISC\"],\n    [\"Poland\", \"LOC\", \"capital\", \"Warsaw\", \"LOC\"],\n    [\"Hydrozagadka\", \"MISC\", \"genre\", \"comedy\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Hydrozagadka\", \"MISC\", \"country of origin\", \"Poland\", \"LOC\"],\n    [\"As\", \"PER\", \"occupation\", \"engineer\", \"MISC\"],\n    [\"Maharaja\", \"PER\", \"relation\", \"Doctor Spot\", \"PER\"],\n    [\"Hydrozagadka\", \"MISC\", \"release date\", \"30 April 1971\", \"TIME\"],\n    [\"Hydrozagadka\", \"MISC\", \"director\", \"unknown\", \"PER\"],\n    [\"Doctor Spot\", \"PER\", \"location\", \"Poland\", \"LOC\"],\n    [\"Maharaja\", \"PER\", \"location\", \"his country\", \"LOC\"],\n    [\"As\", \"PER\", \"location\", \"Warsaw\", \"LOC\"],\n    [\"Hydrozagadka\", \"MISC\", \"genre\", \"superhero comedy film\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ }
+}

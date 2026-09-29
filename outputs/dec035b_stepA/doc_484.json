@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_484",
+ "base_raw": "[\n    [\"Ejaz Ahmed Chaudhary\", \"PER\", \"date of birth\", \"15 September 1956\", \"TIME\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"profession\", \"civil engineer\", \"MISC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"member of political party\", \"Jamaat-e-Islami\", \"ORG\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"member of political party\", \"Pakistan Tehreek-e-Insaf\", \"ORG\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"position held\", \"chief political advisor\", \"MISC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"position held\", \"Punjab President\", \"MISC\"],\n    [\"Imran Khan\", \"PER\", \"position held\", \"chief of Pakistan Tehreek-e-Insaf\", \"MISC\"],\n    [\"Jamaat-e-Islami\", \"ORG\", \"member\", \"Ejaz Chaudhary\", \"PER\"],\n    [\"Pakistan Tehreek-e-Insaf\", \"ORG\", \"member\", \"Ejaz Chaudhary\", \"PER\"],\n    [\"Pakistan Tehreek-e-Insaf\", \"ORG\", \"leader\", \"Imran Khan\", \"PER\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"located in\", \"Lahore\", \"LOC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"country of citizenship\", \"Pakistan\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Ejaz Ahmed Chaudhary\", \"PER\", \"date of birth\", \"15 September 1956\", \"TIME\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"member of\", \"Jamaat-e-Islami\", \"ORG\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"member of\", \"Pakistan Tehreek-e-Insaf\", \"ORG\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"position held\", \"deputy mayor of Lahore\", \"MISC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"position held\", \"chief political advisor\", \"MISC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"position held\", \"Punjab President\", \"MISC\"],\n    [\"Imran Khan\", \"PER\", \"member of\", \"Pakistan Tehreek-e-Insaf\", \"ORG\"],\n    [\"Imran Khan\", \"PER\", \"position held\", \"chief of Pakistan Tehreek-e-Insaf\", \"MISC\"],\n    [\"Jamaat-e-Islami\", \"ORG\", \"member\", \"Ejaz Chaudhary\", \"PER\"],\n    [\"Pakistan Tehreek-e-Insaf\", \"ORG\", \"member\", \"Ejaz Chaudhary\", \"PER\"],\n    [\"Pakistan Tehreek-e-Insaf\", \"ORG\", \"founded by\", \"Imran Khan\", \"PER\"],\n    [\"Lahore\", \"LOC\", \"located in the administrative territorial entity\", \"Punjab\", \"LOC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"country of citizenship\", \"Pakistan\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 10,
+  "FN": 5,
+  "recall": 0.6153846153846154,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Ejaz Ahmed Chaudhary\", \"PER\", \"date of birth\", \"15 September 1956\", \"TIME\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"member of\", \"Jamaat-e-Islami\", \"ORG\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"member of\", \"Pakistan Tehreek-e-Insaf\", \"ORG\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"position held\", \"chief political advisor\", \"MISC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"position held\", \"Punjab President\", \"MISC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"country of citizenship\", \"Pakistan\", \"LOC\"],\n    [\"Imran Khan\", \"PER\", \"member of political party\", \"Pakistan Tehreek-e-Insaf\", \"ORG\"],\n    [\"Jamaat-e-Islami\", \"ORG\", \"country\", \"Pakistan\", \"LOC\"],\n    [\"Pakistan Tehreek-e-Insaf\", \"ORG\", \"country\", \"Pakistan\", \"LOC\"],\n    [\"Lahore\", \"LOC\", \"country\", \"Pakistan\", \"LOC\"],\n    [\"Ejaz Chaudhary\", \"PER\", \"located in the administrative territorial entity\", \"Lahore\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 8,
+  "FN": 2,
+  "recall": 0.8333333333333334,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

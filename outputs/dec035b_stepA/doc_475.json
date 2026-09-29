@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_475",
+ "base_raw": "[\n    [\"Paint It Black\", \"MISC\", \"author\", \"Mick Jagger\", \"PER\"],\n    [\"Paint It Black\", \"MISC\", \"author\", \"Keith Richards\", \"PER\"],\n    [\"Paint It Black\", \"MISC\", \"genre\", \"rock\", \"MISC\"],\n    [\"The Rolling Stones\", \"ORG\", \"member\", \"Mick Jagger\", \"PER\"],\n    [\"The Rolling Stones\", \"ORG\", \"member\", \"Keith Richards\", \"PER\"],\n    [\"Aftermath\", \"MISC\", \"artist\", \"The Rolling Stones\", \"ORG\"],\n    [\"Paint It Black\", \"MISC\", \"release date\", \"6 May 1966\", \"TIME\"],\n    [\"Paint It Black\", \"MISC\", \"chart position\", \"number one\", \"NUM\"],\n    [\"The Rolling Stones\", \"ORG\", \"country of origin\", \"England\", \"LOC\"],\n    [\"Paint It Black\", \"MISC\", \"instrument\", \"sitar\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 8,
+  "recall": 0.3333333333333333,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Music Genre: Rock",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Mick Jagger\", \"PER\", \"member of\", \"Rolling Stones\", \"ORG\"],\n    [\"Keith Richards\", \"PER\", \"member of\", \"Rolling Stones\", \"ORG\"],\n    [\"Rolling Stones\", \"ORG\", \"genre\", \"Rock\", \"MISC\"],\n    [\"Paint It Black\", \"MISC\", \"author\", \"Mick Jagger\", \"PER\"],\n    [\"Paint It Black\", \"MISC\", \"author\", \"Keith Richards\", \"PER\"],\n    [\"Aftermath\", \"MISC\", \"author\", \"Rolling Stones\", \"ORG\"],\n    [\"Rolling Stones\", \"ORG\", \"country of origin\", \"England\", \"LOC\"],\n    [\"Paint It Black\", \"MISC\", \"release date\", \"6 May 1966\", \"TIME\"],\n    [\"Paint It Black\", \"MISC\", \"chart position\", \"number one\", \"NUM\"],\n    [\"Rolling Stones\", \"ORG\", \"number of number one hits in US\", \"3\", \"NUM\"],\n    [\"Rolling Stones\", \"ORG\", \"number of number one hits in UK\", \"6\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 15,
+  "FN": 3,
+  "recall": 0.7,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Paint It Black\", \"MISC\", \"author\", \"Mick Jagger\", \"PER\"],\n    [\"Paint It Black\", \"MISC\", \"author\", \"Keith Richards\", \"PER\"],\n    [\"The Rolling Stones\", \"ORG\", \"member\", \"Mick Jagger\", \"PER\"],\n    [\"The Rolling Stones\", \"ORG\", \"member\", \"Keith Richards\", \"PER\"],\n    [\"Paint It Black\", \"MISC\", \"genre\", \"rock\", \"MISC\"],\n    [\"Aftermath\", \"MISC\", \"artist\", \"The Rolling Stones\", \"ORG\"],\n    [\"Paint It Black\", \"MISC\", \"release date\", \"6 May 1966\", \"TIME\"],\n    [\"The Rolling Stones\", \"ORG\", \"country of origin\", \"England\", \"LOC\"],\n    [\"Paint It Black\", \"MISC\", \"chart position\", \"number one\", \"NUM\"],\n    [\"Paint It Black\", \"MISC\", \"chart\", \"Billboard Hot 100\", \"MISC\"],\n    [\"Paint It Black\", \"MISC\", \"chart\", \"UK Singles Chart\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 10,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_148",
+ "base_raw": "[\n    [\"Antonio Maria Viani\", \"PER\", \"architect of\", \"House of Gonzaga\", \"ORG\"],\n    [\"Margherita Gonzaga d'Este\", \"PER\", \"spouse\", \"Alfonso II d'Este\", \"PER\"],\n    [\"Margherita Gonzaga d'Este\", \"PER\", \"residence\", \"Clarissan monastery\", \"LOC\"],\n    [\"Domenico Fetti\", \"PER\", \"sibling\", \"Lucrina\", \"PER\"],\n    [\"Lucrina\", \"PER\", \"member of\", \"Clarissan monastery\", \"ORG\"],\n    [\"Lodovico Carracci\", \"PER\", \"collaborator\", \"Antonio Maria Viani\", \"PER\"],\n    [\"Carlo Bonomi\", \"PER\", \"collaborator\", \"Antonio Maria Viani\", \"PER\"],\n    [\"Clarissan monastery\", \"LOC\", \"located in\", \"Mantua\", \"LOC\"],\n    [\"House of Gonzaga\", \"ORG\", \"location\", \"Mantua\", \"LOC\"],\n    [\"Church of Sant'Orsola\", \"LOC\", \"commissioned by\", \"Margherita Gonzaga d'Este\", \"PER\"],\n    [\"Church of Sant'Orsola\", \"LOC\", \"designed by\", \"Antonio Maria Viani\", \"PER\"],\n    [\"Church of Sant'Orsola\", \"LOC\", \"built by\", \"Antonio Maria Viani\", \"PER\"],\n    [\"Clarissan monastery\", \"LOC\", \"destroyed in\", \"1930\", \"TIME\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Antonio Maria Viani\", \"PER\", \"architect of\", \"House of Gonzaga\", \"ORG\"],\n    [\"Margherita Gonzaga d'Este\", \"PER\", \"spouse\", \"Alfonso II d'Este\", \"PER\"],\n    [\"Margherita Gonzaga d'Este\", \"PER\", \"commissioned\", \"Church of Sant'Orsola\", \"LOC\"],\n    [\"Domenico Fetti\", \"PER\", \"sibling\", \"Lucrina\", \"PER\"],\n    [\"Lucrina\", \"PER\", \"member of\", \"Clarissan monastery\", \"ORG\"],\n    [\"Lodovico Carracci\", \"PER\", \"decorator of\", \"Church of Sant'Orsola\", \"LOC\"],\n    [\"Carlo Bonomi\", \"PER\", \"decorator of\", \"Church of Sant'Orsola\", \"LOC\"],\n    [\"Church of Sant'Orsola\", \"LOC\", \"located in\", \"Mantua\", \"LOC\"],\n    [\"Clarissan monastery\", \"ORG\", \"located in\", \"Mantua\", \"LOC\"],\n    [\"House of Gonzaga\", \"ORG\", \"located in\", \"Mantua\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 14,
+  "FN": 5,
+  "recall": 0.5,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 14,
+  "FN": 5,
+  "recall": 0.5,
+  "n_extracted": 18,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Antonio Maria Viani\", \"PER\", \"architect of\", \"House of Gonzaga\", \"ORG\"],\n    [\"Margherita Gonzaga d'Este\", \"PER\", \"spouse\", \"Alfonso II d'Este\", \"PER\"],\n    [\"Margherita Gonzaga d'Este\", \"PER\", \"commissioned\", \"Church of Sant'Orsola\", \"LOC\"],\n    [\"Domenico Fetti\", \"PER\", \"sibling\", \"Lucrina\", \"PER\"],\n    [\"Lucrina\", \"PER\", \"member of\", \"Clarissan monastery\", \"ORG\"],\n    [\"Lodovico Carracci\", \"PER\", \"decorator of\", \"Church of Sant'Orsola\", \"LOC\"],\n    [\"Carlo Bonomi\", \"PER\", \"decorator of\", \"Church of Sant'Orsola\", \"LOC\"],\n    [\"Church of Sant'Orsola\", \"LOC\", \"located in\", \"Mantua\", \"LOC\"],\n    [\"Clarissan monastery\", \"ORG\", \"located in\", \"Mantua\", \"LOC\"],\n    [\"House of Gonzaga\", \"ORG\", \"located in\", \"Mantua\", \"LOC\"]\n]"
+}

@@ -1,0 +1,44 @@
+{
+ "doc_id": "doc_380",
+ "base_raw": "[\n    [\"Antonio Maria Bononcini\", \"PER\", \"date of birth\", \"18 June 1677\", \"TIME\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"date of death\", \"8 July 1726\", \"TIME\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"place of birth\", \"Modena\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"place of death\", \"Modena\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"brother\", \"Giovanni Bononcini\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"educated at\", \"Giovanni Paolo Colonna\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"employer\", \"Cardinal Pamphili\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"position held\", \"Kapellmeister\", \"MISC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"country of citizenship\", \"Italy\", \"LOC\"],\n    [\"Giovanni Bononcini\", \"PER\", \"brother\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Giovanni Paolo Colonna\", \"PER\", \"student\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Cardinal Pamphili\", \"PER\", \"employee\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Charles VI\", \"PER\", \"employer\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"worked at\", \"Milan\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"worked at\", \"Naples\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"worked at\", \"Modena\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"position held\", \"maestro di cappella\", \"MISC\"],\n    [\"La fama eroica\", \"MISC\", \"composer\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Mass in G minor\", \"MISC\", \"composer\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Stabat Mater in C Minor\", \"MISC\", \"composer\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Salve Regina\", \"MISC\", \"composer\", \"Antonio Maria Bononcini\", \"PER\"]\n]",
+ "base": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 10,
+  "recall": 0.4117647058823529,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Italian Locations",
+  "Locations",
+  "Locations in Italy and Spain",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Antonio Maria Bononcini\", \"PER\", \"date of birth\", \"18 June 1677\", \"TIME\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"date of death\", \"8 July 1726\", \"TIME\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"place of birth\", \"Modena\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"place of death\", \"Modena\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"brother\", \"Giovanni Bononcini\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"educated at\", \"Giovanni Paolo Colonna\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"employer\", \"Cardinal Pamphili\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"position held\", \"Kapellmeister\", \"MISC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"worked at\", \"Vienna\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"worked with\", \"Giovanni Bononcini\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"author\", \"La fama eroica\", \"MISC\"],\n    [\"La fama eroica\", \"MISC\", \"location of performance\", \"Rome\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"member of\", \"court orchestra\", \"ORG\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"worked in\", \"Milan\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"worked in\", \"Naples\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"maestro di cappella\", \"Modena\", \"LOC\"],\n    [\"Charles VI\", \"PER\", \"title\", \"Holy Roman Emperor\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 21,
+  "FN": 10,
+  "recall": 0.4444444444444444,
+  "n_extracted": 30,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Italian Locations",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Antonio Maria Bononcini\", \"PER\", \"date of birth\", \"18 June 1677\", \"TIME\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"date of death\", \"8 July 1726\", \"TIME\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"place of birth\", \"Modena\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"place of death\", \"Modena\", \"LOC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"brother\", \"Giovanni Bononcini\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"educated at\", \"Giovanni Paolo Colonna\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"employer\", \"Cardinal Pamphili\", \"PER\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"position held\", \"Kapellmeister\", \"MISC\"],\n    [\"Antonio Maria Bononcini\", \"PER\", \"country of citizenship\", \"Italy\", \"LOC\"],\n    [\"Giovanni Bononcini\", \"PER\", \"brother\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Giovanni Paolo Colonna\", \"PER\", \"student\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Cardinal Pamphili\", \"PER\", \"employee\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Charles VI\", \"PER\", \"employer\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"La fama eroica\", \"MISC\", \"composer\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Mass in G minor\", \"MISC\", \"composer\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Stabat Mater in C Minor\", \"MISC\", \"composer\", \"Antonio Maria Bononcini\", \"PER\"],\n    [\"Salve Regina\", \"MISC\", \"composer\", \"Antonio Maria Bononcini\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 14,
+  "FN": 10,
+  "recall": 0.4117647058823529,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

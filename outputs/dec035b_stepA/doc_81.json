@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_81",
+ "base_raw": "[\n    [\"University of Madras\", \"ORG\", \"located in\", \"Chennai\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"located in\", \"Tamil Nadu\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"country\", \"India\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"founded by\", \"Legislative Council of India\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"instance of\", \"collegiate research university\", \"MISC\"],\n    [\"Chepauk\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Marina\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Guindy\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Taramani\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Maduravoyal\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Chetpet\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"has part\", \"73 academic departments\", \"MISC\"],\n    [\"University of Madras\", \"ORG\", \"has part\", \"18 schools\", \"MISC\"],\n    [\"University of Madras\", \"ORG\", \"affiliated with\", \"109 colleges\", \"MISC\"],\n    [\"University of Madras\", \"ORG\", \"affiliated with\", \"52 research institutions\", \"MISC\"],\n    [\"National Assessment and Accreditation Council\", \"ORG\", \"accredited\", \"University of Madras\", \"ORG\"],\n    [\"University Grants Commission\", \"ORG\", \"recognized\", \"University of Madras\", \"ORG\"],\n    [\"Subrahmanyan Chandrasekhar\", \"PER\", \"alumni of\", \"University of Madras\", \"ORG\"],\n    [\"A.P.J. Abdul Kalam\", \"PER\", \"alumni of\", \"University of Madras\", \"ORG\"],\n    [\"Srinivasa Ramanujan\", \"PER\", \"alumni of\", \"University of Madras\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"educated at\", \"India\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"inception\", \"1857\", \"TIME\"]\n]",
+ "base": {
+  "TP": 8,
+  "FP": 18,
+  "FN": 17,
+  "recall": 0.32,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in Asia",
+  "Countries",
+  "Countries in Locations",
+  "Indian Cities",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"University of Madras\", \"ORG\", \"located in\", \"Chennai\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"located in\", \"Tamil Nadu\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"country\", \"India\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"founded by\", \"Legislative Council of India\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"instance of\", \"collegiate research university\", \"MISC\"],\n    [\"Chepauk\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Marina\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Guindy\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Taramani\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Maduravoyal\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Chetpet\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"educated at\", \"Subrahmanyan Chandrasekhar\", \"PER\"],\n    [\"University of Madras\", \"ORG\", \"educated at\", \"A.P.J. Abdul Kalam\", \"PER\"],\n    [\"University of Madras\", \"ORG\", \"educated at\", \"Srinivasa Ramanujan\", \"PER\"],\n    [\"National Assessment and Accreditation Council\", \"ORG\", \"relation\", \"University of Madras\", \"ORG\"],\n    [\"University Grants Commission\", \"ORG\", \"relation\", \"University of Madras\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"date of birth\", \"1857\", \"TIME\"],\n    [\"Subrahmanyan Chandrasekhar\", \"PER\", \"award received\", \"Nobel Prize\", \"MISC\"],\n    [\"A.P.J. Abdul Kalam\", \"PER\", \"position held\", \"President of India\", \"MISC\"],\n    [\"Srinivasa Ramanujan\", \"PER\", \"field of work\", \"mathematics\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 23,
+  "FN": 22,
+  "recall": 0.2413793103448276,
+  "n_extracted": 31,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Indian Cities",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"University of Madras\", \"ORG\", \"located in\", \"Chennai\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"located in\", \"Tamil Nadu\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"country\", \"India\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"founded by\", \"Legislative Council of India\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"instance of\", \"collegiate research university\", \"MISC\"],\n    [\"Chepauk\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Marina\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Guindy\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Taramani\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Maduravoyal\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"Chetpet\", \"LOC\", \"part of\", \"University of Madras\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"has part\", \"73 academic departments\", \"MISC\"],\n    [\"University of Madras\", \"ORG\", \"has part\", \"18 schools\", \"MISC\"],\n    [\"University of Madras\", \"ORG\", \"affiliated with\", \"109 colleges\", \"MISC\"],\n    [\"University of Madras\", \"ORG\", \"affiliated with\", \"52 research institutions\", \"MISC\"],\n    [\"National Assessment and Accreditation Council\", \"ORG\", \"accredited\", \"University of Madras\", \"ORG\"],\n    [\"University Grants Commission\", \"ORG\", \"recognized\", \"University of Madras\", \"ORG\"],\n    [\"Subrahmanyan Chandrasekhar\", \"PER\", \"alumni of\", \"University of Madras\", \"ORG\"],\n    [\"A.P.J. Abdul Kalam\", \"PER\", \"alumni of\", \"University of Madras\", \"ORG\"],\n    [\"Srinivasa Ramanujan\", \"PER\", \"alumni of\", \"University of Madras\", \"ORG\"],\n    [\"University of Madras\", \"ORG\", \"educated at\", \"India\", \"LOC\"],\n    [\"University of Madras\", \"ORG\", \"inception\", \"1857\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 19,
+  "FN": 17,
+  "recall": 0.22727272727272727,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

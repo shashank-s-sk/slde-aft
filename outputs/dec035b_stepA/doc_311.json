@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_311",
+ "base_raw": "[\n    [\"MobileMe\", \"MISC\", \"replaces\", \".Mac\", \"MISC\"],\n    [\"iCloud\", \"MISC\", \"replaces\", \"MobileMe\", \"MISC\"],\n    [\"Apple Inc.\", \"ORG\", \"founded by\", \"MobileMe\", \"MISC\"],\n    [\"MobileMe\", \"MISC\", \"discontinued, abolished or demolished\", \"June 30, 2012\", \"TIME\"],\n    [\"MobileMe\", \"MISC\", \"location of formation\", \"Apple Worldwide Developers Conference\", \"MISC\"],\n    [\"iTools\", \"MISC\", \"replaced by\", \".Mac\", \"MISC\"],\n    [\"Apple Inc.\", \"ORG\", \"developer\", \"MobileMe\", \"MISC\"],\n    [\"MobileMe\", \"MISC\", \"inception\", \"January 5, 2000\", \"TIME\"],\n    [\"MobileMe\", \"MISC\", \"dissolved, abolished or demolished\", \"June 30, 2012\", \"TIME\"],\n    [\"iCloud\", \"MISC\", \"inception\", \"October 12, 2011\", \"TIME\"],\n    [\"Apple Inc.\", \"ORG\", \"operator\", \"MobileMe\", \"MISC\"],\n    [\"MobileMe\", \"MISC\", \"end time\", \"June 30, 2012\", \"TIME\"],\n    [\"MobileMe\", \"MISC\", \"start time\", \"July 9, 2008\", \"TIME\"]\n]",
+ "base": {
+  "TP": 0,
+  "FP": 13,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"MobileMe\", \"ORG\", \"replaced by\", \"iCloud\", \"ORG\"],\n    [\"iTools\", \"ORG\", \"replaced by\", \".Mac\", \"ORG\"],\n    [\"MobileMe\", \"ORG\", \"discontinued on\", \"June 30, 2012\", \"TIME\"],\n    [\"Apple Inc.\", \"ORG\", \"owner of\", \"MobileMe\", \"ORG\"],\n    [\"MobileMe\", \"ORG\", \"launched on\", \"January 5, 2000\", \"TIME\"],\n    [\"MobileMe\", \"ORG\", \"relaunched as\", \".Mac\", \"ORG\"],\n    [\"MobileMe\", \"ORG\", \"targeted users of\", \"Mac OS X\", \"MISC\"],\n    [\"MobileMe\", \"ORG\", \"targeted users of\", \"Microsoft Windows\", \"MISC\"],\n    [\"MobileMe\", \"ORG\", \"targeted users of\", \"iPhone\", \"MISC\"],\n    [\"MobileMe\", \"ORG\", \"targeted users of\", \"iPod Touch\", \"MISC\"],\n    [\"Apple\", \"ORG\", \"announced discontinuation of\", \"MobileMe\", \"ORG\"],\n    [\"iCloud\", \"ORG\", \"launched on\", \"October 12, 2011\", \"TIME\"],\n    [\"MobileMe\", \"ORG\", \"user data available until\", \"July 31, 2012\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 18,
+  "FN": 8,
+  "recall": 0.42857142857142855,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"MobileMe\", \"MISC\", \"replaced by\", \"iCloud\", \"MISC\"],\n    [\"iTools\", \"MISC\", \"replaced by\", \".Mac\", \"MISC\"],\n    [\".Mac\", \"MISC\", \"replaced by\", \"MobileMe\", \"MISC\"],\n    [\"Apple Inc.\", \"ORG\", \"owner of\", \"MobileMe\", \"MISC\"],\n    [\"MobileMe\", \"MISC\", \"available to\", \"Mac OS X\", \"MISC\"],\n    [\"MobileMe\", \"MISC\", \"available to\", \"Microsoft Windows\", \"MISC\"],\n    [\"MobileMe\", \"MISC\", \"available to\", \"iPhone\", \"MISC\"],\n    [\"MobileMe\", \"MISC\", \"available to\", \"iPod Touch\", \"MISC\"],\n    [\"Apple\", \"ORG\", \"announced\", \"iCloud\", \"MISC\"],\n    [\"iCloud\", \"MISC\", \"launched on\", \"October 12, 2011\", \"TIME\"],\n    [\"MobileMe\", \"MISC\", \"discontinued on\", \"June 30, 2012\", \"TIME\"],\n    [\"MobileMe\", \"MISC\", \"data available until\", \"July 31, 2012\", \"TIME\"],\n    [\"Apple Worldwide Developers Conference\", \"MISC\", \"location of announcement\", \"MobileMe\", \"MISC\"],\n    [\"February 24, 2011\", \"TIME\", \"date of discontinuation\", \"MobileMe retail boxes\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 7,
+  "FP": 20,
+  "FN": 6,
+  "recall": 0.5384615384615384,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

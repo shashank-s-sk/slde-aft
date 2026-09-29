@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_257",
+ "base_raw": "[\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"educated at\", \"Moscow State Institute of International Relations\", \"ORG\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"employer\", \"USSR Ministry of Foreign Affairs\", \"ORG\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"official language\", \"Russian\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"official language\", \"English\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"official language\", \"Arabic\", \"MISC\"],\n    [\"Russian Ministry of Foreign Affairs\", \"ORG\", \"located in\", \"Russia\", \"LOC\"],\n    [\"Permanent Mission of Russia to UNESCO\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Permanent Mission of Russia to UNESCO\", \"ORG\", \"country of citizenship\", \"Russia\", \"LOC\"],\n    [\"UNESCO\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Mauritius\", \"LOC\", \"continent\", \"Africa\", \"LOC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 5,
+  "recall": 0.16666666666666666,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"date of birth\", \"1945\", \"TIME\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"educated at\", \"Moscow State Institute of International Relations\", \"ORG\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"employer\", \"USSR Ministry of Foreign Affairs\", \"ORG\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"position held\", \"Ambassador Extraordinary and Plenipotentiary\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"country of citizenship\", \"Russian Federation\", \"LOC\"],\n    [\"Russian Federation\", \"LOC\", \"capital\", \"Moscow\", \"LOC\"],\n    [\"Moscow State Institute of International Relations\", \"ORG\", \"located in\", \"Moscow\", \"LOC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"language\", \"Russian\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"language\", \"Arabic\", \"MISC\"],\n    [\"Russian Ministry of Foreign Affairs\", \"ORG\", \"department\", \"Department of International Humanitarian and Cultural Cooperation\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"member of\", \"Permanent Mission of Russia to UNESCO\", \"ORG\"],\n    [\"Permanent Mission of Russia to UNESCO\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Paris\", \"LOC\", \"country\", \"France\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 18,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"date of birth\", \"1945\", \"TIME\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"educated at\", \"Moscow State Institute of International Relations\", \"ORG\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"employer\", \"USSR Ministry of Foreign Affairs\", \"ORG\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"position held\", \"Ambassador Extraordinary and Plenipotentiary\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"country of citizenship\", \"Russian Federation\", \"LOC\"],\n    [\"Russian Federation\", \"LOC\", \"capital\", \"Moscow\", \"LOC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"language\", \"Russian\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"language\", \"English\", \"MISC\"],\n    [\"Olga Yakovlevna Ivanova\", \"PER\", \"language\", \"Arabic\", \"MISC\"],\n    [\"Moscow State Institute of International Relations\", \"ORG\", \"located in\", \"Moscow\", \"LOC\"],\n    [\"Russian Ministry of Foreign Affairs\", \"ORG\", \"located in\", \"Russian Federation\", \"LOC\"],\n    [\"UNESCO\", \"ORG\", \"located in\", \"Paris\", \"LOC\"],\n    [\"Paris\", \"LOC\", \"country\", \"France\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.5,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ }
+}

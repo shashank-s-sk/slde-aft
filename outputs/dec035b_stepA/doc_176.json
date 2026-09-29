@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_176",
+ "base_raw": "[\n    [\"Alberta\", \"LOC\", \"population\", \"73,022\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"population\", \"3,645,257\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"part of\", \"Canada\", \"LOC\"],\n    [\"Calgary \u2013 Edmonton Corridor\", \"LOC\", \"located in\", \"Alberta\", \"LOC\"],\n    [\"Calgary \u2013 Edmonton Corridor\", \"LOC\", \"part of\", \"Canada\", \"LOC\"],\n    [\"British Columbia\", \"LOC\", \"country\", \"Canada\", \"LOC\"],\n    [\"Alberta\", \"LOC\", \"continent\", \"North America\", \"LOC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 5,
+  "FN": 6,
+  "recall": 0.25,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Alberta\", \"LOC\", \"part of\", \"Canada\", \"LOC\"],\n    [\"Calgary \u2013 Edmonton Corridor\", \"LOC\", \"located in\", \"Alberta\", \"LOC\"],\n    [\"Alberta\", \"LOC\", \"population\", \"3,645,257\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"population percentage of Canada\", \"10.9 %\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"urban population percentage\", \"81 %\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"rural population percentage\", \"19 %\", \"NUM\"],\n    [\"British Columbia\", \"LOC\", \"comparison province\", \"Alberta\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 7,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Alberta\", \"LOC\", \"population\", \"3,645,257\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"population in 1901\", \"73,022\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"percentage of Canada's population in 2011\", \"10.9%\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"percentage of Canada's population in 1901\", \"less than 1.5%\", \"NUM\"],\n    [\"Calgary \u2013 Edmonton Corridor\", \"LOC\", \"located in\", \"Alberta\", \"LOC\"],\n    [\"Alberta\", \"LOC\", \"urban population percentage\", \"81%\", \"NUM\"],\n    [\"Alberta\", \"LOC\", \"rural population percentage\", \"19%\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 6,
+  "recall": 0.4,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_203",
+ "base_raw": "[\n    [\"Sir Robert Walpole\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"James Callaghan\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Margaret Thatcher\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Margaret Thatcher\", \"PER\", \"member of political party\", \"Conservative Party\", \"ORG\"],\n    [\"James Callaghan\", \"PER\", \"country of citizenship\", \"United Kingdom\", \"LOC\"],\n    [\"Sir Robert Walpole\", \"PER\", \"country of citizenship\", \"United Kingdom\", \"LOC\"],\n    [\"Margaret Thatcher\", \"PER\", \"country of citizenship\", \"United Kingdom\", \"LOC\"],\n    [\"Callaghan ministry\", \"ORG\", \"head of government\", \"James Callaghan\", \"PER\"],\n    [\"Whig\", \"ORG\", \"member of\", \"Sir Robert Walpole\", \"PER\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 6,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Locations",
+  "Organizations",
+  "Persons",
+  "Persons in Politics"
+ ],
+ "kb_orig_raw": "[\n    [\"Sir Robert Walpole\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"James Callaghan\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Margaret Thatcher\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Margaret Thatcher\", \"PER\", \"member of political party\", \"Conservative Party\", \"ORG\"],\n    [\"James Callaghan\", \"PER\", \"member of political party\", \"Labour Party\", \"ORG\"],\n    [\"Sir Robert Walpole\", \"PER\", \"member of political party\", \"Whig\", \"ORG\"],\n    [\"Callaghan ministry\", \"ORG\", \"head of government\", \"James Callaghan\", \"PER\"],\n    [\"United Kingdom\", \"LOC\", \"capital\", \"London\", \"LOC\"],\n    [\"Kingdom of Great Britain\", \"LOC\", \"part of\", \"United Kingdom\", \"LOC\"],\n    [\"Whig\", \"ORG\", \"located in the administrative territorial entity\", \"United Kingdom\", \"LOC\"],\n    [\"Conservative Party\", \"ORG\", \"located in the administrative territorial entity\", \"United Kingdom\", \"LOC\"],\n    [\"Labour Party\", \"ORG\", \"located in the administrative territorial entity\", \"United Kingdom\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 12,
+  "FN": 7,
+  "recall": 0.36363636363636365,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Sir Robert Walpole\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"James Callaghan\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Margaret Thatcher\", \"PER\", \"position held\", \"Prime Minister\", \"MISC\"],\n    [\"Margaret Thatcher\", \"PER\", \"member of political party\", \"Conservative Party\", \"ORG\"],\n    [\"James Callaghan\", \"PER\", \"country of citizenship\", \"United Kingdom\", \"LOC\"],\n    [\"Sir Robert Walpole\", \"PER\", \"country of citizenship\", \"United Kingdom\", \"LOC\"],\n    [\"Margaret Thatcher\", \"PER\", \"country of citizenship\", \"United Kingdom\", \"LOC\"],\n    [\"Callaghan ministry\", \"ORG\", \"head of government\", \"James Callaghan\", \"PER\"],\n    [\"Whig\", \"ORG\", \"member\", \"Sir Robert Walpole\", \"PER\"],\n    [\"Conservative Party\", \"ORG\", \"member\", \"Margaret Thatcher\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 8,
+  "FN": 7,
+  "recall": 0.3,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

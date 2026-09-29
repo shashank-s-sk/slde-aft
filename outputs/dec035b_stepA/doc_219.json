@@ -1,0 +1,43 @@
+{
+ "doc_id": "doc_219",
+ "base_raw": "[\n    [\"Congo Free State\", \"MISC\", \"country\", \"Belgium\", \"LOC\"],\n    [\"Belgian Congo\", \"MISC\", \"country\", \"Belgium\", \"LOC\"],\n    [\"Middle Congo\", \"MISC\", \"country\", \"France\", \"LOC\"],\n    [\"Republic of the Congo\", \"MISC\", \"located in the administrative territorial entity\", \"Africa\", \"LOC\"],\n    [\"Congo-L\u00e9opoldville\", \"MISC\", \"capital\", \"L\u00e9opoldville\", \"LOC\"],\n    [\"Congo-Brazzaville\", \"MISC\", \"capital\", \"Brazzaville\", \"LOC\"],\n    [\"John D. Tomlinson\", \"PER\", \"position held\", \"Charg\u00e9 d'Affaires ad interim\", \"MISC\"],\n    [\"Clare H. Timberlake\", \"PER\", \"position held\", \"ambassador\", \"MISC\"],\n    [\"Joseph-D\u00e9sir\u00e9 Mobutu\", \"PER\", \"country of citizenship\", \"Zaire\", \"LOC\"],\n    [\"Laurent Kabila\", \"PER\", \"country of citizenship\", \"Democratic Republic of the Congo\", \"LOC\"],\n    [\"Zaire\", \"LOC\", \"located in the administrative territorial entity\", \"Africa\", \"LOC\"],\n    [\"L\u00e9opoldville\", \"LOC\", \"located in the administrative territorial entity\", \"Democratic Republic of the Congo\", \"LOC\"],\n    [\"Brazzaville\", \"LOC\", \"located in the administrative territorial entity\", \"Republic of the Congo\", \"LOC\"],\n    [\"United States\", \"LOC\", \"relation\", \"Democratic Republic of the Congo\", \"LOC\"],\n    [\"June 30, 1960\", \"TIME\", \"date of event\", \"independence of Democratic Republic of the Congo\", \"MISC\"],\n    [\"July 5, 1960\", \"TIME\", \"date of event\", \"appointment of Clare H. Timberlake\", \"MISC\"],\n    [\"1971\", \"TIME\", \"date of event\", \"name change to Zaire\", \"MISC\"],\n    [\"1997\", \"TIME\", \"date of event\", \"name change to Democratic Republic of the Congo\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Congo Free State\", \"MISC\", \"country\", \"Belgium\", \"LOC\"],\n    [\"Belgian Congo\", \"MISC\", \"country\", \"Belgium\", \"LOC\"],\n    [\"Middle Congo\", \"MISC\", \"country\", \"France\", \"LOC\"],\n    [\"Republic of the Congo\", \"LOC\", \"capital\", \"L\u00e9opoldville\", \"LOC\"],\n    [\"Congo-L\u00e9opoldville\", \"LOC\", \"capital\", \"L\u00e9opoldville\", \"LOC\"],\n    [\"Congo-Brazzaville\", \"LOC\", \"capital\", \"Brazzaville\", \"LOC\"],\n    [\"United States\", \"LOC\", \"recognizes\", \"Republic of the Congo\", \"LOC\"],\n    [\"John D. Tomlinson\", \"PER\", \"position held\", \"Charg\u00e9 d'Affaires ad interim\", \"MISC\"],\n    [\"Clare H. Timberlake\", \"PER\", \"position held\", \"ambassador\", \"MISC\"],\n    [\"Joseph-D\u00e9sir\u00e9 Mobutu\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Laurent Kabila\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Zaire\", \"LOC\", \"country\", \"Democratic Republic of the Congo\", \"LOC\"],\n    [\"L\u00e9opoldville\", \"LOC\", \"located in the administrative territorial entity\", \"Democratic Republic of the Congo\", \"LOC\"],\n    [\"Kinshasa\", \"LOC\", \"located in the administrative territorial entity\", \"Democratic Republic of the Congo\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 21,
+  "FN": 12,
+  "recall": 0.2,
+  "n_extracted": 24,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Congo Free State\", \"MISC\", \"country\", \"Belgium\", \"LOC\"],\n    [\"Belgian Congo\", \"MISC\", \"country\", \"Belgium\", \"LOC\"],\n    [\"Middle Congo\", \"MISC\", \"country\", \"France\", \"LOC\"],\n    [\"Republic of the Congo\", \"MISC\", \"capital\", \"L\u00e9opoldville\", \"LOC\"],\n    [\"Congo-L\u00e9opoldville\", \"MISC\", \"capital\", \"L\u00e9opoldville\", \"LOC\"],\n    [\"Congo-Brazzaville\", \"MISC\", \"capital\", \"Brazzaville\", \"LOC\"],\n    [\"United States\", \"LOC\", \"recognizes\", \"Republic of the Congo\", \"MISC\"],\n    [\"John D. Tomlinson\", \"PER\", \"position held\", \"Charg\u00e9 d'Affaires ad interim\", \"MISC\"],\n    [\"Clare H. Timberlake\", \"PER\", \"position held\", \"ambassador\", \"MISC\"],\n    [\"Joseph-D\u00e9sir\u00e9 Mobutu\", \"PER\", \"country of citizenship\", \"Zaire\", \"LOC\"],\n    [\"Laurent Kabila\", \"PER\", \"country of citizenship\", \"Democratic Republic of the Congo\", \"LOC\"],\n    [\"Zaire\", \"LOC\", \"previous name\", \"Republic of the Congo\", \"MISC\"],\n    [\"Democratic Republic of the Congo\", \"LOC\", \"previous name\", \"Zaire\", \"MISC\"],\n    [\"L\u00e9opoldville\", \"LOC\", \"located in the administrative territorial entity\", \"Democratic Republic of the Congo\", \"LOC\"],\n    [\"Brazzaville\", \"LOC\", \"located in the administrative territorial entity\", \"Republic of the Congo\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 20,
+  "FN": 12,
+  "recall": 0.14285714285714285,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

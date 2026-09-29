@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_401",
+ "base_raw": "[\n    [\"Bank of North America\", \"ORG\", \"founded by\", \"Robert Morris\", \"PER\"],\n    [\"Bank of North America\", \"ORG\", \"located in\", \"Philadelphia\", \"LOC\"],\n    [\"Bank of North America\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Robert Morris\", \"PER\", \"position held\", \"US Superintendent of Finance\", \"MISC\"],\n    [\"First Bank of the United States\", \"ORG\", \"replaces\", \"Bank of North America\", \"ORG\"],\n    [\"Bank of North America\", \"ORG\", \"inception\", \"May 26, 1781\", \"TIME\"],\n    [\"Bank of North America\", \"ORG\", \"start time\", \"January 7, 1782\", \"TIME\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 6,
+  "FN": 1,
+  "recall": 0.5,
+  "n_extracted": 7,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Cities in the United States",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Bank of North America\", \"ORG\", \"founded by\", \"Robert Morris\", \"PER\"],\n    [\"Bank of North America\", \"ORG\", \"located in\", \"Philadelphia\", \"LOC\"],\n    [\"Bank of North America\", \"ORG\", \"succeeded by\", \"First Bank of the United States\", \"ORG\"],\n    [\"Robert Morris\", \"PER\", \"position held\", \"US Superintendent of Finance\", \"MISC\"],\n    [\"First Bank of the United States\", \"ORG\", \"inception\", \"1791\", \"TIME\"],\n    [\"Bank of North America\", \"ORG\", \"country of origin\", \"United States\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 8,
+  "FN": 1,
+  "recall": 0.6666666666666666,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Bank of North America\", \"ORG\", \"located in\", \"Philadelphia\", \"LOC\"],\n    [\"Bank of North America\", \"ORG\", \"founded by\", \"Robert Morris\", \"PER\"],\n    [\"Bank of North America\", \"ORG\", \"country\", \"United States\", \"LOC\"],\n    [\"Robert Morris\", \"PER\", \"position held\", \"US Superintendent of Finance\", \"MISC\"],\n    [\"First Bank of the United States\", \"ORG\", \"replaces\", \"Bank of North America\", \"ORG\"],\n    [\"Bank of North America\", \"ORG\", \"inception\", \"May 26, 1781\", \"TIME\"],\n    [\"Bank of North America\", \"ORG\", \"dissolved, abolished or demolished\", \"1791\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 7,
+  "FN": 1,
+  "recall": 0.5,
+  "n_extracted": 8,
+  "judge_parse_ok": true
+ }
+}

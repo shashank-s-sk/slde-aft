@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_83",
+ "base_raw": "[\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"date of birth\", \"11 March 1958\", \"TIME\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"place of birth\", \"Gao\", \"LOC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"member of\", \"Rally for Mali\", \"ORG\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"position held\", \"Minister of Territorial Administration\", \"MISC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"position held\", \"Minister for the Environment, Water and Sanitation\", \"MISC\"],\n    [\"Ibrahim Boubacar Ke\u00efta\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Ti\u00e9man Hubert Coulibaly\", \"PER\", \"position held\", \"Minister of Defence\", \"MISC\"],\n    [\"Ti\u00e9na Coulibaly\", \"PER\", \"position held\", \"Minister of Defence\", \"MISC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"campaign director of\", \"Ibrahim Boubacar Ke\u00efta\", \"PER\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 6,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"date of birth\", \"11 March 1958\", \"TIME\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"place of birth\", \"Gao\", \"LOC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"member of\", \"Rally for Mali\", \"ORG\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"position held\", \"Minister of Territorial Administration\", \"MISC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"position held\", \"Minister for the Environment, Water and Sanitation\", \"MISC\"],\n    [\"Ibrahim Boubacar Ke\u00efta\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Ti\u00e9man Hubert Coulibaly\", \"PER\", \"position held\", \"Minister of Defence\", \"MISC\"],\n    [\"Ti\u00e9na Coulibaly\", \"PER\", \"position held\", \"Minister of Defence\", \"MISC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"campaign director of\", \"Ibrahim Boubacar Ke\u00efta\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 6,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 6,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 9,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"date of birth\", \"11 March 1958\", \"TIME\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"place of birth\", \"Gao\", \"LOC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"member of\", \"Rally for Mali\", \"ORG\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"position held\", \"Minister of Territorial Administration\", \"MISC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"position held\", \"Minister for the Environment, Water and Sanitation\", \"MISC\"],\n    [\"Ibrahim Boubacar Ke\u00efta\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Ti\u00e9man Hubert Coulibaly\", \"PER\", \"position held\", \"Minister of Defence\", \"MISC\"],\n    [\"Ti\u00e9na Coulibaly\", \"PER\", \"position held\", \"Minister of Defence\", \"MISC\"],\n    [\"Abdoulaye Idrissa Ma\u00efga\", \"PER\", \"campaign director of\", \"Ibrahim Boubacar Ke\u00efta\", \"PER\"]\n]"
+}

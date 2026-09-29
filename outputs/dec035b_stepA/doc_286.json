@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_286",
+ "base_raw": "[\n    [\"Frank Zappa\", \"PER\", \"genre\", \"quadraphonic\", \"MISC\"],\n    [\"Quaudiophiliac\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"Barking Pumpkin Records\", \"ORG\", \"release year\", \"2004\", \"TIME\"],\n    [\"Over-Nite Sensation\", \"MISC\", \"release year\", \"1973\", \"TIME\"],\n    [\"Apostrophe (')\", \"MISC\", \"release year\", \"1974\", \"TIME\"],\n    [\"Dweezil Zappa\", \"PER\", \"relation\", \"Frank Zappa\", \"PER\"],\n    [\"Chunga's Revenge\", \"MISC\", \"release year\", \"1970\", \"TIME\"],\n    [\"Abnuceals Emuukha Electric Orchestra\", \"ORG\", \"relation\", \"Orchestral Favorites\", \"MISC\"],\n    [\"Royce Hall, UCLA\", \"LOC\", \"event\", \"concerts\", \"MISC\"],\n    [\"Lumpy Gravy\", \"MISC\", \"release year\", \"1968\", \"TIME\"],\n    [\"Frank Zappa\", \"PER\", \"employer\", \"DiscReet Records\", \"ORG\"],\n    [\"Quaudiophiliac\", \"MISC\", \"producer\", \"Frank Zappa\", \"PER\"],\n    [\"Quaudiophiliac\", \"MISC\", \"completed by\", \"Dweezil Zappa\", \"PER\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 8,
+  "FN": 20,
+  "recall": 0.23076923076923078,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Frank Zappa\", \"PER\", \"genre\", \"quadraphonic\", \"MISC\"],\n    [\"Quaudiophiliac\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"Barking Pumpkin Records\", \"ORG\", \"release format\", \"DVD-Audio\", \"MISC\"],\n    [\"Frank Zappa\", \"PER\", \"experimented with\", \"quadraphonic sound\", \"MISC\"],\n    [\"Over-Nite Sensation\", \"MISC\", \"release year\", \"1973\", \"TIME\"],\n    [\"Apostrophe (')\", \"MISC\", \"release year\", \"1974\", \"TIME\"],\n    [\"DiscReet Records\", \"ORG\", \"label of\", \"Over-Nite Sensation\", \"MISC\"],\n    [\"DiscReet Records\", \"ORG\", \"label of\", \"Apostrophe (')\", \"MISC\"],\n    [\"Dweezil Zappa\", \"PER\", \"completed work of\", \"Quaudiophiliac\", \"MISC\"],\n    [\"Chunga's Revenge\", \"MISC\", \"release year\", \"1970\", \"TIME\"],\n    [\"Abnuceals Emuukha Electric Orchestra\", \"ORG\", \"performed at\", \"Royce Hall, UCLA\", \"LOC\"],\n    [\"Orchestral Favorites\", \"MISC\", \"release year\", \"1979\", \"TIME\"],\n    [\"Lumpy Gravy\", \"MISC\", \"release year\", \"1968\", \"TIME\"],\n    [\"Frank Zappa\", \"PER\", \"created\", \"Lumpy Gravy\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 11,
+  "FP": 13,
+  "FN": 18,
+  "recall": 0.3793103448275862,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Time"
+ ],
+ "kb_dedup": {
+  "TP": 11,
+  "FP": 13,
+  "FN": 18,
+  "recall": 0.3793103448275862,
+  "n_extracted": 21,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Frank Zappa\", \"PER\", \"genre\", \"quadraphonic\", \"MISC\"],\n    [\"Quaudiophiliac\", \"MISC\", \"release year\", \"2004\", \"TIME\"],\n    [\"Barking Pumpkin Records\", \"ORG\", \"release format\", \"DVD-Audio\", \"MISC\"],\n    [\"Frank Zappa\", \"PER\", \"experimented with\", \"quadraphonic sound\", \"MISC\"],\n    [\"Over-Nite Sensation\", \"MISC\", \"release year\", \"1973\", \"TIME\"],\n    [\"Apostrophe (')\", \"MISC\", \"release year\", \"1974\", \"TIME\"],\n    [\"DiscReet Records\", \"ORG\", \"label of\", \"Over-Nite Sensation\", \"MISC\"],\n    [\"DiscReet Records\", \"ORG\", \"label of\", \"Apostrophe (')\", \"MISC\"],\n    [\"Dweezil Zappa\", \"PER\", \"completed work of\", \"Quaudiophiliac\", \"MISC\"],\n    [\"Chunga's Revenge\", \"MISC\", \"release year\", \"1970\", \"TIME\"],\n    [\"Abnuceals Emuukha Electric Orchestra\", \"ORG\", \"performed at\", \"Royce Hall, UCLA\", \"LOC\"],\n    [\"Orchestral Favorites\", \"MISC\", \"release year\", \"1979\", \"TIME\"],\n    [\"Lumpy Gravy\", \"MISC\", \"release year\", \"1968\", \"TIME\"],\n    [\"Frank Zappa\", \"PER\", \"created\", \"Lumpy Gravy\", \"MISC\"]\n]"
+}

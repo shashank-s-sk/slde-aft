@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_237",
+ "base_raw": "[\n    [\"Vivian Mayhew\", \"PER\", \"co-writer of\", \"Sanguinarium\", \"MISC\"],\n    [\"Valerie Mayhew\", \"PER\", \"co-writer of\", \"Sanguinarium\", \"MISC\"],\n    [\"Kim Manners\", \"PER\", \"director of\", \"Sanguinarium\", \"MISC\"],\n    [\"Sanguinarium\", \"MISC\", \"part of\", \"The X-Files\", \"MISC\"],\n    [\"The X-Files\", \"MISC\", \"genre\", \"science fiction\", \"MISC\"],\n    [\"Fox Mulder\", \"PER\", \"investigator of\", \"X-Files\", \"MISC\"],\n    [\"Dana Scully\", \"PER\", \"investigator of\", \"X-Files\", \"MISC\"],\n    [\"David Duchovny\", \"PER\", \"portrayer of\", \"Fox Mulder\", \"PER\"],\n    [\"Gillian Anderson\", \"PER\", \"portrayer of\", \"Dana Scully\", \"PER\"],\n    [\"Sanguinarium\", \"MISC\", \"original broadcast network\", \"Fox\", \"ORG\"],\n    [\"Sanguinarium\", \"MISC\", \"original air date\", \"November 10, 1996\", \"TIME\"],\n    [\"Sanguinarium\", \"MISC\", \"Nielsen rating\", \"11.1\", \"NUM\"],\n    [\"Sanguinarium\", \"MISC\", \"number of viewers\", \"19.85 million\", \"NUM\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 19,
+  "recall": 0.17391304347826086,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Vivian Mayhew\", \"PER\", \"author\", \"Sanguinarium\", \"MISC\"],\n    [\"Valerie Mayhew\", \"PER\", \"author\", \"Sanguinarium\", \"MISC\"],\n    [\"Kim Manners\", \"PER\", \"director\", \"Sanguinarium\", \"MISC\"],\n    [\"The X-Files\", \"MISC\", \"genre\", \"science fiction\", \"MISC\"],\n    [\"Fox Mulder\", \"PER\", \"member of\", \"FBI\", \"ORG\"],\n    [\"Dana Scully\", \"PER\", \"member of\", \"FBI\", \"ORG\"],\n    [\"David Duchovny\", \"PER\", \"cast member\", \"The X-Files\", \"MISC\"],\n    [\"Gillian Anderson\", \"PER\", \"cast member\", \"The X-Files\", \"MISC\"],\n    [\"Sanguinarium\", \"MISC\", \"part of\", \"The X-Files\", \"MISC\"],\n    [\"November 10, 1996\", \"TIME\", \"airdate\", \"Sanguinarium\", \"MISC\"],\n    [\"Fox network\", \"ORG\", \"broadcaster\", \"Sanguinarium\", \"MISC\"],\n    [\"The X-Files\", \"MISC\", \"created by\", \"Chris Carter\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 16,
+  "FN": 20,
+  "recall": 0.25925925925925924,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Vivian Mayhew\", \"PER\", \"co-writer\", \"Valerie Mayhew\", \"PER\"],\n    [\"Kim Manners\", \"PER\", \"director\", \"Sanguinarium\", \"MISC\"],\n    [\"The X-Files\", \"MISC\", \"season\", \"4\", \"NUM\"],\n    [\"Sanguinarium\", \"MISC\", \"episode\", \"6\", \"NUM\"],\n    [\"Fox Mulder\", \"PER\", \"portrayed by\", \"David Duchovny\", \"PER\"],\n    [\"Dana Scully\", \"PER\", \"portrayed by\", \"Gillian Anderson\", \"PER\"],\n    [\"The X-Files\", \"MISC\", \"network\", \"Fox\", \"ORG\"],\n    [\"Sanguinarium\", \"MISC\", \"air date\", \"November 10, 1996\", \"TIME\"],\n    [\"Sanguinarium\", \"MISC\", \"Nielsen rating\", \"11.1\", \"NUM\"],\n    [\"Sanguinarium\", \"MISC\", \"viewers\", \"19.85 million\", \"NUM\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 15,
+  "FN": 19,
+  "recall": 0.24,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ }
+}

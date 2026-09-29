@@ -1,0 +1,40 @@
+{
+ "doc_id": "doc_489",
+ "base_raw": "[\n    [\"Heinz-Josef Koitka\", \"PER\", \"date of birth\", \"12 February 1952\", \"TIME\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"place of birth\", \"Germany\", \"LOC\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"SG Wattenscheid 09\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"Rot-Wei\u00df L\u00fcdenscheid\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"Hamburger SV\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"Eintracht Frankfurt\", \"ORG\"],\n    [\"Kai Koitka\", \"PER\", \"member of sports team\", \"SG Wattenscheid 09\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"father\", \"Kai Koitka\", \"PER\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"employer\", \"DFB\", \"ORG\"],\n    [\"SG Wattenscheid 09\", \"ORG\", \"located in the administrative territorial entity\", \"Germany\", \"LOC\"],\n    [\"Rot-Wei\u00df L\u00fcdenscheid\", \"ORG\", \"located in the administrative territorial entity\", \"Germany\", \"LOC\"],\n    [\"Hamburger SV\", \"ORG\", \"located in the administrative territorial entity\", \"Germany\", \"LOC\"],\n    [\"Eintracht Frankfurt\", \"ORG\", \"located in the administrative territorial entity\", \"Germany\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 9,
+  "FN": 12,
+  "recall": 0.25,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Heinz-Josef Koitka\", \"PER\", \"date of birth\", \"12 February 1952\", \"TIME\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"position held\", \"goalkeeping coach\", \"MISC\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"employer\", \"SG Wattenscheid 09\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"Hamburger SV\", \"ORG\"],\n    [\"Kai Koitka\", \"PER\", \"member of sports team\", \"SG Wattenscheid 09\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"child\", \"Kai Koitka\", \"PER\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Hamburger SV\", \"ORG\", \"league\", \"Bundesliga\", \"MISC\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"country of citizenship\", \"Germany\", \"LOC\"],\n    [\"SG Wattenscheid 09\", \"ORG\", \"located in the administrative territorial entity\", \"Germany\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 15,
+  "FN": 16,
+  "recall": 0.2,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Heinz-Josef Koitka\", \"PER\", \"date of birth\", \"12 February 1952\", \"TIME\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"place of birth\", \"unknown\", \"MISC\"],\n    [\"SG Wattenscheid 09\", \"ORG\", \"located in\", \"Germany\", \"LOC\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"SG Wattenscheid 09\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"Eintracht Frankfurt\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"Hamburger SV\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"member of sports team\", \"Rot-Wei\u00df L\u00fcdenscheid\", \"ORG\"],\n    [\"Kai Koitka\", \"PER\", \"father\", \"Heinz-Josef Koitka\", \"PER\"],\n    [\"Kai Koitka\", \"PER\", \"member of sports team\", \"SG Wattenscheid 09\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"employer\", \"DFB\", \"ORG\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"position held\", \"goalkeeping coach\", \"MISC\"],\n    [\"Heinz-Josef Koitka\", \"PER\", \"position held\", \"coach\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 16,
+  "FN": 14,
+  "recall": 0.125,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

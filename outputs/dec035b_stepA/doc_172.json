@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_172",
+ "base_raw": "[\n    [\"Abdul Gaffar Choudhury\", \"PER\", \"author\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Ekusher Gaan\", \"MISC\", \"genre\", \"Bengali song\", \"MISC\"],\n    [\"Abdul Latif\", \"PER\", \"composer\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Latif Atikul Islam\", \"PER\", \"performer\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Dhaka College\", \"ORG\", \"location\", \"Shaheed Minar\", \"MISC\"],\n    [\"Altaf Mahmud\", \"PER\", \"composer\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Bangladesh Liberation War\", \"MISC\", \"conflict\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Shaheed Minar\", \"MISC\", \"located in\", \"Bangladesh\", \"LOC\"],\n    [\"Kabir Chowdhury\", \"PER\", \"translator\", \"Ekusher Gaan\", \"MISC\"],\n    [\"BBC Bengali Service\", \"ORG\", \"publisher\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Jubo League\", \"ORG\", \"member of\", \"Abdul Gaffar Choudhury\", \"PER\"],\n    [\"Ekusher Gaan\", \"MISC\", \"original language of work\", \"Bengali\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 10,
+  "FN": 5,
+  "recall": 0.2857142857142857,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Asian Languages",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Abdul Gaffar Choudhury\", \"PER\", \"author\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Ekusher Gaan\", \"MISC\", \"language\", \"Bengali\", \"MISC\"],\n    [\"Abdul Latif\", \"PER\", \"composer\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Altaf Mahmud\", \"PER\", \"composer\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Ekusher Gaan\", \"MISC\", \"genre\", \"protest song\", \"MISC\"],\n    [\"Bengali Language Movement\", \"MISC\", \"location\", \"East Pakistan\", \"LOC\"],\n    [\"Jubo League\", \"ORG\", \"location\", \"East Pakistan\", \"LOC\"],\n    [\"Dhaka College\", \"ORG\", \"location\", \"Dhaka\", \"LOC\"],\n    [\"Shaheed Minar\", \"MISC\", \"location\", \"Dhaka\", \"LOC\"],\n    [\"Altaf Mahmud\", \"PER\", \"member of\", \"Bangladesh Liberation War\", \"MISC\"],\n    [\"Kabir Chowdhury\", \"PER\", \"translator\", \"Ekusher Gaan\", \"MISC\"],\n    [\"BBC Bengali Service\", \"ORG\", \"publisher\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Ekusher Gaan\", \"MISC\", \"award received\", \"third best song in Bengali\", \"MISC\"],\n    [\"Abdul Gaffar Choudhury\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"Altaf Mahmud\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"Ekusher Gaan\", \"MISC\", \"country of origin\", \"Bangladesh\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 19,
+  "FN": 5,
+  "recall": 0.5454545454545454,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Abdul Gaffar Choudhury\", \"PER\", \"author\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Ekusher Gaan\", \"MISC\", \"genre\", \"Bengali song\", \"MISC\"],\n    [\"Abdul Latif\", \"PER\", \"composer\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Altaf Mahmud\", \"PER\", \"composer\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Ekusher Gaan\", \"MISC\", \"lyrics by\", \"Abdul Gaffar Choudhury\", \"PER\"],\n    [\"Jubo League\", \"ORG\", \"member of\", \"Abdul Gaffar Choudhury\", \"PER\"],\n    [\"Dhaka College\", \"ORG\", \"location\", \"Dhaka\", \"LOC\"],\n    [\"Shaheed Minar\", \"MISC\", \"located in\", \"Dhaka\", \"LOC\"],\n    [\"Altaf Mahmud\", \"PER\", \"martyr of\", \"Bangladesh Liberation War\", \"MISC\"],\n    [\"Bangladesh Liberation War\", \"MISC\", \"conflict\", \"1971\", \"TIME\"],\n    [\"Ekusher Gaan\", \"MISC\", \"original language of work\", \"Bengali\", \"MISC\"],\n    [\"Kabir Chowdhury\", \"PER\", \"translator\", \"Ekusher Gaan\", \"MISC\"],\n    [\"BBC Bengali Service\", \"ORG\", \"publisher\", \"Ekusher Gaan\", \"MISC\"],\n    [\"Abdul Gaffar Choudhury\", \"PER\", \"country of citizenship\", \"Bangladesh\", \"LOC\"],\n    [\"Ekusher Gaan\", \"MISC\", \"part of\", \"Bengali Language Movement\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 15,
+  "FN": 4,
+  "recall": 0.5,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ }
+}

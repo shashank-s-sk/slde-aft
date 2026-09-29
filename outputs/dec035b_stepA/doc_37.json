@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_37",
+ "base_raw": "[\n    [\"Christina Surer\", \"PER\", \"place of birth\", \"Basel\", \"LOC\"],\n    [\"Christina Surer\", \"PER\", \"country of citizenship\", \"Switzerland\", \"LOC\"],\n    [\"Christina Surer\", \"PER\", \"date of birth\", \"26 March 1974\", \"TIME\"],\n    [\"Christina Surer\", \"PER\", \"spouse\", \"Marc Surer\", \"PER\"],\n    [\"Christina Surer\", \"PER\", \"married to\", \"Marc Surer\", \"PER\"],\n    [\"Christina Surer\", \"PER\", \"engaged to\", \"Martin Tomczyk\", \"PER\"],\n    [\"Christina Surer\", \"PER\", \"employer\", \"Playboy\", \"ORG\"],\n    [\"Marc Surer\", \"PER\", \"occupation\", \"Formula One driver\", \"MISC\"],\n    [\"Martin Tomczyk\", \"PER\", \"occupation\", \"DTM racer\", \"MISC\"],\n    [\"Christina Surer\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Ford Superseries\", \"MISC\", \"instance of\", \"racing series\", \"MISC\"],\n    [\"Alfa 147 Cup\", \"MISC\", \"instance of\", \"racing series\", \"MISC\"],\n    [\"Ford Fiesta Cup\", \"MISC\", \"instance of\", \"racing series\", \"MISC\"],\n    [\"Seat Leon Supercopa\", \"MISC\", \"instance of\", \"racing series\", \"MISC\"],\n    [\"24 Hours N\u00fcrburgring\", \"MISC\", \"instance of\", \"racing event\", \"MISC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 10,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Christina Surer\", \"PER\", \"date of birth\", \"26 March 1974\", \"TIME\"],\n    [\"Christina Surer\", \"PER\", \"place of birth\", \"Basel\", \"LOC\"],\n    [\"Christina Surer\", \"PER\", \"country of citizenship\", \"Switzerland\", \"LOC\"],\n    [\"Christina Surer\", \"PER\", \"spouse\", \"Marc Surer\", \"PER\"],\n    [\"Christina Surer\", \"PER\", \"married to\", \"Marc Surer\", \"PER\"],\n    [\"Christina Surer\", \"PER\", \"engaged to\", \"Martin Tomczyk\", \"PER\"],\n    [\"Marc Surer\", \"PER\", \"occupation\", \"Formula One driver\", \"MISC\"],\n    [\"Martin Tomczyk\", \"PER\", \"occupation\", \"DTM racer\", \"MISC\"],\n    [\"Basel\", \"LOC\", \"country\", \"Switzerland\", \"LOC\"],\n    [\"Christina Surer\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Christina Surer\", \"PER\", \"occupation\", \"race car driver\", \"MISC\"],\n    [\"Christina Surer\", \"PER\", \"occupation\", \"model\", \"MISC\"],\n    [\"Christina Surer\", \"PER\", \"occupation\", \"television host\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 2,
+  "recall": 0.7142857142857143,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Christina Surer\", \"PER\", \"place of birth\", \"Basel\", \"LOC\"],\n    [\"Christina Surer\", \"PER\", \"country of citizenship\", \"Switzerland\", \"LOC\"],\n    [\"Christina Surer\", \"PER\", \"date of birth\", \"26 March 1974\", \"TIME\"],\n    [\"Christina Surer\", \"PER\", \"spouse\", \"Marc Surer\", \"PER\"],\n    [\"Christina Surer\", \"PER\", \"educated at\", \"None\", \"MISC\"],\n    [\"Marc Surer\", \"PER\", \"occupation\", \"Formula One driver\", \"MISC\"],\n    [\"Christina Surer\", \"PER\", \"engaged to\", \"Martin Tomczyk\", \"PER\"],\n    [\"Martin Tomczyk\", \"PER\", \"occupation\", \"DTM racer\", \"MISC\"],\n    [\"Christina Surer\", \"PER\", \"occupation\", \"race car driver\", \"MISC\"],\n    [\"Christina Surer\", \"PER\", \"modelled for\", \"Playboy\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_312",
+ "base_raw": "[\n    [\"Joseph Smith\", \"PER\", \"author\", \"Book of Abraham\", \"MISC\"],\n    [\"Book of Abraham\", \"MISC\", \"part of\", \"Pearl of Great Price\", \"MISC\"],\n    [\"Joseph Smith Papyri\", \"MISC\", \"located in\", \"late 1960s\", \"TIME\"],\n    [\"Hugh Nibley\", \"PER\", \"member of\", \"LDS\", \"ORG\"],\n    [\"John L. Gee\", \"PER\", \"member of\", \"Brigham Young University\", \"ORG\"],\n    [\"Michael D. Rhodes\", \"PER\", \"member of\", \"Brigham Young University\", \"ORG\"],\n    [\"Robert K. Ritner\", \"PER\", \"member of\", \"University of Chicago\", \"ORG\"],\n    [\"Breathing Permit of H\u00f4r\", \"MISC\", \"source of\", \"Book of Abraham\", \"MISC\"],\n    [\"Joseph Smith\", \"PER\", \"translator of\", \"Breathing Permit of H\u00f4r\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 6,
+  "FN": 8,
+  "recall": 0.2727272727272727,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions",
+  "Higher Education Institutions within Organizations",
+  "Organizations",
+  "Universities"
+ ],
+ "kb_orig_raw": "[\n    [\"Joseph Smith\", \"PER\", \"author\", \"Book of Abraham\", \"MISC\"],\n    [\"Book of Abraham\", \"MISC\", \"part of\", \"Pearl of Great Price\", \"MISC\"],\n    [\"Joseph Smith Papyri\", \"MISC\", \"located in\", \"late 1960s\", \"TIME\"],\n    [\"Hugh Nibley\", \"PER\", \"member of\", \"LDS\", \"ORG\"],\n    [\"John L. Gee\", \"PER\", \"member of\", \"Brigham Young University\", \"ORG\"],\n    [\"Michael D. Rhodes\", \"PER\", \"member of\", \"Brigham Young University\", \"ORG\"],\n    [\"Robert K. Ritner\", \"PER\", \"member of\", \"University of Chicago\", \"ORG\"],\n    [\"Breathing Permit of H\u00f4r\", \"MISC\", \"source of\", \"Book of Abraham\", \"MISC\"],\n    [\"Joseph Smith\", \"PER\", \"translator of\", \"Breathing Permit of H\u00f4r\", \"MISC\"],\n    [\"Book of Abraham\", \"MISC\", \"published in\", \"1842\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 5,
+  "FN": 8,
+  "recall": 0.38461538461538464,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Educational Institutions",
+  "Higher Education Institutions"
+ ],
+ "kb_dedup_raw": "[\n    [\"Joseph Smith\", \"PER\", \"author\", \"Book of Abraham\", \"MISC\"],\n    [\"Book of Abraham\", \"MISC\", \"part of\", \"Pearl of Great Price\", \"MISC\"],\n    [\"Joseph Smith Papyri\", \"MISC\", \"located in\", \"late 1960s\", \"TIME\"],\n    [\"Hugh Nibley\", \"PER\", \"member of\", \"LDS\", \"ORG\"],\n    [\"John L. Gee\", \"PER\", \"employer\", \"Brigham Young University\", \"ORG\"],\n    [\"Michael D. Rhodes\", \"PER\", \"employer\", \"Brigham Young University\", \"ORG\"],\n    [\"Robert K. Ritner\", \"PER\", \"employer\", \"University of Chicago\", \"ORG\"],\n    [\"Breathing Permit of H\u00f4r\", \"MISC\", \"source of\", \"Book of Abraham\", \"MISC\"],\n    [\"Joseph Smith\", \"PER\", \"translator of\", \"Breathing Permit of H\u00f4r\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 7,
+  "FN": 4,
+  "recall": 0.5555555555555556,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ }
+}

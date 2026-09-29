@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_441",
+ "base_raw": "[\n    [\"David S. Wyman\", \"PER\", \"educated at\", \"University of Massachusetts Amherst\", \"ORG\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"author\", \"David S. Wyman\", \"PER\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"publisher\", \"Unknown\", \"ORG\"],\n    [\"David S. Wyman Institute for Holocaust Studies\", \"ORG\", \"founded by\", \"David S. Wyman\", \"PER\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"publication date\", \"1984\", \"TIME\"],\n    [\"David S. Wyman\", \"PER\", \"position held\", \"Josiah DuBois professor of history\", \"MISC\"],\n    [\"University of Massachusetts Amherst\", \"ORG\", \"located in\", \"Massachusetts\", \"LOC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"National Jewish Book Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Anisfield-Wolf Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Present Tense Literary Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Stuart Bernath Prize\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Theodore Saloutos Award\", \"MISC\"]\n]",
+ "base": {
+  "TP": 3,
+  "FP": 9,
+  "FN": 1,
+  "recall": 0.75,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"David S. Wyman\", \"PER\", \"educated at\", \"University of Massachusetts Amherst\", \"ORG\"],\n    [\"David S. Wyman\", \"PER\", \"employer\", \"University of Massachusetts Amherst\", \"ORG\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"author\", \"David S. Wyman\", \"PER\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"publication date\", \"1984\", \"TIME\"],\n    [\"David S. Wyman Institute for Holocaust Studies\", \"ORG\", \"founded by\", \"David S. Wyman\", \"PER\"],\n    [\"David S. Wyman\", \"PER\", \"position held\", \"chairman\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"National Jewish Book Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Anisfield-Wolf Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Present Tense Literary Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Stuart Bernath Prize\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Theodore Saloutos Award\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 11,
+  "FN": 4,
+  "recall": 0.42857142857142855,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"David S. Wyman\", \"PER\", \"educated at\", \"University of Massachusetts Amherst\", \"ORG\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"author\", \"David S. Wyman\", \"PER\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"publisher\", \"unknown\", \"MISC\"],\n    [\"David S. Wyman\", \"PER\", \"position held\", \"Josiah DuBois professor of history\", \"MISC\"],\n    [\"David S. Wyman Institute for Holocaust Studies\", \"ORG\", \"founded by\", \"David S. Wyman\", \"PER\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"publication date\", \"1984\", \"TIME\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"National Jewish Book Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Anisfield-Wolf Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Present Tense Literary Award\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Stuart Bernath Prize\", \"MISC\"],\n    [\"The Abandonment of the Jews\", \"MISC\", \"award received\", \"Theodore Saloutos Award\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 4,
+  "recall": 0.3333333333333333,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

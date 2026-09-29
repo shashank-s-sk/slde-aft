@@ -1,0 +1,38 @@
+{
+ "doc_id": "doc_258",
+ "base_raw": "[\n    [\"Auguste Rodin\", \"PER\", \"nationality\", \"French\", \"MISC\"],\n    [\"Edmond Bazire\", \"PER\", \"occupation\", \"journalist\", \"MISC\"],\n    [\"Museo Soumaya\", \"ORG\", \"location\", \"Mexico City\", \"LOC\"],\n    [\"Victor Hugo\", \"PER\", \"residence\", \"Avenue d'Eylau\", \"LOC\"],\n    [\"Auguste Rodin\", \"PER\", \"creator\", \"Bust of Victor Hugo\", \"MISC\"],\n    [\"Bust of Victor Hugo\", \"MISC\", \"material\", \"patinated plaster\", \"MISC\"],\n    [\"Auguste Rodin\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Victor Hugo\", \"PER\", \"date of death\", \"1885\", \"TIME\"],\n    [\"Auguste Rodin\", \"PER\", \"notable work\", \"Monument to Victor Hugo\", \"MISC\"],\n    [\"Monument to Victor Hugo\", \"MISC\", \"created by\", \"Auguste Rodin\", \"PER\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 9,
+  "FN": 9,
+  "recall": 0.1,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Auguste Rodin\", \"PER\", \"nationality\", \"French\", \"MISC\"],\n    [\"Edmond Bazire\", \"PER\", \"occupation\", \"journalist\", \"MISC\"],\n    [\"Museo Soumaya\", \"ORG\", \"location\", \"Mexico City\", \"LOC\"],\n    [\"Victor Hugo\", \"PER\", \"residence\", \"Avenue d'Eylau\", \"LOC\"],\n    [\"Auguste Rodin\", \"PER\", \"creator\", \"Bust of Victor Hugo\", \"MISC\"],\n    [\"Bust of Victor Hugo\", \"MISC\", \"location\", \"Museo Soumaya\", \"ORG\"],\n    [\"Auguste Rodin\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Victor Hugo\", \"PER\", \"date of death\", \"1885\", \"TIME\"],\n    [\"Auguste Rodin\", \"PER\", \"notable work\", \"Monument to Victor Hugo\", \"MISC\"],\n    [\"Monument to Victor Hugo\", \"MISC\", \"creator\", \"Auguste Rodin\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 11,
+  "FN": 9,
+  "recall": 0.1,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Auguste Rodin\", \"PER\", \"nationality\", \"French\", \"MISC\"],\n    [\"Edmond Bazire\", \"PER\", \"occupation\", \"journalist\", \"MISC\"],\n    [\"Victor Hugo\", \"PER\", \"residence\", \"Avenue d'Eylau\", \"LOC\"],\n    [\"Museo Soumaya\", \"ORG\", \"location\", \"Mexico City\", \"LOC\"],\n    [\"Auguste Rodin\", \"PER\", \"creator\", \"Bust of Victor Hugo\", \"MISC\"],\n    [\"Bust of Victor Hugo\", \"MISC\", \"material\", \"patinated plaster\", \"MISC\"],\n    [\"Auguste Rodin\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Victor Hugo\", \"PER\", \"date of death\", \"1885\", \"TIME\"],\n    [\"Auguste Rodin\", \"PER\", \"notable work\", \"Monument to Victor Hugo\", \"MISC\"],\n    [\"Monument to Victor Hugo\", \"MISC\", \"based on\", \"Bust of Victor Hugo\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 9,
+  "FN": 9,
+  "recall": 0.18181818181818182,
+  "n_extracted": 11,
+  "judge_parse_ok": true
+ }
+}

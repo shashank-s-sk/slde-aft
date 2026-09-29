@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_227",
+ "base_raw": "[\n    [\"Erik Rune Hansen\", \"PER\", \"leader of\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"founded by\", \"Erik Rune Hansen\", \"PER\"],\n    [\"Adolf Hitler\", \"PER\", \"admired by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"Vidkun Quisling\", \"PER\", \"admired by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"publisher of\", \"Gjallarhorn\", \"MISC\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"published\", \"The Protocols of the Elders of Zion\", \"MISC\"],\n    [\"Erik Bl\u00fccher\", \"PER\", \"associated with\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"Varg Vikernes\", \"PER\", \"associated with\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"member of\", \"World Union of National Socialists\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"member of\", \"Blood & Honour\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"allied with\", \"National Socialist Movement of Denmark\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"allied with\", \"Swedish National Socialist Front\", \"ORG\"],\n    [\"Rudolf Hess\", \"PER\", \"honored by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"Nasjonal Samling\", \"ORG\", \"former member of\", \"National Socialist Movement of Norway\", \"ORG\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Erik Rune Hansen\", \"PER\", \"leader of\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"founded by\", \"Erik Rune Hansen\", \"PER\"],\n    [\"Adolf Hitler\", \"PER\", \"admired by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"Vidkun Quisling\", \"PER\", \"admired by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"publisher of\", \"Gjallarhorn\", \"MISC\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"published\", \"The Protocols of the Elders of Zion\", \"MISC\"],\n    [\"Erik Bl\u00fccher\", \"PER\", \"associated with\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"Varg Vikernes\", \"PER\", \"associated with\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"member of\", \"World Union of National Socialists\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"member of\", \"Blood & Honour\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"allied with\", \"National Socialist Movement of Denmark\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"allied with\", \"Swedish National Socialist Front\", \"ORG\"],\n    [\"Rudolf Hess\", \"PER\", \"honored by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"location of ceremony\", \"German war cemetery in Oslo\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 15,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 13,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 15,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Erik Rune Hansen\", \"PER\", \"leader of\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"founded by\", \"Erik Rune Hansen\", \"PER\"],\n    [\"Adolf Hitler\", \"PER\", \"admired by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"Vidkun Quisling\", \"PER\", \"admired by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"publisher of\", \"Gjallarhorn\", \"MISC\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"published\", \"The Protocols of the Elders of Zion\", \"MISC\"],\n    [\"Erik Bl\u00fccher\", \"PER\", \"associated with\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"Varg Vikernes\", \"PER\", \"associated with\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"member of\", \"World Union of National Socialists\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"member of\", \"Blood & Honour\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"allied with\", \"National Socialist Movement of Denmark\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"allied with\", \"Swedish National Socialist Front\", \"ORG\"],\n    [\"Rudolf Hess\", \"PER\", \"honored by\", \"National Socialist Movement of Norway\", \"ORG\"],\n    [\"National Socialist Movement of Norway\", \"ORG\", \"location of ceremony\", \"German war cemetery in Oslo\", \"LOC\"]\n]"
+}

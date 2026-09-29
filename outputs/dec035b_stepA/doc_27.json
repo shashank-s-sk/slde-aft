@@ -1,0 +1,42 @@
+{
+ "doc_id": "doc_27",
+ "base_raw": "[\n    [\"Arras Cathedral\", \"LOC\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Arras Cathedral\", \"LOC\", \"country\", \"France\", \"LOC\"],\n    [\"Bishops of Arras\", \"ORG\", \"head of government\", \"Arras Cathedral\", \"LOC\"],\n    [\"Louis de Bourbon\", \"PER\", \"place of death\", \"Arras Cathedral\", \"LOC\"],\n    [\"Louis XIV\", \"PER\", \"child\", \"Louis de Bourbon\", \"PER\"],\n    [\"Louise de La Valli\u00e8re\", \"PER\", \"child\", \"Louis de Bourbon\", \"PER\"],\n    [\"Cardinal de Rohan\", \"PER\", \"position held\", \"abbot of St. Vaast's\", \"MISC\"],\n    [\"Pierre Contant d'Ivry\", \"PER\", \"creator\", \"designs for the Church of La Madeleine\", \"MISC\"],\n    [\"St. Vaast's Abbey\", \"LOC\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Mus\u00e9e des beaux-arts d'Arras\", \"LOC\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Arras Cathedral\", \"LOC\", \"part of\", \"Roman Catholic church\", \"ORG\"],\n    [\"Arras Cathedral\", \"LOC\", \"instance of\", \"Gothic structures\", \"MISC\"],\n    [\"Louis XIV\", \"PER\", \"spouse\", \"Louise de La Valli\u00e8re\", \"PER\"],\n    [\"Arras Cathedral\", \"LOC\", \"founded by\", \"Bishops of Arras\", \"ORG\"],\n    [\"Pierre Contant d'Ivry\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Arras Cathedral\", \"LOC\", \"contains administrative territorial entity\", \"Arras\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 12,
+  "FN": 14,
+  "recall": 0.2631578947368421,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations",
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Arras Cathedral\", \"LOC\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Arras Cathedral\", \"LOC\", \"country\", \"France\", \"LOC\"],\n    [\"Bishops of Arras\", \"ORG\", \"head of government\", \"Arras Cathedral\", \"LOC\"],\n    [\"Louis de Bourbon\", \"PER\", \"place of death\", \"Arras Cathedral\", \"LOC\"],\n    [\"Louis XIV\", \"PER\", \"child\", \"Louis de Bourbon\", \"PER\"],\n    [\"Louise de La Valli\u00e8re\", \"PER\", \"child\", \"Louis de Bourbon\", \"PER\"],\n    [\"Cardinal de Rohan\", \"PER\", \"position held\", \"abbot of St. Vaast's\", \"MISC\"],\n    [\"Pierre Contant d'Ivry\", \"PER\", \"creator\", \"Arras Cathedral\", \"LOC\"],\n    [\"Pierre Contant d'Ivry\", \"PER\", \"creator\", \"Church of La Madeleine\", \"LOC\"],\n    [\"St. Vaast's Abbey\", \"ORG\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Mus\u00e9e des beaux-arts d'Arras\", \"ORG\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Arras Cathedral\", \"LOC\", \"part of\", \"Roman Catholic church\", \"ORG\"],\n    [\"Louis de Bourbon\", \"PER\", \"father\", \"Louis XIV\", \"PER\"],\n    [\"Louis de Bourbon\", \"PER\", \"mother\", \"Louise de La Valli\u00e8re\", \"PER\"],\n    [\"Arras Cathedral\", \"LOC\", \"instance of\", \"Gothic structures\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 15,
+  "FN": 13,
+  "recall": 0.2777777777777778,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Arras Cathedral\", \"LOC\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Arras Cathedral\", \"LOC\", \"country\", \"France\", \"LOC\"],\n    [\"Bishops of Arras\", \"ORG\", \"head of government\", \"Arras Cathedral\", \"LOC\"],\n    [\"Louis de Bourbon\", \"PER\", \"place of death\", \"Arras Cathedral\", \"LOC\"],\n    [\"Louis XIV\", \"PER\", \"child\", \"Louis de Bourbon\", \"PER\"],\n    [\"Louise de La Valli\u00e8re\", \"PER\", \"child\", \"Louis de Bourbon\", \"PER\"],\n    [\"Cardinal de Rohan\", \"PER\", \"position held\", \"abbot of St. Vaast's\", \"MISC\"],\n    [\"Pierre Contant d'Ivry\", \"PER\", \"creator\", \"Arras Cathedral\", \"LOC\"],\n    [\"Pierre Contant d'Ivry\", \"PER\", \"creator\", \"Church of La Madeleine\", \"LOC\"],\n    [\"St. Vaast's Abbey\", \"LOC\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Mus\u00e9e des beaux-arts d'Arras\", \"LOC\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Benedictine Abbey of Saint-Vaast\", \"LOC\", \"located in\", \"Arras\", \"LOC\"],\n    [\"Arras Cathedral\", \"LOC\", \"part of\", \"Roman Catholic church\", \"ORG\"],\n    [\"Louis de Bourbon\", \"PER\", \"father\", \"Louis XIV\", \"PER\"],\n    [\"Louis de Bourbon\", \"PER\", \"mother\", \"Louise de La Valli\u00e8re\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 16,
+  "FN": 13,
+  "recall": 0.2777777777777778,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

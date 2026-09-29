@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_229",
+ "base_raw": "[\n    [\"Ghana\", \"LOC\", \"located in the administrative territorial entity\", \"Africa\", \"LOC\"],\n    [\"Togo\", \"LOC\", \"located in the administrative territorial entity\", \"Africa\", \"LOC\"],\n    [\"Ewe people\", \"MISC\", \"ethnic group\", \"Ghana\", \"LOC\"],\n    [\"Ewe people\", \"MISC\", \"ethnic group\", \"Togo\", \"LOC\"],\n    [\"Kwame Nkrumah\", \"PER\", \"leader of\", \"Gold Coast independence movement\", \"MISC\"],\n    [\"Gold Coast\", \"LOC\", \"country\", \"Ghana\", \"LOC\"],\n    [\"British Togoland\", \"LOC\", \"part of\", \"Gold Coast\", \"LOC\"],\n    [\"French Togoland\", \"LOC\", \"part of\", \"Togo\", \"LOC\"],\n    [\"Lom\u00e9\", \"LOC\", \"capital of\", \"Togo\", \"LOC\"],\n    [\"Ghana\", \"LOC\", \"shares border with\", \"Togo\", \"LOC\"],\n    [\"Togoland\", \"LOC\", \"former colony of\", \"Germany\", \"LOC\"],\n    [\"League of Nations\", \"ORG\", \"divided\", \"Togoland\", \"LOC\"],\n    [\"United Nations\", \"ORG\", \"took over\", \"Togoland mandates\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 12,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Locations in Australia and New Zealand",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Ghana\", \"LOC\", \"located in the administrative territorial entity\", \"Africa\", \"LOC\"],\n    [\"Togo\", \"LOC\", \"located in the administrative territorial entity\", \"Africa\", \"LOC\"],\n    [\"Ewe people\", \"MISC\", \"located in\", \"Togoland\", \"LOC\"],\n    [\"Kwame Nkrumah\", \"PER\", \"leader of\", \"Gold Coast independence movement\", \"MISC\"],\n    [\"Gold Coast\", \"LOC\", \"part of\", \"Ghana\", \"LOC\"],\n    [\"Togoland\", \"LOC\", \"divided by\", \"League of Nations\", \"ORG\"],\n    [\"United Nations\", \"ORG\", \"took over\", \"Togoland mandates\", \"MISC\"],\n    [\"Ghana\", \"LOC\", \"shares border with\", \"Togo\", \"LOC\"],\n    [\"Lom\u00e9\", \"LOC\", \"capital of\", \"Togo\", \"LOC\"],\n    [\"Ewe people\", \"MISC\", \"inhabits\", \"Ghana\", \"LOC\"],\n    [\"Ewe people\", \"MISC\", \"inhabits\", \"Togo\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 1,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Ghana\", \"LOC\", \"located in the administrative territorial entity\", \"Africa\", \"LOC\"],\n    [\"Togo\", \"LOC\", \"located in the administrative territorial entity\", \"Africa\", \"LOC\"],\n    [\"Ewe people\", \"MISC\", \"located in\", \"Ghana\", \"LOC\"],\n    [\"Ewe people\", \"MISC\", \"located in\", \"Togo\", \"LOC\"],\n    [\"Kwame Nkrumah\", \"PER\", \"leader of\", \"Gold Coast independence movement\", \"MISC\"],\n    [\"Gold Coast\", \"LOC\", \"part of\", \"Ghana\", \"LOC\"],\n    [\"British Togoland\", \"LOC\", \"part of\", \"Ghana\", \"LOC\"],\n    [\"French Togoland\", \"LOC\", \"part of\", \"Togo\", \"LOC\"],\n    [\"Lom\u00e9\", \"LOC\", \"capital of\", \"Togo\", \"LOC\"],\n    [\"Ghana\", \"LOC\", \"shares border with\", \"Togo\", \"LOC\"],\n    [\"Togoland\", \"LOC\", \"formerly part of\", \"Germany\", \"LOC\"],\n    [\"United Nations\", \"ORG\", \"took over\", \"Togoland mandates\", \"MISC\"],\n    [\"League of Nations\", \"ORG\", \"divided\", \"Togoland\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 17,
+  "FN": 3,
+  "recall": 0.25,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

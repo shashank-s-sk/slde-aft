@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_343",
+ "base_raw": "[\n    [\"Haakon Steen Lie\", \"PER\", \"date of birth\", \"22 September 1905\", \"TIME\"],\n    [\"Haakon Steen Lie\", \"PER\", \"date of death\", \"25 May 2009\", \"TIME\"],\n    [\"Haakon Steen Lie\", \"PER\", \"member of political party\", \"Norwegian Labour Party\", \"ORG\"],\n    [\"Norwegian Labour Party\", \"ORG\", \"country\", \"Norway\", \"LOC\"],\n    [\"Haakon Steen Lie\", \"PER\", \"country of citizenship\", \"Norway\", \"LOC\"],\n    [\"Einar Gerhardsen\", \"PER\", \"member of political party\", \"Norwegian Labour Party\", \"ORG\"],\n    [\"Haakon Steen Lie\", \"PER\", \"author\", \"Slik jeg ser det n\u00e5\", \"MISC\"],\n    [\"Norwegian Labour Party\", \"ORG\", \"founded by\", \"None\", \"MISC\"],\n    [\"Haakon Steen Lie\", \"PER\", \"position held\", \"party secretary\", \"MISC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 5,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 9,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Haakon Steen Lie\", \"PER\", \"date of birth\", \"22 September 1905\", \"TIME\"],\n    [\"Haakon Steen Lie\", \"PER\", \"date of death\", \"25 May 2009\", \"TIME\"],\n    [\"Haakon Steen Lie\", \"PER\", \"member of political party\", \"Norwegian Labour Party\", \"ORG\"],\n    [\"Norwegian Labour Party\", \"ORG\", \"country\", \"Norway\", \"LOC\"],\n    [\"Haakon Steen Lie\", \"PER\", \"country of citizenship\", \"Norway\", \"LOC\"],\n    [\"Einar Gerhardsen\", \"PER\", \"member of political party\", \"Norwegian Labour Party\", \"ORG\"],\n    [\"Haakon Steen Lie\", \"PER\", \"author\", \"Slik jeg ser det n\u00e5\", \"MISC\"],\n    [\"Norway\", \"LOC\", \"located in\", \"Europe\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Haakon Steen Lie\", \"PER\", \"date of birth\", \"22 September 1905\", \"TIME\"],\n    [\"Haakon Steen Lie\", \"PER\", \"date of death\", \"25 May 2009\", \"TIME\"],\n    [\"Haakon Steen Lie\", \"PER\", \"member of political party\", \"Norwegian Labour Party\", \"ORG\"],\n    [\"Norwegian Labour Party\", \"ORG\", \"country\", \"Norway\", \"LOC\"],\n    [\"Haakon Steen Lie\", \"PER\", \"country of citizenship\", \"Norway\", \"LOC\"],\n    [\"Einar Gerhardsen\", \"PER\", \"member of political party\", \"Norwegian Labour Party\", \"ORG\"],\n    [\"Haakon Steen Lie\", \"PER\", \"author\", \"Slik jeg ser det n\u00e5\", \"MISC\"],\n    [\"Norway\", \"LOC\", \"capital\", \"Oslo\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 4,
+  "FP": 6,
+  "FN": 3,
+  "recall": 0.5714285714285714,
+  "n_extracted": 10,
+  "judge_parse_ok": true
+ }
+}

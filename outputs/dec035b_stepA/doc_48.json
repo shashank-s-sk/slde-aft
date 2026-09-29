@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_48",
+ "base_raw": "[\n    [\"Yemelyan Pugachev\", \"PER\", \"leader of\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Pugachev's Rebellion\", \"MISC\", \"location\", \"Russian Empire\", \"LOC\"],\n    [\"Catherine II\", \"PER\", \"ruler of\", \"Russian Empire\", \"LOC\"],\n    [\"Yaik Cossacks\", \"ORG\", \"involved in\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Yemelyan Pugachev\", \"PER\", \"former occupation\", \"lieutenant of the Imperial Russian Army\", \"MISC\"],\n    [\"Pugachev's Rebellion\", \"MISC\", \"resulted in\", \"end of serfdom\", \"MISC\"],\n    [\"Tsar Peter III\", \"PER\", \"mentioned in\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Old Believers priesthood\", \"ORG\", \"supported\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Volga River\", \"LOC\", \"boundary of\", \"Pugachev's Rebellion territory\", \"MISC\"],\n    [\"Urals\", \"LOC\", \"boundary of\", \"Pugachev's Rebellion territory\", \"MISC\"],\n    [\"Battle of Kazan\", \"MISC\", \"part of\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"General Michelsohn\", \"PER\", \"defeated\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Tsaritsyn\", \"LOC\", \"location of\", \"Pugachev's defeat\", \"MISC\"],\n    [\"General Peter Panin\", \"PER\", \"carried out\", \"reprisals against rebel areas\", \"MISC\"],\n    [\"Pushkin\", \"PER\", \"author of\", \"The Captain's Daughter\", \"MISC\"],\n    [\"The Captain's Daughter\", \"MISC\", \"about\", \"Pugachev's Rebellion\", \"MISC\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 18,
+  "recall": 0.05263157894736842,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Yemelyan Pugachev\", \"PER\", \"leader of\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Pugachev's Rebellion\", \"MISC\", \"location\", \"Russian Empire\", \"LOC\"],\n    [\"Catherine II\", \"PER\", \"ruler of\", \"Russian Empire\", \"LOC\"],\n    [\"Yaik Cossacks\", \"ORG\", \"involved in\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Yemelyan Pugachev\", \"PER\", \"member of\", \"Imperial Russian Army\", \"ORG\"],\n    [\"Pugachev's Rebellion\", \"MISC\", \"started in\", \"1773\", \"TIME\"],\n    [\"Pugachev's Rebellion\", \"MISC\", \"ended in\", \"1775\", \"TIME\"],\n    [\"Tsar Peter III\", \"PER\", \"mentioned in\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Old Believers priesthood\", \"ORG\", \"supported\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Volga River\", \"LOC\", \"near\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Urals\", \"LOC\", \"near\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Battle of Kazan\", \"MISC\", \"part of\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"General Michelsohn\", \"PER\", \"defeated\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Tsaritsyn\", \"LOC\", \"location of\", \"Battle of Kazan\", \"MISC\"],\n    [\"General Peter Panin\", \"PER\", \"carried out reprisals against\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Pushkin\", \"PER\", \"author of\", \"The Captain's Daughter\", \"MISC\"],\n    [\"The Captain's Daughter\", \"MISC\", \"about\", \"Pugachev's Rebellion\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 14,
+  "FP": 21,
+  "FN": 7,
+  "recall": 0.6666666666666666,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Yemelyan Pugachev\", \"PER\", \"leader of\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Pugachev's Rebellion\", \"MISC\", \"location\", \"Russian Empire\", \"LOC\"],\n    [\"Catherine II\", \"PER\", \"ruler of\", \"Russian Empire\", \"LOC\"],\n    [\"Yaik Cossacks\", \"ORG\", \"involved in\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Yemelyan Pugachev\", \"PER\", \"former occupation\", \"lieutenant of the Imperial Russian Army\", \"MISC\"],\n    [\"Pugachev's Rebellion\", \"MISC\", \"resulted in\", \"end of serfdom\", \"MISC\"],\n    [\"Tsar Peter III\", \"PER\", \"mentioned in\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Old Believers priesthood\", \"ORG\", \"supported\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Volga River\", \"LOC\", \"boundary of\", \"Pugachev's Rebellion territory\", \"MISC\"],\n    [\"Urals\", \"LOC\", \"boundary of\", \"Pugachev's Rebellion territory\", \"MISC\"],\n    [\"Battle of Kazan\", \"MISC\", \"part of\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"General Michelsohn\", \"PER\", \"defeated\", \"Pugachev's Rebellion\", \"MISC\"],\n    [\"Tsaritsyn\", \"LOC\", \"location of\", \"Pugachev's defeat\", \"MISC\"],\n    [\"General Peter Panin\", \"PER\", \"carried out\", \"reprisals against rebel areas\", \"MISC\"],\n    [\"Pushkin\", \"PER\", \"author of\", \"The Captain's Daughter\", \"MISC\"],\n    [\"The Captain's Daughter\", \"MISC\", \"about\", \"Pugachev's Rebellion\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 3,
+  "FP": 13,
+  "FN": 18,
+  "recall": 0.14285714285714285,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_170",
+ "base_raw": "[\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Gold Coast\", \"LOC\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Queensland\", \"LOC\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Milton Courts\", \"LOC\", \"located in\", \"Brisbane\", \"LOC\"],\n    [\"Queensland Tennis Centre\", \"LOC\", \"located in\", \"Tennyson\", \"LOC\"],\n    [\"Queensland Tennis Centre\", \"LOC\", \"located in\", \"Brisbane\", \"LOC\"],\n    [\"Royal Pines tennis centre\", \"LOC\", \"located in\", \"Queensland\", \"LOC\"],\n    [\"Tennis Asia\", \"ORG\", \"country of origin\", \"Hong Kong\", \"LOC\"],\n    [\"Pat Cash\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Chris Steele\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Jeff Schneider\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Tennis Blue\", \"ORG\", \"country of origin\", \"Australia\", \"LOC\"],\n    [\"Australia Tennis Academy\", \"ORG\", \"country of origin\", \"Australia\", \"LOC\"],\n    [\"Activa Tennis Academy Australia\", \"ORG\", \"country of origin\", \"Australia\", \"LOC\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"owned by\", \"Tennis Asia\", \"ORG\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"leased to\", \"Tennis Blue\", \"ORG\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"leased to\", \"Australia Tennis Academy\", \"ORG\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"leased to\", \"Activa Tennis Academy Australia\", \"ORG\"],\n    [\"Pat Cash\", \"PER\", \"sold interest in\", \"Hope Island Resort Tennis Centre\", \"LOC\"],\n    [\"Chris Steele\", \"PER\", \"decided not to renew relationship with\", \"Pat Cash\", \"PER\"],\n    [\"Jeff Schneider\", \"PER\", \"head coach of\", \"Activa Tennis Academy Australia\", \"ORG\"],\n    [\"Jeff Schneider\", \"PER\", \"company director of\", \"Activa Tennis Academy Australia\", \"ORG\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 17,
+  "FN": 22,
+  "recall": 0.18518518518518517,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Locations",
+  "Locations",
+  "Locations in Australia and New Zealand",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Gold Coast\", \"LOC\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Queensland\", \"LOC\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Milton Courts\", \"LOC\", \"located in\", \"Brisbane\", \"LOC\"],\n    [\"Queensland Tennis Centre\", \"LOC\", \"located in\", \"Tennyson\", \"LOC\"],\n    [\"Queensland Tennis Centre\", \"LOC\", \"located in\", \"Brisbane\", \"LOC\"],\n    [\"Royal Pines tennis centre\", \"LOC\", \"located in\", \"Gold Coast\", \"LOC\"],\n    [\"Tennis Asia\", \"ORG\", \"country of origin\", \"Hong Kong\", \"LOC\"],\n    [\"Pat Cash\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Chris Steele\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Jeff Schneider\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Tennis Blue\", \"ORG\", \"country of origin\", \"Australia\", \"LOC\"],\n    [\"Australia Tennis Academy\", \"ORG\", \"country of origin\", \"Australia\", \"LOC\"],\n    [\"Activa Tennis Academy Australia\", \"ORG\", \"country of origin\", \"Australia\", \"LOC\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"owned by\", \"Tennis Asia\", \"ORG\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"leased to\", \"Tennis Blue\", \"ORG\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"leased to\", \"Australia Tennis Academy\", \"ORG\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"leased to\", \"Activa Tennis Academy Australia\", \"ORG\"],\n    [\"Pat Cash\", \"PER\", \"position held\", \"owner\", \"MISC\"],\n    [\"Chris Steele\", \"PER\", \"position held\", \"lease holder\", \"MISC\"],\n    [\"Jeff Schneider\", \"PER\", \"position held\", \"company director\", \"MISC\"],\n    [\"Jeff Schneider\", \"PER\", \"position held\", \"head coach\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 24,
+  "FN": 24,
+  "recall": 0.1111111111111111,
+  "n_extracted": 27,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Gold Coast\", \"LOC\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Queensland\", \"LOC\"],\n    [\"Hope Island Resort Tennis Centre\", \"LOC\", \"located in\", \"Australia\", \"LOC\"],\n    [\"Milton Courts\", \"LOC\", \"located in\", \"Brisbane\", \"LOC\"],\n    [\"Queensland Tennis Centre\", \"LOC\", \"located in\", \"Tennyson\", \"LOC\"],\n    [\"Queensland Tennis Centre\", \"LOC\", \"located in\", \"Brisbane\", \"LOC\"],\n    [\"Royal Pines tennis centre\", \"LOC\", \"located in\", \"Queensland\", \"LOC\"],\n    [\"Tennis Asia\", \"ORG\", \"country of origin\", \"Hong Kong\", \"LOC\"],\n    [\"Pat Cash\", \"PER\", \"country of citizenship\", \"Australia\", \"LOC\"],\n    [\"Chris Steele\", \"PER\", \"associated with\", \"Hope Island Resort Tennis Centre\", \"LOC\"],\n    [\"Tennis Blue\", \"ORG\", \"leased\", \"Hope Island Resort Tennis Centre\", \"LOC\"],\n    [\"Australia Tennis Academy\", \"ORG\", \"leased\", \"Hope Island Resort Tennis Centre\", \"LOC\"],\n    [\"Activa Tennis Academy Australia\", \"ORG\", \"leased\", \"Hope Island Resort Tennis Centre\", \"LOC\"],\n    [\"Jeff Schneider\", \"PER\", \"head coach of\", \"Activa Tennis Academy Australia\", \"ORG\"],\n    [\"Jeff Schneider\", \"PER\", \"company director of\", \"Activa Tennis Academy Australia\", \"ORG\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 19,
+  "FN": 24,
+  "recall": 0.2,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ }
+}

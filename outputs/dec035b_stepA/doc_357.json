@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_357",
+ "base_raw": "[\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"nationality\", \"Argentinian\", \"MISC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"brother\", \"Mario\", \"PER\"],\n    [\"Grupo Plaza\", \"ORG\", \"founder\", \"Sergio Claudio Cirigliano\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"friend\", \"Carlos Menem\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"friend\", \"Nestor Kirchner\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"friend\", \"Cristina Fernandez de Kirchner\", \"PER\"],\n    [\"Ricardo Jaime\", \"PER\", \"position held\", \"Secretary of Transportation\", \"MISC\"],\n    [\"Juan Pablo Schiavi\", \"PER\", \"position held\", \"Secretary of Transportation\", \"MISC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"charged with\", \"corruption\", \"MISC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"charged with\", \"fraudulent administration\", \"MISC\"],\n    [\"Mario\", \"PER\", \"charged with\", \"corruption\", \"MISC\"],\n    [\"Mario\", \"PER\", \"charged with\", \"fraudulent administration\", \"MISC\"],\n    [\"La Naci\u00f3n\", \"ORG\", \"described\", \"Sergio Claudio Cirigliano\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"associated with\", \"Kirchner family\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 12,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"brother\", \"Mario\", \"PER\"],\n    [\"Mario\", \"PER\", \"brother\", \"Sergio Claudio Cirigliano\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"friend\", \"Carlos Menem\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"friend\", \"Nestor Kirchner\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"friend\", \"Cristina Fernandez de Kirchner\", \"PER\"],\n    [\"Grupo Plaza\", \"ORG\", \"founder\", \"Sergio Claudio Cirigliano\", \"PER\"],\n    [\"Grupo Plaza\", \"ORG\", \"founder\", \"Mario\", \"PER\"],\n    [\"Ricardo Jaime\", \"PER\", \"position held\", \"Secretary of Transportation\", \"MISC\"],\n    [\"Juan Pablo Schiavi\", \"PER\", \"position held\", \"Secretary of Transportation\", \"MISC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"member of\", \"Grupo Plaza\", \"ORG\"],\n    [\"Mario\", \"PER\", \"member of\", \"Grupo Plaza\", \"ORG\"],\n    [\"Carlos Menem\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Nestor Kirchner\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Cristina Fernandez de Kirchner\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"charged with\", \"corruption\", \"MISC\"],\n    [\"Mario\", \"PER\", \"charged with\", \"corruption\", \"MISC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"charged with\", \"fraudulent administration\", \"MISC\"],\n    [\"Mario\", \"PER\", \"charged with\", \"fraudulent administration\", \"MISC\"],\n    [\"La Naci\u00f3n\", \"ORG\", \"described\", \"Sergio Claudio Cirigliano\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"associated with\", \"Kirchner family\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 19,
+  "FN": 17,
+  "recall": 0.15,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"brother\", \"Mario\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"employer\", \"Grupo Plaza\", \"ORG\"],\n    [\"Mario\", \"PER\", \"country of citizenship\", \"Argentina\", \"LOC\"],\n    [\"Mario\", \"PER\", \"brother\", \"Sergio Claudio Cirigliano\", \"PER\"],\n    [\"Mario\", \"PER\", \"employer\", \"Grupo Plaza\", \"ORG\"],\n    [\"Grupo Plaza\", \"ORG\", \"location\", \"Buenos Aires\", \"LOC\"],\n    [\"Grupo Plaza\", \"ORG\", \"country\", \"Argentina\", \"LOC\"],\n    [\"Carlos Menem\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Nestor Kirchner\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Cristina Fernandez de Kirchner\", \"PER\", \"position held\", \"President\", \"MISC\"],\n    [\"Ricardo Jaime\", \"PER\", \"position held\", \"Secretary of Transportation\", \"MISC\"],\n    [\"Juan Pablo Schiavi\", \"PER\", \"position held\", \"Secretary of Transportation\", \"MISC\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"accused of bribing\", \"Ricardo Jaime\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"accused of bribing\", \"Juan Pablo Schiavi\", \"PER\"],\n    [\"La Naci\u00f3n\", \"ORG\", \"description of\", \"Sergio Claudio Cirigliano\", \"PER\"],\n    [\"Sergio Claudio Cirigliano\", \"PER\", \"member of\", \"Kirchner family\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 22,
+  "FN": 17,
+  "recall": 0.2608695652173913,
+  "n_extracted": 28,
+  "judge_parse_ok": true
+ }
+}

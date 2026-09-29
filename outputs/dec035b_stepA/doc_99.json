@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_99",
+ "base_raw": "[\n    [\"ARK: Survival Evolved\", \"MISC\", \"developer\", \"Studio Wildcard\", \"ORG\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"developer\", \"Instinct Games\", \"ORG\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"developer\", \"Virtual Basement\", \"ORG\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"OS X\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Linux\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Android\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"iOS\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Dododex\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"Survival of the Fittest\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"Instinct Games\", \"ORG\", \"location\", \"Egypt\", \"LOC\"],\n    [\"The Center\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Primitive Plus\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Scorched Earth\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Ragnarok\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Aberration\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"ARK Park\", \"MISC\", \"developer\", \"Snail Games\", \"ORG\"],\n    [\"ARK Park\", \"MISC\", \"release year\", \"2018\", \"TIME\"],\n    [\"PixARK\", \"MISC\", \"developer\", \"Snail Games\", \"ORG\"],\n    [\"PixARK\", \"MISC\", \"release year\", \"2018\", \"TIME\"],\n    [\"Snail Games\", \"ORG\", \"location\", \"MISC\", \"MISC\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 16,
+  "FN": 1,
+  "recall": 0.9,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"ARK : Survival Evolved\", \"MISC\", \"developer\", \"Studio Wildcard\", \"ORG\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"developer\", \"Instinct Games\", \"ORG\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"developer\", \"Virtual Basement\", \"ORG\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"platform\", \"OS X\", \"MISC\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"platform\", \"Linux\", \"MISC\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"platform\", \"Android\", \"MISC\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"platform\", \"iOS\", \"MISC\"],\n    [\"ARK : Survival Evolved\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Dododex\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"Survival of the Fittest\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"Instinct Games\", \"ORG\", \"location\", \"Egypt\", \"LOC\"],\n    [\"The Center\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Primitive Plus\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Scorched Earth\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Ragnarok\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Aberration\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"ARK Park\", \"MISC\", \"developer\", \"Snail Games\", \"ORG\"],\n    [\"ARK Park\", \"MISC\", \"release year\", \"2018\", \"TIME\"],\n    [\"PixARK\", \"MISC\", \"developer\", \"Snail Games\", \"ORG\"],\n    [\"PixARK\", \"MISC\", \"release year\", \"2018\", \"TIME\"]\n]",
+ "kb_orig": {
+  "TP": 18,
+  "FP": 20,
+  "FN": 1,
+  "recall": 0.9473684210526315,
+  "n_extracted": 37,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"ARK: Survival Evolved\", \"MISC\", \"developer\", \"Studio Wildcard\", \"ORG\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"developer\", \"Instinct Games\", \"ORG\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"developer\", \"Virtual Basement\", \"ORG\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"PlayStation 4\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Xbox One\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Microsoft Windows\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"OS X\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Linux\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Android\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"iOS\", \"MISC\"],\n    [\"ARK: Survival Evolved\", \"MISC\", \"platform\", \"Nintendo Switch\", \"MISC\"],\n    [\"Instinct Games\", \"ORG\", \"location\", \"Egypt\", \"LOC\"],\n    [\"Dododex\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"Survival of the Fittest\", \"MISC\", \"release year\", \"2017\", \"TIME\"],\n    [\"The Center\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Primitive Plus\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Scorched Earth\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Ragnarok\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"Aberration\", \"MISC\", \"type\", \"expansion\", \"MISC\"],\n    [\"ARK Park\", \"MISC\", \"developer\", \"Snail Games\", \"ORG\"],\n    [\"ARK Park\", \"MISC\", \"release year\", \"2018\", \"TIME\"],\n    [\"PixARK\", \"MISC\", \"developer\", \"Snail Games\", \"ORG\"],\n    [\"PixARK\", \"MISC\", \"release year\", \"2018\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 9,
+  "FP": 16,
+  "FN": 1,
+  "recall": 0.9,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

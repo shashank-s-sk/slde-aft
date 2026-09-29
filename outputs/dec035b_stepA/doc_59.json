@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_59",
+ "base_raw": "[\n    [\"Leslie Mynard\", \"PER\", \"date of birth\", \"19 December 1925\", \"TIME\"],\n    [\"Leslie Mynard\", \"PER\", \"date of death\", \"25 July 2008\", \"TIME\"],\n    [\"Leslie Mynard\", \"PER\", \"country\", \"England\", \"LOC\"],\n    [\"Wolverhampton Wanderers\", \"ORG\", \"league\", \"Football League\", \"MISC\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Wolverhampton Wanderers\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Derby County\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Scunthorpe United\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Worcester City\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Halesowen Town\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Bromsgrove Rovers\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Kidderminster Harriers\", \"ORG\"],\n    [\"Bewdley\", \"ORG\", \"league\", \"non-league\", \"MISC\"],\n    [\"Scunthorpe and Lindsey United\", \"ORG\", \"division\", \"Third Division\", \"MISC\"]\n]",
+ "base": {
+  "TP": 10,
+  "FP": 3,
+  "FN": 4,
+  "recall": 0.7142857142857143,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Leslie Mynard\", \"PER\", \"date of birth\", \"19 December 1925\", \"TIME\"],\n    [\"Leslie Mynard\", \"PER\", \"date of death\", \"25 July 2008\", \"TIME\"],\n    [\"Leslie Mynard\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"Wolverhampton Wanderers\", \"ORG\", \"located in\", \"England\", \"LOC\"],\n    [\"Derby County\", \"ORG\", \"located in\", \"England\", \"LOC\"],\n    [\"Scunthorpe United\", \"ORG\", \"located in\", \"England\", \"LOC\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Wolverhampton Wanderers\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Derby County\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Scunthorpe United\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Worcester City\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Halesowen Town\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Bromsgrove Rovers\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Kidderminster Harriers\", \"ORG\"],\n    [\"Bewdley\", \"ORG\", \"located in\", \"England\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 10,
+  "FP": 8,
+  "FN": 5,
+  "recall": 0.6666666666666666,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations"
+ ],
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 8,
+  "FN": 5,
+  "recall": 0.6666666666666666,
+  "n_extracted": 18,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Leslie Mynard\", \"PER\", \"date of birth\", \"19 December 1925\", \"TIME\"],\n    [\"Leslie Mynard\", \"PER\", \"date of death\", \"25 July 2008\", \"TIME\"],\n    [\"Leslie Mynard\", \"PER\", \"country of citizenship\", \"England\", \"LOC\"],\n    [\"Wolverhampton Wanderers\", \"ORG\", \"located in\", \"England\", \"LOC\"],\n    [\"Derby County\", \"ORG\", \"located in\", \"England\", \"LOC\"],\n    [\"Scunthorpe United\", \"ORG\", \"located in\", \"England\", \"LOC\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Wolverhampton Wanderers\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Derby County\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Scunthorpe United\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Worcester City\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Halesowen Town\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Bromsgrove Rovers\", \"ORG\"],\n    [\"Leslie Mynard\", \"PER\", \"member of sports team\", \"Kidderminster Harriers\", \"ORG\"],\n    [\"Bewdley\", \"ORG\", \"located in\", \"England\", \"LOC\"]\n]"
+}

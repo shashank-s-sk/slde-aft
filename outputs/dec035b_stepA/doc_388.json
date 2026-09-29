@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_388",
+ "base_raw": "[\n    [\"Khan Tervel\", \"PER\", \"reigned for\", \"21 years\", \"NUM\"],\n    [\"Khan Tervel\", \"PER\", \"member of\", \"Dulo clan\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"defeated\", \"Arabs\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"title\", \"Caesar\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"grandfather\", \"Khan Kubrat\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"predecessor\", \"Asparukh\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"son of\", \"Asparukh\", \"PER\"],\n    [\"Asparukh\", \"PER\", \"died in battle against\", \"Khazars\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"Emperor\", \"Bulgaria\", \"LOC\"],\n    [\"Khan Tervel\", \"PER\", \"defended\", \"Constantinople\", \"LOC\"],\n    [\"Justinian II\", \"PER\", \"gave title to\", \"Khan Tervel\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"date of reign\", \"695-715\", \"TIME\"],\n    [\"Khan Tervel\", \"PER\", \"date of reign\", \"701-718\", \"TIME\"],\n    [\"Khan Tervel\", \"PER\", \"date of reign\", \"700-721\", \"TIME\"]\n]",
+ "base": {
+  "TP": 1,
+  "FP": 13,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "European Countries",
+  "Locations"
+ ],
+ "kb_orig_raw": "[\n    [\"Khan Tervel\", \"PER\", \"reigned\", \"21 years\", \"NUM\"],\n    [\"Khan Tervel\", \"PER\", \"member of\", \"Dulo clan\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"defeated\", \"Arabs\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"title\", \"Caesar\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"grandfather\", \"Khan Kubrat\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"predecessor\", \"Asparukh\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"son of\", \"Asparukh\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"place of reign\", \"First Bulgarian Empire\", \"LOC\"],\n    [\"Khan Tervel\", \"PER\", \"time of reign\", \"8th century\", \"TIME\"],\n    [\"Khan Tervel\", \"PER\", \"religion\", \"Christian\", \"MISC\"],\n    [\"Justinian II\", \"PER\", \"title given to\", \"Khan Tervel\", \"PER\"],\n    [\"Asparukh\", \"PER\", \"died in battle against\", \"Khazars\", \"MISC\"],\n    [\"Byzantine sources\", \"MISC\", \"mentions\", \"Khan Tervel\", \"PER\"],\n    [\"Imennik\", \"MISC\", \"testimony about\", \"Khan Tervel\", \"PER\"],\n    [\"Moskov\", \"PER\", \"developed chronology about\", \"Khan Tervel\", \"PER\"]\n]",
+ "kb_orig": {
+  "TP": 3,
+  "FP": 19,
+  "FN": 6,
+  "recall": 0.3333333333333333,
+  "n_extracted": 22,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Khan Tervel\", \"PER\", \"reigned for\", \"21 years\", \"NUM\"],\n    [\"Khan Tervel\", \"PER\", \"member of\", \"Dulo clan\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"defeated\", \"Arabs\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"title\", \"Caesar\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"grandfather\", \"Khan Kubrat\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"predecessor\", \"Asparukh\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"son of\", \"Asparukh\", \"PER\"],\n    [\"Asparukh\", \"PER\", \"died in battle against\", \"Khazars\", \"MISC\"],\n    [\"Khan Tervel\", \"PER\", \"Emperor\", \"Bulgaria\", \"LOC\"],\n    [\"Justinian II\", \"PER\", \"named\", \"Khan Tervel\", \"PER\"],\n    [\"Khan Tervel\", \"PER\", \"played important role in\", \"Siege of Constantinople\", \"MISC\"],\n    [\"Tervel\", \"PER\", \"Bulgarian Saint\", \"\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 1,
+  "FP": 16,
+  "FN": 6,
+  "recall": 0.14285714285714285,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

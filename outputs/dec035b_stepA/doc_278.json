@@ -1,0 +1,41 @@
+{
+ "doc_id": "doc_278",
+ "base_raw": "[\n    [\"Ignazio Cerio\", \"PER\", \"father\", \"Ignazio Cerio's father\", \"PER\"],\n    [\"Ignazio Cerio\", \"PER\", \"place of work\", \"Capri\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"profession\", \"medical doctor\", \"MISC\"],\n    [\"Ignazio Cerio\", \"PER\", \"notable work\", \"disutilit\u00e0\", \"MISC\"],\n    [\"Pozzuoli\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Edwin Cerio\", \"PER\", \"parent\", \"Ignazio Cerio\", \"PER\"],\n    [\"Centro Caprense Ignazio Cerio\", \"ORG\", \"founded by\", \"Ignazio Cerio\", \"PER\"],\n    [\"Palazzo Cerio\", \"LOC\", \"contains administrative territorial entity\", \"Ignazio Cerio museum\", \"MISC\"],\n    [\"Ignazio Cerio museum\", \"MISC\", \"location\", \"Palazzo Cerio\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"date of birth\", \"1841\", \"TIME\"],\n    [\"Ignazio Cerio\", \"PER\", \"date of death\", \"1921\", \"TIME\"],\n    [\"Ignazio Cerio\", \"PER\", \"country of citizenship\", \"Italy\", \"LOC\"]\n]",
+ "base": {
+  "TP": 4,
+  "FP": 8,
+  "FN": 5,
+  "recall": 0.4444444444444444,
+  "n_extracted": 12,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Ignazio Cerio\", \"PER\", \"place of birth\", \"Capri\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"date of birth\", \"1841\", \"TIME\"],\n    [\"Ignazio Cerio\", \"PER\", \"date of death\", \"1921\", \"TIME\"],\n    [\"Ignazio Cerio\", \"PER\", \"father\", \"unknown\", \"PER\"],\n    [\"Ignazio Cerio\", \"PER\", \"child\", \"Edwin Cerio\", \"PER\"],\n    [\"Edwin Cerio\", \"PER\", \"author\", \"La vita a la figura de un uomo\", \"MISC\"],\n    [\"Ignazio Cerio\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Centro Caprense Ignazio Cerio\", \"ORG\", \"located in\", \"Capri\", \"LOC\"],\n    [\"Palazzo Cerio\", \"LOC\", \"located in\", \"Capri\", \"LOC\"],\n    [\"Ignazio Cerio museum\", \"MISC\", \"located in\", \"Palazzo Cerio\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"position held\", \"medical doctor\", \"MISC\"],\n    [\"Pozzuoli\", \"LOC\", \"located in\", \"Italy\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"country of citizenship\", \"Italy\", \"LOC\"],\n    [\"Capri\", \"LOC\", \"part of\", \"Italy\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 6,
+  "FP": 17,
+  "FN": 5,
+  "recall": 0.5454545454545454,
+  "n_extracted": 23,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations"
+ ],
+ "kb_dedup_raw": "[\n    [\"Ignazio Cerio\", \"PER\", \"place of birth\", \"Capri\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"father\", \"Ignazio Cerio's father\", \"PER\"],\n    [\"Ignazio Cerio's father\", \"PER\", \"country of citizenship\", \"Italy\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Ignazio Cerio\", \"PER\", \"employer\", \"unknown\", \"MISC\"],\n    [\"Pozzuoli\", \"LOC\", \"located in the administrative territorial entity\", \"Italy\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"author\", \"no\", \"MISC\"],\n    [\"Edwin Cerio\", \"PER\", \"parent\", \"Ignazio Cerio\", \"PER\"],\n    [\"Centro Caprense Ignazio Cerio\", \"ORG\", \"located in\", \"Capri\", \"LOC\"],\n    [\"Palazzo Cerio\", \"LOC\", \"located in\", \"Capri\", \"LOC\"],\n    [\"Ignazio Cerio museum\", \"LOC\", \"part of\", \"Palazzo Cerio\", \"LOC\"],\n    [\"Ignazio Cerio\", \"PER\", \"date of birth\", \"1841\", \"TIME\"],\n    [\"Ignazio Cerio\", \"PER\", \"date of death\", \"1921\", \"TIME\"],\n    [\"Ignazio Cerio\", \"PER\", \"country of citizenship\", \"Italy\", \"LOC\"],\n    [\"Capri\", \"LOC\", \"country\", \"Italy\", \"LOC\"]\n]",
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 16,
+  "FN": 4,
+  "recall": 0.5555555555555556,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ }
+}

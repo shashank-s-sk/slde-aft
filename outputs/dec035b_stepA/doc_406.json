@@ -1,0 +1,39 @@
+{
+ "doc_id": "doc_406",
+ "base_raw": "[\n    [\"James William Murphy\", \"PER\", \"place of birth\", \"Platteville\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"educated at\", \"University of Michigan Law School\", \"ORG\"],\n    [\"James William Murphy\", \"PER\", \"educated at\", \"State Normal School\", \"ORG\"],\n    [\"James William Murphy\", \"PER\", \"position held\", \"district attorney\", \"MISC\"],\n    [\"James William Murphy\", \"PER\", \"position held\", \"mayor\", \"MISC\"],\n    [\"Platteville\", \"LOC\", \"located in the administrative territorial entity\", \"Wisconsin\", \"LOC\"],\n    [\"Grant County\", \"LOC\", \"located in the administrative territorial entity\", \"Wisconsin\", \"LOC\"],\n    [\"Joseph W. Babcock\", \"PER\", \"member of political party\", \"Democrat\", \"MISC\"],\n    [\"Arthur W. Kopp\", \"PER\", \"member of political party\", \"Democrat\", \"MISC\"],\n    [\"James William Murphy\", \"PER\", \"date of death\", \"July 11, 1927\", \"TIME\"],\n    [\"Rochester\", \"LOC\", \"located in the administrative territorial entity\", \"Minnesota\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"University of Wisconsin \u2013 Platteville\", \"ORG\", \"located in\", \"Platteville\", \"LOC\"]\n]",
+ "base": {
+  "TP": 6,
+  "FP": 7,
+  "FN": 21,
+  "recall": 0.2222222222222222,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"James William Murphy\", \"PER\", \"date of birth\", \"April 17, 1858\", \"TIME\"],\n    [\"James William Murphy\", \"PER\", \"date of death\", \"July 11, 1927\", \"TIME\"],\n    [\"James William Murphy\", \"PER\", \"place of birth\", \"Platteville, Wisconsin\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"educated at\", \"University of Michigan Law School\", \"ORG\"],\n    [\"James William Murphy\", \"PER\", \"educated at\", \"State Normal School\", \"ORG\"],\n    [\"Platteville, Wisconsin\", \"LOC\", \"located in the administrative territorial entity\", \"Wisconsin\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"residence\", \"Platteville, Wisconsin\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Rochester, Minnesota\", \"LOC\", \"located in the administrative territorial entity\", \"Minnesota\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"place of death\", \"Rochester, Minnesota\", \"LOC\"],\n    [\"Grant County, Wisconsin\", \"LOC\", \"located in the administrative territorial entity\", \"Wisconsin\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"position held\", \"district attorney\", \"MISC\"],\n    [\"James William Murphy\", \"PER\", \"position held\", \"mayor\", \"MISC\"],\n    [\"University of Wisconsin \u2013 Platteville\", \"ORG\", \"located in\", \"Platteville, Wisconsin\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 8,
+  "FP": 12,
+  "FN": 21,
+  "recall": 0.27586206896551724,
+  "n_extracted": 21,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_dedup": {
+  "TP": 8,
+  "FP": 12,
+  "FN": 21,
+  "recall": 0.27586206896551724,
+  "n_extracted": 21,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"James William Murphy\", \"PER\", \"date of birth\", \"April 17, 1858\", \"TIME\"],\n    [\"James William Murphy\", \"PER\", \"date of death\", \"July 11, 1927\", \"TIME\"],\n    [\"James William Murphy\", \"PER\", \"place of birth\", \"Platteville, Wisconsin\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"educated at\", \"University of Michigan Law School\", \"ORG\"],\n    [\"James William Murphy\", \"PER\", \"educated at\", \"State Normal School\", \"ORG\"],\n    [\"Platteville, Wisconsin\", \"LOC\", \"located in the administrative territorial entity\", \"Wisconsin\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"residence\", \"Platteville, Wisconsin\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"country of citizenship\", \"U.S.\", \"LOC\"],\n    [\"Rochester, Minnesota\", \"LOC\", \"located in the administrative territorial entity\", \"Minnesota\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"place of death\", \"Rochester, Minnesota\", \"LOC\"],\n    [\"Grant County, Wisconsin\", \"LOC\", \"located in the administrative territorial entity\", \"Wisconsin\", \"LOC\"],\n    [\"James William Murphy\", \"PER\", \"position held\", \"district attorney\", \"MISC\"],\n    [\"James William Murphy\", \"PER\", \"position held\", \"mayor\", \"MISC\"],\n    [\"University of Wisconsin \u2013 Platteville\", \"ORG\", \"located in\", \"Platteville, Wisconsin\", \"LOC\"]\n]"
+}

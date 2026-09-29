@@ -1,0 +1,33 @@
+{
+ "doc_id": "doc_347",
+ "base_raw": "[\n    [\"Guy\", \"PER\", \"father-in-law\", \"William Iron Arm\", \"PER\"],\n    [\"Guy\", \"PER\", \"father-in-law\", \"William of the Principate\", \"PER\"],\n    [\"Guy\", \"PER\", \"brother-in-law\", \"Humphrey of Hauteville\", \"PER\"],\n    [\"Guy\", \"PER\", \"son\", \"Guaimar III\", \"PER\"],\n    [\"Guy\", \"PER\", \"son\", \"Gaitelgrima\", \"PER\"],\n    [\"Guy\", \"PER\", \"brother\", \"Guaimar IV of Salerno\", \"PER\"],\n    [\"Guaimar IV of Salerno\", \"PER\", \"brother\", \"Guy\", \"PER\"],\n    [\"Guy\", \"PER\", \"nephew\", \"Gisulf\", \"PER\"],\n    [\"Gisulf\", \"PER\", \"uncle\", \"Guy\", \"PER\"],\n    [\"Guy\", \"PER\", \"nephew-in-law\", \"Robert Guiscard\", \"PER\"],\n    [\"Robert Guiscard\", \"PER\", \"nephew-in-law\", \"Guy\", \"PER\"],\n    [\"Herman\", \"PER\", \"uncle\", \"Guy\", \"PER\"],\n    [\"Guy\", \"PER\", \"place of death\", \"Sorrento\", \"LOC\"],\n    [\"Guy\", \"PER\", \"date of birth\", \"c. 1012\", \"TIME\"],\n    [\"Guy\", \"PER\", \"position held\", \"duke of Sorrento\", \"MISC\"],\n    [\"Sorrento\", \"LOC\", \"duke\", \"Guy\", \"PER\"],\n    [\"Guaimar III\", \"PER\", \"child\", \"Guy\", \"PER\"],\n    [\"Gaitelgrima\", \"PER\", \"child\", \"Guy\", \"PER\"],\n    [\"Guaimar IV of Salerno\", \"PER\", \"child\", \"Gisulf\", \"PER\"],\n    [\"Guy\", \"PER\", \"located in or next to body of water\", \"Southern Italy\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 16,
+  "FN": 6,
+  "recall": 0.45454545454545453,
+  "n_extracted": 20,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [],
+ "kb_orig_raw": "[\n    [\"Guy\", \"PER\", \"father-in-law\", \"William Iron Arm\", \"PER\"],\n    [\"Guy\", \"PER\", \"brother-in-law\", \"Humphrey of Hauteville\", \"PER\"],\n    [\"Guy\", \"PER\", \"son\", \"Guaimar III\", \"PER\"],\n    [\"Guy\", \"PER\", \"son\", \"Gaitelgrima\", \"PER\"],\n    [\"Guy\", \"PER\", \"brother\", \"Guaimar IV of Salerno\", \"PER\"],\n    [\"Guy\", \"PER\", \"nephew\", \"Gisulf\", \"PER\"],\n    [\"Guy\", \"PER\", \"nephew\", \"Herman\", \"PER\"],\n    [\"Guy\", \"PER\", \"nephew-in-law\", \"Robert Guiscard\", \"PER\"],\n    [\"Guaimar IV of Salerno\", \"PER\", \"brother\", \"Guy\", \"PER\"],\n    [\"Gisulf\", \"PER\", \"uncle\", \"Guy\", \"PER\"],\n    [\"Herman\", \"PER\", \"uncle\", \"Guy\", \"PER\"],\n    [\"Robert Guiscard\", \"PER\", \"nephew-in-law\", \"Guy\", \"PER\"],\n    [\"Guy\", \"PER\", \"place of birth\", \"Sorrento\", \"LOC\"],\n    [\"Sorrento\", \"LOC\", \"duke\", \"Guy\", \"PER\"],\n    [\"Guaimar III\", \"PER\", \"child\", \"Guy\", \"PER\"],\n    [\"Gaitelgrima\", \"PER\", \"child\", \"Guy\", \"PER\"],\n    [\"William Iron Arm\", \"PER\", \"father-in-law\", \"Guy\", \"PER\"],\n    [\"Humphrey of Hauteville\", \"PER\", \"brother-in-law\", \"Guy\", \"PER\"],\n    [\"Guy\", \"PER\", \"date of birth\", \"c. 1012\", \"TIME\"],\n    [\"Guy\", \"PER\", \"position held\", \"duke of Sorrento\", \"MISC\"],\n    [\"Guaimar IV of Salerno\", \"PER\", \"father\", \"Gisulf\", \"PER\"],\n    [\"Guy\", \"PER\", \"located in\", \"Southern Italy\", \"LOC\"]\n]",
+ "kb_orig": {
+  "TP": 5,
+  "FP": 25,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 26,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup": {
+  "TP": 5,
+  "FP": 25,
+  "FN": 3,
+  "recall": 0.625,
+  "n_extracted": 26,
+  "judge_parse_ok": true,
+  "identical_prompt": true
+ },
+ "kb_dedup_raw": "[\n    [\"Guy\", \"PER\", \"father-in-law\", \"William Iron Arm\", \"PER\"],\n    [\"Guy\", \"PER\", \"brother-in-law\", \"Humphrey of Hauteville\", \"PER\"],\n    [\"Guy\", \"PER\", \"son\", \"Guaimar III\", \"PER\"],\n    [\"Guy\", \"PER\", \"son\", \"Gaitelgrima\", \"PER\"],\n    [\"Guy\", \"PER\", \"brother\", \"Guaimar IV of Salerno\", \"PER\"],\n    [\"Guy\", \"PER\", \"nephew\", \"Gisulf\", \"PER\"],\n    [\"Guy\", \"PER\", \"nephew\", \"Herman\", \"PER\"],\n    [\"Guy\", \"PER\", \"nephew-in-law\", \"Robert Guiscard\", \"PER\"],\n    [\"Guaimar IV of Salerno\", \"PER\", \"brother\", \"Guy\", \"PER\"],\n    [\"Gisulf\", \"PER\", \"uncle\", \"Guy\", \"PER\"],\n    [\"Herman\", \"PER\", \"uncle\", \"Guy\", \"PER\"],\n    [\"Robert Guiscard\", \"PER\", \"nephew-in-law\", \"Guy\", \"PER\"],\n    [\"Guy\", \"PER\", \"place of birth\", \"Sorrento\", \"LOC\"],\n    [\"Sorrento\", \"LOC\", \"duke\", \"Guy\", \"PER\"],\n    [\"Guaimar III\", \"PER\", \"child\", \"Guy\", \"PER\"],\n    [\"Gaitelgrima\", \"PER\", \"child\", \"Guy\", \"PER\"],\n    [\"William Iron Arm\", \"PER\", \"father-in-law\", \"Guy\", \"PER\"],\n    [\"Humphrey of Hauteville\", \"PER\", \"brother-in-law\", \"Guy\", \"PER\"],\n    [\"Guy\", \"PER\", \"date of birth\", \"c. 1012\", \"TIME\"],\n    [\"Guy\", \"PER\", \"position held\", \"duke of Sorrento\", \"MISC\"],\n    [\"Guaimar IV of Salerno\", \"PER\", \"father\", \"Gisulf\", \"PER\"],\n    [\"Guy\", \"PER\", \"located in\", \"Southern Italy\", \"LOC\"]\n]"
+}

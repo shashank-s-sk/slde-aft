@@ -1,0 +1,35 @@
+{
+ "doc_id": "doc_160",
+ "base_raw": "[\n    [\"Digimon : Digital Monsters\", \"MISC\", \"created by\", \"Akiyoshi Hongo\", \"PER\"],\n    [\"Toei Animation\", \"ORG\", \"cooperation with\", \"WiZ\", \"ORG\"],\n    [\"Toei Animation\", \"ORG\", \"cooperation with\", \"Bandai\", \"ORG\"],\n    [\"Toei Animation\", \"ORG\", \"cooperation with\", \"Fuji Television\", \"ORG\"],\n    [\"Digimon\", \"MISC\", \"based on\", \"virtual pet\", \"MISC\"],\n    [\"Digimon\", \"MISC\", \"first anime installment in\", \"Digimon media franchise\", \"MISC\"],\n    [\"Digimon Adventure 02\", \"MISC\", \"followed by\", \"Digimon Adventure\", \"MISC\"],\n    [\"Digimon Adventure tri.\", \"MISC\", \"takes place after\", \"Digimon Adventure 02\", \"MISC\"],\n    [\"Digimon Adventure tri.\", \"MISC\", \"released from\", \"2015\", \"TIME\"],\n    [\"Digimon Adventure tri.\", \"MISC\", \"released until\", \"2018\", \"TIME\"],\n    [\"Prope\", \"ORG\", \"developer\", \"Digimon Adventure\", \"MISC\"],\n    [\"PlayStation Portable\", \"MISC\", \"platform\", \"Digimon Adventure\", \"MISC\"],\n    [\"Saban Entertainment\", \"ORG\", \"producer\", \"English-language version\", \"MISC\"],\n    [\"North America\", \"LOC\", \"location of release\", \"English-language version\", \"MISC\"],\n    [\"August 1999\", \"TIME\", \"start time\", \"English-language version\", \"MISC\"],\n    [\"June 2000\", \"TIME\", \"end time\", \"English-language version\", \"MISC\"],\n    [\"March 7, 1999\", \"TIME\", \"start time\", \"Digimon Adventure\", \"MISC\"],\n    [\"March 26, 2000\", \"TIME\", \"end time\", \"Digimon Adventure\", \"MISC\"],\n    [\"January 17, 2013\", \"TIME\", \"release date\", \"video game adaptation\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 17,
+  "FN": 8,
+  "recall": 0.2,
+  "n_extracted": 19,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Akiyoshi Hongo\", \"PER\", \"creator\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"Toei Animation\", \"ORG\", \"producer\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"WiZ\", \"ORG\", \"cooperation\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"Bandai\", \"ORG\", \"cooperation\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"Fuji Television\", \"ORG\", \"cooperation\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"Digimon: Digital Monsters\", \"MISC\", \"based on\", \"virtual pet\", \"MISC\"],\n    [\"Japan\", \"LOC\", \"location of airing\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"March 7, 1999\", \"TIME\", \"start time\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"March 26, 2000\", \"TIME\", \"end time\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"Saban Entertainment\", \"ORG\", \"producer\", \"English-language version\", \"MISC\"],\n    [\"North America\", \"LOC\", \"location of airing\", \"English-language version\", \"MISC\"],\n    [\"August 1999\", \"TIME\", \"start time\", \"English-language version\", \"MISC\"],\n    [\"June 2000\", \"TIME\", \"end time\", \"English-language version\", \"MISC\"],\n    [\"Prope\", \"ORG\", \"developer\", \"video game adaptation\", \"MISC\"],\n    [\"PlayStation Portable\", \"MISC\", \"platform\", \"video game adaptation\", \"MISC\"],\n    [\"January 17, 2013\", \"TIME\", \"release date\", \"video game adaptation\", \"MISC\"],\n    [\"Digimon Adventure 02\", \"MISC\", \"follows\", \"Digimon: Digital Monsters\", \"MISC\"],\n    [\"Digimon Adventure tri.\", \"MISC\", \"series\", \"Digimon Adventure 02\", \"MISC\"],\n    [\"2015\", \"TIME\", \"start time\", \"Digimon Adventure tri.\", \"MISC\"],\n    [\"2018\", \"TIME\", \"end time\", \"Digimon Adventure tri.\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 11,
+  "FP": 24,
+  "FN": 7,
+  "recall": 0.6111111111111112,
+  "n_extracted": 35,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Digimon : Digital Monsters\", \"MISC\", \"created by\", \"Akiyoshi Hongo\", \"PER\"],\n    [\"Toei Animation\", \"ORG\", \"cooperation with\", \"WiZ\", \"ORG\"],\n    [\"Toei Animation\", \"ORG\", \"cooperation with\", \"Bandai\", \"ORG\"],\n    [\"Toei Animation\", \"ORG\", \"cooperation with\", \"Fuji Television\", \"ORG\"],\n    [\"Digimon\", \"MISC\", \"based on\", \"virtual pet\", \"MISC\"],\n    [\"Digimon Adventure 02\", \"MISC\", \"followed by\", \"Digimon Adventure\", \"MISC\"],\n    [\"Digimon Adventure tri.\", \"MISC\", \"takes place after\", \"Digimon Adventure 02\", \"MISC\"],\n    [\"Prope\", \"ORG\", \"developer\", \"Digimon Adventure\", \"MISC\"],\n    [\"Saban Entertainment\", \"ORG\", \"producer\", \"English-language version\", \"MISC\"],\n    [\"Digimon Adventure\", \"MISC\", \"aired in\", \"North America\", \"LOC\"],\n    [\"Digimon Adventure\", \"MISC\", \"aired between\", \"August 1999\", \"TIME\"],\n    [\"Digimon Adventure\", \"MISC\", \"aired between\", \"June 2000\", \"TIME\"],\n    [\"Digimon Adventure tri.\", \"MISC\", \"released between\", \"2015\", \"TIME\"],\n    [\"Digimon Adventure tri.\", \"MISC\", \"released between\", \"2018\", \"TIME\"],\n    [\"Digimon Adventure\", \"MISC\", \"15th anniversary\", \"2015\", \"TIME\"]\n]",
+ "kb_dedup": {
+  "TP": 0,
+  "FP": 25,
+  "FN": 8,
+  "recall": 0.0,
+  "n_extracted": 25,
+  "judge_parse_ok": true
+ }
+}

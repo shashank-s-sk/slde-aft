@@ -1,0 +1,37 @@
+{
+ "doc_id": "doc_453",
+ "base_raw": "[\n    [\"Midway High School\", \"ORG\", \"located in\", \"Waco\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"part of\", \"Midway Independent School District\", \"ORG\"],\n    [\"Midway Independent School District\", \"ORG\", \"serves\", \"Waco\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"classified as\", \"6A school\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"formerly located in\", \"Hewitt\", \"LOC\"],\n    [\"Midway Middle School\", \"ORG\", \"formerly\", \"Midway High School\", \"ORG\"],\n    [\"Midway High School\", \"ORG\", \"ranked\", \"# 1 Best Public High School in McLennan County\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"rated\", \"Met Standard\", \"MISC\"],\n    [\"Texas Education Agency\", \"ORG\", \"rated\", \"Midway High School\", \"ORG\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for student progress\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for closing performance gaps\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for postsecondary readiness\", \"MISC\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 18,
+  "recall": 0.1,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Locations",
+  "U.S. States and Cities"
+ ],
+ "kb_orig_raw": "[\n    [\"Midway High School\", \"ORG\", \"located in\", \"Waco\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"part of\", \"Midway Independent School District\", \"ORG\"],\n    [\"Midway Independent School District\", \"ORG\", \"serves\", \"Waco\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"classified as\", \"6A school\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"formerly located in\", \"Hewitt\", \"LOC\"],\n    [\"Midway Middle School\", \"ORG\", \"formerly\", \"Midway High School\", \"ORG\"],\n    [\"Midway High School\", \"ORG\", \"ranked\", \"# 1 Best Public High School in McLennan County\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"rated\", \"Met Standard\", \"MISC\"],\n    [\"Texas Education Agency\", \"ORG\", \"rated\", \"Midway High School\", \"ORG\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for student progress\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for closing performance gaps\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for postsecondary readiness\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "U.S. States and Cities"
+ ],
+ "kb_dedup_raw": "[\n    [\"Midway High School\", \"ORG\", \"located in\", \"Waco\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"part of\", \"Midway Independent School District\", \"ORG\"],\n    [\"Midway Independent School District\", \"ORG\", \"serves\", \"Waco\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"located in\", \"Texas\", \"LOC\"],\n    [\"Midway High School\", \"ORG\", \"classified as\", \"6A school\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"formerly located in\", \"Hewitt\", \"LOC\"],\n    [\"Midway Middle School\", \"ORG\", \"formerly\", \"Midway High School\", \"ORG\"],\n    [\"Midway High School\", \"ORG\", \"ranked\", \"# 1 Best Public High School in McLennan County\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"rated\", \"Met Standard\", \"MISC\"],\n    [\"Texas Education Agency\", \"ORG\", \"rated\", \"Midway High School\", \"ORG\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for student progress\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for closing performance gaps\", \"MISC\"],\n    [\"Midway High School\", \"ORG\", \"students rank in\", \"top 25 % for postsecondary readiness\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 17,
+  "recall": 0.10526315789473684,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ }
+}

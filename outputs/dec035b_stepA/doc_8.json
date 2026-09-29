@@ -1,0 +1,34 @@
+{
+ "doc_id": "doc_8",
+ "base_raw": "[\n    [\"Leda\", \"PER\", \"spouse\", \"Tyndareus\", \"PER\"],\n    [\"Tyndareus\", \"PER\", \"title\", \"King of Sparta\", \"MISC\"],\n    [\"Helen\", \"PER\", \"parent\", \"Nemesis\", \"PER\"],\n    [\"Zeus\", \"PER\", \"relation\", \"Leda\", \"PER\"],\n    [\"Clytemnestra\", \"PER\", \"parent\", \"Tyndareus\", \"PER\"],\n    [\"Polydeuces\", \"PER\", \"parent\", \"Zeus\", \"PER\"],\n    [\"Castor\", \"PER\", \"parent\", \"Tyndareus\", \"PER\"],\n    [\"Timotheus\", \"PER\", \"creator\", \"Leda sculpture\", \"MISC\"],\n    [\"Ovid\", \"PER\", \"author\", \"Leda myth\", \"MISC\"],\n    [\"Fulgentius\", \"PER\", \"author\", \"Leda myth\", \"MISC\"],\n    [\"Leda\", \"PER\", \"child\", \"Helen\", \"PER\"],\n    [\"Leda\", \"PER\", \"child\", \"Polydeuces\", \"PER\"],\n    [\"Leda\", \"PER\", \"child\", \"Castor\", \"PER\"],\n    [\"Leda\", \"PER\", \"child\", \"Clytemnestra\", \"PER\"],\n    [\"Zeus\", \"PER\", \"parent\", \"Helen\", \"PER\"],\n    [\"Zeus\", \"PER\", \"parent\", \"Polydeuces\", \"PER\"]\n]",
+ "base": {
+  "TP": 9,
+  "FP": 10,
+  "FN": 8,
+  "recall": 0.5294117647058824,
+  "n_extracted": 16,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Persons"
+ ],
+ "kb_orig_raw": "[\n    [\"Leda\", \"PER\", \"spouse\", \"Tyndareus\", \"PER\"],\n    [\"Zeus\", \"PER\", \"father\", \"Helen\", \"PER\"],\n    [\"Zeus\", \"PER\", \"father\", \"Polydeuces\", \"PER\"],\n    [\"Tyndareus\", \"PER\", \"father\", \"Castor\", \"PER\"],\n    [\"Tyndareus\", \"PER\", \"father\", \"Clytemnestra\", \"PER\"],\n    [\"Leda\", \"PER\", \"mother\", \"Helen\", \"PER\"],\n    [\"Leda\", \"PER\", \"mother\", \"Polydeuces\", \"PER\"],\n    [\"Leda\", \"PER\", \"mother\", \"Castor\", \"PER\"],\n    [\"Leda\", \"PER\", \"mother\", \"Clytemnestra\", \"PER\"],\n    [\"Nemesis\", \"PER\", \"mother\", \"Helen\", \"PER\"],\n    [\"Timotheus\", \"PER\", \"creator\", \"Leda sculpture\", \"MISC\"],\n    [\"Ovid\", \"PER\", \"author\", \"Leda myth\", \"MISC\"],\n    [\"Fulgentius\", \"PER\", \"author\", \"Leda myth\", \"MISC\"],\n    [\"Leda\", \"PER\", \"instance of\", \"mythological figure\", \"MISC\"],\n    [\"Zeus\", \"PER\", \"instance of\", \"god\", \"MISC\"],\n    [\"Tyndareus\", \"PER\", \"instance of\", \"king\", \"MISC\"],\n    [\"Helen\", \"PER\", \"instance of\", \"mythological figure\", \"MISC\"],\n    [\"Polydeuces\", \"PER\", \"instance of\", \"mythological figure\", \"MISC\"],\n    [\"Castor\", \"PER\", \"instance of\", \"mythological figure\", \"MISC\"],\n    [\"Clytemnestra\", \"PER\", \"instance of\", \"mythological figure\", \"MISC\"],\n    [\"Nemesis\", \"PER\", \"instance of\", \"goddess\", \"MISC\"],\n    [\"Timotheus\", \"PER\", \"instance of\", \"sculptor\", \"MISC\"],\n    [\"Ovid\", \"PER\", \"instance of\", \"author\", \"MISC\"],\n    [\"Fulgentius\", \"PER\", \"instance of\", \"author\", \"MISC\"],\n    [\"Leda and the Swan\", \"MISC\", \"instance of\", \"mythological story\", \"MISC\"],\n    [\"Greek mythology\", \"MISC\", \"instance of\", \"mythology\", \"MISC\"],\n    [\"Italian Renaissance\", \"MISC\", \"instance of\", \"art movement\", \"MISC\"],\n    [\"Middle Ages\", \"MISC\", \"instance of\", \"historical period\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 16,
+  "FP": 28,
+  "FN": 2,
+  "recall": 0.8888888888888888,
+  "n_extracted": 40,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Leda\", \"PER\", \"spouse\", \"Tyndareus\", \"PER\"],\n    [\"Tyndareus\", \"PER\", \"title\", \"King of Sparta\", \"MISC\"],\n    [\"Helen\", \"PER\", \"parent\", \"Nemesis\", \"PER\"],\n    [\"Zeus\", \"PER\", \"relation\", \"Leda\", \"PER\"],\n    [\"Clytemnestra\", \"PER\", \"parent\", \"Tyndareus\", \"PER\"],\n    [\"Polydeuces\", \"PER\", \"parent\", \"Zeus\", \"PER\"],\n    [\"Castor\", \"PER\", \"parent\", \"Tyndareus\", \"PER\"],\n    [\"Timotheus\", \"PER\", \"creator\", \"Leda sculpture\", \"MISC\"],\n    [\"Ovid\", \"PER\", \"author\", \"Leda myth\", \"MISC\"],\n    [\"Fulgentius\", \"PER\", \"author\", \"Leda myth\", \"MISC\"],\n    [\"Leda\", \"PER\", \"child\", \"Helen\", \"PER\"],\n    [\"Leda\", \"PER\", \"child\", \"Polydeuces\", \"PER\"],\n    [\"Leda\", \"PER\", \"child\", \"Castor\", \"PER\"],\n    [\"Leda\", \"PER\", \"child\", \"Clytemnestra\", \"PER\"],\n    [\"Zeus\", \"PER\", \"relation\", \"Helen\", \"PER\"],\n    [\"Zeus\", \"PER\", \"relation\", \"Polydeuces\", \"PER\"]\n]",
+ "kb_dedup": {
+  "TP": 10,
+  "FP": 15,
+  "FN": 8,
+  "recall": 0.5555555555555556,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}

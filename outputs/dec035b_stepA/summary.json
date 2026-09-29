@@ -1,0 +1,33 @@
+{
+  "n_docs": 500,
+  "extractor": "meta-llama/llama-3.3-70b-instruct",
+  "judge": "openai/gpt-4.1-mini",
+  "cost_usd_this_session": 0.0,
+  "base": {
+    "mean_doc_recall": 0.26648888960018824,
+    "macro_recall": 0.2379691636816695,
+    "avg_extracted": 13.378,
+    "judge_parse_failures": 0
+  },
+  "kb_orig": {
+    "mean_doc_recall": 0.3607882809407493,
+    "macro_recall": 0.32171658986175117,
+    "avg_extracted": 19.89,
+    "judge_parse_failures": 0
+  },
+  "kb_dedup": {
+    "mean_doc_recall": 0.3527590651077686,
+    "macro_recall": 0.3222790357925493,
+    "avg_extracted": 19.346,
+    "judge_parse_failures": 0
+  },
+  "orig_minus_dedup_pp": {
+    "mean": 0.8029215832980638,
+    "ci95": [
+      -0.7740647403183712,
+      2.3497232328969644
+    ]
+  },
+  "docs_with_identical_prompt": 102,
+  "meaningful_ge_2pp": false
+}

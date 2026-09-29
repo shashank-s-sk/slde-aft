@@ -1,0 +1,44 @@
+{
+ "doc_id": "doc_315",
+ "base_raw": "[\n    [\"Procidis\", \"ORG\", \"founded by\", \"Albert Barill\u00e9\", \"PER\"],\n    [\"Procidis\", \"ORG\", \"country\", \"France\", \"LOC\"],\n    [\"Once Upon a Time...\", \"MISC\", \"producer\", \"Procidis\", \"ORG\"],\n    [\"Les Zooriginaux\", \"MISC\", \"translated into\", \"English\", \"MISC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"released in\", \"2001\", \"TIME\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"France\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Belgium\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Germany\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Italy\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"United Kingdom\", \"LOC\"],\n    [\"The Music\", \"MISC\", \"language\", \"Spanish\", \"MISC\"],\n    [\"Planet Earth\", \"MISC\", \"language\", \"French\", \"MISC\"],\n    [\"Procidis\", \"ORG\", \"programs sold in\", \"100 countries\", \"NUM\"]\n]",
+ "base": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "Countries",
+  "Countries in Europe and South America",
+  "Countries in Locations",
+  "European Countries",
+  "Locations",
+  "Organizations",
+  "Time"
+ ],
+ "kb_orig_raw": "[\n    [\"Procidis\", \"ORG\", \"founded by\", \"Albert Barill\u00e9\", \"PER\"],\n    [\"Procidis\", \"ORG\", \"country\", \"France\", \"LOC\"],\n    [\"Once Upon a Time...\", \"MISC\", \"producer\", \"Procidis\", \"ORG\"],\n    [\"Les Zooriginaux\", \"MISC\", \"translated into\", \"English\", \"MISC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"released in\", \"2001\", \"TIME\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"France\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Belgium\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Germany\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Italy\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"United Kingdom\", \"LOC\"],\n    [\"The Music\", \"MISC\", \"language\", \"Spanish\", \"MISC\"],\n    [\"Planet Earth\", \"MISC\", \"language\", \"French\", \"MISC\"],\n    [\"Procidis\", \"ORG\", \"programs sold in\", \"100 countries\", \"NUM\"]\n]",
+ "kb_orig": {
+  "TP": 2,
+  "FP": 11,
+  "FN": 3,
+  "recall": 0.4,
+  "n_extracted": 13,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [
+  "Countries in Europe and South America",
+  "Locations",
+  "Time"
+ ],
+ "kb_dedup_raw": "[\n    [\"Procidis\", \"ORG\", \"country of origin\", \"France\", \"LOC\"],\n    [\"Procidis\", \"ORG\", \"founded by\", \"Albert Barill\u00e9\", \"PER\"],\n    [\"Once Upon a Time...\", \"MISC\", \"producer\", \"Procidis\", \"ORG\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"France\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Belgium\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Germany\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"Italy\", \"LOC\"],\n    [\"Les Zooriginaux\", \"MISC\", \"location of release\", \"United Kingdom\", \"LOC\"],\n    [\"Procidis\", \"ORG\", \"location of sales\", \"100 countries\", \"NUM\"],\n    [\"The Music\", \"MISC\", \"original language of work\", \"Spanish\", \"MISC\"],\n    [\"Planet Earth\", \"MISC\", \"original language of work\", \"French\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 2,
+  "FP": 15,
+  "FN": 2,
+  "recall": 0.5,
+  "n_extracted": 17,
+  "judge_parse_ok": true
+ }
+}

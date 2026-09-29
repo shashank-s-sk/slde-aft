@@ -1,0 +1,36 @@
+{
+ "doc_id": "doc_185",
+ "base_raw": "[\n    [\"Alexandru Borza\", \"PER\", \"date of birth\", \"1887\", \"TIME\"],\n    [\"Alexandru Borza\", \"PER\", \"place of birth\", \"Alba Iulia\", \"LOC\"],\n    [\"Alexandru Borza\", \"PER\", \"date of death\", \"3 September 1971\", \"TIME\"],\n    [\"Alexandru Borza\", \"PER\", \"place of death\", \"Cluj\", \"LOC\"],\n    [\"Alexandru Borza\", \"PER\", \"position held\", \"honorary protopop of Cluj\", \"MISC\"],\n    [\"Cluj Botanical Garden\", \"LOC\", \"founded by\", \"Alexandru Borza\", \"PER\"],\n    [\"Retezat National Park\", \"LOC\", \"founded by\", \"Alexandru Borza\", \"PER\"],\n    [\"Alexandru Borza\", \"PER\", \"member of\", \"General Association of the Uniate Romanians\", \"ORG\"],\n    [\"Alexandru Borza\", \"PER\", \"president of\", \"General Association of the Uniate Romanians\", \"ORG\"],\n    [\"Alexandru Borza\", \"PER\", \"country of citizenship\", \"Romania\", \"LOC\"],\n    [\"Alexandru Borza\", \"PER\", \"educated at\", \"MISC\", \"MISC\"],\n    [\"Nymphaea lotus f. thermalis\", \"MISC\", \"advocated for legal protection by\", \"Alexandru Borza\", \"PER\"],\n    [\"Romanian Academy\", \"ORG\", \"member\", \"Alexandru Borza\", \"PER\"],\n    [\"General Association of the Uniate Romanians\", \"ORG\", \"country\", \"Romania\", \"LOC\"]\n]",
+ "base": {
+  "TP": 5,
+  "FP": 9,
+  "FN": 7,
+  "recall": 0.4166666666666667,
+  "n_extracted": 14,
+  "judge_parse_ok": true
+ },
+ "kb_orig_concepts": [
+  "European Countries",
+  "Locations",
+  "Organizations"
+ ],
+ "kb_orig_raw": "[\n    [\"Alexandru Borza\", \"PER\", \"date of birth\", \"1887\", \"TIME\"],\n    [\"Alexandru Borza\", \"PER\", \"place of birth\", \"Alba Iulia\", \"LOC\"],\n    [\"Alexandru Borza\", \"PER\", \"date of death\", \"3 September 1971\", \"TIME\"],\n    [\"Alexandru Borza\", \"PER\", \"place of death\", \"Cluj\", \"LOC\"],\n    [\"Alexandru Borza\", \"PER\", \"position held\", \"honorary protopop of Cluj\", \"MISC\"],\n    [\"Cluj Botanical Garden\", \"LOC\", \"founded by\", \"Alexandru Borza\", \"PER\"],\n    [\"Retezat National Park\", \"LOC\", \"founded by\", \"Alexandru Borza\", \"PER\"],\n    [\"Alexandru Borza\", \"PER\", \"member of\", \"General Association of the Uniate Romanians\", \"ORG\"],\n    [\"Alexandru Borza\", \"PER\", \"president of\", \"General Association of the Uniate Romanians\", \"ORG\"],\n    [\"Alexandru Borza\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Romanian Academy\", \"ORG\", \"member of\", \"Alexandru Borza\", \"PER\"],\n    [\"Nymphaea lotus f. thermalis\", \"MISC\", \"advocated for protection by\", \"Alexandru Borza\", \"PER\"],\n    [\"Alexandru Borza\", \"PER\", \"position held\", \"Government minister in charge of education\", \"MISC\"]\n]",
+ "kb_orig": {
+  "TP": 7,
+  "FP": 12,
+  "FN": 5,
+  "recall": 0.5833333333333334,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ },
+ "kb_dedup_concepts": [],
+ "kb_dedup_raw": "[\n    [\"Alexandru Borza\", \"PER\", \"date of birth\", \"1887\", \"TIME\"],\n    [\"Alexandru Borza\", \"PER\", \"place of birth\", \"Alba Iulia\", \"LOC\"],\n    [\"Alexandru Borza\", \"PER\", \"date of death\", \"3 September 1971\", \"TIME\"],\n    [\"Alexandru Borza\", \"PER\", \"place of death\", \"Cluj\", \"LOC\"],\n    [\"Alexandru Borza\", \"PER\", \"position held\", \"honorary protopop of Cluj\", \"MISC\"],\n    [\"Cluj Botanical Garden\", \"LOC\", \"founded by\", \"Alexandru Borza\", \"PER\"],\n    [\"Retezat National Park\", \"LOC\", \"founded by\", \"Alexandru Borza\", \"PER\"],\n    [\"Alexandru Borza\", \"PER\", \"member of\", \"General Association of the Uniate Romanians\", \"ORG\"],\n    [\"Alexandru Borza\", \"PER\", \"president of\", \"General Association of the Uniate Romanians\", \"ORG\"],\n    [\"Alexandru Borza\", \"PER\", \"educated at\", \"unknown\", \"MISC\"],\n    [\"Romanian Academy\", \"ORG\", \"member of\", \"Alexandru Borza\", \"PER\"],\n    [\"Nymphaea lotus f. thermalis\", \"MISC\", \"advocated for protection by\", \"Alexandru Borza\", \"PER\"],\n    [\"Alexandru Borza\", \"PER\", \"position held\", \"Government minister in charge of education\", \"MISC\"]\n]",
+ "kb_dedup": {
+  "TP": 6,
+  "FP": 12,
+  "FN": 6,
+  "recall": 0.5,
+  "n_extracted": 18,
+  "judge_parse_ok": true
+ }
+}
