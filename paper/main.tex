@@ -1,63 +1,50 @@
-% SLDE-AFT manuscript -- Springer Nature sn-jnl template (v3.1, Dec 2024).
+% SLDE-AFT manuscript -- Elsevier elsarticle template, double line spaced.
 %
-% ==================== TARGET JOURNAL: EDIT THIS BLOCK ONLY ====================
-% Keep exactly ONE \documentclass line active. Both journals are Springer
-% Nature titles using sn-jnl; the only journal-dependent setting in this
-% file is the reference style (class option). Numbered style
-% (sn-mathphys-num) is set for both until each journal's required style is
-% confirmed in its submission guidelines (see paper/UNVERIFIED.md). For
-% author-year, swap the option to sn-mathphys-ay (or sn-basic).
+% Venue: on hold between Knowledge-Based Systems and Expert Systems with
+% Applications (both Elsevier, same template). The Springer sn-jnl version
+% of this file is in git history (commit b2eccad and earlier).
 %
-% Language Resources and Evaluation (LRE) -- the confirmed venue; its
-% guidelines require APA 7 author-date references (sn-apa):
-\documentclass[pdflatex,sn-apa]{sn-jnl}
-% SUBMISSION CHECKLIST (not yet done, on purpose):
-% - [referee]: add to the class options ONLY when the journal requests the
-%   peer-review stage (the template manual asks for double spacing then);
-%   not used for initial submission.
-% - Upload sn-apacite.bst (locally modified for APA 7: 20 authors) and
-%   main.bbl with the sources; the stock copy would truncate long author
-%   lists APA-6 style.
-% - Figure files sit next to this file (no subfolder), as the template
-%   manual requires; upload them at the same level.
-% Knowledge and Information Systems (KAIS):
-%\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
-% ============================================================================
-%
-% The class loads natbib (with the style chosen above) and hyperref, and
-% sets the bibliography style; do not load those again here.
+% Double spacing is deliberate: Elsevier's Guide for Authors for KBS
+% prefers "no more than 20 double line spaced manuscript pages, including
+% tables and figures". Compile this file as is to measure that length.
+\documentclass[preprint,12pt,authoryear]{elsarticle}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage[title]{appendix}
+\usepackage{setspace}
+\doublespacing
+\usepackage[hidelinks]{hyperref}
 
-\theoremstyle{thmstyleone}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
 
-\raggedbottom
+\journal{[journal to be decided: Knowledge-Based Systems or Expert Systems with Applications]}
 
 \begin{document}
 
+\begin{frontmatter}
 
-\title[How Much Corroboration Do LLM Extractors Realise?]{How Much Corroboration Do LLM Extractors Realise? Source-Counted Noisy-OR Aggregation Across Sentences and Documents}
+\title{How Much Corroboration Do LLM Extractors Realise? Source-Counted Noisy-OR Aggregation Across Sentences and Documents}
 
-% TEMPLATE. LRE's title page needs each author's name and affiliation,
-% the corresponding author's email, and ORCID identifiers if available
-% (add \orcid{...} after \author if the class version supports it, or
-% list ORCIDs in the cover letter). Replace every [PLACEHOLDER].
-\author*[1]{\fnm{Shashank Kumar} \sur{Sadashiva}}\email{shashankkumarsadashiva@gmail.com}
-\author[1]{\fnm{Ahmed} \sur{Ebada}}\email{[PLACEHOLDER: Prof. Ebada to supply]}
-\affil*[1]{\orgname{Hopn UG}, \orgaddress{\country{Germany}}}
+% Replace every [PLACEHOLDER].
+\author[inst1]{Shashank Kumar Sadashiva\corref{cor1}}
+\ead{shashankkumarsadashiva@gmail.com}
+\author[inst1]{Ahmed Ebada}
+\ead{[PLACEHOLDER: Prof. Ebada to supply]}
+\cortext[cor1]{Corresponding author. [PLACEHOLDER: institutional email address.]}
+\affiliation[inst1]{organization={Hopn UG},
+            country={Germany}}
 
-% No citations or equations, per the template.
-\abstract{Corroboration-gated aggregation admits an extracted fact only when more than one source supports it. This paper asks how much corroboration public resources supply, how much language-model extractors realise, and what counting distinct sources buys. In DocRED, 50.2\% of gold facts have two or more evidence sentences but only 3.4\% name both entities in two or more; in BioRED, 35.1\% are co-mentioned in two or more sentences; and across 4,051 DocRED documents, 4.8\% of distinct facts recur in two or more documents, mostly geographic ones. Extractors realised little of this. Within documents, at most 3.1\% of gold facts were corroborated by two supporting sentences, even with document-level extraction and a stronger model; on a 2,010-document redundancy subset, 0.8--4.1\% of multi-document facts were recovered from two documents. Aggregation lowered F1 in every configuration: extractor recall is the binding constraint. The rule studied is the conservative Noisy-OR of the DySECT system, which counts repeated observations as independent support by design. Counting distinct sources instead raised the precision of admitted facts on real LLM extractions of synthetic products; in a pre-registered rerun the gain held with a stronger extractor, robustly on one dataset and borderline on the other, and with token-probability confidence, which proved even more compressed than verbalized confidence. In DySECT's released knowledge base, 87.5\% of the concept generalisations its extractor can use pass its threshold only through repeated counts. Pre-registrations are verifiable from timestamped commits.}
+\begin{abstract}
+Corroboration-gated aggregation admits an extracted fact only when more than one source supports it. This paper asks how much corroboration public resources supply, how much language-model extractors realise, and what counting distinct sources buys. In DocRED, 50.2\% of gold facts have two or more evidence sentences but only 3.4\% name both entities in two or more; in BioRED, 35.1\% are co-mentioned in two or more sentences; and across 4,051 DocRED documents, 4.8\% of distinct facts recur in two or more documents, mostly geographic ones. Extractors realised little of this. Within documents, at most 3.1\% of gold facts were corroborated by two supporting sentences, even with document-level extraction and a stronger model; on a 2,010-document redundancy subset, 0.8--4.1\% of multi-document facts were recovered from two documents. Aggregation lowered F1 in every configuration: extractor recall is the binding constraint. The rule studied is the conservative Noisy-OR of the DySECT system, which counts repeated observations as independent support by design. Counting distinct sources instead raised the precision of admitted facts on real LLM extractions of synthetic products; in a pre-registered rerun the gain held with a stronger extractor, robustly on one dataset and borderline on the other, and with token-probability confidence, which proved even more compressed than verbalized confidence. In DySECT's released knowledge base, 87.5\% of the concept generalisations its extractor can use pass its threshold only through repeated counts. Pre-registrations are verifiable from timestamped commits.
+\end{abstract}
 
-\keywords{information extraction, confidence aggregation, corroboration, Noisy-OR, knowledge base population, large language models}
+\begin{keyword}
+information extraction \sep confidence aggregation \sep corroboration \sep Noisy-OR \sep knowledge base population \sep large language models
+\end{keyword}
 
-\maketitle
-
+\end{frontmatter}
 
 % ------------------------------------------------------------------
 \section{Introduction}
@@ -1269,42 +1256,49 @@ evaluation with source-deduplicated scores, with its own extractors and
 judge.
 \end{itemize}
 
+\section*{Declaration of competing interest}
+[PLACEHOLDER: ``The authors declare that they have no known competing
+financial interests or personal relationships that could have appeared
+to influence the work reported in this paper.'' or the declared
+interests.]
 
-\backmatter
+\section*{CRediT authorship contribution statement}
+[PLACEHOLDER: each author's roles, e.g.\ \textbf{Shashank Kumar
+Sadashiva:} Conceptualization, Methodology, Software, Investigation,
+Formal analysis, Writing -- original draft. \textbf{Ahmed Ebada:}
+Supervision, Writing -- review \& editing.]
 
-\section*{Statements and Declarations}
-% TEMPLATE. Every [PLACEHOLDER: ...] must be replaced by the authors;
-% nothing inside a placeholder has been decided. LRE requires the
-% competing-interests and data-availability statements; funding and
-% ethics are required if applicable; author contributions are
-% recommended.
-\begin{itemize}
-\item \textbf{Funding}: [PLACEHOLDER: funding source(s) and grant
-number(s), or ``No funding was received for conducting this study.'']
-\item \textbf{Competing interests}: [PLACEHOLDER: competing interests of
-each author, or ``The authors have no relevant financial or
-non-financial interests to disclose.'']
-\item \textbf{Ethics approval and consent to participate}: Not
-applicable. The study used only synthetic data and publicly released
-corpora (CaRB, DocRED, BioRED) and involved no human participants,
-personal data, or animals. [PLACEHOLDER: authors to confirm.]
-\item \textbf{Consent for publication}: Not applicable (no individual
-person's data). [PLACEHOLDER: authors to confirm.]
-\item \textbf{Data availability}: The synthetic product data are
-regenerated deterministically by the project code. CaRB, DocRED, and
-BioRED are publicly available from their original releases. All
-extraction outputs and analysis results used in this paper are in the
-project repository, \url{https://github.com/shashank-s-sk/slde-aft}
-[PLACEHOLDER: commit hash or archived DOI for the submitted version].
-\item \textbf{Code availability}: The code, prompts, configurations,
-and a reproduction script are in the same repository
-[PLACEHOLDER: commit hash or archived DOI; licence].
-\item \textbf{Author contributions}: [PLACEHOLDER: each author's
-contribution, e.g.\ by CRediT role: conceptualisation, methodology,
-software, investigation, formal analysis, writing, supervision.]
-\end{itemize}
+\section*{Funding}
+[PLACEHOLDER: funding source(s), or ``This research did not receive any
+specific grant from funding agencies in the public, commercial, or
+not-for-profit sectors.'']
 
+\section*{Data and code availability}
+The synthetic product data are regenerated deterministically by the project code. CaRB, DocRED, and BioRED are publicly available from their original releases. All extraction outputs and analysis results used in this paper are in the project repository, \url{https://github.com/shashank-s-sk/slde-aft} [PLACEHOLDER: commit hash or archived DOI for the submitted version]. The code, prompts, configurations, and a reproduction script are in the same repository [PLACEHOLDER: commit hash or archived DOI; licence].
 
+% DRAFT pending author approval: paper/AI_DECLARATION_DRAFT.md (revised 2026-09-29).
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+During the preparation of this work the authors used Claude Code and
+Claude (Anthropic) in order to write and run the analysis and experiment
+scripts, including the API extraction runs, the bootstrap and
+significance analyses, and the audit of the released DySECT code and
+knowledge base; to check the manuscript's numbers against the committed
+outputs and its references against bibliographic records; to search and
+verify the literature, including locating and confirming the claims of
+the DySECT paper against its text and released code, and checking
+journal submission guidelines; and to draft and edit text of the
+manuscript and the supplementary material. The authors decided the
+research questions, the experimental designs and their
+pre-registrations, and every interpretation. Every reported number comes
+from scripts and outputs committed to the public repository. No figure
+was produced or altered with a generative image tool. After using these
+tools, the authors reviewed and edited the content as needed and take
+full responsibility for the content of the publication. Several large
+language models are objects of study or evaluation tools in this
+research; their use is described in the Methods and is not covered by
+this declaration.
+
+\bibliographystyle{elsarticle-harv}
 \bibliography{references}
 
 \end{document}

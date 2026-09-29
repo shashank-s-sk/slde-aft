@@ -266,3 +266,19 @@ Size: about 7,630 prose words, 6 tables, 0 figures, abstract 233 words.
 **Next: 3d** - add real double spacing to the template, commit and push;
 the user compiles and reports the page count; trim against it.
 AI declaration still awaiting the user's final approval before insertion.
+
+## 10. Stage 3d step 1 - double-spaced Elsevier build, pushed for the user's compile
+
+- main.tex front and back matter converted from Springer sn-jnl to
+  Elsevier elsarticle (preprint,12pt,authoryear) with setspace
+  \doublespacing. The body is unchanged. Both finalist venues (KBS, ESWA)
+  are Elsevier with this template, so the choice is venue-neutral. The
+  sn-jnl version is in git history (b2eccad).
+- Elsevier back matter: competing interest, CRediT, funding
+  (placeholders); data and code availability (existing text); the AI
+  declaration (revised draft text, marked pending approval) before the
+  references; bibliography style elsarticle-harv.
+- The user compiles (pdflatex, bibtex, pdflatex x2) and reports the real
+  page count; 3d trimming is done against that number, not a word-count
+  estimate (user instruction).
+- Supplement untouched (compiled separately; not counted).
