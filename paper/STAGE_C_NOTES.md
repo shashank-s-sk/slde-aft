@@ -222,3 +222,47 @@ Realise? ..." (apply in 3c). The AI declaration was revised (broad scope,
 no versions, literature-search bullet, no-generative-figures statement).
 3d: add real double spacing, commit and push; the user compiles and
 reports the page count.
+
+## 9. Stage 3c (reframe) - APPLIED 2026-09-29
+
+- Title (a); new abstract (233 words): availability -> realised
+  (within/across) -> R3 (+ stronger extractor, logprob) -> DySECT.
+- Intro: three conditions (supply, realise, independence); RQ1-RQ4 in
+  that order; 4 contributions; the rival ceiling is mentioned as a
+  designed property; the closed loop is a pointer to the supplement.
+- Related work: DySECT rewritten with "by design; we test that
+  independence assumption" and the m(t) disambiguation (item 2 of the
+  Stage C notes). The gap is restated as three unmeasured things. The
+  Evaluated Framework section became a paragraph opening Section 3.
+- Rule section: definition + m(t) note after Eq. (2). "Properties Used":
+  corroboration, **rival ceiling as ONE proposition with an inline proof
+  + "designed property, no measurable harm" note**, independence ("DySECT
+  adopts this by design"). The boundedness proposition moved to S14; the
+  corollary was removed (its content is in the note).
+- Results reordered: 5.1 availability (new), 5.2 within documents
+  (DocRED, BioRED, protocol as subsubsections), 5.3 across documents, 5.4
+  counting distinct sources (the old empirical-validation block,
+  retitled, + DEC-036, + a within-sentence/cross-document paragraph), 5.5
+  DySECT. The CaRB subsection became one sentence in Setup (Models).
+- Setup: the product domain is reframed as "product snapshots" (real LLM
+  extractions of synthetic products); fine-tuning leakage and confidence
+  template details went to the supplement; the recall-denominator and
+  bootstrap paragraphs no longer mention fine-tuning.
+- Discussion: "defect" is gone (-> "different parts of the rule", "The
+  same repeat counting"); cross-document paragraph added; DySECT
+  divergence paragraph notes the released-system finding, labelled "one
+  reading"; the R3 account is linked to the DEC-036 rerun.
+- Limitations: "Synthetic products in the rule comparison"; "Confidence
+  carries little information" (logprob finding); "The extractors"
+  (DeepSeek now tested on every main-text conclusion); new "The
+  cross-document subset" and "The DySECT audit".
+- Conclusion rewritten around the three conditions, the RQs and the open
+  experiments.
+- Supplement: new title; range proposition in S14; the two-template
+  confidence caveat in S18; "Table 1 of the main text" references made
+  descriptive (the table order changed).
+
+Size: about 7,630 prose words, 6 tables, 0 figures, abstract 233 words.
+**Next: 3d** - add real double spacing to the template, commit and push;
+the user compiles and reports the page count; trim against it.
+AI declaration still awaiting the user's final approval before insertion.

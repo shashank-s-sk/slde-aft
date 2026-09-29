@@ -27,7 +27,11 @@ All six items are done; see `paper/STAGE_C_NOTES.md` section 5 for what changed 
 
 Jargon removed, verifiable pre-registration table added (Suppl. Table S19), all 54 references verified and corrected. Still open: an institutional email (needs the user). See `paper/STAGE_C_NOTES.md` section 6.
 
-## Must change (framing), must align
+## Must change (framing): Stage 3a-3c APPLIED 2026-09-29
+
+Leads with corroboration availability and extractor recall, then R3; rival ceiling reduced to one proposition noted as a designed property; closed-loop, fine-tuning and synthetic-domain material moved to the supplement; new title. Cutting to about 20 pages (3d) is pending a real double-spaced compile by the user. See `paper/STAGE_C_NOTES.md` sections 7-9.
+
+## Must align
 
 All of these are writing tasks, held for the Stage C manuscript pass
 (experiments first). Approved wording and the locations to change are in

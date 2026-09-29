@@ -15,8 +15,9 @@
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
-\title{Supplementary Material for ``Corroboration-Gated Confidence
-Aggregation in Closed-Loop Information Extraction''}
+\title{Supplementary Material for ``How Much Corroboration Do LLM
+Extractors Realise? Source-Counted Noisy-OR Aggregation Across Sentences
+and Documents''}
 \date{}
 \begin{document}
 \maketitle
@@ -862,7 +863,7 @@ no decision rule.
 \toprule
 Experiment & Primary (pre-registered) & Secondary, exploratory or descriptive \\
 \midrule
-Offline aggregation-rule comparison (datasets A and B) & $F_1$(rule) $-$ $F_1$(R2) at each rule's own selected threshold, for R3, R4, R5 & Fixed $\tau=0.88$ comparison (Table~1 of the main text; secondary, added after first results); R6 (exploratory, added after R4's null); contested-slot counts (descriptive) \\
+Offline aggregation-rule comparison (datasets A and B) & $F_1$(rule) $-$ $F_1$(R2) at each rule's own selected threshold, for R3, R4, R5 & Fixed $\tau=0.88$ comparison (the main text's fixed-threshold comparison table; secondary, added after first results); R6 (exploratory, added after R4's null); contested-slot counts (descriptive) \\
 Thirty-seed module ablation & Paired $t$-test of each ablated configuration against the full system, with minimum detectable effect & Wilcoxon signed-rank test; earlier five-seed runs at $N=20$ and $N=50$ (Section~S4) \\
 Leakage-free fine-tuning & Paired bootstrap over the 40 test products of the mean per-product $F_1$ difference & One-sample $t$-test and Wilcoxon test (descriptive); earlier tuning-leakage-affected runs (Section~S5, superseded) \\
 DocRED at scale & Normalised vs.\ exact key, $F_1$ (R2, all sentences); R3 $-$ R2 $F_1$ (normalised key) & R3 $-$ R2 precision; oracle alias key (upper bound); evidence-only setting and first-mention evaluator (Section~S7) \\
@@ -1016,6 +1017,23 @@ and plain text. They are scope limits of what this paper evaluates
 
 Properties of Equations~(1) and (2) of the main text that the main
 argument does not use directly.
+
+\begin{proposition}[Range and boundedness]
+For any non-empty finite multiset of confidences $c_1,\dots,c_n \in [0,1]$
+and $\lambda \in (0,1]$, $A(t) \in [0,1)$ whenever at least one $c_i < 1$,
+and $A(t) \to 1$ only in the limit $n\to\infty$ with every $c_i$ bounded
+away from $0$. Consequently $C(t) \in [0,1)$ for every functionally
+single-valued slot with $m(t) \ge 0$.
+\end{proposition}
+\begin{proof}
+Each factor $(1-\lambda c_i) \in (0,1]$ since $\lambda c_i \in [0,1]$, so
+the product $\prod_i(1-\lambda c_i) \in (0,1]$ and is strictly positive
+for finite $n$; hence $A(t) = 1 - \prod_i(1-\lambda c_i) < 1$ strictly for
+every finite observation set. $A(t) \ge 0$ follows since each factor is
+$\le 1$, so the product is $\le 1$. Dividing by $m(t)+1 \ge 1$ preserves
+$C(t) \in [0,1)$.
+\end{proof}
+
 
 \begin{proposition}[Order-invariance]
 $A(t)$ depends only on the multiset $\{c_1,\dots,c_n\}$, not on the order
@@ -1477,7 +1495,7 @@ favour, not a smaller one, and its point estimate favours max-merge
 (Section~\ref{sec:results-ablation}). Separately, in the offline replay max-merge exceeded the
 published rule at its own selected threshold but not at the shared
 $\tau=0.88$, where its significant precision loss and recall gain cancel
-in $F_1$ (Table~1 of the main text). Neither comparison
+in $F_1$ (the main text's fixed-threshold comparison table). Neither comparison
 shows that the PKB is unnecessary or harmful, but every comparison
 favours max-merge or finds no difference, so the paper cannot claim that
 it improves held-out $F_1$. The rival ceiling is one mechanism that can
@@ -1532,6 +1550,12 @@ answer. Neither mechanism was isolated experimentally.
 \label{sec:s18}
 
 These caveats qualify the results in Section~S16 and moved with them.
+
+\paragraph{Two confidence templates.} The fine-tuning data-generation and
+evaluation prompt asks for a confidence between $0.85$ and $0.99$, the
+extraction prompt for one between $0.80$ and $0.96$. The ranges are
+deliberately different and not on a common scale, so confidence values
+from the two paths are not comparable.
 
 \paragraph{The provenance gate was tested against a generator-derived
 source.} The filter's rise in precision from $93.5\%$ to $100.0\%$ was
