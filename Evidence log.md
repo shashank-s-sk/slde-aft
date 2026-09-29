@@ -5331,3 +5331,137 @@ admit anything.
 
 Manuscript wording is the user's call (report first). Experiment queue
 continues: stronger-extractor rerun, then logprob confidence.
+
+---
+
+# EVID-051 — DEC-035b Step A (internal go/no-go, NOT for the paper): repeat counting barely changes DySECT's KB-guided recall
+
+## Setup
+
+As pre-registered (Decision log, DEC-035b staged plan, commit 2f3a731).
+- Script: `scripts/dec035b_dysect_stepA.py`. Output: `outputs/dec035b_stepA/`
+  (per-document records plus `summary.json`).
+- DySECT's 500 dev docs (`data_prep.py`, seed 1), its Positive-mode prompt
+  and system prompt verbatim, and its released KB.
+- Extractor: Llama-3.3-70B (OpenRouter), temperature 0.
+- Judge: gpt-4.1-mini with DySECT's judge prompt verbatim. This is a
+  deviation from their gpt-4.1 judge, pre-registered for Step A.
+- Arms: a base; b KB as released (repeat counting); c the same KB rescored
+  with one observation per (source, document).
+- Where arms b and c produced the same concept list, the prompt was
+  identical (temperature 0), so arm b's extraction and judgement were reused
+  for c: 102 of 500 docs.
+- Cost: about $1.30 in clean calls. A further share was lost to calls that
+  failed during the credit outage; those were discarded and redone.
+
+## Results (500 docs, 0 judge parse failures)
+
+| Arm | Mean per-doc recall | Macro recall | Avg triples |
+|---|---:|---:|---:|
+| a base | 26.65% | 23.80% | 13.4 |
+| b KB, repeat counting (as published) | 36.08% | 32.17% | 19.9 |
+| c KB, one obs per (source, doc) | 35.28% | 32.23% | 19.3 |
+
+- Primary: b minus c = **+0.80 pp, paired bootstrap 95% CI [-0.77, +2.35]**,
+  below the pre-registered 2.0 pp threshold -> **NO-GO**. Step B not
+  requested.
+- Macro recall: b and c equal (32.17% vs 32.23%).
+- Sanity check: the KB gain over base (+9.4 pp mean per-doc, +8.4 pp macro)
+  reproduces the direction and rough size of DySECT's reported Llama-70B
+  Iter-1 gain (23.23 -> 28.78, +5.6 pp). Our base (23.8% macro) is close to
+  their 23.23.
+- Post-hoc, labelled secondary: DySECT's released `data_prep.py` puts 78 of
+  the 100 KB-building ("seed") docs into the 500 evaluation docs (the dev
+  assignment overrides the seed assignment for shuffled positions < 500).
+  Excluding them: b minus c = +0.55 pp [-1.13, +2.21]; KB gain +9.7 pp.
+  This is an observation about their released code, not a claim about
+  their paper's runs.
+
+## Result
+
+Repeat counting is active in DySECT's released KB (EVID-050): 87.5% of the
+prompt-eligible concept links pass only through repeats. But it does not
+measurably change KB-guided recall in their own protocol: under 1 pp, CI
+spanning 0. The concept list that enters the prompt changes; recall barely
+moves. Consistent with the by-design framing: repeat counting is a
+calibration and independence issue in the scores, not a demonstrated cause
+of DySECT's reported gains. Internal only, as agreed; the paper may at most
+say the check was done and found no material effect.
+
+---
+
+# EVID-052 — DEC-036: R3's precision gain holds with a stronger extractor; logprob confidence does not make the score less count-driven
+
+## Setup
+
+As pre-registered (Decision log DEC-036, commit 2f3a731), with the
+implementation notes logged before any replay: difflib token alignment;
+DeepSeek pinned to DigitalOcean; transient API errors retried.
+- Scripts: `scripts/dec036_run.py`, `scripts/dec036_replay.py`
+  (DEC-026 replay code unchanged).
+- Outputs: `outputs/dec036/` (runs, raw token logprobs,
+  `replay/`, `dec036_summary.json`).
+- Cells: {Llama-3.1-8B, DeepSeek-V3.2} x {A = product657 pipeline,
+  B = product200 pipeline}. One run per cell; all four clean (0 API errors;
+  every LLM triple has a logprob confidence). Final run cost about $0.26.
+- Sanity check: the replay wrapper reproduces DEC-026 exactly on the original
+  A snapshot (+0.1060 [0.032, 0.227]). Gold reconstruction: 0 mismatches in
+  every cell.
+
+## Primary: R3 - R2 precision at tau=0.88, DeepSeek-V3.2, verbalized
+
+| Dataset | R3 - R2 precision [95% CI] | F1 diff |
+|---|---|---|
+| A | **+0.227 [+0.038, +0.417]** | +0.048 [+0.006, +0.109] |
+| B | +0.008 [0.000, +0.027] | +0.002 [0.000, +0.006] |
+
+Decision rule: CI excludes 0 on >=1 dataset (A), none reversed ->
+**HOLDS.** Table 1's conclusion does not rest only on the 8B model.
+
+## Secondary
+
+R3 - R2 precision, tau=0.88:
+
+| Cell | verbalized | logprob (primary def.) | logprob (object only) |
+|---|---|---|---|
+| A, Llama rerun | +0.098 [0.020, 0.215] | +0.138 [0.030, 0.284] | +0.155 [0.030, 0.322] |
+| A, DeepSeek | +0.227 [0.038, 0.417] | +0.237 [0.049, 0.429] | +0.237 [0.049, 0.429] |
+| B, Llama rerun | +0.012 [0.000, 0.033] | +0.020 [0.004, 0.044] | +0.020 [0.004, 0.044] |
+| B, DeepSeek | +0.008 [0.000, 0.027] | +0.008 [0.000, 0.027] | +0.008 [0.000, 0.027] |
+
+- No cell reverses. R3 raises precision a lot on A for both extractors;
+  on B the gain is small (CI touching 0 under verbalized confidence).
+- **Llama reproducibility check:** A +0.098 vs the original +0.106
+  (reproduced). B +0.012 [0.000, 0.033] vs the original +0.027
+  [0.008, 0.052]: same direction, weaker; the new CI touches 0. The provider
+  differs from the original run (Novita/CoreWeave).
+- **Count-drivenness (professor's point).** Spearman rho between the
+  Noisy-OR support A(t) and the observation count:
+
+  | Cell | verbalized | logprob |
+  |---|---|---|
+  | A, Llama | 0.895 | 0.894 |
+  | A, DeepSeek | 0.924 | 0.924 |
+  | B, Llama | 0.933 | 0.933 |
+  | B, DeepSeek | 0.949 | 0.949 |
+
+  Logprob confidence does NOT reduce count-drivenness. Logprob
+  confidences are even more compressed than verbalized ones: median
+  0.995-1.0, vs verbalized median 0.91 within [0.80, 0.96/1.0]. The
+  object-only variant has a longer low tail (min 0.08-0.14) but the same
+  median.
+
+## Result
+
+1. The corrected-rule finding (R3 over R2 on precision) is not an artefact
+   of the 8B extractor: DeepSeek-V3.2 shows it more strongly on A, the same
+   direction on B, and it survives the confidence source.
+2. The score is count-driven because per-observation confidences are
+   near-constant whatever their source. Token logprobs from the same
+   extractors are near 1 for almost every emitted triple. Replacing
+   verbalized with logprob confidence neither removes the count dependence
+   nor changes R3's conclusion. This answers feedback item 3 as a finding,
+   not a fix: the count dependence is a property of the extractor-confidence
+   regime, not of the verbalization prompt.
+3. Dataset B's R3 effect is small for every extractor; report it with its
+   CI, not as a replicated large gain.

@@ -58,3 +58,30 @@ In DySECT's released KB, 4,030 of the 4,604 generalization edges eligible
 for its DocRED prompt (87.5%) pass its 0.5 threshold only through repeated
 observations of the same source/document. Use only if the DySECT rerun
 (DEC-035b) is not done; otherwise report the rerun result.
+
+## 4. Write-up framing approved 2026-09-29 (hold for the manuscript pass)
+
+- **DySECT (EVID-050/051): two parts.**
+  (i) The independence violation is real and structural. In DySECT's
+  released KB, 87.5% of the prompt-eligible generalization edges pass its
+  0.5 threshold only through repeated observations of the same
+  source/document.
+  (ii) Its effect on DySECT's own recall is small. Repeat-counted vs
+  source-deduplicated KB: +0.80 pts, 95% CI [-0.77, +2.35], crossing 0 and
+  below the pre-registered 2-pt threshold (Llama-3.3-70B, gpt-4.1-mini
+  judge). Step A was an internal go/no-go; cite it at most as "a check found
+  no material effect".
+  The 78/100 overlap between DySECT's KB-building documents and its 500
+  evaluation documents is a property of its **released code**
+  (`data_prep.py`), not a claim about the runs reported in its paper.
+- **DEC-036 (EVID-052).** Dataset A is a robust replication with the
+  stronger extractor: DeepSeek R3-R2 precision +0.227 [0.038, 0.417];
+  Llama rerun +0.098 [0.020, 0.215]. Dataset B is weak or borderline for
+  both extractors: DeepSeek +0.008 [0, 0.027]; Llama +0.012 [0, 0.033].
+  NOT a uniform two-for-two confirmation.
+- **Logprob finding, stated precisely.** Token-logprob confidences are
+  more compressed than verbalized ones (median about 1.0 for nearly all
+  triples, vs about 0.91 verbalized). Spearman correlation between the
+  Noisy-OR score and the observation count stays at 0.89-0.95 under either
+  confidence. The count-driven pattern is therefore not caused by the
+  prompt's [0.80, 0.96] wording.

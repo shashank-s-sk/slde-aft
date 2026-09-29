@@ -32,8 +32,8 @@ just says where each DEC currently stands and what's left.
 | 032 | BioRED at Scale (extractor recall vs. corroboration) | DONE (EVID-047) | Extractor-recall constraint replicates (Llama rho 0.022); R3 acts only with within-source duplicates (Llama precision +0.054, DeepSeek null) | Supersedes the DEC-009 pilot |
 | 033 | Is the corroboration bottleneck a protocol artefact? | DONE: STANDS by the pre-registered rule, with partial relief on BioRED ($0.945) | EVID-048 | None |
 | 034 | DocRED under official-style metrics (descriptive, no new extraction) | DONE ($0) | EVID-049 | None |
-| 035 | DySECT released-code check (feedback round 2) | DONE ($0) | Repeat counting is DySECT's documented design, active in its released KB (87.5% of prompt-eligible generalizations pass 0.5 only via repeats); mutex penalty fired 0/61,676; its m(t) is type-level, not rival values — EVID-050 | Wording approved, held for Stage C (`paper/STAGE_C_NOTES.md`). DEC-035b rerun estimated (~$15 one model / ~$75-80 all four), not approved |
-| 036 | Stronger extractor (DeepSeek-V3.2) + token-logprob confidence on DEC-026 comparison | PRE-REG DRAFT, NOT RUN | Logprobs verified available (Llama-8B, DeepSeek, Llama-70B); est. < $0.50 | Commit pre-reg, then run on approval |
+| 035 | DySECT released-code check (feedback round 2) | DONE ($0) | Repeat counting is DySECT's documented design, active in its released KB (87.5% of prompt-eligible generalizations pass 0.5 only via repeats); mutex penalty fired 0/61,676; its m(t) is type-level, not rival values — EVID-050 | Wording approved, held for Stage C (`paper/STAGE_C_NOTES.md`). DEC-035b Step A (internal) DONE: NO-GO, b-c recall +0.80 pp [-0.77, +2.35] < 2 pp (EVID-051); Step B not requested |
+| 036 | Stronger extractor (DeepSeek-V3.2) + token-logprob confidence on DEC-026 comparison | DONE (pre-reg 2f3a731) | PRIMARY HOLDS: DeepSeek R3-R2 precision A +0.227 [0.038,0.417], B +0.008 [0,0.027]; no cell reversed; logprob conf median ~1.0 and rho(A,n_obs) unchanged 0.89-0.95 -> score stays count-driven — EVID-052 | Stage C: report as robustness + count-drivenness finding |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3765,3 +3765,54 @@ first, which gives the timestamped commit hash the professor asked for, and
   needs separate approval.
 
 DEC-036 status: user approved commit + run (< $0.50) on 2026-09-29.
+
+## DEC-036 implementation notes (2026-09-29, before any outcome was computed)
+
+- **Alignment method.** Providers' token lists do not always reconstruct the
+  output text: Novita omits some tokens (e.g. the "d" of "usd"), and
+  CoreWeave splits them differently. The first launch left 790 of 870
+  dataset-A Llama triples without a logprob confidence. All four runs were
+  stopped, and the partial outputs deleted, unscored. Tokens are now aligned
+  to the text by difflib sequence matching (each token takes the characters
+  it matches; unmatched tokens are left out), and the raw per-call token
+  logprobs are saved (`logprob_raw_calls.json`) so the alignment can be
+  recomputed. The confidence definitions are unchanged. A live check on 8
+  products left 0/51 triples without a logprob confidence.
+- **Provider.** `require_parameters` routes Llama-3.1-8B to Novita or
+  CoreWeave, which may differ from the provider behind the original DEC-003
+  and DEC-006 snapshots. This is one reason the Llama rerun is a secondary
+  reproducibility check, not a replacement.
+- **Early observation, not an outcome:** logprob confidences on the check
+  products cluster near 1.0 (most 0.95-1.0), so they may be as compressed
+  as the verbalized ones, in a different range.
+
+## Run interruption (2026-09-29): OpenRouter credit exhausted
+
+OpenRouter credit ran out mid-run ($5.00 purchased, $5.16 used; $1.33
+today). Calls then returned 402 errors. All jobs were stopped and every
+contaminated output was discarded unscored:
+- 293 Step A document caches (206 clean kept; the cache resumes the rest);
+- the DEC-036 A/DeepSeek run (5 of 155 calls failed);
+- both partial dataset-B runs.
+
+The DEC-036 A/Llama run is clean (155 calls, 0 errors, 947 triples, all with
+logprob confidences) and is kept. Both scripts now stop at once on a 402, so
+a credit failure cannot leave a partial run that looks complete. Estimated
+spend still needed: about $1.5 (Step A about $1.2, DEC-036 about $0.3).
+- **Provider exclusion (2026-09-29, before any replay/outcome):** for
+  DeepSeek-V3.2, AtlasCloud accepted `require_parameters` + logprobs but
+  returned no logprobs on 488/488 calls. That left 674/1,009 (A) and
+  2,607/4,214 (B) DeepSeek triples without a logprob confidence.
+  DigitalOcean, Google and SambaNova aligned fully. Both DeepSeek runs were
+  discarded unscored and rerun with AtlasCloud excluded
+  (`provider.ignore`), so both confidence variants still score identical
+  observations. The Llama runs (0 missing) are kept.
+- **Provider pinning (2026-09-29, still before any replay):** with
+  AtlasCloud merely excluded, DeepSeek calls were routed to Friendli (422,
+  "top_logprobs is not supported with reasoning content parsing") and to
+  providers that timed out: 77/155 errored calls on A. That run and the
+  partial B run were discarded unscored. DeepSeek is now pinned to
+  DigitalOcean (no fallbacks), the provider that returned complete, aligned
+  logprobs. Transient API errors are retried (up to 6 times, with backoff)
+  instead of being recorded as empty extractions. Model-output parse
+  failures are kept, as in the original pipeline.

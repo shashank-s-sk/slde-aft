@@ -6,12 +6,21 @@ latency/cost returned so callers can log them.
 
 from __future__ import annotations
 
+import difflib
 import json
 import re
 import time
 
+import numpy as np
+
 from src.datasets.product_generator import ALLOWED_PREDICATES
 from src.extractors.openrouter_http import post_with_network_retry
+
+
+# DEC-036: providers pinned for logprob runs. For DeepSeek-V3.2, AtlasCloud
+# returned no logprobs (488/488 calls), Friendli rejects top_logprobs (422),
+# and others timed out; DigitalOcean returned complete, alignable logprobs.
+LOGPROB_PROVIDERS = {"deepseek/deepseek-v3.2": ["DigitalOcean"]}
 
 
 def build_prompt(text: str, locked_context=None, feedback_hint: str | None = None) -> str:
@@ -56,6 +65,7 @@ def call_openrouter_for_triples(
     timeout: int = 90,
     max_tokens: int = 512,
     prompt_override: str | None = None,
+    logprobs: bool = False,
 ) -> dict:
     """Returns a dict with: items (parsed triples), raw_response, latency_s,
     cost_usd, prompt_tokens, completion_tokens, http_status, error.
@@ -74,6 +84,10 @@ def call_openrouter_for_triples(
     against a fine-tuned model that was trained on that exact format,
     so the API-based "control" extraction isn't disadvantaged/advantaged
     by a different prompt structure than the fine-tuned "treatment".
+
+    logprobs (DEC-036): request per-token logprobs, routed only to providers
+    that return them, and attach a logprob confidence to each parsed item
+    (see item_logprob_confidences).
     """
 
     prompt = prompt_override if prompt_override is not None else build_prompt(
@@ -92,6 +106,12 @@ def call_openrouter_for_triples(
         "temperature": temperature,
         "max_tokens": max_tokens,
     }
+    if logprobs:
+        payload["logprobs"] = True
+        payload["top_logprobs"] = 1
+        payload["provider"] = {"require_parameters": True}
+        if model in LOGPROB_PROVIDERS:
+            payload["provider"].update(order=LOGPROB_PROVIDERS[model], allow_fallbacks=False)
 
     t0 = time.perf_counter()
     r, network_retries, network_error = post_with_network_retry(headers, payload, timeout)
@@ -142,7 +162,81 @@ def call_openrouter_for_triples(
     except Exception as e:
         result["error"] = f"JSON parse error: {e}"
 
+    if logprobs:
+        result["provider"] = response_json.get("provider")
+        lp = (response_json["choices"][0].get("logprobs") or {}).get("content")
+        result["content"] = content
+        result["token_logprobs"] = [(t.get("token", ""), t.get("logprob")) for t in lp] if lp else None
+        confs = item_logprob_confidences(content, lp, len(result["items"])) if lp else None
+        for i, item in enumerate(result["items"]):
+            if isinstance(item, dict):
+                item["_lp_conf"], item["_lp_obj_conf"] = confs[i] if confs else (None, None)
+
     return result
+
+
+_OBJ_RE = re.compile(r"\{[^{}]*\}")
+_FIELD_RE = {
+    f: re.compile(r'"%s"\s*:\s*(?:"((?:[^"\\]|\\.)*)"|([^,}\s]+))' % f)
+    for f in ("subject", "predicate", "object")
+}
+
+
+def item_logprob_confidences(content: str, token_logprobs: list, n_items: int) -> list | None:
+    """DEC-036 logprob confidence for each JSON object in `content`, in order.
+
+    Primary: exp(mean logprob) over the tokens overlapping the subject,
+    predicate and object value spans. Secondary: exp(sum logprob) over the
+    tokens overlapping the object value span only.
+
+    Providers' logprob token lists do not always reconstruct `content`
+    exactly (observed 2026-09-29: Novita omits some tokens, e.g. the "d" of
+    "usd"; CoreWeave splits them differently). Tokens are therefore aligned
+    to `content` by difflib sequence matching: each token takes the content
+    characters its own characters match, and a token with no matched
+    character is left out. Returns None when the JSON objects cannot be
+    matched one-to-one with the parsed items; the caller then keeps the
+    verbalized confidence for that call.
+    """
+    tokens = [t.get("token", "") for t in token_logprobs]
+    lps = [float(t.get("logprob", 0.0)) for t in token_logprobs]
+    joined = "".join(tokens)
+    j2c = [-1] * len(joined)
+    for blk in difflib.SequenceMatcher(None, joined, content, autojunk=False).get_matching_blocks():
+        for k in range(blk.size):
+            j2c[blk.a + k] = blk.b + k
+    spans, pos = [], 0
+    for tok in tokens:
+        mapped = [j2c[i] for i in range(pos, pos + len(tok)) if j2c[i] >= 0]
+        spans.append((min(mapped), max(mapped) + 1) if mapped else None)
+        pos += len(tok)
+
+    def span_logprobs(a: int, b: int) -> list[float]:
+        return [lp for sp, lp in zip(spans, lps) if sp and sp[0] < b and sp[1] > a]
+
+    arr = re.search(r"\[.*\]", content, re.DOTALL)
+    if not arr:
+        return None
+    objs = [m for m in _OBJ_RE.finditer(content, arr.start(), arr.end())]
+    if len(objs) != n_items:
+        return None
+    out = []
+    for m in objs:
+        all_lp, obj_lp = [], []
+        for field, rx in _FIELD_RE.items():
+            fm = rx.search(m.group(0))
+            if not fm:
+                continue
+            g = 1 if fm.group(1) is not None else 2
+            a, b = m.start() + fm.start(g), m.start() + fm.end(g)
+            vals = span_logprobs(a, b) if b > a else []
+            all_lp += vals
+            if field == "object":
+                obj_lp = vals
+        prim = float(np.exp(np.mean(all_lp))) if all_lp else None
+        sec = float(np.exp(np.sum(obj_lp))) if obj_lp else None
+        out.append((prim, sec))
+    return out
 
 
 def extract_unstructured_llm(
@@ -154,6 +248,7 @@ def extract_unstructured_llm(
     feedback_hint: str | None = None,
     extractor_tag: str = "openrouter",
     prompt_override: str | None = None,
+    logprobs: bool = False,
 ) -> dict:
     """Returns dict with: triples (list of common-schema dicts) plus the
     same latency/cost/error fields as call_openrouter_for_triples."""
@@ -165,6 +260,7 @@ def extract_unstructured_llm(
         locked_context=locked_context,
         feedback_hint=feedback_hint,
         prompt_override=prompt_override,
+        logprobs=logprobs,
     )
 
     triples = []
@@ -182,6 +278,9 @@ def extract_unstructured_llm(
                     "source_type": "unstructured",
                     "extractor_version": extractor_tag,
                 })
+                if logprobs:
+                    triples[-1]["confidence_logprob"] = item.get("_lp_conf")
+                    triples[-1]["confidence_logprob_object"] = item.get("_lp_obj_conf")
 
     call_result["triples"] = triples
     return call_result
