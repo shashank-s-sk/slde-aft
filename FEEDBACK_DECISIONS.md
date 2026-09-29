@@ -19,7 +19,11 @@ committed before any of those runs). Result commits: `ad40563`, `fc5a5eb`,
 | 3 | Token-logprob confidence variant | DEC-036 | EVID-052 | DONE | Logprob confidences are more compressed than verbalized ones (median about 1.0). Score-vs-count correlation stays 0.89-0.95 under both, so the count-driven pattern is not caused by the [0.80, 0.96] prompt wording. |
 | 4 | Rerun the main aggregation comparison with a stronger extractor | DEC-036 | EVID-052 | DONE (pre-registered rule: HOLDS) | DeepSeek-V3.2 R3-R2 precision: A +0.227 [0.038, 0.417] (robust); B +0.008 [0, 0.027] (weak or borderline, as is Llama's +0.012). Not a uniform two-for-two confirmation. |
 
-## Must change (framing), must fix (consistency), must clean up, must align
+## Must fix (consistency): Stage 1 APPLIED 2026-09-29, awaiting review
+
+All six items are done; see `paper/STAGE_C_NOTES.md` section 5 for what changed and why.
+
+## Must change (framing), must clean up, must align
 
 All of these are writing tasks, held for the Stage C manuscript pass
 (experiments first). Approved wording and the locations to change are in

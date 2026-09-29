@@ -255,25 +255,26 @@ B (2241) & R6 & 940 & 10 & 864 & 0 \\
 
 \begin{table}[htbp]
 \centering
-\caption{Bootstrap 95\% CI for $F_1(\text{rule}) - F_1(\text{R2})$ at
-each rule's own F1-selected threshold, $10{,}000$ resamples over
-test-split subjects.}
+\caption{$F_1(\text{rule}) - F_1(\text{R2})$ at each rule's own
+F1-selected threshold, the pre-registered primary analysis: observed
+test-split difference with a 95\% bootstrap percentile interval
+($10{,}000$ resamples over test-split subjects).}
 \label{tab:dec026-bootstrap-f1sel}
 \begin{tabular}{@{}llrrc@{}}
 \toprule
-Dataset & Rule & Mean diff. & 95\% CI & Excludes 0 \\
+Dataset & Rule & Observed diff. & 95\% CI & Excludes 0 \\
 \midrule
-A (657) & R1 & $+0.0359$ & $[0.0154, 0.0641]$ & Yes \\
-A (657) & R3 & $+0.0106$ & $[0.0028, 0.0222]$ & Yes \\
+A (657) & R1 & $+0.0350$ & $[0.0154, 0.0641]$ & Yes \\
+A (657) & R3 & $+0.0101$ & $[0.0028, 0.0222]$ & Yes \\
 A (657) & R4 & $+0.0000$ & $[0.0000, 0.0000]$ & No \\
-A (657) & R5 & $+0.0106$ & $[0.0028, 0.0222]$ & Yes \\
-A (657) & R6 & $-0.0429$ & $[-0.0870, -0.0118]$ & Yes \\
+A (657) & R5 & $+0.0101$ & $[0.0028, 0.0222]$ & Yes \\
+A (657) & R6 & $-0.0418$ & $[-0.0870, -0.0118]$ & Yes \\
 \midrule
 B (2241) & R1 & $+0.0341$ & $[0.0191, 0.0496]$ & Yes \\
 B (2241) & R3 & $+0.0039$ & $[0.0013, 0.0075]$ & Yes \\
 B (2241) & R4 & $+0.0000$ & $[0.0000, 0.0000]$ & No \\
 B (2241) & R5 & $+0.0039$ & $[0.0013, 0.0075]$ & Yes \\
-B (2241) & R6 & $-0.0131$ & $[-0.0303, 0.0015]$ & No \\
+B (2241) & R6 & $-0.0128$ & $[-0.0303, 0.0015]$ & No \\
 \bottomrule
 \end{tabular}
 % [EVID-041]
@@ -836,5 +837,36 @@ outcome include a gap that narrows significantly but stays
 significantly negative, which also satisfies the stands rule; the
 overlap is reported in the main text.
 % [Decision log.md, DEC-033; EVID-048]
+
+\section{Pre-Registration and Analysis Status}
+\label{sec:s12}
+
+Every analysis reported in the main text, with its status. \emph{Primary}:
+fixed before any result as the experiment's main test. \emph{Secondary}:
+fixed in advance but not the main test, or, where marked, added after
+first results. \emph{Exploratory} and \emph{descriptive} analyses carry
+no decision rule.
+
+\begin{table}[htbp]
+\centering
+\caption{Status of each analysis.}
+\label{tab:s12-status}
+\small
+\begin{tabular}{@{}p{0.22\linewidth}p{0.36\linewidth}p{0.36\linewidth}@{}}
+\toprule
+Experiment & Primary (pre-registered) & Secondary, exploratory or descriptive \\
+\midrule
+Offline aggregation-rule comparison (datasets A and B) & $F_1$(rule) $-$ $F_1$(R2) at each rule's own selected threshold, for R3, R4, R5 & Fixed $\tau=0.88$ comparison (Table~1 of the main text; secondary, added after first results); R6 (exploratory, added after R4's null); contested-slot counts (descriptive) \\
+Thirty-seed module ablation & Paired $t$-test of each ablated configuration against the full system, with minimum detectable effect & Wilcoxon signed-rank test; earlier five-seed runs at $N=20$ and $N=50$ (Section~S4) \\
+Leakage-free fine-tuning & Paired bootstrap over the 40 test products of the mean per-product $F_1$ difference & One-sample $t$-test and Wilcoxon test (descriptive); earlier tuning-leakage-affected runs (Section~S5, superseded) \\
+DocRED at scale & Normalised vs.\ exact key, $F_1$ (R2, all sentences); R3 $-$ R2 $F_1$ (normalised key) & R3 $-$ R2 precision; oracle alias key (upper bound); evidence-only setting and first-mention evaluator (Section~S7) \\
+BioRED at scale & Extractor recall without aggregation; R3 $-$ R2 $F_1$ (Llama-3.1-8B, sentence level) & R3 $-$ R2 precision (pre-registered secondary); DeepSeek-V3.2 cross-extractor check; strict and relaxed evaluators \\
+Protocol check (extractor $\times$ unit) & Corroborated share and the stands/weakened/overturned rule, with the aggregation gap & Co-mention-based ratio on DocRED (descriptive, not pre-registered) \\
+DocRED official-style metrics & --- & Descriptive, not pre-registered (Section~S10) \\
+Calibration, scalability, error analysis, provenance filter & --- & Descriptive, not pre-registered \\
+\bottomrule
+\end{tabular}
+% [Decision log.md: DEC-026 (and its addenda), DEC-027, DEC-029, DEC-031, DEC-032, DEC-033, DEC-034]
+\end{table}
 
 \end{document}

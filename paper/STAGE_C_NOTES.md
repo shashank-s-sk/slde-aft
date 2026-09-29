@@ -85,3 +85,41 @@ observations of the same source/document. Use only if the DySECT rerun
   Noisy-OR score and the observation count stays at 0.89-0.95 under either
   confidence. The count-driven pattern is therefore not caused by the
   prompt's [0.80, 0.96] wording.
+
+## 5. Stage 1 (consistency fixes) - APPLIED 2026-09-29, awaiting review
+
+All six "Must fix" items from `new feddback.md`:
+1. **0.26/0.75% vs 0.17/0.73%.** These are two definitions, both correct:
+   "recovered from >= 2 sentences" (g2_raw) and "corroborated" (g2_verified:
+   >= 2 genuinely supporting sentences). Both are now defined in Metrics
+   ("Sources and corroboration") and labelled in 6.2/6.3. The abstract,
+   intro and conclusion now say "corroborated": their 3.1% ceiling is the
+   verified share; the raw share would be 3.95%.
+2. **+0.106 vs +0.099.** Table 1 printed the bootstrap *mean*; Table S2's
+   values give the *observed* difference (0.9322 - 0.8333). Table 1, the
+   F1-selected figures in the text (+0.0106 -> +0.0101) and the supplement's
+   bootstrap table now all report observed differences with percentile
+   CIs. Every other analysis script already reported observed differences.
+3. **"221 times"** -> "2 to 21 times" (both places; an en-dash lost in
+   conversion).
+4. **"real-data snapshots"** -> "snapshots of real LLM extractions on
+   synthetic products" (abstract, intro, conclusion). "Real data" ->
+   "real LLM extractions" in the calibration statements and the subsection
+   title.
+5. **"Source"** is defined precisely (Metrics). Prop. (independence) now
+   covers both shared-source mechanisms: re-reads (product domain) and
+   within-sentence duplicate emissions (DocRED/BioRED).
+6. **Primary vs secondary.** The Statistical Protocol paragraph was
+   rewritten. The new Supplementary S12 table gives the status of every
+   analysis. DEC-026's fixed-tau Table 1 is now labelled **secondary** (it
+   was added after first results); its pre-registered primary is F1 at the
+   selected threshold.
+
+**Carry-forward for later stages:** when DEC-036 goes into the paper, use
+OBSERVED differences, not the EVID-052 bootstrap means:
+- DeepSeek R3-R2 precision: A **+0.229** [0.038, 0.417]; B **+0.008** [0.000, 0.027].
+- Llama rerun: A **+0.095** [0.020, 0.215]; B **+0.013** [0.000, 0.033].
+
+No LaTeX compiler is available on this machine. Checked statically: braces
+and environments balance, every \ref has a label. A PDF compile is still
+needed.
