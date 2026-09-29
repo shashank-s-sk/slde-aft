@@ -178,6 +178,56 @@ larger \texttt{gold\_structured} set (checked against
 saved by the product-domain runs: it re-scores stored observations under
 six rules, with no API calls or GPU time.
 
+
+\paragraph{Moved from the main text.} The following text and tables were moved verbatim from the main text in the length reduction.
+
+\paragraph{Product snapshots.} The rule comparison
+(the main text's rule comparison) replays real LLM
+extractions of synthetic products. Products come from a
+deterministic synthetic consumer-product generator
+(\texttt{src/datasets/product\_generator.py}, \texttt{random.seed(42)})
+over a fixed 13-predicate schema (listed in Supplementary Section~S1).
+For each product it produces (i) a structured record with all 13 facts,
+(ii) a text paragraph verbalising a random 7 of the 13, and (iii) two
+gold sets: \texttt{gold\_structured} (all 13 facts) and
+\texttt{gold\_unstructured} (the facts verbalised in the text).
+\textbf{The structured records and the gold triples come from the same
+generator call} (the main text's Limitations).
+% [src/datasets/product_generator.py]
+
+Two sizes are used, both split 70/10/20 (train/validation/test) with
+\texttt{random.Random(7)}, a seed distinct from the generation seed
+(\texttt{src/leakage\_split.py}): 50 products (35/5/10;
+\texttt{data/product\_split.csv}) and 200 products (140/20/40;
+\texttt{data/product\_split\_200.csv}). The knowledge bases replayed
+here (dataset A: 657 candidate triples; dataset B: 2,241) were built by
+the implementation's four-iteration loop over the training products;
+the leakage rules for the other splits are in Supplementary
+Section~S15.
+
+As a check on extractor quality, on 548 CaRB \citep{bhardwaj2019carb}
+test sentences under the official scorer, Llama-3.1-8B scored
+$F_1=0.467$ against $0.571$ for DeepSeek-V3.2; on a 30-sentence subset it
+also scored below \texttt{openai/gpt-4o} \citep{openai2024gpt4o},
+\texttt{anthropic/claude-sonnet-5} \citep{anthropic2026claudesonnet5},
+and \texttt{google/gemini-2.5-pro} \citep{comanici2025gemini25}
+(Supplementary Section~S1).
+% [EVID-032; EVID-035]
+
+\textbf{CaRB} is reported under the official scorer (lenient span
+matching; AUC and an optimal precision/recall/$F_1$ point), which this
+paper cites; the internal exact-match evaluator is known to undercount
+matches the official scorer accepts.
+% [EVID-031; EVID-035]
+
+\paragraph{Recall denominators.} Recall is $TP/(TP+FN)$, and its gold
+set is named wherever it appears. The rule comparison
+(the main text's rule comparison) uses the
+\texttt{gold\_unstructured} facts of training products; recall in the
+closed-loop experiments uses other gold sets and is not comparable
+(Supplementary Section~S1).
+% [EVID-041]
+
 \section{Aggregation-Rule Comparison: Full Tables}
 \label{sec:s2}
 
@@ -286,6 +336,44 @@ B (2241) & R6 & $-0.0128$ & $[-0.0303, 0.0015]$ & No \\
 % [EVID-041]
 \end{table}
 
+
+
+\paragraph{Moved from the main text.} The following text and tables were moved verbatim from the main text in the length reduction.
+
+Whether counting distinct sources improves what the rule admits, and
+whether the rival ceiling (the main text's rival-ceiling proposition) matters in
+practice, were tested offline by replaying the stored observations of two independent
+gold-labelled snapshots, 657 triples from 35 products (dataset A) and
+2,241 triples from 140 products (dataset B), through six rules applied
+to identical observations: R1, max-merge ($C(t)=\max_i c_i$, no conflict
+handling); R2, the published rule; R3, distinct-source counting
+(below); R4, an evidence-share reformulation
+$C(t)=A(t)^2/\sum_j A(t_j)$ over the candidates $j$ of a slot; R5, R3 and
+R4 combined; and R6, the unsquared share $A(t)/\sum_j A(t_j)$. Each rule
+is evaluated at its own validation-selected threshold and at the fixed
+$\tau=0.88$, on held-out subjects (35 and 92), with 95\% confidence
+intervals from 10,000 bootstrap resamples over subjects. The full
+per-rule tables are in Supplementary Section~S2.
+% [EVID-041; EVID-013/014/036 (dataset A); EVID-029/030 (dataset B)]
+
+\paragraph{Two corrections that do not help.} R4 removes the algebraic
+ceiling and reduces correctly to $C(t)=A(t)$ when $m(t)=0$, but its
+admitted set is identical to R2's on both datasets ($F_1$ difference
+CI exactly $[0,0]$), because no observed contested-slot score comes
+near the threshold (maximum $0.581$ against a selected $\tau=0.73$ on
+dataset A). R6, tested afterwards as an exploratory check, degenerates
+to $C(t)=1$ for every uncontested slot (495 of 495 such rows in dataset
+A), and its $F_1$ is significantly below R2's on dataset A (95\% CI
+$[-0.087, -0.012]$) and not significantly different on B. Any
+share-based replacement for Equation~(2) of the main text must reduce to
+$A(t)$ when $m(t)=0$ to avoid this degeneracy; R4 does and R6 does not.
+Neither is claimed as a contribution.
+% [EVID-041]
+
+R6 shows that rescaling the output can
+also hurt: because $A(t)/A(t)=1$ for any uncontested slot, it collapses
+to a constant exactly where the input carries information. This account
+fits the measured pattern but was not tested against alternatives.
 
 \section{Computational Complexity}
 \label{sec:formal-analysis-complexity}
@@ -611,6 +699,188 @@ relaxed containment evaluator roughly doubles no-aggregation $F_1$
 admitted triples mostly match exactly. The 15-abstract pilot had
 reported $F_1=0.007$ (strict) and $0.103$ (relaxed).
 % [EVID-047; EVID-024]
+
+
+\paragraph{Moved from the main text.} The following text and tables were moved verbatim from the main text in the length reduction.
+
+\paragraph{DocRED (moved from the main text).}
+
+On the 845 DocRED documents, extracting from every sentence (6,861
+calls), PKB aggregation lowered $F_1$ relative to no aggregation under
+every matching key tested (Table~\ref{tab:docred-results}): the PKB's
+existing exact key (lower-cased, stripped); the deployable normalisation
+of the main text's Metrics section; and a gold-alias key that maps each
+string to the gold entity whose mention it matches, an oracle upper
+bound rather than a deployable method. Normalisation admitted 7 more
+items than the exact key, all false positives, and closed about 0\% of
+the $F_1$ gap to no aggregation. The oracle key raised $F_1$ by $0.0031$
+(95\% CI $[0.0017, 0.0047]$), closing 7.3\% of that gap, and remained
+$0.039$ below no aggregation ($[-0.044, -0.034]$). Of the 11,344 gold
+facts, only 29 (0.26\%) were recovered from two or more distinct
+sentences, and 19 (0.17\%) were corroborated by two supporting
+sentences, against 50.2\% with two or more evidence sentences and 3.4\%
+that name both entities in two or more, approximately the ceiling for
+sentence-level extraction scored by entity name. Only 49.2\% of the
+18,104 extracted triples used one of DocRED's relation names.
+% [EVID-046; EVID-048]
+
+Counting distinct source sentences (R3) rather than every observation
+(R2) raised the precision of admitted triples from $0.060$ to $0.250$
+with the exact key ($+0.190$, 95\% CI $[0.084, 0.315]$) and from $0.117$
+to $0.406$ with the oracle key ($+0.289$, $[0.204, 0.384]$), by
+discarding 154 and 194 within-sentence duplicate observations
+respectively. The counts are small (36 triples admitted, 9 correct, with
+the exact key), R3 lost a few true positives (11 to 9), and the
+pre-registered $F_1$ comparison did not exclude zero ($-0.0003$,
+$[-0.0009, 0.00003]$); the precision comparison was a secondary
+analysis. Extracting from the gold evidence sentences only gives the
+same pattern (Supplementary Section~S7).
+% [EVID-046; Decision log.md, DEC-031]
+
+\begin{table}[htbp]
+\centering
+\caption{DocRED, 845 development documents, all sentences
+($\lambda=0.5$, $\tau=0.70$). The gold-alias key is an oracle upper
+bound.}
+\label{tab:docred-results}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Method & $P$ & $R$ & $F_1$ & Admitted & Correct \\
+\midrule
+No aggregation & 0.036 & 0.057 & 0.044 & 17,914 & 645 \\
+PKB, exact key (R2) & 0.060 & 0.001 & 0.002 & 184 & 11 \\
+PKB, normalised key (R2) & 0.058 & 0.001 & 0.002 & 191 & 11 \\
+PKB, gold-alias key (R2, oracle) & 0.117 & 0.003 & 0.005 & 248 & 29 \\
+PKB, exact key (R3) & 0.250 & 0.001 & 0.002 & 36 & 9 \\
+PKB, gold-alias key (R3, oracle) & 0.406 & 0.003 & 0.005 & 69 & 28 \\
+\bottomrule
+\end{tabular}
+% [EVID-046; outputs/dec031_docred/analysis_result.json]
+\end{table}
+
+\paragraph{BioRED (moved from the main text).}
+
+On 500 BioRED abstracts, extracting from every sentence, aggregation
+lowered $F_1$ relative to no aggregation for both the pipeline's
+extractor and the external baseline (Table~\ref{tab:biored-results}).
+With Llama-3.1-8B, R2 was $0.041$ below no aggregation (95\% CI
+$[-0.049, -0.033]$); with DeepSeek-V3.2 it was $0.064$ below
+($[-0.078, -0.052]$). The two extractors had almost the same recall
+without aggregation ($0.096$ and $0.097$), but DeepSeek-V3.2 was nearly
+twice as precise ($0.069$ against $0.036$). Only 0.75\% of gold facts
+(Llama-3.1-8B) and 1.35\% (DeepSeek-V3.2) were recovered from two or more
+sentences (corroborated: 0.73\% and 1.35\%), against 35.1\% whose concepts are co-mentioned in two or more
+sentences; the difference between the extractors was significant
+($+0.0059$, 95\% CI $[0.0021, 0.0098]$). Unlike on DocRED, 96.6\%
+(Llama-3.1-8B) and 100\% (DeepSeek-V3.2) of extracted triples used a
+valid relation type.
+% [EVID-047]
+
+R3 raised the precision of Llama-3.1-8B's admitted triples by $0.054$
+(95\% CI $[0.015, 0.094]$), discarding 138 within-sentence duplicate
+observations. It also lost true positives (32 to 26), and its $F_1$ was
+lower than R2's ($-0.0021$, $[-0.0048, -0.0002]$). DeepSeek-V3.2 produced
+only 6 within-sentence duplicates, and R3 changed neither its precision
+($+0.004$, $[-0.011, 0.016]$) nor its $F_1$ ($-0.0004$,
+$[-0.0012, 0.00002]$). Whole-abstract extraction and the strict and
+relaxed evaluators are reported in Supplementary Section~S7.
+% [EVID-047]
+
+\begin{table}[htbp]
+\centering
+\caption{BioRED, 500 abstracts, sentence-level extraction
+($\lambda=0.5$, $\tau=0.70$); DeepSeek-V3.2 is the external baseline.}
+\label{tab:biored-results}
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Extractor & Method & $P$ & $R$ & $F_1$ & Admitted & Correct \\
+\midrule
+Llama-3.1-8B & No aggregation & 0.036 & 0.096 & 0.053 & 13,034 & 473 \\
+ & R2 & 0.127 & 0.007 & 0.012 & 256 & 32 \\
+ & R3 & 0.181 & 0.005 & 0.010 & 146 & 26 \\
+DeepSeek-V3.2 & No aggregation & 0.069 & 0.097 & 0.081 & 6,934 & 475 \\
+ & R2 & 0.296 & 0.009 & 0.017 & 144 & 42 \\
+ & R3 & 0.299 & 0.008 & 0.016 & 139 & 41 \\
+\bottomrule
+\end{tabular}
+% [EVID-047; outputs/dec032_biored/analysis_result.json]
+\end{table}
+
+\paragraph{Why Aggregation Fails, Within and Across Documents (moved from the main text).}
+
+A natural explanation for the DocRED result is exact-string matching:
+the same fact phrased differently in two sentences would never be
+pooled. The data do not support it: even the oracle key, which already pooled 28 of the 29
+gold facts recovered from more than one sentence, closed only 7.3\% of
+the gap (the main text's DocRED results).
+% [EVID-046]
+
+The failure comes instead from the scarcity of cross-sentence
+corroboration in what the extractor produces: the sentence-level
+extractor recovered only 645 of 11,344 DocRED facts at all and 29 from
+two or more sentences. Part of that shortfall belongs to the protocol
+rather than the extractor: only 3.4\% of DocRED's facts name both
+entities in two or more sentences, so extraction from single sentences,
+scored by entity name, could never have approached 50.2\%. A rule that
+admits a fact only when it is corroborated cannot admit facts that are
+never corroborated, whatever the key
+(the main text's corroboration proposition). The binding constraint is
+therefore extractor recall, compounded across sentences. The same
+pattern holds on BioRED, with different text, a different schema, and an
+external baseline (the main text's BioRED results). There the stronger
+extractor recovered significantly more corroborated facts, but far too
+few, and it lost more $F_1$ to aggregation only because its
+unaggregated output was more precise while both aggregated outputs ended
+near the same low $F_1$. The constraint binds in the product domain
+too, but is masked there: every one of the 99 admitted correct facts
+pairs a structured observation with an LLM one, while the 141
+text-stated facts the LLM never extracted stay below the threshold
+(Supplementary Section~S16). The structured record supplies the
+second observation that the extractor does not. The aggregation stage
+therefore adds value only
+when the extractor recovers the same fact from more than one source often
+enough.
+% [EVID-046; EVID-047]
+
+The pre-registered protocol check tested whether a document-level or
+stronger extractor moves this boundary (the main text's protocol check).
+It moves it, but not far. Extracting from the whole document, with
+cited evidence sentences, raised corroboration significantly on both
+corpora; a stronger model extracting from single sentences did not
+raise it on DocRED. On BioRED, the best configuration narrowed the gap
+to no aggregation significantly, the one partial relief the check
+found, but it still corroborated under a tenth of the annotated facts,
+and aggregation still lowered $F_1$ on both corpora in every
+configuration. By the pre-registered rule, the extractor-recall
+conclusion stands for the extractors and protocols tested. What the
+check does not settle is whether a much larger extractor, or one that
+resolves coreference before extraction, would reach the corroboration
+rates that a corroboration-gated rule needs.
+% [Decision log.md, DEC-033; EVID-048]
+
+The cross-document subset removes a further objection, that single
+documents rarely restate a fact. There every target fact is stated in
+at least two documents, yet the extractors recovered at most 13.1\% of
+them from even one document, and aggregation lowered $F_1$ in every cell
+(the main text's cross-document results). Corroboration that exists in the
+text is not corroboration the extractor delivers.
+% [EVID-054]
+
+\citet{aminnaseri2026dysect} report a recall \emph{improvement} from
+knowledge-base-guided extraction on DocRED for all four models they
+evaluate. The two results are not a controlled comparison, and two
+differences, neither tested here, may explain the opposite direction.
+First, their extractors (GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and
+Kimi~K2.5) are all larger than the Llama-3.1-8B used here, and the
+finding above suggests extractor recall matters most. Second, their
+recall is extraction recall under knowledge-base-guided
+\emph{prompting}, whereas this paper measures recall after a
+confidence-threshold \emph{admission} step, so the two figures may not
+measure the same quantity. In DySECT's own released system, the repeat
+counting that R3 removes is active, yet a check found no material effect
+on its recall (the main text's DySECT audit). One reading is that
+where scores select prompt context rather than admit facts, the
+independence violation changes the scores more than the outcome.
 
 \section{Calibration Bins and Iteration Metrics}
 \label{sec:s8}
@@ -1012,6 +1282,26 @@ and plain text. They are scope limits of what this paper evaluates
 (the main text's Limitations).
 
 
+
+\paragraph{Moved from the main text.} The following text and tables were moved verbatim from the main text in the length reduction.
+
+\paragraph{Adaptation.} Parameter-efficient, instruction, and preference
+tuning adapt pretrained models from curated supervision
+\citep{devlin2019bert,houlsby2019peft,lester2021prompttuning,hu2021lora,dettmers2023qlora,wei2022flan,ouyang2022instructgpt,rafailov2023dpo}.
+Self-improvement methods generate their own supervision
+\citep{madaan2023selfrefine,gulcehre2023rest,chen2024spin,wang2023selfinstruct,schick2023toolformer},
+and continual learning stabilises sequential adaptation
+\citep{wang2024continuallearning,li2017lwf}; none maintains a persistent
+structured knowledge base as the source of supervision. AutoML
+\citep{hutter2019automl,he2021automlsurvey,feurer2015autosklearn,feurer2022autosklearn2,erickson2020autogluon,das2020sagemaker,elsken2019nas}
+treats data extraction as a fixed upstream step.
+
+\paragraph{DySECT's reported gains.} On DocRED it reports recall gains of 5--8 percentage
+points at the first knowledge-base-guided iteration for all four models
+it evaluates (GPT-4.1: 22.80\%$\to$30.62\%; GPT-4.1-mini:
+12.72\%$\to$20.22\%; Kimi~K2.5: 32.03\%$\to$37.85\%; LLaMA-3.3~70B:
+23.23\%$\to$28.78\%).
+
 \section{Additional Formal Properties}
 \label{sec:s14}
 
@@ -1106,6 +1396,17 @@ $t$ distribution, using both the ablated configuration's standard
 deviation and that of the paired differences.
 % [scripts/dec029_analyze.py]
 
+
+
+\paragraph{Moved from the main text.} The following text and tables were moved verbatim from the main text in the length reduction.
+
+The product-domain loop runs four extraction iterations on training
+products: structured facts seed the knowledge base at iteration 1 only,
+and the LLM re-extracts at every iteration, guided from iteration 2 by
+the feedback hint. Validation and test products receive one
+text-only extraction pass, guided only by the trained knowledge base's
+locked context.
+% [EVID-013]
 
 \section{Closed-Loop Evaluation: Results}
 \label{sec:s16}

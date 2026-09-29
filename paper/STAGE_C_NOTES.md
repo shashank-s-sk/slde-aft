@@ -282,3 +282,28 @@ AI declaration still awaiting the user's final approval before insertion.
   page count; 3d trimming is done against that number, not a word-count
   estimate (user instruction).
 - Supplement untouched (compiled separately; not counted).
+
+## 11. Stage 3d trim - APPLIED 2026-09-29 (LENGTH_PLAN_3D.md), awaiting the user's compile
+
+- Body: 7,468 words + 6 tables -> **4,752 words + 4 tables** (plan
+  ~4,150). Over plan mainly in Related Work (386 vs 280), the rule
+  section (488 vs 370; proposition texts fixed), Setup (980 vs 840) and
+  Limitations (557 vs 470; every caveat kept).
+- At the measured 197 words/page, expected about 23-24 pages (minus some
+  relief from moving 2 tables). The real number comes from the user's
+  compile.
+- Moved verbatim to the supplement:
+  - S1: product generator/splits, CaRB detail, recall denominators.
+  - S2: rule definitions, the R4/R6 paragraph, the R6 explanation.
+  - S7: the full old DocRED/BioRED subsections with both per-method
+    tables, and the old Discussion 6.1.
+  - S13: the Adaptation paragraph and DySECT per-model recall.
+  - S15: the product loop schedule.
+- Verification (scripts in the scratchpad: numcheck.py,
+  caveatcheck.py):
+  - **0 of 308 numbers lost**: 265 still in the main text, 43 now only in
+    the supplement.
+  - Every caveat phrase is present.
+  - The 9 limitation paragraphs became 8: two merged ("Small counts and
+    protocol choices"), and the 6.2 scope caveat was folded into "The
+    scope of distinct-source counting".

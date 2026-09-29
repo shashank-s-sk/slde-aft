@@ -59,17 +59,16 @@ text must supply corroboration; the extractor must realise it, by
 recovering the same fact from more than one source; and the repeated
 observations the rule counts must be independent evidence.
 
-This paper tests all three for one published rule, the conservative
-Noisy-OR with a mutual-exclusivity penalty of the DySECT system
+This paper tests all three for the conservative Noisy-OR with a
+mutual-exclusivity penalty of the DySECT system
 \citep{aminnaseri2026dysect}, which counts repeated observations of a
-fact as independent support by design. The rule, its default shrinkage,
-and the closed-loop system around it are DySECT's and are attributed to
-it throughout (Section~\ref{sec:related-work-dysect}); this paper
-evaluates an independent implementation. The implementation's closed
-loop (feedback, fine-tuning on knowledge-base-derived data) was also
-evaluated, with null or negative results, and is reported in the
-Supplementary Material; the main text concerns the aggregation step. It
-asks four questions:
+fact as independent support by design. The rule and the closed-loop
+system around it are DySECT's and are attributed to it throughout
+(Section~\ref{sec:related-work-dysect}); this paper evaluates an
+independent implementation. That implementation's closed loop was also
+evaluated, with null or negative results reported in the Supplementary
+Material; the main text concerns the aggregation step. It asks four
+questions:
 
 \begin{enumerate}
 \item[\textbf{RQ1}] How much corroboration do widely used resources
@@ -83,54 +82,22 @@ stronger extractor and with confidence derived from token probabilities?
 targets occur in DySECT's released system, and does it matter there?
 \end{enumerate}
 
-\noindent The paper makes four contributions:
-
-\begin{enumerate}
-\item[(i)] A characterisation of how much corroboration two widely used
-resources supply. In DocRED, 50.2\% of gold facts have two or more
-evidence sentences, but only 3.4\% name both entities in two or more; in
-BioRED, 35.1\% are co-mentioned in two or more sentences; and across
-DocRED's 4,051 annotated documents, 4.8\% of distinct facts recur in two
-or more documents, 65\% of them geographic
-(Sections~\ref{sec:setup-datasets} and~\ref{sec:results-availability}).
-\item[(ii)] A measurement of how much extractors realise. Within
-documents, extractors corroborated at most 3.1\% of gold facts, even with
-document-level extraction and a stronger model in a pre-registered
-check; on a pre-registered 2,010-document redundancy subset, they
-recovered 0.8--4.1\% of multi-document facts from two documents,
-reported separately for geographic and other relations. Aggregation
-lowered $F_1$ relative to no aggregation in every configuration, within
-and across documents: extractor recall, not the matching key, is the
-binding constraint
-(Sections~\ref{sec:results-within} and~\ref{sec:results-crossdoc}).
-\item[(iii)] A test of the independence assumption. Counting distinct
-sources (R3) raised the precision of admitted facts on real LLM
-extractions of synthetic products. In a pre-registered rerun the gain
-held with a stronger extractor, robustly on one dataset ($+0.229$) and
-borderline on the other ($+0.008$), and with token-logprob confidence,
-which was even more compressed than verbalized confidence. The
-correction acts only where the extractor repeats a fact within a source
-(Section~\ref{sec:formal-analysis-empirical}).
-\item[(iv)] An audit of DySECT's released code and knowledge base.
-Repeat counting is documented and active there: 87.5\% of the concept
-generalisations its extractor can use pass its threshold only through
-repeated counts. Its mutual-exclusion penalty never fired, and a check
-found no material effect on its recall
-(Section~\ref{sec:results-dysect}).
-\end{enumerate}
-
-\noindent The rule's properties are stated in
-Section~\ref{sec:formal-analysis}, including a rival ceiling that keeps a
-contested value of a single-valued predicate out at any threshold of
-$0.5$ or more, a designed property. The pre-registered analyses are
-verifiable from timestamped commits in the public repository
-(Section~\ref{sec:setup-statistics}).
-Section~\ref{sec:related-work} reviews related work and DySECT,
-Section~\ref{sec:formal-analysis} defines the rule,
-Section~\ref{sec:experimental-setup} gives the setup,
-Section~\ref{sec:results} the results in the order of the questions,
-Section~\ref{sec:discussion} their interpretation, and
-Section~\ref{sec:limitations} the limitations.
+\noindent The paper makes four contributions: (i) a characterisation of
+how much corroboration DocRED and BioRED supply within documents, and
+DocRED across documents (Section~\ref{sec:results-availability}); (ii) a
+measurement of how much of it extractors realise, within documents and
+on a pre-registered cross-document subset, showing that extractor recall
+is the binding constraint
+(Sections~\ref{sec:results-within}--\ref{sec:results-crossdoc}); (iii) a
+pre-registered test of the independence assumption, in which counting
+distinct sources raised precision with two extractors and two confidence
+sources (Section~\ref{sec:formal-analysis-empirical}); and (iv) an audit
+of the rule in DySECT's released system
+(Section~\ref{sec:results-dysect}). Section~\ref{sec:related-work}
+reviews related work, Section~\ref{sec:formal-analysis} defines the rule,
+Section~\ref{sec:experimental-setup} gives the setup, and
+Sections~\ref{sec:results}--\ref{sec:limitations} give the results,
+their interpretation, and the limitations.
 
 % ------------------------------------------------------------------
 \section{Related Work}
@@ -154,99 +121,59 @@ inference time
 Knowledge-graph population treats confidence as an open problem
 \citep{bach2017psl,ji2021kgsurvey,nguyen2020kgcsurvey}, and attribution
 is largely post hoc \citep{ribeiro2016lime,zhao2023explainability}.
-
-\paragraph{Adaptation.} Parameter-efficient, instruction, and preference
-tuning adapt pretrained models from curated supervision
-\citep{devlin2019bert,houlsby2019peft,lester2021prompttuning,hu2021lora,dettmers2023qlora,wei2022flan,ouyang2022instructgpt,rafailov2023dpo}.
-Self-improvement methods generate their own supervision
-\citep{madaan2023selfrefine,gulcehre2023rest,chen2024spin,wang2023selfinstruct,schick2023toolformer},
-and continual learning stabilises sequential adaptation
-\citep{wang2024continuallearning,li2017lwf}; none maintains a persistent
-structured knowledge base as the source of supervision. AutoML
-\citep{hutter2019automl,he2021automlsurvey,feurer2015autosklearn,feurer2022autosklearn2,erickson2020autogluon,das2020sagemaker,elsken2019nas}
-treats data extraction as a fixed upstream step.
-
+Work on adapting extractors from their own outputs is reviewed in
+Supplementary Section~S13.
 
 \subsection{Closest Prior System: DySECT}
 \label{sec:related-work-dysect}
 
 DySECT \citep{aminnaseri2026dysect} populates a self-expanding knowledge
 base with LLM-extracted triples, scores them with a probabilistic
-confidence and reasoning layer built on Theo \citep{mitchell1989theo},
-and feeds the knowledge base back into the extractor through prompt
-tuning, few-shot sampling, or fine-tuning on knowledge-base-derived
-synthetic data. On DocRED it reports recall gains of 5--8 percentage
-points at the first knowledge-base-guided iteration for all four models
-it evaluates (GPT-4.1: 22.80\%$\to$30.62\%; GPT-4.1-mini:
-12.72\%$\to$20.22\%; Kimi~K2.5: 32.03\%$\to$37.85\%; LLaMA-3.3~70B:
-23.23\%$\to$28.78\%), and its knowledge base can be inspected and
-curated by a user.
-
-\paragraph{What this paper takes from DySECT.} The aggregation rule
-analysed here is DySECT's: its Equations 1--2 define
-$C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with default
-shrinkage $\lambda=0.75$, followed by the mutual-exclusivity penalty
-$C(t) = C_{\mathrm{agg}}(t)/(m(t)+1)$. DySECT treats the frequency $f_i$
-of an observation ``as repeated independent support'' by design, with
-shrinkage as its guard against redundant evidence
+confidence layer built on Theo \citep{mitchell1989theo}, and feeds the
+knowledge base back into the extractor through prompting, few-shot
+sampling, or fine-tuning. On DocRED it reports recall gains of 5--8
+points for four models (Supplementary Section~S13). Its aggregation rule
+is the one analysed here: its Equations 1--2 define
+$C_{\mathrm{agg}}(t) = 1 - \prod_i (1-\lambda c_i)^{f_i}$ with
+$\lambda=0.75$, followed by $C(t) = C_{\mathrm{agg}}(t)/(m(t)+1)$.
+DySECT treats the frequency $f_i$ ``as repeated independent support'' by
+design, with shrinkage as its guard against redundant evidence
 \citep[Sect.~2.2]{aminnaseri2026dysect}; this paper tests that
-independence assumption. DySECT's $m(t)$ is ``the number of mutually
-exclusive instances detected for $t$'', which its released code computes
-as a count of type-level mutual-exclusion conflicts
-(Section~\ref{sec:results-dysect}). This paper keeps the functional form
-but counts rival object values of a designated single-valued slot, so
-the penalty's behaviour and its ceiling
-(Section~\ref{sec:formal-analysis}) are properties of this
-instantiation, not of DySECT's. DySECT also exempts fully trusted sources
-(in its current version, human curators) from aggregation
-\citep[Sect.~2.2, footnote~3]{aminnaseri2026dysect}; this paper analyses
-the automatic path, which governs all LLM-sourced evidence in both
-systems' evaluations.
+independence assumption. DySECT's $m(t)$, ``the number of mutually
+exclusive instances detected for $t$'', is a type-level conflict count
+in its released code (Section~\ref{sec:results-dysect}); this paper
+keeps the functional form but counts rival values of a single-valued
+slot, so the penalty's behaviour is a property of this instantiation.
+DySECT exempts fully trusted sources (human curators) from aggregation
+\citep[Sect.~2.2, footnote~3]{aminnaseri2026dysect}; the automatic path
+analysed here governs all LLM-sourced evidence in both systems.
 % [aminnaseri2026dysect, arXiv:2603.06915v2, p. 3, Sect. 2.2 "Knowledge Base Growth", footnote 3, verified 2026-09-27]
-The closed loop, the probabilistic confidence layer,
-prompt-augmentation feedback, fine-tuning on knowledge-base-derived data,
-and the names of DySECT's two feedback modes (Encouraging and
-Prohibitive) are DySECT's design, and the implementation evaluated here
-follows them (Supplementary Section~S13). This paper claims none of them.
+The closed loop, the confidence layer, knowledge-base feedback,
+fine-tuning on knowledge-base data, and the names of DySECT's two
+feedback modes (Encouraging and Prohibitive) are DySECT's design. The
+evaluated implementation follows them, lacks DySECT's concept hierarchy
+and curation interface, and adds seeding from structured records
+(Supplementary Section~S13); this paper claims none of them, and the two
+evaluations are not directly comparable.
 
-\paragraph{Differences.} The evaluated implementation lacks DySECT's
-KNN-based hierarchical concept abstraction and its curation interface,
-and it seeds the knowledge base from structured records as well as text
-(Supplementary Section~S13). The two evaluations use different
-benchmarks, models, and metrics, so no direct numerical comparison is
-made.
+Not yet measured for this family of rules are how much corroboration the
+text supplies and extractors realise, whether the independence
+assumption holds, and how the rule behaves in the released system. The
+main text measures these; the closed-loop evaluation of the
+implementation (a thirty-seed ablation, a leakage-free fine-tuning test,
+and calibration) found no end-to-end benefit and is in Supplementary
+Sections~S15--S18.
 
-\subsection{Evaluation Gap}
-\label{sec:gap}
-
-Three things have not been measured for this family of rules: how much
-corroboration the text supplies and how much of it extractors realise;
-whether the independence assumption behind counting repeated
-observations holds; and how the rule behaves in the released system.
-This paper measures all three
-(Sections~\ref{sec:results-availability}--\ref{sec:results-dysect}). The
-closed-loop evaluation of the implementation, with a module ablation
-over thirty seeds, a leakage-free fine-tuning test, and a calibration
-measurement, found no end-to-end benefit and is reported in
-Supplementary Sections~S15--S18.
-
+% ------------------------------------------------------------------
 \section{The Aggregation Rule}
 \label{sec:formal-analysis}
 
-The rule is the aggregation step of a closed-loop extraction system that
-follows DySECT's design: dual-source extraction from structured records
-and text, a probabilistic knowledge base, a feedback controller, and
-fine-tuning on knowledge-base-derived data. The modules are described in
-Supplementary Section~S13.
-
-\subsection{Definition and Attribution}
+\subsection{Definition}
 \label{sec:formal-analysis-definition}
 
-The aggregation rule is \citet{aminnaseri2026dysect}'s (their
-Equations 1--2), with their default shrinkage
-(Section~\ref{sec:related-work-dysect}); this paper cites it rather
-than claiming it. For a slot with candidate object $t$ supported by
-observations with self-reported confidences
+The rule is the aggregation step of a closed-loop system that follows
+DySECT's design (Supplementary Section~S13). For a slot with candidate
+object $t$ supported by observations with self-reported confidences
 $c_1,\dots,c_n \in [0,1]$ and shrinkage $\lambda \in (0,1]$ (default
 $\lambda=0.75$)
 % [scripts/dec003_product_probkb_run.py; matches aminnaseri2026dysect Eq. 1]
@@ -262,15 +189,14 @@ the admitted confidence is
 C(t) \;=\; \frac{A(t)}{m(t) + 1}.
 \label{eq:conflict}
 \end{equation}
-The functional form is DySECT's, but DySECT's $m(t)$ counts type-level
-mutual-exclusion conflicts, whereas here it counts rival values of a
-designated single-valued slot (Section~\ref{sec:related-work-dysect}).
+The form is DySECT's; here $m(t)$ counts rival values rather than
+DySECT's type-level conflicts (Section~\ref{sec:related-work-dysect}).
 For a non-functional predicate (only \texttt{has\_color} in the product
 domain), $C(t) = A(t)$. A candidate is admitted when $C(t) \ge \tau$,
 with $\tau=0.88$ in the product domain
 % [configs/functional_predicates_product_domain.json; scripts/dec003_product_probkb_run.py]
-. The three properties below are the ones the argument uses; the rule's
-other properties, with proofs, are in Supplementary Section~S14.
+. Three properties matter here; the others, with proofs, are in
+Supplementary Section~S14.
 
 \subsection{Properties Used in This Paper}
 \label{sec:formal-analysis-properties}
@@ -305,301 +231,201 @@ Each factor $1-\lambda c_i$ is positive, so $A(t) < 1$ for any finite set
 of observations, and $C(t) = A(t)/(m(t)+1) < 1/(m(t)+1) \le 1/2$ for
 $m(t) \ge 1$.
 \end{proof}
-The ceiling is a designed property of Equation~\ref{eq:conflict}: it
-keeps a contested value out of the knowledge base, and on the data here
-it did no measurable harm, since a variant without it admitted exactly
-the same facts (Section~\ref{sec:formal-analysis-empirical}). Because the
-implementation never deletes an accepted candidate (Supplementary
-Section~S13), a contested slot stays unresolved however much evidence
-accumulates.
+The ceiling is a designed property: it keeps a contested value out, and
+a variant without it admitted exactly the same facts here
+(Section~\ref{sec:formal-analysis-empirical}). Since accepted candidates
+are never deleted (Supplementary Section~S13), a contested slot stays
+unresolved however much evidence accumulates.
 
 \begin{proposition}[Independence assumption and repeated observation]
 \label{prop:independence}
 Equation~\ref{eq:noisyor} is a Noisy-OR combination rule, which assumes
 each $c_i$ is drawn from a conditionally independent evidence source;
-DySECT adopts this by design for repeated observations.
-This assumption is violated whenever observations that share a source
-(Section~\ref{sec:setup-metrics}) are counted separately. In
-particular, when the same extractor, invoked at temperature $0$, is
-asked to re-read the same source text, the output is
-deterministic, so repeated invocations produce byte-identical
-observations that are treated by Equation~\ref{eq:noisyor} as though they
-were independent corroboration, inflating $A(t)$ by
-the saturation property (Supplementary Section~S14) regardless of
-whether the underlying claim is correct.
+DySECT adopts this by design for repeated observations. The assumption
+is violated whenever observations that share a source
+(Section~\ref{sec:setup-metrics}) are counted separately. In particular,
+when the same extractor, invoked at temperature $0$, re-reads the same
+source text, the output is deterministic, so repeated invocations
+produce identical observations that Equation~\ref{eq:noisyor} treats as
+independent corroboration, inflating $A(t)$ by the saturation property
+(Supplementary Section~S14) whether or not the claim is correct.
 \end{proposition}
-The violation is observable in the data: in the 200-product snapshot, 31
-unstructured-only triples were observed 2 to 21 times each by this
-mechanism, and all 31 were incorrect
+In the 200-product snapshot, 31 unstructured-only triples were observed
+2 to 21 times each by this mechanism, and all 31 were incorrect
 % [EVID-029]
 . On DocRED and BioRED the shared-source observations are of the other
 kind, duplicate emissions of one fact from a single sentence
-(Section~\ref{sec:results-docred}). The same rule's scores are poorly calibrated on real LLM extractions (expected
-calibration error $0.333$; Supplementary Section~S16).
-The computational cost of the implementation is analysed in
-Supplementary Section~S3.
+(Section~\ref{sec:results-within}).
 
+% ------------------------------------------------------------------
 \section{Experimental Setup}
 \label{sec:experimental-setup}
 
 \subsection{Datasets}
 \label{sec:setup-datasets}
 
-\paragraph{Product snapshots.} The rule comparison
-(Section~\ref{sec:formal-analysis-empirical}) replays real LLM
-extractions of synthetic products. Products come from a
-deterministic synthetic consumer-product generator
-(\texttt{src/datasets/product\_generator.py}, \texttt{random.seed(42)})
-over a fixed 13-predicate schema (listed in Supplementary Section~S1).
-For each product it produces (i) a structured record with all 13 facts,
-(ii) a text paragraph verbalising a random 7 of the 13, and (iii) two
-gold sets: \texttt{gold\_structured} (all 13 facts) and
-\texttt{gold\_unstructured} (the facts verbalised in the text).
-\textbf{The structured records and the gold triples come from the same
-generator call} (Section~\ref{sec:limitations}).
-% [src/datasets/product_generator.py]
-
-Two sizes are used, both split 70/10/20 (train/validation/test) with
-\texttt{random.Random(7)}, a seed distinct from the generation seed
-(\texttt{src/leakage\_split.py}): 50 products (35/5/10;
-\texttt{data/product\_split.csv}) and 200 products (140/20/40;
-\texttt{data/product\_split\_200.csv}). The knowledge bases replayed
-here (dataset A: 657 candidate triples; dataset B: 2,241) were built by
-the implementation's four-iteration loop over the training products;
-the leakage rules for the other splits are in Supplementary
-Section~S15.
-
-\paragraph{Public benchmarks.} \textbf{DocRED} \citep{yao2019docred}: the 845 documents of the
-998-document human-annotated development split (\texttt{thunlp/DocRED})
-that contain at least one gold fact supported by two or more evidence
-sentences, with 6,861 sentences and 11,344 entity-level gold facts, of
-which 5,691 (50.2\%) have two or more evidence sentences. Only 386
-(3.4\%) name both entities in two or more sentences; most second
-evidence sentences refer to an entity by a pronoun or other
-coreference, which extraction from a single sentence, scored by entity
-name, cannot match. The extractor is run on every sentence.
-% [Decision log.md, DEC-031; EVID-046; EVID-048]
-These DocRED scores are not comparable to published DocRED results:
-those systems are trained on DocRED and given the gold entities,
-whereas the extractors here are zero-shot, open, and given no entity
-list, and the evaluation covers 845 of the 998 development documents.
-Supplementary Section~S10 reports the official metrics ($F_1$, Ign
-$F_1$, evidence $F_1$) for the same extractions, with the caveats of
-that conversion; the conclusions are unchanged.
-% [Decision log.md, DEC-034; EVID-049]
-\textbf{BioRED} \citep{luo2022biored}: all 500 abstracts of the Train
-(400) and Dev (100) splits (PubTator format); the Test split is not
-used. They contain 5,462 sentences (the title plus the abstract, split
-by a fixed rule) and 4,906 gold facts, each an unordered pair of
-annotated concepts with one of eight relation types. BioRED has no
-evidence-sentence annotations; as a proxy, 35.1\% of gold facts have
-both concepts mentioned together in two or more sentences, and 89.7\%
-in at least one.
+\paragraph{Public corpora.} \textbf{DocRED} \citep{yao2019docred}: the
+845 documents of the 998-document human-annotated development split
+(\texttt{thunlp/DocRED}) that contain at least one gold fact with two or
+more evidence sentences, with 6,861 sentences and 11,344 entity-level
+gold facts; the extractor is run on every sentence. These scores are not
+comparable with published DocRED results, whose systems are trained on
+DocRED and given the gold entities, whereas the extractors here are
+zero-shot, open, and given no entity list; Supplementary Section~S10
+reports the official metrics for the same extractions, with the same
+conclusions.
+% [Decision log.md, DEC-031, DEC-034; EVID-046; EVID-049]
+\textbf{BioRED} \citep{luo2022biored}: the 500 abstracts of the Train
+(400) and Dev (100) splits, with 5,462 sentences and 4,906 gold facts,
+each an unordered pair of annotated concepts with one of eight relation
+types, and no evidence-sentence annotations.
 % [Decision log.md, DEC-032; EVID-047]
-% [Earlier 15-document pilots superseded: Decision log.md, DEC-020; EVID-024; EVID-047; Supplementary S7]
 
-\paragraph{Cross-document redundancy subset.} DocRED and BioRED annotate
-facts within single documents, so they test corroboration across
-sentences but not across documents. To test the latter, a subset was
-built from DocRED's development and annotated training documents: every
-document containing at least one gold fact that also appears in another
-document, a fact being identified by its relation and the normalised
-first-mention names of its two entities. Across those 4,051 documents,
-2,179 of 45,212 distinct gold facts (4.8\%) recur in two or more
-documents, 65\% of them in three geographic relations. The subset has
-2,010 documents (477 development, 1,533 training), 16,222 sentences, and
+\paragraph{Cross-document subset.} DocRED and BioRED annotate facts
+within single documents. To test corroboration across documents, a
+subset was built from DocRED's annotated development and training
+documents: every document containing a gold fact that also appears in
+another document, a fact being identified by its relation and the
+normalised first-mention names of its two entities. It has 2,010
+documents (477 development, 1,533 training), 16,222 sentences, and
 24,591 distinct gold facts, 2,130 of them stated in two or more of its
-documents. Because geographic facts dominate, every result on it is
-reported separately for the three geographic relations (GEO: country;
-located in the administrative territorial entity; contains
-administrative territorial entity) and all others (OTHER); no pooled
-figure supports a conclusion. Each document is one source. The document
-list was fixed and committed before any extraction.
+documents. Each document is one source. Results are reported separately
+for three geographic relations (GEO: country; located in the
+administrative territorial entity; contains administrative territorial
+entity) and all others (OTHER), never pooled. The document list was
+committed before any extraction.
 % [Decision log.md, DEC-037, DEC-038; EVID-053; outputs/dec038_crossdoc/doc_list.json]
 
-\subsection{Models and Hardware}
+\paragraph{Product snapshots.} The rule comparison
+(Section~\ref{sec:formal-analysis-empirical}) replays real LLM
+extractions of synthetic products from a deterministic generator
+(Supplementary Section~S1). \textbf{The structured records and the gold
+triples come from the same generator call}
+(Section~\ref{sec:limitations}). Two knowledge bases are replayed, built
+over the training products of a 50-product run (dataset A: 657
+candidate triples) and a 200-product run (dataset B: 2,241).
+
+\subsection{Models}
 \label{sec:setup-models}
 
-The pipeline's extractor, used for every product-domain, DocRED, and
-BioRED run, is \texttt{meta-llama/llama-3.1-8b-instruct}
-\citep{grattafiori2024llama3} via OpenRouter at temperature $0$.
-% [EVID-013; src/extractors/openrouter_llm.py]
-On BioRED it is compared with \texttt{deepseek/deepseek-v3.2}
-\citep{deepseekai2025deepseekv32} as an external baseline, given the
-same prompts and inputs. DeepSeek-V3.2 also re-extracts the two
-product snapshots (Section~\ref{sec:formal-analysis-empirical}) and the
-cross-document subset, so that no aggregation conclusion rests on the
-8B extractor alone.
-% [Decision log.md, DEC-032, DEC-036, DEC-038]
-As a check on extractor quality, on 548 CaRB \citep{bhardwaj2019carb}
-test sentences under the official scorer, Llama-3.1-8B scored
-$F_1=0.467$ against $0.571$ for DeepSeek-V3.2; on a 30-sentence subset it
-also scored below \texttt{openai/gpt-4o} \citep{openai2024gpt4o},
-\texttt{anthropic/claude-sonnet-5} \citep{anthropic2026claudesonnet5},
-and \texttt{google/gemini-2.5-pro} \citep{comanici2025gemini25}
-(Supplementary Section~S1).
+The pipeline's extractor is \texttt{meta-llama/llama-3.1-8b-instruct}
+\citep{grattafiori2024llama3}, via OpenRouter at temperature $0$.
+\texttt{deepseek/deepseek-v3.2} \citep{deepseekai2025deepseekv32},
+given the same prompts and inputs, re-extracts BioRED, the protocol
+check, the product snapshots, and the cross-document subset, so that no
+conclusion rests on the 8B extractor alone.
+% [EVID-013; Decision log.md, DEC-032, DEC-033, DEC-036, DEC-038]
+On CaRB \citep{bhardwaj2019carb} (official scorer, 548 sentences),
+Llama-3.1-8B scored $F_1=0.467$ against $0.571$ for DeepSeek-V3.2, and it
+also scored below GPT-4o \citep{openai2024gpt4o}, Claude Sonnet 5
+\citep{anthropic2026claudesonnet5}, and Gemini 2.5 Pro
+\citep{comanici2025gemini25} on a 30-sentence subset (Supplementary
+Section~S1).
 % [EVID-032; EVID-035]
 
-\subsection{Hyperparameters and Prompts}
+\subsection{Aggregation Settings and Confidence}
 \label{sec:setup-hyperparameters}
 
-The product domain uses shrinkage $\lambda=0.75$ and admission threshold
-$\tau=0.88$, the default \citet{aminnaseri2026dysect} report.
-% [scripts/dec003_product_probkb_run.py; scripts/dec006_scaleup_probkb_run.py]
-DocRED and BioRED use $\lambda=0.5$ and $\tau=0.70$, so that two
-corroborating observations suffice for admission (Supplementary
-Section~S1), and no conflict penalty, because no functional-predicate
-policy is defined for them
-(\texttt{configs/docred\_functional\_predicates.json} is empty).
+The product domain uses $\lambda=0.75$ and $\tau=0.88$, DySECT's
+defaults, over a four-iteration extraction loop (Supplementary
+Section~S15). DocRED, BioRED, and the cross-document subset use
+$\lambda=0.5$ and $\tau=0.70$, so that two corroborating observations
+suffice (Supplementary Section~S1), and no conflict penalty, since no
+functional predicates are defined for them; each document is processed
+once, with one extraction call per sentence, or per document in the
+protocol check.
 % [Decision log.md, DEC-020, DEC-032]
-The product-domain loop runs four extraction iterations on training
-products: structured facts seed the knowledge base at iteration 1 only,
-and the LLM re-extracts at every iteration, guided from iteration 2 by
-the feedback hint. Validation and test products receive one
-text-only extraction pass, guided only by the trained knowledge base's
-locked context.
-% [EVID-013]
-DocRED and BioRED documents are processed once, with one extraction call
-per sentence (per document in Section~\ref{sec:results-protocol}); the
-same fact extracted from several sentences supplies the repeated
-observations.
+Confidence is self-reported in response to the prompt, not derived from
+token probabilities or calibrated; the product extractor asks for a
+value between $0.80$ and $0.96$, and the public corpora use their own
+prompts (Supplementary Section~S1).
+% [EVID-021; EVID-041]
 
-Confidence is self-reported by the model in response to a prompt
-instruction, not derived from token probabilities or calibrated
-% [EVID-041]
-. The pipeline's extraction prompt asks for a confidence between $0.80$
-and $0.96$. CaRB, DocRED, and BioRED use their
-own prompts, open-phrase for CaRB and enumerating the closed relation
-sets for the others (Supplementary Section~S1).
-% [EVID-021; Decision log.md, DEC-020, DEC-032]
-
-\paragraph{Token-logprob confidence.} Because a prompted range of
-$[0.80, 0.96]$ leaves confidence little room to vary, the product-snapshot
-comparison was repeated with confidences derived from the token
-log-probabilities of the same extraction calls: the geometric-mean token
-probability over the tokens of the subject, predicate, and object values
-(primary), and the joint probability of the object-value tokens
-(secondary). Tokens are aligned to the output text by sequence matching,
-so both confidences score identical observations. DeepSeek-V3.2 was
-routed to a single provider that returns complete log-probabilities.
+\paragraph{Token-logprob confidence.} The product comparison was
+repeated with confidences from the token log-probabilities of the same
+calls: the geometric-mean token probability over the subject, predicate,
+and object values (primary) and the joint probability of the
+object-value tokens (secondary). Tokens are aligned to the output text by
+sequence matching, so both confidences score identical observations;
+DeepSeek-V3.2 was routed to a provider that returns complete
+log-probabilities.
 % [Decision log.md, DEC-036; EVID-052; src/extractors/openrouter_llm.py item_logprob_confidences]
 
 \subsection{Metrics}
 \label{sec:setup-metrics}
 
-Unless stated otherwise, triples are scored by normalised exact-match
-set comparison (\texttt{src/evaluator.py}: lower-cased and
-whitespace-normalised subject, predicate, and object, intersected as
-sets). \textbf{CaRB} is reported under the official scorer (lenient span
-matching; AUC and an optimal precision/recall/$F_1$ point), which this
-paper cites; the internal exact-match evaluator is known to undercount
-matches the official scorer accepts.
-% [EVID-031; EVID-035]
-\textbf{DocRED} is scored per document against gold entities rather than
-strings: a predicted triple matches a gold fact when its relation name
-matches and its subject and object, after string normalisation (Unicode
-NFKC, case folding, punctuation and possessives removed, one leading
-article dropped), equal the normalised form of any gold mention of the
-head and tail entities. Predictions are deduplicated per
-gold fact, and the same evaluator is used for every aggregation arm.
-\textbf{BioRED} is scored the same way against gold concepts, matching
-either argument order. For both, exact matching against each entity's
-first mention (and, for BioRED, a relaxed containment match) is a
-secondary measure (Supplementary Section~S7).
-% [Decision log.md, DEC-031, DEC-032; EVID-046; EVID-047]
-
-\paragraph{Recall denominators.} Recall is $TP/(TP+FN)$, and its gold
-set is named wherever it appears. The rule comparison
-(Section~\ref{sec:formal-analysis-empirical}) uses the
-\texttt{gold\_unstructured} facts of training products; recall in the
-closed-loop experiments uses other gold sets and is not comparable
-(Supplementary Section~S1).
-% [EVID-041]
+Triples are scored by normalised exact-match set comparison unless
+stated otherwise; CaRB uses its official scorer (Supplementary
+Section~S1). On DocRED a predicted triple matches a gold fact when its
+relation name matches and its subject and object, after normalisation
+(Unicode NFKC, case folding, punctuation and possessives removed, one
+leading article dropped), equal a gold mention of the head and tail
+entities; BioRED is scored the same way against gold concepts, in either
+argument order. Exact matching against first mentions is a secondary
+measure (Supplementary Section~S7). The rule comparison's recall uses
+the \texttt{gold\_unstructured} facts of training products and is not
+comparable with recall elsewhere (Supplementary Section~S1).
+% [Decision log.md, DEC-031, DEC-032; EVID-041; EVID-046; EVID-047]
 
 \paragraph{Sources and corroboration.} A \emph{source} is the unit of
-text an observation was extracted from, identified by its (source type,
-source identifier) pair: in the product domain, one product's structured
-record or its unstructured description; on DocRED and BioRED, one
-sentence (sentence-level extraction) or one sentence the extractor cites
-(document-level extraction). Observations share a source when they come
-from the same unit, by either of two mechanisms: the pipeline re-reads
-the same text (the product domain reads each description once per
-iteration, for four iterations), or the extractor emits the same fact
-more than once, possibly in different spellings, from one unit in a
-single call (the within-sentence duplicates on DocRED and BioRED). R3
+text an observation comes from: in the product domain, a product's
+structured record or its description; on DocRED and BioRED, a sentence,
+or a sentence the extractor cites at document level; on the
+cross-document subset, a document. Observations share a source when the
+pipeline re-reads the same text (the product domain reads each
+description in each of four iterations) or when the extractor emits the
+same fact more than once, possibly spelled differently, from one unit in
+one call (the within-sentence duplicates of DocRED and BioRED). R3
 counts each source once. A gold fact is \emph{recovered from two or more
-sentences} when matching extractions come from at least two distinct
-sentences, and \emph{corroborated} when at least two of those sentences
-genuinely support it: gold evidence sentences on DocRED, sentences
-mentioning both concepts on BioRED (Supplementary Section~S11). The
-first share bounds the second from above; both are given where they
-differ.
+sentences} when matching extractions come from two distinct sentences,
+and \emph{corroborated} when two of those sentences genuinely support it
+(gold evidence sentences on DocRED, sentences mentioning both concepts
+on BioRED; Supplementary Section~S11). The first share bounds the
+second.
 % [src/dec033_protocol.py corroboration(); outputs/dec033_protocol/analysis_result.json g2_raw vs g2_verified]
 
 \subsection{Statistical Protocol}
 \label{sec:setup-statistics}
 
-\paragraph{Bootstrap confidence intervals.} All bootstrap intervals use
-10,000 resamples and the percentile 95\% interval, resampling the unit
-of analysis with replacement and recomputing precision, recall, and
-$F_1$ from summed counts: test-split subjects for the rule comparison,
-documents for DocRED and BioRED, and fact keys for the cross-document
-subset, where a document-resampling check is reported alongside.
-% [EVID-041; scripts/dec026_aggregation_rules_replay.py; Decision log.md, DEC-027, DEC-031, DEC-032, DEC-033]
+Bootstrap intervals use 10,000 resamples and the percentile 95\%
+interval, resampling test-split subjects (rule comparison), documents
+(DocRED, BioRED), or fact keys (cross-document subset, with a
+document-resampling check). Point estimates are observed differences.
+The DocRED, BioRED, protocol-check, stronger-extractor, and
+cross-document analyses, and the closed-loop experiments in the
+Supplementary Material, were pre-registered with primary metrics and
+decision rules. Each pre-registration is a public commit whose timestamp
+precedes its first result, and for DocRED and BioRED the extraction logs
+also start after it (Supplementary Table~S19). The rule comparison fixed
+$F_1$ at each rule's own selected threshold as primary in advance, but
+committed that together with its first results, so its order cannot be
+verified; its fixed-threshold comparison
+(Table~\ref{tab:dec026-bootstrap-tau088}) was added after them as a
+secondary analysis, and R6 as an exploratory rule. Every other interval
+is secondary or descriptive and labelled as such (Supplementary
+Section~S12). Nulls are reported as found, without re-running, adding
+seeds, or post-hoc adjustment.
+% [Decision log.md, DEC-026 to DEC-038; README.md ground rule 5]
 
-\paragraph{Pre-registration; primary and secondary analyses.} The
-DocRED and BioRED runs, the protocol check, the stronger-extractor and
-token-logprob rerun, the cross-document analysis, and the closed-loop
-experiments in the Supplementary Material were pre-registered, with
-primary metrics and decision rules fixed before any result was seen.
-Each pre-registration is a commit in the public repository whose hash
-and timestamp precede the commit of its first result; for the DocRED
-and BioRED runs the extraction logs also record a start time after the
-pre-registration commit (Supplementary Table~S19). The offline rule
-comparison specified $F_1$ at each rule's own selected threshold as its
-primary analysis in advance, but that specification was committed
-together with its first results, so its order cannot be verified from
-the repository; its fixed-threshold
-comparison (Table~\ref{tab:dec026-bootstrap-tau088}) was added as a
-secondary analysis after the first results, and one rule (R6) as an
-exploratory check. Each experiment has one or two primary analyses;
-every other interval is secondary or descriptive and is labelled as such
-where it is reported. Supplementary Section~S12 lists the status of
-every analysis. Point estimates are observed differences; intervals are
-bootstrap percentile intervals. A result with $p \ge 0.05$, or a bootstrap
-CI including zero, is reported as a null exactly as found, without
-re-running, adding seeds, or post-hoc adjustment.
-% [Decision log.md, DEC-027, DEC-029, DEC-031, DEC-032, DEC-033; README.md ground rule 5]
-
+% ------------------------------------------------------------------
 \section{Results}
 \label{sec:results}
-
-Results follow the four questions: what the resources supply
-(Section~\ref{sec:results-availability}), what extractors realise within
-and across documents
-(Sections~\ref{sec:results-within} and~\ref{sec:results-crossdoc}), what
-counting distinct sources buys
-(Section~\ref{sec:formal-analysis-empirical}), and how the rule behaves
-in DySECT's released system (Section~\ref{sec:results-dysect}).
-Interpretation is in Section~\ref{sec:discussion}.
 
 \subsection{How Much Corroboration the Resources Supply}
 \label{sec:results-availability}
 
-Independently of any extractor, the annotations bound how much
-corroboration aggregation can use. In DocRED's 845 development documents,
-50.2\% of the 11,344 gold facts have two or more evidence sentences, but
-only 3.4\% name both entities in two or more; the other supporting
-sentences refer to an entity by a pronoun or other coreference, which
-extraction from single sentences, scored by entity name, cannot match.
-In BioRED's 500 abstracts, which have no evidence annotations, 35.1\% of
-gold facts have both concepts mentioned together in two or more
-sentences. Across documents, corroboration is scarcer still: of 45,212
-distinct gold facts in DocRED's 4,051 annotated development and training
-documents, 2,179 (4.8\%) recur in two or more documents, and 65\% of
-those are geographic. These rates are properties of the resources, not
-of any method.
-% [EVID-046; EVID-047; EVID-053]
+The annotations bound how much corroboration aggregation can use,
+independently of any extractor. Of DocRED's 11,344 gold facts, 5,691
+(50.2\%) have two or more evidence sentences, but only 386 (3.4\%) name
+both entities in two or more: most second evidence sentences refer to an
+entity by a pronoun or other coreference, which single-sentence
+extraction scored by entity name cannot match. In BioRED, 35.1\% of gold
+facts have both concepts mentioned together in two or more sentences
+(89.7\% in at least one). Across documents, corroboration is scarcer: of
+45,212 distinct gold facts in DocRED's 4,051 annotated development and
+training documents, 2,179 (4.8\%) recur in two or more documents, 65\% of
+them geographic.
+% [EVID-046; EVID-047; EVID-048; EVID-053]
 
 \subsection{Realised Corroboration Within Documents}
 \label{sec:results-within}
@@ -607,152 +433,68 @@ of any method.
 \subsubsection{DocRED}
 \label{sec:results-docred}
 
-On the 845 DocRED documents, extracting from every sentence (6,861
-calls), PKB aggregation lowered $F_1$ relative to no aggregation under
-every matching key tested (Table~\ref{tab:docred-results}): the PKB's
-existing exact key (lower-cased, stripped); the deployable normalisation
-of Section~\ref{sec:setup-metrics}; and a gold-alias key that maps each
-string to the gold entity whose mention it matches, an oracle upper
-bound rather than a deployable method. Normalisation admitted 7 more
-items than the exact key, all false positives, and closed about 0\% of
-the $F_1$ gap to no aggregation. The oracle key raised $F_1$ by $0.0031$
-(95\% CI $[0.0017, 0.0047]$), closing 7.3\% of that gap, and remained
-$0.039$ below no aggregation ($[-0.044, -0.034]$). Of the 11,344 gold
-facts, only 29 (0.26\%) were recovered from two or more distinct
-sentences, and 19 (0.17\%) were corroborated by two supporting
-sentences, against 50.2\% with two or more evidence sentences and 3.4\%
-that name both entities in two or more, approximately the ceiling for
-sentence-level extraction scored by entity name. Only 49.2\% of the
-18,104 extracted triples used one of DocRED's relation names.
-% [EVID-046; EVID-048]
-
-Counting distinct source sentences (R3) rather than every observation
-(R2) raised the precision of admitted triples from $0.060$ to $0.250$
-with the exact key ($+0.190$, 95\% CI $[0.084, 0.315]$) and from $0.117$
-to $0.406$ with the oracle key ($+0.289$, $[0.204, 0.384]$), by
-discarding 154 and 194 within-sentence duplicate observations
-respectively. The counts are small (36 triples admitted, 9 correct, with
-the exact key), R3 lost a few true positives (11 to 9), and the
-pre-registered $F_1$ comparison did not exclude zero ($-0.0003$,
-$[-0.0009, 0.00003]$); the precision comparison was a secondary
-analysis. Extracting from the gold evidence sentences only gives the
-same pattern (Supplementary Section~S7).
-% [EVID-046; Decision log.md, DEC-031]
-
-\begin{table}[htbp]
-\centering
-\caption{DocRED, 845 development documents, all sentences
-($\lambda=0.5$, $\tau=0.70$). The gold-alias key is an oracle upper
-bound.}
-\label{tab:docred-results}
-\begin{tabular}{@{}lrrrrr@{}}
-\toprule
-Method & $P$ & $R$ & $F_1$ & Admitted & Correct \\
-\midrule
-No aggregation & 0.036 & 0.057 & 0.044 & 17,914 & 645 \\
-PKB, exact key (R2) & 0.060 & 0.001 & 0.002 & 184 & 11 \\
-PKB, normalised key (R2) & 0.058 & 0.001 & 0.002 & 191 & 11 \\
-PKB, gold-alias key (R2, oracle) & 0.117 & 0.003 & 0.005 & 248 & 29 \\
-PKB, exact key (R3) & 0.250 & 0.001 & 0.002 & 36 & 9 \\
-PKB, gold-alias key (R3, oracle) & 0.406 & 0.003 & 0.005 & 69 & 28 \\
-\bottomrule
-\end{tabular}
-% [EVID-046; outputs/dec031_docred/analysis_result.json]
-\end{table}
+Extracting from all 6,861 sentences, aggregation lowered $F_1$ relative
+to no aggregation ($0.044$) under every matching key: the exact key; the
+normalisation of Section~\ref{sec:setup-metrics}, which closed about 0\%
+of the gap; and an oracle key mapping each string to its gold entity,
+which raised $F_1$ by $0.0031$ (95\% CI $[0.0017, 0.0047]$), closing
+7.3\% of the gap, and stayed $0.039$ below no aggregation
+($[-0.044, -0.034]$). Only 29 of the 11,344 gold facts (0.26\%) were
+recovered from two or more sentences, and 19 (0.17\%) were corroborated.
+R3 raised the precision of admitted triples from $0.060$ to $0.250$ with
+the exact key ($+0.190$, $[0.084, 0.315]$) and from $0.117$ to $0.406$
+with the oracle key ($+0.289$, $[0.204, 0.384]$), by discarding 154 and
+194 within-sentence duplicates. The counts are small (36 admitted, 9
+correct, exact key), and the pre-registered $F_1$ comparison did not
+exclude zero ($-0.0003$, $[-0.0009, 0.00003]$); precision was a
+secondary analysis. Per-method counts and the evidence-only setting are
+in Supplementary Section~S7.
+% [EVID-046; EVID-048; Decision log.md, DEC-031]
 
 \subsubsection{BioRED}
 \label{sec:results-biored}
 
-On 500 BioRED abstracts, extracting from every sentence, aggregation
-lowered $F_1$ relative to no aggregation for both the pipeline's
-extractor and the external baseline (Table~\ref{tab:biored-results}).
-With Llama-3.1-8B, R2 was $0.041$ below no aggregation (95\% CI
-$[-0.049, -0.033]$); with DeepSeek-V3.2 it was $0.064$ below
-($[-0.078, -0.052]$). The two extractors had almost the same recall
-without aggregation ($0.096$ and $0.097$), but DeepSeek-V3.2 was nearly
-twice as precise ($0.069$ against $0.036$). Only 0.75\% of gold facts
-(Llama-3.1-8B) and 1.35\% (DeepSeek-V3.2) were recovered from two or more
-sentences (corroborated: 0.73\% and 1.35\%), against 35.1\% whose concepts are co-mentioned in two or more
-sentences; the difference between the extractors was significant
-($+0.0059$, 95\% CI $[0.0021, 0.0098]$). Unlike on DocRED, 96.6\%
-(Llama-3.1-8B) and 100\% (DeepSeek-V3.2) of extracted triples used a
-valid relation type.
+On 500 abstracts, aggregation lowered $F_1$ relative to no aggregation for
+both extractors: R2 by $0.041$ with Llama-3.1-8B ($[-0.049, -0.033]$)
+and by $0.064$ with DeepSeek-V3.2 ($[-0.078, -0.052]$). The extractors
+had similar recall without aggregation ($0.096$ and $0.097$), but
+DeepSeek-V3.2 was nearly twice as precise ($0.069$ against $0.036$).
+Only 0.75\% and 1.35\% of gold facts were recovered from two or more
+sentences (corroborated: 0.73\% and 1.35\%; difference $+0.0059$,
+$[0.0021, 0.0098]$). R3 raised Llama-3.1-8B's admitted precision by
+$0.054$ ($[0.015, 0.094]$), discarding 138 duplicates, but lowered its
+$F_1$ ($-0.0021$, $[-0.0048, -0.0002]$; true positives 32 to 26).
+DeepSeek-V3.2 repeated itself 6 times, and R3 changed neither its
+precision ($+0.004$, $[-0.011, 0.016]$) nor its $F_1$ ($-0.0004$,
+$[-0.0012, 0.00002]$). Per-method counts and whole-abstract extraction
+are in Supplementary Section~S7.
 % [EVID-047]
-
-R3 raised the precision of Llama-3.1-8B's admitted triples by $0.054$
-(95\% CI $[0.015, 0.094]$), discarding 138 within-sentence duplicate
-observations. It also lost true positives (32 to 26), and its $F_1$ was
-lower than R2's ($-0.0021$, $[-0.0048, -0.0002]$). DeepSeek-V3.2 produced
-only 6 within-sentence duplicates, and R3 changed neither its precision
-($+0.004$, $[-0.011, 0.016]$) nor its $F_1$ ($-0.0004$,
-$[-0.0012, 0.00002]$). Whole-abstract extraction and the strict and
-relaxed evaluators are reported in Supplementary Section~S7.
-% [EVID-047]
-
-\begin{table}[htbp]
-\centering
-\caption{BioRED, 500 abstracts, sentence-level extraction
-($\lambda=0.5$, $\tau=0.70$); DeepSeek-V3.2 is the external baseline.}
-\label{tab:biored-results}
-\begin{tabular}{@{}llrrrrr@{}}
-\toprule
-Extractor & Method & $P$ & $R$ & $F_1$ & Admitted & Correct \\
-\midrule
-Llama-3.1-8B & No aggregation & 0.036 & 0.096 & 0.053 & 13,034 & 473 \\
- & R2 & 0.127 & 0.007 & 0.012 & 256 & 32 \\
- & R3 & 0.181 & 0.005 & 0.010 & 146 & 26 \\
-DeepSeek-V3.2 & No aggregation & 0.069 & 0.097 & 0.081 & 6,934 & 475 \\
- & R2 & 0.296 & 0.009 & 0.017 & 144 & 42 \\
- & R3 & 0.299 & 0.008 & 0.016 & 139 & 41 \\
-\bottomrule
-\end{tabular}
-% [EVID-047; outputs/dec032_biored/analysis_result.json]
-\end{table}
 
 \subsubsection{Document-Level and Stronger Extractors}
 \label{sec:results-protocol}
 
-Both runs above extracted from single sentences, mostly with an 8B
-model, so the scarce corroboration could be an artefact of that
-protocol. A pre-registered check crossed the two extractors with two
-units, sentence and whole document, on both corpora
-(Table~\ref{tab:protocol-results}). At document level the extractor
-cites the sentences that support each triple, and corroboration is
-counted only from cited sentences that genuinely support the fact
-(Supplementary Section~S11 gives the design). The pre-registered rule
-would have judged the extractor-recall conclusion weakened if a new
-configuration raised corroboration significantly, reached a fifth of
-the annotation-level rate ($\rho \ge 0.2$), and narrowed the gap to no
-aggregation significantly.
-% [Decision log.md, DEC-033; EVID-048]
-
-Document-level extraction raised corroboration significantly on both
-corpora: DeepSeek-V3.2 corroborated 0.98\% of DocRED's gold facts and
-3.10\% of BioRED's by two or more supporting sentences, against 0.17\%
-and 0.73\% for the Llama-3.1-8B sentence-level reference (differences
-$+0.0081$, 95\% CI $[0.0056, 0.0110]$, and $+0.0236$,
-$[0.0169, 0.0314]$). A stronger extractor alone did not: at sentence
-level on DocRED, DeepSeek-V3.2 doubled recall but left corroboration
-unchanged ($+0.0002$, $[-0.0011, 0.0015]$). No configuration came near
-the threshold: the highest $\rho$ was $0.088$ (BioRED) and $0.020$
-(DocRED), and aggregation lowered $F_1$ relative to no aggregation in
-all eight configurations, each with a confidence interval below zero.
-The conclusion therefore stands by the pre-registered rule, with
-partial relief on BioRED: there, DeepSeek-V3.2 at document level
-narrowed the gap to no aggregation significantly ($+0.016$,
-$[0.003, 0.029]$), from $-0.043$ to $-0.026$ ($[-0.038, -0.016]$), and
-raised the recall of the aggregated output from $0.005$ to $0.039$. This
-configuration also matches an example the pre-registration gave for a
-partial outcome, so its rules overlap here; the stands rule, stated
-first, is met (Section~\ref{sec:limitations}). On DocRED the gap
+Because both runs extracted from single sentences, mostly with an 8B
+model, a pre-registered check crossed the two extractors with sentence-
+and document-level extraction on both corpora, counting corroboration
+only from cited sentences that genuinely support the fact
+(Table~\ref{tab:protocol-results}; design in Supplementary
+Section~S11). Document-level extraction raised corroboration
+significantly: DeepSeek-V3.2 corroborated 0.98\% of DocRED's facts and
+3.10\% of BioRED's, against 0.17\% and 0.73\% for the Llama-3.1-8B
+sentence-level reference ($+0.0081$, $[0.0056, 0.0110]$; $+0.0236$,
+$[0.0169, 0.0314]$). A stronger extractor at sentence level did not
+($+0.0002$, $[-0.0011, 0.0015]$, DocRED). No configuration came near the
+pre-registered threshold of a fifth of the annotation-level rate ($\rho
+\ge 0.2$; highest $0.088$ on BioRED, $0.020$ on DocRED), and aggregation
+lowered $F_1$ in all eight configurations, so the extractor-recall
+conclusion stands by the pre-registered rule. The one partial relief was
+DeepSeek-V3.2 at document level on BioRED, which narrowed the gap
+significantly ($+0.016$, $[0.003, 0.029]$; from $-0.043$ to $-0.026$) and
+raised aggregated recall from $0.005$ to $0.039$. On DocRED the gap
 widened, because DeepSeek-V3.2's unaggregated output was far more
-accurate ($F_1$ $0.184$ at document level) while aggregation still
-admitted almost nothing. Measured against the 3.4\% of DocRED facts that
-name both entities in two or more sentences, DeepSeek-V3.2 at document
-level reached 0.29 of that rate (descriptive). Llama-3.1-8B returned
-unparsable output for many documents at document level (table note b;
-Section~\ref{sec:limitations}).
-% [EVID-048; outputs/dec033_protocol/analysis_result.json]
+accurate ($F_1$ $0.184$ at document level); it reached 0.29 of the 3.4\%
+name-both-entities rate (descriptive).
+% [Decision log.md, DEC-033; EVID-048; outputs/dec033_protocol/analysis_result.json]
 
 \begin{table}[htbp]
 \centering
@@ -786,24 +528,20 @@ BioRED & Llama-3.1-8B, sentence & 0.096 & 0.73\% & 0.021 & $-0.043$ $[-0.051, -0
 \subsection{Realised Corroboration Across Documents}
 \label{sec:results-crossdoc}
 
-On the cross-document subset (Section~\ref{sec:setup-datasets}), every
-target fact is stated in two or more documents by construction, yet the
-extractors recovered only 3.6--13.1\% of these facts from even one
-document, and 0.8--4.1\% from two or more (Table~\ref{tab:crossdoc}).
-This is the same order as within single documents
-(Section~\ref{sec:results-protocol}): extractor recall, not the
-availability of corroboration, is the binding constraint across
-documents too. Requiring two distinct documents lowered $F_1$ relative to
-no aggregation in every cell, both strata and both extractors, each
-confidence interval below zero. It raised the precision of the few facts
-it admitted in three of the four cells (13 to 71 admitted keys), with no
-detectable change for Llama-3.1-8B on OTHER relations, whose unaggregated
-precision was only $0.038$. The strata did not behave alike:
-DeepSeek-V3.2 realised less cross-document corroboration for GEO facts
-than for OTHER facts, Llama-3.1-8B the reverse. In a secondary check that
-resampled half of the documents, the $F_1$ decreases held, but the
-precision intervals widened considerably, since they rest on few
-admitted keys.
+On the cross-document subset every target fact is stated in two or more
+documents, yet the extractors recovered only 3.6--13.1\% of these facts
+from even one document and 0.8--4.1\% from two or more
+(Table~\ref{tab:crossdoc}), the same order as within documents: extractor
+recall, not the availability of corroboration, is the binding
+constraint. Requiring two distinct documents lowered $F_1$ relative to no
+aggregation in every cell, each interval below zero. It raised the
+precision of the few facts it admitted (13 to 71 keys) in three of the
+four cells, with no detectable change for Llama-3.1-8B on OTHER
+relations, whose unaggregated precision was only $0.038$. The strata
+differed: DeepSeek-V3.2 realised less corroboration for GEO facts than
+for OTHER facts, Llama-3.1-8B the reverse. Resampling half the documents
+(secondary) left the $F_1$ decreases intact but widened the precision
+intervals considerably.
 % [Decision log.md, DEC-038 (pre-registered, commit f87e91a); EVID-054; outputs/dec038_crossdoc/analysis_result.json]
 
 \begin{table}[htbp]
@@ -836,60 +574,35 @@ Llama-3.1-8B, sentence & GEO & 1,372 & 8.3\% & 2.11\% $[1.48, 3.02]$ & $-0.055$ 
 \subsection{Counting Distinct Sources}
 \label{sec:formal-analysis-empirical}
 
-Whether counting distinct sources improves what the rule admits, and
-whether the rival ceiling (Proposition~\ref{prop:ceiling}) matters in
-practice, were tested offline by replaying the stored observations of two independent
-gold-labelled snapshots, 657 triples from 35 products (dataset A) and
-2,241 triples from 140 products (dataset B), through six rules applied
-to identical observations: R1, max-merge ($C(t)=\max_i c_i$, no conflict
-handling); R2, the published rule; R3, distinct-source counting
-(below); R4, an evidence-share reformulation
-$C(t)=A(t)^2/\sum_j A(t_j)$ over the candidates $j$ of a slot; R5, R3 and
-R4 combined; and R6, the unsquared share $A(t)/\sum_j A(t_j)$. Each rule
-is evaluated at its own validation-selected threshold and at the fixed
-$\tau=0.88$, on held-out subjects (35 and 92), with 95\% confidence
-intervals from 10,000 bootstrap resamples over subjects. The full
-per-rule tables are in Supplementary Section~S2.
+The rule comparison replays the stored observations of the two product
+snapshots (dataset A: 657 triples from 35 products; B: 2,241 from 140)
+through six rules applied to identical observations, among them R1,
+max-merge; R2, the published rule; R3, which applies
+Equation~\ref{eq:noisyor} over distinct (source type, source identifier)
+pairs, keeping each source's maximum confidence, and leaves
+Equation~\ref{eq:conflict} unchanged; and R4 and R6, evidence-share
+reformulations of Equation~\ref{eq:conflict} (all six in Supplementary
+Section~S2). Each rule is evaluated at its own validation-selected
+threshold (the pre-registered primary) and at $\tau=0.88$, on held-out
+subjects (35 and 92), with bootstrap intervals over subjects.
 % [EVID-041; EVID-013/014/036 (dataset A); EVID-029/030 (dataset B)]
 
-\paragraph{The ceiling is confirmed.} R2 admits no contested
-single-valued slot on either dataset at either threshold. Max-merge,
-evaluated identically, admits 6 and 40 at its selected thresholds and
-20 and 69 at $\tau=0.88$. It is therefore the ceiling, not an absence of
-contested slots, that accounts for R2's zero. Max-merge's higher $F_1$
-at its own selected threshold does not survive at $\tau=0.88$, where its
-significant precision loss offsets its significant recall gain
+\paragraph{The ceiling holds and does no harm.} R2 admitted no contested
+single-valued slot on either dataset at either threshold, while max-merge
+admitted 6 and 40 at its selected thresholds and 20 and 69 at
+$\tau=0.88$, where its precision loss offset its recall gain
+(Table~\ref{tab:dec026-bootstrap-tau088}). R4, which removes the ceiling,
+admitted exactly R2's set ($F_1$ difference CI $[0,0]$), since no
+contested score came near the threshold (maximum $0.581$); R6 degenerates
+to $C(t)=1$ for uncontested slots and was below R2 on dataset A ($F_1$
+CI $[-0.087, -0.012]$) and not different on B (Supplementary
+Section~S2).
+
+\paragraph{Distinct-source counting (R3).} At each rule's own selected
+threshold R3 raised $F_1$ ($+0.0101$, $[0.0028, 0.0222]$; $+0.0039$,
+$[0.0013, 0.0075]$), and at $\tau=0.88$ it raised precision on both
+datasets at exactly unchanged recall
 (Table~\ref{tab:dec026-bootstrap-tau088}).
-% [EVID-041]
-
-\paragraph{Two corrections that do not help.} R4 removes the algebraic
-ceiling and reduces correctly to $C(t)=A(t)$ when $m(t)=0$, but its
-admitted set is identical to R2's on both datasets ($F_1$ difference
-CI exactly $[0,0]$), because no observed contested-slot score comes
-near the threshold (maximum $0.581$ against a selected $\tau=0.73$ on
-dataset A). R6, tested afterwards as an exploratory check, degenerates
-to $C(t)=1$ for every uncontested slot (495 of 495 such rows in dataset
-A), and its $F_1$ is significantly below R2's on dataset A (95\% CI
-$[-0.087, -0.012]$) and not significantly different on B. Any
-share-based replacement for Equation~\ref{eq:conflict} must reduce to
-$A(t)$ when $m(t)=0$ to avoid this degeneracy; R4 does and R6 does not.
-Neither is claimed as a contribution.
-% [EVID-041]
-
-\paragraph{The corrected rule: distinct-source counting (R3).} R3
-targets the independence violation of
-Proposition~\ref{prop:independence} rather than the ceiling: it applies
-Equation~\ref{eq:noisyor} over distinct
-$(\text{source\_type}, \text{source\_id})$ pairs, keeping each source's
-maximum confidence, and leaves Equation~\ref{eq:conflict} unchanged. At
-$\tau=0.88$ it raises precision significantly on both datasets at
-exactly unchanged recall, and raises $F_1$ significantly
-(Table~\ref{tab:dec026-bootstrap-tau088}). It also raises $F_1$ at each
-dataset's own selected threshold, the comparison pre-registered as
-primary ($+0.0101$, 95\% CI $[0.0028,0.0222]$; $+0.0039$,
-$[0.0013,0.0075]$), so the gain does not depend on threshold
-selection. Its effect outside the product domain is reported in
-Sections~\ref{sec:results-docred} and~\ref{sec:results-biored}.
 % [EVID-041]
 
 \begin{table}[htbp]
@@ -913,29 +626,25 @@ R3$-$R2 & B & $+0.027\ [0.008,0.052]$ & $0.000\ [0.000,0.000]$ & $+0.006\ [0.002
 % [EVID-041]
 \end{table}
 
-\paragraph{A stronger extractor and token-logprob confidence.} The
-comparison above rests on Llama-3.1-8B. Both product pipelines were rerun
-unchanged with DeepSeek-V3.2 and, as a reproducibility check, with
-Llama-3.1-8B, logging a verbalized and a token-logprob confidence for
-every observation (Table~\ref{tab:dec036}). The pre-registered primary
-test, R3 $-$ R2 precision at $\tau=0.88$ with DeepSeek-V3.2 and verbalized
-confidence, was $+0.229$ on dataset A (95\% CI $[0.038, 0.417]$) and
-$+0.008$ on dataset B ($[0.000, 0.027]$). By the pre-registered rule, a
-CI excluding zero on at least one dataset with none reversed, the
-precision gain holds with the stronger extractor: robustly on A, and
-only borderline on B. At each rule's own selected threshold, R3's $F_1$
-gain was $+0.032$ on A ($[0.005, 0.075]$) and not detectable on B
-($+0.003$, $[-0.012, 0.015]$). The Llama-3.1-8B rerun reproduced dataset
-A ($+0.095$ against the original $+0.099$) and was weaker on B
-($+0.013$, $[0.000, 0.033]$, against $+0.027$). Replacing verbalized with
-token-logprob confidence changed neither conclusion. Token-logprob
-confidences were even more compressed than verbalized ones (median
-about $1.0$, against $0.91$), and the Spearman correlation between the
-support $A(t)$ and the number of observations stayed at $0.88$--$0.95$
-under both. The score is count-driven because the extractors assign
-nearly uniform confidence to what they emit, not because of the
-prompted range.
-% [Decision log.md, DEC-036 (pre-registered, commit 2f3a731); EVID-052; outputs/dec036/replay/, outputs/dec036/dec036_summary.json]
+\paragraph{A stronger extractor and token-logprob confidence.} Both
+product pipelines were rerun unchanged with DeepSeek-V3.2 and, as a
+reproducibility check, with Llama-3.1-8B, logging a verbalized and a
+token-logprob confidence for every observation (Table~\ref{tab:dec036}).
+The pre-registered primary, R3 $-$ R2 precision at $\tau=0.88$ with
+DeepSeek-V3.2 and verbalized confidence, was $+0.229$ on dataset A
+($[0.038, 0.417]$) and $+0.008$ on B ($[0.000, 0.027]$): the gain holds
+by the pre-registered rule, robustly on A and borderline on B. At the
+selected threshold R3's $F_1$ gain was $+0.032$ on A ($[0.005, 0.075]$)
+and not detectable on B ($+0.003$, $[-0.012, 0.015]$). The Llama-3.1-8B
+rerun reproduced A ($+0.095$; originally $+0.099$) and was weaker on B
+($+0.013$, $[0.000, 0.033]$; originally $+0.027$). Token-logprob
+confidence changed neither conclusion. It was even more compressed than
+verbalized confidence (median about $1.0$ against $0.91$), and the
+Spearman correlation between $A(t)$ and the number of observations
+stayed at $0.88$--$0.95$ under both: the score is count-driven because
+extractors assign nearly uniform confidence, not because of the prompted
+range.
+% [Decision log.md, DEC-036 (pre-registered, commit 2f3a731); EVID-052; outputs/dec036/]
 
 \begin{table}[htbp]
 \centering
@@ -960,301 +669,198 @@ B & Llama-3.1-8B (rerun) & $+0.013$ $[0.000, 0.033]$ & $+0.020$ $[0.004, 0.044]$
 % [EVID-052; outputs/dec036/replay/*_metrics_summary.json and *_bootstrap_ci_fixed_tau.json]
 \end{table}
 
-\paragraph{Within-sentence duplicates and repeated documents.} On DocRED
-and BioRED the shared-source observations are duplicate emissions of one
-fact from a single sentence. There R3 raised the precision of admitted
-triples on DocRED and for Llama-3.1-8B on BioRED, and had no measurable
-effect for DeepSeek-V3.2, which rarely repeated itself
-(Sections~\ref{sec:results-docred} and~\ref{sec:results-biored}). Across
-documents, requiring two distinct documents raised the precision of the
-few admitted facts in three of four cells
-(Section~\ref{sec:results-crossdoc}). In every setting the precision gain
-came with lower or unchanged recall.
+\paragraph{Outside the product domain.} R3 raised precision on DocRED
+and for Llama-3.1-8B on BioRED, where within-sentence duplicates are
+common, but not for DeepSeek-V3.2, which rarely repeated itself
+(Section~\ref{sec:results-within}); across documents, requiring two
+documents raised precision in three of four cells
+(Section~\ref{sec:results-crossdoc}). The gains came with lower or
+unchanged recall.
 % [EVID-046; EVID-047; EVID-054]
-
 
 \subsection{The Rule in DySECT's Released System}
 \label{sec:results-dysect}
 
 DySECT's released code (\texttt{megagonlabs/dysect}, commit
-\texttt{8d6c680}) and the knowledge base it ships from its DocRED
-demonstration run were audited to see whether the counting behaviour
-tested above occurs there. The code does not deduplicate by source:
+\texttt{8d6c680}) and the knowledge base shipped from its DocRED
+demonstration run were audited. The code does not deduplicate by source:
 every stored observation, including repeated extractions by the same
 model from the same prompt and document, enters the Noisy-OR once per
-occurrence. This is the behaviour the DySECT paper describes, treating
-frequencies ``as repeated independent support'' with shrinkage as the
-guard against redundant evidence
-\citep[Sect.~2.2]{aminnaseri2026dysect}. Repeat counting is therefore a
-design choice, and the source-counted rule tested here tests its
-independence assumption. It is active in the released run: 98.7\% of the
-61,772 stored triples carry exactly the repeat-counted score, and of the
-4,604 concept generalisations above the $0.5$ threshold at which
-DySECT's extractor injects them into its DocRED prompt, 4,030 (87.5\%)
-exceed it only because the same source or document was counted more than
-once. The released run never applied the mutual-exclusion division (0
-of 61,676 stored scores); DySECT's $m(t)$ counts type-level
-mutual-exclusion conflicts, not rival values of a single-valued slot as
-in this paper. A check that reran DySECT's knowledge-base-guided DocRED
-extraction with a source-deduplicated knowledge base found no material
-effect on its recall. DySECT's released data-preparation script also
-places 78 of the 100 documents used to build its knowledge base among
-its 500 evaluation documents; this is a property of the released code,
-not a claim about the runs its paper reports.
+occurrence, as the DySECT paper describes (frequencies ``as repeated
+independent support'', with shrinkage as the guard;
+\citealp[Sect.~2.2]{aminnaseri2026dysect}). Repeat counting is thus a
+design choice, and R3 tests its independence assumption. It is active in
+the released run: 98.7\% of the 61,772 stored triples carry exactly the
+repeat-counted score, and of the 4,604 concept generalisations above the
+$0.5$ threshold at which DySECT's extractor injects them into its DocRED
+prompt, 4,030 (87.5\%) exceed it only because the same source or
+document was counted more than once. The mutual-exclusion division never
+applied (0 of 61,676 stored scores); DySECT's $m(t)$ counts type-level
+conflicts, not rival slot values. A check that reran DySECT's
+knowledge-base-guided DocRED extraction with a source-deduplicated
+knowledge base found no material effect on its recall. DySECT's released
+data-preparation script also places 78 of the 100 documents used to
+build its knowledge base among its 500 evaluation documents; this is a
+property of the released code, not a claim about the runs its paper
+reports.
 % [Decision log.md, DEC-035, DEC-035b; EVID-050; EVID-051; scripts/dec035_dysect_kb_audit.py; scripts/dec035b_dysect_stepA.py; outputs/dec035/]
 
+% ------------------------------------------------------------------
 \section{Discussion}
 \label{sec:discussion}
 
 \subsection{Why Aggregation Fails, Within and Across Documents}
 \label{sec:discussion-docred}
 
-A natural explanation for the DocRED result is exact-string matching:
-the same fact phrased differently in two sentences would never be
-pooled. The data do not support it: even the oracle key, which already pooled 28 of the 29
-gold facts recovered from more than one sentence, closed only 7.3\% of
-the gap (Section~\ref{sec:results-docred}).
-% [EVID-046]
-
-The failure comes instead from the scarcity of cross-sentence
-corroboration in what the extractor produces: the sentence-level
-extractor recovered only 645 of 11,344 DocRED facts at all and 29 from
-two or more sentences. Part of that shortfall belongs to the protocol
-rather than the extractor: only 3.4\% of DocRED's facts name both
-entities in two or more sentences, so extraction from single sentences,
-scored by entity name, could never have approached 50.2\%. A rule that
-admits a fact only when it is corroborated cannot admit facts that are
-never corroborated, whatever the key
-(Proposition~\ref{prop:corroboration}). The binding constraint is
-therefore extractor recall, compounded across sentences. The same
-pattern holds on BioRED, with different text, a different schema, and an
-external baseline (Section~\ref{sec:results-biored}). There the stronger
-extractor recovered significantly more corroborated facts, but far too
-few, and it lost more $F_1$ to aggregation only because its
-unaggregated output was more precise while both aggregated outputs ended
-near the same low $F_1$. The constraint binds in the product domain
-too, but is masked there: every one of the 99 admitted correct facts
-pairs a structured observation with an LLM one, while the 141
+A natural explanation for the DocRED result is exact-string matching,
+but even the oracle key, which pooled 28 of the 29 facts recovered from
+more than one sentence, closed only 7.3\% of the gap
+(Section~\ref{sec:results-docred}). The failure comes from the scarcity
+of realised corroboration: a rule that admits only corroborated facts
+cannot admit facts that are never corroborated, whatever the key
+(Proposition~\ref{prop:corroboration}). Part of the shortfall is the
+protocol, since only 3.4\% of DocRED's facts name both entities in two
+sentences, but document-level extraction and a stronger model moved it
+only slightly, and where every target fact is stated in two documents,
+extractors recovered at most 13.1\% of them even once
+(Sections~\ref{sec:results-within}--\ref{sec:results-crossdoc}).
+Corroboration that exists in the text is not corroboration the extractor
+delivers. In the product domain the constraint is masked: every admitted
+correct fact pairs a structured observation with an LLM one, while
 text-stated facts the LLM never extracted stay below the threshold
-(Supplementary Section~S16). The structured record supplies the
-second observation that the extractor does not. The aggregation stage
-therefore adds value only
-when the extractor recovers the same fact from more than one source often
-enough.
-% [EVID-046; EVID-047]
+(Supplementary Section~S16). Whether a much larger or
+coreference-resolving extractor would reach the rates a corroboration
+gate needs remains open.
+% [EVID-046; EVID-047; EVID-048; EVID-054]
 
-The pre-registered protocol check tested whether a document-level or
-stronger extractor moves this boundary (Section~\ref{sec:results-protocol}).
-It moves it, but not far. Extracting from the whole document, with
-cited evidence sentences, raised corroboration significantly on both
-corpora; a stronger model extracting from single sentences did not
-raise it on DocRED. On BioRED, the best configuration narrowed the gap
-to no aggregation significantly, the one partial relief the check
-found, but it still corroborated under a tenth of the annotated facts,
-and aggregation still lowered $F_1$ on both corpora in every
-configuration. By the pre-registered rule, the extractor-recall
-conclusion stands for the extractors and protocols tested. What the
-check does not settle is whether a much larger extractor, or one that
-resolves coreference before extraction, would reach the corroboration
-rates that a corroboration-gated rule needs.
-% [Decision log.md, DEC-033; EVID-048]
-
-The cross-document subset removes a further objection, that single
-documents rarely restate a fact. There every target fact is stated in
-at least two documents, yet the extractors recovered at most 13.1\% of
-them from even one document, and aggregation lowered $F_1$ in every cell
-(Section~\ref{sec:results-crossdoc}). Corroboration that exists in the
-text is not corroboration the extractor delivers.
-% [EVID-054]
-
-\citet{aminnaseri2026dysect} report a recall \emph{improvement} from
-knowledge-base-guided extraction on DocRED for all four models they
-evaluate. The two results are not a controlled comparison, and two
-differences, neither tested here, may explain the opposite direction.
-First, their extractors (GPT-4.1, GPT-4.1-mini, LLaMA-3.3~70B, and
-Kimi~K2.5) are all larger than the Llama-3.1-8B used here, and the
-finding above suggests extractor recall matters most. Second, their
-recall is extraction recall under knowledge-base-guided
-\emph{prompting}, whereas this paper measures recall after a
-confidence-threshold \emph{admission} step, so the two figures may not
-measure the same quantity. In DySECT's own released system, the repeat
-counting that R3 removes is active, yet a check found no material effect
-on its recall (Section~\ref{sec:results-dysect}). One reading is that
-where scores select prompt context rather than admit facts, the
-independence violation changes the scores more than the outcome.
+\citet{aminnaseri2026dysect} report a recall gain from
+knowledge-base-guided extraction on DocRED, the opposite direction; the
+two results are not a controlled comparison. Their extractors are larger
+than Llama-3.1-8B, and their recall is measured after
+knowledge-base-guided prompting, not after a confidence-threshold
+admission step. In their released system the repeat counting that R3
+removes is active, yet a check found no material effect on recall
+(Section~\ref{sec:results-dysect}). One reading is that where scores
+select prompt context rather than admit facts, the independence
+violation changes the scores more than the outcome.
 
 \subsection{Why Counting Distinct Sources Helps Where Evidence-Share Does Not}
 \label{sec:discussion-r3}
 
-R3 is the one tested correction with a robust gain over R2 at the fixed
-threshold (Table~\ref{tab:dec026-bootstrap-tau088}); R4 is an exact null
-and R6 is negative (Section~\ref{sec:formal-analysis-empirical}). An
-account consistent with all three is that they target different parts of
-the rule. Equation~\ref{eq:noisyor} treats every repeated observation as
-independent evidence, by design, but repeated readings of the same source by one
-extractor at temperature 0 are deterministic repeats
-(Proposition~\ref{prop:independence}). R3 corrects this at the
-\emph{input} to the aggregation, by collapsing repeats from the same
-source. R4 and R6 rescale the \emph{output} of the already over-counted
-$A(t)$, changing how a contested slot's confidence is divided but not
-how often a repeat is counted. R6 shows that rescaling the output can
-also hurt: because $A(t)/A(t)=1$ for any uncontested slot, it collapses
-to a constant exactly where the input carries information. This account
-fits the measured pattern but was not tested against alternatives. The
-pre-registered rerun with a stronger extractor and with token-logprob
-confidence supports it: the gain persisted under both, and the score
-stayed count-driven under both (Table~\ref{tab:dec036}).
+R3 is the one tested correction with a robust gain; R4 is an exact null
+and R6 is negative. An account consistent with all three is that they
+target different parts of the rule. Equation~\ref{eq:noisyor} counts
+every repeated observation as independent evidence, by design, but
+repeated readings of one source by one extractor at temperature 0 are
+deterministic repeats (Proposition~\ref{prop:independence}). R3 corrects
+this at the \emph{input} to the aggregation, by collapsing repeats; R4
+and R6 rescale its already over-counted \emph{output}, changing how a
+contested slot's confidence is divided but not how often a repeat
+counts. The pre-registered rerun supports this account: the gain
+persisted with a stronger extractor and with token-logprob confidence,
+and the score stayed count-driven under both (Table~\ref{tab:dec036}).
+The account was not tested against alternatives.
 
-The same repeat counting appears outside the product domain, and it
-defines R3's scope: R3 raised precision on DocRED (154 within-sentence repeats) and
-for Llama-3.1-8B on BioRED (138), and had no measurable effect for
-DeepSeek-V3.2, which repeated itself 6 times
-(Sections~\ref{sec:results-docred} and~\ref{sec:results-biored}). Where
-the discarded repeats include correct facts, R3 can cost recall. R3 is
-therefore a correction for extractors that repeat themselves within a
-source, not a general improvement to aggregation.
-% [EVID-046; EVID-047]
-
+% ------------------------------------------------------------------
 \section{Limitations}
 \label{sec:limitations}
 
 \paragraph{Synthetic products in the rule comparison.} The rule
-comparison replays real LLM extractions, but of synthetic products whose
+comparison replays real LLM extractions of synthetic products whose
 structured records, text, and gold sets come from one generator
 (Section~\ref{sec:setup-datasets}). The domain names each fact
 consistently across sources, is fully labelled, and has a fixed
-13-predicate schema, which real product data would not. On real text
-(Sections~\ref{sec:results-within} and~\ref{sec:results-crossdoc}),
-aggregation lowered $F_1$ relative to no aggregation. The product
-numbers should be read as results under favourable conditions, not as
-estimates for deployment.
+13-predicate schema, which real product data would not; on real text,
+aggregation lowered $F_1$. The product numbers are results under
+favourable conditions, not estimates for deployment.
 
-\paragraph{Confidence carries little information.} The extraction
-prompt asks for a self-reported confidence between $0.80$ and $0.96$
-(Section~\ref{sec:setup-hyperparameters}), and the aggregated score is
-poorly calibrated (ECE $=0.333$; Supplementary Section~S16)
+\paragraph{Confidence carries little information.} The extraction prompt
+asks for a self-reported confidence between $0.80$ and $0.96$, and the
+aggregated score is poorly calibrated (ECE $=0.333$; Supplementary
+Section~S16)
 % [EVID-036; EVID-041]
-. Token-logprob confidence, tested as the alternative, was even more
-compressed (Section~\ref{sec:formal-analysis-empirical}). Neither source
-gives the score much information beyond counts; a calibrated or
-externally validated confidence was not tested.
+. Token-logprob confidence was even more compressed
+(Section~\ref{sec:formal-analysis-empirical}). Neither gives the score
+much information beyond counts; a calibrated confidence was not tested.
 
 \paragraph{Model versions.} The API-hosted extractors are fixed by model
 identifier alone, and the provider could change the model served behind
 an identifier.
 
-\paragraph{The scope of the repeat-counting correction.} R3 corrects
-the counting of repeated observations from one source, so it acts only
-when the extractor emits the same fact more than once from a single
-source. On BioRED it raised the precision of Llama-3.1-8B's admitted
-triples by $0.054$ (138 repeats) but had no measurable effect for
-DeepSeek-V3.2 (6 repeats). With Llama-3.1-8B its $F_1$ was slightly
-lower than R2's, because some discarded repeats were correct
-(Sections~\ref{sec:results-biored} and~\ref{sec:discussion-r3})
+\paragraph{The scope of distinct-source counting.} R3 acts only when the
+extractor emits the same fact more than once from a single source: on
+BioRED it raised precision for Llama-3.1-8B (138 repeats) but not for
+DeepSeek-V3.2 (6 repeats), and where the discarded repeats included
+correct facts it cost recall. Its benefit depends on the extractor, and
+it does not address the scarcity of corroboration across sources.
 % [EVID-041; EVID-046; EVID-047]
-. Its benefit depends on the extractor, and it does not address the
-scarcity of corroboration across sources.
 
-\paragraph{Small admitted counts on DocRED.} On DocRED, R3's precision
-gain rests on very few triples: 36 admitted and 9 correct with the exact
-key. Its confidence interval is correspondingly wide ($+0.190$, 95\% CI
-$[0.084, 0.315]$), and its $F_1$ did not differ from R2's
-(Section~\ref{sec:results-docred})
-% [EVID-046]
-. More generally, the main public-corpus runs used sentence-level
-extraction without document context; the document-level check
-(Section~\ref{sec:results-protocol}) used one untuned prompt per corpus
-and ran DeepSeek-V3.2 at sentence level on DocRED on a random 400 of
-845 documents. All runs used a single fixed admission threshold
-($\tau=0.70$) and, on BioRED, co-mention as a proxy for
-annotation-level corroboration.
+\paragraph{Small counts and protocol choices.} R3's precision gains rest
+on few admitted triples (on DocRED, 36 admitted and 9 correct), with
+correspondingly wide intervals and no $F_1$ difference. The main
+public-corpus runs extracted from single sentences without document
+context; the document-level check used one untuned prompt per corpus and
+ran DeepSeek-V3.2 at sentence level on DocRED on a random 400 of 845
+documents; every run used one fixed threshold ($\tau=0.70$); and on
+BioRED co-mention stands in for evidence annotations. At document level
+Llama-3.1-8B returned unparsable output for 12.7\% of DocRED documents
+(107 of 845) and 18.8\% of BioRED abstracts (94 of 500), against 0.1\%
+and 0.6\% for DeepSeek-V3.2. These count as having no extractions, as
+pre-registered, so those configurations understate that extractor;
+excluding them gives $\rho = 0.010$ and $0.028$ (descriptive, not
+pre-registered). The check's pre-registered rules overlap for
+DeepSeek-V3.2 at document level on BioRED, which meets both the
+``stands'' rule and an example given for a partial outcome; it is
+reported as standing with partial relief.
+% [EVID-046; EVID-048; Decision log.md, DEC-033]
 
-\paragraph{Extraction failures and rule overlap in the protocol check.}
-At document level, Llama-3.1-8B returned unparsable output for 12.7\%
-of DocRED documents (107 of 845) and 18.8\% of BioRED abstracts (94 of
-500), against 0.1\% and 0.6\% for DeepSeek-V3.2. These documents count
-as having no extractions, as pre-registered, so the Llama-3.1-8B
-document-level configurations understate what that extractor can do at
-document level and are a weaker test of the protocol question than the
-DeepSeek-V3.2 ones. Excluding the failures gives $\rho = 0.010$ and
-$0.028$, still far below the pre-registered threshold of $0.2$; this
-is a descriptive analysis, not pre-registered. Separately, the check's
-pre-registered decision rules overlap for one configuration (DeepSeek-V3.2
-at document level on BioRED), which meets both the ``stands'' rule and
-an example given for a partial outcome; it is reported as standing with
-partial relief (Section~\ref{sec:results-protocol})
-% [EVID-048; Decision log.md, DEC-033]
-.
-
-\paragraph{The extractors.} The pipeline's extractor,
-Llama-3.1-8B-Instruct, scored $F_1=0.467$ on CaRB against $0.571$ for
-DeepSeek-V3.2, and was below all four external systems on a 30-sentence
-subset (Section~\ref{sec:setup-models})
+\paragraph{The extractors.} Llama-3.1-8B-Instruct scored $F_1=0.467$ on
+CaRB against $0.571$ for DeepSeek-V3.2 and was below all four external
+systems on a 30-sentence subset (Section~\ref{sec:setup-models}). Every
+main-text conclusion was also tested with DeepSeek-V3.2; the largest
+available extractors, and extractors that resolve coreference first, were
+not. The closed-loop results in the Supplementary Material were not
+repeated with a stronger extractor.
 % [EVID-032; EVID-035]
-. Every main-text conclusion was also tested with DeepSeek-V3.2: on
-DocRED, BioRED, the cross-document subset, and the product snapshots.
-The largest available extractors, and extractors that resolve
-coreference first, were not tested. The closed-loop results in the
-Supplementary Material were not repeated with a stronger extractor.
 
-\paragraph{The cross-document subset.} The subset is built from
-DocRED's own annotations. Recurrence is decided by normalised
-first-mention names, so a fact whose entities are named differently in
-different documents is not counted as recurring. The documents are
-selected because they share facts, not sampled naturally. OTHER relations
+\paragraph{The cross-document subset.} The subset is built from DocRED's
+own annotations. Recurrence is decided by normalised first-mention
+names, so a fact whose entities are named differently in different
+documents is not counted as recurring, and the documents are selected
+because they share facts, not sampled naturally. OTHER relations
 contribute only 758 multi-document facts, 561 of them in two documents,
 and the precision gains rest on 13 to 71 admitted keys, whose intervals
-widen under document resampling (Section~\ref{sec:results-crossdoc}).
+widen under document resampling.
 % [EVID-054]
 
 \paragraph{The DySECT audit.} The audit is a static reading of one
-released commit and of the knowledge base shipped with it. The recall
-check used a different extractor and judge from DySECT's evaluation,
-and is reported only by its outcome. Neither shows how DySECT behaves
-with other data or settings.
+released commit and the knowledge base shipped with it. The recall check
+used a different extractor and judge from DySECT's evaluation and is
+reported only by its outcome. Neither shows how DySECT behaves with other
+data or settings.
 % [EVID-050; EVID-051]
 
-
+% ------------------------------------------------------------------
 \section{Conclusion}
 \label{sec:conclusion}
 
-Corroboration-gated aggregation needs three things: text that supplies
-corroboration, an extractor that realises it, and repeated observations
-that are independent evidence. For the conservative Noisy-OR rule of
-DySECT \citep{aminnaseri2026dysect}, this paper measured all three. The
-resources supply some corroboration within documents (50.2\% of DocRED's
-facts have two evidence sentences, 3.4\% name both entities twice) and
-little across them (4.8\% of DocRED's facts recur in two documents) (RQ1).
-Extractors realise almost none of it: at most 3.1\% of facts within
-documents and 0.8--4.1\% of multi-document facts across documents, so
-aggregation lowered $F_1$ in every configuration (RQ2). Counting
-distinct sources rather than repeated observations raised the precision
-of admitted facts where extractors repeat themselves within a source,
-and in a pre-registered rerun the gain held with a stronger extractor
-and with token-logprob confidence, robustly on one dataset and
-borderline on the other (RQ3). In DySECT's released system, repeat
-counting is a documented design choice that decides which 87.5\% of
-usable concept generalisations pass its threshold, yet a check found no
-material effect on its recall (RQ4).
-
-The practical conclusion is that the aggregation step cannot supply what
-the extractor does not: until extractors recover the same fact from
-several sources, a corroboration gate mainly discards recall. Each open
-question could be settled by a specific experiment:
-
-\begin{itemize}
-\item \textbf{A much stronger or coreference-aware extractor.} Repeat
-the protocol check and the cross-document analysis with the largest
-available extractors, or with coreference resolved before extraction,
-and test whether aggregation's gap to no aggregation closes as realised
-corroboration rises.
-\item \textbf{Calibrated confidence.} Replace self-reported and
-token-logprob confidence with a calibrated one, and test whether the
-score then carries information beyond counts.
-\item \textbf{Source counting in a deployed loop.} Rerun DySECT's full
-evaluation with source-deduplicated scores, with its own extractors and
-judge.
-\end{itemize}
+Corroboration-gated aggregation needs text that supplies corroboration,
+an extractor that realises it, and repeated observations that are
+independent evidence. For DySECT's conservative Noisy-OR rule
+\citep{aminnaseri2026dysect}, the resources supply some corroboration
+within documents and little across them (RQ1); extractors realise almost
+none of it, so aggregation lowered $F_1$ in every configuration (RQ2);
+counting distinct sources raised precision where extractors repeat
+themselves, with a stronger extractor and with token-logprob confidence
+(RQ3); and in DySECT's released system repeat counting is a documented
+design choice that decides whether most of its usable concept
+generalisations pass the threshold, with no material effect on recall
+(RQ4). The aggregation step cannot supply what the extractor does not.
+Three experiments would settle what remains open: repeating the protocol
+and cross-document analyses with much stronger or coreference-resolving
+extractors; replacing self-reported and token-logprob confidence with a
+calibrated one; and rerunning DySECT's full evaluation with
+source-deduplicated scores.
 
 \section*{Declaration of competing interest}
 [PLACEHOLDER: ``The authors declare that they have no known competing
