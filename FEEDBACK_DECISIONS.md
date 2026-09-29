@@ -49,7 +49,7 @@ All of these are writing tasks, held for the Stage C manuscript pass
     (bootstrap mean, dataset A); the +0.099 in Table S2 still has to be
     traced.
   - 0.26%/0.75% vs 0.17%/0.73% is not yet reconciled.
-- Venue: LRE on hold. KBS vs ESWA to be compared after the experiments.
+- Venue: **Knowledge-Based Systems** (decided 2026-09-29 after the user's KBS-vs-ESWA comparison: both Q1, IF 9.62 vs 9.4, KBS scope fits better).
 
 ## Other decisions this round
 

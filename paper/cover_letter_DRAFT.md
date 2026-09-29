@@ -2,15 +2,15 @@
 
 Replaces `cover_letter_TEMPLATE.md` (written for LRE). Every
 `[NEEDED: ...]` is something only the authors can supply; see
-`paper/STAGE4_INPUTS.md`. Choose ONE of the two "Fit" paragraphs once the
-venue is decided.
+`paper/STAGE4_INPUTS.md`. Venue: Knowledge-Based Systems (decided
+2026-09-29).
 
 ---
 
 [NEEDED: date]
 
 To the Editor-in-Chief,
-[NEEDED: *Knowledge-Based Systems* or *Expert Systems with Applications*]
+*Knowledge-Based Systems*
 
 **Submission:** "How Much Corroboration Do LLM Extractors Realise?
 Source-Counted Noisy-OR Aggregation Across Sentences and Documents"
@@ -18,7 +18,8 @@ Source-Counted Noisy-OR Aggregation Across Sentences and Documents"
 
 Dear Editor,
 
-We submit the manuscript named above for consideration.
+We submit the manuscript named above for consideration as a full-length
+article in *Knowledge-Based Systems*.
 
 **What the paper does.** Knowledge-base systems that populate themselves
 with facts extracted by language models often admit a fact only when
@@ -46,19 +47,12 @@ findings:
    its extractor can use pass its threshold. A check found no material
    effect on its recall.
 
-**Fit: Knowledge-Based Systems** [use if KBS]. The paper concerns how
+**Fit with Knowledge-Based Systems.** The paper concerns how
 knowledge bases built from automatically extracted facts score and admit
 those facts: when evidence aggregation adds reliable knowledge and when
 it only discards recall. It combines a formal analysis of the scoring
 rule with pre-registered empirical tests and an audit of a published
 system's released code.
-
-**Fit: Expert Systems with Applications** [use if ESWA]. The paper
-evaluates a component that knowledge-driven applications built on
-language-model extraction routinely rely on, confidence aggregation
-before facts are admitted, and gives practitioners a measured account
-of when it helps (precision, where extractors repeat themselves) and
-when it does not (recall, when corroboration is scarce).
 
 **Scope of the evidence, stated plainly.**
 - The public-corpus and cross-document analyses are single extraction

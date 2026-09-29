@@ -28,7 +28,7 @@ and `paper/cover_letter_DRAFT.md`. Nothing here is invented. Items marked
 
 | # | Item | What to send |
 |---|---|---|
-| C1 | **Venue** | KBS or ESWA, which selects one of the two drafted "Fit" paragraphs. This was on hold until the writing pass; I can do a short KBS-vs-ESWA comparison (scope fit, SCImago quartile, review times) if you want it first. |
+| C1 | **Venue** | DONE 2026-09-29: **Knowledge-Based Systems** (user's comparison: both Q1, IF 9.62 vs 9.4, similar APC; KBS scope fits better). ESWA paragraph deleted; `\journal{}` set. |
 | C2 | Not under consideration elsewhere; all authors approve | Confirm both. |
 | C3 | Preprint | "None", or server and identifier. |
 | C4 | Suggested / excluded reviewers | Optional: names, affiliations, emails, and reasons for exclusions. |
@@ -40,5 +40,5 @@ and `paper/cover_letter_DRAFT.md`. Nothing here is invented. Items marked
 |---|---|---|
 | D1 | **Highlights**: approve or edit `paper/HIGHLIGHTS_DRAFT.md` (5 bullets, all <= 85 characters) | You |
 | D2 | **Visual proofread of the compiled PDFs** (main and supplement). No one has read the rendered pages yet, and three restructuring passes changed many cross-references | You (I cannot render PDFs here) |
-| D3 | Compile the supplement once (it gained a bibliography and moved material in Stage 3) and send me any LaTeX errors | You |
-| D4 | Confirm the abstract limit of the chosen journal (ours is 233 words) and its keyword limit (we have 6) | Me, once C1 is decided |
+| D3 | Compile the supplement once | DONE 2026-09-29: 33 pages, 0 errors, 0 undefined references or citations |
+| D4 | Confirm KBS's abstract word limit (ours: 233 words) and keyword limit (ours: 6) | **You**: the KBS guide on ScienceDirect loads only in a browser (fetching it returns an empty JavaScript page), so I could not verify it |
