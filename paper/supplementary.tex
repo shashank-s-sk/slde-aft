@@ -6,6 +6,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{adjustbox}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{amsthm}
 \usepackage[round]{natbib}
@@ -42,6 +43,7 @@ point rather than a confidence-ranked list.
 full evaluation on 548 sentences. Systems are ordered by pilot $F_1$;
 ``---'' denotes not evaluated at full scale.}
 \label{tab:s1-carb}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}l ccc ccc@{}}
 \toprule
 & \multicolumn{3}{c}{Pilot ($n=30$)} & \multicolumn{3}{c}{Full ($n=548$)} \\
@@ -55,6 +57,7 @@ GPT-4o & 0.736 & 0.384 & 0.504 & --- & --- & --- \\
 Llama-3.1-8B-Instruct (pipeline) & 0.652 & 0.401 & 0.496 & 0.589 & 0.387 & 0.467 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-032; EVID-035]
 \end{table}
 
@@ -286,6 +289,7 @@ Full results of the offline replay summarised in the main text's Section on empi
 rule's own F1-selected threshold and at the fixed $\tau=0.88$, side by
 side.}
 \label{tab:dec026-a-metrics}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lc ccc ccc@{}}
 \toprule
 & & \multicolumn{3}{c}{F1-selected} & \multicolumn{3}{c}{Fixed $\tau=0.88$} \\
@@ -300,6 +304,7 @@ R5 (R3+R4) & 0.73 & 0.5214 & 0.9571 & 0.6751 & 0.9322 & 0.3929 & 0.5528 \\
 R6 (unsquared, exploratory) & 0.73 & 0.4621 & 0.9571 & 0.6233 & 0.4674 & 0.9214 & 0.6202 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-041]
 \end{table}
 
@@ -309,6 +314,7 @@ R6 (unsquared, exploratory) & 0.73 & 0.4621 & 0.9571 & 0.6233 & 0.4674 & 0.9214 
 rule's own F1-selected threshold and at the fixed $\tau=0.88$, side by
 side.}
 \label{tab:dec026-b-metrics}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lc ccc ccc@{}}
 \toprule
 & & \multicolumn{3}{c}{F1-selected} & \multicolumn{3}{c}{Fixed $\tau=0.88$} \\
@@ -323,6 +329,7 @@ R5 (R3+R4) & 0.73 & 0.5149 & 0.9317 & 0.6632 & 0.9280 & 0.4534 & 0.6092 \\
 R6 (unsquared, exploratory) & 0.58 & 0.4894 & 0.9524 & 0.6465 & 0.5023 & 0.8986 & 0.6444 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-041]
 \end{table}
 
@@ -332,6 +339,7 @@ R6 (unsquared, exploratory) & 0.58 & 0.4894 & 0.9524 & 0.6465 & 0.5023 & 0.8986 
 slots with at least one candidate admitted, both datasets, both
 thresholds.}
 \label{tab:dec026-admitted}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}llcc cc@{}}
 \toprule
 & & \multicolumn{2}{c}{F1-selected} & \multicolumn{2}{c}{Fixed $\tau=0.88$} \\
@@ -353,6 +361,7 @@ B (2241) & R5 & 874 & 0 & 236 & 0 \\
 B (2241) & R6 & 940 & 10 & 864 & 0 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-041]
 \end{table}
 
@@ -363,6 +372,7 @@ F1-selected threshold, the pre-registered primary analysis: observed
 test-split difference with a 95\% bootstrap percentile interval
 ($10{,}000$ resamples over test-split subjects).}
 \label{tab:dec026-bootstrap-f1sel}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}llrrc@{}}
 \toprule
 Dataset & Rule & Observed diff. & 95\% CI & Excludes 0 \\
@@ -380,6 +390,7 @@ B (2241) & R5 & $+0.0039$ & $[0.0013, 0.0075]$ & Yes \\
 B (2241) & R6 & $-0.0128$ & $[-0.0303, 0.0015]$ & No \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-041]
 \end{table}
 
@@ -435,6 +446,7 @@ $\rho$: Spearman correlation between $A(t)$ and the observation count,
 verbalized / logprob.}
 \label{tab:s2-dec036}
 \small
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}llllc@{}}
 \toprule
 Dataset & Extractor & Verbalized & Token logprob & $\rho$ \\
@@ -445,6 +457,7 @@ B & DeepSeek-V3.2 & $+0.008$ $[0.000, 0.027]$ & $+0.008$ $[0.000, 0.027]$ & 0.95
 B & Llama-3.1-8B (rerun) & $+0.013$ $[0.000, 0.033]$ & $+0.020$ $[0.004, 0.044]$ & 0.93 / 0.93 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-052; outputs/dec036/replay/*_metrics_summary.json and *_bootstrap_ci_fixed_tau.json]
 \end{table}
 
@@ -479,6 +492,7 @@ mathematical properties above.
 \caption{Growth in per-call latency of candidate acceptance (100 to
 8,000 observations).}
 \label{tab:s8-complexity}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lcc@{}}
 \toprule
 Implementation & Growth in observations & Growth in per-call latency \\
@@ -487,6 +501,7 @@ Production routine (linear scan over accepted candidates) & 80$\times$ & 72.7$\t
 Indexed variant (benchmark only, not in pipeline) & 80$\times$ & 2.9$\times$ \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-036]
 \end{table}
 
@@ -525,6 +540,7 @@ Section~\ref{sec:s5}.
 and paired comparisons with the full pipeline (the thirty-seed $N=50$
 result is in the main text's thirty-seed ablation table).}
 \label{tab:s3-ablation-full}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lll@{}}
 \toprule
 Configuration / comparison & $N=20$ & $N=50$ \\
@@ -544,6 +560,7 @@ $\Delta$ without feedback [95\% CI]; $p$ ($t$/Wilcoxon) & $-0.136\ [-0.536, 0.26
 $\Delta$ without PKB [95\% CI]; $p$ ($t$/Wilcoxon) & $-0.080\ [-0.291, 0.132]$; $0.354/0.313$ & $-0.031\ [-0.245, 0.183]$; $0.709/0.813$ \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 
 \noindent\emph{Note.} $N=20$ used 4 held-out test products and $N=50$
 used 10. $N=50$ SDs are sample SDs converted from the logged population
@@ -609,6 +626,7 @@ differ significantly ($+0.020$, $[-0.045,0.085]$, $p=0.446$).
 \centering
 \caption{Five-seed fine-tuning results on the earlier 8-product test set, with hyperparameters tuned on that same test set (historical; superseded by the negative result in the main text's leakage-free fine-tuning table).}
 \label{tab:finetune-5seed}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lrrrrrr@{}}
 \toprule
 Configuration & $F_1$, mean (SD) & $\Delta F_1$ [95\% CI] & $t(4)$ & $p$ & Wilcoxon $p$ & Seeds $>$ base \\
@@ -619,6 +637,7 @@ Base model & 0.137 & --- & --- & --- & --- & --- \\
 5 vs.\ 3 epochs (paired) & --- & $+0.020\ [-0.045, 0.085]$ & 0.84 & 0.446 & 0.625 & --- \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-040; SD corrected to sample SD, see the note in
 % Section~\ref{sec:s4} -- EVID-040's logged 0.0194 for the
 % 5-epoch configuration is the population SD; the sample SD is 0.0217,
@@ -643,6 +662,7 @@ configurations; the dashed line marks the base model.}
 \caption{Epoch search (seed 42; rank 16, $\alpha=32$, learning rate
 $2\times10^{-4}$; 8-product test set).}
 \label{tab:s4-epoch-search}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lccc@{}}
 \toprule
 Configuration & $P$ & $R$ & $F_1$ \\
@@ -654,6 +674,7 @@ Base model & 0.1522 & 0.1250 & 0.1373 \\
 8 epochs & 1.0000 & 0.1250 & 0.2222 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-037]
 \end{table}
 
@@ -661,6 +682,7 @@ Base model & 0.1522 & 0.1250 & 0.1373 \\
 \centering
 \caption{LoRA hyperparameter search at 5 epochs (seed 42; 8-product test set).}
 \label{tab:s5-lora-search}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lccc@{}}
 \toprule
 Setting & $P$ & $R$ & $F_1$ \\
@@ -672,6 +694,7 @@ Rank 16, $\alpha=32$, lr $1\times10^{-4}$ & 0.2258 & 0.1250 & 0.1609 \\
 Rank 16, $\alpha=32$, lr $3\times10^{-4}$ & 0.3684 & 0.1250 & 0.1867 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-038]
 \end{table}
 
@@ -680,6 +703,7 @@ Rank 16, $\alpha=32$, lr $3\times10^{-4}$ & 0.3684 & 0.1250 & 0.1867 \\
 \caption{Per-seed test $F_1$ at 3 and 5 epochs (8-product test set;
 base model $F_1=0.1373$).}
 \label{tab:s6-per-seed}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lcc@{}}
 \toprule
 Seed & 3 epochs & 5 epochs ($P$ / $R$ / $F_1$) \\
@@ -692,6 +716,7 @@ Seed & 3 epochs & 5 epochs ($P$ / $R$ / $F_1$) \\
 Mean (sample SD) & 0.1814 (0.0393) & 0.2012 (0.0217) \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-034 (3 epochs); EVID-040 (5 epochs); 5-epoch sample SD
 % 0.0217 independently recomputed this session from these per-seed
 % values -- EVID-040's logged 0.0194 is the population SD, see
@@ -725,6 +750,7 @@ per-document latency.}
 \centering
 \caption{Scalability of a single unguided extraction pass (seed 42).}
 \label{tab:s7-scalability}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lrrrrrrr@{}}
 \toprule
 $N$ & Runtime (s) & Mean latency (s) & Max latency (s) & KB size & Conflicts & Above $\tau$ & Failed calls \\
@@ -735,6 +761,7 @@ $N$ & Runtime (s) & Mean latency (s) & Max latency (s) & KB size & Conflicts & A
 200 & 799.06 & 3.988 & 20.12 & 2,814 & 187 & 547 & 53 (26.5\%) \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 
 \noindent\emph{Note.} The failure rate reflects a deliberately unguided
 single pass and is not comparable with guided multi-iteration runs.
@@ -816,6 +843,7 @@ same pattern (Supplementary Section~S7).
 ($\lambda=0.5$, $\tau=0.70$). The gold-alias key is an oracle upper
 bound.}
 \label{tab:docred-results}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
 Method & $P$ & $R$ & $F_1$ & Admitted & Correct \\
@@ -828,6 +856,7 @@ PKB, exact key (R3) & 0.250 & 0.001 & 0.002 & 36 & 9 \\
 PKB, gold-alias key (R3, oracle) & 0.406 & 0.003 & 0.005 & 69 & 28 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-046; outputs/dec031_docred/analysis_result.json]
 \end{table}
 
@@ -864,6 +893,7 @@ relaxed evaluators are reported in Supplementary Section~S7.
 \caption{BioRED, 500 abstracts, sentence-level extraction
 ($\lambda=0.5$, $\tau=0.70$); DeepSeek-V3.2 is the external baseline.}
 \label{tab:biored-results}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}llrrrrr@{}}
 \toprule
 Extractor & Method & $P$ & $R$ & $F_1$ & Admitted & Correct \\
@@ -876,6 +906,7 @@ DeepSeek-V3.2 & No aggregation & 0.069 & 0.097 & 0.081 & 6,934 & 475 \\
  & R3 & 0.299 & 0.008 & 0.016 & 139 & 41 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-047; outputs/dec032_biored/analysis_result.json]
 \end{table}
 
@@ -966,6 +997,7 @@ Per-bin calibration values for the reliability diagram, and per-iteration extrac
 triples, 245 correct; ten equal-width bins, the last closed at 1.0;
 ECE $=0.3332$, Brier $=0.2969$). ``---'': empty bin.}
 \label{tab:s1-calibration}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lccc@{}}
 \toprule
 Confidence bin & Triples & Mean confidence & Fraction correct \\
@@ -982,6 +1014,7 @@ Confidence bin & Triples & Mean confidence & Fraction correct \\
 0.9--1.0 & 114 & 0.978 & 0.868 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 
 \noindent\emph{Source.} \texttt{outputs/dec003\_real\_calibration/calibration\_bins\_real.csv}
 and \texttt{ece\_real.json} in the project repository, produced by
@@ -996,6 +1029,7 @@ above; the Brier score is computed per triple from the snapshot.
 \caption{LLM-only extraction on training products per iteration, and
 held-out base-extractor $F_1$ (single seed).}
 \label{tab:s2-iteration}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
 Iteration / split & $P$ & $R$ & $F_1$ & KB size \\
@@ -1010,6 +1044,7 @@ Iteration 4 (guided) & 0.5088 & 0.3551 & 0.4183 & 657 \\
 200-product run, test (40 products) & --- & --- & 0.413 & --- \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-013; 200-product validation/test values verified against
 % Decision log.md's DEC-006 scale-up entry: "val 0.5610, test 0.4126"]
 \end{table}
@@ -1035,6 +1070,7 @@ ambiguity.
 \caption{Product-domain final knowledge base (657 triples), re-scored
 against the structured record.}
 \label{tab:s9-counts}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lrl@{}}
 \toprule
 Category & Triples & Source of the observations \\
@@ -1051,6 +1087,7 @@ Triples on contested single-valued slots & 117 (9 correct) & 47 slots, 38 all wr
 Scores within $\pm0.03$ of $\tau$ & 18 & 13 wrong and admitted \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{table}
 
 \begin{table}[htbp]
@@ -1114,6 +1151,7 @@ $^{a}$Random 400 of 845 documents.}
 \label{tab:s10-official}
 \small
 \setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}llrrrrrrrr@{}}
 \toprule
  & & & & \multicolumn{3}{c}{Strict} & \multicolumn{2}{c}{Penalised} & \\
@@ -1130,6 +1168,7 @@ DeepSeek-V3.2, document & None & 6,678 & 4,392 & 0.292 & 0.217 & 0.216 & 0.174 &
  & R3 & 373 & 243 & 0.306 & 0.020 & 0.020 & 0.019 & 0.019 & 0.021 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-049; outputs/docred_official/official_scores.json]
 \end{table}
 
@@ -1591,6 +1630,7 @@ conflict penalty admitted 19.2, 36.4, and 68.6.
 (200-product run), against \texttt{gold\_structured}; in parentheses,
 against \texttt{gold\_unstructured}.}
 \label{tab:provenance}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lcc@{}}
 \toprule
 Group & Triples & Precision (\%) \\
@@ -1600,6 +1640,7 @@ At least one structured observation (retained) & 444 & 100.0 (99.1) \\
 Unstructured observations only (removed) & 31 & 0.0 (0.0) \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-029; EVID-043]
 \end{table}
 
@@ -1659,6 +1700,7 @@ resamples). The PKB row uses first-pass results; the retry-inclusive row
 applies the inherited retry rule, which was triggered unevenly across
 configurations (see text).}
 \label{tab:ablation-n50}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
 Configuration & $F_1$, mean (SD) & $\Delta F_1$ [95\% CI] & $t(29)$ & $p$ & Wilcoxon $p$ \\
@@ -1669,6 +1711,7 @@ Without PKB (max-merge) & 0.398 (0.163) & $+0.034\ [-0.010, 0.082]$ & $1.43$ & 0
 \quad retry-inclusive & 0.411 (0.161) & $+0.048\ [-0.003, 0.101]$ & $1.77$ & 0.087 & 0.146 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-045; scripts/dec029_analyze.py]
 \end{table}
 
@@ -1704,6 +1747,7 @@ recall in every seed ($R=0.414$--$0.425$).
 seeds on the untouched 40-product test split (280 gold triples). The base
 model is decoded greedily and gives one deterministic score.}
 \label{tab:finetune-dec027}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lccc@{}}
 \toprule
 Configuration & $P$ & $R$ & $F_1$ \\
@@ -1716,6 +1760,7 @@ Fine-tuned, seed 45 & 0.773 & 0.414 & 0.540 \\
 Fine-tuned, seed 46 & 0.704 & 0.425 & 0.530 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-044]
 \end{table}
 
@@ -1769,6 +1814,7 @@ attributed to fine-tuning alone. Recall here is against
 \caption{Knowledge-base quality after a fifth iteration from an
 identical starting state (200-product run).}
 \label{tab:closedloop}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
 Arm & KB size & $P$ & $R$ & $F_1$ \\
@@ -1778,6 +1824,7 @@ Iteration 5, base extractor (control) & 480 & 0.908 & 0.240 & 0.379 \\
 Iteration 5, fine-tuned model (treatment) & 499 & 0.898 & 0.246 & 0.386 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-030]
 \end{table}
 

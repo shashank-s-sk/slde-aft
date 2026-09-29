@@ -12,6 +12,11 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{adjustbox}
+% Table helpers: a value with its 95% CI stacked beneath in footnote size,
+% and a two-line left-aligned label. Plain tabular, no extra packages.
+\newcommand{\valci}[2]{\begin{tabular}[t]{@{}r@{}}#1\\{\footnotesize #2}\end{tabular}}
+\newcommand{\twoline}[2]{\begin{tabular}[t]{@{}l@{}}#1\\#2\end{tabular}}
 \usepackage{setspace}
 \doublespacing
 \usepackage[hidelinks]{hyperref}
@@ -478,6 +483,7 @@ $^{b}$12.7\% (DocRED) and 18.8\% (BioRED) of responses unparsable,
 counted as no extractions.}
 \label{tab:protocol-results}
 \setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}llrrrl@{}}
 \toprule
 Corpus & Extractor, unit & Recall & Corroborated & $\rho$ & Gap [95\% CI] \\
@@ -492,6 +498,7 @@ BioRED & Llama-3.1-8B, sentence & 0.096 & 0.73\% & 0.021 & $-0.043$ $[-0.051, -0
  & DeepSeek-V3.2, document & 0.089 & 3.10\% & 0.088 & $-0.026$ $[-0.038, -0.016]$ \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-048; outputs/dec033_protocol/analysis_result.json]
 \end{table}
 
@@ -520,24 +527,27 @@ intervals considerably.
 $G_{\mathrm{rec}}$: gold facts stated in two or more documents.
 Recovered: share of $G_{\mathrm{rec}}$ matched by raw extractions from at
 least one, and from two or more distinct documents (Wilson 95\%
-interval). $\Delta F_1$ and $\Delta P$: R3 with source = document minus no
-aggregation, observed, with a 95\% bootstrap interval over fact keys;
-admitted keys under R3 in parentheses. GEO: country, located in the
+interval beneath). $\Delta F_1$ and $\Delta P$: R3 with source = document minus no
+aggregation, observed, with its 95\% bootstrap interval over fact keys
+beneath; Admitted: keys admitted under R3. GEO: country, located in the
 administrative territorial entity, contains administrative territorial
 entity; OTHER: all other relations.}
 \label{tab:crossdoc}
 \small
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}llrrlll@{}}
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}llrrrrrr@{}}
 \toprule
-Extractor, unit & Stratum & $G_{\mathrm{rec}}$ & $\ge 1$ doc & $\ge 2$ docs & $\Delta F_1$ & $\Delta P$ (admitted) \\
+Extractor & Stratum & $G_{\mathrm{rec}}$ & $\ge 1$ doc & $\ge 2$ docs & $\Delta F_1$ & $\Delta P$ & Admitted \\
 \midrule
-DeepSeek-V3.2, document & GEO & 1,372 & 8.1\% & 0.87\% $[0.50, 1.52]$ & $-0.098$ $[-0.105, -0.091]$ & $+0.496$ $[+0.228, +0.726]$ (13) \\
- & OTHER & 758 & 13.1\% & 4.09\% $[2.90, 5.75]$ & $-0.200$ $[-0.206, -0.194]$ & $+0.316$ $[+0.184, +0.450]$ (54) \\
-Llama-3.1-8B, sentence & GEO & 1,372 & 8.3\% & 2.11\% $[1.48, 3.02]$ & $-0.055$ $[-0.060, -0.051]$ & $+0.261$ $[+0.150, +0.377]$ (71) \\
- & OTHER & 758 & 3.6\% & 0.79\% $[0.36, 1.72]$ & $-0.055$ $[-0.058, -0.052]$ & $-0.006$ $[-0.031, +0.025]$ (154) \\
+\twoline{DeepSeek-V3.2}{(document)} & GEO & 1,372 & 8.1\% & \valci{0.87\%}{[0.50, 1.52]} & \valci{$-0.098$}{$[-0.105, -0.091]$} & \valci{$+0.496$}{$[+0.228, +0.726]$} & 13 \\
+ & OTHER & 758 & 13.1\% & \valci{4.09\%}{[2.90, 5.75]} & \valci{$-0.200$}{$[-0.206, -0.194]$} & \valci{$+0.316$}{$[+0.184, +0.450]$} & 54 \\
+\addlinespace
+\twoline{Llama-3.1-8B}{(sentence)} & GEO & 1,372 & 8.3\% & \valci{2.11\%}{[1.48, 3.02]} & \valci{$-0.055$}{$[-0.060, -0.051]$} & \valci{$+0.261$}{$[+0.150, +0.377]$} & 71 \\
+ & OTHER & 758 & 3.6\% & \valci{0.79\%}{[0.36, 1.72]} & \valci{$-0.055$}{$[-0.058, -0.052]$} & \valci{$-0.006$}{$[-0.031, +0.025]$} & 154 \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-054; outputs/dec038_crossdoc/analysis_result.json]
 \end{table}
 
@@ -581,18 +591,21 @@ datasets at exactly unchanged recall
 threshold $\tau=0.88$, a secondary analysis
 (Section~\ref{sec:setup-statistics}): observed test-split difference
 with a 95\% bootstrap percentile interval (10,000 resamples over
-test-split subjects). A: 657 triples; B: 2,241 triples.}
+test-split subjects), CI beneath each value. A: 657 triples; B: 2,241
+triples.}
 \label{tab:dec026-bootstrap-tau088}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{@{}llrrr@{}}
 \toprule
-Comparison & Dataset & $P$ diff. (95\% CI) & $R$ diff. (95\% CI) & $F_1$ diff. (95\% CI) \\
+Comparison & Dataset & $P$ diff. & $R$ diff. & $F_1$ diff. \\
 \midrule
-R1$-$R2 & A & $-0.394\ [-0.480,-0.246]$ & $+0.607\ [0.407,0.798]$ & $+0.076\ [-0.115,0.299]$ \\
-R1$-$R2 & B & $-0.453\ [-0.492,-0.403]$ & $+0.547\ [0.444,0.650]$ & $+0.016\ [-0.089,0.130]$ \\
-R3$-$R2 & A & $+0.099\ [0.032,0.227]$ & $0.000\ [0.000,0.000]$ & $+0.019\ [0.006,0.040]$ \\
-R3$-$R2 & B & $+0.027\ [0.008,0.052]$ & $0.000\ [0.000,0.000]$ & $+0.006\ [0.002,0.012]$ \\
+R1$-$R2 & A & \valci{$-0.394$}{$[-0.480, -0.246]$} & \valci{$+0.607$}{$[0.407, 0.798]$} & \valci{$+0.076$}{$[-0.115, 0.299]$} \\
+R1$-$R2 & B & \valci{$-0.453$}{$[-0.492, -0.403]$} & \valci{$+0.547$}{$[0.444, 0.650]$} & \valci{$+0.016$}{$[-0.089, 0.130]$} \\
+R3$-$R2 & A & \valci{$+0.099$}{$[0.032, 0.227]$} & \valci{$0.000$}{$[0.000, 0.000]$} & \valci{$+0.019$}{$[0.006, 0.040]$} \\
+R3$-$R2 & B & \valci{$+0.027$}{$[0.008, 0.052]$} & \valci{$0.000$}{$[0.000, 0.000]$} & \valci{$+0.006$}{$[0.002, 0.012]$} \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 % [EVID-041]
 \end{table}
 
