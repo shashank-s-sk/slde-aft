@@ -5496,3 +5496,92 @@ generic geographic containment facts, which are also among the easiest
 facts to extract. A corroboration test built from them would mainly test
 geography. Any constructed multi-document subset should report its
 relation mix and ideally stratify geographic vs other relations.
+
+---
+
+# EVID-054 — DEC-038: cross-document corroboration on a 2,010-document DocRED redundancy subset, GEO vs OTHER (pre-registered, commit f87e91a)
+
+## Setup
+
+- As pre-registered, no deviations. Scripts: `scripts/dec038_extract.py`,
+  `scripts/dec038_analyze.py`. Output: `outputs/dec038_crossdoc/`
+  (`analysis_result.json`).
+- 2,010 docs (477 dev + 1,533 train), 24,591 distinct gold facts. G_rec
+  (facts in >= 2 docs under the normalize_b key) = 2,130; EVID-053's
+  primary key gave 2,179.
+- Extraction was fresh for all docs, with no API failures:
+  - DeepSeek-V3.2 document level: 2,010 calls, 3 unparsable, $0.755.
+  - Llama-3.1-8B sentence level: 16,222 calls, 624 unparsable, $0.502.
+  - Total $1.26.
+- The code was validated on synthetic gold-derived extractions before the
+  real outputs were read.
+
+## P1 — realised cross-document corroboration of G_rec (Wilson 95% CI)
+
+| Extractor | Stratum | G_rec | Recovered from >= 2 docs | Recovered from >= 1 doc |
+|---|---|---:|---|---:|
+| DeepSeek, document | GEO | 1,372 | 12 (**0.87%**, 0.50-1.52) | 8.1% |
+| DeepSeek, document | OTHER | 758 | 31 (**4.09%**, 2.90-5.75) | 13.1% |
+| Llama, sentence | GEO | 1,372 | 29 (**2.11%**, 1.48-3.02) | 8.3% |
+| Llama, sentence | OTHER | 758 | 6 (**0.79%**, 0.36-1.72) | 3.6% |
+
+Every one of these facts is stated in >= 2 documents (by construction).
+The extractors recover only 3.6-13.1% of them from even one document, so
+cross-document corroboration is realised for 0.8-4.1%. This is the same
+order as the within-document rates (DocRED 0.26% sentence level, 3.1% best
+document level). **Extractor recall, not corroboration availability, is the
+binding constraint across documents too.**
+
+## P2 / P3 — R3-doc vs naive (paired bootstrap over fact keys, 10,000)
+
+| Extractor | Stratum | naive P / R / F1 | R3-doc P / R / F1 (admitted) | P2: dF1 [CI] | P3: dP [CI] |
+|---|---|---|---|---|---|
+| DeepSeek | GEO | 0.274 / 0.061 / 0.100 | 0.769 / 0.0008 / 0.002 (13) | **-0.098** [-0.105, -0.091] | **+0.496** [+0.229, +0.726] |
+| DeepSeek | OTHER | 0.166 / 0.266 / 0.204 | 0.481 / 0.0020 / 0.004 (54) | **-0.200** [-0.206, -0.194] | **+0.316** [+0.184, +0.450] |
+| Llama | GEO | 0.091 / 0.044 / 0.060 | 0.352 / 0.0021 / 0.004 (71) | **-0.055** [-0.060, -0.051] | **+0.261** [+0.150, +0.377] |
+| Llama | OTHER | 0.038 / 0.105 / 0.056 | 0.032 / 0.0004 / 0.001 (154) | **-0.055** [-0.058, -0.053] | -0.006 [-0.031, +0.025] (null) |
+
+- **P2, per the pre-registered reading:** cross-document aggregation
+  **lowers F1** in both strata for both extractors (all CIs < 0).
+- **P3:** it **raises precision** in GEO for both extractors and in OTHER
+  for DeepSeek, on very few admitted keys (13-71). No detectable effect for
+  Llama OTHER, where naive precision is only 3.8%.
+
+## Secondary
+
+- R3-doc vs R2, precision: DeepSeek GEO +0.480 [0.229, 0.710]; DeepSeek
+  OTHER +0.277 [0.148, 0.409]; Llama GEO +0.118 [0.032, 0.208]; Llama
+  OTHER +0.003 (null).
+- R3-doc vs R2, F1: small negative everywhere (CI < 0).
+- Counting distinct documents rather than all observations is what buys
+  the precision. R2 admits 166-1,396 keys at near-naive precision because
+  within-document repeats (cited sentences, re-extractions) count as
+  support.
+- R3-unit equals R2 for DeepSeek (each observation is a distinct cited
+  sentence).
+- Recall on G_rec rises with the number of stating documents for Llama
+  GEO: R3-doc 0.4% (2 docs) -> 5.1% (5+). It stays <= 5.6% everywhere.
+- Half-sampling robustness (1,000 draws of 50% of docs): the F1 decrease
+  holds (deviation interval about +/-0.01 around -0.05 to -0.20). The
+  precision gains are much less certain under document resampling
+  (unscaled deviation intervals about +/-0.2-0.3), because they rest on
+  13-71 admitted keys. Pre-registered 1/sqrt(2) scaling and unscaled
+  intervals are both in the JSON; the unscaled one is the appropriate
+  variance for a half-sample without replacement, so the precision CIs
+  above should be read as optimistic.
+- Contrary to the "geography is easy" expectation, DeepSeek realises
+  **less** cross-document corroboration for GEO (0.87%) than for OTHER
+  (4.09%). Llama shows the reverse (2.11% vs 0.79%). The strata do not
+  behave alike, which confirms they should not be pooled.
+
+## Result (feedback item 2)
+
+On a genuine multi-document redundancy corpus, where every target fact is
+stated in >= 2 documents, corroboration-gated aggregation behaves as it did
+within single documents: extractors realise 0.8-4.1% of the available
+cross-document corroboration. Gating on distinct documents raises the
+precision of the few facts it admits (3 of 4 cells) and lowers F1 in every
+cell (both strata, both extractors). This extends the paper's main finding
+(extractor recall is the binding constraint) from within-document to
+cross-document corroboration. It answers the professor's objection that
+DocRED/BioRED are single-document.
