@@ -13,6 +13,8 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 % Table helpers: a value with its 95% CI stacked beneath in footnote size,
 % and a two-line left-aligned label. Plain tabular, no extra packages.
 \newcommand{\valci}[2]{\begin{tabular}[t]{@{}r@{}}#1\\{\footnotesize #2}\end{tabular}}
@@ -62,7 +64,36 @@ how much evidence supports it, and admit only facts that more than one
 source supports. Such a rule can only work if three conditions hold. The
 text must supply corroboration; the extractor must realise it, by
 recovering the same fact from more than one source; and the repeated
-observations the rule counts must be independent evidence.
+observations the rule counts must be independent evidence
+(Figure~\ref{fig:conditions}).
+
+\begin{figure}[t]
+\centering
+\begin{adjustbox}{max width=\textwidth}
+\begin{tikzpicture}[node distance=5mm,
+  box/.style={draw, rounded corners=2pt, align=center, font=\small, minimum height=11mm, text width=24mm},
+  note/.style={align=center, font=\footnotesize, text width=27mm},
+  arr/.style={-{Stealth}, thick}]
+\node[box] (c) {Corpus};
+\node[box, right=of c] (a) {Corroboration\\available?};
+\node[box, right=of a] (r) {Extractor\\realises it?};
+\node[box, right=of r] (i) {Observations\\independent?};
+\node[box, right=of i] (k) {Aggregation\\into the\\knowledge base};
+\draw[arr] (c) -- (a);
+\draw[arr] (a) -- (r);
+\draw[arr] (r) -- (i);
+\draw[arr] (i) -- (k);
+\node[note, below=2mm of a] {DocRED: 50.2\% of gold facts have ${\ge}2$ evidence sentences};
+\node[note, below=2mm of r] {Extractors corroborate at most 3.1\% within documents};
+\node[note, below=2mm of i] {Repeats counted as independent: $O(t) \ge S(t)$};
+\end{tikzpicture}
+\end{adjustbox}
+\caption{The three conditions a corroboration gate needs, with the
+headline measurement for each
+(Sections~\ref{sec:results-availability}--\ref{sec:formal-analysis-empirical}).
+Extractor recall, the middle condition, is the binding constraint.}
+\label{fig:conditions}
+\end{figure}
 
 This paper tests all three for the conservative Noisy-OR with a
 mutual-exclusivity penalty of the DySECT system
@@ -93,8 +124,11 @@ corroboration DocRED and BioRED supply
 of it extractors realise, within documents and on a pre-registered
 cross-document subset
 (Sections~\ref{sec:results-within}--\ref{sec:results-crossdoc}); (iii) a
-pre-registered test of the independence assumption with two extractors
-and two confidence sources, whose precision gain also appears on real
+distinction between observation multiplicity $O(t)$ and source
+multiplicity $S(t)$ that applies to any rule aggregating repeated
+extractions, not only DySECT's (Section~\ref{sec:formal-analysis-properties}),
+with a pre-registered test of the independence assumption on two
+extractors and two confidence sources, whose precision gain also appears on real
 DocRED and BioRED extractions where the extractor repeats a fact within a
 sentence (Section~\ref{sec:formal-analysis-empirical});
 and (iv) an audit of the rule in DySECT's released system
@@ -256,6 +290,17 @@ In the 200-product snapshot, 31 unstructured-only triples were observed
 . On DocRED and BioRED the shared-source observations are of the other
 kind, duplicate emissions of one fact from a single sentence
 (Section~\ref{sec:results-within}).
+
+Formally, let $O(t)$ be the number of observations of $t$ and $S(t)$ the
+number of distinct sources among them (Section~\ref{sec:setup-metrics}).
+Then $O(t) \ge S(t)$, with equality exactly when no source is observed
+more than once. Equation~\ref{eq:noisyor} multiplies over all $O(t)$
+observations, which matches its independence assumption only if every
+observation comes from its own source: it treats $O(t)$ as if it were
+$S(t)$. The corrected rule R3 (Section~\ref{sec:formal-analysis-empirical})
+evaluates Equation~\ref{eq:noisyor} over the $S(t)$ distinct sources
+instead, keeping each source's highest confidence, so the published rule
+and R3 coincide exactly when $O(t) = S(t)$.
 
 % ------------------------------------------------------------------
 \section{Experimental Setup}
@@ -438,7 +483,10 @@ by $0.064$ with DeepSeek-V3.2 ($[-0.078,\allowbreak -0.052]$). The two extractor
 similar unaggregated recall ($0.096$ and $0.097$), but DeepSeek-V3.2 was
 nearly twice as precise ($0.069$ against $0.036$); 0.75\% and 1.35\% of
 gold facts were recovered from two or more sentences (corroborated: 0.73\%
-and 1.35\%; difference $+0.0059$, $[0.0021,\allowbreak 0.0098]$). Distinct-source
+and 1.35\%; difference $+0.0059$, $[0.0021,\allowbreak 0.0098]$). Many errors were
+schema errors, not entity errors: Llama-3.1-8B produced 811 triples that
+connect a correct gold concept pair with the wrong relation type, against
+473 fully correct facts (Supplementary Section~S16). Distinct-source
 counting on both corpora is reported in
 Section~\ref{sec:formal-analysis-empirical}; per-method counts, the
 evidence-only setting, and whole-abstract extraction are in
