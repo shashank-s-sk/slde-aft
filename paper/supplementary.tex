@@ -228,6 +228,53 @@ closed-loop experiments uses other gold sets and is not comparable
 (Supplementary Section~S1).
 % [EVID-041]
 
+
+\paragraph{Moved from the main text (second pass).} Verbatim copies.
+
+Triples are scored by normalised exact-match set comparison unless
+stated otherwise; CaRB uses its official scorer (Supplementary
+Section~S1). On DocRED a predicted triple matches a gold fact when its
+relation name matches and its subject and object, after normalisation
+(Unicode NFKC, case folding, punctuation and possessives removed, one
+leading article dropped), equal a gold mention of the head and tail
+entities; BioRED is scored the same way against gold concepts, in either
+argument order. Exact matching against first mentions is a secondary
+measure (Supplementary Section~S7). The rule comparison's recall uses
+the \texttt{gold\_unstructured} facts of training products and is not
+comparable with recall elsewhere (Supplementary Section~S1).
+% [Decision log.md, DEC-031, DEC-032; EVID-041; EVID-046; EVID-047]
+
+gold facts; the extractor is run on every sentence. These scores are not
+comparable with published DocRED results, whose systems are trained on
+DocRED and given the gold entities, whereas the extractors here are
+zero-shot, open, and given no entity list; Supplementary Section~S10
+reports the official metrics for the same extractions, with the same
+conclusions.
+
+\textbf{BioRED} \citep{luo2022biored}: the 500 abstracts of the Train
+(400) and Dev (100) splits, with 5,462 sentences and 4,906 gold facts,
+each an unordered pair of annotated concepts with one of eight relation
+types, and no evidence-sentence annotations.
+
+Bootstrap intervals use 10,000 resamples and the percentile 95\%
+interval, resampling test-split subjects (rule comparison), documents
+(DocRED, BioRED), or fact keys (cross-document subset, with a
+document-resampling check). Point estimates are observed differences.
+The DocRED, BioRED, protocol-check, stronger-extractor, and
+cross-document analyses, and the closed-loop experiments in the
+Supplementary Material, were pre-registered with primary metrics and
+decision rules. Each pre-registration is a public commit whose timestamp
+precedes its first result, and for DocRED and BioRED the extraction logs
+also start after it (Supplementary Table~S19). The rule comparison fixed
+$F_1$ at each rule's own selected threshold as primary in advance, but
+committed that together with its first results, so its order cannot be
+verified; its fixed-threshold comparison
+(the main text's fixed-threshold comparison table) was added after them as a
+secondary analysis, and R6 as an exploratory rule. Every other interval
+is secondary or descriptive and labelled as such (Supplementary
+Section~S12). Nulls are reported as found, without re-running, adding
+seeds, or post-hoc adjustment.
+
 \section{Aggregation-Rule Comparison: Full Tables}
 \label{sec:s2}
 
@@ -374,6 +421,32 @@ R6 shows that rescaling the output can
 also hurt: because $A(t)/A(t)=1$ for any uncontested slot, it collapses
 to a constant exactly where the input carries information. This account
 fits the measured pattern but was not tested against alternatives.
+
+
+\paragraph{Moved from the main text (second pass).} Verbatim copies.
+
+\begin{table}[htbp]
+\centering
+\caption{R3 $-$ R2 precision at $\tau=0.88$ on the product snapshots, by
+extractor and confidence source: observed test-split difference with a
+95\% bootstrap percentile interval (10,000 resamples over test-split
+subjects). Pre-registered primary: DeepSeek-V3.2, verbalized.
+$\rho$: Spearman correlation between $A(t)$ and the observation count,
+verbalized / logprob.}
+\label{tab:s2-dec036}
+\small
+\begin{tabular}{@{}llllc@{}}
+\toprule
+Dataset & Extractor & Verbalized & Token logprob & $\rho$ \\
+\midrule
+A & DeepSeek-V3.2 & $+0.229$ $[0.038, 0.417]$ & $+0.239$ $[0.049, 0.429]$ & 0.92 / 0.92 \\
+A & Llama-3.1-8B (rerun) & $+0.095$ $[0.020, 0.215]$ & $+0.137$ $[0.030, 0.284]$ & 0.90 / 0.89 \\
+B & DeepSeek-V3.2 & $+0.008$ $[0.000, 0.027]$ & $+0.008$ $[0.000, 0.027]$ & 0.95 / 0.95 \\
+B & Llama-3.1-8B (rerun) & $+0.013$ $[0.000, 0.033]$ & $+0.020$ $[0.004, 0.044]$ & 0.93 / 0.93 \\
+\bottomrule
+\end{tabular}
+% [EVID-052; outputs/dec036/replay/*_metrics_summary.json and *_bootstrap_ci_fixed_tau.json]
+\end{table}
 
 \section{Computational Complexity}
 \label{sec:formal-analysis-complexity}
@@ -1301,6 +1374,26 @@ points at the first knowledge-base-guided iteration for all four models
 it evaluates (GPT-4.1: 22.80\%$\to$30.62\%; GPT-4.1-mini:
 12.72\%$\to$20.22\%; Kimi~K2.5: 32.03\%$\to$37.85\%; LLaMA-3.3~70B:
 23.23\%$\to$28.78\%).
+
+
+\paragraph{Moved from the main text (second pass).} Verbatim copies.
+
+DySECT exempts fully trusted sources (human curators) from aggregation
+\citep[Sect.~2.2, footnote~3]{aminnaseri2026dysect}; the automatic path
+analysed here governs all LLM-sourced evidence in both systems.
+
+The closed loop, the confidence layer, knowledge-base feedback,
+fine-tuning on knowledge-base data, and the names of DySECT's two
+feedback modes (Encouraging and Prohibitive) are DySECT's design. The
+evaluated implementation follows them, lacks DySECT's concept hierarchy
+and curation interface, and adds seeding from structured records
+(Supplementary Section~S13); this paper claims none of them, and the two
+evaluations are not directly comparable.
+
+In the product domain the constraint is masked: every admitted
+correct fact pairs a structured observation with an LLM one, while
+text-stated facts the LLM never extracted stay below the threshold
+(Supplementary Section~S16).
 
 \section{Additional Formal Properties}
 \label{sec:s14}

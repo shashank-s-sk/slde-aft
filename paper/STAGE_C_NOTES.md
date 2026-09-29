@@ -307,3 +307,25 @@ AI declaration still awaiting the user's final approval before insertion.
   - The 9 limitation paragraphs became 8: two merged ("Small counts and
     protocol choices"), and the 6.2 scope caveat was folded into "The
     scope of distinct-source counting".
+
+## 12. Stage 3d pass 2 (Option B, items 1-10) - APPLIED 2026-09-29, awaiting compile
+
+- Body: 4,752 words + 4 tables -> **4,540 words + 3 tables** (plan
+  ~4,020 + 3). Saving about 330 words-equivalent (~1.7 pages), not the
+  planned ~730.
+- Why short: item 1 moved the DocRED/BioRED R3 results into 5.4 rather
+  than out of the main text (they are results; "no result cut"), and
+  item 3 put the logprob values and CIs inline. Section 5.4 therefore
+  grew from 446 to 561 words. Tightening in items 4-9 also saved less
+  than estimated.
+- Items 11-12 NOT applied (user decision): proofs and limitation numbers
+  stay in the main text.
+- Moved verbatim to the supplement:
+  - S1: old metrics paragraph, DocRED comparability sentence, BioRED
+    description, statistics paragraph.
+  - S2: the stronger-extractor table (relabelled tab:s2-dec036).
+  - S13: the trusted-source sentence, the full attribution sentence, the
+    product-domain "masked" detail.
+- Verification: 0 numbers lost against both the pre-pass-2 file and the
+  original pre-trim file (261 in main, 47 in the supplement). All caveat
+  phrases are present. The 8 limitation paragraphs are unchanged.
