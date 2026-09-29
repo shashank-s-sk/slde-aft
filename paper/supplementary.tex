@@ -156,26 +156,27 @@ when all five paired differences share a sign. A Wilcoxon $p=0.0625$ at
 five seeds is therefore the strongest result the test can give, not a
 weaker one than an accompanying $t$-test.
 
-\paragraph{Recall denominators in detail.} DEC-026's recall uses the
+\paragraph{Recall denominators in detail.} The offline rule comparison's recall uses the
 \texttt{gold\_unstructured} facts of train-split products, built with the
 same \texttt{normalize\_gold()} logic as the original run scripts, and
 matching the snapshots' own \texttt{gold\_label} column with zero
-mismatches on both snapshots. It is directly comparable to EVID-014's
-admission recall on the same 657-triple snapshot at $\tau=0.88$. It is
-not comparable to the held-out extraction recall of EVID-013, which is
+mismatches on both snapshots. It is directly comparable to the
+admission recall of the calibration analysis on the same 657-triple
+snapshot at $\tau=0.88$. It is not comparable to held-out extraction
+recall, which is
 measured on other products from a single extraction pass with no
 admission step, or to the closed-loop test's recall, which uses the
 larger \texttt{gold\_structured} set (checked against
 \texttt{scripts/dec019\_closedloop\_compare.py}).
 
-\paragraph{DEC-026 cost.} DEC-026 is a replay of knowledge-base snapshots
+\paragraph{Cost of the rule comparison.} The comparison is a replay of knowledge-base snapshots
 saved by the product-domain runs: it re-scores stored observations under
 six rules, with no API calls or GPU time.
 
 \section{Aggregation-Rule Comparison: Full Tables}
 \label{sec:s2}
 
-Full results of the offline replay (DEC-026) summarised in the main text's Section on empirical validation of the aggregation rule. Rules: R1 max-merge; R2 the published rule; R3 distinct-source counting; R4 evidence share; R5 R3 and R4 combined; R6 the unsquared share (exploratory). Dataset A: 657 triples, 35 test-split subjects; dataset B: 2,241 triples, 92.
+Full results of the offline replay summarised in the main text's Section on empirical validation of the aggregation rule. Rules: R1 max-merge; R2 the published rule; R3 distinct-source counting; R4 evidence share; R5 R3 and R4 combined; R6 the unsquared share (exploratory). Dataset A: 657 triples, 35 test-split subjects; dataset B: 2,241 triples, 92.
 
 \begin{table}[htbp]
 \centering
@@ -342,7 +343,7 @@ variance, so these runs rule out only large effects. The structured-only
 and unstructured-only variants have no held-out evaluation by design.
 % [EVID-020; EVID-039; AUDIT.md]
 
-\paragraph{Standard-deviation correction.} EVID-039 logged these $F_1$
+\paragraph{Standard-deviation correction.} The original run logged these $F_1$
 standard deviations as population SDs ($\text{ddof}=0$), e.g.\ $0.0934$
 for the full pipeline's held-out $F_1$. The values in
 Table~\ref{tab:s3-ablation-full} are converted to sample SDs
@@ -401,10 +402,11 @@ run that reported $p=0.0028$ for it, both evaluated on the same 8-product
 test split. It has 8 products rather than 10 because an automated
 leakage guard excludes any test product whose name appears in the
 fine-tuning data, and excludes 2 of the 10. There was no independent
-validation split separating selection from confirmation. DEC-024
-pre-registered the fix (select on the 200-product superset's 20-product
-validation split, confirm once on its untouched 40-product test split),
-executed as DEC-027 with a leakage-guard unit test
+validation split separating selection from confirmation. The fix was
+pre-registered (select on the 200-product superset's 20-product
+validation split, confirm once on its untouched 40-product test split)
+and executed as the leakage-free evaluation of the main text, with a
+leakage-guard unit test
 (\texttt{tests/test\_dec027\_leakage\_guard.py}) that aborts training
 before any GPU time is spent if a held-out product appears in the
 training data. The one-sample tests below also treat the base score as
@@ -427,7 +429,7 @@ alternative LoRA rank or learning rate exceeded the default configuration
 (Table~\ref{tab:s5-lora-search}), and recall was $0.125$ in all nine
 runs. \textbf{This flat recall does not show that fine-tuning leaves
 recall unchanged}: the base model found only 7 of 56 gold triples, so a
-loss of about 10\% of true positives, the size measured in DEC-027, is
+loss of about 10\% of true positives, the size measured in the leakage-free evaluation, is
 less than one triple and could not appear on this set. Over five seeds
 (Table~\ref{tab:finetune-5seed}; Figure~\ref{fig:finetuning}b), with the
 configuration tuned on the same test set, the 5-epoch configuration
@@ -670,12 +672,12 @@ Iteration 4 (guided) & 0.5088 & 0.3551 & 0.4183 & 657 \\
 \paragraph{Sources and categories.} Product-domain rows are the final
 iteration-4 knowledge base of the 50-product run (657 triples, 35 training
 products), from \texttt{outputs/dec007\_error\_analysis/error\_analysis\_full.csv}.
-The original categorisation (DEC-007) scored triples against
+The original error categorisation scored triples against
 \texttt{gold\_unstructured}, the facts a product's text states. That
 labelled correct structured-record facts absent from the text as
 ``hallucinated''. The counts below re-score every row against the
 structured record and use each triple's provenance to separate
-structured-only from LLM-supported triples. The flag DEC-007 calls
+structured-only from LLM-supported triples. The flag the original categorisation calls
 ``ambiguous'' marks a score within $\pm0.03$ of $\tau$; it is reported
 here as a score-near-threshold category, distinct from relation-type
 ambiguity.
@@ -795,7 +797,7 @@ in the training set.
 \section{Protocol Check: Design}
 \label{sec:s11}
 
-\paragraph{Configurations.} The check (DEC-033) crosses two extractors,
+\paragraph{Configurations.} The check crosses two extractors,
 Llama-3.1-8B and DeepSeek-V3.2, with two units, sentence and whole
 document, on DocRED and BioRED. The Llama-3.1-8B sentence-level runs on
 both corpora and the DeepSeek-V3.2 sentence-level run on BioRED are
@@ -867,6 +869,34 @@ Calibration, scalability, error analysis, provenance filter & --- & Descriptive,
 \bottomrule
 \end{tabular}
 % [Decision log.md: DEC-026 (and its addenda), DEC-027, DEC-029, DEC-031, DEC-032, DEC-033, DEC-034]
+\end{table}
+
+\paragraph{Verifiable pre-registration.} Each pre-registration is a
+commit in the public repository
+(\url{https://github.com/shashank-s-sk/slde-aft}); its design is in the
+decision log at that commit. Table~\ref{tab:s13-prereg} gives the
+pre-registration commit, the first commit containing the result, and,
+where the run logged one, the time extraction started. Timestamps are
+commit times (UTC+2).
+
+\begin{table}[htbp]
+\centering
+\caption{Pre-registration evidence (git commit hashes and times).}
+\label{tab:s13-prereg}
+\small
+\begin{tabular}{@{}p{0.25\linewidth}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+\toprule
+Experiment & Pre-registration commit & First result commit & Run start logged \\
+\midrule
+Leakage-free fine-tuning & \texttt{cd874a5}, 2026-09-23 13:21 & \texttt{cc21e05}, 2026-09-23 16:31 & --- \\
+Thirty-seed module ablation & \texttt{cd874a5}, 2026-09-23 13:21 & \texttt{848937d}, 2026-09-24 18:26 & --- \\
+DocRED at scale & \texttt{8715f35}, 2026-09-24 18:50:26 & \texttt{bc5c79e}, 2026-09-24 19:42 & 2026-09-24 18:51:14 \\
+BioRED at scale & \texttt{938079a}, 2026-09-24 19:51:43 & \texttt{7f554aa}, 2026-09-25 11:29 & 2026-09-24 19:51:59 \\
+Protocol check & \texttt{a9976b8}, 2026-09-26 16:14 & \texttt{82292ee}, 2026-09-26 20:39 & --- \\
+Offline rule comparison & \texttt{36da4dd}, 2026-09-23 11:47, committed with its first results & \texttt{36da4dd} & --- \\
+\bottomrule
+\end{tabular}
+% [git log -S "# DEC-0xx" -- "Decision log.md"; git log -S "# EVID-0xx" -- "Evidence log.md"; outputs/dec031_docred/run_log.txt; outputs/dec032_biored logs]
 \end{table}
 
 \end{document}

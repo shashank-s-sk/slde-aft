@@ -123,3 +123,43 @@ OBSERVED differences, not the EVID-052 bootstrap means:
 No LaTeX compiler is available on this machine. Checked statically: braces
 and environments balance, every \ref has a label. A PDF compile is still
 needed.
+
+## 6. Stage 2 (clean-up) - APPLIED 2026-09-29, awaiting review
+
+- **Jargon:** no DEC-/EVID- identifiers, "this project", or "an earlier
+  account" remain in the main text's visible text (the % comments are
+  kept as the audit trail). Superseded 15-document pilots were removed
+  from the main text (they stay in Suppl. S7). The CaRB 5-system
+  comparison is now a one-line pointer to Suppl. S1. The DocRED
+  discussion now opens with the exact-string hypothesis rather than "an
+  earlier account". Supplement IDs were replaced with descriptive names.
+- **Verifiable pre-registration:** new Suppl. Table S19 (label
+  tab:s13-prereg) gives each pre-registration commit hash and time, its
+  first-result commit, and the logged run start where one exists
+  (DocRED: started 48 s after the pre-reg commit; BioRED: 16 s after).
+  The main text states this. **Honest exception:** the offline rule
+  comparison's specification was committed together with its first
+  results (36da4dd), so its order is not verifiable; the text says so.
+  **Carry-forward:** add rows for DEC-036 (2f3a731) and DEC-038 (f87e91a)
+  when they enter the paper.
+- **References:** all 54 checked against authoritative sources (ACL
+  Anthology BibTeX, Crossref, JMLR, PMLR, NeurIPS proceedings, arXiv API).
+  Fixed:
+  - Venue names are now the full official ones (no "Proceedings of ACL").
+  - Missing volumes and pages were filled.
+  - Five preprints now cite their published versions (LoRA, FLAN and
+    Self-RAG at ICLR; the continual-learning survey in TPAMI; the
+    explainability survey in ACM TIST; OA-Mine at WWW 2022).
+  - **Wrong authors corrected:**
+    - Open-IE survey: 5 wrong names.
+    - DocRED: one missing Liu.
+    - SageMaker Autopilot: 4 missing authors.
+    - Llama 3 and Gemini 2.5: wrong 21st name and a silently truncated
+      list; now 20 names + others.
+  - DySECT uses "Aminnaseri" (Anthology form). Prose uses \citet only, so
+    naming is consistent.
+  - Remaining entries without pages are legitimate (ICLR, arXiv-only,
+    an edited book).
+- **OPEN (needs the user):** institutional email for the corresponding
+  author (currently a Gmail address; affiliation Hopn UG). Prof. Ebada's
+  email is still a placeholder.

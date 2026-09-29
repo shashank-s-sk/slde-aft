@@ -550,7 +550,7 @@ Supplementary Section~S3.
 Corollary~\ref{cor:ceiling-consequence} says the ceiling must block every
 contested single-valued slot, but not whether such slots arise on real
 data or whether a corrected rule does better. Both were tested offline
-(DEC-026) by replaying the stored observations of two independent
+by replaying the stored observations of two independent
 gold-labelled snapshots, 657 triples from 35 products (dataset A) and
 2,241 triples from 140 products (dataset B), through six rules applied
 to identical observations: R1, max-merge ($C(t)=\max_i c_i$, no conflict
@@ -687,9 +687,7 @@ evidence-sentence annotations; as a proxy, 35.1\% of gold facts have
 both concepts mentioned together in two or more sentences, and 89.7\%
 in at least one.
 % [Decision log.md, DEC-032; EVID-047]
-Earlier 15-document pilots on both corpora are superseded
-(Supplementary Section~S7).
-% [Decision log.md, DEC-020; EVID-024; EVID-047]
+% [Earlier 15-document pilots superseded: Decision log.md, DEC-020; EVID-024; EVID-047; Supplementary S7]
 
 \subsection{Models and Hardware}
 \label{sec:setup-models}
@@ -703,10 +701,10 @@ On BioRED it is compared with \texttt{deepseek/deepseek-v3.2}
 same prompts and inputs.
 % [Decision log.md, DEC-032]
 On CaRB it is compared with \texttt{deepseek/deepseek-v3.2} on all 548
-sentences, and with \texttt{openai/gpt-4o} \citep{openai2024gpt4o},
-\texttt{anthropic/claude-sonnet-5} \citep{anthropic2026claudesonnet5},
-and \texttt{google/gemini-2.5-pro} \citep{comanici2025gemini25} on the
-30-sentence pilot only (Supplementary Section~S1).
+sentences; a 30-sentence comparison with \texttt{openai/gpt-4o}
+\citep{openai2024gpt4o}, \texttt{anthropic/claude-sonnet-5}
+\citep{anthropic2026claudesonnet5}, and \texttt{google/gemini-2.5-pro}
+\citep{comanici2025gemini25} is in Supplementary Section~S1.
 % [EVID-032; EVID-035]
 The fine-tuning base model is \texttt{mistralai/Mistral-7B-Instruct-v0.3}
 \citep{jiang2023mistral}, adapted with QLoRA on rented GPUs; the
@@ -769,7 +767,7 @@ gold fact, and the same evaluator is used for every aggregation arm.
 \textbf{BioRED} is scored the same way against gold concepts, matching
 either argument order. For both, exact matching against each entity's
 first mention (and, for BioRED, a relaxed containment match) is a
-secondary measure, as in the earlier pilots.
+secondary measure (Supplementary Section~S7).
 % [Decision log.md, DEC-031, DEC-032; EVID-046; EVID-047]
 
 \paragraph{Recall denominators.} Recall is $TP/(TP+FN)$, and its gold
@@ -833,9 +831,15 @@ for DocRED and BioRED.
 \paragraph{Pre-registration; primary and secondary analyses.} The
 leakage-free fine-tuning evaluation, the thirty-seed ablation, the
 DocRED and BioRED runs, and the protocol check were pre-registered, with
-primary metrics and decision rules fixed before any result was seen. The
-offline rule comparison was pre-registered with $F_1$ at each rule's own
-selected threshold as its primary analysis; its fixed-threshold
+primary metrics and decision rules fixed before any result was seen.
+Each pre-registration is a commit in the public repository whose hash
+and timestamp precede the commit of its first result; for the DocRED
+and BioRED runs the extraction logs also record a start time after the
+pre-registration commit (Supplementary Table~S19). The offline rule
+comparison specified $F_1$ at each rule's own selected threshold as its
+primary analysis in advance, but that specification was committed
+together with its first results, so its order cannot be verified from
+the repository; its fixed-threshold
 comparison (Table~\ref{tab:dec026-bootstrap-tau088}) was added as a
 secondary analysis after the first results, and one rule (R6) as an
 exploratory check. Each experiment has one or two primary analyses;
@@ -859,10 +863,8 @@ per-seed, and per-size values are in the Supplementary Material.
 On all 548 CaRB sentences, under the official scorer, the pipeline's
 Llama-3.1-8B-Instruct extractor obtained $P=0.589$, $R=0.387$,
 $F_1=0.467$, $0.104$ below DeepSeek-V3.2 ($P=0.713$, $R=0.477$,
-$F_1=0.571$). In the 30-sentence pilot it ranked last of five systems
-($F_1=0.496$, against $0.504$ for GPT-4o, $0.527$ for Claude Sonnet 5,
-$0.528$ for Gemini 2.5 Pro, and $0.558$ for DeepSeek-V3.2); the full
-table is in Supplementary Section~S1.
+$F_1=0.571$). On a 30-sentence subset it also scored below GPT-4o,
+Claude Sonnet 5, and Gemini 2.5 Pro (Supplementary Section~S1).
 % [EVID-032; EVID-035]
 
 \subsection{Aggregation on DocRED}
@@ -896,8 +898,8 @@ respectively. The counts are small (36 triples admitted, 9 correct, with
 the exact key), R3 lost a few true positives (11 to 9), and the
 pre-registered $F_1$ comparison did not exclude zero ($-0.0003$,
 $[-0.0009, 0.00003]$); the precision comparison was a secondary
-analysis. The pilot's evidence-sentence setting gives the same pattern
-(Supplementary Section~S7).
+analysis. Extracting from the gold evidence sentences only gives the
+same pattern (Supplementary Section~S7).
 % [EVID-046; Decision log.md, DEC-031]
 
 \begin{table}[htbp]
@@ -946,8 +948,8 @@ observations. It also lost true positives (32 to 26), and its $F_1$ was
 lower than R2's ($-0.0021$, $[-0.0048, -0.0002]$). DeepSeek-V3.2 produced
 only 6 within-sentence duplicates, and R3 changed neither its precision
 ($+0.004$, $[-0.011, 0.016]$) nor its $F_1$ ($-0.0004$,
-$[-0.0012, 0.00002]$). Whole-abstract extraction and the pilot's
-evaluators are reported in Supplementary Section~S7.
+$[-0.0012, 0.00002]$). Whole-abstract extraction and the strict and
+relaxed evaluators are reported in Supplementary Section~S7.
 % [EVID-047]
 
 \begin{table}[htbp]
@@ -1116,8 +1118,8 @@ The 31 excluded triples had each been observed 2 to 21 times; 13 had a
 generic category noun (e.g.\ ``laptop device'') as the subject. Because
 the structured records and the gold triples share a generator
 (Section~\ref{sec:setup-datasets}), this result reflects a noise-free
-structured source. Under a deliberately corrupted structured source
-(DEC-028), the filter's precision advantage decays but remains
+structured source. Under a deliberately corrupted structured source,
+the filter's precision advantage decays but remains
 significant at corruption rates up to 20\%. Corruption also creates
 contested single-valued slots, on average 21.8, 43.6, and 84.2 at 5\%,
 10\%, and 20\%; the published rule admitted none of them at any rate, as
@@ -1218,10 +1220,9 @@ Without PKB (max-merge) & 0.398 (0.163) & $+0.034\ [-0.010, 0.082]$ & $1.43$ & 0
 The fine-tuning evaluation selects hyperparameters on an independent
 20-product validation split and confirms once on an untouched 40-product
 test split of the 200-product dataset (280 gold triples), with a
-pre-registered paired bootstrap over test products as the primary test
-(DEC-027). An earlier exploration that selected and tested on the same
-8-product set is superseded and reported only in Supplementary
-Section~S5.
+pre-registered paired bootstrap over test products as the primary test.
+An earlier exploration that tuned and tested on the same 8-product set
+is reported in Supplementary Section~S5; its results are not used.
 % [Decision log.md, DEC-027; EVID-044]
 
 On the validation split, an epoch search and a follow-up LoRA search
@@ -1423,9 +1424,9 @@ fully correct facts.
 \subsection{Why Aggregation Fails on DocRED and BioRED, and the Divergence from DySECT}
 \label{sec:discussion-docred}
 
-An earlier account in this project attributed the DocRED result, on a
-15-document pilot, to exact-string matching. The 845-document run does
-not support it: even the oracle key, which already pooled 28 of the 29
+A natural explanation for the DocRED result is exact-string matching:
+the same fact phrased differently in two sentences would never be
+pooled. The data do not support it: even the oracle key, which already pooled 28 of the 29
 gold facts recovered from more than one sentence, closed only 7.3\% of
 the gap (Section~\ref{sec:results-docred}).
 % [EVID-046]
@@ -1594,12 +1595,12 @@ measured with a structured source generated from the same attribute
 values as the gold triples (Section~\ref{sec:results-provenance}), so
 the structured source was never wrong
 % [EVID-029]
-. DEC-028 partly mitigates this by corrupting the structured source at
-5\%, 10\%, and 20\%: the filter's precision advantage decayed from
+. A robustness check partly mitigates this by corrupting the structured
+source at 5\%, 10\%, and 20\%: the filter's precision advantage decayed from
 $+0.991$ to $+0.823$ (95\% CI $[0.688, 0.911]$) but remained
 significant at every rate
 % [EVID-042]
-. That corruption was injected at random by this project, however, and
+. That corruption was random, however, and
 an independent real-world structured source may be wrong in correlated
 ways that random corruption does not model.
 
@@ -1642,12 +1643,13 @@ $=0.333$; Section~\ref{sec:results-calibration})
 % [EVID-036; EVID-041]
 .
 
-\paragraph{Software versions.} No fine-tuning run in this project
+\paragraph{Software versions.} No fine-tuning run reported here
 pinned the versions of torch, transformers, trl, or bitsandbytes,
-including the DEC-027 run that supplies the headline fine-tuning result.
-Only the PEFT version can be recovered, from adapter metadata (0.21.0
-for every DEC-027 adapter; 0.20.0 for the first DEC-006 adapter). A
-record of every installed version is written for runs after DEC-027 only
+including the leakage-free run that supplies the headline fine-tuning
+result. Only the PEFT version can be recovered, from adapter metadata
+(0.21.0 for every leakage-free adapter; 0.20.0 for the earliest
+exploratory adapter). Runs after the leakage-free evaluation record
+every installed version
 % [EVID-044]
 . The API-hosted extractors are fixed by model identifier alone, and
 the provider could change the model served behind an identifier.
@@ -1714,8 +1716,8 @@ dominates, but would at larger scale.
 
 \paragraph{The weakest extractor on CaRB.} The pipeline's extractor,
 Llama-3.1-8B-Instruct, scored $F_1=0.467$ on CaRB against $0.571$ for
-DeepSeek-V3.2, and ranked last of five systems in the 30-sentence pilot
-(Section~\ref{sec:results-benchmarks})
+DeepSeek-V3.2, and was below all four external systems on a 30-sentence
+subset (Section~\ref{sec:results-benchmarks})
 % [EVID-032; EVID-035]
 . Every aggregation, filtering, and fine-tuning result in this paper
 sits on top of that extractor. The public-corpus results show that

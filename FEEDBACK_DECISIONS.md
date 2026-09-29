@@ -23,7 +23,11 @@ committed before any of those runs). Result commits: `ad40563`, `fc5a5eb`,
 
 All six items are done; see `paper/STAGE_C_NOTES.md` section 5 for what changed and why.
 
-## Must change (framing), must clean up, must align
+## Must clean up: Stage 2 APPLIED 2026-09-29, awaiting review
+
+Jargon removed, verifiable pre-registration table added (Suppl. Table S19), all 54 references verified and corrected. Still open: an institutional email (needs the user). See `paper/STAGE_C_NOTES.md` section 6.
+
+## Must change (framing), must align
 
 All of these are writing tasks, held for the Stage C manuscript pass
 (experiments first). Approved wording and the locations to change are in
