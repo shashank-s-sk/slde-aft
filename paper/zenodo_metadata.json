@@ -1,0 +1,17 @@
+{
+  "_comment": "Zenodo deposition metadata. Every [NEEDED] value must be filled by the authors before 'create'. Values are passed unchanged to the Zenodo API (metadata object).",
+  "title": "Code, extraction outputs, and analyses for: How Much Corroboration Do LLM Extractors Realise? Source-Counted Noisy-OR Aggregation Across Sentences and Documents",
+  "upload_type": "software",
+  "description": "<p>Code, prompts, configurations, language-model extraction outputs, analysis results, pre-registration history (decision and evidence logs), and a reproduction script for the article of the same title, submitted to Knowledge-Based Systems.</p><p>The raw third-party corpora (CaRB, DocRED, BioRED) are not redistributed; they are available from their original releases. The synthetic product data are regenerated deterministically by the code.</p>",
+  "creators": [
+    {"name": "Sadashiva, Shashank Kumar", "affiliation": "[NEEDED]", "orcid": "[NEEDED or remove]"},
+    {"name": "Ebada, Ahmed", "affiliation": "[NEEDED]", "orcid": "[NEEDED or remove]"}
+  ],
+  "license": "[NEEDED: e.g. mit (code) or cc-by-4.0; one licence per record]",
+  "access_right": "open",
+  "keywords": ["information extraction", "confidence aggregation", "corroboration", "Noisy-OR", "knowledge base population", "large language models"],
+  "related_identifiers": [
+    {"identifier": "https://github.com/shashank-s-sk/slde-aft", "relation": "isSupplementTo", "scheme": "url"}
+  ],
+  "version": "[NEEDED: e.g. 1.0.0-submission]"
+}
