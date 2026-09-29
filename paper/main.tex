@@ -496,6 +496,53 @@ R3$-$R2 & B & $+0.027\ [0.008,0.052]$ & $0.000\ [0.000,0.000]$ & $+0.006\ [0.002
 % [EVID-041]
 \end{table}
 
+\paragraph{A stronger extractor and token-logprob confidence.} The
+comparison above rests on Llama-3.1-8B. Both product pipelines were rerun
+unchanged with DeepSeek-V3.2 and, as a reproducibility check, with
+Llama-3.1-8B, logging a verbalized and a token-logprob confidence for
+every observation (Table~\ref{tab:dec036}). The pre-registered primary
+test, R3 $-$ R2 precision at $\tau=0.88$ with DeepSeek-V3.2 and verbalized
+confidence, was $+0.229$ on dataset A (95\% CI $[0.038, 0.417]$) and
+$+0.008$ on dataset B ($[0.000, 0.027]$). By the pre-registered rule, a
+CI excluding zero on at least one dataset with none reversed, the
+precision gain holds with the stronger extractor: robustly on A, and
+only borderline on B. At each rule's own selected threshold, R3's $F_1$
+gain was $+0.032$ on A ($[0.005, 0.075]$) and not detectable on B
+($+0.003$, $[-0.012, 0.015]$). The Llama-3.1-8B rerun reproduced dataset
+A ($+0.095$ against the original $+0.099$) and was weaker on B
+($+0.013$, $[0.000, 0.033]$, against $+0.027$). Replacing verbalized with
+token-logprob confidence changed neither conclusion. Token-logprob
+confidences were even more compressed than verbalized ones (median
+about $1.0$, against $0.91$), and the Spearman correlation between the
+support $A(t)$ and the number of observations stayed at $0.88$--$0.95$
+under both. The score is count-driven because the extractors assign
+nearly uniform confidence to what they emit, not because of the
+prompted range.
+% [Decision log.md, DEC-036 (pre-registered, commit 2f3a731); EVID-052; outputs/dec036/replay/, outputs/dec036/dec036_summary.json]
+
+\begin{table}[htbp]
+\centering
+\caption{R3 $-$ R2 precision at $\tau=0.88$ on the product snapshots, by
+extractor and confidence source: observed test-split difference with a
+95\% bootstrap percentile interval (10,000 resamples over test-split
+subjects). Pre-registered primary: DeepSeek-V3.2, verbalized.
+$\rho$: Spearman correlation between $A(t)$ and the observation count,
+verbalized / logprob.}
+\label{tab:dec036}
+\small
+\begin{tabular}{@{}llllc@{}}
+\toprule
+Dataset & Extractor & Verbalized & Token logprob & $\rho$ \\
+\midrule
+A & DeepSeek-V3.2 & $+0.229$ $[0.038, 0.417]$ & $+0.239$ $[0.049, 0.429]$ & 0.92 / 0.92 \\
+A & Llama-3.1-8B (rerun) & $+0.095$ $[0.020, 0.215]$ & $+0.137$ $[0.030, 0.284]$ & 0.90 / 0.89 \\
+B & DeepSeek-V3.2 & $+0.008$ $[0.000, 0.027]$ & $+0.008$ $[0.000, 0.027]$ & 0.95 / 0.95 \\
+B & Llama-3.1-8B (rerun) & $+0.013$ $[0.000, 0.033]$ & $+0.020$ $[0.004, 0.044]$ & 0.93 / 0.93 \\
+\bottomrule
+\end{tabular}
+% [EVID-052; outputs/dec036/replay/*_metrics_summary.json and *_bootstrap_ci_fixed_tau.json]
+\end{table}
+
 \section{Experimental Setup}
 \label{sec:experimental-setup}
 
@@ -560,6 +607,25 @@ in at least one.
 % [Decision log.md, DEC-032; EVID-047]
 % [Earlier 15-document pilots superseded: Decision log.md, DEC-020; EVID-024; EVID-047; Supplementary S7]
 
+\paragraph{Cross-document redundancy subset.} DocRED and BioRED annotate
+facts within single documents, so they test corroboration across
+sentences but not across documents. To test the latter, a subset was
+built from DocRED's development and annotated training documents: every
+document containing at least one gold fact that also appears in another
+document, a fact being identified by its relation and the normalised
+first-mention names of its two entities. Across those 4,051 documents,
+2,179 of 45,212 distinct gold facts (4.8\%) recur in two or more
+documents, 65\% of them in three geographic relations. The subset has
+2,010 documents (477 development, 1,533 training), 16,222 sentences, and
+24,591 distinct gold facts, 2,130 of them stated in two or more of its
+documents. Because geographic facts dominate, every result on it is
+reported separately for the three geographic relations (GEO: country;
+located in the administrative territorial entity; contains
+administrative territorial entity) and all others (OTHER); no pooled
+figure supports a conclusion. Each document is one source. The document
+list was fixed and committed before any extraction.
+% [Decision log.md, DEC-037, DEC-038; EVID-053; outputs/dec038_crossdoc/doc_list.json]
+
 \subsection{Models and Hardware}
 \label{sec:setup-models}
 
@@ -569,8 +635,11 @@ BioRED run, is \texttt{meta-llama/llama-3.1-8b-instruct}
 % [EVID-013; src/extractors/openrouter_llm.py]
 On BioRED it is compared with \texttt{deepseek/deepseek-v3.2}
 \citep{deepseekai2025deepseekv32} as an external baseline, given the
-same prompts and inputs.
-% [Decision log.md, DEC-032]
+same prompts and inputs. DeepSeek-V3.2 also re-extracts the two
+product snapshots (Section~\ref{sec:formal-analysis-empirical}) and the
+cross-document subset, so that no aggregation conclusion rests on the
+8B extractor alone.
+% [Decision log.md, DEC-032, DEC-036, DEC-038]
 On CaRB it is compared with \texttt{deepseek/deepseek-v3.2} on all 548
 sentences; a 30-sentence comparison with \texttt{openai/gpt-4o}
 \citep{openai2024gpt4o}, \texttt{anthropic/claude-sonnet-5}
@@ -612,6 +681,17 @@ different and are not comparable. CaRB, DocRED, and BioRED use their
 own prompts, open-phrase for CaRB and enumerating the closed relation
 sets for the others (Supplementary Section~S1).
 % [EVID-021; Decision log.md, DEC-020, DEC-032]
+
+\paragraph{Token-logprob confidence.} Because a prompted range of
+$[0.80, 0.96]$ leaves confidence little room to vary, the product-snapshot
+comparison was repeated with confidences derived from the token
+log-probabilities of the same extraction calls: the geometric-mean token
+probability over the tokens of the subject, predicate, and object values
+(primary), and the joint probability of the object-value tokens
+(secondary). Tokens are aligned to the output text by sequence matching,
+so both confidences score identical observations. DeepSeek-V3.2 was
+routed to a single provider that returns complete log-probabilities.
+% [Decision log.md, DEC-036; EVID-052; src/extractors/openrouter_llm.py item_logprob_confidences]
 
 \subsection{Metrics}
 \label{sec:setup-metrics}
@@ -681,7 +761,9 @@ for DocRED and BioRED.
 
 \paragraph{Pre-registration; primary and secondary analyses.} The
 leakage-free fine-tuning evaluation, the thirty-seed ablation, the
-DocRED and BioRED runs, and the protocol check were pre-registered, with
+DocRED and BioRED runs, the protocol check, the stronger-extractor and
+token-logprob rerun, and the cross-document analysis were
+pre-registered, with
 primary metrics and decision rules fixed before any result was seen.
 Each pre-registration is a commit in the public repository whose hash
 and timestamp precede the commit of its first result; for the DocRED
@@ -896,6 +978,86 @@ BioRED & Llama-3.1-8B, sentence & 0.096 & 0.73\% & 0.021 & $-0.043$ $[-0.051, -0
 \end{tabular}
 % [EVID-048; outputs/dec033_protocol/analysis_result.json]
 \end{table}
+
+\subsection{Corroboration Across Documents}
+\label{sec:results-crossdoc}
+
+On the cross-document subset (Section~\ref{sec:setup-datasets}), every
+target fact is stated in two or more documents by construction, yet the
+extractors recovered only 3.6--13.1\% of these facts from even one
+document, and 0.8--4.1\% from two or more (Table~\ref{tab:crossdoc}).
+This is the same order as within single documents
+(Section~\ref{sec:results-protocol}): extractor recall, not the
+availability of corroboration, is the binding constraint across
+documents too. Requiring two distinct documents lowered $F_1$ relative to
+no aggregation in every cell, both strata and both extractors, each
+confidence interval below zero. It raised the precision of the few facts
+it admitted in three of the four cells (13 to 71 admitted keys), with no
+detectable change for Llama-3.1-8B on OTHER relations, whose unaggregated
+precision was only $0.038$. The strata did not behave alike:
+DeepSeek-V3.2 realised less cross-document corroboration for GEO facts
+than for OTHER facts, Llama-3.1-8B the reverse. In a secondary check that
+resampled half of the documents, the $F_1$ decreases held, but the
+precision intervals widened considerably, since they rest on few
+admitted keys.
+% [Decision log.md, DEC-038 (pre-registered, commit f87e91a); EVID-054; outputs/dec038_crossdoc/analysis_result.json]
+
+\begin{table}[htbp]
+\centering
+\caption{Cross-document subset (2,010 DocRED documents), by stratum.
+$G_{\mathrm{rec}}$: gold facts stated in two or more documents.
+Recovered: share of $G_{\mathrm{rec}}$ matched by raw extractions from at
+least one, and from two or more distinct documents (Wilson 95\%
+interval). $\Delta F_1$ and $\Delta P$: R3 with source = document minus no
+aggregation, observed, with a 95\% bootstrap interval over fact keys;
+admitted keys under R3 in parentheses. GEO: country, located in the
+administrative territorial entity, contains administrative territorial
+entity; OTHER: all other relations.}
+\label{tab:crossdoc}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrlll@{}}
+\toprule
+Extractor, unit & Stratum & $G_{\mathrm{rec}}$ & $\ge 1$ doc & $\ge 2$ docs & $\Delta F_1$ & $\Delta P$ (admitted) \\
+\midrule
+DeepSeek-V3.2, document & GEO & 1,372 & 8.1\% & 0.87\% $[0.50, 1.52]$ & $-0.098$ $[-0.105, -0.091]$ & $+0.496$ $[+0.228, +0.726]$ (13) \\
+ & OTHER & 758 & 13.1\% & 4.09\% $[2.90, 5.75]$ & $-0.200$ $[-0.206, -0.194]$ & $+0.316$ $[+0.184, +0.450]$ (54) \\
+Llama-3.1-8B, sentence & GEO & 1,372 & 8.3\% & 2.11\% $[1.48, 3.02]$ & $-0.055$ $[-0.060, -0.051]$ & $+0.261$ $[+0.150, +0.377]$ (71) \\
+ & OTHER & 758 & 3.6\% & 0.79\% $[0.36, 1.72]$ & $-0.055$ $[-0.058, -0.052]$ & $-0.006$ $[-0.031, +0.025]$ (154) \\
+\bottomrule
+\end{tabular}
+% [EVID-054; outputs/dec038_crossdoc/analysis_result.json]
+\end{table}
+
+\subsection{The Rule in DySECT's Released System}
+\label{sec:results-dysect}
+
+DySECT's released code (\texttt{megagonlabs/dysect}, commit
+\texttt{8d6c680}) and the knowledge base it ships from its DocRED
+demonstration run were audited to see whether the counting behaviour
+tested above occurs there. The code does not deduplicate by source:
+every stored observation, including repeated extractions by the same
+model from the same prompt and document, enters the Noisy-OR once per
+occurrence. This is the behaviour the DySECT paper describes, treating
+frequencies ``as repeated independent support'' with shrinkage as the
+guard against redundant evidence
+\citep[Sect.~2.2]{aminnaseri2026dysect}. Repeat counting is therefore a
+design choice, and the source-counted rule tested here tests its
+independence assumption. It is active in the released run: 98.7\% of the
+61,772 stored triples carry exactly the repeat-counted score, and of the
+4,604 concept generalisations above the $0.5$ threshold at which
+DySECT's extractor injects them into its DocRED prompt, 4,030 (87.5\%)
+exceed it only because the same source or document was counted more than
+once. The released run never applied the mutual-exclusion division (0
+of 61,676 stored scores); DySECT's $m(t)$ counts type-level
+mutual-exclusion conflicts, not rival values of a single-valued slot as
+in this paper. A check that reran DySECT's knowledge-base-guided DocRED
+extraction with a source-deduplicated knowledge base found no material
+effect on its recall. DySECT's released data-preparation script also
+places 78 of the 100 documents used to build its knowledge base among
+its 500 evaluation documents; this is a property of the released code,
+not a claim about the runs its paper reports.
+% [Decision log.md, DEC-035, DEC-035b; EVID-050; EVID-051; scripts/dec035_dysect_kb_audit.py; scripts/dec035b_dysect_stepA.py; outputs/dec035/]
 
 \section{Discussion}
 \label{sec:discussion}

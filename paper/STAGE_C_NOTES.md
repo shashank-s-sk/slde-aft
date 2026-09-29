@@ -191,3 +191,34 @@ conclusion still describe moved results; they are rewritten in 3c.
 double-spaced compile (user instruction). Title decision needed before 3c.
 AI declaration draft: `paper/AI_DECLARATION_DRAFT.md` (awaiting user
 review).
+
+## 8. Stage 3b (new results) - APPLIED 2026-09-29, review stop
+
+Added to main.tex:
+- Setup: "Cross-document redundancy subset" paragraph (GEO/OTHER strata
+  defined, document list pre-committed); DeepSeek-V3.2 also re-extracts
+  the product snapshots and the subset; "Token-logprob confidence"
+  paragraph.
+- After Table 1: "A stronger extractor and token-logprob confidence"
+  paragraph + Table tab:dec036 (observed differences). The primary rule
+  HOLDS (A robust, B borderline). F1 at the selected threshold: A +0.032
+  [0.005, 0.075], B null. The Llama rerun reproduces A and is weaker on B.
+  The logprob finding is stated as approved.
+- Results: new subsection "Corroboration Across Documents" + Table
+  tab:crossdoc (rows generated from analysis_result.json). New subsection
+  "The Rule in DySECT's Released System": two-part framing (by design;
+  active 87.5%); penalty never fired; m(t) is type-level. Step A appears
+  ONLY as "a check ... found no material effect" (no numbers, per the
+  user). The 78/100 overlap is stated as a property of the released code.
+- The pre-registration list in Statistical Protocol now names both new
+  analyses.
+
+Added to supplement: S12 status rows (stronger extractor, cross-document,
+DySECT audit) and S19 pre-registration rows (2f3a731 -> ad40563; f87e91a
+-> 678f373). The Step A recall check is not listed (internal).
+
+Decisions recorded: title (a) "How Much Corroboration Do LLM Extractors
+Realise? ..." (apply in 3c). The AI declaration was revised (broad scope,
+no versions, literature-search bullet, no-generative-figures statement).
+3d: add real double spacing, commit and push; the user compiles and
+reports the page count.

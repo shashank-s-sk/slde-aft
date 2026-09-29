@@ -1,6 +1,6 @@
 # Draft: Declaration of generative AI and AI-assisted technologies
 
-Status: DRAFT for the user's review (2026-09-29). Not yet inserted into
+Status: REVISED DRAFT (2026-09-29): broad scope kept, no version numbers, literature-search bullet and figure statement added per user. Awaiting final approval. Not yet inserted into
 main.tex. Goes immediately before the references once approved.
 
 Check the template sentence against the current Elsevier Guide for Authors
@@ -24,6 +24,9 @@ Claude (Anthropic) in order to:
 - check the manuscript's numbers against the committed outputs and its
   references against bibliographic records (ACL Anthology, Crossref,
   JMLR, PMLR, NeurIPS proceedings, arXiv);
+- search and verify the literature, including locating and confirming
+  the claims of the DySECT paper against its text and released code, and
+  checking journal submission guidelines;
 - draft and edit text of the manuscript and the supplementary material.
 
 The authors decided the research questions, the experimental designs and
@@ -31,6 +34,11 @@ their pre-registrations, and every interpretation. Every reported number
 comes from scripts and outputs committed to the public repository. After
 using these tools, the authors reviewed and edited the content as needed
 and take full responsibility for the content of the publication.
+
+No figure was produced or altered with a generative image tool: every
+figure is drawn by a plotting script (matplotlib) from committed data or
+from the analytic form of the rule, and that script was written with the
+assistance described above.
 
 Separately, several large language models (Llama-3.1-8B, DeepSeek-V3.2,
 Llama-3.3-70B, GPT-4o, GPT-4.1-mini, Claude Sonnet 5 and Gemini 2.5 Pro)

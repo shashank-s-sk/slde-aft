@@ -869,6 +869,9 @@ DocRED at scale & Normalised vs.\ exact key, $F_1$ (R2, all sentences); R3 $-$ R
 BioRED at scale & Extractor recall without aggregation; R3 $-$ R2 $F_1$ (Llama-3.1-8B, sentence level) & R3 $-$ R2 precision (pre-registered secondary); DeepSeek-V3.2 cross-extractor check; strict and relaxed evaluators \\
 Protocol check (extractor $\times$ unit) & Corroborated share and the stands/weakened/overturned rule, with the aggregation gap & Co-mention-based ratio on DocRED (descriptive, not pre-registered) \\
 DocRED official-style metrics & --- & Descriptive, not pre-registered (Section~S10) \\
+Stronger extractor and token-logprob confidence (product snapshots) & R3 $-$ R2 precision at $\tau=0.88$, DeepSeek-V3.2, verbalized confidence & $F_1$ at the selected threshold; token-logprob confidence; Llama-3.1-8B rerun (reproducibility); correlation of $A(t)$ with the observation count (descriptive) \\
+Cross-document subset & Share of multi-document facts recovered from two or more documents; R3 (source = document) $-$ no aggregation, $F_1$ and precision, per stratum & R3 $-$ R2; R3 by sentence; recall by number of stating documents; document half-sampling \\
+DySECT released code & --- & Code and knowledge-base audit (descriptive); a recall check reported only by its outcome \\
 Calibration, scalability, error analysis, provenance filter & --- & Descriptive, not pre-registered \\
 \bottomrule
 \end{tabular}
@@ -898,6 +901,8 @@ DocRED at scale & \texttt{8715f35}, 2026-09-24 18:50:26 & \texttt{bc5c79e}, 2026
 BioRED at scale & \texttt{938079a}, 2026-09-24 19:51:43 & \texttt{7f554aa}, 2026-09-25 11:29 & 2026-09-24 19:51:59 \\
 Protocol check & \texttt{a9976b8}, 2026-09-26 16:14 & \texttt{82292ee}, 2026-09-26 20:39 & --- \\
 Offline rule comparison & \texttt{36da4dd}, 2026-09-23 11:47, committed with its first results & \texttt{36da4dd} & --- \\
+Stronger extractor and token-logprob rerun & \texttt{2f3a731}, 2026-09-29 01:10 & \texttt{ad40563}, 2026-09-29 11:39 & --- \\
+Cross-document subset (with its document list) & \texttt{f87e91a}, 2026-09-29 11:54 & \texttt{678f373}, 2026-09-29 12:57 & --- \\
 \bottomrule
 \end{tabular}
 % [git log -S "# DEC-0xx" -- "Decision log.md"; git log -S "# EVID-0xx" -- "Evidence log.md"; outputs/dec031_docred/run_log.txt; outputs/dec032_biored logs]
