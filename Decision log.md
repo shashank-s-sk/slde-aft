@@ -35,6 +35,7 @@ just says where each DEC currently stands and what's left.
 | 035 | DySECT released-code check (feedback round 2) | DONE ($0) | Repeat counting is DySECT's documented design, active in its released KB (87.5% of prompt-eligible generalizations pass 0.5 only via repeats); mutex penalty fired 0/61,676; its m(t) is type-level, not rival values — EVID-050 | Wording approved, held for Stage C (`paper/STAGE_C_NOTES.md`). DEC-035b Step A (internal) DONE: NO-GO, b-c recall +0.80 pp [-0.77, +2.35] < 2 pp (EVID-051); Step B not requested |
 | 036 | Stronger extractor (DeepSeek-V3.2) + token-logprob confidence on DEC-026 comparison | DONE (pre-reg 2f3a731) | PRIMARY HOLDS: DeepSeek R3-R2 precision A +0.227 [0.038,0.417], B +0.008 [0,0.027]; no cell reversed; logprob conf median ~1.0 and rho(A,n_obs) unchanged 0.89-0.95 -> score stays count-driven — EVID-052 | Stage C: report as robustness + count-drivenness finding |
 | 037 | Multi-document redundancy corpus (feedback item 2): free DocRED data check first; TAC KBP/LDC dropped (same reasoning as DEC-021) | DATA CHECK DONE ($0) | 2,179/45,212 distinct gold facts (4.8%) recur across docs in dev+train; 65% are country/located-in/contains geography — EVID-053 | Propose a constructed subset (costed) only after user reviews the counts |
+| 038 | Cross-document corroboration on constructed DocRED redundancy subset (2,010 docs), GEO vs OTHER stratified | PRE-REGISTERED, NOT RUN | — | Run after pre-reg commit; caps $1.20 DeepSeek / $0.75 Llama |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3832,3 +3833,106 @@ is proposed.
 ## Status
 
 Data check DONE (EVID-053). No paid design proposed yet; awaiting the user.
+
+---
+
+# DEC-038 — Cross-document corroboration on a constructed DocRED redundancy subset, stratified by geography vs other relations — PRE-REGISTRATION (user-approved 2026-09-29, Option B)
+
+## Why is this required?
+
+Professor feedback round 2, item 2: "Add one multi-document redundancy
+corpus ... DocRED and BioRED are single-document, so they are a poor test
+of corroboration." TAC KBP/LDC was dropped (DEC-037). EVID-053 found 2,179
+gold facts recurring across DocRED documents, 65% of them geographic. The
+user requires geography and other relations to be reported separately
+throughout, never pooled.
+
+## Corpus (fixed before any extraction)
+
+- `outputs/dec038_crossdoc/doc_list.json`: 2,010 documents (477 dev, 1,533
+  train_annotated), 16,222 sentences. These are every document containing
+  >=1 gold fact that also appears in another document (EVID-053 rule:
+  NFKC/lowercase/punctuation-normalised first-mention names + relation).
+- All gold facts of these documents are evaluated, including the
+  single-document ones.
+- **Strata.** GEO = {country, located in the administrative territorial
+  entity, contains administrative territorial entity}; OTHER = every other
+  relation. Gold facts and predicted items are assigned by relation. Every
+  metric is reported per stratum. No pooled number supports any conclusion;
+  a pooled figure may appear in the supplement only, labelled as pooled.
+
+## Extraction (Option B: fresh for all 2,010 documents)
+
+- **Primary: DeepSeek-V3.2, document level.** One call per document,
+  numbered sentences, `prompts/openie_docred_doc_v1.txt`, max_tokens 2048,
+  temperature 0; cited evidence kept (as in DEC-033).
+- **Secondary: Llama-3.1-8B, sentence level.** One call per sentence,
+  `prompts/openie_docred_v1.txt`, max_tokens 1024 (as in DEC-031).
+- Crash-safe per-call cache, run in parallel.
+  - Transient API failures (network, HTTP 408/429/5xx) are re-requested.
+  - Unparsable model output is kept as-is, never re-requested (DEC-031
+    rule).
+  - Stop at once on HTTP 402.
+- Hard spending caps: DeepSeek $1.20, Llama $0.75 (total $1.95). Estimate
+  $1.29 (unit costs from DEC-031/033), user-approved about $1.80 with
+  margin. Balance $2.97.
+
+## Aggregation (unchanged DEC-031 rule)
+
+- Score = 1 - (1 - 0.5)^n, admitted at tau = 0.70, so n >= 2 counted
+  sources are needed.
+- Matching key: DEC-031 `norm` key (`normalize_b` on subject and object,
+  exact relation), pooled **across documents** into one corpus-level KB.
+- **Source = document.**
+- Methods:
+  - naive: every distinct extracted key;
+  - R2: n = all observations;
+  - **R3-doc: n = distinct documents** (primary corroboration rule);
+  - R3-unit: n = distinct (document, sentence) units (secondary; the
+    within-document DEC-031 analogue). For the document-level arm, a
+    unit = a cited sentence, and a triple with no valid citation counts as
+    one unit.
+
+## Evaluation (corpus level)
+
+- Gold G = distinct (H, r, T) over the 2,010 documents. H and T are the
+  `normalize_b` first-mention names, so the same entity in different
+  documents shares a name. G_rec = gold facts in >= 2 documents under that
+  key (recomputed; its size is reported next to EVID-053's).
+- A predicted item (s, p, o) matches (H, p, T) if normalize_b(s) is a
+  normalised mention alias of an entity whose first-mention name is H in
+  some document of the corpus, and likewise o for T.
+- TP = admitted distinct keys matching some gold fact. Recall = gold facts
+  matched by >= 1 admitted key / |G|. Computed per stratum.
+
+## Outcomes and decision rules (per stratum; DeepSeek document-level is primary)
+
+- **P1 (descriptive, primary):** realised cross-document corroboration: the
+  share of G_rec recovered by the raw extractions from >= 2 distinct
+  documents, with a 95% CI. Also shown: the share recoverable at all (>= 1
+  document), and the within-document benchmarks (DocRED 0.26% sentence
+  level, 3.1% best document level; EVID-046/048).
+- **P2 (test): F1(R3-doc) - F1(naive).**
+  - CI > 0: "cross-document aggregation raises F1 in stratum S".
+  - CI < 0: "lowers F1".
+  - Otherwise: no detectable effect.
+- **P3 (test):** precision(R3-doc) - precision(naive), same reading.
+- **Secondary:**
+  - R3-doc - R2 (precision, F1);
+  - R3-unit vs R3-doc;
+  - recall on G_rec by the number of documents stating the fact
+    (2 / 3 / 4 / 5+);
+  - the whole analysis repeated for Llama sentence level.
+- **CIs:** paired bootstrap over fact keys (units = union of gold and
+  candidate keys, each carrying its per-method admission and TP status),
+  10,000 resamples, seed 20380929, percentile [2.5, 97.5]. Stated
+  limitation: this ignores clustering of keys within documents. A
+  robustness check, repeated 50% document half-sampling (1,000 draws,
+  intervals scaled by 1/sqrt(2)), is reported alongside and labelled
+  secondary.
+- **Not pooled:** a conclusion holds for a stratum only. GEO and OTHER may
+  disagree, and both are reported.
+
+## Status
+
+PRE-REGISTERED. Commit before any extraction call.
