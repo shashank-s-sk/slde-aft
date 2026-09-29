@@ -163,3 +163,31 @@ needed.
 - **OPEN (needs the user):** institutional email for the corresponding
   author (currently a Gmail address; affiliation Hopn UG). Prof. Ebada's
   email is still a placeholder.
+
+## 7. Stage 3a (move to supplement) - APPLIED 2026-09-29
+
+Moved verbatim to the supplement:
+- S13: framework (modules).
+- S14: order-invariance, monotonicity, saturation, conflict-penalty
+  propositions.
+- S15: fine-tuning model; multi-seed/MDE protocol.
+- S16: results on calibration, provenance, ablation, fine-tuning, closed
+  loop, scalability and error analysis, with 3 figures and their tables.
+- S17: discussion of ablations, fine-tuning and calibration.
+- S18: limitations of those results (provenance gate, feedback not
+  self-supervised, ablation power, closed-loop single seed, software
+  versions, resource use, unindexed scan).
+
+The API model-identifier caveat stayed in the main text as "Model
+versions". The supplement gained amsthm, natbib and a bibliography
+(apalike). Cross-document references were rewritten (main -> "Supplementary
+Section S1x"; supplement -> named main-text sections/equations).
+
+After the move the main text is about 6,990 prose words, 4 tables and
+0 figures (before: 10,300 words, 11 floats). The intro, abstract and
+conclusion still describe moved results; they are rewritten in 3c.
+
+**Next:** 3b (add the new results). Measuring 3d needs a real
+double-spaced compile (user instruction). Title decision needed before 3c.
+AI declaration draft: `paper/AI_DECLARATION_DRAFT.md` (awaiting user
+review).
