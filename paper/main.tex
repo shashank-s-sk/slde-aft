@@ -429,16 +429,16 @@ Extracting from all 6,861 DocRED sentences, aggregation lowered $F_1$
 relative to no aggregation ($0.044$) under every matching key: the exact
 key; the normalisation of Section~\ref{sec:setup-metrics}, which closed
 about 0\% of the gap; and an oracle key mapping each string to its gold
-entity, which closed 7.3\% of it ($+0.0031$, 95\% CI $[0.0017, 0.0047]$)
-and stayed $0.039$ below no aggregation ($[-0.044, -0.034]$). Only 29 of
+entity, which closed 7.3\% of it ($+0.0031$, 95\% CI $[0.0017,\allowbreak 0.0047]$)
+and stayed $0.039$ below no aggregation ($[-0.044,\allowbreak -0.034]$). Only 29 of
 the 11,344 gold facts (0.26\%) were recovered from two or more sentences,
 and 19 (0.17\%) were corroborated. On BioRED's 500 abstracts, aggregation
-(R2) lowered $F_1$ by $0.041$ with Llama-3.1-8B ($[-0.049, -0.033]$) and
-by $0.064$ with DeepSeek-V3.2 ($[-0.078, -0.052]$). The two extractors had
+(R2) lowered $F_1$ by $0.041$ with Llama-3.1-8B ($[-0.049,\allowbreak -0.033]$) and
+by $0.064$ with DeepSeek-V3.2 ($[-0.078,\allowbreak -0.052]$). The two extractors had
 similar unaggregated recall ($0.096$ and $0.097$), but DeepSeek-V3.2 was
 nearly twice as precise ($0.069$ against $0.036$); 0.75\% and 1.35\% of
 gold facts were recovered from two or more sentences (corroborated: 0.73\%
-and 1.35\%; difference $+0.0059$, $[0.0021, 0.0098]$). Distinct-source
+and 1.35\%; difference $+0.0059$, $[0.0021,\allowbreak 0.0098]$). Distinct-source
 counting on both corpora is reported in
 Section~\ref{sec:formal-analysis-empirical}; per-method counts, the
 evidence-only setting, and whole-abstract extraction are in
@@ -456,15 +456,15 @@ only from cited sentences that genuinely support the fact
 Section~S11). Document-level extraction raised corroboration
 significantly: DeepSeek-V3.2 corroborated 0.98\% of DocRED's facts and
 3.10\% of BioRED's, against 0.17\% and 0.73\% for the Llama-3.1-8B
-sentence-level reference ($+0.0081$, $[0.0056, 0.0110]$; $+0.0236$,
-$[0.0169, 0.0314]$). A stronger extractor at sentence level did not
-($+0.0002$, $[-0.0011, 0.0015]$, DocRED). No configuration came near the
+sentence-level reference ($+0.0081$, $[0.0056,\allowbreak 0.0110]$; $+0.0236$,
+$[0.0169,\allowbreak 0.0314]$). A stronger extractor at sentence level did not
+($+0.0002$, $[-0.0011,\allowbreak 0.0015]$, DocRED). No configuration came near the
 pre-registered threshold of a fifth of the annotation-level rate ($\rho
 \ge 0.2$; highest $0.088$ on BioRED, $0.020$ on DocRED), and aggregation
 lowered $F_1$ in all eight configurations, so the extractor-recall
 conclusion stands by the pre-registered rule. The one partial relief was
 DeepSeek-V3.2 at document level on BioRED, which narrowed the gap
-significantly ($+0.016$, $[0.003, 0.029]$; from $-0.043$ to $-0.026$) and
+significantly ($+0.016$, $[0.003,\allowbreak 0.029]$; from $-0.043$ to $-0.026$) and
 raised aggregated recall from $0.005$ to $0.039$. On DocRED the gap
 widened, because DeepSeek-V3.2's unaggregated output was far more
 accurate ($F_1$ $0.184$ at document level); it reached 0.29 of the 3.4\%
@@ -575,12 +575,12 @@ $\tau=0.88$, where its precision loss offset its recall gain
 admitted exactly R2's set ($F_1$ difference CI $[0,0]$), since no
 contested score came near the threshold (maximum $0.581$); R6 degenerates
 to $C(t)=1$ for uncontested slots and was below R2 on dataset A ($F_1$
-CI $[-0.087, -0.012]$) and not different on B (Supplementary
+CI $[-0.087,\allowbreak -0.012]$) and not different on B (Supplementary
 Section~S2).
 
 \paragraph{Distinct-source counting (R3).} At each rule's own selected
-threshold R3 raised $F_1$ ($+0.0101$, $[0.0028, 0.0222]$; $+0.0039$,
-$[0.0013, 0.0075]$), and at $\tau=0.88$ it raised precision on both
+threshold R3 raised $F_1$ ($+0.0101$, $[0.0028,\allowbreak 0.0222]$; $+0.0039$,
+$[0.0013,\allowbreak 0.0075]$), and at $\tau=0.88$ it raised precision on both
 datasets at exactly unchanged recall
 (Table~\ref{tab:dec026-bootstrap-tau088}).
 % [EVID-041]
@@ -614,16 +614,16 @@ product pipelines were rerun unchanged with DeepSeek-V3.2 and, as a
 reproducibility check, with Llama-3.1-8B, logging a verbalized and a
 token-logprob confidence for every observation. The pre-registered
 primary, R3 $-$ R2 precision at $\tau=0.88$ with DeepSeek-V3.2 and
-verbalized confidence, was $+0.229$ on dataset A ($[0.038, 0.417]$) and
-$+0.008$ on B ($[0.000, 0.027]$): the gain holds by the pre-registered
+verbalized confidence, was $+0.229$ on dataset A ($[0.038,\allowbreak 0.417]$) and
+$+0.008$ on B ($[0.000,\allowbreak 0.027]$): the gain holds by the pre-registered
 rule, robustly on A and borderline on B. At the selected threshold R3's
-$F_1$ gain was $+0.032$ on A ($[0.005, 0.075]$) and not detectable on B
-($+0.003$, $[-0.012, 0.015]$). The Llama-3.1-8B rerun reproduced A
-($+0.095$, $[0.020, 0.215]$; originally $+0.099$) and was weaker on B
-($+0.013$, $[0.000, 0.033]$; originally $+0.027$). Token-logprob
+$F_1$ gain was $+0.032$ on A ($[0.005,\allowbreak 0.075]$) and not detectable on B
+($+0.003$, $[-0.012,\allowbreak 0.015]$). The Llama-3.1-8B rerun reproduced A
+($+0.095$, $[0.020,\allowbreak 0.215]$; originally $+0.099$) and was weaker on B
+($+0.013$, $[0.000,\allowbreak 0.033]$; originally $+0.027$). Token-logprob
 confidence changed neither conclusion: the corresponding differences were
-$+0.239$ ($[0.049, 0.429]$) and $+0.137$ ($[0.030, 0.284]$) on A, and
-$+0.008$ ($[0.000, 0.027]$) and $+0.020$ ($[0.004, 0.044]$) on B, for
+$+0.239$ ($[0.049,\allowbreak 0.429]$) and $+0.137$ ($[0.030,\allowbreak 0.284]$) on A, and
+$+0.008$ ($[0.000,\allowbreak 0.027]$) and $+0.020$ ($[0.004,\allowbreak 0.044]$) on B, for
 DeepSeek-V3.2 and Llama-3.1-8B (table in Supplementary Section~S2).
 Token-logprob confidence was even more compressed than verbalized
 confidence (median about $1.0$ against $0.91$), and the Spearman
@@ -635,16 +635,16 @@ assign nearly uniform confidence, not because of the prompted range.
 
 \paragraph{Outside the product domain.} On DocRED, R3 raised the
 precision of admitted triples from $0.060$ to $0.250$ with the exact key
-($+0.190$, $[0.084, 0.315]$) and from $0.117$ to $0.406$ with the oracle
-key ($+0.289$, $[0.204, 0.384]$), by discarding 154 and 194
+($+0.190$, $[0.084,\allowbreak 0.315]$) and from $0.117$ to $0.406$ with the oracle
+key ($+0.289$, $[0.204,\allowbreak 0.384]$), by discarding 154 and 194
 within-sentence duplicates; the counts are small (36 admitted, 9
 correct), and the pre-registered $F_1$ comparison did not exclude zero
-($-0.0003$, $[-0.0009, 0.00003]$), precision being secondary. On BioRED
-it raised Llama-3.1-8B's precision by $0.054$ ($[0.015, 0.094]$),
+($-0.0003$, $[-0.0009,\allowbreak 0.00003]$), precision being secondary. On BioRED
+it raised Llama-3.1-8B's precision by $0.054$ ($[0.015,\allowbreak 0.094]$),
 discarding 138 duplicates, but lowered its $F_1$ ($-0.0021$,
-$[-0.0048, -0.0002]$; true positives 32 to 26); DeepSeek-V3.2 repeated
+$[-0.0048,\allowbreak -0.0002]$; true positives 32 to 26); DeepSeek-V3.2 repeated
 itself 6 times, and R3 changed neither its precision ($+0.004$,
-$[-0.011, 0.016]$) nor its $F_1$ ($-0.0004$, $[-0.0012, 0.00002]$).
+$[-0.011,\allowbreak 0.016]$) nor its $F_1$ ($-0.0004$, $[-0.0012,\allowbreak 0.00002]$).
 Across documents, requiring two documents raised precision in three of
 four cells (Section~\ref{sec:results-crossdoc}). The gains came with
 lower or unchanged recall.
