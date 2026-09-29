@@ -1,0 +1,455 @@
+{
+  "dev": {
+    "documents": 998,
+    "entity_mentions_clusters": 19528,
+    "distinct_entities_primary_name": 13358,
+    "entities_in_2plus_docs_primary_name": 1362,
+    "distinct_alias_strings": 14828,
+    "alias_strings_in_2plus_docs": 1473,
+    "entity_doc_count_distribution_primary": {
+      "1": 11996,
+      "2": 662,
+      "3": 234,
+      "4": 106,
+      "5+": 360
+    },
+    "gold_fact_instances": 12275,
+    "distinct_facts_primary_name": 11678,
+    "distinct_facts_in_2plus_docs_primary_name": 317,
+    "fact_instances_whose_fact_recurs_in_another_doc_primary": 759,
+    "fact_instances_whose_fact_recurs_in_another_doc_alias": 941,
+    "fact_doc_count_distribution_primary": {
+      "1": 11361,
+      "2": 244,
+      "3": 43,
+      "4": 17,
+      "5+": 13
+    },
+    "top_relations_among_recurring_facts": [
+      [
+        "country",
+        106
+      ],
+      [
+        "located in the administrative territorial entity",
+        60
+      ],
+      [
+        "contains administrative territorial entity",
+        55
+      ],
+      [
+        "continent",
+        9
+      ],
+      [
+        "official language",
+        7
+      ],
+      [
+        "conflict",
+        7
+      ],
+      [
+        "applies to jurisdiction",
+        5
+      ],
+      [
+        "has part",
+        5
+      ],
+      [
+        "country of origin",
+        5
+      ],
+      [
+        "part of",
+        4
+      ]
+    ],
+    "example_recurring_facts": [
+      {
+        "fact": [
+          "paris",
+          "country",
+          "france"
+        ],
+        "n_docs": 8
+      },
+      {
+        "fact": [
+          "paris",
+          "located in the administrative territorial entity",
+          "france"
+        ],
+        "n_docs": 8
+      },
+      {
+        "fact": [
+          "ontario",
+          "country",
+          "canada"
+        ],
+        "n_docs": 6
+      },
+      {
+        "fact": [
+          "ontario",
+          "located in the administrative territorial entity",
+          "canada"
+        ],
+        "n_docs": 6
+      },
+      {
+        "fact": [
+          "canada",
+          "contains administrative territorial entity",
+          "ontario"
+        ],
+        "n_docs": 6
+      },
+      {
+        "fact": [
+          "illinois",
+          "country",
+          "u s"
+        ],
+        "n_docs": 5
+      },
+      {
+        "fact": [
+          "illinois",
+          "located in the administrative territorial entity",
+          "u s"
+        ],
+        "n_docs": 5
+      },
+      {
+        "fact": [
+          "fox",
+          "country",
+          "the united states"
+        ],
+        "n_docs": 5
+      },
+      {
+        "fact": [
+          "quebec",
+          "located in the administrative territorial entity",
+          "canada"
+        ],
+        "n_docs": 5
+      },
+      {
+        "fact": [
+          "u s",
+          "contains administrative territorial entity",
+          "illinois"
+        ],
+        "n_docs": 5
+      }
+    ]
+  },
+  "train_annotated": {
+    "documents": 3053,
+    "entity_mentions_clusters": 59493,
+    "distinct_entities_primary_name": 36012,
+    "entities_in_2plus_docs_primary_name": 3963,
+    "distinct_alias_strings": 40058,
+    "alias_strings_in_2plus_docs": 4373,
+    "entity_doc_count_distribution_primary": {
+      "1": 32049,
+      "2": 2006,
+      "3": 645,
+      "4": 320,
+      "5+": 992
+    },
+    "gold_fact_instances": 38180,
+    "distinct_facts_primary_name": 34545,
+    "distinct_facts_in_2plus_docs_primary_name": 1526,
+    "fact_instances_whose_fact_recurs_in_another_doc_primary": 4719,
+    "fact_instances_whose_fact_recurs_in_another_doc_alias": 5421,
+    "fact_doc_count_distribution_primary": {
+      "1": 33019,
+      "2": 973,
+      "3": 241,
+      "4": 130,
+      "5+": 182
+    },
+    "top_relations_among_recurring_facts": [
+      [
+        "country",
+        525
+      ],
+      [
+        "located in the administrative territorial entity",
+        272
+      ],
+      [
+        "contains administrative territorial entity",
+        236
+      ],
+      [
+        "country of citizenship",
+        46
+      ],
+      [
+        "continent",
+        44
+      ],
+      [
+        "has part",
+        29
+      ],
+      [
+        "part of",
+        26
+      ],
+      [
+        "applies to jurisdiction",
+        21
+      ],
+      [
+        "member of",
+        18
+      ],
+      [
+        "head of government",
+        17
+      ]
+    ],
+    "example_recurring_facts": [
+      {
+        "fact": [
+          "ontario",
+          "located in the administrative territorial entity",
+          "canada"
+        ],
+        "n_docs": 31
+      },
+      {
+        "fact": [
+          "ontario",
+          "country",
+          "canada"
+        ],
+        "n_docs": 31
+      },
+      {
+        "fact": [
+          "canada",
+          "contains administrative territorial entity",
+          "ontario"
+        ],
+        "n_docs": 30
+      },
+      {
+        "fact": [
+          "new jersey",
+          "country",
+          "united states"
+        ],
+        "n_docs": 25
+      },
+      {
+        "fact": [
+          "united states",
+          "contains administrative territorial entity",
+          "new jersey"
+        ],
+        "n_docs": 24
+      },
+      {
+        "fact": [
+          "new jersey",
+          "located in the administrative territorial entity",
+          "united states"
+        ],
+        "n_docs": 24
+      },
+      {
+        "fact": [
+          "paris",
+          "located in the administrative territorial entity",
+          "france"
+        ],
+        "n_docs": 18
+      },
+      {
+        "fact": [
+          "paris",
+          "country",
+          "france"
+        ],
+        "n_docs": 18
+      },
+      {
+        "fact": [
+          "british columbia",
+          "country",
+          "canada"
+        ],
+        "n_docs": 17
+      },
+      {
+        "fact": [
+          "canada",
+          "contains administrative territorial entity",
+          "british columbia"
+        ],
+        "n_docs": 17
+      }
+    ]
+  },
+  "dev+train_annotated": {
+    "documents": 4051,
+    "entity_mentions_clusters": 79021,
+    "distinct_entities_primary_name": 46429,
+    "entities_in_2plus_docs_primary_name": 5304,
+    "distinct_alias_strings": 51661,
+    "alias_strings_in_2plus_docs": 5862,
+    "entity_doc_count_distribution_primary": {
+      "1": 41125,
+      "2": 2705,
+      "3": 884,
+      "4": 419,
+      "5+": 1296
+    },
+    "gold_fact_instances": 50455,
+    "distinct_facts_primary_name": 45212,
+    "distinct_facts_in_2plus_docs_primary_name": 2179,
+    "fact_instances_whose_fact_recurs_in_another_doc_primary": 6825,
+    "fact_instances_whose_fact_recurs_in_another_doc_alias": 7817,
+    "fact_doc_count_distribution_primary": {
+      "1": 43033,
+      "2": 1395,
+      "3": 342,
+      "4": 162,
+      "5+": 280
+    },
+    "top_relations_among_recurring_facts": [
+      [
+        "country",
+        737
+      ],
+      [
+        "located in the administrative territorial entity",
+        360
+      ],
+      [
+        "contains administrative territorial entity",
+        322
+      ],
+      [
+        "country of citizenship",
+        73
+      ],
+      [
+        "continent",
+        64
+      ],
+      [
+        "has part",
+        40
+      ],
+      [
+        "applies to jurisdiction",
+        36
+      ],
+      [
+        "part of",
+        35
+      ],
+      [
+        "head of government",
+        27
+      ],
+      [
+        "developer",
+        22
+      ]
+    ],
+    "example_recurring_facts": [
+      {
+        "fact": [
+          "ontario",
+          "located in the administrative territorial entity",
+          "canada"
+        ],
+        "n_docs": 37
+      },
+      {
+        "fact": [
+          "ontario",
+          "country",
+          "canada"
+        ],
+        "n_docs": 37
+      },
+      {
+        "fact": [
+          "canada",
+          "contains administrative territorial entity",
+          "ontario"
+        ],
+        "n_docs": 36
+      },
+      {
+        "fact": [
+          "new jersey",
+          "country",
+          "united states"
+        ],
+        "n_docs": 28
+      },
+      {
+        "fact": [
+          "united states",
+          "contains administrative territorial entity",
+          "new jersey"
+        ],
+        "n_docs": 27
+      },
+      {
+        "fact": [
+          "new jersey",
+          "located in the administrative territorial entity",
+          "united states"
+        ],
+        "n_docs": 27
+      },
+      {
+        "fact": [
+          "paris",
+          "located in the administrative territorial entity",
+          "france"
+        ],
+        "n_docs": 26
+      },
+      {
+        "fact": [
+          "paris",
+          "country",
+          "france"
+        ],
+        "n_docs": 26
+      },
+      {
+        "fact": [
+          "quebec",
+          "located in the administrative territorial entity",
+          "canada"
+        ],
+        "n_docs": 21
+      },
+      {
+        "fact": [
+          "british columbia",
+          "country",
+          "canada"
+        ],
+        "n_docs": 21
+      }
+    ]
+  }
+}

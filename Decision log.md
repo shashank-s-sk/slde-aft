@@ -34,6 +34,7 @@ just says where each DEC currently stands and what's left.
 | 034 | DocRED under official-style metrics (descriptive, no new extraction) | DONE ($0) | EVID-049 | None |
 | 035 | DySECT released-code check (feedback round 2) | DONE ($0) | Repeat counting is DySECT's documented design, active in its released KB (87.5% of prompt-eligible generalizations pass 0.5 only via repeats); mutex penalty fired 0/61,676; its m(t) is type-level, not rival values — EVID-050 | Wording approved, held for Stage C (`paper/STAGE_C_NOTES.md`). DEC-035b Step A (internal) DONE: NO-GO, b-c recall +0.80 pp [-0.77, +2.35] < 2 pp (EVID-051); Step B not requested |
 | 036 | Stronger extractor (DeepSeek-V3.2) + token-logprob confidence on DEC-026 comparison | DONE (pre-reg 2f3a731) | PRIMARY HOLDS: DeepSeek R3-R2 precision A +0.227 [0.038,0.417], B +0.008 [0,0.027]; no cell reversed; logprob conf median ~1.0 and rho(A,n_obs) unchanged 0.89-0.95 -> score stays count-driven — EVID-052 | Stage C: report as robustness + count-drivenness finding |
+| 037 | Multi-document redundancy corpus (feedback item 2): free DocRED data check first; TAC KBP/LDC dropped (same reasoning as DEC-021) | DATA CHECK DONE ($0) | 2,179/45,212 distinct gold facts (4.8%) recur across docs in dev+train; 65% are country/located-in/contains geography — EVID-053 | Propose a constructed subset (costed) only after user reviews the counts |
 
 No more open items without an owning DEC — all 5 of SLDE.pdf's claims
 now have at least one real experiment behind them (see each DEC row
@@ -3816,3 +3817,18 @@ spend still needed: about $1.5 (Step A about $1.2, DEC-036 about $0.3).
   logprobs. Transient API errors are retried (up to 6 times, with backoff)
   instead of being recorded as empty extractions. Model-output parse
   failures are kept, as in the original pipeline.
+
+---
+
+# DEC-037 — Multi-document redundancy corpus (professor feedback round 2, item 2)
+
+## Decision (user, 2026-09-29)
+
+TAC KBP (LDC) is dropped, for the same budget reasoning as DEC-021
+(TACRED). First step: a free check of how much cross-document redundancy
+the DocRED data on disk already has, reported before any paid extraction
+is proposed.
+
+## Status
+
+Data check DONE (EVID-053). No paid design proposed yet; awaiting the user.

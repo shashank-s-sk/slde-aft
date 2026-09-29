@@ -5465,3 +5465,34 @@ R3 - R2 precision, tau=0.88:
    regime, not of the verbalization prompt.
 3. Dataset B's R3 effect is small for every extractor; report it with its
    CI, not as a replicated large gain.
+
+---
+
+# EVID-053 — DEC-037 free data check: cross-document redundancy already in DocRED ($0)
+
+Script: `scripts/dec037_docred_cross_document_check.py`. Output:
+`outputs/dec037_docred_redundancy_check/summary.json`. Names normalised
+(NFKC, lowercase, punctuation collapsed). "Primary" = an entity's first
+mention name; "alias" = any of its mention names.
+
+| Corpus (docs) | Entities in >=2 docs | Distinct gold facts in >=2 docs | Gold fact instances whose fact recurs in another doc (primary / alias) |
+|---|---|---|---|
+| dev (998) | 1,362 of 13,358 (10.2%) | 317 of 11,678 (2.7%) | 759 / 941 of 12,275 (6.2% / 7.7%) |
+| train_annotated (3,053) | 3,963 of 36,012 (11.0%) | 1,526 of 34,545 (4.4%) | 4,719 / 5,421 of 38,180 (12.4% / 14.2%) |
+| pooled (4,051) | 5,304 of 46,429 (11.4%) | 2,179 of 45,212 (4.8%) | 6,825 / 7,817 of 50,455 (13.5% / 15.5%) |
+
+- Of the pooled recurring facts, 2,179 distinct facts recur: 1,395 in 2
+  docs, 342 in 3, 162 in 4 and 280 in 5+.
+- They are dominated by geography: country (737), located in the
+  administrative territorial entity (360), contains administrative
+  territorial entity (322). Those three make up 65% (1,419/2,179), 70% in
+  dev.
+- Top examples: (Ontario, country, Canada) in 37 docs; (New Jersey,
+  country, United States) in 28.
+
+**Reading.** Cross-document redundancy exists in DocRED, but it is thin and
+skewed. About 5% of distinct facts recur across documents, and most are
+generic geographic containment facts, which are also among the easiest
+facts to extract. A corroboration test built from them would mainly test
+geography. Any constructed multi-document subset should report its
+relation mix and ideally stratify geographic vs other relations.
