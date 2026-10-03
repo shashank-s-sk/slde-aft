@@ -1276,6 +1276,21 @@ commits on its \texttt{main} branch), with that commit's own authored and
 committed time and the date of the fresh clone on which it was
 re-verified.
 
+\paragraph{Re-derivation of the 78 of 100 overlap.} The main text's
+count of 78 of DySECT's 100 knowledge-base-building documents among its
+500 evaluation documents was re-derived on that clone without the script
+that first produced it, in two ways. From the code: 78 of the 100
+positions in the hard-coded \texttt{seed\_ids} list of
+\texttt{data\_prep.py} are below 500, and the script assigns every
+shuffled position below 500 to the evaluation set. From the released
+knowledge base: it records exactly 100 source documents, numbered by
+their order in DocRED's training file; mapped to the script's shuffled
+positions (seed 1), they are exactly the \texttt{seed\_ids} set. In a
+hand check of a 10-document sample (every tenth entry of the sorted
+list), all 10 were in the knowledge base and 8 were among the evaluation
+documents, consistent with 78\%.
+% [fresh clone of megagonlabs/dysect @ 8d6c680, 2026-10-03; data_prep.py seed_ids; kbs/demo_acl_2026_run_dec_25_2025.tar.gz "instances file" keys]
+
 \begin{table}[htbp]
 \centering
 \caption{Pre-registration evidence (git commit hashes and times).}
