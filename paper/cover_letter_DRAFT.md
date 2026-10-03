@@ -37,7 +37,9 @@ findings:
    of facts within documents (on BioRED; 0.98% on DocRED), and 0.8-4.1% of
    multi-document facts on a
    pre-registered 2,010-document subset. Aggregation lowered F1 in every
-   configuration, so extractor recall is the binding constraint.
+   configuration: in the evaluated settings, extractor-realised
+   corroboration, rather than the aggregation rule itself, was the
+   dominant constraint.
 3. **Independence.** Counting distinct sources instead of repeated
    observations raised the precision of admitted facts. In a
    pre-registered rerun this held with a stronger extractor, robustly on
@@ -57,7 +59,7 @@ system's released code.
 
 **Length.** The body of the manuscript, from the Introduction to the end
 of the Conclusion, is 24 double line spaced pages including tables and
-figures (the PDF is 34 pages in total with the title page, declarations
+figures (the PDF is 35 pages in total with the title page, declarations
 and references). The guide for authors asks for papers of "preferably no
 more than 20 double line spaced manuscript pages, including tables and
 figures"; the body is four pages above that stated preference. The

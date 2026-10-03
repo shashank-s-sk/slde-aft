@@ -44,7 +44,7 @@
             country={Germany}}
 
 \begin{abstract}
-For language-model extraction pipelines that admit a fact only when more than one source supports it, extractor recall, not the aggregation rule, is the binding constraint. This paper measures how much corroboration public resources supply, how much extractors realise, and what counting distinct sources buys, for the conservative Noisy-OR of the DySECT system, which counts repeated observations as independent support by design. The resources supply corroboration that extractors do not deliver: half of DocRED's gold facts (50.2\%) have two or more evidence sentences, yet extractors corroborated at most 3.1\% of facts within documents (on BioRED; 0.98\% on DocRED), even with document-level extraction and a stronger model, and recovered few multi-document facts from two documents on a pre-registered 2,010-document redundancy subset. Aggregation lowered F1 in every configuration, within and across documents. Counting distinct sources instead of repeated observations raised the precision of admitted facts on real LLM extractions of synthetic products, and on DocRED and BioRED where extractors repeat themselves; in a pre-registered rerun the gain held with a stronger extractor, robustly on one dataset and borderline on the other, and with token-probability confidence, which was even more compressed than verbalized confidence. In DySECT's released knowledge base, 87.5\% of the concept generalisations its extractor can use pass its threshold only through repeated counts. Pre-registrations are verifiable from timestamped commits.
+For language-model extraction pipelines that admit a fact only when more than one source supports it, extractor-realised corroboration, rather than the aggregation rule itself, was the dominant constraint in the evaluated settings. This paper measures how much corroboration public resources supply, how much extractors realise, and what counting distinct sources buys, for the conservative Noisy-OR of the DySECT system, which counts repeated observations as independent support by design. The resources supply corroboration that extractors do not deliver: half of DocRED's gold facts (50.2\%) have two or more evidence sentences, yet extractors corroborated at most 3.1\% of facts within documents (on BioRED; 0.98\% on DocRED), even with document-level extraction and a stronger model, and recovered few multi-document facts from two documents on a pre-registered 2,010-document redundancy subset. Aggregation lowered F1 in every configuration, within and across documents. Counting distinct sources instead of repeated observations raised the precision of admitted facts on real LLM extractions of synthetic products, and on DocRED and BioRED where extractors repeat themselves; in a pre-registered rerun the gain held with a stronger extractor, robustly on one dataset and borderline on the other, and with token-probability confidence, which was even more compressed than verbalized confidence. In DySECT's released knowledge base, 87.5\% of the concept generalisations its extractor can use pass its threshold only through repeated counts. Pre-registrations are verifiable from timestamped commits.
 \end{abstract}
 
 \begin{keyword}
@@ -91,7 +91,8 @@ observations the rule counts must be independent evidence
 \caption{The three conditions a corroboration gate needs, with the
 headline measurement for each
 (Sections~\ref{sec:results-availability}--\ref{sec:formal-analysis-empirical}).
-Extractor recall, the middle condition, is the binding constraint.}
+In the evaluated settings, extractor-realised corroboration, the middle
+condition, was the dominant constraint.}
 \label{fig:conditions}
 \end{figure}
 
@@ -556,9 +557,9 @@ BioRED & Llama-3.1-8B, sentence & 0.096 & 0.73\% & 0.021 & $-0.043$ $[-0.051, -0
 On the cross-document subset every target fact is stated in two or more
 documents, yet the extractors recovered only 3.6--13.1\% of these facts
 from even one document and 0.8--4.1\% from two or more
-(Table~\ref{tab:crossdoc}), the same order as within documents: extractor
-recall, not the availability of corroboration, is the binding
-constraint. Requiring two distinct documents lowered $F_1$ relative to no
+(Table~\ref{tab:crossdoc}), the same order as within documents: on this
+subset, extractor-realised corroboration, not the availability of
+corroboration, was the dominant constraint. Requiring two distinct documents lowered $F_1$ relative to no
 aggregation in every cell, each interval below zero. It raised the
 precision of the few facts it admitted (13 to 71 keys) in three of the
 four cells, with no detectable change for Llama-3.1-8B on OTHER
@@ -761,10 +762,11 @@ removes is active, yet a check found no material effect on recall
 select prompt context rather than admit facts, the independence
 violation changes the scores more than the outcome.
 
-\subsection{Why Counting Distinct Sources Helps Where Evidence-Share Does Not}
+\subsection{Why Counting Distinct Sources Raises Precision Where Evidence-Share Does Not}
 \label{sec:discussion-r3}
 
-R3 is the one tested correction with a robust gain; R4 is an exact null
+R3 is the one tested correction with a robust precision gain
+(Section~\ref{sec:formal-analysis-empirical}); R4 is an exact null
 and R6 is negative. An account consistent with all three is that they
 target different parts of the rule. Equation~\ref{eq:noisyor} counts
 every repeated observation as independent evidence, by design, but
@@ -773,7 +775,7 @@ deterministic repeats (Proposition~\ref{prop:independence}). R3 corrects
 this at the \emph{input} to the aggregation, by collapsing repeats; R4
 and R6 rescale its already over-counted \emph{output}, changing how a
 contested slot's confidence is divided but not how often a repeat
-counts. The pre-registered rerun supports this account: the gain
+counts. The pre-registered rerun supports this account: the precision gain
 persisted with a stronger extractor and with token-logprob confidence,
 and the score stayed count-driven under both (Section~\ref{sec:formal-analysis-empirical}).
 The account was not tested against alternatives.
@@ -873,11 +875,10 @@ themselves, with a stronger extractor and with token-logprob confidence
 design choice that decides whether most of its usable concept
 generalisations pass the threshold, with no material effect on recall
 (RQ4). The aggregation step cannot supply what the extractor does not.
-Three experiments would settle what remains open: repeating the protocol
-and cross-document analyses with much stronger or coreference-resolving
-extractors; replacing self-reported and token-logprob confidence with a
-calibrated one; and rerunning DySECT's full evaluation with
-source-deduplicated scores.
+Future work should test whether stronger or coreference-resolving
+extractors substantially increase realised corroboration, whether
+calibrated confidence changes aggregation behaviour, and whether
+source-deduplicated scores alter DySECT's full evaluation.
 
 \section*{Declaration of competing interest}
 [PLACEHOLDER: ``The authors declare that they have no known competing
