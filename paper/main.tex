@@ -40,11 +40,11 @@
 \author[inst1]{Ahmed Ebada}
 \ead{[PLACEHOLDER: Prof. Ebada to supply]}
 \cortext[cor1]{Corresponding author. [PLACEHOLDER: institutional email address.]}
-\affiliation[inst1]{organization={Hopn UG},
+\affiliation[inst1]{organization={HOPn UG},
             country={Germany}}
 
 \begin{abstract}
-For language-model extraction pipelines that admit a fact only when more than one source supports it, extractor recall, not the aggregation rule, is the binding constraint. This paper measures how much corroboration public resources supply, how much extractors realise, and what counting distinct sources buys, for the conservative Noisy-OR of the DySECT system, which counts repeated observations as independent support by design. The resources supply corroboration that extractors do not deliver: half of DocRED's gold facts (50.2\%) have two or more evidence sentences, yet extractors corroborated at most 3.1\% of facts within documents, even with document-level extraction and a stronger model, and recovered few multi-document facts from two documents on a pre-registered 2,010-document redundancy subset. Aggregation lowered F1 in every configuration, within and across documents. Counting distinct sources instead of repeated observations raised the precision of admitted facts on real LLM extractions of synthetic products, and on DocRED and BioRED where extractors repeat themselves; in a pre-registered rerun the gain held with a stronger extractor, robustly on one dataset and borderline on the other, and with token-probability confidence, which was even more compressed than verbalized confidence. In DySECT's released knowledge base, 87.5\% of the concept generalisations its extractor can use pass its threshold only through repeated counts. Pre-registrations are verifiable from timestamped commits.
+For language-model extraction pipelines that admit a fact only when more than one source supports it, extractor recall, not the aggregation rule, is the binding constraint. This paper measures how much corroboration public resources supply, how much extractors realise, and what counting distinct sources buys, for the conservative Noisy-OR of the DySECT system, which counts repeated observations as independent support by design. The resources supply corroboration that extractors do not deliver: half of DocRED's gold facts (50.2\%) have two or more evidence sentences, yet extractors corroborated at most 3.1\% of facts within documents (on BioRED; 0.98\% on DocRED), even with document-level extraction and a stronger model, and recovered few multi-document facts from two documents on a pre-registered 2,010-document redundancy subset. Aggregation lowered F1 in every configuration, within and across documents. Counting distinct sources instead of repeated observations raised the precision of admitted facts on real LLM extractions of synthetic products, and on DocRED and BioRED where extractors repeat themselves; in a pre-registered rerun the gain held with a stronger extractor, robustly on one dataset and borderline on the other, and with token-probability confidence, which was even more compressed than verbalized confidence. In DySECT's released knowledge base, 87.5\% of the concept generalisations its extractor can use pass its threshold only through repeated counts. Pre-registrations are verifiable from timestamped commits.
 \end{abstract}
 
 \begin{keyword}
@@ -84,7 +84,7 @@ observations the rule counts must be independent evidence
 \draw[arr] (r) -- (i);
 \draw[arr] (i) -- (k);
 \node[note, below=2mm of a] {DocRED: 50.2\% of gold facts have ${\ge}2$ evidence sentences};
-\node[note, below=2mm of r] {Extractors corroborate at most 3.1\% within documents};
+\node[note, below=2mm of r] {Extractors corroborate at most 3.1\% within documents (BioRED; DocRED 0.98\%)};
 \node[note, below=2mm of i] {Repeats counted as independent: $O(t) \ge S(t)$};
 \end{tikzpicture}
 \end{adjustbox}

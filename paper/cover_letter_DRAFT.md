@@ -34,7 +34,8 @@ findings:
    sentences, but only 3.4% name both entities in two; across 4,051
    DocRED documents, 4.8% of facts recur in two or more documents.
 2. **Realisation.** Extractors realise almost none of it: at most 3.1%
-   of facts within documents, and 0.8-4.1% of multi-document facts on a
+   of facts within documents (on BioRED; 0.98% on DocRED), and 0.8-4.1% of
+   multi-document facts on a
    pre-registered 2,010-document subset. Aggregation lowered F1 in every
    configuration, so extractor recall is the binding constraint.
 3. **Independence.** Counting distinct sources instead of repeated
@@ -53,6 +54,16 @@ those facts: when evidence aggregation adds reliable knowledge and when
 it only discards recall. It combines a formal analysis of the scoring
 rule with pre-registered empirical tests and an audit of a published
 system's released code.
+
+**Length.** The body of the manuscript, from the Introduction to the end
+of the Conclusion, is 24 double line spaced pages including tables and
+figures (the PDF is 34 pages in total with the title page, declarations
+and references). The guide for authors asks for papers of "preferably no
+more than 20 double line spaced manuscript pages, including tables and
+figures"; the body is four pages above that stated preference. The
+closed-loop evaluation, rule definitions and per-method tables are
+already in the supplementary material, and we can shorten further if the
+editor prefers.
 
 **Scope of the evidence, stated plainly.**
 - The public-corpus and cross-document analyses are single extraction

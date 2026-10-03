@@ -161,7 +161,7 @@ needed.
   - Remaining entries without pages are legitimate (ICLR, arXiv-only,
     an edited book).
 - **OPEN (needs the user):** institutional email for the corresponding
-  author (currently a Gmail address; affiliation Hopn UG). Prof. Ebada's
+  author (currently a Gmail address; affiliation HOPn UG). Prof. Ebada's
   email is still a placeholder.
 
 ## 7. Stage 3a (move to supplement) - APPLIED 2026-09-29
@@ -335,6 +335,13 @@ AI declaration still awaiting the user's final approval before insertion.
 Option (c): accept 23 pages. No third tightening pass, and the protocol
 table is not to be touched. Body cut 38 -> 25 -> 23 pages with no result
 or caveat lost.
+
+**Correction 2026-10-03:** "23" is out of date. The current compile has a
+**24-page body** (Introduction starts on page 2, declarations on page 26;
+34 PDF pages in total, user-verified). Quote 24 body pages, never the
+total, and never as compliance with a limit: KBS states a preference
+("preferably no more than 20 double line spaced manuscript pages,
+including tables and figures"). The cover letter now says this.
 
 ## 14. Stage 4 started - cover letter, highlights, author inputs
 

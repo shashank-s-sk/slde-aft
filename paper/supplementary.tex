@@ -1267,7 +1267,13 @@ commit in the public repository
 decision log at that commit. Table~\ref{tab:s13-prereg} gives the
 pre-registration commit, the first commit containing the result, and,
 where the run logged one, the time extraction started. Timestamps are
-commit times (UTC+2).
+commit times (UTC+2). The last row is not a pre-registration: it pins
+the external repository audited in the main text
+(\texttt{megagonlabs/dysect}, commit
+\texttt{8d6c680234462326a7a1c8321b976ce2f240013e}, the head of the six
+commits on its \texttt{main} branch), with that commit's own authored and
+committed time and the date of the fresh clone on which it was
+re-verified.
 
 \begin{table}[htbp]
 \centering
@@ -1286,9 +1292,11 @@ Protocol check & \texttt{a9976b8}, 2026-09-26 16:14 & \texttt{82292ee}, 2026-09-
 Offline rule comparison & \texttt{36da4dd}, 2026-09-23 11:47, committed with its first results & \texttt{36da4dd} & --- \\
 Stronger extractor and token-logprob rerun & \texttt{2f3a731}, 2026-09-29 01:10 & \texttt{ad40563}, 2026-09-29 11:39 & --- \\
 Cross-document subset (with its document list) & \texttt{f87e91a}, 2026-09-29 11:54 & \texttt{678f373}, 2026-09-29 12:57 & --- \\
+\midrule
+DySECT released code (external; audited, not pre-registered) & \texttt{8d6c680}, authored and committed 2026-03-02 21:58:30 (UTC$-$8) & --- & Fresh clone 2026-10-03 15:40 (UTC) \\
 \bottomrule
 \end{tabular}
-% [git log -S "# DEC-0xx" -- "Decision log.md"; git log -S "# EVID-0xx" -- "Evidence log.md"; outputs/dec031_docred/run_log.txt; outputs/dec032_biored logs]
+% [git log -S "# DEC-0xx" -- "Decision log.md"; git log -S "# EVID-0xx" -- "Evidence log.md"; outputs/dec031_docred/run_log.txt; outputs/dec032_biored logs; DySECT row: git clone https://github.com/megagonlabs/dysect + git log, 2026-10-03]
 \end{table}
 
 

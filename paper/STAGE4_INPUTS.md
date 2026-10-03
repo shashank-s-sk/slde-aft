@@ -9,7 +9,7 @@ and `paper/cover_letter_DRAFT.md`. Nothing here is invented. Items marked
 | # | Item | For | Required? | Current value |
 |---|---|---|---|---|
 | A1 | Corresponding author's **institutional email** | title page, cover letter | Required (professor's request) | Gmail address |
-| A2 | Corresponding author's **affiliation and full postal address** | title page | Required by Elsevier | "Hopn UG, Germany" (is this right?) |
+| A2 | Corresponding author's **affiliation and full postal address** | title page | Required by Elsevier | "HOPn UG, Germany" (is this right?) |
 | A3 | **Prof. Ebada's email** | title page | Required | placeholder |
 | A4 | **Prof. Ebada's affiliation** (the same as A2, or a university?) | title page | Required | assumed the same as A2 |
 | A5 | ORCID iDs for both authors | title page, cover letter | Recommended | none |
@@ -18,7 +18,7 @@ and `paper/cover_letter_DRAFT.md`. Nothing here is invented. Items marked
 
 | # | Item | What to send |
 |---|---|---|
-| B1 | **Declaration of competing interest** | Either "no competing interests" or the interests. **Check this:** the affiliation is a company (Hopn UG); if Hopn UG has any commercial interest in knowledge-base or extraction products, declare it. **KBS requires this as a separate Word document generated with Elsevier's declarations tool (declarations.elsevier.com) and uploaded at submission**, in addition to the statement in the manuscript (see D5). |
+| B1 | **Declaration of competing interest** | Either "no competing interests" or the interests. **Check this:** the affiliation is a company (HOPn UG); if HOPn UG has any commercial interest in knowledge-base or extraction products, declare it. **KBS requires this as a separate Word document generated with Elsevier's declarations tool (declarations.elsevier.com) and uploaded at submission**, in addition to the statement in the manuscript (see D5). |
 | B2 | **CRediT roles** | For each author, pick from the 14 official names, exactly as written: Conceptualization, Data curation, Formal analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing - original draft, Writing - review and editing. |
 | B3 | **Funding** | The source and grant number, or confirm "no specific grant" (sentence already drafted). Include API credits or compute paid by an employer or grant, if any. |
 | B4 | **AI declaration** | Approve the text now in `main.tex` (before the references; the same as `paper/AI_DECLARATION_DRAFT.md`), or send edits. |
